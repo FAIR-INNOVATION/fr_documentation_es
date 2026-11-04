@@ -1,0 +1,893 @@
+机器人状态查询
+===============
+
+.. toctree:: 
+    :maxdepth: 5
+
+获取当前关节位置(角度)
+++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetActualJointPosDegree(flag=1)``"
+    "描述", "获取关节当前位置(角度)"
+    "必选参数", "无"
+    "默认参数", "- ``flag``：0-阻塞，1-非阻塞，默认1"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``joint_pos=[j1,j2,j3,j4,j5,j6]``：当前关节位置(角度)"
+
+获取当前关节位置(弧度)
++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetActualJointPosRadian(flag=1)``"
+    "描述", "获取关节当前位置(弧度)"
+    "必选参数", "无"
+    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``joint_pos=[j1,j2,j3,j4,j5,j6]``：当前关节位置(弧度)"
+
+获取关节反馈速度-deg/s
++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetActualJointSpeedsDegree(flag=1)``"
+    "描述", "获取关节反馈速度-deg/s"
+    "必选参数", "无"
+    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``speed=[j1,j2,j3,j4,j5,j6]``：关节反馈速度-deg/s"
+
+获取关节反馈加速度-deg/s^2
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetActualJointAccDegree(flag=1)``"
+    "描述", "获取关节反馈加速度-deg/s^2"
+    "必选参数", "无"
+    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``acc=[j1,j2,j3,j4,j5,j6]``：关节反馈加速度-deg/s^2"
+
+获取TCP指令合速度
++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetTargetTCPCompositeSpeed(flag=1)``"
+    "描述", "获取TCP指令合速度"
+    "必选参数", "无"
+    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``[tcp_speed,ori_speed]``：tcp_speed-线性合速度 ori_speed-姿态合速度"
+
+获取TCP反馈合速度
++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetActualTCPCompositeSpeed(flag=1)``"
+    "描述", "获取TCP反馈合速度"
+    "必选参数", "无"
+    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``[tcp_speed,ori_speed]``：tcp_speed-线性合速度 ori_speed-姿态合速度"
+
+获取TCP指令速度
++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetTargetTCPSpeed(flag=1)``"
+    "描述", "获取TCP指令速度"
+    "必选参数", "无"
+    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``speed=[x,y,z,rx,ry,rz]``：TCP指令速度，mm/s"
+
+获取TCP反馈速度
++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetActualTCPSpeed(flag=1)``"
+    "描述", "获取TCP反馈速度"
+    "必选参数", "无"
+    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``speed=[x,y,z,rx,ry,rz]``：TCP反馈速度"
+
+获取当前工具位姿
+++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetActualTCPPose(flag=1)``"
+    "描述", "获取当前工具位姿"
+    "必选参数", "无"
+    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``tcp_pose=[x,y,z,rx,ry,rz]``：当前工具位姿"
+
+获取当前工具坐标系编号
++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetActualTCPNum(flag=1)``"
+    "描述", "获取当前工具坐标系编号"
+    "必选参数", "无"
+    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``tool_id``:工具坐标系编号"
+
+获取当前工件坐标系编号
++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetActualWObjNum(flag=1)``"
+    "描述", "获取当前工件坐标系编号"
+    "必选参数", "无"
+    "默认参数", "- ``flag``：0-阻塞，1-非阻塞  默认1"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``wobj_id``:工件坐标系编号"
+
+获取当前末端法兰位姿
+++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetActualToolFlangePose(flag=1)``"
+    "描述", "获取当前末端法兰位姿"
+    "必选参数", "无"
+    "默认参数", "- ``flag``：0-阻塞，1-非阻塞  默认1"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``flange_pose=[x,y,z,rx,ry,rz]``：当前末端法兰位姿"
+
+获取当前关节转矩
++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetJointTorques(flag=1)``"
+    "描述", "获取当前关节转矩"
+    "必选参数", "无"
+    "默认参数", "``flag``：0-阻塞，1-非阻塞  默认1"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``torques=[j1,j2,j3,j4,j5,j6]``：关节扭矩"
+
+获取系统时间
+++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetSystemClock()``"
+    "描述", "获取系统时间"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``t_ms``: 系统时间，单位 [ms]"
+
+同步系统时间至机器人
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``SetRobottime(self)``"
+    "描述", "获取当前上位机系统时间并发送给机器人，同步系统时间（由于QNX系统限制，同步精度为分钟级）"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode"
+
+同步系统时间至机器人代码示例
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: python
+    :linenos:
+
+    from fairino import Robot
+    import time
+    from datetime import datetime, timedelta
+
+
+    def main():
+        # Establish connection with the robot controller
+        robot = Robot.RPC('192.168.58.2')
+        time.sleep(0.5)
+
+        print("========== Set and Get Robot Time Test ==========")
+
+        # Get system clock before setting
+        ret, t_ms = robot.GetSystemClock()
+        if ret == 0 and t_ms is not None:
+            print(f"system clock : {t_ms}")
+            # Robot stores UTC+8, convert back to PC time (subtract 8 hours)
+            robot_time = datetime.fromtimestamp(t_ms / 1000.0) - timedelta(hours=8)
+            print(f"BEFORE Robot Time: {robot_time.strftime('%Y-%m-%d %H:%M:%S')}")
+        else:
+            print(f"GetSystemClock failed, ret:{ret}")
+
+        # Set robot time to PC time
+        ret = robot.SetRobottime()
+        print(f"SetRobottime ret: {ret}")
+
+        # Get the robot time after setting
+        ret, t_ms_after = robot.GetSystemClock()
+        if ret == 0 and t_ms_after is not None:
+            print(f"system clock : {t_ms_after}")
+            # Robot stores UTC+8, convert back to PC time (subtract 8 hours)
+            robot_time = datetime.fromtimestamp(t_ms_after / 1000.0) - timedelta(hours=8)
+
+            # PC time - display system local time
+            pc_time = datetime.now()
+
+            # Truncate both times to minutes
+            pc_minute = pc_time.replace(second=0, microsecond=0)
+            robot_minute = robot_time.replace(second=0, microsecond=0)
+
+            # Compare consistency
+            is_consistent = (pc_minute == robot_minute)
+            if is_consistent:
+                print(f"Consistent     | PC time: {pc_minute.strftime('%Y-%m-%d %H:%M')}  | Robot time: {robot_minute.strftime('%Y-%m-%d %H:%M')}")
+            else:
+                print(f"Inconsistent | PC time: {pc_minute.strftime('%Y-%m-%d %H:%M')}  | Robot time: {robot_minute.strftime('%Y-%m-%d %H:%M')}")
+        else:
+            print(f"GetSystemClock failed, ret:{ret}")
+
+        # Close connection
+        robot.CloseRPC()
+
+
+    if __name__ == "__main__":
+        main()
+
+查询机器人运动是否完成
+++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetRobotMotionDone()``"
+    "描述", "查询机器人运动是否完成"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``state``: 机器人运动状态，0-未完成，1-完成"
+
+查询机器人运动队列缓存长度
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetMotionQueueLength()``"
+    "描述", "查询机器人运动队列缓存长度"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``len``：缓存长度"
+
+获取机器人急停状态
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetRobotEmergencyStopState()``"
+    "描述", "获取机器人急停状态"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``state``：急停状态，0-非急停，1-急停"
+
+获取SDK与机器人的通讯状态
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetSDKComState()``"
+    "描述", "获取SDK与机器人的通讯状态"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``state``：通讯状态，0-通讯正常，1-通讯异常"
+
+获取安全停止信号
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetSafetyStopState()``"
+    "描述", "获取安全停止信号"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``[si0_state,si1_state]``：si0_state 安全停止信号SI0，0-无效，1-有效 si1_state 安全停止信号SI1，0-无效，1-有效"
+
+获取关节驱动器当前温度(℃)
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetJointDriverTemperature()``"
+    "描述", "获取关节驱动器当前温度(℃)"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``data=[t1,t2,t3,t4,t5,t6]``：各关节当前温度"
+
+获取关节驱动器当前扭矩(Nm)
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetJointDriverTorque()``"
+    "描述", "获取关节驱动器当前扭矩(Nm)"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``data=[j1,j2,j3,j4,j5,j6]``：关节扭矩 [fx,fy,fz,tx,ty,tz]"
+
+获取机器人状态
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetRobotRealTimeState()``"
+    "描述", "获取机器人状态"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``robot_state_pkg``：机器人状态结构体"
+
+机器人状态查询代码示例
+++++++++++++++++++++++++
+.. code-block:: python
+    :linenos:
+
+    from fairino import Robot
+    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    robot = Robot.RPC('192.168.58.2')
+    error,[yangle, zangle] = robot.GetRobotInstallAngle()
+    print(f"yangle:{yangle},zangle:{zangle}")
+    error,j_deg = robot.GetActualJointPosDegree(0)
+    print(f"joint pos deg:{j_deg[0]},{j_deg[1]},{j_deg[2]},{j_deg[3]},{j_deg[4]},{j_deg[5]}")
+    error,jointSpeed = robot.GetActualJointSpeedsDegree(0)
+    print(f"joint speeds deg:{jointSpeed[0]},{jointSpeed[1]},{jointSpeed[2]},{jointSpeed[3]},{jointSpeed[4]},{jointSpeed[5]}")
+    error,jointAcc = robot.GetActualJointAccDegree(0)
+    print(f"joint acc deg:{jointAcc[0]},{jointAcc[1]},{jointAcc[2]},{jointAcc[3]},{jointAcc[4]},{jointAcc[5]}")
+    error,[tcp_speed, ori_speed] = robot.GetTargetTCPCompositeSpeed(0)
+    print(f"GetTargetTCPCompositeSpeed tcp {tcp_speed}; ori {ori_speed}")
+    error,[tcp_speed, ori_speed] = robot.GetActualTCPCompositeSpeed(0)
+    print(f"GetActualTCPCompositeSpeed tcp {tcp_speed}; ori {ori_speed}")
+    error,targetSpeed = robot.GetTargetTCPSpeed(0)
+    print(f"GetTargetTCPSpeed {targetSpeed[0]},{targetSpeed[1]},{targetSpeed[2]},{targetSpeed[3]},{targetSpeed[4]},{targetSpeed[5]}")
+    error,actualSpeed = robot.GetActualTCPSpeed(0)
+    print(f"GetActualTCPSpeed {actualSpeed[0]},{actualSpeed[1]},{actualSpeed[2]},{actualSpeed[3]},{actualSpeed[4]},{actualSpeed[5]}")
+    error,tcp = robot.GetActualTCPPose(0)
+    print(f"tcp pose:{tcp[0]},{tcp[1]},{tcp[2]},{tcp[3]},{tcp[4]},{tcp[5]}")
+    error,flange = robot.GetActualToolFlangePose(0)
+    print(f"flange pose:{flange[0]},{flange[1]},{flange[2]},{flange[3]},{flange[4]},{flange[5]}")
+    error,id = robot.GetActualTCPNum(0)
+    print(f"tcp num:{id}")
+    error,id = robot.GetActualWObjNum(0)
+    print(f"wobj num:{id}")
+    error,jtorque = robot.GetJointTorques(0)
+    print(f"torques:{jtorque[0]},{jtorque[1]},{jtorque[2]},{jtorque[3]},{jtorque[4]},{jtorque[5]}")
+    error,t_ms = robot.GetSystemClock()
+    print(f"system clock:{t_ms}")
+    error,config = robot.GetRobotCurJointsConfig()
+    print(f"joint config:{config}")
+    error,motionDone = robot.GetRobotMotionDone()
+    print(f"GetRobotMotionDone:{motionDone}")
+    error,len = robot.GetMotionQueueLength()
+    print(f"GetMotionQueueLength:{len}")
+    error,emergState = robot.GetRobotEmergencyStopState()
+    print(f"GetRobotEmergencyStopState:{emergState}")
+    error,comstate = robot.GetSDKComState()
+    print(f"GetSDKComState:{comstate}")
+    error,[si0_state, si1_state] = robot.GetSafetyStopState()
+    print(f"GetSafetyStopState:{si0_state} {si1_state}")
+    error,temp = robot.GetJointDriverTemperature()
+    print(f"Temperature:{temp[0]},{temp[1]},{temp[2]},{temp[3]},{temp[4]},{temp[5]}")
+    error,torque = robot.GetJointDriverTorque()
+    print(f"torque:{torque[0]},{torque[1]},{torque[2]},{torque[3]},{torque[4]},{torque[5]}")
+    error,pkg = robot.GetRobotRealTimeState()
+    robot.CloseRPC()
+
+逆运动学求解
+++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetInverseKin(type,desc_pos,config=-1)``"
+    "描述", "逆运动学，笛卡尔位姿求解关节位置 "
+    "必选参数", "- ``type``:0-绝对位姿(基坐标系)，1-相对位姿（基坐标系），2-相对位姿（工具坐标系）
+    - ``desc_pose``:[x,y,z,rx,ry,rz],工具位姿，单位[mm][°]"
+    "默认参数", "- ``config``:关节配置，[-1]-参考当前关节位置求解，[0~7]-依据关节配置求解 默认-1"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``joint_pos=[j1,j2,j3,j4,j5,j6]``：逆运动学解，笛卡尔位姿求解关节位置"
+
+逆运动学求解-指定参考位置
+++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetInverseKinRef(type,desc_pos,joint_pos_ref)``"
+    "描述", "逆运动学，工具位姿求解关节位置，参考指定关节位置求解"
+    "必选参数", "- ``type``:0-绝对位姿(基坐标系)，1-相对位姿（基坐标系），2-相对位姿（工具坐标系）
+    - ``desc_pos``：[x,y,z,rx,ry,rz]工具位姿，单位[mm][°]
+    - ``joint_pos_ref``：[j1,j2,j3,j4,j5,j6]，关节参考位置，单位[°]"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``joint_pos=[j1,j2,j3,j4,j5,j6]``：逆运动学解，工具位姿求解关节位置"
+
+逆运动学求解，笛卡尔空间包含扩展轴位置
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetInverseKinExaxis(type, desc_pos, exaxis, tool, workPiece, config = -1)``"
+    "描述", "逆运动学求解，笛卡尔空间包含扩展轴位置"
+    "必选参数", "- ``type``: 0-绝对位姿(基坐标系)，1-增量位姿(基坐标系)，2-增量位姿(工具坐标系)
+    - ``desc_pos``: 笛卡尔位姿
+    - ``exaxis``: 扩展轴位置
+    - ``tool``: 工具号
+    - ``workPiece``: 工件号
+    - ``config -1``: 自动求解，0-7对应八组解"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``joint_pos``：关节位置"
+
+逆运动学求解包含扩展轴位置代码示例
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: python
+    :linenos:
+
+    from fairino import Robot
+    import time
+    robot = Robot.RPC('192.168.58.2')
+    desc = [99.957, -0.002, 29.994, -176.569, -6.757, -167.462]
+    exaxis = [100.0, 0.0, 0.0, 0.0]
+    jointPos = [0.0] * 6
+    offsetPos = [0.0] * 6
+    rtn,pkg = robot.GetRobotRealTimeState()
+    toolnum = pkg.tool
+    workPcsNum = pkg.user
+    rtn, jointPos = robot.GetInverseKinExaxis(0, desc, exaxis, toolnum, workPcsNum)
+    print(f"GetInverseKinExaxis joint is {jointPos[0]},{jointPos[1]},{jointPos[2]},{jointPos[3]},{jointPos[4]},{jointPos[5]}")
+    robot.ExtAxisMove(exaxis, 100, -1)
+    robot.MoveJ(joint_pos=jointPos, desc_pos=desc, tool=toolnum, user=workPcsNum, vel=100.0, acc=100.0, ovl=100.0, exaxis_pos=exaxis, blendT=-1, offset_flag=0, offset_pos=offsetPos)
+    robot.CloseRPC()
+    return 0
+
+逆运动学求解-是否有解
+++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetInverseKinHasSolution(type,desc_pos,joint_pos_ref)``"
+    "描述", "逆运动学，工具位姿求解关节位置 是否有解"
+    "必选参数", "- ``type``:0-绝对位姿(基坐标系)，1-相对位姿（基坐标系），2-相对位姿（工具坐标系）
+    - ``desc_pos``：[x,y,z,rx,ry,rz]工具位姿，单位[mm][°]
+    - ``joint_pos_ref``：[j1,j2,j3,j4,j5,j6]，关节参考位置，单位[°]"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``result``:“True”-有解，“False”-无解"
+
+获取机器人8组逆解
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``TCFToAllJoint(self, tcp_pose, tool, workpiece, exPos)``"
+    "描述", "获取8组逆解"
+    "必选参数", "
+    - ``tcp_pose``: 笛卡尔位姿，6个元素[x,y,z,rx,ry,rz]
+    - ``tool``: 工具坐标系
+    - ``workpiece``: 工件坐标系
+    - ``exPos``: 扩展轴位置，4个元素
+    "
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``jPos``：输出8组关节角度，二维列表，每组6个关节值，共48个值"
+
+获取机器人8组逆解代码示例
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: python
+    :linenos:
+
+    from fairino import Robot
+    import time
+
+    def main():
+        # Establish connection with the robot controller
+        robot = Robot.RPC('192.168.58.2')
+        time.sleep(0.5)  # Wait for connection and data reception
+
+        # Get current TCP pose
+        ret, curTcp = robot.GetActualTCPPose(1)
+        if ret != 0:
+            print(f"GetActualTCPPose failed, ret:{ret}")
+            robot.CloseRPC()
+            return
+
+        print(f"Current TCP pose: x={curTcp[0]:.3f}, y={curTcp[1]:.3f}, z={curTcp[2]:.3f}, "
+            f"a={curTcp[3]:.3f}, b={curTcp[4]:.3f}, c={curTcp[5]:.3f}")
+
+        # Exaxis position, all zeros here
+        exPos = [0.0, 0.0, 0.0, 0.0]
+
+        # Call TCFToAllJoint to get 8 inverse solutions, tool=0, workpiece=0
+        rtn, allJoints = robot.TCFToAllJoint(curTcp, 0, 0, exPos)
+        if rtn != 0:
+            print(f"TCFToAllJoint failed, rtn:{rtn}")
+            robot.CloseRPC()
+            return
+
+        # Verify each solution with forward kinematics
+        for i in range(8):
+            joint = allJoints[i]
+
+            print(f"JOINT{i + 1}: j1={joint[0]:.3f}, j2={joint[1]:.3f}, j3={joint[2]:.3f}, "
+                f"j4={joint[3]:.3f}, j5={joint[4]:.3f}, j6={joint[5]:.3f}")
+
+            # Forward kinematics to get cartesian pose of the i-th solution
+            rtn, pos = robot.GetForwardKin(joint)
+            if rtn != 0:
+                # Skip this solution if forward kinematics fails
+                continue
+
+            print(f"POS{i + 1}: x={pos[0]:.3f}, y={pos[1]:.3f}, z={pos[2]:.3f}, "
+                f"a={pos[3]:.3f}, b={pos[4]:.3f}, c={pos[5]:.3f}")
+
+        # Close connection
+        robot.CloseRPC()
+
+    if __name__ == "__main__":
+        main()
+        
+正运动学求解
++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetForwardKin(joint_pos)``"
+    "描述", "正运动学，关节位置求解工具位姿"
+    "必选参数", "- ``joint_pos``:[j1,j2,j3,j4,j5,j6]:关节位置，单位[°]"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``desc_pos=[x,y,z,rx,ry,rz]``：正运动学解，关节位置求解工具位姿"
+
+机器人正逆运动学计算代码示例
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: python
+    :linenos:
+
+    from fairino import Robot
+    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    robot = Robot.RPC('192.168.58.2')
+    j1 = [-11.904, -99.669, 117.473, -108.616, -91.726, 74.256]
+    desc_pos1 = [-419.524, -13.000, 351.569, -178.118, 0.314, 3.833]
+    error, inverseRtn = robot.GetInverseKin(0, desc_pos=desc_pos1, config=-1)
+    print(f"dcs1 GetInverseKin rtn is {inverseRtn[0]}, {inverseRtn[1]}, {inverseRtn[2]}, "
+          f"{inverseRtn[3]}, {inverseRtn[4]}, {inverseRtn[5]}")
+    error, inverseRtn = robot.GetInverseKinRef(0, desc_pos=desc_pos1, joint_pos_ref=j1)
+    print(f"dcs1 GetInverseKinRef rtn is {inverseRtn[0]}, {inverseRtn[1]}, {inverseRtn[2]}, "
+          f"{inverseRtn[3]}, {inverseRtn[4]}, {inverseRtn[5]}")
+    error, hasResult = robot.GetInverseKinHasSolution(0, desc_pos=desc_pos1, joint_pos_ref=j1)
+    print(f"dcs1 GetInverseKinRef result {hasResult}")
+    error, forwordResult = robot.GetForwardKin(j1)
+    print(f"jpos1 forwordResult rtn is {forwordResult[0]}, {forwordResult[1]}, {forwordResult[2]}, "
+          f"{forwordResult[3]}, {forwordResult[4]}, {forwordResult[5]}")
+    robot.CloseRPC()
+
+查询机器人示教管理点位数据
+++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetRobotTeachingPoint(name)``"
+    "描述", "查询机器人示教管理点位数据"
+    "必选参数", "``name``：点位名"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``[x,y,z,rx,ry,rz,j1,j2,j3,j4,j5,j6,tool,wobj,speed,acc,e1,e2,e3,e4]``：点位数据"
+
+获取DH补偿参数
+++++++++++++++++++++++++++
+.. versionadded:: python SDK-v2.0.1
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetDHCompensation()``"
+    "描述", "获取DH补偿参数"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``dhCompensation=[cmpstD1,cmpstA2,cmpstA3,cmpstD4,cmpstD5,cmpstD6]``：机器人DH参数补偿值(mm)"
+
+获取控制箱SN码
++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: python SDK-v2.1.1
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetRobotSN()``"
+    "描述", "获取控制箱SN码"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``SNCode``：控制箱SN码"
+
+查询机器人示教管理点位数据代码示例
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: python
+    :linenos:
+
+    from fairino import Robot
+    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    robot = Robot.RPC('192.168.58.2')
+    name = "P1"
+    rtn, data = robot.GetRobotTeachingPoint(name)
+    print(f"{rtn} name is: {name}")
+    for i in range(20):
+        print(f"data is: {data[i]}")
+    rtn,que_len = robot.GetMotionQueueLength()
+    print(f"GetMotionQueueLength rtn is: {rtn}, queue length is: {que_len}")
+    retval,dh = robot.GetDHCompensation()
+    print(f"retval is: {retval}")
+    print(f"dh is: {dh[0]} {dh[1]} {dh[2]} {dh[3]} {dh[4]} {dh[5]}")
+    error,sn = robot.GetRobotSN()
+    print(f"robot SN is {sn[0]}")
+    robot.CloseRPC()
+
+根据编号获取工具坐标系
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. versionchanged:: python SDK-V3.9.8
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetToolCoordWithID(id)``"
+    "描述", "根据编号获取工具坐标系"
+    "必选参数", "- ``id``：工具坐标系编号"
+    "默认参数", "无"
+    "返回值", "
+    - 错误码 成功-0  失败- errcode
+    - ``coord``：坐标系数值
+    - ``type``：工具类型 (可选) 0-工具；1-传感器
+    - ``install``：安装位置 (可选) 0-机器人末端；1-机器人外部
+    - ``toolID``：工具ID
+    - ``loadNo``：负载编号
+    "
+
+根据编号获取工件坐标系
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. versionchanged:: python SDK-V3.9.8
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetWObjCoordWithID(id)``"
+    "描述", "根据编号获取工件坐标系"
+    "必选参数", "- ``id``：工件坐标系编号"
+    "默认参数", "无"
+    "返回值", "
+    - 错误码 成功-0  失败- errcode
+    - ``coord``：坐标系数值
+    - ``refFrame``：参考坐标系
+    "
+
+根据编号获取外部工具坐标系
++++++++++++++++++++++++++++++++++++++++++++++
+.. versionchanged:: python SDK-V3.9.8
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetExToolCoordWithID(id)``"
+    "描述", "根据编号获取外部工具坐标系"
+    "必选参数", "- ``id``：外部工具坐标系编号"
+    "默认参数", "无"
+    "返回值", "
+    - 错误码 成功-0  失败- errcode
+    - ``coord``：坐标系数值
+    - ``tcoord``：机器人末端安装工件坐标系位姿 (6个值: [x, y, z, rx, ry, rz])
+    "
+
+根据编号获取扩展轴坐标系
++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: python SDK-v2.1.6
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetExAxisCoordWithID(id)``"
+    "描述", "根据编号获取扩展轴坐标系"
+    "必选参数", "- ``id``：扩展轴坐标系编号"
+    "默认参数", "无"
+    "返回值", "
+    - 错误码 成功-0  失败- errcode
+    - ``coord``：坐标系数值
+    - ``axisCoordNum``：扩展轴号 (可选) bit0-bit3对应扩展轴1-扩展轴4；如值为3,对应应用扩展轴[1,2]
+    - ``calibFlag``：标定标志 (可选) 0-未标定；1-已标定
+    "
+
+根据编号获取负载质量及质心
++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: python SDK-v2.1.6
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetTargetPayloadWithID(id)``"
+    "描述", "根据编号获取负载质量及质心"
+    "必选参数", "- ``id``：扩展轴坐标系编号"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``weight``：负载质量
+    - ``cog``：负载质心"
+
+获取当前工具坐标系
++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: python SDK-v2.1.6
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetCurToolCoord()``"
+    "描述", "获取当前工具坐标系"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``coord``：坐标系数值"
+
+获取当前工件坐标系
++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: python SDK-v2.1.6
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetCurWObjCoord()``"
+    "描述", "获取当前工件坐标系"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``coord``：坐标系数值"
+
+获取当前外部工具坐标系
++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: python SDK-v2.1.6
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetCurExToolCoord()``"
+    "描述", "获取当前外部工具坐标系"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``coord``：坐标系数值"
+
+获取当前扩展轴坐标系
++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: python SDK-v2.1.6
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "原型", "``GetCurExAxisCoord()``"
+    "描述", "获取当前扩展轴坐标系"
+    "必选参数", "无"
+    "默认参数", "无"
+    "返回值", "- 错误码 成功-0  失败- errcode
+    - ``coord``：坐标系数值"
+
+获取机器人坐标系及负载代码示例
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: python
+    :linenos:
+
+    from fairino import Robot
+    import time
+
+    def main():
+        robot = Robot.RPC('192.168.58.2')
+        time.sleep(0.5)  
+
+        time.sleep(2)
+
+        id = 1
+        rtn, toolCoord, type_val, install, toolID, loadNo = robot.GetToolCoordWithID(id)
+        print(f"GetToolCoordWithID {id}, {toolCoord[0]:.6f} {toolCoord[1]:.6f} {toolCoord[2]:.6f} {toolCoord[3]:.6f} {toolCoord[4]:.6f} {toolCoord[5]:.6f},  type = {type_val}, install = {install}, toolID = {toolID}, loadNo = {loadNo}")
+        rtn, wobjCoord, refFrame = robot.GetWObjCoordWithID(id)
+        print(f"GetWObjCoordWithID {id}, {wobjCoord[0]:.6f} {wobjCoord[1]:.6f} {wobjCoord[2]:.6f} {wobjCoord[3]:.6f} {wobjCoord[4]:.6f} {wobjCoord[5]:.6f}, refFrame = {refFrame}")
+        rtn, extoolCoord, exworkpieceCoord = robot.GetExToolCoordWithID(21)
+        print(f"GetExToolCoordWithID {id}, {extoolCoord[0]:.6f} {extoolCoord[1]:.6f} {extoolCoord[2]:.6f} {extoolCoord[3]:.6f} {extoolCoord[4]:.6f} {extoolCoord[5]:.6f}, {exworkpieceCoord[0]:.6f} {exworkpieceCoord[1]:.6f} {exworkpieceCoord[2]:.6f} {exworkpieceCoord[3]:.6f} {exworkpieceCoord[4]:.6f} {exworkpieceCoord[5]:.6f}")
+        rtn, exAxisCoord, axisCoordNum, calibFlag = robot.GetExAxisCoordWithID(id)
+        print(f"GetExAxisCoordWithID {id}, {exAxisCoord[0]:.6f} {exAxisCoord[1]:.6f} {exAxisCoord[2]:.6f} {exAxisCoord[3]:.6f} {exAxisCoord[4]:.6f} {exAxisCoord[5]:.6f}, axisCoordNum = {axisCoordNum}, calibFlag = {calibFlag}")
+        rtn, weight, cog = robot.GetTargetPayloadWithID(id)
+        print(f"GetTargetPayloadWithID {id}, {weight:.6f} {cog[0]:.6f} {cog[1]:.6f} {cog[2]:.6f}")
+        rtn, toolCoord = robot.GetCurToolCoord()
+        print(f"GetCurToolCoord {toolCoord[0]:.6f} {toolCoord[1]:.6f} {toolCoord[2]:.6f} {toolCoord[3]:.6f} {toolCoord[4]:.6f} {toolCoord[5]:.6f}")
+        rtn, wobjCoord = robot.GetCurWObjCoord()
+        print(f"GetCurWObjCoord {wobjCoord[0]:.6f} {wobjCoord[1]:.6f} {wobjCoord[2]:.6f} {wobjCoord[3]:.6f} {wobjCoord[4]:.6f} {wobjCoord[5]:.6f}")
+        rtn, extoolCoord = robot.GetCurExToolCoord()
+        print(f"GetCurExToolCoord {extoolCoord[0]:.6f} {extoolCoord[1]:.6f} {extoolCoord[2]:.6f} {extoolCoord[3]:.6f} {extoolCoord[4]:.6f} {extoolCoord[5]:.6f}")
+
+        rtn, exAxisCoord = robot.GetCurExAxisCoord()
+        print(f"GetCurExAxisCoord {exAxisCoord[0]:.6f} {exAxisCoord[1]:.6f} {exAxisCoord[2]:.6f} {exAxisCoord[3]:.6f} {exAxisCoord[4]:.6f} {exAxisCoord[5]:.6f}")
+        rtn, weightT = robot.GetTargetPayload(0)
+        rtn, cogT = robot.GetTargetPayloadCog(0)
+        print(f"GetTargetPayload {weightT:.6f} {cogT[0]:.6f} {cogT[1]:.6f} {cogT[2]:.6f}")
+        coordSet = [0.0, 1.0, 2.0, 3.0, 4.0, 5.0]
+
+        rtn = robot.SetToolCoord(1, coordSet, 0, 0, 1, 0)
+        print(f"SetToolCoord rtn is {rtn}")
+
+        rtn = robot.SetWObjCoord(1, coordSet, 0)
+        print(f"SetWObjCoord rtn is {rtn}")
+
+        rtn = robot.SetLoadWeight(1, 1.3)
+        print(f"SetLoadWeight rtn is {rtn}")
+
+        rtn = robot.SetLoadCoord(10.0, 20.0, 30.0,1)
+        print(f"SetLoadCoord rtn is {rtn}")
+
+        etcp = [0.0, 0.0, 100.0, 0.0, 0.0, 0.0]
+        etool = [0.0, 0.0, 50.0, 0.0, 0.0, 0.0]
+        rtn = robot.SetExToolCoord(21, etcp, etool)
+        print(f"SetExToolCoord rtn is {rtn}")
+
+        rtn = robot.ExtAxisActiveECoordSys(1, 1, coordSet, 1)
+        print(f"ExtAxisActiveECoordSys rtn is {rtn}")
+
+        robot.CloseRPC()
+
+    if __name__ == "__main__":
+        main()

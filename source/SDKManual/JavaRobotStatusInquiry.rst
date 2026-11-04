@@ -1,0 +1,883 @@
+机器人状态查询
+===============
+
+.. toctree:: 
+    :maxdepth: 5
+
+获取当前关节位置(角度)
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  获取当前关节位置(角度)
+    * @param  [out] jPos 获取的六个关节位置，单位deg
+    * @return  错误码
+    */
+    int GetActualJointPosDegree(JointPos jPos); 
+
+获取关节反馈速度-deg/s
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /** 
+    * @brief 获取关节反馈速度-deg/s 
+    * @param [out] speed 六个关节速度
+    * @return 错误码 
+    */
+    int GetActualJointSpeedsDegree(Object[] speed);
+
+获取关节反馈加速度
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  获取关节反馈加速度-deg/s^2
+    * @param  [in] flag 0-阻塞，1-非阻塞
+    * @param  [out] acc 六个关节加速度
+    * @return  错误码
+    */
+    public int GetActualJointAccDegree(int flag, Object[] acc)
+
+获取TCP指令合速度
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  获取TCP指令速度
+    * @param  [in] flag 0-阻塞，1-非阻塞
+    * @param  [out] tcp_speed 线性速度
+    * @param  [out] ori_speed 姿态速度
+    * @return  错误码
+    */
+    public int GetTargetTCPCompositeSpeed(int flag, double tcp_speed, double ori_speed)
+
+获取TCP反馈合速度
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  获取TCP反馈合速度
+    * @param  [in] flag 0-阻塞，1-非阻塞
+    * @param  [out] tcp_speed 线性速度
+    * @param  [out] ori_speed 姿态速度
+    * @return  错误码
+    */
+    public int GetActualTCPCompositeSpeed(int flag, double tcp_speed, double ori_speed)
+
+获取TCP指令速度
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  获取TCP指令速度
+    * @param  [in] flag 0-阻塞，1-非阻塞
+    * @param  [out] speed [x,y,z,rx,ry,rz]速度
+    * @return  错误码
+    */
+    public int GetTargetTCPSpeed(int flag, Object[] speed)
+
+获取TCP反馈速度
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  获取TCP反馈速度
+    * @param  [in] flag 0-阻塞，1-非阻塞
+    * @param  [out] speed [x,y,z,rx,ry,rz]速度
+    * @return  错误码
+    */
+    public int GetActualTCPSpeed(int flag, Object[] speed)
+
+获取当前工具位姿
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  获取当前工具位姿
+    * @param  [out] desc_pos  工具位姿
+    * @return  错误码
+    */
+    int GetActualTCPPose(DescPose desc_pos); 
+
+获取当前工具坐标系编号
++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  获取当前工具坐标系编号
+    * @param  [in] flag  0-阻塞，1-非阻塞
+    * @param  [out] id  工具坐标系编号
+    * @return  错误码
+    */
+    int GetActualTCPNum(int flag, int[] id)
+
+获取当前工件坐标系编号
++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  获取当前工件坐标系编号
+    * @param  [in] flag  0-阻塞，1-非阻塞
+    * @param  [out] id  工件坐标系编号
+    * @return  错误码
+    */
+    public int GetActualWObjNum(int flag, int[] id)
+
+获取当前末端法兰位姿
++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  获取当前末端法兰位姿
+    * @param  [in] flag  0-阻塞，1-非阻塞
+    * @param  [out] desc_pos  法兰位姿
+    * @return  错误码
+    */
+    public int GetActualToolFlangePose(int flag, DescPose desc_pos)
+
+获取当前关节转矩
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief 获取当前关节转矩
+    * @param  [in]  flag 0-阻塞，1-非阻塞
+    * @param  [out]  torques 关节转矩
+    * @return  错误码
+    */
+    int GetJointTorques(int flag, Object[] torques);
+
+获取系统时间
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  获取系统时间
+    * @return  List[0]:int 错误码; List[1]:double t_ms 单位ms
+    */
+    List<Number> GetSystemClock();
+
+同步系统时间至机器人
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief 获取当前上位机系统时间并发送给机器人，同步系统时间（由于QNX系统限制，同步精度为分钟级）
+    * @return 错误码
+    */
+    public int SetRobottime()
+
+同步系统时间至机器人代码示例
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    public static void testSetAndGetRobotTime(Robot robot) 
+    {
+        // 1. 获取设置前的时间
+        List<Number> resultBefore = robot.GetSystemClock();
+        int retBefore = (int) resultBefore.get(0);
+        
+        if (retBefore == 0) {
+            double t_ms = (double) resultBefore.get(1);
+            System.out.println("system clock : " + t_ms);
+            
+            // Convert millisecond timestamp to DateTime (UTC time)
+            java.time.Instant instant = java.time.Instant.ofEpochMilli((long) t_ms);
+            java.time.LocalDateTime utcTime = java.time.LocalDateTime.ofInstant(instant, java.time.ZoneOffset.UTC);
+            System.out.println("BEFORE UTC Time   : " + 
+                utcTime.format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+        } else {
+            System.out.println("GetSystemClock failed, ret:" + retBefore);
+        }
+
+        // 2. 设置机器人时间
+        int retSet = robot.SetRobotTime();
+        if (retSet != 0) {
+            System.out.println("SetRobotTime failed, ret:" + retSet);
+            return;
+        }
+
+        // 3. 获取设置后的时间
+        List<Number> resultAfter = robot.GetSystemClock();
+        int retAfter = (int) resultAfter.get(0);
+        
+        if (retAfter == 0) {
+            double t_ms_after = (double) resultAfter.get(1);
+            System.out.println("system clock after: " + t_ms_after);
+            
+            // 转换为UTC时间
+            java.time.Instant instantAfter = java.time.Instant.ofEpochMilli((long) t_ms_after);
+            java.time.LocalDateTime robotTimeAfter = java.time.LocalDateTime.ofInstant(instantAfter, java.time.ZoneOffset.UTC);
+
+            // 获取PC当前时间（作为期望值）
+            java.time.LocalDateTime pcTimeBefore = java.time.LocalDateTime.now(java.time.ZoneOffset.UTC);
+
+            // 截断到分钟级别进行比较（因为QNX系统限制，同步精度为分钟级）
+            java.time.LocalDateTime pcMinute = pcTimeBefore.withSecond(0).withNano(0);
+            java.time.LocalDateTime robotMinute = robotTimeAfter.withSecond(0).withNano(0);
+
+            // 比较一致性
+            boolean isConsistent = pcMinute.equals(robotMinute);
+            if (isConsistent) {
+                System.out.println("Consistent     | PC time: " + 
+                    pcMinute.format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")) + 
+                    "  | Robot time: " + 
+                    robotMinute.format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
+            } else {
+                System.out.println("[Inconsistent | PC time: " + 
+                    pcMinute.format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")) + 
+                    "  | Robot time: " + 
+                    robotMinute.format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
+            }
+        } else {
+            System.out.println("GetSystemClock failed, ret:" + retAfter);
+        }
+    }
+
+查询机器人运动是否完成
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  查询机器人运动是否完成
+    * @param   [out] state  0-未完成，1-完成
+    * @return  错误码
+    */
+    public int GetRobotMotionDone(int[] state)
+
+查询机器人运动队列缓存长度
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  查询机器人运动队列缓存长度
+    * @param   [out] len  缓存长度
+    * @return  错误码
+    */
+    public int GetMotionQueueLength(int[] len)
+
+获取机器人急停状态
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief 获取机器人急停状态
+    * @param [out] state 急停状态，0-非急停，1-急停
+    * @return 错误码
+    */
+    public int GetRobotEmergencyStopState(int[] state)
+
+获取SDK与机器人的通讯状态
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief 获取SDK与机器人的通讯状态
+    * @return state 通讯状态，0-通讯正常，1-通讯异常
+    */
+    public int GetSDKComState()
+
+获取安全停止信号
++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief 获取安全停止信号
+    * @param  [out] si0_state 安全停止信号SI0，0-无效，1-有效
+    * @param  [out] si1_state 安全停止信号SI1，0-无效，1-有效
+    * @return 错误码
+    */
+    public int GetSafetyStopState(int[] si0_state, int[] si1_state)
+
+获取机器人关节驱动器温度(℃)
++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief 获取机器人关节驱动器温度(℃)
+    * @param  [out] temperature 温度
+    * @return 错误码
+    */
+    public int GetJointDriverTemperature(double[] temperature)
+
+获取机器人关节驱动器扭矩(Nm)
++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief 获取机器人关节驱动器扭矩(Nm)
+    * @param  [out] torque 扭矩
+    * @return 错误码
+    */
+    public int GetJointDriverTorque(double[] torque)
+
+获取机器人实时状态结构体
++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief 获取机器人实时状态结构体
+    * @return 实时状态结构体
+    */
+    public ROBOT_STATE_PKG GetRobotRealTimeState()
+
+机器人状态查询代码示例
++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    public static int TestGetStatus(Robot robot)
+    {
+        List<Number> angle=new ArrayList<>();
+        angle=robot.GetRobotInstallAngle();
+        System.out.println("yangle:"+angle.get(1)+",zangle:"+angle.get(2));
+
+        JointPos j_deg =new JointPos(){};
+        robot.GetActualJointPosDegree( j_deg);
+
+        Object[] jointSpeed =new Object[] { 0,0,0,0,0,0 };
+        robot.GetActualJointSpeedsDegree(jointSpeed);
+
+        Object[] jointAcc = new Object[]{0,0,0,0,0,0 };
+        robot.GetActualJointAccDegree(0, jointAcc);
+
+        double tcp_speed = 0.0;
+        double ori_speed = 0.0;
+        robot.GetTargetTCPCompositeSpeed(0, tcp_speed, ori_speed);
+
+        robot.GetActualTCPCompositeSpeed(0, tcp_speed, ori_speed);
+
+        Object[] targetSpeed =new Object[] { 0,0,0,0,0,0 };
+        robot.GetTargetTCPSpeed(0, targetSpeed);
+
+        Object[] actualSpeed =new Object[] {0,0,0,0,0,0 };
+        robot.GetActualTCPSpeed(0, actualSpeed);
+
+        DescPose tcp = new DescPose(){};
+        robot.GetActualTCPPose(tcp);
+
+        DescPose flange = new DescPose(){};
+        robot.GetActualToolFlangePose(0, flange);
+
+        int[] id = {};
+        robot.GetActualTCPNum(0, id);
+
+        robot.GetActualWObjNum(0, id);
+
+        List<Number> jtorque=new ArrayList<>();
+        jtorque=robot.GetJointTorques(0);
+
+        List<Number> t_ms = new ArrayList<>();
+        t_ms=robot.GetSystemClock();
+
+        List<Integer> config = new ArrayList<>();
+        config=robot.GetRobotCurJointsConfig();
+
+        int motionDone = 0;
+        robot.GetRobotMotionDone(motionDone);
+
+        int[] len ={0 };
+        robot.GetMotionQueueLength(len);
+
+        int[] emergState = {0};
+        robot.GetRobotEmergencyStopState(emergState);
+
+        int comstate = 0;
+        comstate=robot.GetSDKComState();
+
+        int[] si0_state=new int[]{0}, si1_state=new int[]{0};
+        robot.GetSafetyStopState(si0_state, si1_state);
+
+        double[] temp =new double[] { 0,0,0,0,0,0 };
+        robot.GetJointDriverTemperature(temp);
+
+        double[] torque = new double[]{ 0,0,0,0,0,0 };
+        robot.GetJointDriverTorque(torque);
+
+        ROBOT_STATE_PKG pkg=new ROBOT_STATE_PKG();
+        pkg=robot.GetRobotRealTimeState();
+
+        return 0;
+    }
+
+逆运动学求解
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  逆运动学求解
+    * @param  [in] type 0-绝对位姿(基坐标系)，1-增量位姿(基坐标系)，2-增量位姿(工具坐标系)
+    * @param  [in] desc_pos 笛卡尔位姿
+    * @param  [in] config 关节空间配置，[-1]-参考当前关节位置解算，[0~7]-依据特定关节空间配置求解
+    * @param  [out] joint_pos 关节位置
+    * @return  错误码
+    */ 
+    int GetInverseKin(int type, DescPose desc_pos, int config, JointPos joint_pos);
+
+逆运动学求解(参考位置)
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  逆运动学求解，参考指定关节位置求解
+    * @param  [in] posMode 0绝对位姿， 1相对位姿-基坐标系   2相对位姿-工具坐标系
+    * @param  [in] desc_pos 笛卡尔位姿
+    * @param  [in] joint_pos_ref 参考关节位置
+    * @param  [out] joint_pos 关节位置
+    * @return  错误码
+    */   
+    int GetInverseKinRef(int posMode, DescPose desc_pos, JointPos joint_pos_ref, JointPos joint_pos); 
+
+逆运动学求解，笛卡尔空间包含扩展轴位置
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief 逆运动学求解，笛卡尔空间包含扩展轴位置
+    * @param  type 0-绝对位姿(基坐标系)，1-增量位姿(基坐标系)，2-增量位姿(工具坐标系)
+    * @param  desc_pos 笛卡尔位姿
+    * @param  exaxis 扩展轴位置
+    * @param  tool 工具号
+    * @param  workPiece 工件号
+    * @param  joint_pos 关节位置
+    * @param  config -1：自动求解，0-7对应八组解
+    * @return 错误码
+    */
+    public int GetInverseKinExaxis(int type, DescPose desc_pos, ExaxisPos exaxis, int tool, int workPiece, JointPos joint_pos, int config)
+    
+逆运动学求解包含扩展轴位置代码示例
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    public static void  TestInverseKinExaxis(Robot robot)
+    {
+        DescPose desc=new DescPose(99.957, -0.002, 29.994, -176.569, -6.757, -167.462);
+        ExaxisPos exaxis=new ExaxisPos(100.0, 0.0, 0.0, 0.0);
+        JointPos jointPos =new JointPos();
+        DescPose offsetPos =new DescPose();
+
+        ROBOT_STATE_PKG pkg=robot.GetRobotRealTimeState();
+        int toolnum = pkg.tool;
+        int workPcsNum = pkg.user;
+        robot.GetInverseKinExaxis(0, desc, exaxis, toolnum, workPcsNum, jointPos, 0);
+        System.out.printf("GetInverseKinExaxis joint is %f, %f, %f, %f, %f, %f\n", jointPos.J1, jointPos.J2, jointPos.J3, jointPos.J4, jointPos.J5, jointPos.J6);
+
+        robot.ExtAxisMove(exaxis, 100, -1);
+        robot.MoveJ(jointPos, desc, toolnum, workPcsNum, 100.0, 100.0, 100.0, exaxis, -1, 0, offsetPos);
+
+    }
+
+获取逆运动学是否有解
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  逆运动学求解，参考指定关节位置判断是否有解
+    * @param  [in] posMode 0绝对位姿， 1相对位姿-基坐标系   2相对位姿-工具坐标系
+    * @param  [in] desc_pos 笛卡尔位姿
+    * @param  [in] joint_pos_ref 参考关节位置
+    * @return  错误码  List[0]:错误码; List[1]: int hasResult 0-无解，1-有解
+    */   
+    List<Integer> GetInverseKinHasSolution(int posMode, DescPose desc_pos, JointPos joint_pos_ref);  
+
+获取机器人8组逆解
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+     * @brief  获取8组逆解
+     * @param [in] tcp_pose 笛卡尔位姿
+     * @param [in] tool 工具坐标系
+     * @param [in] workpiece 工件坐标系
+     * @param [in] exPos 扩展轴位置
+     * @param [out] jPos 输出8组关节角度
+     * @return 错误码
+     */
+    public int TCFToAllJoint(DescPose tcp_pose, int tool, int workpiece, ExaxisPos exPos, JointPos[] jPos)
+
+获取机器人8组逆解代码示例
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    public static int TestTCFToAllJoint(Robot robot)
+    {
+        DescPose curTcp = new DescPose(0, 0, 0, 0, 0, 0);
+        int rtn = robot.GetActualTCPPose(curTcp);
+        if (rtn != 0)
+        {
+            return rtn;
+        }
+        ExaxisPos exPos = new ExaxisPos(0, 0, 0, 0);
+
+        JointPos[] allJoints = new JointPos[8];
+
+        rtn = robot.TCFToAllJoint(curTcp, 0, 0, exPos, allJoints);
+        if (rtn != 0)
+        {
+            return rtn;
+        }
+
+        for (int i = 0; i < 8; i++)
+        {
+            JointPos joint = allJoints[i];
+
+            System.out.printf("JOINT%d: j1=%.3f, j2=%.3f, j3=%.3f, j4=%.3f, j5=%.3f, j6=%.3f\n",
+                    i + 1, joint.J1, joint.J2, joint.J3, joint.J4, joint.J5, joint.J6);
+
+            DescPose pos = new DescPose(0, 0, 0, 0, 0, 0);
+            rtn = robot.GetForwardKin(joint, pos);
+            if (rtn != 0)
+            {
+                continue;
+            }
+
+            System.out.printf("POS%d: x=%.3f, y=%.3f, z=%.3f, a=%.3f, b=%.3f, c=%.3f\n",
+                    i + 1, pos.tran.x, pos.tran.y, pos.tran.z,
+                    pos.rpy.rx, pos.rpy.ry, pos.rpy.rz);
+        }
+
+        return 0;
+    }
+
+正运动学求解
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief  正运动学求解
+    * @param  [in] joint_pos 关节位置
+    * @param  [out] desc_pos 笛卡尔位姿
+    * @return  错误码
+    */
+    int GetForwardKin(JointPos joint_pos, DescPose desc_pos); 
+
+机器人正逆运动学计算代码示例
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    public static int TestInverseKin(Robot robot)
+    {
+        JointPos j1=new JointPos(-11.904, -99.669, 117.473, -108.616, -91.726, 74.256);
+        DescPose desc_pos1=new DescPose(-419.524, -13.000, 351.569, -178.118, 0.314, 3.833);
+
+        JointPos inverseRtn = new JointPos(){};
+
+        robot.GetInverseKin(0, desc_pos1, -1, inverseRtn);
+        robot.GetInverseKinRef(0, desc_pos1, j1, inverseRtn);
+
+        int hasResut = 0;
+        robot.GetInverseKinHasSolution(0, desc_pos1, j1);
+
+        DescPose forwordResult = new DescPose(){};
+        robot.GetForwardKin(j1, forwordResult);
+
+        return 0;
+    }
+
+查询机器人示教管理点数据
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /** 
+    * @brief 查询机器人示教管理点位数据 
+    * @param [in]  name  点位名
+    * @return  List[0]:错误码; List[1] - List[20] : 点位数据double[20]{x,y,z,rx,ry,rz,j1,j2,j3,j4,j5,j6,tool,wobj,speed,acc,e1,e2,e3,e4} 
+    */ 
+    List<Number> GetRobotTeachingPoint(String name); 
+
+获取机器人DH参数补偿值
++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief 获取机器人DH参数补偿值
+    * @param dhCompensation 机器人DH参数补偿值(mm) [cmpstD1,cmpstA2,cmpstA3,cmpstD4,cmpstD5,cmpstD6]
+    * @return 错误码
+    */
+    public int GetDHCompensation(Object[] dhCompensation)
+
+获取控制箱SN码
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: Java SDK-v1.0.4-3.8.1
+
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief 获取控制箱SN码
+    * @param [out] SNCode 控制箱SN码
+    * @return 错误码
+    */
+    int GetRobotSN(String[] SNCode);
+
+查询机器人示教管理点位数据代码示例
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    public static int TestGetTeachPoint(Robot robot)
+    {
+        String name = "P1";
+        List<Number> data=new ArrayList<>();
+        data = robot.GetRobotTeachingPoint(name);
+        System.out.println(name+" name is: "+data.get(0));
+        for (int i = 0; i < 20; i++)
+        {
+            System.out.println("data is: "+ data.get(i+1));
+        }
+
+        int[] que_len = {0};
+        int rtn = robot.GetMotionQueueLength(que_len);
+        System.out.println("GetMotionQueueLength rtn is:"+rtn+", queue length is:"+ que_len[0]);
+
+        Object[] dh = new Object[]{ 0,0,0,0,0,0 };
+        int retval = 0;
+        retval = robot.GetDHCompensation(dh);
+        System.out.println("retval is: "+retval);
+
+        String[] SN = new String[]{""};
+        robot.GetRobotSN(SN);
+        System.out.println("robot SN is "+SN[0]);
+        return 0;
+    }
+
+根据编号获取工具坐标系
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. versionchanged:: Java SDK-V3.9.8
+
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief 根据编号获取工具坐标系
+    * @param [in] id 工具坐标系编号
+    * @param [out] coord 坐标系数值
+    * @param [out] type 工具类型 0-工具；1-传感器
+    * @param [out] install 安装位置 0-机器人末端；1-机器人外部
+    * @param [out] toolID 工具ID 
+    * @param [out] loadNo 负载编号
+    * @return 错误码
+    */
+    int GetToolCoordWithID(int id, DescPose coord, int[] type, int[] install, int[] toolID, int[] loadNo)
+
+根据编号获取工件坐标系
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. versionchanged:: Java SDK-V3.9.8
+
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief 根据编号获取工件坐标系
+    * @param [in] id 工件坐标系编号
+    * @param [out] coord 坐标系数值
+    * @param [out] refFrame 参考坐标系
+    * @return 错误码
+    */
+    public int GetWObjCoordWithID(int id, DescPose coord, int[] refFrame)
+
+根据编号获取外部工具坐标系
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. versionchanged:: Java SDK-V3.9.8
+
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief 根据编号获取外部工具坐标系
+    * @param [in] id 外部工具坐标系编号，20-39对应外部工具坐标系0-19
+    * @param [out] coord 机器人外部固定工具TCP位姿
+    * @param [out] tcoord 机器人末端安装工件坐标系位姿
+    * @return 错误码
+    */
+    public int GetExToolCoordWithID(int id, DescPose coord, DescPose tcoord)
+
+根据编号获取扩展轴坐标系
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. versionchanged:: Java SDK-V3.9.8
+
+.. code-block:: Java
+    :linenos:
+
+    /**
+    * @brief 根据编号获取扩展轴坐标系
+    * @param [in] id 外部工具坐标系编号
+    * @param [out] coord 坐标系数值
+    * @param [out] axisCoordNum 扩展轴号；bit0-bit3对应扩展轴1-扩展轴4；如axisCoordNum值为3,对应应用扩展轴[1，2]
+    * @param [out] calibFlag 标定标志；0-未标定；1-已标定
+    * @return 错误码
+    */
+    public int GetExAxisCoordWithID (int id, DescPose coord, int[] axisCoordNum, int[] calibFlag)
+
+获取当前工具坐标系
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: Java SDK-v1.0.9-3.8.6
+
+.. code-block:: Java
+    :linenos:
+
+    /**
+     * @brief 获取当前工具坐标系
+     * @param [out] coord 坐标系数值
+     * @return 错误码
+     */
+    public int GetCurToolCoord(DescPose coord)
+
+获取当前工件坐标系
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: Java SDK-v1.0.9-3.8.6
+
+.. code-block:: Java
+    :linenos:
+
+    /**
+     * @brief 获取当前工件坐标系
+     * @param [out] coord 坐标系数值
+     * @return 错误码
+     */
+    public int GetCurWObjCoord(DescPose coord)
+
+获取当前外部工具坐标系
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: Java SDK-v1.0.9-3.8.6
+
+.. code-block:: Java
+    :linenos:
+
+    /**
+     * @brief 获取当前外部工具坐标系
+     * @param  [out] coord 坐标系数值
+     * @return 错误码
+     */
+    public int GetCurExToolCoord(DescPose coord)
+
+获取当前扩展轴坐标系
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: Java SDK-v1.0.9-3.8.6
+
+.. code-block:: Java
+    :linenos:
+
+    /**
+     * @brief 获取当前扩展轴坐标系
+     * @param [out] coord 坐标系数值
+     * @return 错误码
+     */
+    public int GetCurExAxisCoord(DescPose coord)
+
+获取机器人坐标系及负载代码示例
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. code-block:: Java
+    :linenos:
+
+    public static int TestCoord(Robot robot)
+    {
+        int id = 1;
+        DescPose toolCoord = new DescPose();
+        DescPose extoolCoord = new DescPose();
+        DescPose exworkpieceCoord = new DescPose();
+        DescPose wobjCoord = new DescPose();
+        DescPose exAxisCoord = new DescPose();
+        int[] type = new int[1];
+        int[] install = new int[1];
+        int[] toolID = new int[1];
+        int[] loadNo = new int[1];
+        robot.GetToolCoordWithID(id, toolCoord, type, install, toolID, loadNo);
+        System.out.printf("GetToolCoordWithID %d, %f %f %f %f %f %f,  type = %d, install = %d, toolID = %d, loadNo = %d\n", id,
+            toolCoord.tran.x, toolCoord.tran.y, toolCoord.tran.z,
+            toolCoord.rpy.rx, toolCoord.rpy.ry, toolCoord.rpy.rz, type[0], install[0], toolID[0], loadNo[0]);
+        int[] refFrame = new int[1];
+        robot.GetWObjCoordWithID(id, wobjCoord, refFrame);
+        System.out.printf("GetWObjCoordWithID %d, %f %f %f %f %f %f, refFrame = %d\n", id,
+            wobjCoord.tran.x, wobjCoord.tran.y, wobjCoord.tran.z,
+            wobjCoord.rpy.rx, wobjCoord.rpy.ry, wobjCoord.rpy.rz, refFrame[0]);
+
+
+        robot.GetExToolCoordWithID(21, extoolCoord, exworkpieceCoord);
+        System.out.printf("GetExToolCoordWithID %d, %f %f %f %f %f %f\n", id,
+            extoolCoord.tran.x, extoolCoord.tran.y, extoolCoord.tran.z,
+            extoolCoord.rpy.rx, extoolCoord.rpy.ry, extoolCoord.rpy.rz,
+            exworkpieceCoord.tran.x, exworkpieceCoord.tran.y, exworkpieceCoord.tran.z,
+            exworkpieceCoord.rpy.rx, exworkpieceCoord.rpy.ry, exworkpieceCoord.rpy.rz);
+
+        int[] axisCoordNum = new int[1];
+        int[] calibFlag = new int[1];
+        robot.GetExAxisCoordWithID(id, exAxisCoord, axisCoordNum, calibFlag);
+        System.out.printf("GetExAxisCoordWithID %d, %f %f %f %f %f %f, axisCoordNum = %d, calibFlag = %d\n", id,
+            exAxisCoord.tran.x, exAxisCoord.tran.y, exAxisCoord.tran.z,
+            exAxisCoord.rpy.rx, exAxisCoord.rpy.ry, exAxisCoord.rpy.rz, axisCoordNum[0], calibFlag[0]);
+
+        double[] weight = new double[1];
+        DescTran cog = new DescTran();
+        robot.GetTargetPayloadWithID(id, weight, cog);
+        System.out.println("GetTargetPayload is " + weightT.get(0) + " cogT is  " + cogT.x + "  " + cogT.y + "  " + cogT.z);
+        robot.GetCurToolCoord(toolCoord);
+        System.out.printf("GetCurToolCoord %f %f %f %f %f %f\n",
+            toolCoord.tran.x, toolCoord.tran.y, toolCoord.tran.z,
+            toolCoord.rpy.rx, toolCoord.rpy.ry, toolCoord.rpy.rz);
+        robot.GetCurWObjCoord(wobjCoord);
+        System.out.printf("GetCurWObjCoord %f %f %f %f %f %f\n",
+            wobjCoord.tran.x, wobjCoord.tran.y, wobjCoord.tran.z,
+            wobjCoord.rpy.rx, wobjCoord.rpy.ry, wobjCoord.rpy.rz);
+        robot.GetCurExToolCoord(extoolCoord);
+        System.out.printf("GetExToolCoordWithID %f %f %f %f %f %f\n",
+            extoolCoord.tran.x, extoolCoord.tran.y, extoolCoord.tran.z,
+            extoolCoord.rpy.rx, extoolCoord.rpy.ry, extoolCoord.rpy.rz);
+        robot.GetCurExAxisCoord(exAxisCoord);
+        System.out.printf("GetCurExAxisCoord %f %f %f %f %f %f\n",
+            exAxisCoord.tran.x, exAxisCoord.tran.y, exAxisCoord.tran.z,
+            exAxisCoord.rpy.rx, exAxisCoord.rpy.ry, exAxisCoord.rpy.rz);
+        DescTran cogT = new DescTran();
+        List<Number> weightT = robot.GetTargetPayload(0);
+        robot.GetTargetPayloadCog(0, cogT);
+        System.out.printf("GetTargetPayload %f %f %f %f\n", weightT.get(0),
+            cogT.x, cogT.y, cogT.z);
+        DescPose coordSet = new DescPose(0, 1, 2, 3, 4, 5);
+        robot.SetToolCoord(1, coordSet, 0, 0, 1, 0);
+        robot.SetWObjCoord(1, coordSet, 0);
+        robot.SetLoadWeight(1, 1.3);
+        cog.x = 10;
+        cog.y = 20;
+        cog.z = 30;
+        robot.SetLoadCoord(1, cog);
+        DescPose etcp = new DescPose(0, 0, 100, 0, 0, 0);
+        DescPose etool = new DescPose(0, 0, 50, 0, 0, 0);
+        int rtn = robot.SetExToolCoord(21, etcp, etool);
+        System.out.printf("SetExToolCoord rtn is %d\n", rtn);
+        robot.ExtAxisActiveECoordSys(1, 1, coordSet, 1);
+        return 0;
+    }
