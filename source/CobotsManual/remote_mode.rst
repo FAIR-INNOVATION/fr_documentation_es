@@ -1,239 +1,239 @@
-机器人远程模式
+Modo remoto del robot
 =============================================================
 
 .. toctree:: 
    :maxdepth: 6
    
-概述
+Descripción general
 -------------------------
 
-为了便于PLC通过不同的工业总线协议（CC-Link、Profinet、Ethernet/IP和EtherCAT）对机器人进行运动控制，在集成式mini控制箱上增加FRH-PCIeN-EC/EIP/CC/PN-RJ-V10板卡、FRJ-PCIeN-EIP/CC/PN-RJ-V10板卡模块，实现功能如下：
+Para facilitar el control de movimiento del robot por parte del PLC mediante distintos protocolos de bus industrial (CC-Link, Profinet, Ethernet/IP y EtherCAT), se añaden en la caja de control mini integrada las tarjetas FRH-PCIeN-EC/EIP/CC/PN-RJ-V10 y el módulo FRJ-PCIeN-EIP/CC/PN-RJ-V10, con las siguientes funciones:
 
-1) CC-Link slave 协议支持；
-2) Profinet slave 协议支持；
-3) Ethernet/IP slave 协议支持；
-4) EtherCAT slave 协议支持（FRJ-PCIeN-EIP/CC/PN-RJ-V10板卡不支持）。
+1) Compatibilidad con el protocolo CC-Link slave;
+2) Compatibilidad con el protocolo Profinet slave;
+3) Compatibilidad con el protocolo Ethernet/IP slave;
+4) Compatibilidad con el protocolo EtherCAT slave (la tarjeta FRJ-PCIeN-EIP/CC/PN-RJ-V10 no es compatible).
 
-环境配置
+Configuración del entorno
 --------------------------------------------
 
-板卡安装
+Instalación de la tarjeta
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-(1) 查验物料：FRH-PCIeN 板卡、FRJ-PCIeN 板卡、配套钣金件外形参照如下所示。
+(1) Verificación del material: el aspecto de las tarjetas FRH-PCIeN y FRJ-PCIeN, así como de la pieza de chapa metálica correspondiente, se muestra a continuación.
 
 .. image:: remote_mode/001.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 18.2-1 安装钣金（正面）
+.. centered:: Figura 18.2-1 Chapa de instalación (frontal)
 
 .. image:: remote_mode/002.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 18.2-2 安装钣金（背面）
+.. centered:: Figura 18.2-2 Chapa de instalación (posterior)
 
 .. image:: remote_mode/003.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 18.2-3 FRH-PCIeN-EC/EIP/CC/PN-RJ-V10板卡
+.. centered:: Figura 18.2-3 Tarjeta FRH-PCIeN-EC/EIP/CC/PN-RJ-V10
 
 .. image:: remote_mode/004.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 18.2-4 FRJ-PCIeN-EIP/CC/PN-RJ-V10板卡
+.. centered:: Figura 18.2-4 Tarjeta FRJ-PCIeN-EIP/CC/PN-RJ-V10
 
-(2) 将板卡安装到集成式mini控制箱，如图所示。
+(2) Instalar la tarjeta en la caja de control mini integrada, como se muestra en la figura.
 
 .. image:: remote_mode/005.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 18.2-5 钣金安装示意图
+.. centered:: Figura 18.2-5 Esquema de instalación de la chapa metálica
 
 .. image:: remote_mode/006.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 18.2-6 FRH-PCIeN核心主板安装示意图
+.. centered:: Figura 18.2-6 Esquema de instalación de la placa base principal FRH-PCIeN
 
 .. image:: remote_mode/007.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 18.2-7 FRH-PCIeN网口（RJ45）扩展卡安装示意图
+.. centered:: Figura 18.2-7 Esquema de instalación de la tarjeta de expansión de puerto de red (RJ45) FRH-PCIeN
 
 .. image:: remote_mode/008.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 18.2-8 FRJ-PCIeN核心主板安装示意图
+.. centered:: Figura 18.2-8 Esquema de instalación de la placa base principal FRJ-PCIeN
 
 .. image:: remote_mode/009.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 18.2-9 FRJ-PCIeN网口（RJ45）扩展卡安装示意图
+.. centered:: Figura 18.2-9 Esquema de instalación de la tarjeta de expansión de puerto de red (RJ45) FRJ-PCIeN
 
-.. note:: 注：所有螺钉均需拧紧。
+.. note:: Nota: todos los tornillos deben apretarse.
 
-(3) 机器人控制箱和PLC接线如下图所示。
+(3) El cableado de la caja de control del robot y del PLC se muestra en la figura siguiente.
 
 .. image:: remote_mode/010.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 18.2-10 控制箱&三菱PLC接线图    
+.. centered:: Figura 18.2-10 Diagrama de cableado caja de control y PLC Mitsubishi    
 
 .. image:: remote_mode/011.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 18.2-11 控制箱&西门子PLC接线图
+.. centered:: Figura 18.2-11 Diagrama de cableado caja de control y PLC Siemens
 
 .. image:: remote_mode/012.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 18.2-12 控制箱&欧姆龙PLC接线图
+.. centered:: Figura 18.2-12 Diagrama de cableado caja de control y PLC Omron
 
 .. image:: remote_mode/013.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 18.2-13 控制箱&欧姆龙PLC接线图
+.. centered:: Figura 18.2-13 Diagrama de cableado caja de control y PLC Omron
 
 .. note:: 
-    1：机器人控制箱（板卡网口）；
-    2：交换机；
-    3：笔记本PC；
-    4：三菱PLC（CC-Link IEF Basic网口）；
-    5：西门子PLC（Profinet网口）；
-    6：欧姆龙PLC（Ethernet/IP网口）；
-    7：欧姆龙PLC（EtherCAT网口）；
+    1: caja de control del robot (puerto de red de la tarjeta);
+    2: conmutador;
+    3: PC portátil;
+    4: PLC Mitsubishi (puerto de red CC-Link IEF Basic);
+    5: PLC Siemens (puerto de red Profinet);
+    6: PLC Omron (puerto de red Ethernet/IP);
+    7: PLC Omron (puerto de red EtherCAT);
 
-当协议切换为EtherCAT总线时，板卡的网口需要区分为EtherCAT_IN和EtherCAT_OUT，此时，欧姆龙PLC的EtherCAT网口需要与板卡的EtherCAT_IN网口通过一根网线直连。
+Cuando el protocolo se conmuta al bus EtherCAT, los puertos de red de la tarjeta deben distinguirse entre EtherCAT_IN y EtherCAT_OUT; en este momento, el puerto de red EtherCAT del PLC Omron debe conectarse directamente mediante un cable de red al puerto de red EtherCAT_IN de la tarjeta.
 
-PLC环境搭建
+Configuración del entorno del PLC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-实现各协议从站指令所搭建的测试环境如下表所示，其中包括各协议中所使用PLC的型号，固件版本及测试软件。
+El entorno de prueba construido para implementar las instrucciones de esclavo de cada protocolo se muestra en la tabla siguiente, que incluye los modelos de PLC utilizados en cada protocolo, las versiones de firmware y el software de prueba.
 
-.. centered:: 表 2-1 测试环境
+.. centered:: Tabla 2-1 Entorno de prueba
 
 .. list-table:: 
    :widths: 20 40 40
    :header-rows: 1
    :align: center
 
-   * - 协议
+   * - Protocolo
      - Profinet
      - CC-link
   
-   * - 品牌
-     - 西门子
-     - 三菱
+   * - Marca
+     - Siemens
+     - Mitsubishi
   
-   * - 型号
+   * - Modelo
      - CPU 1515-2 PN
      - FX5S-30TR/DS
   
-   * - 固件
+   * - Firmware
      - 6ES75152AM020AB0
      - 30MR/ES V1.3
   
-   * - 软件
+   * - Software
      - TIA Portal V17
      - GXWorks3V1.097B
   
-   * - 板卡IP地址
-     - “192.168.0.2”
-     - “192.168.0.113”
+   * - Dirección IP de la tarjeta
+     - "192.168.0.2"
+     - "192.168.0.113"
   
-   * - PLC IP地址
-     - IP无需同网段
-     - “192.168.0.15”(IP同网段)
+   * - Dirección IP del PLC
+     - IP no requiere mismo segmento de red
+     - "192.168.0.15"(IP mismo segmento de red)
 		
 .. list-table:: 
    :widths: 20 40 40
    :header-rows: 1
    :align: center
 
-   * - 协议
+   * - Protocolo
      - Ethernet/IP
      - EtherCAT
 
-   * - 品牌
-     - 欧姆龙
-     - 欧姆龙
+   * - Marca
+     - Omron
+     - Omron
 
-   * - 型号
+   * - Modelo
      - NX102-1100
      - NX102-1100
 
-   * - 固件
+   * - Firmware
      - V1.3
      - V1.3
 
-   * - 软件
+   * - Software
      - SysmacStudioV1.50
      - SysmacStudioV1.50
 
-   * - 板卡IP地址
-     - “192.168.0.112”
-     - “192.168.0.2”
+   * - Dirección IP de la tarjeta
+     - "192.168.0.112"
+     - "192.168.0.2"
 
-   * - PLC IP地址
-     - “192.168.0.88”(IP同网段)
-     - “192.168.0.88” (IP同网段)
+   * - Dirección IP del PLC
+     - "192.168.0.88"(IP mismo segmento de red)
+     - "192.168.0.88" (IP mismo segmento de red)
 		
-西门子Profinet
+Profinet de Siemens
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-(1) GSD文件（XML文件）导入
+(1) Importación del archivo GSD (archivo XML)
 
-打开西门子编程软件TIA Portal V17，新建PLC工程，选择“设备与网络”，右侧“硬件目录”选择双击6ES7 515-2AM02-0AB0添加PLC模块。
+Abrir el software de programación de Siemens TIA Portal V17, crear un nuevo proyecto de PLC, seleccionar "Dispositivos y redes" y, en el "Catálogo de hardware" de la derecha, hacer doble clic en 6ES7 515-2AM02-0AB0 para añadir el módulo de PLC.
 
 .. image:: remote_mode/014.png
    :width: 6in
    :align: center
 
-在 TIA PORTAL 软件中菜单栏选择“选项”->“管理通用站描述文件(GSD)”可安装或删除已经安装完成的 GSD 文件。
+En la barra de menú del software TIA PORTAL, seleccionar "Opciones"->"Gestionar archivos de descripción de estación general (GSD)" para instalar o eliminar los archivos GSD ya instalados.
 
 .. image:: remote_mode/015.png
    :width: 6in
    :align: center
 
-安装 GSD 文件，如上选择“管理通用站描述文件(GSD)”，出现“管理通用站描述文件”窗口。
+Instalar el archivo GSD: como se ha indicado, seleccionar "Gestionar archivos de descripción de estación general (GSD)" y aparecerá la ventana "Gestionar archivo de descripción de estación general".
 
-从“源路径”选择要安装 GSD 文件的文件夹，从所显示 GSD 文件的列表中选择要安装的一个或者多个文件，单击“安装”按钮。如下图所示。
+Seleccionar en "Ruta de origen" la carpeta donde se encuentra el archivo GSD que se desea instalar, seleccionar en la lista de archivos GSD mostrada uno o varios archivos que se deseen instalar y hacer clic en el botón "Instalar". Como se muestra en la figura siguiente.
 
 .. image:: remote_mode/016.png
    :width: 6in
    :align: center
 
-安装成功后，可在硬件目录下，其它现场设备找到安装的 GSD 文件的设备，如下图所示。
+Tras una instalación correcta, se puede encontrar el dispositivo del archivo GSD instalado en el catálogo de hardware, en otros dispositivos de campo, como se muestra en la figura siguiente.
 
 .. image:: remote_mode/017.png
    :width: 6in
    :align: center
 
-分配IO：目录寻找模块拖动Input与Output。
+Asignar IO: buscar el módulo en el catálogo y arrastrar Input y Output.
 
 .. image:: remote_mode/018.png
    :width: 6in
    :align: center
 
-下载程序到设备：左侧项目树双击进入“设备和网络”，右击“PLC_1”模块，下拉菜单选择“下载到设备”，单机“硬件和软件（仅更改）”：
+Descargar el programa al dispositivo: hacer doble clic en "Dispositivos y redes" del árbol de proyectos de la izquierda, hacer clic con el botón derecho en el módulo "PLC_1", seleccionar "Descargar al dispositivo" en el menú desplegable y hacer clic en "Hardware y software (solo cambios)":
 
 .. image:: remote_mode/019.png
    :width: 6in
    :align: center
 
-搜索并下载设备：弹窗后如下图配置PG/PC接口类型，点击开始搜索，选择需要下载程序的设备，点击下载：
+Buscar y descargar el dispositivo: tras aparecer la ventana emergente, configurar el tipo de interfaz PG/PC como se muestra en la figura siguiente, hacer clic en iniciar búsqueda, seleccionar el dispositivo al que se desea descargar el programa y hacer clic en descargar:
 
 .. image:: remote_mode/020.png
    :width: 6in
@@ -243,11 +243,11 @@ PLC环境搭建
    :width: 6in
    :align: center
 
-三菱CC-link
+CC-link de Mitsubishi
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-(1) 导入配置文件
-打开GxWorks3,选择“工具”→“配置文件管理”→“登录”，出现弹窗后选择对应的通讯文件，点击登录，完成配置文件导入。
+(1) Importación del archivo de configuración
+Abrir GxWorks3, seleccionar "Herramientas"→"Gestión de archivos de configuración"→"Iniciar sesión"; tras aparecer la ventana emergente, seleccionar el archivo de comunicación correspondiente y hacer clic en iniciar sesión para completar la importación del archivo de configuración.
 
 .. image:: remote_mode/022.png
    :width: 6in
@@ -261,76 +261,76 @@ PLC环境搭建
    :width: 6in
    :align: center
 
-(2) CC-Link IEF Basic设置
+(2) Configuración de CC-Link IEF Basic
 
-建立PLC工程，开启使用CC-link：左侧导航菜单栏选择“以太网端口”，设置PLC ip地址，保证与赫优讯板卡地址同网段。点击“CC-link IEF Basic使用有无”，选择 “使用”。
+Crear el proyecto de PLC y activar el uso de CC-link: seleccionar "Puerto Ethernet" en el menú de navegación de la izquierda y configurar la dirección IP del PLC, garantizando que esté en el mismo segmento de red que la dirección de la tarjeta Hilscher. Hacer clic en "Uso de CC-link IEF Basic" y seleccionar "Usar".
 
 .. image:: remote_mode/025.png
    :width: 6in
    :align: center
 
-CC-Link 网络配置设置：同样在CC-Link IEF Basic设置，选择“网络配置设置”，模块选择赫优讯CIFX Digital I/O模块。拖拽到视图左下方，完成硬件配置。
+Configuración de red de CC-Link: igualmente en la configuración de CC-Link IEF Basic, seleccionar "Configuración de red" y seleccionar el módulo Hilscher CIFX Digital I/O como módulo. Arrastrarlo a la parte inferior izquierda de la vista para completar la configuración de hardware.
 
 .. image:: remote_mode/026.png
    :width: 6in
    :align: center
 
-CC-Link 刷新设置：同样在CC-Link IEF Basic设置，点击刷新设置，自定义传输设置：256字节接收，256字节发送。
+Configuración de refresco de CC-Link: igualmente en la configuración de CC-Link IEF Basic, hacer clic en configuración de refresco y personalizar la configuración de transmisión: 256 bytes de recepción, 256 bytes de envío.
 
 .. image:: remote_mode/027.png
    :width: 6in
    :align: center
 
-(3) 程序下载
+(3) Descarga del programa
 
-打开测试程序后，点击“在线”→“写入至可编程控制器”进入下载界面
+Tras abrir el programa de prueba, hacer clic en "En línea"→"Escribir en controlador programable" para entrar en la interfaz de descarga
 
 .. image:: remote_mode/028.png
    :width: 6in
    :align: center
 
-打开下载界面后，点击左上方“参数+程序”，再点击右下角“执行”进行下载，等待下载完成。
+Tras abrir la interfaz de descarga, hacer clic en "Parámetros + programa" de la parte superior izquierda y, a continuación, hacer clic en "Ejecutar" de la esquina inferior derecha para descargar, esperando a que finalice la descarga.
 
 .. image:: remote_mode/029.png
    :width: 6in
    :align: center
 
-欧姆龙Ethernet/IP
+Ethernet/IP de Omron
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-(1) 新建PLC工程（本次案例以型号：NX102-1100，1.47欧姆龙PLC为例）：
+(1) Crear un nuevo proyecto de PLC (este caso toma como ejemplo el modelo NX102-1100, PLC Omron 1.47):
 
 .. image:: remote_mode/030.png
    :width: 6in
    :align: center
 
-新建全局变量：
+Crear variables globales:
 
 .. image:: remote_mode/031.png
    :width: 6in
    :align: center
 
-(2) EDS文件导入
+(2) Importación del archivo EDS
 
-点击“工具”→“EtherNet/IP连接设置”：
+Hacer clic en "Herramientas"→"Configuración de conexión EtherNet/IP":
 
 .. image:: remote_mode/032.png
    :width: 6in
    :align: center
 
-进入要连接PLC的设置：
+Entrar en la configuración del PLC al que se desea conectar:
 
 .. image:: remote_mode/033.png
    :width: 6in
    :align: center
 
-在标签组空白处右键创建新标签组：
+En el espacio en blanco del grupo de etiquetas, hacer clic con el botón derecho para crear un nuevo grupo de etiquetas:
 
 .. image:: remote_mode/034.png
    :width: 6in
    :align: center
 
-右键新建的标签组，创建标签,输入赫输出一样，长度均为256个字节：
+Hacer clic con el botón derecho en el grupo de etiquetas recién creado y crear una etiqueta; la entrada y la salida son iguales, con una longitud de 256 bytes:
 
 .. image:: remote_mode/035.png
    :width: 6in
@@ -340,72 +340,72 @@ CC-Link 刷新设置：同样在CC-Link IEF Basic设置，点击刷新设置，�
    :width: 6in
    :align: center
 
-进入连接设置，右键工具箱空白处，右键显示EDS库：
+Entrar en la configuración de conexión; en el espacio en blanco de la caja de herramientas, hacer clic con el botón derecho y mostrar la biblioteca EDS:
 
 .. image:: remote_mode/037.png
    :width: 6in
    :align: center
 
-安装EDS文件：
+Instalar el archivo EDS:
 
 .. image:: remote_mode/038.png
    :width: 6in
    :align: center
 
-点击“工具箱”“+”，添加目标设备，填写目标设备IP地址：
+Hacer clic en "Caja de herramientas" "+" para añadir el dispositivo objetivo e introducir la dirección IP del dispositivo objetivo:
 
 .. image:: remote_mode/039.png
    :width: 6in
    :align: center
 
-右下角点击“添加”，添加成功后显示目标设备：
+Hacer clic en "Añadir" en la esquina inferior derecha; tras añadirlo correctamente, se muestra el dispositivo objetivo:
 
 .. image:: remote_mode/040.png
    :width: 6in
    :align: center
 
-(3) EtherNet/IP 参数设置
+(3) Configuración de parámetros de EtherNet/IP
 
-右键添加的目标设备，点击“编辑”：
+Hacer clic con el botón derecho en el dispositivo objetivo añadido y hacer clic en "Editar":
 
 .. image:: remote_mode/041.png
    :width: 6in
    :align: center
 
-当前设备数据映射长度为256个字节，将0001和0002改为256，确定：
+La longitud de mapeo de datos del dispositivo actual es de 256 bytes; cambiar 0001 y 0002 a 256 y confirmar:
 
 .. image:: remote_mode/042.png
    :width: 6in
    :align: center
 
-双击目标设备，填写输入和输出，选择起始变量：
+Hacer doble clic en el dispositivo objetivo, rellenar la entrada y la salida y seleccionar la variable inicial:
 
 .. image:: remote_mode/043.png
    :width: 6in
    :align: center
 
-(4) 程序下载
+(4) Descarga del programa
 
-打开测试程序，将PLC IP地址修改为与板卡同网段，下载程序后运行。
+Abrir el programa de prueba, modificar la dirección IP del PLC para que esté en el mismo segmento de red que la tarjeta, descargar el programa y ejecutarlo.
 
-欧姆龙EtherCAT
+EtherCAT de Omron
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
-(1) 新建PLC工程（本次案例以型号：NX102-1100，1.47欧姆龙PLC为例）：
+(1) Crear un nuevo proyecto de PLC (este caso toma como ejemplo el modelo NX102-1100, PLC Omron 1.47):
 
 .. image:: remote_mode/044.png
    :width: 6in
    :align: center
 
-新建全局变量：
+Crear variables globales:
 
 .. image:: remote_mode/045.png
    :width: 6in
    :align: center
 
-(2) XML文件导入
+(2) Importación del archivo XML
 
-双击“EtherCAT”后进入主站设置界面，右键选择“显示ESI库”
+Hacer doble clic en "EtherCAT" para entrar en la interfaz de configuración del maestro y, con el botón derecho, seleccionar "Mostrar biblioteca ESI"
 
 .. image:: remote_mode/046.png
    :width: 6in
@@ -415,103 +415,103 @@ CC-Link 刷新设置：同样在CC-Link IEF Basic设置，点击刷新设置，�
    :width: 6in
    :align: center
 
-在右侧工具箱选中添加的目标设备，双击添加从站：
+Seleccionar en la caja de herramientas de la derecha el dispositivo objetivo añadido y hacer doble clic para añadir el esclavo:
 
 .. image:: remote_mode/048.png
    :width: 6in
    :align: center
 
-(3) EtherCAT从站设置
+(3) Configuración del esclavo EtherCAT
 
-将从站“分布式时钟有效”设置为“启动DC”：
+Configurar el esclavo "Reloj distribuido válido" como "Iniciar DC":
 
 .. image:: remote_mode/049.png
    :width: 6in
    :align: center
 
-(4) I/O映射
+(4) Mapeo de I/O
 
-双击“I/O映射”，进行变量与地址绑定：
+Hacer doble clic en "Mapeo de I/O" para vincular las variables con las direcciones:
 
 .. image:: remote_mode/050.png
    :width: 6in
    :align: center
 
-(5) 程序下载
+(5) Descarga del programa
 
-打开测试程序，将PLC IP地址修改为与板卡同网段，下载程序后运行。
+Abrir el programa de prueba, modificar la dirección IP del PLC para que esté en el mismo segmento de red que la tarjeta, descargar el programa y ejecutarlo.
 
-机器人远程模式相关操作说明
+Descripción de las operaciones relacionadas con el modo remoto del robot
 ----------------------------------------------------------------------------
 
-(1) 浏览器IP输入192.168.58.2，账号为admin，密码为123，点击“登录”，进入机器人控制箱Web界面。
+(1) Introducir en el navegador la IP 192.168.58.2, con cuenta admin y contraseña 123; hacer clic en "Iniciar sesión" para entrar en la interfaz Web de la caja de control del robot.
 
 .. image:: remote_mode/051.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 18.2-14 控制箱Web界面
+.. centered:: Figura 18.2-14 Interfaz Web de la caja de control
 
-(2) 点击“系统设置”->“关于”->软件升级界面，点击“升级”按钮，上传待升级的软件包，点击“升级”开始升级，升级完成重启控制箱即可。
+(2) Hacer clic en "Configuración del sistema"->"Acerca de"->interfaz de actualización de software; hacer clic en el botón "Actualizar", cargar el paquete de software que se desea actualizar y hacer clic en "Actualizar" para comenzar la actualización; tras completarla, reiniciar la caja de control.
 
 .. image:: remote_mode/052.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 18.2-15 软件升级
+.. centered:: Figura 18.2-15 Actualización de software
 
-(3) 点击右上角扩展按钮，打开菜单栏，点击本地模式，即可切换到远程模式。
+(3) Hacer clic en el botón de expansión de la esquina superior derecha para abrir la barra de menú y hacer clic en modo local para cambiar al modo remoto.
 
 .. image:: remote_mode/053.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 18.2-16 切换远程模式
+.. centered:: Figura 18.2-16 Cambio al modo remoto
 
-(4) 选择控制器从站协议，以及是否需要自启动功能，点击“设置”按钮。
+(4) Seleccionar el protocolo de esclavo del controlador y si se necesita la función de inicio automático, y hacer clic en el botón "Configurar".
 
 .. image:: remote_mode/054.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 18.2-17 配置通讯协议
+.. centered:: Figura 18.2-17 Configuración del protocolo de comunicación
 
-.. note:: 切换不同的协议，需要先点击“卸载”按钮，再进行其他协议的配置。   
+.. note:: Para conmutar a un protocolo diferente, es necesario hacer clic primero en el botón "Desinstalar" y, a continuación, realizar la configuración de otros protocolos.   
 
-板卡固件升级
+Actualización del firmware de la tarjeta
 ----------------------------------------------------------------------------
 
-FRH-PCIeN-EC/EIP/CC/PN-RJ-V10板卡
+Tarjeta FRH-PCIeN-EC/EIP/CC/PN-RJ-V10
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-（1）选择待升级的固件包，以BoardFirm_xxx.tar.gz命名，点击“升级”按钮，等待升级；
+（1）Seleccionar el paquete de firmware que se desea actualizar, con el nombre BoardFirm_xxx.tar.gz, y hacer clic en el botón "Actualizar", esperando a que finalice la actualización;
 
 .. image:: remote_mode/056.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 18.3-1 固件升级包
+.. centered:: Figura 18.3-1 Paquete de actualización de firmware
 
-（2）升级完成后，重启控制箱；
+（2）Tras completar la actualización, reiniciar la caja de control;
 
 .. image:: remote_mode/057.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 18.3-2 升级完成
+.. centered:: Figura 18.3-2 Actualización completada
    
-（3）重启控制箱，若出现图示警告信息，代表本次固件升级失败。清除该警告后，重新执行升级操作。
+（3）Reiniciar la caja de control; si aparece el mensaje de advertencia mostrado en la figura, significa que la actualización de firmware ha fallado. Tras borrar dicha advertencia, volver a realizar la operación de actualización.
 
 .. image:: remote_mode/058.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 18.3-3 固件升级失败
+.. centered:: Figura 18.3-3 Fallo de la actualización de firmware
 
-附录
+Apéndice
 -------------------
 
-指令列表
+Lista de instrucciones
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. list-table:: 
@@ -519,83 +519,83 @@ FRH-PCIeN-EC/EIP/CC/PN-RJ-V10板卡
    :header-rows: 1
    :align: center
 
-   * - 命令码
-     - 指令描述
+   * - Código de comando
+     - Descripción de la instrucción
 
    * - 0x1000
-     - 机器人使能
+     - Habilitación del robot
 
    * - 0x1001
-     - 重置所有错误
+     - Restablecer todos los errores
 
    * - 0x1002
-     - 机器人停止运动
+     - Detener el movimiento del robot
 
    * - 0x1003
-     - 读取实际位置
+     - Leer la posición real
 
    * - 0x1004
-     - 设置机器人速度
+     - Establecer la velocidad del robot
 
    * - 0x1005
-     - 机器人继续运动
+     - Reanudar el movimiento del robot
 
    * - 0x1006
-     - 机器人暂停运动
+     - Pausar el movimiento del robot
 
    * - 0x1007
-     - 根据joint位置计算出笛卡尔位置
+     - Calcular la posición cartesiana a partir de la posición articular
 
    * - 0x1008
-     - 根据笛卡尔位置计算出joint位置
+     - Calcular la posición articular a partir de la posición cartesiana
 
    * - 0x2000
-     - 写工具信息
+     - Escribir información de la herramienta
 
    * - 0x2001
-     - 读工具信息
+     - Leer información de la herramienta
 
    * - 0x2002
-     - 写工件信息
+     - Escribir información de la pieza
 
    * - 0x2003
-     - 读工件信息
+     - Leer información de la pieza
 
    * - 0x2004
-     - 写负载信息
+     - Escribir información de la carga
 
    * - 0x2005
-     - 读负载信息
+     - Leer información de la carga
 
    * - 0x2006
-     - 写reference dynamic信息
+     - Escribir información de dinámica de referencia
 
    * - 0x2007
-     - 读reference dynamic信息
+     - Leer información de dinámica de referencia
 
    * - 0x2008
-     - 写default dynamic信息
+     - Escribir información de dinámica predeterminada
 
    * - 0x2009
-     - 读default dynamic信息
+     - Leer información de dinámica predeterminada
 
    * - 0x2010
-     - 写软限位信息
+     - Escribir información de límite suave
 
    * - 0x2011
-     - 读软限位信息
+     - Leer información de límite suave
 
    * - 0x3000
-     - MoveAxes（基于关节角度）
+     - MoveAxes (basado en ángulos articulares)
 
    * - 0x3001
      - MoveLinear
 
    * - 0x3002
-     - MoveDirect（基于笛卡尔坐标系）
+     - MoveDirect (basado en el sistema de coordenadas cartesiano)
 
    * - 0x3003
-     - jog运动
+     - Movimiento jog
 
    * - 0x3004
-     - jog停止
+     - Parada de jog

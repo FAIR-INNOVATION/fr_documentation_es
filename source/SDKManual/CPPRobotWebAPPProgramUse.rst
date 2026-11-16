@@ -1,116 +1,116 @@
-机器人WebAPP程序使用
-======================
+Uso del programa WebAPP del robot
+=================================
 
 .. toctree:: 
     :maxdepth: 5
 
-设置开机自动加载默认的作业程序
-+++++++++++++++++++++++++++++++++++
+Establecer la carga automática del programa de trabajo predeterminado al arrancar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  设置开机自动加载默认的作业程序
-    * @param  [in] flag  0-开机不自动加载默认程序，1-开机自动加载默认程序
-    * @param  [in] program_name 作业程序名及路径，如"movej.lua"
-    * @return  错误码
+    * @brief  Establecer la carga automática del programa de trabajo predeterminado al arrancar
+    * @param  [in] flag  0-no cargar automáticamente el programa predeterminado al arrancar, 1-cargar automáticamente el programa predeterminado al arrancar
+    * @param  [in] program_name Nombre y ruta del programa de trabajo, como "movej.lua"
+    * @return  Código de error
     */
     errno_t  LoadDefaultProgConfig(uint8_t flag, char program_name[64]);
 
-加载指定的作业程序
-+++++++++++++++++++++++++++++++++++
+Cargar el programa de trabajo especificado
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  加载指定的作业程序
-    * @param  [in] program_name 作业程序名及路径，如"movej.lua"
-    * @return  错误码
+    * @brief  Cargar el programa de trabajo especificado
+    * @param  [in] program_name Nombre y ruta del programa de trabajo, como "movej.lua"
+    * @return  Código de error
     */
     errno_t  ProgramLoad(char program_name[64]);
 
-获取已加载的作业程序名
-+++++++++++++++++++++++++++++++++++
+Obtener el nombre del programa de trabajo cargado
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  获取已加载的作业程序名
-    * @param  [out] program_name 作业程序名及路径，如"movej.lua"
-    * @return  错误码
+    * @brief  Obtener el nombre del programa de trabajo cargado
+    * @param  [out] program_name Nombre y ruta del programa de trabajo, como "movej.lua"
+    * @return  Código de error
     */
     errno_t  GetLoadedProgram(char program_name[64]);  
 
-获取当前机器人作业程序的执行行号
-+++++++++++++++++++++++++++++++++++
+Obtener el número de línea de ejecución del programa de trabajo actual del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  获取当前机器人作业程序执行的行号
-    * @param  [out] line  行号
-    * @return  错误码
+    * @brief  Obtener el número de línea de ejecución del programa de trabajo actual del robot
+    * @param  [out] line  Número de línea
+    * @return  Código de error
     */   
     errno_t  GetCurrentLine(int *line);
 
-运行当前加载的作业程序
-+++++++++++++++++++++++++++++++++++
+Ejecutar el programa de trabajo cargado actualmente
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  运行当前加载的作业程序
-    * @return  错误码
+    * @brief  Ejecutar el programa de trabajo cargado actualmente
+    * @return  Código de error
     */
     errno_t  ProgramRun();
 
-暂停当前运行的作业程序
-+++++++++++++++++++++++++++++++++++
+Pausar el programa de trabajo en ejecución actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  暂停当前运行的作业程序
-    * @return  错误码
+    * @brief  Pausar el programa de trabajo en ejecución actual
+    * @return  Código de error
     */ 
     errno_t  ProgramPause();
 
-恢复当前暂停的作业程序
-+++++++++++++++++++++++++++++++++++
+Reanudar el programa de trabajo pausado actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  恢复当前暂停的作业程序
-    * @return  错误码
+    * @brief  Reanudar el programa de trabajo pausado actual
+    * @return  Código de error
     */ 
     errno_t  ProgramResume();  
 
-终止当前运行的作业程序
-+++++++++++++++++++++++++++++++++++
+Terminar el programa de trabajo en ejecución actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  终止当前运行的作业程序
-    * @return  错误码
+    * @brief  Terminar el programa de trabajo en ejecución actual
+    * @return  Código de error
     */ 
     errno_t  ProgramStop();    
 
-获取机器人作业程序执行状态
-+++++++++++++++++++++++++++++++++++
+Obtener el estado de ejecución del programa de trabajo del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  获取机器人作业程序执行状态
-    * @param  [out]  state 1-程序停止或无程序运行，2-程序运行中，3-程序暂停
-    * @return  错误码
+    * @brief  Obtener el estado de ejecución del programa de trabajo del robot
+    * @param  [out]  state 1-programa detenido o sin programa en ejecución, 2-programa en ejecución, 3-programa pausado
+    * @return  Código de error
     */
     errno_t  GetProgramState(uint8_t *state);
 
-机器人LUA程序操作代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de operación del programa LUA del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
@@ -151,8 +151,8 @@
       return 0;
     }
 
-下载Lua文件
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Descargar archivo Lua
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.2.0
 
@@ -160,15 +160,15 @@
     :linenos:
 
     /**
-    * @brief 下载Lua文件
-    * @param [in] fileName 要下载的lua文件名，例如：“test.lua”
-    * @param [in] savePath 保存文件本地路径，例如：“D://Down/”
-    * @return 错误码
+    * @brief Descargar archivo Lua
+    * @param [in] fileName Nombre del archivo lua a descargar, por ejemplo: "test.lua"
+    * @param [in] savePath Ruta local de guardado del archivo, por ejemplo: "D://Down/"
+    * @return Código de error
     */
     errno_t LuaDownLoad(std::string fileName, std::string savePath);
 
-删除Lua文件
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Eliminar archivo Lua
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.2.0
 
@@ -176,14 +176,14 @@
     :linenos:
 
     /**
-    * @brief 删除Lua文件
-    * @param [in] fileName 要删除的lua文件名，例如：“test.lua”
-    * @return 错误码
+    * @brief Eliminar archivo Lua
+    * @param [in] fileName Nombre del archivo lua a eliminar, por ejemplo: "test.lua"
+    * @return Código de error
     */
     errno_t LuaDelete(std::string fileName);
 
-获取当前所有lua文件名称
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener los nombres de todos los archivos lua actuales
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.2.0
 
@@ -191,14 +191,14 @@
     :linenos:
 
     /**
-    * @brief 获取当前所有lua文件名称
-    * @param [out] luaNames lua文件名列表
-    * @return 错误码
+    * @brief Obtener los nombres de todos los archivos lua actuales
+    * @param [out] luaNames Lista de nombres de archivos lua
+    * @return Código de error
     */
     errno_t GetLuaList(std::list<std::string>* luaNames);
 
-上传Lua文件
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subir archivo Lua
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.2.0
 
@@ -206,14 +206,14 @@
     :linenos:
 
     /**
-    * @brief 上传Lua文件
-    * @param [in] filePath 本地lua文件路径名
-    * @return 错误码
+    * @brief Subir archivo Lua
+    * @param [in] filePath Nombre de ruta del archivo lua local
+    * @return Código de error
     */
     errno_t LuaUpload(std::string filePath);
 
-机器人LUA文件上传下载代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de carga y descarga de archivos LUA del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:

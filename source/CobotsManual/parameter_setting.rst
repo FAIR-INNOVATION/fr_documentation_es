@@ -1,26 +1,26 @@
-机器人参数设置
-===================
+Configuración de parámetros del robot
+=====================================
 
-设置安装方式
---------------------
+Configuración del modo de instalación
+-------------------------------------
 
-机器人默认安装方式为水平安装，当机器人安装方式更改时，需及时在“初始设置”->“基础”->“安装”菜单下设置机器人的实际安装方式，以保证机器人正常工作。
+El modo de instalación predeterminado del robot es la instalación horizontal; cuando se modifique el modo de instalación del robot, es necesario configurar a tiempo el modo de instalación real del robot en el menú "Configuración inicial"->"Básico"->"Instalación", para garantizar el funcionamiento normal del robot.
 
-考虑到更加灵活丰富的机器人部署场景，我们提供了自由安装功能，用户点击“初始设置”->“基础”->“安装”，进入机器人安装方式设置页面。手动调整“基座倾斜”和“基座旋转”角度，三维模型会对应展示安装效果。修改后点击“应用”按钮即可完成机器人安装方式设置。
+Teniendo en cuenta escenarios de despliegue del robot más flexibles y variados, ofrecemos la función de instalación libre; el usuario debe hacer clic en "Configuración inicial"->"Básico"->"Instalación" para entrar en la página de configuración del modo de instalación del robot. Ajustar manualmente los ángulos de "Inclinación de la base" y "Rotación de la base"; el modelo 3D mostrará el efecto de instalación correspondiente. Tras la modificación, hacer clic en el botón "Aplicar" para completar la configuración del modo de instalación del robot.
 
 .. image:: teaching_pendant_software/026.png
    :width: 6in
    :align: center
    
-.. centered:: 图表 3.1-1 机器人安装
+.. centered:: Figura 3.1-1 Instalación del robot
 
 .. important::
-    机器人安装完成后，必须正确设置机器人的安装方式，否则会影响机器人的拖动功能以及碰撞检测功能使用。
+    Una vez completada la instalación del robot, es obligatorio configurar correctamente el modo de instalación del robot; de lo contrario, se verán afectadas la función de arrastre y la función de detección de colisiones del robot.
 
-设置末端负载
---------------------
+Configuración de la carga del extremo
+-------------------------------------
 
-在“初始设置”->“基础”->“负载”中“轨迹辨识”的辨识类型，进入末端负载设置界面。
+En "Configuración inicial"->"Básico"->"Carga", en el tipo de identificación de "Identificación de trayectoria", entrar en la interfaz de configuración de la carga del extremo.
 
 .. note:: 
    .. image:: base/071.png
@@ -28,9 +28,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**应用按钮**
+   Nombre: **Botón Aplicar**
    
-   作用：点击应用负载编号对应的负载重量和质心坐标
+   Función: aplicar el peso de la carga y las coordenadas del centro de masa correspondientes al número de carga
 
 .. note:: 
    .. image:: base/072.png
@@ -38,9 +38,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**修改按钮**
+   Nombre: **Botón Modificar**
    
-   作用：点击打开/关闭辨识运动界面
+   Función: hacer clic para abrir/cerrar la interfaz de movimiento de identificación
 
 .. note:: 
    .. image:: base/073.png
@@ -48,9 +48,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**重命名按钮**
+   Nombre: **Botón Cambiar nombre**
    
-   作用：重命名负载名称
+   Función: cambiar el nombre de la carga
 
 .. note:: 
    .. image:: base/074.png
@@ -58,44 +58,44 @@
       :height: 0.75in
       :align: left
 
-   名称：**清空按钮**
+   Nombre: **Botón Vaciar**
    
-   作用：清空当前负载信息（负载重量和质心坐标置0）
+   Función: vaciar la información de carga actual (peso de la carga y coordenadas del centro de masa a 0)
 
-在配置末端负载时，可直接输入末端工具的质量以及对应的质心坐标X、Y和Z”后点击“应用”按钮即可设置。
+Al configurar la carga del extremo, se puede introducir directamente la masa de la herramienta del extremo y las coordenadas del centro de masa correspondientes X, Y y Z, y hacer clic en el botón "Aplicar" para configurarlo.
 
-同时可以点击“编辑”按钮，打开“辨识运动”界面进行负载自动辨识，辨识运行完成后进行应用。
+Asimismo, se puede hacer clic en el botón "Editar" para abrir la interfaz "Movimiento de identificación" y realizar la identificación automática de la carga; tras completar la ejecución de la identificación, aplicarla.
 
 .. important:: 
-   负载质量不可超过机器人的最大负载范围。对应型号负载如下：
+   La masa de la carga no puede superar el rango máximo de carga del robot. La carga correspondiente a cada modelo es la siguiente:
 
-   - FR3：3kg
+   - FR3: 3kg
 
-   - FR5：5kg
+   - FR5: 5kg
 
-   - FR10：10kg
+   - FR10: 10kg
 
-   - FR16：16kg
+   - FR16: 16kg
    
-   - FR20：20kg
+   - FR20: 20kg
    
-   - FR30：30kg
+   - FR30: 30kg
 
-   质心坐标设置范围为0-1000，单位mm。
+   El rango de configuración de las coordenadas del centro de masa es de 0 a 1000, en unidades de mm.
 
 .. image:: base/016.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 3.2-1 负载设定示意图
+.. centered:: Figura 3.2-1 Esquema de configuración de la carga
     
 .. important:: 
-    机器人末端安装负载后，必须正确设置末端负载重量以及质心坐标，否则会影响机器人的拖动功能以及碰撞检测功能使用。
+    Tras instalar la carga en el extremo del robot, es obligatorio configurar correctamente el peso de la carga del extremo y las coordenadas del centro de masa; de lo contrario, se verán afectadas la función de arrastre y la función de detección de colisiones del robot.
 
-设置工具坐标
---------------------
+Configuración de las coordenadas de herramienta
+-----------------------------------------------
 
-在“初始设置”->“基础”->“工具坐标”进入工具坐标页面。
+En "Configuración inicial"->"Básico"->"Coordenadas de herramienta" entrar en la página de coordenadas de herramienta.
 
 .. note:: 
    .. image:: base/071.png
@@ -103,9 +103,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**应用按钮**
+   Nombre: **Botón Aplicar**
    
-   作用：点击应用工具坐标系
+   Función: hacer clic para aplicar el sistema de coordenadas de herramienta
 
 .. note:: 
    .. image:: base/072.png
@@ -113,9 +113,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**修改按钮**
+   Nombre: **Botón Modificar**
    
-   作用：点击打开/关闭坐标系标定界面
+   Función: hacer clic para abrir/cerrar la interfaz de calibración del sistema de coordenadas
 
 .. note:: 
    .. image:: base/073.png
@@ -123,9 +123,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**重命名按钮**
+   Nombre: **Botón Cambiar nombre**
    
-   作用：重命名工具坐标系名称
+   Función: cambiar el nombre del sistema de coordenadas de herramienta
 
 .. note:: 
    .. image:: base/074.png
@@ -133,27 +133,27 @@
       :height: 0.75in
       :align: left
 
-   名称：**清空按钮**
+   Nombre: **Botón Vaciar**
    
-   作用：清空当前工具坐标信息
+   Función: vaciar la información del sistema de coordenadas de herramienta actual
 
-工具坐标可实现工具坐标的修改、清空与应用。在工具坐标系的下拉列表中，选择对应的坐标系后会在下方显示对应坐标值（坐标系名称可自定义），工具类型以及安装位置（仅在传感器类型工具下显示），选择某一坐标系后点击“应用”按钮，当前使用的工具坐标系变为所选择的坐标，如下所示。
+Las coordenadas de herramienta permiten la modificación, el borrado y la aplicación de las coordenadas de herramienta. En la lista desplegable del sistema de coordenadas de herramienta, tras seleccionar el sistema de coordenadas correspondiente se mostrarán debajo los valores de coordenadas correspondientes (el nombre del sistema de coordenadas se puede personalizar), el tipo de herramienta y la posición de instalación (solo se muestra en el caso de herramientas de tipo sensor); tras seleccionar un sistema de coordenadas, hacer clic en el botón "Aplicar", y el sistema de coordenadas de herramienta en uso actualmente pasa a ser el seleccionado, como se muestra a continuación.
 
 .. image:: base/001.png
    :width: 4in
    :align: center
    
-.. centered:: 图表 3.3-1 设置工具坐标
+.. centered:: Figura 3.3-1 Configuración de las coordenadas de herramienta
 
-点击“修改”可根据提示对该编号的工具坐标系进行重新设置。工具标定方法分为四点法和六点法，四点法只标定工具TCP，即工具中心点的位置，其姿态默认与末端姿态一致，六点法则在四点法的基础上增加了两点，用于标定工具的姿态。
+Hacer clic en "Modificar" para volver a configurar, según las indicaciones, el sistema de coordenadas de herramienta de ese número. El método de calibración de herramienta se divide en el método de cuatro puntos y el método de seis puntos; el método de cuatro puntos solo calibra el TCP de la herramienta, es decir, la posición del punto central de la herramienta, y su actitud por defecto es consistente con la actitud del extremo; el método de seis puntos añade dos puntos sobre la base del método de cuatro puntos para calibrar la actitud de la herramienta.
 
 .. image:: base/002.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 3.3-2 工具坐标系标定
+.. centered:: Figura 3.3-2 Calibración del sistema de coordenadas de herramienta
 
 .. important:: 
-    1. 末端安装工具后，必须要进行工具坐标系的标定及应用，否则会导致机器人执行运动指令时工具中心点的位置和姿态不符合预期值。
+    1. Tras instalar la herramienta en el extremo, es obligatorio realizar la calibración y la aplicación del sistema de coordenadas de herramienta; de lo contrario, la posición y la actitud del punto central de la herramienta no cumplirán los valores esperados cuando el robot ejecute las instrucciones de movimiento.
 
-    2. 工具坐标系一般使用toolcoord1~toolcoord19,应用toolcoord0代表工具TCP的位置中心在末端法兰中心，在进行工具坐标系标定时，首先需将工具坐标系应用至toolcoord0，然后选择其他工具坐标系进行标定及应用。
+    2. El sistema de coordenadas de herramienta utiliza generalmente toolcoord1~toolcoord19; aplicar toolcoord0 significa que el centro de posición del TCP de la herramienta está en el centro de la brida del extremo; al calibrar el sistema de coordenadas de herramienta, primero es necesario aplicar el sistema de coordenadas de herramienta a toolcoord0 y, a continuación, seleccionar otro sistema de coordenadas de herramienta para calibrarlo y aplicarlo.

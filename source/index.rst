@@ -1,18 +1,13 @@
-.. FR documentation master file, created by
-   sphinx-quickstart on Thu Nov 17 15:56:34 2022.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-.. Welcome to FR's documentation!
-
-欢迎访问法奥文档！
-=========================================
+¡Bienvenido a la documentación de FAIRINO!
+=================================================
 
 .. figure:: _static/product_matrix.png
     :align: center
     :figclass: align-center
 
-语言切换
+Cambio de idioma
+
+    \ `简体中文 <https://fairino-doc-zhs.readthedocs.io/latest/>`__\
 
     \ `繁體中文 <https://fairino-doc-zht.readthedocs.io/latest/>`__\
 
@@ -30,7 +25,7 @@
 
 .. toctree::
    :maxdepth: 6
-   :caption: 用户手册
+   :caption: Manual de usuario
 
    CobotsManual/intro
    SDKManual/index
@@ -41,19 +36,18 @@
 
 .. toctree:: 
    :maxdepth: 6
-   :caption: 插件商店
+   :caption: Tienda de complementos
 
    CapSoftware
    
 .. toctree:: 
    :maxdepth: 6
-   :caption: 开放平台
+   :caption: Plataforma abierta
 
    ROSGuide/index
 
 .. toctree:: 
    :maxdepth: 6
-   :caption: 资料下载
+   :caption: Descarga de materiales
 
    download
-

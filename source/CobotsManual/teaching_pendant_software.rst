@@ -1,71 +1,71 @@
-示教器软件基础功能
-=========================
+Funciones básicas del software del teach pendant
+================================================
 
 .. toctree:: 
    :maxdepth: 6
 
-基础信息
------------
+Información básica
+------------------
 
-系统简介
-~~~~~~~~~~~
+Introducción al sistema
+~~~~~~~~~~~~~~~~~~~~~~~
 
-示教器软件是针对机器人开发的配套软件，运行于示教器操作系统中，其主要功能和技术特点如下：
+El software del teach pendant es un software complementario desarrollado para el robot, que se ejecuta en el sistema operativo del teach pendant; sus funciones y características técnicas principales son las siguientes:
 
--  能够对机器人进行示教程序的编写；
--  能够实时显示机器人位置坐标，三维模拟实体机器人，并能控制机器人运动；
--  能够实现对机器人的单轴点动以及各轴联动操作；
--  能够查看控制IO状态；
--  用户可以修改密码、查看系统信息等。
+-  Permite la escritura de programas de enseñanza para el robot;
+-  Permite mostrar en tiempo real las coordenadas de posición del robot, simular el robot físico en 3D y controlar el movimiento del robot;
+-  Permite realizar el jog de un solo eje y el movimiento coordinado de varios ejes del robot;
+-  Permite consultar el estado de las IO de control;
+-  El usuario puede modificar la contraseña, consultar la información del sistema, etc.
 
-机器人首次激活
-~~~~~~~~~~~~~~~
+Primera activación del robot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. 开启控制箱并将网线连接PC。
+1. Encender la caja de control y conectar el cable de red al PC.
 
-2. PC打开浏览器访问目标网址192.168.58.2，机器人首次开机即进入激活页面。
+2. Abrir el navegador en el PC y acceder a la dirección de destino 192.168.58.2; al encender el robot por primera vez se entra en la página de activación.
 
 .. figure:: teaching_pendant_software/058.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 5.1‑1 激活界面
+.. centered:: Figura 5.1‑1 Interfaz de activación
 
-3. 正确输入设备箱的SN码，输入完毕后点击“激活”按钮。
+3. Introducir correctamente el código SN de la caja del equipo y, tras introducirlo, hacer clic en el botón "Activar".
    
-4. 系统将验证您的SN码。如果输入正确，将自动完成激活过程。
+4. El sistema verificará el código SN. Si la introducción es correcta, se completará automáticamente el proceso de activación.
 
 .. figure:: teaching_pendant_software/059.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 5.1‑2 激活成功界面
+.. centered:: Figura 5.1‑2 Interfaz de activación correcta
 
-5. 激活成功，请手动重启控制箱。
+5. Activación correcta; reiniciar manualmente la caja de control.
    
-6. 再次开机访问目标网址192.168.58.2即进入登录页面。
+6. Al volver a encender y acceder a la dirección de destino 192.168.58.2 se entra en la página de inicio de sesión.
 
-启动软件
-~~~~~~~~~~~
+Inicio del software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. 控制箱上电；
-2. 示教器打开浏览器访问目标网址192.168.58.2；
-3. 输入用户名和密码点击登录即可登录系统。
+1. Encender la caja de control;
+2. Abrir el navegador en el teach pendant y acceder a la dirección de destino 192.168.58.2;
+3. Introducir el nombre de usuario y la contraseña y hacer clic en iniciar sesión para acceder al sistema.
 
-用户登录及权限更新
-~~~~~~~~~~~~~~~~~~~~
+Inicio de sesión del usuario y actualización de permisos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. centered:: 表格 5.1-1 初始用户
+.. centered:: Tabla 5.1-1 Usuarios iniciales
 
 .. list-table::
    :widths: 70 70 70 70
    :header-rows: 0
    :align: center
 
-   * - **工号**
-     - **初始用户名**
-     - **密码**
-     - **职能代号**
+   * - **Número de empleado**
+     - **Nombre de usuario inicial**
+     - **Contraseña**
+     - **Código de función**
 
    * - 111
      - admin
@@ -98,153 +98,153 @@
      - 6
 
 
-用户（用户管理参考15.2.1 用户管理）默认分为六个等级，管理员无功能限制，操作员和监视员少部分功能可以使用，ME工程师、PE&PQE工程师和技术员&班组长部分功能限制，管理员无功能限制，具体默认职能代号权限参考15.2.2 权限管理。
+Los usuarios (para la gestión de usuarios, consulte 15.2.1 Gestión de usuarios) se dividen por defecto en seis niveles: el administrador no tiene limitaciones de funciones; el operador y el monitor pueden utilizar una minoría de funciones; el ingeniero ME, el ingeniero PE&PQE y el técnico&jefe de equipo tienen algunas funciones limitadas; el administrador no tiene limitaciones de funciones. Para los permisos predeterminados concretos de los códigos de función, consulte 15.2.2 Gestión de permisos.
 
-登录界面如下图所示：
+La interfaz de inicio de sesión se muestra en la figura siguiente:
 
 .. figure:: teaching_pendant_software/001.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 5.1‑3 登录界面
+.. centered:: Figura 5.1‑3 Interfaz de inicio de sesión
 
-多语言设置
-~~~~~~~~~~~~~~~~~~~~
+Configuración multilingüe
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- 系统目前自带有中文（简体）、中文（繁體）、英语（English）、法语（français）、韩语（한국어）、日语（日本語）、俄语（Русский）、意大利语（italiano）、德语（Deutsch）、葡萄牙语（Português）、波兰语（Polski）11种语言。
+- El sistema incorpora actualmente 11 idiomas: chino (simplificado), chino (tradicional), inglés (English), francés (français), coreano (한국어), japonés (日本語), ruso (Русский), italiano (italiano), alemán (Deutsch), portugués (Português) y polaco (Polski).
 
-- 语言包名称必须为：[语言代码].json，例如：es.json，其中语言代码为ISO 639-1标准
+- El nombre del paquete de idioma debe ser: [código de idioma].json, por ejemplo: es.json, donde el código de idioma sigue la norma ISO 639-1.
   
-- 以下为语言对照表
+- A continuación se muestra la tabla de correspondencia de idiomas
 
 .. list-table::
    :widths: 70 70 70 70
    :header-rows: 0
    :align: center
 
-   * - **语言**
-     - **当地语言名称**
-     - **语言代码（ISO 639-1）**
-     - **是否系统自带**
+   * - **Idioma**
+     - **Nombre del idioma local**
+     - **Código de idioma (ISO 639-1)**
+     - **¿Incluido en el sistema?**
 
-   * - 中文
+   * - Chino
      - 中文（汉语）
      - zh
-     - 是
+     - Sí
 
-   * - 中文
+   * - Chino
      - 中文（繁體）
      - tc
-     - 是
+     - Sí
 
-   * - 英语
+   * - Inglés
      - English
      - en
-     - 是
+     - Sí
 
-   * - 法语
+   * - Francés
      - français
      - fr
-     - 是
+     - Sí
    
-   * - 日语
+   * - Japonés
      - 日本語
      - ja 
-     - 是
+     - Sí
 
-   * - 韩语
+   * - Coreano
      - 한국어
      - ko
-     - 是
+     - Sí
 
-   * - 俄语
+   * - Ruso
      - Русский
      - ru
-     - 是
+     - Sí
 
-   * - 意大利语
+   * - Italiano
      - italiano
      - it
-     - 是
+     - Sí
 
-   * - 德语
+   * - Alemán
      - Deutsch
      - de
-     - 是
+     - Sí
 
-   * - 葡萄牙语
+   * - Portugués
      - Português
      - pt
-     - 是
+     - Sí
 
-   * - 波兰语
+   * - Polaco
      - Polski
      - pl
-     - 是
+     - Sí
 
-1. 在登录界面（或首次激活界面均可设置），在右上角进行语言选择；
+1. En la interfaz de inicio de sesión (o en la interfaz de primera activación, en cualquiera de las dos se puede configurar), realizar la selección de idioma en la esquina superior derecha;
 
 .. image:: teaching_pendant_software/062.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 5.1‑5 激活界面设置语言
+.. centered:: Figura 5.1‑5 Configuración del idioma en la interfaz de activación
 
 .. image:: teaching_pendant_software/063.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 5.1‑6 登录界面设置语言
+.. centered:: Figura 5.1‑6 Configuración del idioma en la interfaz de inicio de sesión
 
-2. 以登录界面设置多语言为例，若选择语言，则当前页面语言内容切换为所选语言，例如：
+2. Tomando como ejemplo la configuración multilingüe en la interfaz de inicio de sesión, si se selecciona un idioma, el contenido del idioma de la página actual se conmuta al idioma seleccionado, por ejemplo:
 
 .. image:: teaching_pendant_software/001.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 5.1‑7 中文登录页面
+.. centered:: Figura 5.1‑7 Página de inicio de sesión en chino
 
 .. image:: teaching_pendant_software/061.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 5.1‑8 英文登录页面
+.. centered:: Figura 5.1‑8 Página de inicio de sesión en inglés
 
-登录成功后，系统会加载模型等数据，加载完毕后进入初始页面。
+Tras iniciar sesión correctamente, el sistema carga los datos del modelo, etc.; una vez completada la carga, entra en la página inicial.
 
-系统初始界面
-------------------
+Interfaz inicial del sistema
+----------------------------
 
-登录成功后系统进入“初始界面”，主要包含：
+Tras iniciar sesión correctamente, el sistema entra en la "interfaz inicial", que contiene principalmente:
 
-1. 法奥LOGO；
-2. 菜单栏缩放按钮；
-3. 菜单栏；
-4. 机器人控制区
-5. 机器人状态区；
-6. 三维模拟机器人——三维场景操作；
-7. 三维模拟机器人——机器人本体操作；
-8. 机器人配套功能；
-9. 机器人及配套功能状态。
+1. LOGO de FAIRINO;
+2. Botón de zoom de la barra de menú;
+3. Barra de menú;
+4. Área de control del robot
+5. Área de estado del robot;
+6. Robot simulado en 3D——operación de la escena 3D;
+7. Robot simulado en 3D——operación del cuerpo del robot;
+8. Funciones complementarias del robot;
+9. Estado del robot y de las funciones complementarias.
 
-如下图系统初始界面示意图所示：
+Como se muestra en la figura siguiente del esquema de la interfaz inicial del sistema:
 
 .. image:: teaching_pendant_software/002.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 5.2‑1 系统初始界面示意图
+.. centered:: Figura 5.2‑1 Esquema de la interfaz inicial del sistema
 
-当进入 WebApp 的“初始设置”、“示教程序”->“程序编程”、“示教程序”->“图形化编程”和辅助应用时，此时三维模拟机器人模型页面是半展开的，点击铺开的图标可重新进入系统初始界面。
+Al entrar en "Configuración inicial", en "Programa de enseñanza"->"Programación de programas", en "Programa de enseñanza"->"Programación gráfica" y en las aplicaciones auxiliares de WebApp, la página del modelo del robot simulado en 3D se encuentra semiexpandida; hacer clic en el icono de expansión para volver a entrar en la interfaz inicial del sistema.
 
 .. image:: teaching_pendant_software/054.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 5.2‑2 三维模拟机器人模型页面可铺开图标
+.. centered:: Figura 5.2‑2 Icono de expansión de la página del modelo del robot simulado en 3D
 
-控制区
-~~~~~~~~~
+Área de control
+~~~~~~~~~~~~~~~
 
 .. note:: 
    .. image:: teaching_pendant_software/003.png
@@ -252,9 +252,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**使能按钮**
+   Nombre: **Botón de habilitación**
    
-   作用：使能机器人
+   Función: habilitar el robot
 
 .. note:: 
    .. image:: teaching_pendant_software/004.png
@@ -262,9 +262,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**开始按钮**
+   Nombre: **Botón de inicio**
    
-   作用：上传并开始运行示教程序
+   Función: cargar e iniciar la ejecución del programa de enseñanza
 
 .. note:: 
    .. image:: teaching_pendant_software/005.png
@@ -272,9 +272,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**停止按钮**
+   Nombre: **Botón de parada**
    
-   作用：停止当前示教程序运行
+   Función: detener la ejecución del programa de enseñanza actual
 
 .. note:: 
    .. image:: teaching_pendant_software/006.png
@@ -282,15 +282,15 @@
       :height: 0.75in
       :align: left
 
-   名称：**暂停/恢复按钮**
+   Nombre: **Botón de pausa/reanudación**
    
-   作用：暂停和恢复当前示教程序
+   Función: pausar y reanudar el programa de enseñanza actual
    
 .. important::
-   暂停指令在程序的末尾，无法进行判断
+   La instrucción de pausa está al final del programa, no se puede realizar la comprobación
 
-状态栏
-~~~~~~~~~~~~
+Barra de estado
+~~~~~~~~~~~~~~~
 
 .. note:: 
    .. image:: teaching_pendant_software/011.png
@@ -298,9 +298,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**机器人运行错误状态**
+   Nombre: **Estado de error de ejecución del robot**
    
-   作用：当前机器人运行有错误，无错误时隐藏
+   Función: el robot actual tiene un error de ejecución; se oculta cuando no hay error
 
 .. note:: 
    .. image:: teaching_pendant_software/007.png
@@ -308,9 +308,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**机器人状态**
+   Nombre: **Estado del robot**
    
-   作用：Stopped-停止，Running-运行，Pause-暂停，Drag-拖动
+   Función: Stopped-detenido, Running-en ejecución, Pause-pausado, Drag-arrastre
 
 .. note:: 
    .. image:: teaching_pendant_software/010.png
@@ -318,9 +318,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**机器人工具坐标系、工件坐标系、扩展轴坐标系和负载编号**
+   Nombre: **Sistema de coordenadas de herramienta del robot, sistema de coordenadas de pieza, sistema de coordenadas de eje extendido y número de carga**
    
-   作用：左上——当前工具坐标系编号、右上——当前工件坐标系编号、左下——当前扩展轴坐标系编号、右下——当前负载编号
+   Función: arriba a la izquierda——número del sistema de coordenadas de herramienta actual, arriba a la derecha——número del sistema de coordenadas de pieza actual, abajo a la izquierda——número del sistema de coordenadas de eje extendido actual, abajo a la derecha——número de carga actual
 
 .. note:: 
    .. image:: teaching_pendant_software/009.png
@@ -328,9 +328,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**运行速度百分比**
+   Nombre: **Porcentaje de velocidad de ejecución**
    
-   作用：机器人当前模式运行时速度
+   Función: velocidad de ejecución del robot en el modo actual
 
 .. note:: 
    .. image:: teaching_pendant_software/012.png
@@ -338,9 +338,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**自动模式**
+   Nombre: **Modo automático**
    
-   作用：机器人自动运行模式，开启手动切自动模式全局速度调整并指定速度时，全局速度会自动调整为指定速度
+   Función: modo de funcionamiento automático del robot; al activar el ajuste de velocidad global del cambio de modo manual a automático y especificar la velocidad, la velocidad global se ajustará automáticamente a la velocidad especificada
 
 .. note:: 
    .. image:: teaching_pendant_software/013.png
@@ -348,9 +348,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**手动模式**
+   Nombre: **Modo manual**
    
-   作用：机器人手动模式，进行机器人示教操作
+   Función: modo manual del robot, para realizar operaciones de enseñanza del robot
 
 .. note:: 
    .. image:: teaching_pendant_software/065.png
@@ -358,11 +358,11 @@
       :height: 0.75in
       :align: left
 
-   名称：**机器人状态折叠/展开按钮**
+   Nombre: **Botón de plegado/despliegue del estado del robot**
    
-   作用：折叠/展开工具坐标系、工件坐标系、扩展轴坐标系、负载、机器人拖动状态、本地/远程模式、机器人连接状态、BOOT模式和账户信息内容
+   Función: plegar/desplegar el sistema de coordenadas de herramienta, el sistema de coordenadas de pieza, el sistema de coordenadas de eje extendido, la carga, el estado de arrastre del robot, el modo local/remoto, el estado de conexión del robot, el modo BOOT y el contenido de la información de la cuenta
 
-点击折叠按钮，查看以下状态信息内容。
+Hacer clic en el botón de plegado para ver el siguiente contenido de información de estado.
 
 .. note:: 
    .. image:: teaching_pendant_software/008.png
@@ -370,9 +370,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**工具坐标系编号**
+   Nombre: **Número del sistema de coordenadas de herramienta**
    
-   作用：展示当前应用的工具坐标系编号
+   Función: mostrar el número del sistema de coordenadas de herramienta aplicado actualmente
 
 .. note:: 
    .. image:: teaching_pendant_software/027.png
@@ -380,9 +380,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**工件坐标系编号**
+   Nombre: **Número del sistema de coordenadas de pieza**
    
-   作用：展示当前应用的工件坐标系编号
+   Función: mostrar el número del sistema de coordenadas de pieza aplicado actualmente
    
 .. note:: 
    .. image:: teaching_pendant_software/028.png
@@ -390,9 +390,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**扩展轴坐标系编号**
+   Nombre: **Número del sistema de coordenadas de eje extendido**
    
-   作用：展示当前应用的扩展轴坐标系编号
+   Función: mostrar el número del sistema de coordenadas de eje extendido aplicado actualmente
 
 .. note:: 
    .. image:: teaching_pendant_software/066.png
@@ -400,9 +400,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**负载**
+   Nombre: **Carga**
    
-   作用：展示当前应用的负载重量和质心坐标X、Y、Z
+   Función: mostrar el peso de la carga aplicada actualmente y las coordenadas del centro de masa X, Y, Z
 
 .. note:: 
    .. image:: teaching_pendant_software/014.png
@@ -410,9 +410,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**机器人拖动状态**
+   Nombre: **Estado de arrastre del robot**
    
-   作用：当前机器人可拖动
+   Función: el robot actual se puede arrastrar
 
 .. note:: 
    .. image:: teaching_pendant_software/015.png
@@ -420,9 +420,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**机器人拖动状态**
+   Nombre: **Estado de arrastre del robot**
    
-   作用：当前机器人不可拖动
+   Función: el robot actual no se puede arrastrar
 
 .. note:: 
    .. image:: teaching_pendant_software/068.png
@@ -430,9 +430,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**机器人本地模式**
+   Nombre: **Modo local del robot**
    
-   作用：当前机器人通过控制箱控制
+   Función: el robot actual se controla a través de la caja de control
 
 .. note:: 
    .. image:: teaching_pendant_software/067.png
@@ -440,9 +440,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**机器人远程模式**
+   Nombre: **Modo remoto del robot**
    
-   作用：当前机器人只能通过PLC控制
+   Función: el robot actual solo se puede controlar a través del PLC
 
 .. note:: 
    .. image:: teaching_pendant_software/017.png
@@ -450,9 +450,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**连接状态**
+   Nombre: **Estado de conexión**
    
-   作用：机器人已连接
+   Función: robot conectado
 
 .. note:: 
    .. image:: teaching_pendant_software/016.png
@@ -460,9 +460,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**未连接状态**
+   Nombre: **Estado de no conexión**
    
-   作用：机器人未连接
+   Función: robot no conectado
 
 .. note:: 
    .. image:: teaching_pendant_software/018.png
@@ -470,55 +470,55 @@
       :height: 0.75in
       :align: left
 
-   名称：**账户信息**
+   Nombre: **Información de la cuenta**
    
-   作用：显示用户名和权限及登出用户
+   Función: mostrar el nombre de usuario y los permisos y cerrar la sesión del usuario
 
-菜单栏
-~~~~~~~~~~~~
+Barra de menú
+~~~~~~~~~~~~~
 
-菜单栏如下表格：
+La barra de menú se muestra en la tabla siguiente:
 
-.. centered:: 表格 5.2‑1 示教器菜单分栏
+.. centered:: Tabla 5.2‑1 Distribución de la barra de menú del teach pendant
 
-+----------+------------+
-|   一级   |    二级    |
-+==========+============+
-| 初始设置 | 基础       |
-+          +------------+
-|          | 安全       |
-+          +------------+
-|          | 外设       |
-+----------+------------+
-| 示教程序 | 程序编程   |
-+          +------------+
-|          | 图形化编程 |
-+          +------------+
-|          | 节点图编程 |
-+          +------------+
-|          | 示教点     |
-+----------+------------+
-| 状态信息 | 系统日志   |
-+          +------------+
-|          | 状态查询   |
-+----------+------------+
-| 辅助应用 | 工具应用   |
-+          +------------+
-|          | 工艺包     |
-+----------+------------+
-| 系统设置 | /          |
-+----------+------------+
++---------------------------+--------------------------------+
+|  Primer nivel             |  Segundo nivel                 |
++===========================+================================+
+| Configuración inicial     | Básico                         |
++                           +--------------------------------+
+|                           | Seguridad                      |
++                           +--------------------------------+
+|                           | Periféricos                    |
++---------------------------+--------------------------------+
+| Programa de enseñanza     | Programación de programas      |
++                           +--------------------------------+
+|                           | Programación gráfica           |
++                           +--------------------------------+
+|                           | Programación por grafo de nodos|
++                           +--------------------------------+
+|                           | Puntos de enseñanza            |
++---------------------------+--------------------------------+
+| Información de estado     | Registro del sistema           |
++                           +--------------------------------+
+|                           | Consulta de estado             |
++---------------------------+--------------------------------+
+| Aplicaciones auxiliares   | Aplicación de herramientas     |
++                           +--------------------------------+
+|                           | Paquete de proceso             |
++---------------------------+--------------------------------+
+| Configuración del sistema | /                              |
++---------------------------+--------------------------------+
 
-三维模拟机器人
-----------------
+Robot simulado en 3D
+--------------------
 
-三维场景操作条
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Barra de operación de la escena 3D
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-机器人坐标系系统三维可视化展示
-++++++++++++++++++++++++++++++++
+Visualización tridimensional del sistema de coordenadas del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-在WebAPP机器人三维虚拟区域中创建各类三维虚拟坐标系，以基坐标系展示为例，如下图所示。其中X轴红色，Y轴绿色，Z轴蓝色。
+En el área virtual 3D del robot de WebAPP se crean diversos sistemas de coordenadas virtuales 3D; tomando como ejemplo la visualización del sistema de coordenadas base, se muestra en la figura siguiente. El eje X es rojo, el eje Y es verde y el eje Z es azul.
 
 .. note:: 
    .. image:: teaching_pendant_software/021.png
@@ -526,9 +526,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**基坐标系**
+   Nombre: **Sistema de coordenadas base**
    
-   说明：基坐标系WebAPP中系统机器人三维虚拟区域中进行默认开启展示，固定标记在机器人基座底部中心。三维虚拟基坐标系可进行手动关闭展示。
+   Descripción: el sistema de coordenadas base se muestra activado por defecto en el área virtual 3D del robot del sistema en WebAPP, fijado en el centro de la parte inferior de la base del robot. El sistema de coordenadas base virtual 3D se puede desactivar manualmente.
 
 .. note:: 
    .. image:: teaching_pendant_software/022.png
@@ -536,12 +536,12 @@
       :height: 0.75in
       :align: left
 
-   名称：**工具坐标系**
+   Nombre: **Sistema de coordenadas de herramienta**
    
-   说明：工具坐标系默认开启展示，可手动关闭。在WebAPP启动并且用户登录成功后，获取当前应用的工具坐标系名称和对应参数数据，初始化当前工具坐标系。
+   Descripción: el sistema de coordenadas de herramienta se muestra activado por defecto y se puede desactivar manualmente. Tras iniciar WebAPP e iniciar sesión correctamente el usuario, se obtiene el nombre del sistema de coordenadas de herramienta aplicado actualmente y los datos de parámetros correspondientes, y se inicializa el sistema de coordenadas de herramienta actual.
 
 .. important::
-   使用的过程中应用其他工具坐标系时，当应用工具坐标系指令成功后，先将机器人三维虚拟区域中已有的工具坐标系清除，再将新应用的工具坐标系参数数据传入三维坐标系生成API进行工具坐标系生成，生成后完成在机器人三维虚拟区域中进行对应展示。
+   Al aplicar otros sistemas de coordenadas de herramienta durante el uso, tras aplicar correctamente la instrucción del sistema de coordenadas de herramienta, se borra primero el sistema de coordenadas de herramienta existente en el área virtual 3D del robot y, a continuación, se pasan los datos de parámetros del sistema de coordenadas de herramienta recién aplicado a la API de generación de sistemas de coordenadas 3D para generar el sistema de coordenadas de herramienta; tras la generación se completa la visualización correspondiente en el área virtual 3D del robot.
 
 .. note:: 
    .. image:: teaching_pendant_software/023.png
@@ -549,9 +549,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**工件坐标系**
+   Nombre: **Sistema de coordenadas de pieza**
    
-   说明：工件坐标系默认关闭，可以进行手动开启展示。流程与工具坐标系一致。
+   Descripción: el sistema de coordenadas de pieza está desactivado por defecto y se puede activar manualmente para su visualización. El proceso es idéntico al del sistema de coordenadas de herramienta.
 
 .. note:: 
    .. image:: teaching_pendant_software/024.png
@@ -559,12 +559,12 @@
       :height: 0.75in
       :align: left
 
-   名称：**外部轴坐标系**
+   Nombre: **Sistema de coordenadas de eje externo**
    
-   说明：外部轴坐标系默认关闭，可以进行手动开启展示。流程与工具坐标系一致。
+   Descripción: el sistema de coordenadas de eje externo está desactivado por defecto y se puede activar manualmente para su visualización. El proceso es idéntico al del sistema de coordenadas de herramienta.
 
-三维虚拟轨迹和工具模型
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Trayectoria virtual 3D y modelo de herramienta
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. note:: 
    .. image:: teaching_pendant_software/020.png
@@ -572,9 +572,9 @@
       :height: 0.75in
       :align: left
 
-   名称：**轨迹绘制**
+   Nombre: **Dibujo de trayectoria**
    
-   说明：点击按钮，打开轨迹绘制功能。运行示教程序时，机器人三维模型会描绘机器人运动的轨迹路线。
+   Descripción: hacer clic en el botón para activar la función de dibujo de trayectoria. Durante la ejecución del programa de enseñanza, el modelo 3D del robot dibuja la ruta de la trayectoria del movimiento del robot.
 
 .. note:: 
    .. image:: teaching_pendant_software/029.png
@@ -582,101 +582,101 @@
       :height: 0.75in
       :align: left
 
-   名称：**工具模型**
+   Nombre: **Modelo de herramienta**
    
-   说明：点击按钮，打开/关闭工具模型。
+   Descripción: hacer clic en el botón para activar/desactivar el modelo de herramienta.
 
-机器人本体操作条
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Barra de operación del cuerpo del robot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 TCP
-+++++++++++
++++
 
-**Base点动**：在基坐标系下，可以通过长按对应坐标系按钮来控制机器人，在X，Y，Z轴上直线移动或绕着RX，RY，RZ旋转。Base点动的功能与Joint运动中单轴点动的功能相似。界面如下图：
+**Jog Base**: en el sistema de coordenadas base, se puede controlar el robot manteniendo pulsado el botón del sistema de coordenadas correspondiente para desplazarlo en línea recta a lo largo de los ejes X, Y, Z o girar alrededor de RX, RY, RZ. La función del jog Base es similar a la del jog de un solo eje en el movimiento Joint. La interfaz se muestra en la figura siguiente:
 
 .. image:: teaching_pendant_software/030.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3-1 Base点动示意图
+.. centered:: Figura 5.3-1 Esquema del jog Base
 
 .. important:: 
-   可随时释放该按钮，使机器人停止运动。在必要情况下，按急停按钮使机器人停止。
+   El botón se puede soltar en cualquier momento para detener el movimiento del robot. En caso necesario, pulsar el botón de parada de emergencia para detener el robot.
 
-**Tool点动**：选择工具坐标系，可以通过长按对应坐标系按钮控制机器人，在X，Y，Z轴上直线移动或绕着RX，RY，RZ旋转。Tool点动的功能与Joint运动中单轴点动的功能相似。界面如下图：
+**Jog Tool**: seleccionar el sistema de coordenadas de herramienta; se puede controlar el robot manteniendo pulsado el botón del sistema de coordenadas correspondiente para desplazarlo en línea recta a lo largo de los ejes X, Y, Z o girar alrededor de RX, RY, RZ. La función del jog Tool es similar a la del jog de un solo eje en el movimiento Joint. La interfaz se muestra en la figura siguiente:
 
 .. image:: teaching_pendant_software/031.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3-2 Tool点动示意图
+.. centered:: Figura 5.3-2 Esquema del jog Tool
 
 
-**Wobj点动**：选择工件点动，可以通过长按对应坐标系按钮控制机器人，在工件坐标系下，沿着X，Y，Z轴上直线移动或绕着RX，RY，RZ旋转。Wobj点动的功能与Joint运动中单轴点动的功能相似。界面如下图：
+**Jog Wobj**: seleccionar el jog de pieza; se puede controlar el robot manteniendo pulsado el botón del sistema de coordenadas correspondiente para desplazarlo en línea recta a lo largo de los ejes X, Y, Z o girar alrededor de RX, RY, RZ bajo el sistema de coordenadas de pieza. La función del jog Wobj es similar a la del jog de un solo eje en el movimiento Joint. La interfaz se muestra en la figura siguiente:
 
 .. image:: teaching_pendant_software/032.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3-3 Wobj点动示意图
+.. centered:: Figura 5.3-3 Esquema del jog Wobj
 
-Joint运动
+Movimiento Joint
 ++++++++++++++++
 
-Joint运作下，中间的6个滑块条分别表示对应轴的角度，joint运动分单轴点动和多轴联动。
+En el funcionamiento Joint, las 6 barras deslizantes centrales representan respectivamente el ángulo del eje correspondiente; el movimiento joint se divide en jog de un solo eje y movimiento coordinado de varios ejes.
 
-**单轴点动**：用户可通过操作左右两边圆形按钮来控制机器人运动，如下图。在手动模式和关节坐标系下，对机器人某一关节进行转动操作。当机器人超出运动范围（软限位）而停止时，可以利用单轴点动进行手动操作，将机器人移出超限位置。单轴点动在进行粗略定位和较大幅度移动时，会比其他操作模式更快捷方便。
+**Jog de un solo eje**: el usuario puede controlar el movimiento del robot operando los botones circulares de ambos lados, como se muestra en la figura siguiente. En modo manual y con el sistema de coordenadas articular, realizar la operación de rotación de una articulación del robot. Cuando el robot se detiene por superar el rango de movimiento (límite suave), se puede utilizar el jog de un solo eje para realizar la operación manual y sacar el robot de la posición fuera de límite. El jog de un solo eje resulta más rápido y cómodo que otros modos de operación al realizar un posicionamiento aproximado y desplazamientos de mayor amplitud.
 
 .. image:: teaching_pendant_software/033.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3-4 单轴点动示意图
+.. centered:: Figura 5.3-4 Esquema del jog de un solo eje
 
 .. important::
-   设置“长按运动阈值”（长按按钮时，机器人运行的最大距离，输入值得范围0~300）参数，长按圆形按钮控制机器人运行，若在机器人运行中松开按钮，机器人会立即停止运动，若一直按住不松开按钮，机器人会运行长按运动阈值所设置的值后停止运动。
+   Configurar el parámetro "Umbral de movimiento por pulsación larga" (distancia máxima de funcionamiento del robot al mantener pulsado el botón; el rango de valores de entrada es 0~300); mantener pulsado el botón circular para controlar el funcionamiento del robot; si se suelta el botón durante el funcionamiento del robot, este se detiene inmediatamente; si se mantiene pulsado el botón sin soltarlo, el robot se detiene tras recorrer el valor establecido en el umbral de movimiento por pulsación larga.
 
-**多轴联动**：用户可操作中间六个滑块来调整机器人相应的目标位置，如下图。可通过观察三维虚拟机器人来确定目标位置，若调整的位置不符合自己的预期，点击“还原”按钮，使得三维虚拟机器人回到初始的位置。当用户确定目标位置后，可点击“应用”按钮，实体机器人便会进行相应的运动。
+**Movimiento coordinado de varios ejes**: el usuario puede operar las seis barras deslizantes centrales para ajustar la posición objetivo correspondiente del robot, como se muestra en la figura siguiente. Se puede determinar la posición objetivo observando el robot virtual 3D; si la posición ajustada no cumple las expectativas, hacer clic en el botón "Restablecer" para que el robot virtual 3D vuelva a la posición inicial. Cuando el usuario determine la posición objetivo, puede hacer clic en el botón "Aplicar" y el robot físico realizará el movimiento correspondiente.
 
 .. image:: teaching_pendant_software/034.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3-5 多轴联动示意图
+.. centered:: Figura 5.3-5 Esquema del movimiento coordinado de varios ejes
 
 .. important:: 
-   多轴联动中，第5个关节j5的设置值不能小于0.01度，若期望值小于0.01度，则可以先设置为0.011度，然后通过单轴点动微调第5个关节j5。
+   En el movimiento coordinado de varios ejes, el valor configurado para la quinta articulación j5 no puede ser inferior a 0.01 grados; si el valor esperado es inferior a 0.01 grados, se puede configurar primero en 0.011 grados y, a continuación, ajustar finamente la quinta articulación j5 mediante el jog de un solo eje.
 
-Move移动
-++++++++++++++++
+Movimiento Move
++++++++++++++++
 
-选择Move移动，可以直接输入笛卡尔坐标值，点击“计算关节位置”，关节位置显示为计算后结果，确认无危险，可以点击“移至该点”控制机器人运动至输入的笛卡尔位姿。
+Al seleccionar el movimiento Move, se pueden introducir directamente los valores de coordenadas cartesianas; hacer clic en "Calcular posición articular" y la posición articular se mostrará como el resultado del cálculo; tras confirmar que no hay peligro, se puede hacer clic en "Mover a este punto" para controlar el movimiento del robot hasta la pose cartesiana introducida.
 
 .. image:: teaching_pendant_software/035.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3‑6 Move移动示意图
+.. centered:: Figura 5.3‑6 Esquema del movimiento Move
 
 .. important:: 
-   当出现给定位姿无法到达时，首先检查笛卡尔空间位姿是否超过机器人工作范围，然后检查当前位姿到目标位姿过程中是否存在奇异位姿，若存在奇异位置则调整下当前姿态或过程中插入一个新的位姿以避开奇异位姿。
+   Cuando la pose dada no se pueda alcanzar, comprobar primero si la pose en el espacio cartesiano supera el rango de trabajo del robot y, a continuación, comprobar si existe una pose singular en el proceso desde la pose actual hasta la pose objetivo; si existe una posición singular, ajustar la actitud actual o insertar una nueva pose en el proceso para evitar la pose singular.
 
-机器人配套功能条
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Barra de funciones complementarias del robot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-示教点记录
-++++++++++++++++
+Registro de puntos de enseñanza
++++++++++++++++++++++++++++++++
 
-手动示教控制区主要是在示教模式中对考坐标系进行设定，并实时显示机器人各轴角度与坐标值，并可对示教点进行命名保存。
+El área de control de la enseñanza manual se utiliza principalmente para configurar el sistema de coordenadas de referencia en el modo de enseñanza y mostrar en tiempo real los ángulos de cada eje y los valores de coordenadas del robot, y permite nombrar y guardar los puntos de enseñanza.
 
-保存示教点时，该示教点的坐标系为当前机器人应用的坐标系。
+Al guardar el punto de enseñanza, el sistema de coordenadas de dicho punto de enseñanza es el sistema de coordenadas aplicado actualmente por el robot.
 
-示教点记录分为“快速记点”和“命名记点”两种方式。
+El registro de puntos de enseñanza se divide en dos modos: "Registro rápido de punto" y "Registro con nombre de punto".
 
-- 快速记点：示教点自动记录，名称自动生成；
-- 命名记点：示教点命名自定义，由示教点前缀+示教点名称构成；
+- Registro rápido de punto: el punto de enseñanza se registra automáticamente y el nombre se genera automáticamente;
+- Registro con nombre de punto: el nombre del punto de enseñanza se personaliza y se compone del prefijo del punto de enseñanza + el nombre del punto de enseñanza;
 
-传感器示教点，选择已经标定的传感器类型工具，输入点名称，点击添加，保存的点的位置为传感器识别到点的位置。
+Punto de enseñanza de sensor: seleccionar la herramienta de tipo sensor ya calibrada, introducir el nombre del punto y hacer clic en añadir; la posición del punto guardado es la posición del punto identificado por el sensor.
 
 .. image:: teaching_pendant_software/036.png
    :width: 5in
@@ -686,233 +686,233 @@ Move移动
    :width: 5in
    :align: center
 
-.. centered:: 图表 5.3‑7 手动操作区示意图
+.. centered:: Figura 5.3‑7 Esquema del área de operación manual
 
 .. important:: 
-   第一次使用时，请设置30这样较小的速度值，熟悉机器人运动，以免发生意外情况。
+   La primera vez que se utilice, configurar un valor de velocidad pequeño como 30 para familiarizarse con el movimiento del robot y evitar situaciones accidentales.
 
 I/O
-++++++++++++++++
++++
 
-该界面中可实现对机器人控制箱中数字输出、模拟输出（0-10v）和末端工具数字输出、模拟输出（0-10v）进行手动控制。如下图所示：
+En esta interfaz se puede realizar el control manual de las salidas digitales, las salidas analógicas (0-10v) de la caja de control del robot y las salidas digitales y analógicas (0-10v) de la herramienta del extremo. Como se muestra en la figura siguiente:
 
 .. image:: teaching_pendant_software/037.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 5.3‑8 I/O设置示意图
+.. centered:: Figura 5.3‑8 Esquema de configuración de I/O
 
-TPD（示教编程）
-++++++++++++++++
+TPD (enseñanza y programación)
+++++++++++++++++++++++++++++++
 
-示教编程（TPD）功能操作步骤如下：
+Los pasos de operación de la función de enseñanza y programación (TPD) son los siguientes:
 
-- **Step1记录初始位置**：进入三维模型左侧操作区，记录机器人当前位置。在编辑框内设定好点的名称，点击“保存”按钮，若保存成功，则提示“保存点成功”；
+- **Step1 Registrar la posición inicial**: entrar en el área de operación de la parte izquierda del modelo 3D y registrar la posición actual del robot. Configurar el nombre del punto en el cuadro de edición y hacer clic en el botón "Guardar"; si el guardado es correcto, se mostrará el aviso "Punto guardado correctamente";
 
-- **Step2配置轨迹记录参数**：点击TPD进入“TPD”功能项配置轨迹记录参数，设定好轨迹文件的名称、位姿类型以及采样周期，配置DI和DO，可以在记录TPD轨迹的过程中，通过触发DI来记录对应需要输出的DO；
+- **Step2 Configurar los parámetros de registro de trayectoria**: hacer clic en TPD para entrar en el elemento de función "TPD" y configurar los parámetros de registro de trayectoria: establecer el nombre del archivo de trayectoria, el tipo de pose y el período de muestreo, y configurar DI y DO; durante el proceso de registro de la trayectoria TPD se puede registrar, mediante la activación de DI, el DO correspondiente que se necesita emitir;
 
 .. image:: teaching_pendant_software/038.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 5.3‑9 TPD轨迹记录
+.. centered:: Figura 5.3‑9 Registro de trayectoria TPD
 
-- **Step3检查机器人模式**：检查机器人模式是否处于手动模式下，若不处于则切换至手动模式，在手动模式下可通过两种方式切换到托动示教模式，一种是长按末端按钮，一种是界面拖动模式切换按键，在TPD记录是推荐从界面切换机器人进入托动示教模式。
+- **Step3 Comprobar el modo del robot**: comprobar si el robot se encuentra en modo manual; si no es así, cambiar al modo manual. En el modo manual se puede cambiar al modo de enseñanza por arrastre de dos formas: una manteniendo pulsado el botón del extremo y otra mediante el botón de cambio al modo de arrastre de la interfaz; en el registro TPD se recomienda cambiar el robot al modo de enseñanza por arrastre desde la interfaz.
 
 .. image:: teaching_pendant_software/039.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3‑10 机器人模式
+.. centered:: Figura 5.3‑10 Modo del robot
 
 .. important:: 
-   从界面切入拖动模式时，先确认末端工具负载以及质心是否设置正确、摩檫力补偿系数是否设置合理，然后通过长按末端按钮确认拖动是否正常，确认无误后从界面切入拖动模式。
+   Al entrar en el modo de arrastre desde la interfaz, confirmar primero si la carga de la herramienta del extremo y el centro de masa están configurados correctamente y si el coeficiente de compensación de fricción está configurado razonablemente; a continuación, confirmar mediante la pulsación larga del botón del extremo si el arrastre es normal; tras confirmarlo, entrar en el modo de arrastre desde la interfaz.
 
-- **Step4开始记录**：点击“开始记录”按钮开始轨迹记录，拖动机器人进行动作示教。此外，末端DI配置中有“TPD记录启动/停止”功能配置项，通过配置此功能，用户可以通过外部信号触发“开始记录”轨迹功能，需要注意的是，通过外部信号开始记录轨迹，首先得在页面先进行TPD轨迹的信息配置。
+- **Step4 Iniciar el registro**: hacer clic en el botón "Iniciar registro" para comenzar el registro de trayectoria y arrastrar el robot para realizar la enseñanza de movimientos. Además, en la configuración de DI del extremo existe la opción de configuración "Inicio/detención del registro TPD"; mediante la configuración de esta función, el usuario puede activar por señal externa la función de registro de trayectoria "Iniciar registro"; tenga en cuenta que para iniciar el registro de trayectoria mediante señal externa es necesario configurar primero en la página la información de la trayectoria TPD.
 
-- **Step5停止记录**：动作示教完成后，点击“停止记录”按钮，停止轨迹记录，然后通过拖动示教切换按键使机器人退出拖动示教模式。示教器接收到“停止轨迹记录成功”即表示轨迹记录成功。同步骤4，在配置“TPD记录启动/停止”功能后，可以通过外部信号触发停止记录。
+- **Step5 Detener el registro**: tras completar la enseñanza de movimientos, hacer clic en el botón "Detener registro" para detener el registro de trayectoria y, a continuación, mediante el botón de cambio de la enseñanza por arrastre, hacer que el robot salga del modo de enseñanza por arrastre. El teach pendant recibe "Registro de trayectoria detenido correctamente", lo que indica que el registro de trayectoria se ha realizado correctamente. Igual que en el paso 4, tras configurar la función "Inicio/detención del registro TPD", se puede activar la detención del registro mediante señal externa.
 
-- **Step6示教编程**：点击新建，选择空白模板，点击进入PTP功能编程项，选择刚保存的初始位置点，点击“添加”按钮，应用完成后，在程序文件中会显示一条PTP指令；然后点击进入TPD功能编程项，选择刚刚记录的轨迹，设定是否平滑以及速度缩放比例，点击“添加”按钮，应用完成后，在程序文件中会显示一条MoveTPD指令，如下图所示；
+- **Step6 Enseñanza y programación**: hacer clic en nuevo, seleccionar la plantilla en blanco, hacer clic para entrar en el elemento de programación de la función PTP, seleccionar el punto de posición inicial recién guardado y hacer clic en el botón "Añadir"; tras aplicar, en el archivo de programa se mostrará una instrucción PTP; a continuación, hacer clic para entrar en el elemento de programación de la función TPD, seleccionar la trayectoria recién registrada, configurar si hay suavizado y la proporción de escala de velocidad, y hacer clic en el botón "Añadir"; tras aplicar, en el archivo de programa se mostrará una instrucción MoveTPD, como se muestra en la figura siguiente;
 
 .. image:: teaching_pendant_software/040.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 5.3‑11 TPD编程
+.. centered:: Figura 5.3‑11 Programación TPD
 
-- **Step7轨迹复现**：示教程序编辑完成后，切换至自动运行模式，点击界面上方”开始运行”图标开始运行程序，机器人开始复现示教的动作。
+- **Step7 Reproducción de trayectoria**: tras completar la edición del programa de enseñanza, cambiar al modo de funcionamiento automático y hacer clic en el icono "Iniciar ejecución" de la parte superior de la interfaz para iniciar la ejecución del programa; el robot comienza a reproducir el movimiento enseñado.
 
-- **Step8轨迹编辑**：TPD轨迹编辑区可对轨迹可视化展示和编辑裁切，以达到TPD轨迹预分析和精简。选择对应轨迹获取点，那么用户记录的轨迹点会展示在机器人三维空间内，其次用户可以拖动“Start”和“End”滚动条对轨迹的起点和终点进行模拟复现和剪辑。
+- **Step8 Edición de trayectoria**: el área de edición de trayectoria TPD permite la visualización y la edición y recorte de la trayectoria, para lograr el preanálisis y la simplificación de la trayectoria TPD. Seleccionar el punto de obtención de la trayectoria correspondiente y los puntos de trayectoria registrados por el usuario se mostrarán en el espacio 3D del robot; a continuación, el usuario puede arrastrar las barras deslizantes "Start" y "End" para simular la reproducción y recortar el punto inicial y el punto final de la trayectoria.
 
-TPD文件删除与异常处理：
+Eliminación de archivos TPD y tratamiento de anomalías:
 
-- **轨迹文件删除**：点击进入TPD功能项，选择需要删除的轨迹文件，点击”删除轨迹”按钮，若删除成功，则会收到删除成功提示。
+- **Eliminación de archivo de trayectoria**: hacer clic para entrar en el elemento de función TPD, seleccionar el archivo de trayectoria que se desea eliminar y hacer clic en el botón "Eliminar trayectoria"; si la eliminación es correcta, se recibirá el aviso de eliminación correcta.
 
-- **异常处理：**
+- **Tratamiento de anomalías:**
 
-  +  **指令点数超限**：一条轨迹最多可记录2万个点数，当超过2万个点时，控制器不再记录超过的点数，并向示教器发出“指令点数超限”告警提示，此时需点击停止记录；
+  +  **Número de puntos de instrucción fuera de límite**: una trayectoria puede registrar como máximo 20.000 puntos; cuando se superan los 20.000 puntos, el controlador deja de registrar los puntos excedentes y envía al teach pendant el aviso de alarma "Número de puntos de instrucción fuera de límite"; en este momento es necesario hacer clic en detener registro;
 
-  +  **TPD指令间隔过大**：若示教器报错TPD指令间隔过大，则应检查机器人是否回到了记录前的初始位置，若机器人回到了初始位置依然报错TPD指令间隔过大，则删除当前轨迹重新记录一条新的轨迹；
+  +  **Intervalo de instrucción TPD demasiado grande**: si el teach pendant informa del error de intervalo de instrucción TPD demasiado grande, debe comprobarse si el robot ha vuelto a la posición inicial previa al registro; si el robot ha vuelto a la posición inicial y sigue informando del error de intervalo de instrucción TPD demasiado grande, eliminar la trayectoria actual y volver a registrar una nueva trayectoria;
 
-  +  TPD操作过程中若出现其他异常情况，则应通过示教器或急停按钮立即停止机器人操作，检查原因。
+  +  Si durante la operación TPD se producen otras situaciones anómalas, debe detenerse inmediatamente la operación del robot mediante el teach pendant o el botón de parada de emergencia y comprobar la causa.
 
 .. important:: 
-   TPD功能操作过程中应严格按照示教器上相应的提示进行操作。
+   Durante la operación de la función TPD deben seguirse estrictamente las indicaciones correspondientes del teach pendant.
 
-Eaxis移动
+Movimiento Eaxis
 ++++++++++++++++
 
-选择Eaxis移动，该功能为扩展轴的点动功能，需要在配置好扩展轴的前提下，使用该点动功能控制扩展轴，详见“第四章-机器人外设-扩展轴外设配置”。
+Seleccionar el movimiento Eaxis; esta función es la función de jog del eje extendido; es necesario, con el eje extendido ya configurado, utilizar esta función de jog para controlar el eje extendido; consulte "Capítulo 4-Periféricos del robot-Configuración de periféricos de eje extendido".
 
 .. image:: teaching_pendant_software/041.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 5.3‑12 Eaxis移动示意图
+.. centered:: Figura 5.3‑12 Esquema del movimiento Eaxis
 
 FT
-++++++++++++++++
+++
 
-选择参考坐标作为力传感器拖动时的参考。
+Seleccionar el sistema de coordenadas de referencia como referencia para el arrastre del sensor de fuerza.
 
 .. image:: teaching_pendant_software/042.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 5.3‑12 FT示意图
+.. centered:: Figura 5.3‑12 Esquema de FT
 
-远心不动点
-++++++++++++++++
+Punto fijo remoto
++++++++++++++++++
 
-该功能主要应用于医疗穿透，设置远心不动点后，机器人末端始终在该点运动。
+Esta función se aplica principalmente a la penetración médica; tras configurar el punto fijo remoto, el extremo del robot se mueve siempre en dicho punto.
 
 .. image:: teaching_pendant_software/043.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 5.3‑13 远心不动点示意图
+.. centered:: Figura 5.3‑13 Esquema del punto fijo remoto
 
-机器人及配套功能状态条
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Barra de estado del robot y de las funciones complementarias
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Robot
-++++++++++++++++
++++++
 
-显示当前机器人型号、刚度、关节和坐标数据信息。
+Mostrar el modelo actual del robot, la rigidez, las articulaciones y la información de datos de coordenadas.
 
 .. image:: teaching_pendant_software/044.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3‑14 机器人状态
+.. centered:: Figura 5.3‑14 Estado del robot
 
 Program
-++++++++++++++++
++++++++
 
-显示当前运行程序和子程序的信息。
+Mostrar la información del programa en ejecución actual y de los subprogramas.
 
 .. image:: teaching_pendant_software/045.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3‑15 程序状态
+.. centered:: Figura 5.3‑15 Estado del programa
 
 I/O
-++++++++++++++++
++++
 
-显示当前IO的状态，数字输入与数字输出中，若该端口电平为高，则该点显示为绿色，若为低，则显示为白色；模拟输入和模拟输出显示值为0-100，100即表示10v。
+Mostrar el estado actual de las IO; en las entradas y salidas digitales, si el nivel del puerto es alto, el punto se muestra en verde; si es bajo, se muestra en blanco; las entradas y salidas analógicas muestran valores de 0-100, donde 100 representa 10v.
 
 .. image:: teaching_pendant_software/046.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3‑16 IO状态
+.. centered:: Figura 5.3‑16 Estado de IO
 
 ExAxis
-++++++++++++++++
+++++++
 
-显示当前扩展轴（控制器+PLC）伺服状态信息。
+Mostrar la información del estado del servo del eje extendido actual (controlador + PLC).
 
 .. image:: teaching_pendant_software/047.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3‑17 扩展轴（控制器+PLC）状态
+.. centered:: Figura 5.3‑17 Estado del eje extendido (controlador + PLC)
 
 
 Gripper
-++++++++++++++++
++++++++
 
-显示当前夹爪状态信息。
+Mostrar la información del estado actual de la pinza.
 
 .. image:: teaching_pendant_software/048.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3‑18 夹爪状态
+.. centered:: Figura 5.3‑18 Estado de la pinza
 
 FT
-++++++++++++++++
+++
 
-显示当前力控状态信息。
+Mostrar la información del estado actual del control de fuerza.
 
 .. image:: teaching_pendant_software/049.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3‑19 力控状态
+.. centered:: Figura 5.3‑19 Estado del control de fuerza
 
 Convery
-++++++++++++++++
++++++++
 
-显示当前传送带状态信息。
+Mostrar la información del estado actual de la cinta transportadora.
 
 .. image:: teaching_pendant_software/050.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3‑20 传送带状态
+.. centered:: Figura 5.3‑20 Estado de la cinta transportadora
 
 Servo
-++++++++++++++++
++++++
 
-显示当前扩展轴（控制器+伺服控制器）状态信息。
+Mostrar la información del estado actual del eje extendido (controlador + controlador de servo).
 
 .. image:: teaching_pendant_software/051.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3‑21 扩展轴（控制器+伺服控制器）状态
+.. centered:: Figura 5.3‑21 Estado del eje extendido (controlador + controlador de servo)
 
 Polish
-++++++++++++++++
+++++++
 
-显示当前打磨状态信息。
+Mostrar la información del estado actual del pulido.
 
 .. image:: teaching_pendant_software/052.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3‑22 打磨状态
+.. centered:: Figura 5.3‑22 Estado del pulido
 
 Weld
-++++++++++++++++
+++++
 
-显示当前焊接状态信息。
+Mostrar la información del estado actual de la soldadura.
 
 .. image:: teaching_pendant_software/053.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3‑23 焊接状态
+.. centered:: Figura 5.3‑23 Estado de la soldadura
 
 Board I/O
-++++++++++++++++
++++++++++
 
-显示当前板卡状态信息。
+Mostrar la información del estado actual de la tarjeta.
 
 .. image:: teaching_pendant_software/069.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 5.3‑24 板卡状态
+.. centered:: Figura 5.3‑24 Estado de la tarjeta

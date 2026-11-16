@@ -1,5 +1,5 @@
-FRCap插件系统
-================
+Sistema de plugins FRCap
+========================
 
 .. toctree:: 
     :maxdepth: 12

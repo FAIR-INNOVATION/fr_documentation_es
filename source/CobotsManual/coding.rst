@@ -1,774 +1,774 @@
-程序编程
-===============
+Programación de programas
+=========================
 
 .. toctree:: 
    :maxdepth: 6
 
-简介
-~~~~~~~
+Introducción
+~~~~~~~~~~~~
 
-点击左侧命令可以向程序树添加程序节点。程序运行时，当前执行的程序节点绿色高亮显示。
+Hacer clic en los comandos de la izquierda permite añadir nodos de programa al árbol de programa. Durante la ejecución del programa, el nodo de programa que se está ejecutando actualmente se resalta en verde.
 
-在手动模式下，点击节点右侧第一个图标可以使机器人单独执行该指令，第二个图标为编辑该节点内容。
+En el modo manual, hacer clic en el primer icono a la derecha del nodo permite que el robot ejecute esa instrucción de forma individual; el segundo icono sirve para editar el contenido de ese nodo.
 
 .. image:: coding/001.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.1-1 程序树界面
+.. centered:: Figura 9.1-1 Interfaz del árbol de programa
 
-点击“⇄”切换模式，可以将示教程序文本变为编辑状态。
+Hacer clic en "⇄" para cambiar de modo, lo que permite convertir el texto del programa de enseñanza en estado de edición.
 
 .. image:: coding/002.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.1‑2 示教程序编辑状态
+.. centered:: Figura 9.1‑2 Estado de edición del programa de enseñanza
 
-程序名称右侧图标说明如下：
+Los iconos a la derecha del nombre del programa se describen a continuación:
 
 .. note:: 
    .. image:: coding/003.png
       :height: 0.75in
       :align: left
 
-   名称：**展开/缩放**
+   Nombre: **Expandir/Contraer**
    
-   作用：展开/缩放程序树界面
+   Función: Expandir/Contraer la interfaz del árbol de programa
 
 .. note:: 
    .. image:: coding/004.png
       :height: 0.75in
       :align: left
 
-   名称：**新增示教点**
+   Nombre: **Añadir punto de enseñanza**
    
-   作用：新增当前程序的局部示教点
+   Función: Añadir un punto de enseñanza local del programa actual
 
 .. note:: 
    .. image:: coding/005.png
       :height: 0.75in
       :align: left
 
-   名称：**重命名**
+   Nombre: **Cambiar nombre**
    
-   作用：重新命名当前程序
+   Función: Cambiar el nombre del programa actual
 
-工具栏
-~~~~~~~~~~
+Barra de herramientas
+~~~~~~~~~~~~~~~~~~~~~~
 
-使用程序树顶部的工具栏修改程序树。
+La barra de herramientas situada en la parte superior del árbol de programa se utiliza para modificar el árbol de programa.
 
 .. note:: 
    .. image:: coding/006.png
       :height: 0.75in
       :align: left
 
-   名称：**打开**
+   Nombre: **Abrir**
    
-   作用：打开用户程序文件，并支持按字母（A~Z或Z~A）或最近修改时间的排序。
+   Función: Abrir archivos de programas de usuario; admite la ordenación alfabética (A~Z o Z~A) o por hora de última modificación.
 
 .. note:: 
    .. image:: coding/007.png
       :height: 0.75in
       :align: left
 
-   名称：**新建**
+   Nombre: **Nuevo**
    
-   作用：选择模板新建程序文件
+   Función: Seleccionar una plantilla para crear un nuevo archivo de programa
    
 .. note:: 
    .. image:: coding/008.png
       :height: 0.75in
       :align: left
 
-   名称：**导入**
+   Nombre: **Importar**
    
-   作用：导入文件到用户程序文件夹中
+   Función: Importar archivos a la carpeta de programas de usuario
 
 .. note:: 
    .. image:: coding/009.png
       :height: 0.75in
       :align: left
 
-   名称：**导出**
+   Nombre: **Exportar**
    
-   作用：导出用户程序文件到本地点。
+   Función: Exportar el archivo de programa de usuario al equipo local.
 
 .. note:: 
    .. image:: coding/010.png
       :height: 0.75in
       :align: left
 
-   名称：**保存**
+   Nombre: **Guardar**
    
-   作用：保存文件编辑内容
+   Función: Guardar el contenido editado del archivo
 
 .. note:: 
    .. image:: coding/011.png
       :height: 0.75in
       :align: left
 
-   名称：**另存为**
+   Nombre: **Guardar como**
    
-   作用：给文件重命名存放到用户程序或模板程序文件夹中。
+   Función: Cambiar el nombre del archivo y guardarlo en la carpeta de programas de usuario o de programas de plantilla.
 
 .. note:: 
    .. image:: coding/012.png
       :height: 0.75in
       :align: left
 
-   名称：**复制**
+   Nombre: **Copiar**
    
-   作用：复制一个节点，并允许将其用于其他操作（例如：将其粘贴到程序树的其他位置）。
+   Función: Copiar un nodo y permitir utilizarlo para otras operaciones (por ejemplo, pegarlo en otra posición del árbol de programa).
 
 .. note:: 
    .. image:: coding/013.png
       :height: 0.75in
       :align: left
 
-   名称：**粘贴**
+   Nombre: **Pegar**
    
-   作用：允许您粘贴之前剪切或复制的节点。
+   Función: Permite pegar el nodo previamente cortado o copiado.
 
 .. note:: 
    .. image:: coding/014.png
       :height: 0.75in
       :align: left
 
-   名称：**剪切**
+   Nombre: **Cortar**
    
-   作用：剪切一个节点，并允许将其用于其他操作（例如：将其粘贴到程序树的其他位置）。
+   Función: Cortar un nodo y permitir utilizarlo para otras operaciones (por ejemplo, pegarlo en otra posición del árbol de programa).
 
 .. note:: 
    .. image:: coding/015.png
       :height: 0.75in
       :align: left
 
-   名称：**删除**
+   Nombre: **Eliminar**
    
-   作用：从程序树中删除一个节点。
+   Función: Eliminar un nodo del árbol de programa.
 
 .. note:: 
    .. image:: coding/016.png
       :height: 0.75in
       :align: left
 
-   名称：**上移**
+   Nombre: **Subir**
    
-   作用：向上移动该节点。
+   Función: Mover el nodo hacia arriba.
 
 .. note:: 
    .. image:: coding/017.png
       :height: 0.75in
       :align: left
 
-   名称：**下移**
+   Nombre: **Bajar**
    
-   作用：向下移动该节点。
+   Función: Mover el nodo hacia abajo.
 
 .. note:: 
    .. image:: coding/018.png
       :height: 0.75in
       :align: left
 
-   名称：**切换编辑模式**
+   Nombre: **Cambiar modo de edición**
    
-   作用：程序树模式和lua编辑模式互相切换。
+   Función: Alternar entre el modo de árbol de programa y el modo de edición Lua.
 
-顶部右侧图标说明如下：
+Los iconos de la parte superior derecha se describen a continuación:
 
 .. note:: 
    .. image:: coding/240.png
       :height: 0.75in
       :align: left
 
-   名称：**程序编程添加/编辑**
+   Nombre: **Añadir/Editar programación de programas**
    
-   作用：添加/编辑当前程序命令的内容
+   Función: Añadir/Editar el contenido del comando del programa actual
 
 .. note:: 
    .. image:: coding/245.png
       :height: 0.75in
       :align: left
 
-   名称：**局部示教点**
+   Nombre: **Punto de enseñanza local**
    
-   作用：仅应用于当前程序的示教点
+   Función: Punto de enseñanza que se aplica únicamente al programa actual
 
 .. note:: 
    .. image:: coding/242.png
       :height: 0.75in
       :align: left
 
-   名称：**NewDofile子程序界面**
+   Nombre: **Interfaz de subprograma NewDofile**
    
-   作用：当前程序命令中存在NewDofile指令时，点击进入选择子程序名称查看子程序内容。
+   Función: Cuando existe una instrucción NewDofile en el comando del programa actual, hacer clic para entrar y seleccionar el nombre del subprograma y ver su contenido.
 
 .. note:: 
    .. image:: coding/244.png
       :height: 0.75in
       :align: left
 
-   名称：**当前示教程序备份**
+   Nombre: **Copia de seguridad del programa de enseñanza actual**
    
-   作用：记录当前程序的修改内容
+   Función: Registrar el contenido modificado del programa actual
 
 .. note:: 
    .. image:: coding/602.png
       :height: 0.75in
       :align: left
 
-   名称：**Print打印日志**
+   Nombre: **Print registro de impresión**
    
-   作用：指定信息输出至 WebApp 打印窗口，方便调试与数据追溯
+   Función: Enviar información especificada a la ventana de impresión de WebApp, facilitando la depuración y la trazabilidad de datos
 
 .. note:: 
    .. image:: coding/241.png
       :height: 0.75in
       :align: left
 
-   名称：**机器人模型**
+   Nombre: **Modelo de robot**
    
-   作用：返回机器人3D模型界面
+   Función: Volver a la interfaz del modelo 3D del robot
 
 .. note:: 
    .. image:: coding/596.png
       :height: 0.75in
       :align: left
 
-   名称：**Socket 网络调试**
+   Nombre: **Depuración de red Socket**
    
-   作用：网络通信调试界面
+   Función: Interfaz de depuración de comunicación de red
 
 .. note:: 
    .. image:: coding/243.png
       :height: 0.75in
       :align: left
 
-   名称：**Modbus TCP设置**
+   Nombre: **Configuración de Modbus TCP**
    
-   作用：配置Modbus TCP通信的参数
+   Función: Configurar los parámetros de comunicación Modbus TCP
 
 .. note:: 
    .. image:: coding/597.png
       :height: 0.75in
       :align: left
 
-   名称：**Modbus RTU设置**
+   Nombre: **Configuración de Modbus RTU**
    
-   作用：配置Modbus RTU通信的参数
+   Función: Configurar los parámetros de comunicación Modbus RTU
 
 .. note:: 
    .. image:: coding/598.png
       :height: 0.75in
       :align: left
 
-   名称：**后台程序管理**
+   Nombre: **Gestión de programas en segundo plano**
    
-   作用：配置后台程序界面
+   Función: Interfaz de configuración de programas en segundo plano
 
 .. note:: 
    .. image:: coding/599.png
       :height: 0.75in
       :align: left
 
-   名称：**用户变量管理**
+   Nombre: **Gestión de variables de usuario**
    
-   作用：配置用户变量界面
+   Función: Interfaz de configuración de variables de usuario
 
 .. note:: 
    .. image:: coding/600.png
       :height: 0.75in
       :align: left
 
-   名称：**示教点**
+   Nombre: **Puntos de enseñanza**
    
-   作用：配置示教点界面
+   Función: Interfaz de configuración de puntos de enseñanza
 
 .. note:: 
    .. image:: coding/601.png
       :height: 0.75in
       :align: left
 
-   名称：**主程序配置**
+   Nombre: **Configuración del programa principal**
    
-   作用：配置主程序
+   Función: Configurar el programa principal
 
 .. image:: coding/625.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.3-1 程序名称排序
+.. centered:: Figura 9.3-1 Ordenación de nombres de programa
 
-程序命令
-~~~~~~~~~~~
+Comandos de programa
+~~~~~~~~~~~~~~~~~~~~~~~
 
-左侧主要是程序命令的添加，点击各关键字上方图标进入右侧程序命令添加的详细界面。程序命令添加到文件中的操作主要分为两种：
+La parte izquierda es principalmente el área de adición de comandos de programa; hacer clic en el icono situado encima de cada palabra clave permite entrar en la interfaz detallada de adición de comandos de programa de la derecha. La operación de añadir comandos de programa al archivo se divide principalmente en dos tipos:
 
-- 1、打开相关指令点击应用按键即可将该指令添加到程序中；
-- 2、先点击“添加”按键，此时命令并未保存到程序文件中，需要再点击“应用”方可将命令保存到文件中。
+- 1. Abrir la instrucción correspondiente y hacer clic en el botón aplicar para añadir esa instrucción al programa;
+- 2. Hacer clic primero en el botón "Añadir"; en este momento el comando no se ha guardado en el archivo de programa y es necesario hacer clic además en "Aplicar" para guardar el comando en el archivo.
 
-第二种方式多出现在同类型指令多条下发的情况，我们对该类型命令增加添加按键和显示已添加指令内容功能，点击添加按键可添加一条指令，已添加指令显示所有已添加的指令，点击“应用”即可将添加的指令保存到右侧已打开的文件中。
+El segundo modo aparece principalmente en casos de envío de varias instrucciones del mismo tipo; para este tipo de comandos se ha añadido un botón de añadir y una función de visualización del contenido de las instrucciones ya añadidas; hacer clic en el botón añadir permite añadir una instrucción; el área de instrucciones añadidas muestra todas las instrucciones ya añadidas; hacer clic en "Aplicar" permite guardar las instrucciones añadidas en el archivo abierto a la derecha.
 
-逻辑指令界面
-~~~~~~~~~~~~~
+Interfaz de instrucciones lógicas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: coding/019.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.4 逻辑指令界面
+.. centered:: Figura 9.4 Interfaz de instrucciones lógicas
 
-循环命令
+Comando de bucle
 ++++++++++++++++
 
-点击“循环”图标进入While命令编辑界面。
+Hacer clic en el icono "Bucle" para entrar en la interfaz de edición del comando While.
 
-选择While命令的循环场景，场景如下：
+Seleccionar el escenario de bucle del comando While, cuyos escenarios son los siguientes:
 
-- 始终循环
-- 有限次数循环：输入循环次数和变量名称
-- 表达式为真时循环：点击输入框弹出表达式编辑器，根据使用情形选择相应表达式
+- Bucle siempre
+- Bucle de número finito de veces: introducir el número de repeticiones y el nombre de la variable
+- Bucle cuando la expresión es verdadera: hacer clic en el cuadro de entrada para que aparezca el editor de expresiones y seleccionar la expresión correspondiente según la situación de uso
 
 .. image:: coding/020.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.4-1-1 While指令界面
+.. centered:: Figura 9.4-1-1 Interfaz de la instrucción While
 
 .. image:: coding/236.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.4-1-2 While指令——始终循环
+.. centered:: Figura 9.4-1-2 Instrucción While——Bucle siempre
 
 .. image:: coding/237.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.4-1-3 While指令——有限次数循环
+.. centered:: Figura 9.4-1-3 Instrucción While——Bucle de número finito de veces
 
 .. image:: coding/238.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.4-1-4 While指令——表达式编辑器
+.. centered:: Figura 9.4-1-4 Instrucción While——Editor de expresiones
 
 .. image:: coding/239.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.4-1-5 While指令——表达式为真时循环
+.. centered:: Figura 9.4-1-5 Instrucción While——Bucle cuando la expresión es verdadera
 
-为方便操作，可任意输入do内容，在程序中编辑其他指令插入代替。
+Para facilitar la operación, se puede introducir arbitrariamente el contenido do y editarlo en el programa sustituyéndolo por otras instrucciones insertadas.
 
-判断命令
-++++++++++++++++
+Comando de juicio
+++++++++++++++++++++++++++++
 
-点击“判断”按钮进入if…else命令编辑界面。
+Hacer clic en el botón "Juicio" para entrar en la interfaz de edición del comando if…else.
 
-该命令包含以下按钮：
+Este comando incluye los siguientes botones:
 
-- 添加else if：当不存在“else”表达式时，点击该按钮添加“else if”表达式
-- 移除else if：当存在“else if”表达式时，点击该按钮删除“else if”表达式
-- 添加 else：点击该按钮添加“else”表达式
-- 移除else：点击该按钮删除“else”表达式
+- Añadir else if: cuando no existe la expresión "else", hacer clic en este botón para añadir la expresión "else if"
+- Eliminar else if: cuando existe la expresión "else if", hacer clic en este botón para eliminar la expresión "else if"
+- Añadir else: hacer clic en este botón para añadir la expresión "else"
+- Eliminar else: hacer clic en este botón para eliminar la expresión "else"
 
-点击对应按钮添加后，点击输入框弹出表达式编辑器，根据使用情形选择相应表达式。添加完毕后点击“添加”、“应用”即可。
+Tras hacer clic en el botón correspondiente para añadir, hacer clic en el cuadro de entrada para que aparezca el editor de expresiones y seleccionar la expresión correspondiente según la situación de uso. Una vez completada la adición, hacer clic en "Añadir" y "Aplicar".
 
-该指令需要一定编程基础，如需帮助，请联系我们。
+Esta instrucción requiere cierta base de programación; si necesita ayuda, póngase en contacto con nosotros.
 
 .. image:: coding/021.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.4-2 if…else指令界面
+.. centered:: Figura 9.4-2 Interfaz de la instrucción if…else
 
-跳转命令
+Comando de salto
 ++++++++++++++++
 
-点击“跳转”按钮进入Goto命令编辑界面。
+Hacer clic en el botón "Salto" para entrar en la interfaz de edición del comando Goto.
 
-Goto指令为跳转指令，在右侧输入框中输入语句，编辑完毕后点击“添加”、“应用”即可。（该指令需要一定编程基础，如需帮助，请联系我们）
+La instrucción Goto es una instrucción de salto; introducir la sentencia en el cuadro de entrada de la derecha y, tras completar la edición, hacer clic en "Añadir" y "Aplicar". (Esta instrucción requiere cierta base de programación; si necesita ayuda, póngase en contacto con nosotros)
 
 .. image:: coding/022.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.4-3 Goto指令界面
+.. centered:: Figura 9.4-3 Interfaz de la instrucción Goto
 
-等待命令
-++++++++++++++++
+Comando de espera
+++++++++++++++++++++++++++++
 
-点击“等待”图标进入Wait命令编辑界面。
+Hacer clic en el icono "Espera" para entrar en la interfaz de edición del comando Wait.
 
-该指令为延时指令，分为“WaitMs”、“WaitDI”和“WaitAI”三部分。
+Esta instrucción es una instrucción de retardo y se divide en tres partes: "WaitMs", "WaitDI" y "WaitAI".
 
-“WaitTime”指令延时等待时间单位为毫秒，输入需要等待的毫秒数，点击“添加”、“应用”即可。
+La unidad de tiempo de espera de retardo de la instrucción "WaitTime" es el milisegundo; introducir el número de milisegundos que se desea esperar y hacer clic en "Añadir" y "Aplicar".
 
 .. image:: coding/023.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.4-4 WaitTime指令界面
+.. centered:: Figura 9.4-4 Interfaz de la instrucción WaitTime
 
-“WaitDI”指令，即单DI等待，选择需要等待的IO端口号、等待状态、等待最大时间和等待超时处理方式，点击“添加”、“应用”即可。
+La instrucción "WaitDI", es decir, espera de un solo DI: seleccionar el número de puerto IO que se desea esperar, el estado de espera, el tiempo máximo de espera y el modo de tratamiento del tiempo de espera agotado, y hacer clic en "Añadir" y "Aplicar".
 
 .. image:: coding/024.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.4-5 WaitDI指令界面
+.. centered:: Figura 9.4-5 Interfaz de la instrucción WaitDI
 
-“WaitMultiDI”指令，即多DI等待，首先选择多DI成立条件，其次勾选需要等待的DI端口和状态，最后设置等待最大时间和等待超时处理方式，点击“添加”、“应用”即可。
+La instrucción "WaitMultiDI", es decir, espera de múltiples DI: seleccionar primero la condición de cumplimiento de múltiples DI, a continuación marcar los puertos y estados DI que se desean esperar y, por último, configurar el tiempo máximo de espera y el modo de tratamiento del tiempo de espera agotado, y hacer clic en "Añadir" y "Aplicar".
 
 .. image:: coding/025.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.4-6 WaitMultiDI指令界面
+.. centered:: Figura 9.4-6 Interfaz de la instrucción WaitMultiDI
 
-“WaitAI”指令，选择需要等待的模拟量、数值、等待的最大时间以及等待超时处理方式，点击“添加”、“应用”即可。
+La instrucción "WaitAI": seleccionar la señal analógica que se desea esperar, el valor, el tiempo máximo de espera y el modo de tratamiento del tiempo de espera agotado, y hacer clic en "Añadir" y "Aplicar".
 
 .. image:: coding/026.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.4-7 WaitAI指令界面
+.. centered:: Figura 9.4-7 Interfaz de la instrucción WaitAI
 
-暂停命令
+Comando de pausa
 ++++++++++++++++
 
-点击“暂停”图标进入Pause命令编辑界面。
+Hacer clic en el icono "Pausa" para entrar en la interfaz de edición del comando Pause.
 
-该指令为暂停指令，在程序中插入该指令，当程序执行到该指令时，机器人会处于暂停状态，若想继续运行，点击控制区“暂停/恢复”按键即可。
+Esta instrucción es una instrucción de pausa; al insertar esta instrucción en el programa, cuando el programa llegue a esta instrucción el robot entrará en estado de pausa; si se desea continuar la ejecución, basta con hacer clic en el botón "Pausa/Reanudar" del área de control.
 
 .. image:: coding/027.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.4-8 Pause指令界面
+.. centered:: Figura 9.4-8 Interfaz de la instrucción Pause
 
-子程序命令
-++++++++++++++++
+Comando de subprograma
+++++++++++++++++++++++++
 
-点击“子程序”图标进入Dofile命令编辑界面。
+Hacer clic en el icono "Subprograma" para entrar en la interfaz de edición del comando Dofile.
 
-Dofile指令调用的是控制器内部程序，使用Dofile指令需要保存被调用的子程序，而主程序若未改变可不用再次保存。Dofile指令支持二级调用，需要注意两个参数设置，一是该调用处于第几层，二是该调用的ID编号，ID编号原则上同一程序不能出现相同ID。
+La instrucción Dofile llama a programas internos del controlador; para utilizar la instrucción Dofile es necesario guardar el subprograma llamado, mientras que el programa principal, si no ha cambiado, no necesita volver a guardarse. La instrucción Dofile admite llamadas de dos niveles; es necesario prestar atención a dos configuraciones de parámetros: una es en qué nivel se encuentra la llamada y otra es el número de ID de la llamada; en principio, un mismo programa no puede tener el mismo ID.
 
 .. image:: coding/028.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.4-9 Dofile指令界面
+.. centered:: Figura 9.4-9 Interfaz de la instrucción Dofile
 
-变量命令
-++++++++++++++++
+Comando de variable
+++++++++++++++++++++++++
 
-点击“变量”图标进入Var命令编辑界面。
+Hacer clic en el icono "Variable" para entrar en la interfaz de edición del comando Var.
 
-该指令为变量系统指令，分为Lua变量定义，变量查询和Sys变量重命名，获取值，设置值两部分，Lua变量定义可以声明一个变量并赋予初始值，与while，if-else等指令配合使用，Lua变量查询指令可以实时查询输入的变量名称的值，显示在状态栏。Sys变量个数是固定的，可以对其重命名，获取变量值以及设置变量值，该变量保存的值不随系统关机而清零。
+Esta instrucción es una instrucción del sistema de variables y se divide en dos partes: definición de variables Lua, consulta de variables y cambio de nombre de variables Sys, obtención de valores y establecimiento de valores. La definición de variables Lua permite declarar una variable y asignarle un valor inicial, y se utiliza junto con instrucciones como while, if-else, etc.; la instrucción de consulta de variables Lua permite consultar en tiempo real el valor del nombre de variable introducido, mostrándolo en la barra de estado. El número de variables Sys es fijo; se les puede cambiar el nombre, obtener el valor de la variable y establecer el valor de la variable; el valor guardado en esta variable no se borra al apagar el sistema.
 
 .. image:: coding/029.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.4-10 Var指令界面
+.. centered:: Figura 9.4-10 Interfaz de la instrucción Var
 
-.. important:: 变量命名必须以字母或者下划线开头，不能以数字或其他特殊字符开头。
+.. important:: El nombre de la variable debe comenzar por una letra o un guion bajo, y no puede comenzar por un número u otro carácter especial.
 
-运动指令界面
-~~~~~~~~~~~~~
+Interfaz de instrucciones de movimiento
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: coding/030.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5 运动指令界面
+.. centered:: Figura 9.5 Interfaz de instrucciones de movimiento
 
-点到点命令
-++++++++++++++++
+Comando punto a punto
+++++++++++++++++++++++++
 
-点击“点到点”图标进入PTP命令编辑界面。
+Hacer clic en el icono "Punto a punto" para entrar en la interfaz de edición del comando PTP.
 
-可以选择需要到达的点，平滑过渡时间设置可以实现该点到下一点的运动是连续的，是否偏移设置，可以选择基于基坐标系偏移和基于工具坐标偏移，并弹出x，y，z，rx，ry，rz偏移量设置，PTP具体路径为运动控制器自动规划的最优路径，点击“添加”、“应用”后可保存该条指令。
+Se puede seleccionar el punto al que se desea llegar; la configuración del tiempo de transición suave permite que el movimiento de este punto al siguiente sea continuo; la configuración de desplazamiento permite seleccionar el desplazamiento basado en el sistema de coordenadas base y el desplazamiento basado en el sistema de coordenadas de herramienta, y aparece la configuración de los valores de desplazamiento x, y, z, rx, ry, rz; la ruta concreta de PTP es la ruta óptima planificada automáticamente por el controlador de movimiento; tras hacer clic en "Añadir" y "Aplicar" se puede guardar esta instrucción.
 
 .. image:: coding/031.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-1 PTP指令界面
+.. centered:: Figura 9.5-1 Interfaz de la instrucción PTP
 
-点到点相对运动
+Movimiento relativo punto a punto
 ******************************************
-机器人从当前位置相对运动一段距离。在PTP指令添加页面中选择点名称为“CurrentPos”，根据情况选择偏移坐标系为基座标系或工具坐标系或工件坐标系，并输入偏移量，即机器人在当前位置基础上，沿设定坐标系进行一定的偏移运动。（“CurrentPos”为系统点位，不需要示教）
+El robot se desplaza una cierta distancia de forma relativa desde la posición actual. En la página de adición de la instrucción PTP, seleccionar el nombre de punto "CurrentPos", seleccionar según la situación el sistema de coordenadas de desplazamiento como sistema de coordenadas base, sistema de coordenadas de herramienta o sistema de coordenadas de pieza, e introducir el valor de desplazamiento, es decir, el robot realiza un movimiento de desplazamiento determinado a lo largo del sistema de coordenadas establecido sobre la base de la posición actual. ("CurrentPos" es un punto del sistema y no requiere enseñanza)
 
 .. image:: coding/515.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-1-1 PTP相对运动指令
+.. centered:: Figura 9.5-1-1 Instrucción de movimiento relativo PTP
 
-点击“添加”、“应用”按钮，在lua程序中添加一条机器人PTP相对运动指令。将机器人切换至自动模式，点击启动按钮，在示例程序中机器人将从当前位置，沿基座标系的X+方向移动100mm。
+Hacer clic en los botones "Añadir" y "Aplicar" para añadir una instrucción de movimiento relativo PTP del robot al programa lua. Cambiar el robot al modo automático y hacer clic en el botón de inicio; en el programa de ejemplo, el robot se desplazará desde la posición actual 100 mm en la dirección X+ del sistema de coordenadas base.
 
 .. image:: coding/516.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-1-2 PTP相对运动指令添加
+.. centered:: Figura 9.5-1-2 Adición de la instrucción de movimiento relativo PTP
 
-直线命令
-++++++++++++++++
+Comando de línea recta
+++++++++++++++++++++++++++++++++
 
-点击“直线”图标进入Lin命令编辑界面。
+Hacer clic en el icono "Línea recta" para entrar en la interfaz de edición del comando Lin.
 
-该指令功能与“PTP”指令相似，但该指令所到达点的路径为直线。
+La función de esta instrucción es similar a la de la instrucción "PTP", pero la ruta hasta el punto alcanzado por esta instrucción es una línea recta.
 
 .. image:: coding/032.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-2 Lin指令界面
+.. centered:: Figura 9.5-2 Interfaz de la instrucción Lin
 
-直线相对运动
+Movimiento relativo en línea recta
 ******************************************
-机器人从当前位置沿直线相对运动一段距离。在LIN指令添加页面中选择点名称为“CurrentPos”，根据情况选择偏移坐标系为基座标系或工具坐标系或工件坐标系，并输入偏移量，即机器人在当前位置基础上，沿设定坐标系进行一定的偏移运动。（“CurrentPos”为系统点位，不需要示教）
+El robot se desplaza una cierta distancia de forma relativa en línea recta desde la posición actual. En la página de adición de la instrucción LIN, seleccionar el nombre de punto "CurrentPos", seleccionar según la situación el sistema de coordenadas de desplazamiento como sistema de coordenadas base, sistema de coordenadas de herramienta o sistema de coordenadas de pieza, e introducir el valor de desplazamiento, es decir, el robot realiza un movimiento de desplazamiento determinado a lo largo del sistema de coordenadas establecido sobre la base de la posición actual. ("CurrentPos" es un punto del sistema y no requiere enseñanza)
 
 .. image:: coding/517.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-2-1 LIN相对运动指令
+.. centered:: Figura 9.5-2-1 Instrucción de movimiento relativo LIN
 
-点击“添加”、“应用”按钮，在lua程序中添加一条机器人直线相对运动指令。将机器人切换至自动模式，点击启动按钮，在示例程序中机器人将从当前位置，沿基座标系的X+方向移动100mm。
+Hacer clic en los botones "Añadir" y "Aplicar" para añadir una instrucción de movimiento relativo en línea recta del robot al programa lua. Cambiar el robot al modo automático y hacer clic en el botón de inicio; en el programa de ejemplo, el robot se desplazará desde la posición actual 100 mm en la dirección X+ del sistema de coordenadas base.
 
 .. image:: coding/518.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-2-2 LIN相对运动指令添加
+.. centered:: Figura 9.5-2-2 Adición de la instrucción de movimiento relativo LIN
  
-机器人直线相对运动支持平滑、物理速度、焊丝寻位等功能。
+El movimiento relativo en línea recta del robot admite funciones como suavizado, velocidad física y búsqueda de posición del alambre de soldadura.
 
-.. important:: 当选择点名称为“seamPos”时，直线命令应用于焊接场景中使用激光传感器。由于焊接使用中的运行累计误差，故增加“是否偏移”和“偏移量”。
+.. important:: Cuando se selecciona el nombre de punto "seamPos", el comando de línea recta se aplica al uso del sensor láser en escenarios de soldadura. Debido al error acumulado de funcionamiento en el uso de la soldadura, se añaden "¿Desplazamiento?" y "Valor de desplazamiento".
 
-   **是否偏移**：否、基坐标系偏移、工具坐标系偏移、激光原始数据偏移；
+   **¿Desplazamiento?**: No, desplazamiento del sistema de coordenadas base, desplazamiento del sistema de coordenadas de herramienta, desplazamiento de datos originales del láser;
 
-   **偏移量**：∆x、∆y、∆z、∆rx、∆ry、∆rz，范围：-300~300；
+   **Valor de desplazamiento**: ∆x, ∆y, ∆z, ∆rx, ∆ry, ∆rz, rango: -300~300;
 
    .. image:: coding/033.png
       :width: 6in
       :align: center
 
-   .. centered:: 图表 9.5-2-3 Lin指令界面（焊接场景）
+   .. centered:: Figura 9.5-2-3 Interfaz de la instrucción Lin (escenario de soldadura)
 
-LIN指令可选择运动速度模式为“百分比”或“物理速度”：
+La instrucción LIN permite seleccionar el modo de velocidad de movimiento como "Porcentaje" o "Velocidad física":
 
-- 百分比：输入调试速度百分比，机器人按照最大速度的百分比进行运动，实际机器人运动速度换算为：V = 机器人最大速度×全局速度百分比×调试速度百分比。将鼠标移至“调试速度”输入框右侧的小眼睛上，将显示当前设置调试速度下，机器人在手动模式和自动模式下的实际物理速度(单位：mm/s)。
+- Porcentaje: introducir el porcentaje de velocidad de depuración; el robot se mueve según el porcentaje de la velocidad máxima; la velocidad real de movimiento del robot se convierte en: V = velocidad máxima del robot × porcentaje de velocidad global × porcentaje de velocidad de depuración. Al pasar el ratón sobre el pequeño ojo situado a la derecha del cuadro de entrada "Velocidad de depuración", se mostrará la velocidad física real del robot en modo manual y en modo automático con la velocidad de depuración configurada actualmente (unidad: mm/s).
 
 .. image:: coding/458.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 9.5-2-4 输入百分比显示实际物理速度值
+.. centered:: Figura 9.5-2-4 Introducir porcentaje y mostrar el valor de velocidad física real
 
-- 物理速度：输入速度即为机器人实际运行速度，单位mm/s；输入加速度常设置为速度的2倍。(LIN指令最大物理速度受全局速度百分比限制，若机器人最大运行速度为1000mm/s，全局速度为50%，则LIN指令的最大物理速度为1000 × 50% = 500mm/s)。
+- Velocidad física: la velocidad introducida es la velocidad real de funcionamiento del robot, en unidades de mm/s; la aceleración introducida suele configurarse como el doble de la velocidad. (La velocidad física máxima de la instrucción LIN está limitada por el porcentaje de velocidad global; si la velocidad máxima de funcionamiento del robot es 1000 mm/s y la velocidad global es del 50%, la velocidad física máxima de la instrucción LIN es 1000 × 50% = 500 mm/s).
 
 .. image:: coding/459.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 9.5-2-5 输入实际物理速度
+.. centered:: Figura 9.5-2-5 Introducir la velocidad física real
 
-LIN指令关节超速处理功能
-***************************
+Función de tratamiento de sobrevelocidad articular de la instrucción LIN
+*********************************************************************************
 
-使用笛卡尔空间直线运动指令LIN时，约束的规划条件是线速度，但是实际运行时受到工作空间的影响，在满足线速度要求时关节角速度可能已经超过限制。本功能实现了可选处理策略以应对LIN运动中关节超速的情况。
+Al utilizar la instrucción de movimiento lineal en el espacio cartesiano LIN, la condición de planificación restringida es la velocidad lineal, pero en el funcionamiento real, debido a la influencia del espacio de trabajo, al cumplir el requisito de velocidad lineal la velocidad angular articular puede haber superado el límite. Esta función implementa estrategias de tratamiento opcionales para afrontar situaciones de sobrevelocidad articular en el movimiento LIN.
 
-**Step1**：点击直线运动指令按钮；
+**Step1**: Hacer clic en el botón de la instrucción de movimiento en línea recta;
 
 .. image:: coding/034.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-3-1 点击直线运动指令按钮
+.. centered:: Figura 9.5-3-1 Hacer clic en el botón de la instrucción de movimiento en línea recta
 
-**Step2**：选择直线运动指令目标路点；
+**Step2**: Seleccionar el punto de ruta objetivo de la instrucción de movimiento en línea recta;
 
 .. image:: coding/035.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-3-2 选择直线运动目标路点
+.. centered:: Figura 9.5-3-2 Seleccionar el punto de ruta objetivo del movimiento en línea recta
 
-**Step3**：打开关节超速保护开关；
+**Step3**: Activar el interruptor de protección contra sobrevelocidad articular;
 
 .. image:: coding/036.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-3-3 打开关节超速保护开关按钮
+.. centered:: Figura 9.5-3-3 Botón de activación del interruptor de protección contra sobrevelocidad articular
 
-**Step4**：选择关节超速处理策略(选择超速报错或自适应降速，其他均为默认策略无保护)；
+**Step4**: Seleccionar la estrategia de tratamiento de sobrevelocidad articular (seleccionar error por sobrevelocidad o reducción adaptativa de velocidad; las demás son estrategias predeterminadas sin protección);
 
 .. image:: coding/037.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-3-4 关节超速处理策略
+.. centered:: Figura 9.5-3-4 Estrategia de tratamiento de sobrevelocidad articular
 
-**Step5**：
-   设置处理策略及处理策略参数，点击添加按钮即可添加lua指令；
+**Step5**:
+   Configurar la estrategia de tratamiento y los parámetros de la estrategia de tratamiento, y hacer clic en el botón añadir para añadir la instrucción lua;
 
-   自适应降速策略下，减速阈值为线速度减少值相对设定线速度的百分比，当减速值超过设定阈值时，机器人会报错停止。
+   En la estrategia de reducción adaptativa de velocidad, el umbral de deceleración es el porcentaje de la reducción de velocidad lineal respecto a la velocidad lineal establecida; cuando el valor de deceleración supera el umbral establecido, el robot informa de un error y se detiene.
 
 .. image:: coding/038.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-3-5 关节超速处理策略选择与设置
+.. centered:: Figura 9.5-3-5 Selección y configuración de la estrategia de tratamiento de sobrevelocidad articular
 
-**Step6**：添加的lua指令，形式如图所示；
+**Step6**: La instrucción lua añadida tiene la forma mostrada en la figura;
 
 .. image:: coding/039.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-3-6 lua指令
+.. centered:: Figura 9.5-3-6 Instrucción lua
 
-**超速保护开始**：JointOverSpeedProtectStart（a，b）；
-   a：策略号（参照下拉框顺序）
+**Inicio de protección contra sobrevelocidad**: JointOverSpeedProtectStart（a，b）;
+   a: número de estrategia (consultar el orden del cuadro desplegable)
 
-   b：阈值百分比（0~100，仅自适应降速时起效）
+   b: porcentaje de umbral (0~100, solo efectivo en la reducción adaptativa de velocidad)
 
-**超速保护结束**：JointOverSpeedProtectEnd（）；
+**Fin de protección contra sobrevelocidad**: JointOverSpeedProtectEnd（）;
 
-.. note:: “奇异点穿越”运动保护请参考自动模式下奇异点穿越功能说明。
+.. note:: Para la protección de movimiento "cruce de puntos singulares", consulte la descripción de la función de cruce de puntos singulares en modo automático.
 
-包角姿态过渡角速度可调功能
-***************************
+Función de ajuste de la velocidad angular de transición de actitud de envolvente de esquina
+************************************************************************************************************
 
-当焊接过程中遇到要求包角焊接的工件时，或在一段特定直线规划（姿态变化大且位置变化小，但要求线速度不能加快的情况下快速过渡）时，可以使用本功能完成。
+Cuando durante el proceso de soldadura se encuentren piezas que requieran soldadura de envolvente de esquina, o en el caso de una planificación de línea recta específica (cambio de actitud grande y cambio de posición pequeño, pero que requiera una transición rápida sin poder acelerar la velocidad lineal), se puede utilizar esta función para completarlo.
 
-**Step1**：设置工具坐标系，标定焊枪的工具尺寸与姿态。
+**Step1**: Configurar el sistema de coordenadas de herramienta y calibrar las dimensiones y la actitud de la antorcha de soldadura.
 
-.. note:: 界面数值仅为示例，以实际工具状态为准。
+.. note:: Los valores de la interfaz son solo ejemplos; prevalecerá el estado real de la herramienta.
 
 .. image:: coding/246.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.5-3-7 设置工具坐标系
+.. centered:: Figura 9.5-3-7 Configuración del sistema de coordenadas de herramienta
 
-**Step2**：点击“示教程序”，选择“程序编程”，在“运动指令”分类中选择“直线”。
+**Step2**: Hacer clic en "Programa de enseñanza", seleccionar "Programación de programas" y, en la categoría "Instrucciones de movimiento", seleccionar "Línea recta".
 
 .. image:: coding/032.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-3-8 直线指令设置界面
+.. centered:: Figura 9.5-3-8 Interfaz de configuración de la instrucción de línea recta
 
-**Step3**：设置包角焊接每段直线的起始点为过渡点，打开“过渡点角速度可调”按钮，设置最大加速度百分比（默认最大角速度100%为360°/s）。
+**Step3**: Configurar el punto inicial de cada segmento de línea recta de la soldadura de envolvente de esquina como punto de transición, activar el botón "Velocidad angular de punto de transición ajustable" y configurar el porcentaje de aceleración máxima (por defecto, la velocidad angular máxima del 100% es 360°/s).
 
 .. image:: coding/248.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-3-9 过渡点角速度调整参数配置界面
+.. centered:: Figura 9.5-3-9 Interfaz de configuración de parámetros de ajuste de la velocidad angular del punto de transición
 
-**Step4**：点击“添加”按钮，生成包含过渡姿态角速度调整的直线指令。
+**Step4**: Hacer clic en el botón "Añadir" para generar la instrucción de línea recta que incluye el ajuste de la velocidad angular de la actitud de transición.
 
 .. image:: coding/249.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-3-10 添加过渡点直线运动指令
+.. centered:: Figura 9.5-3-10 Adición de la instrucción de movimiento en línea recta con punto de transición
 
-**Step5**：机器人在起点处完成姿态过渡，正常执行直线指令运动到该段终点，关闭“过渡点角速度可调”按钮，添加终止路点。
+**Step5**: El robot completa la transición de actitud en el punto inicial, ejecuta normalmente la instrucción de línea recta hasta el punto final de ese segmento y desactiva el botón "Velocidad angular de punto de transición ajustable" para añadir el punto de ruta final.
 
 .. image:: coding/250.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-3-11 插入直线终点
+.. centered:: Figura 9.5-3-11 Inserción del punto final de la línea recta
 
-**Step6**：点击“应用”按钮，生成对应LUA指令。
+**Step6**: Hacer clic en el botón "Aplicar" para generar la instrucción LUA correspondiente.
 
 .. image:: coding/251.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-3-12 生成包含过渡点的直线LUA指令
+.. centered:: Figura 9.5-3-12 Generación de la instrucción LUA de línea recta con punto de transición
 
 
-一组完整的包角焊通常具有多个过渡点，在图7所示的包角的情况下，在焊接过程中有两个位置变化小且姿态变化大的姿态过渡点。
+Un conjunto completo de soldadura de envolvente de esquina suele tener varios puntos de transición; en el caso de envolvente de esquina mostrado en la Figura 7, durante el proceso de soldadura hay dos puntos de transición de actitud con cambio de posición pequeño y cambio de actitud grande.
 
-点1是焊接第一段的起点，点2是焊接第一段的终点；
+El punto 1 es el inicio de la primera etapa de soldadura, el punto 2 es el final de la primera etapa de soldadura;
 
-点3是焊接第二段的起点，点4是焊接第二段的终点；
+El punto 3 es el inicio de la segunda etapa de soldadura, el punto 4 es el final de la segunda etapa de soldadura;
 
-点5是焊接第三段的起点，点6是焊接第三段的终点。
+El punto 5 es el inicio de la tercera etapa de soldadura, el punto 6 es el final de la tercera etapa de soldadura.
 
-姿态过渡发生在上一段焊接的终点到下一段焊接的起点，所以需要在下一段焊接的起点增加姿态角速度调整指令，这样在包角姿态过渡期间最大线速度保持不变、最大角速度增加，使包角焊接过程流畅运行。
+La transición de actitud se produce desde el final de la etapa de soldadura anterior hasta el inicio de la siguiente etapa de soldadura, por lo que es necesario añadir la instrucción de ajuste de la velocidad angular de actitud en el punto inicial de la siguiente etapa de soldadura, de modo que durante la transición de actitud de envolvente de esquina la velocidad lineal máxima se mantenga invariable y la velocidad angular máxima aumente, haciendo que el proceso de soldadura de envolvente de esquina se ejecute de forma fluida.
 
 .. image:: coding/252.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.5-3-13 包角焊接流程示例
+.. centered:: Figura 9.5-3-13 Ejemplo de flujo de soldadura de envolvente de esquina
 
-圆弧命令
+Comando de arco
 ++++++++++++++++
 
-点击“圆弧”图标进入Arc命令编辑界面。
+Hacer clic en el icono "Arco" para entrar en la interfaz de edición del comando Arc.
 
-“Arc”指令为圆弧运动，包含三个点，第一点为圆弧起始点，第二点为圆弧中间过渡点，第三点为终点。
+La instrucción "Arc" es un movimiento en arco e incluye tres puntos: el primer punto es el punto inicial del arco, el segundo punto es el punto de transición intermedio del arco y el tercer punto es el punto final.
 
-过渡点和终点都可以对是否偏移进行设置，可以选择基于基坐标系偏移和基于工具坐标偏移或基于工件坐标偏移，并弹出x，y，z，rx，ry，rz偏移量设置，终点可以设置平滑过渡半径，实现运动连续效果。
+Tanto el punto de transición como el punto final permiten configurar si hay desplazamiento, pudiendo seleccionar desplazamiento basado en el sistema de coordenadas base, desplazamiento basado en el sistema de coordenadas de herramienta o desplazamiento basado en el sistema de coordenadas de pieza, y aparece la configuración de los valores de desplazamiento x, y, z, rx, ry, rz; el punto final permite configurar el radio de transición suave para lograr un efecto de movimiento continuo.
 
 .. important::
-   圆弧运动需要先添加PTP或者Lin指令先运动到起始点。
+   El movimiento en arco requiere añadir primero una instrucción PTP o Lin para desplazarse primero al punto inicial.
 
 .. image:: coding/040.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-4 Arc指令界面
+.. centered:: Figura 9.5-4 Interfaz de la instrucción Arc
 
-ARC指令可选择运动速度模式为“百分比”或“物理速度”：
+La instrucción ARC permite seleccionar el modo de velocidad de movimiento como "Porcentaje" o "Velocidad física":
 
-- 百分比：输入调试速度百分比，机器人按照最大速度的百分比进行运动，实际机器人运动速度换算为：V = 机器人最大速度×全局速度百分比×调试速度百分比。将鼠标移至“调试速度”输入框右侧的小眼睛上，将显示当前设置调试速度下，机器人在手动模式和自动模式下的实际物理速度(单位：mm/s)。
+- Porcentaje: introducir el porcentaje de velocidad de depuración; el robot se mueve según el porcentaje de la velocidad máxima; la velocidad real de movimiento del robot se convierte en: V = velocidad máxima del robot × porcentaje de velocidad global × porcentaje de velocidad de depuración. Al pasar el ratón sobre el pequeño ojo situado a la derecha del cuadro de entrada "Velocidad de depuración", se mostrará la velocidad física real del robot en modo manual y en modo automático con la velocidad de depuración configurada actualmente (unidad: mm/s).
 
 .. image:: coding/461.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 9.5-4-1 输入百分比显示实际物理速度值
+.. centered:: Figura 9.5-4-1 Introducir porcentaje y mostrar el valor de velocidad física real
 
-- 物理速度：输入速度即为机器人实际运行速度，单位mm/s；输入加速度常设置为速度的2倍。(LIN指令最大物理速度受全局速度百分比限制，若机器人最大运行速度为1000mm/s，全局速度为50%，则LIN指令的最大物理速度为1000 × 50% = 500mm/s)。
+- Velocidad física: la velocidad introducida es la velocidad real de funcionamiento del robot, en unidades de mm/s; la aceleración introducida suele configurarse como el doble de la velocidad. (La velocidad física máxima de la instrucción LIN está limitada por el porcentaje de velocidad global; si la velocidad máxima de funcionamiento del robot es 1000 mm/s y la velocidad global es del 50%, la velocidad física máxima de la instrucción LIN es 1000 × 50% = 500 mm/s).
 
 .. image:: coding/462.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 9.5-4-2 输入实际物理速度
+.. centered:: Figura 9.5-4-2 Introducir la velocidad física real
 
-整圆命令
-++++++++++++++++
+Comando de círculo completo
+++++++++++++++++++++++++++++++++
 
-点击“整圆”图标进入Circle命令编辑界面。
+Hacer clic en el icono "Círculo completo" para entrar en la interfaz de edición del comando Circle.
 
-协作机器人通过添加整圆指令可以进行整圆轨迹运动，在添加整圆指令前需要先示教出整圆轨迹上的3个路径点，假设整圆轨迹上三个路径点分别为“P1”、“P2”、“P3”，其中“P1”为整圆轨迹起点，“P2”和“P3”分别为整圆轨迹中间点1和中间点2，分别移动机器人至上述三个点，并添加示教点位名称分别为“P1”、“P2”、“P3”。
+El robot colaborativo puede realizar un movimiento de trayectoria circular completa añadiendo la instrucción de círculo completo; antes de añadir la instrucción de círculo completo es necesario enseñar primero 3 puntos de ruta sobre la trayectoria circular completa. Suponiendo que los tres puntos de ruta sobre la trayectoria circular completa son "P1", "P2" y "P3", donde "P1" es el punto inicial de la trayectoria circular completa y "P2" y "P3" son respectivamente el punto intermedio 1 y el punto intermedio 2 de la trayectoria circular completa, desplazar el robot hasta los tres puntos mencionados y añadir los nombres de los puntos de enseñanza "P1", "P2" y "P3" respectivamente.
 
 .. important::
-   整圆轨迹运动需要先添加PTP或者Lin指令先运动到起始点。
+   El movimiento de trayectoria circular completa requiere añadir primero una instrucción PTP o Lin para desplazarse primero al punto inicial.
 
 .. image:: coding/042.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.5-5 整圆轨迹
+.. centered:: Figura 9.5-5 Trayectoria circular completa
 
 .. image:: coding/043.png
    :width: 3in
@@ -782,339 +782,339 @@ ARC指令可选择运动速度模式为“百分比”或“物理速度”：
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.5-6 示教“P1”、“P2”、“P3”点
+.. centered:: Figura 9.5-6 Enseñanza de los puntos "P1", "P2" y "P3"
 
-整圆指令添加
-**************
+Adición de la instrucción de círculo completo
+*****************************************************
 
-**Step1**：新建用户程序“testCircle.lua”，点击“整圆”按钮，打开整圆指令添加页面。
+**Step1**: Crear el programa de usuario "testCircle.lua" y hacer clic en el botón "Círculo completo" para abrir la página de adición de la instrucción de círculo completo.
 
 .. image:: coding/046.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-7 添加整圆指令按钮
+.. centered:: Figura 9.5-7 Botón de adición de la instrucción de círculo completo
 
-**Step2**：在整圆指令添加页面中选择起始点运动方式和起始点为“P1”。
+**Step2**: En la página de adición de la instrucción de círculo completo, seleccionar el modo de movimiento del punto inicial y el punto inicial "P1".
 
 .. image:: coding/050.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-8 起始点运动方式和起始点“P1”
+.. centered:: Figura 9.5-8 Modo de movimiento del punto inicial y punto inicial "P1"
 
-**Step3**：在整圆指令添加页面中选择“整圆中间点1”为“P2”点，整圆中间点2”为“P3”点。
+**Step3**: En la página de adición de la instrucción de círculo completo, seleccionar "Punto intermedio 1 del círculo completo" como punto "P2" y "Punto intermedio 2 del círculo completo" como punto "P3".
 
 .. image:: coding/465.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.33-9 选择圆弧中间点和终点
+.. centered:: Figura 9.33-9 Selección del punto intermedio y del punto final del arco
 
-**Step4**：选择速度模式，并输入速度值。
+**Step4**: Seleccionar el modo de velocidad e introducir el valor de velocidad.
 
-Circle指令可选择运动速度模式为“百分比”或“物理速度”：
+La instrucción Circle permite seleccionar el modo de velocidad de movimiento como "Porcentaje" o "Velocidad física":
 
-- 百分比：输入调试速度百分比，机器人按照最大速度的百分比进行运动，实际机器人运动速度换算为：V = 机器人最大速度×全局速度百分比×调试速度百分比。将鼠标移至“调试速度”输入框右侧的小眼睛上，将显示当前设置调试速度下，机器人在手动模式和自动模式下的实际物理速度(单位：mm/s)。
+- Porcentaje: introducir el porcentaje de velocidad de depuración; el robot se mueve según el porcentaje de la velocidad máxima; la velocidad real de movimiento del robot se convierte en: V = velocidad máxima del robot × porcentaje de velocidad global × porcentaje de velocidad de depuración. Al pasar el ratón sobre el pequeño ojo situado a la derecha del cuadro de entrada "Velocidad de depuración", se mostrará la velocidad física real del robot en modo manual y en modo automático con la velocidad de depuración configurada actualmente (unidad: mm/s).
 
 .. image:: coding/466.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 9.33-10 输入百分比显示实际物理速度值
+.. centered:: Figura 9.33-10 Introducir porcentaje y mostrar el valor de velocidad física real
 
-- 物理速度：输入速度即为机器人实际运行速度，单位mm/s；输入加速度常设置为速度的2倍。(LIN指令最大物理速度受全局速度百分比限制，若机器人最大运行速度为1000mm/s，全局速度为50%，则LIN指令的最大物理速度为1000 × 50% = 500mm/s)。
+- Velocidad física: la velocidad introducida es la velocidad real de funcionamiento del robot, en unidades de mm/s; la aceleración introducida suele configurarse como el doble de la velocidad. (La velocidad física máxima de la instrucción LIN está limitada por el porcentaje de velocidad global; si la velocidad máxima de funcionamiento del robot es 1000 mm/s y la velocidad global es del 50%, la velocidad física máxima de la instrucción LIN es 1000 × 50% = 500 mm/s).
 
 .. image:: coding/467.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 9.33-11 输入实际物理速度
+.. centered:: Figura 9.33-11 Introducir la velocidad física real
 
-**Step5**：依次点击“添加”按钮和“应用”按钮。此时“testCircle.lua”已经增加整圆运动指令。
+**Step5**: Hacer clic sucesivamente en el botón "Añadir" y en el botón "Aplicar". En este momento "testCircle.lua" ya tiene añadida la instrucción de movimiento de círculo completo.
 
 .. image:: coding/468.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.33-12 整圆运动指令添加
+.. centered:: Figura 9.33-12 Adición de la instrucción de movimiento de círculo completo
 
-**Step5**：此时“testCircle.lua”已经增加整圆运动指令。
+**Step5**: En este momento "testCircle.lua" ya tiene añadida la instrucción de movimiento de círculo completo.
 
-将机器人切换到自动模式，在确保安全的前提下启动该程序，机器人即按整圆轨迹进行运动。
+Cambiar el robot al modo automático y, siempre que se garantice la seguridad, iniciar el programa; el robot se desplazará según la trayectoria circular completa.
 
-整圆轨迹偏移
-**************
+Desplazamiento de la trayectoria circular completa
+*****************************************************
 
-协作机器人的整圆运动支持对整圆轨迹中间点1和整圆轨迹中间点2的位置进行偏移，偏移类型包括以下两种类型；
+El movimiento de círculo completo del robot colaborativo admite el desplazamiento de la posición del punto intermedio 1 de la trayectoria circular completa y del punto intermedio 2 de la trayectoria circular completa; los tipos de desplazamiento incluyen los dos tipos siguientes:
 
-**整圆两个轨迹中间点相同偏移量**：整圆轨迹中间点1（“P2”点）和整圆轨迹中间点2（“P3”点）采用相同的偏移量∆(dx, dy, dz, drx, dry, drz)进行偏移。
+**Mismo valor de desplazamiento para los dos puntos intermedios de la trayectoria circular completa**: el punto intermedio 1 de la trayectoria circular completa (punto "P2") y el punto intermedio 2 de la trayectoria circular completa (punto "P3") se desplazan con el mismo valor de desplazamiento ∆(dx, dy, dz, drx, dry, drz).
 
-**整圆两个轨迹中间点不同偏移量**：整圆轨迹中间点1（“P2”点）和整圆轨迹中间点2（“P3”点）分别采用两个不同的偏移量∆1(dx1, dy1, dz1, drx1, dry1, drz1)和∆2(dx2, dy2, dz2, drx2, dry2, drz2)进行偏移。
+**Valores de desplazamiento diferentes para los dos puntos intermedios de la trayectoria circular completa**: el punto intermedio 1 de la trayectoria circular completa (punto "P2") y el punto intermedio 2 de la trayectoria circular completa (punto "P3") se desplazan respectivamente con dos valores de desplazamiento diferentes ∆1(dx1, dy1, dz1, drx1, dry1, drz1) y ∆2(dx2, dy2, dz2, drx2, dry2, drz2).
 
-下面分别演示“相同偏移量”和“不同偏移量”的用法。
+A continuación se demuestra respectivamente el uso de "Mismo valor de desplazamiento" y "Valores de desplazamiento diferentes".
 
-1. 相同偏移量
+1. Mismo valor de desplazamiento
 
-所示，打开整圆指令添加页面，“偏移类型”选择“相同偏移量”，同样选择起始点运动方式和起始点为“P1”，整圆中间点1为“P2”点。
+Abrir la página de adición de la instrucción de círculo completo, seleccionar "Mismo valor de desplazamiento" en "Tipo de desplazamiento", seleccionar igualmente el modo de movimiento del punto inicial y el punto inicial "P1", y el punto intermedio 1 del círculo completo como punto "P2".
 
 .. image:: coding/051.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-12 整圆相同偏移量
+.. centered:: Figura 9.5-12 Mismo valor de desplazamiento del círculo completo
 
-整圆中间点2选择“P3”，“是否偏移”选择“基座标偏移”。
+Seleccionar "P3" como punto intermedio 2 del círculo completo y "Desplazamiento del sistema de coordenadas base" en "¿Desplazamiento?".
 
-.. note:: 您可以根据实际的工作情况选择“工具坐标偏移”或“工件坐标偏移”。
+.. note:: Puede seleccionar "Desplazamiento del sistema de coordenadas de herramienta" o "Desplazamiento del sistema de coordenadas de pieza" según la situación real de trabajo.
 
-输入偏移量dx为10mm，依次点击页面下方的“添加”按钮和“应用”按钮。
+Introducir el valor de desplazamiento dx como 10 mm y hacer clic sucesivamente en los botones "Añadir" y "Aplicar" de la parte inferior de la página.
 
 .. image:: coding/052.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-13 设置偏移量
+.. centered:: Figura 9.5-13 Configuración del valor de desplazamiento
 
-此时一条整圆起始点为“P1”，两个中间点“P2”和“P3”均沿基座标系的X轴方向偏移10mm的整圆指令已经添加到“testCircle.lua”程序中。
+En este momento, ya se ha añadido al programa "testCircle.lua" una instrucción de círculo completo con punto inicial "P1" y con los dos puntos intermedios "P2" y "P3" desplazados 10 mm a lo largo de la dirección del eje X del sistema de coordenadas base.
 
 .. image:: coding/053.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-14 整圆相同偏移量程序
+.. centered:: Figura 9.5-14 Programa con mismo valor de desplazamiento del círculo completo
 
-将机器人切换至自动模式，在保证安全的情况下启动该程序，机器人的实际运动轨迹中穿过“P1”、“P2”和“P3”的圆，其中“P2”为原“P2”点沿X方向偏移10mm后的点，其中“P3”为原“P3”点沿X方向偏移10mm后的点。
+Cambiar el robot al modo automático y, garantizando la seguridad, iniciar el programa; la trayectoria real de movimiento del robot pasa por el círculo que atraviesa "P1", "P2" y "P3", donde "P2" es el punto resultante de desplazar el punto "P2" original 10 mm en la dirección X, y "P3" es el punto resultante de desplazar el punto "P3" original 10 mm en la dirección X.
 
 .. image:: coding/054.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.5-15 相同偏移量X10mm轨迹
+.. centered:: Figura 9.5-15 Trayectoria con mismo valor de desplazamiento X 10 mm
 
-2. 不同偏移量
+2. Valores de desplazamiento diferentes
 
-打开整圆指令添加页面，“偏移类型”选择“不同偏移量”，同样选择起始点运动方式和起始点为“P1”，整圆中间点1为“P2”点，“是否偏移”选择为“基座标偏移”。
+Abrir la página de adición de la instrucción de círculo completo, seleccionar "Valores de desplazamiento diferentes" en "Tipo de desplazamiento", seleccionar igualmente el modo de movimiento del punto inicial y el punto inicial "P1", y el punto intermedio 1 del círculo completo como punto "P2", seleccionando "Desplazamiento del sistema de coordenadas base" en "¿Desplazamiento?".
 
-.. note:: 您可以根据实际的工作情况选择“工具坐标偏移”或“工件坐标偏移”。
+.. note:: Puede seleccionar "Desplazamiento del sistema de coordenadas de herramienta" o "Desplazamiento del sistema de coordenadas de pieza" según la situación real de trabajo.
 
-输入偏移量dy为10mm。
+Introducir el valor de desplazamiento dy como 10 mm.
 
 .. image:: coding/055.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-16 不同偏移量
+.. centered:: Figura 9.5-16 Valores de desplazamiento diferentes
 
-整圆中间点选择“P3”，“是否偏移”选择“基座标偏移”。
+Seleccionar "P3" como punto intermedio del círculo completo y "Desplazamiento del sistema de coordenadas base" en "¿Desplazamiento?".
 
-.. note:: 您可以根据实际的工作情况选择“工具坐标偏移”或“工件坐标偏移”。
+.. note:: Puede seleccionar "Desplazamiento del sistema de coordenadas de herramienta" o "Desplazamiento del sistema de coordenadas de pieza" según la situación real de trabajo.
 
-输入偏移量dx为10mm，依次点击页面下方的“添加”按钮和“应用”按钮。
+Introducir el valor de desplazamiento dx como 10 mm y hacer clic sucesivamente en los botones "Añadir" y "Aplicar" de la parte inferior de la página.
 
 .. image:: coding/056.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-17 不同偏移量设置中间点2偏移
+.. centered:: Figura 9.5-17 Configuración del desplazamiento del punto intermedio 2 con valores de desplazamiento diferentes
 
-此时一条整圆起始点为“P1”，中间点“P2”沿基座标系Y方向偏移10mm和“P3”沿基座标系的X轴方向偏移10mm的整圆指令已经添加到“testCircle.lua”程序中。    
+En este momento, ya se ha añadido al programa "testCircle.lua" una instrucción de círculo completo con punto inicial "P1", con el punto intermedio "P2" desplazado 10 mm en la dirección Y del sistema de coordenadas base y con "P3" desplazado 10 mm en la dirección del eje X del sistema de coordenadas base.
 
 .. image:: coding/057.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-18 整圆两点不同偏移量程序
+.. centered:: Figura 9.5-18 Programa con valores de desplazamiento diferentes para los dos puntos del círculo completo
 
-将机器人切换至自动模式，在保证安全的情况下启动该程序，机器人的实际运动轨迹中穿过“P1”、“P2’”和“P3’”的圆，其中“P2’”为原“P2”点沿Y方向偏移10mm后的点，其中“P3’”为原“P3”点沿X方向偏移10mm后的点。
+Cambiar el robot al modo automático y, garantizando la seguridad, iniciar el programa; la trayectoria real de movimiento del robot pasa por el círculo que atraviesa "P1", "P2'" y "P3'", donde "P2'" es el punto resultante de desplazar el punto "P2" original 10 mm en la dirección Y, y "P3'" es el punto resultante de desplazar el punto "P3" original 10 mm en la dirección X.
 
 .. image:: coding/058.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.5-19 整圆两轨迹点分别偏移轨迹
+.. centered:: Figura 9.5-19 Trayectoria con desplazamiento independiente de los dos puntos de la trayectoria circular completa
 
-螺旋命令
-++++++++++++++++
+Comando de hélice
++++++++++++++++++++++++++++++++
 
-点击“螺旋”图标进入Spiral命令编辑界面。
+Hacer clic en el icono "Hélice" para entrar en la interfaz de edición del comando Spiral.
 
-“Spiral”指令为螺旋线运动，包含三个点，该三个点组成一个圆，在第三点设置页面，包含螺旋圈数，姿态修正角，半径增量和转轴方向增量这几个参数设置，螺旋圈数即该螺旋线的运动圈数，姿态修正角修正的是螺旋线结束时的姿态与螺旋线第一点的姿态，半径增量即每一圈半径的增量，转轴方向增量即螺旋轴方向的增量。
+La instrucción "Spiral" es un movimiento en hélice e incluye tres puntos; estos tres puntos forman un círculo; en la página de configuración del tercer punto se incluyen parámetros como el número de vueltas de la hélice, el ángulo de corrección de actitud, el incremento de radio y el incremento de dirección del eje de rotación. El número de vueltas de la hélice es el número de vueltas del movimiento de la hélice; el ángulo de corrección de actitud corrige la actitud al final de la hélice respecto a la actitud del primer punto de la hélice; el incremento de radio es el incremento del radio de cada vuelta; el incremento de dirección del eje de rotación es el incremento en la dirección del eje de la hélice.
 
-设置是否偏移，可选择“基于基坐标偏移”或“基于工具坐标偏移”或“基于工件坐标偏移”，该偏移量生效于整个螺旋线的轨迹。
+Configurar si hay desplazamiento, pudiendo seleccionar "Desplazamiento basado en el sistema de coordenadas base", "Desplazamiento basado en el sistema de coordenadas de herramienta" o "Desplazamiento basado en el sistema de coordenadas de pieza"; este valor de desplazamiento surte efecto sobre toda la trayectoria de la hélice.
 
 .. image:: coding/059.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-20 Spiral指令界面
+.. centered:: Figura 9.5-20 Interfaz de la instrucción Spiral
 
-新螺旋命令
-++++++++++++++++
+Comando de nueva hélice
++++++++++++++++++++++++++++++++
 
-点击“新螺旋”图标进入N-Spiral命令令编辑界面
+Hacer clic en el icono "Nueva hélice" para entrar en la interfaz de edición del comando N-Spiral.
 
-“N-Spiral”指令为优化版螺旋线运动，该指令只需要一个点加各参数的配置实现螺旋线运动。机器人以当前位置作为起点，用户设置调试速度，是否偏移，螺旋圈数，螺旋倾角，初始半径，半径增量，转轴方向增量和旋转方向这几个参数，螺旋圈数即该螺旋线的运动圈数，螺旋倾角即工具Z轴与水平方向的夹角，姿态修正角修正的是螺旋线结束时的姿态与螺旋线第一点的姿态，初始半径即第一圈半径大小，半径增量即每一圈半径的增量，转轴方向增量即螺旋轴方向的增量，旋转方向即顺时针和逆时针。
+La instrucción "N-Spiral" es una versión optimizada del movimiento en hélice; esta instrucción solo requiere un punto más la configuración de cada parámetro para realizar el movimiento en hélice. El robot toma la posición actual como punto inicial; el usuario configura la velocidad de depuración, si hay desplazamiento, el número de vueltas de la hélice, la inclinación de la hélice, el radio inicial, el incremento de radio, el incremento de dirección del eje de rotación y la dirección de rotación. El número de vueltas de la hélice es el número de vueltas del movimiento de la hélice; la inclinación de la hélice es el ángulo entre el eje Z de la herramienta y la dirección horizontal; el ángulo de corrección de actitud corrige la actitud al final de la hélice respecto a la actitud del primer punto de la hélice; el radio inicial es el tamaño del radio de la primera vuelta; el incremento de radio es el incremento del radio de cada vuelta; el incremento de dirección del eje de rotación es el incremento en la dirección del eje de la hélice; la dirección de rotación es en sentido horario o antihorario.
 
 .. image:: coding/060.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-21 N-Spiral指令界面
+.. centered:: Figura 9.5-21 Interfaz de la instrucción N-Spiral
 
-螺旋线每圈速度一致可设置功能
+Función de velocidad uniforme por vuelta de la hélice
 *****************************************************
 
-概述
-""""""""""""""
-使用螺旋运动指令时可以设置螺旋运动的运行速度，使每一圈的速度都保持为设定的运行速度。
+Descripción general
+""""""""""""""""""""
+Al utilizar la instrucción de movimiento en hélice se puede configurar la velocidad de funcionamiento del movimiento en hélice, de modo que la velocidad de cada vuelta se mantenga en la velocidad de funcionamiento configurada.
 
-操作流程
-""""""""""""""""""""""""""""
-**Step1**：选择执行螺旋线运动的示教点，本手册以“P0”作为示教点的名称。
+Flujo de operación
+""""""""""""""""""""""""""""""
+**Step1**: Seleccionar el punto de enseñanza sobre el que se desea ejecutar el movimiento en hélice; este manual utiliza "P0" como nombre del punto de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“新螺旋”指令，在“速度模式”中选择“物理速度”，并设置速度值与加速度值，该速度值即为螺旋线的实际运行速度，并根据实际需要设置“螺旋圈数”、“螺旋倾角”、“初始半径”、“半径增量”、“转轴方向增量”和“旋转方向”等参数，如图2-1所示。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Nueva hélice", seleccionar "Velocidad física" en "Modo de velocidad" y configurar el valor de velocidad y el valor de aceleración; este valor de velocidad es la velocidad real de funcionamiento de la hélice; configurar además, según las necesidades reales, parámetros como "Número de vueltas de la hélice", "Inclinación de la hélice", "Radio inicial", "Incremento de radio", "Incremento de dirección del eje de rotación" y "Dirección de rotación", como se muestra en la Figura 2-1.
 
 .. image:: coding/492.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-21-1 新螺旋线参数设置
+.. centered:: Figura 9.5-21-1 Configuración de parámetros de la nueva hélice
 
-**Step3**：添加运动指令，生成Lua程序并运行，即可实现以设定的速度运行螺旋线功能，如图2-2所示。
+**Step3**: Añadir la instrucción de movimiento, generar el programa Lua y ejecutarlo; se puede realizar la función de ejecutar la hélice a la velocidad configurada, como se muestra en la Figura 2-2.
 
 .. image:: coding/493.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-21-2 以设定的速度运行螺旋线的典型程序
+.. centered:: Figura 9.5-21-2 Programa típico de ejecución de la hélice a la velocidad configurada
 
-水平螺旋命令
-++++++++++++++++
+Comando de hélice horizontal
++++++++++++++++++++++++++++++++
 
-点击“水平螺旋”图标进入H-Spiral命令令编辑界面
+Hacer clic en el icono "Hélice horizontal" para entrar en la interfaz de edición del comando H-Spiral.
 
-“H-Spiral”指令为水平空间螺旋线运动，该指令设置于单段运动（直线）指令之后。
+La instrucción "H-Spiral" es un movimiento en hélice en el espacio horizontal; esta instrucción se configura después de una instrucción de movimiento de un solo segmento (línea recta).
 
-   - 螺旋半径: 0~100mm
-   - 螺旋角速度: 0~2rev/s
-   - 旋转方向: 螺旋顺/逆时针
-   - 螺旋倾角: 0~40°
+   - Radio de la hélice: 0~100mm
+   - Velocidad angular de la hélice: 0~2rev/s
+   - Dirección de rotación: hélice en sentido horario/antihorario
+   - Inclinación de la hélice: 0~40°
 
 .. image:: coding/061.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-22 H-Spiral指令界面
+.. centered:: Figura 9.5-22 Interfaz de la instrucción H-Spiral
 
-样条命令
-++++++++++++++++
+Comando de spline
++++++++++++++++++++++++++++++++
 
-点击“样条”图标进入Spline命令编辑界面。
+Hacer clic en el icono "Spline" para entrar en la interfaz de edición del comando Spline.
 
-该指令分为样条组起始，样条段和样条组结束三部分，样条组开始是样条运动的起始标志，样条段包含SPL、SLIN和SCIRC段，点击对应图标进入指令添加界面，样条组结束是样条运动的结束标志。
+Esta instrucción se divide en tres partes: inicio del grupo de splines, segmento de spline y fin del grupo de splines. El inicio del grupo de splines es el indicador de inicio del movimiento de spline; el segmento de spline incluye los segmentos SPL, SLIN y SCIRC; hacer clic en el icono correspondiente para entrar en la interfaz de adición de la instrucción; el fin del grupo de splines es el indicador de fin del movimiento de spline.
 
 .. image:: coding/062.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-23 Spline指令界面
+.. centered:: Figura 9.5-23 Interfaz de la instrucción Spline
 
-新样条命令
-++++++++++++++++
+Comando de nueva spline
++++++++++++++++++++++++++++++++
 
-点击“新样条”图标进入N-Spline命令编辑界面。
+Hacer clic en el icono "Nueva spline" para entrar en la interfaz de edición del comando N-Spline.
 
-该指令为Spline指令算法优化指令，后续会替代现有的Spline指令。
+Esta instrucción es una versión optimizada del algoritmo de la instrucción Spline y sustituirá en el futuro a la instrucción Spline actual.
 
-该指令分为多点轨迹起始，多点轨迹段和多点轨迹结束三部分，多点轨迹开始是多点轨迹运动的起始标志，多点轨迹段即设置各个轨迹点。
+Esta instrucción se divide en tres partes: inicio de trayectoria multipunto, segmento de trayectoria multipunto y fin de trayectoria multipunto. El inicio de trayectoria multipunto es el indicador de inicio del movimiento de trayectoria multipunto; el segmento de trayectoria multipunto sirve para configurar cada punto de trayectoria.
 
-点击图标进入点位添加界面，多点轨迹结束是多点轨迹运动的结束标志，在此可以设置控制模式和调试速度。
+Hacer clic en el icono para entrar en la interfaz de adición de puntos; el fin de trayectoria multipunto es el indicador de fin del movimiento de trayectoria multipunto, donde se puede configurar el modo de control y la velocidad de depuración.
 
-- 控制模式：圆弧过渡点/给定路径点
-- 全局平均衔接时间：整数型，大于10，默认值为2000
+- Modo de control: punto de transición de arco / punto de ruta dado
+- Tiempo medio de enlace global: tipo entero, mayor que 10, valor predeterminado 2000
 
 .. image:: coding/063.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-24 N-Spline指令界面
+.. centered:: Figura 9.5-24 Interfaz de la instrucción N-Spline
 
-摆动命令
-++++++++++++++++
+Comando de oscilación
++++++++++++++++++++++++++++++++
 
-点击“摆动”图标进入Weave命令编辑界面。“Weave”指令包含两部分：
+Hacer clic en el icono "Oscilación" para entrar en la interfaz de edición del comando Weave. La instrucción "Weave" incluye dos partes:
 
-- 选择配置好参数的摆焊编号，点击“开始摆焊”和“停止摆焊”并应用可将相关指令添加到程序中。
+- Seleccionar el número de soldadura oscilante con los parámetros ya configurados; hacer clic en "Iniciar soldadura oscilante" y "Detener soldadura oscilante" y aplicar para añadir las instrucciones correspondientes al programa.
 
 .. image:: coding/064.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-25 Weave指令界面
+.. centered:: Figura 9.5-25 Interfaz de la instrucción Weave
 
-- 点击“配置与测试”，可以根据使用场景选择摆动类型，对摆焊的参数进行配置，配置完成后可通过开始摆焊测试和停止摆焊测试按键测试该摆焊轨迹。目前摆动类型有：
+- Hacer clic en "Configuración y prueba" para seleccionar el tipo de oscilación según el escenario de uso y configurar los parámetros de la soldadura oscilante; tras completar la configuración, se puede probar la trayectoria de soldadura oscilante mediante los botones de prueba de inicio de soldadura oscilante y prueba de detención de soldadura oscilante. Actualmente, los tipos de oscilación son:
 
-   - 三角波摆动（LIN/ARC）
-   - 垂直L型三角波摆动（LIN/ARC）
-   - 圆形摆动-顺时针（LIN）
-   - 圆形摆动-逆时针（LIN）
-   - 正弦波摆动（LIN/ARC）
-   - 垂直L型正弦波摆动（LIN/ARC）
-   - 立焊三角摆动
+   - Oscilación triangular (LIN/ARC)
+   - Oscilación triangular tipo L vertical (LIN/ARC)
+   - Oscilación circular- sentido horario (LIN)
+   - Oscilación circular- sentido antihorario (LIN)
+   - Oscilación sinusoidal (LIN/ARC)
+   - Oscilación sinusoidal tipo L vertical (LIN/ARC)
+   - Oscilación triangular para soldadura vertical
 
 .. image:: coding/065.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-26 Weave配置与测试指令界面
+.. centered:: Figura 9.5-26 Interfaz de configuración y prueba de la instrucción Weave
 
-斜锯齿摆动功能
-*********************
+Función de oscilación en diente de sierra inclinado
+************************************************************************************
 
-使用斜锯齿摆动功能能使机器人工具末端在笛卡尔空间内形成倾斜锯齿状摆动轨迹。斜锯齿摆动叠加于直线规划，倾斜量受方位角参数控制，在指定的摆焊平面上摆焊的方位角的倾斜度（单位deg）；
+El uso de la función de oscilación en diente de sierra inclinado permite que el extremo de la herramienta del robot forme en el espacio cartesiano una trayectoria de oscilación en diente de sierra inclinado. La oscilación en diente de sierra inclinado se superpone a la planificación de línea recta; la inclinación está controlada por el parámetro de ángulo de azimut, que determina la inclinación del ángulo de azimut de la soldadura oscilante en el plano de soldadura oscilante especificado (unidad: deg);
 
-值为正时，左端点向前进方向倾斜，为负时，右端点向前进方向倾斜；若为90deg或-90deg时，可以沿着前进方向进行摆动。
+cuando el valor es positivo, el punto final izquierdo se inclina hacia la dirección de avance; cuando es negativo, el punto final derecho se inclina hacia la dirección de avance; si es 90deg o -90deg, se puede oscilar a lo largo de la dirección de avance.
 
 .. image:: coding/066.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.5-26-1 摆动方位角影响
+.. centered:: Figura 9.5-26-1 Influencia del ángulo de azimut de la oscilación
 
-**Step1**：编辑设置基本直线运动。
+**Step1**: Editar y configurar el movimiento básico en línea recta.
 
 .. image:: coding/067.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.5-26-2 基本直线运动lua程序示例
+.. centered:: Figura 9.5-26-2 Ejemplo de programa lua de movimiento básico en línea recta
 
-**Step2**：点击添加摆动指令。
+**Step2**: Hacer clic para añadir la instrucción de oscilación.
 
 .. image:: coding/068.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 9.5-26-3 点击添加摆动指令
+.. centered:: Figura 9.5-26-3 Hacer clic para añadir la instrucción de oscilación
 
-**Step3**：摆动指令参数配置页面点击“配置”按钮，“摆动类型”下拉框选择“三角波摆动”或“正弦波摆动”，输入相应“摆动方向方位角”，点击“应用”。
+**Step3**: En la página de configuración de parámetros de la instrucción de oscilación, hacer clic en el botón "Configurar", seleccionar "Oscilación triangular" u "Oscilación sinusoidal" en el cuadro desplegable "Tipo de oscilación", introducir el "Ángulo de azimut de la dirección de oscilación" correspondiente y hacer clic en "Aplicar".
 
 .. image:: coding/069.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-26-4 摆动参数配置
+.. centered:: Figura 9.5-26-4 Configuración de parámetros de oscilación
 
-**Step4**：点击“开始摆动”按钮，将摆动指令添加到直线运动上方；点击“结束摆动”按钮，将摆动指令添加到直线运动下方。
+**Step4**: Hacer clic en el botón "Iniciar oscilación" para añadir la instrucción de oscilación por encima del movimiento en línea recta; hacer clic en el botón "Finalizar oscilación" para añadir la instrucción de oscilación por debajo del movimiento en línea recta.
 
 .. image:: coding/070.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.5-26-5 添加摆动指令后lua程序
+.. centered:: Figura 9.5-26-5 Programa lua tras añadir la instrucción de oscilación
 
-**Step5**：点击“开始运行”，机器人末端轨迹如图所示。
+**Step5**: Hacer clic en "Iniciar ejecución"; la trayectoria del extremo del robot se muestra en la figura.
 
 .. image:: coding/071.png
    :width: 3in
@@ -1124,448 +1124,446 @@ Circle指令可选择运动速度模式为“百分比”或“物理速度”�
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.5-26-6 锯齿摆动（左） 斜锯齿摆动（右）
+.. centered:: Figura 9.5-26-6 Oscilación en diente de sierra (izquierda) Oscilación en diente de sierra inclinado (derecha)
 
-轨迹复现命令
-++++++++++++++++
+Comando de reproducción de trayectoria
+++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“轨迹复现”按钮进入TPD命令编辑界面。
+Hacer clic en el botón "Reproducción de trayectoria" para entrar en la interfaz de edición del comando TPD.
 
-在该指令中，用户首先需要有记录好的轨迹。
+En esta instrucción, el usuario debe disponer primero de una trayectoria registrada.
 
-关于轨迹记录：在准备记录轨迹之前，先保存下轨迹的起始点。在机器人处于拖动模式下，输入文件名，选择周期（假设数值为x，即每隔x毫秒记录一个点，推荐4毫秒记录一个点），点开始记录，用户可以根据需求拖动机器人进行指定运动，记录完成后，点击停止记录，即可保存之前机器人的运动轨迹。当一条运动无法完全记录，会提
-示记录点数超限提示，用户需要将运动分几次进行记录。
+Acerca del registro de trayectoria: antes de prepararse para registrar la trayectoria, guardar primero el punto inicial de la trayectoria. Con el robot en modo de arrastre, introducir el nombre del archivo, seleccionar el período (suponiendo que el valor es x, es decir, se registra un punto cada x milisegundos; se recomienda registrar un punto cada 4 milisegundos), hacer clic en iniciar registro; el usuario puede arrastrar el robot según sus necesidades para realizar el movimiento especificado; tras completar el registro, hacer clic en detener registro para guardar la trayectoria de movimiento del robot anterior. Cuando un movimiento no pueda registrarse por completo, aparecerá un aviso de que se ha superado el límite de puntos de registro; el usuario deberá registrar el movimiento en varias veces.
 
-进行程序编程时，首先用PTP指令到达对应轨迹起始点，然后在TPD轨迹复现指令中选择轨迹，选择是否平滑，设置调试速度，依次点击“添加”、“应用”，即可插入程序。轨迹加载指令主要用于预先读取轨迹文件，提取成轨迹指令，更好的应用于传送带跟踪场景。
+Al realizar la programación de programas, primero hay que llegar al punto inicial de la trayectoria correspondiente con la instrucción PTP; a continuación, en la instrucción de reproducción de trayectoria TPD seleccionar la trayectoria, seleccionar si hay suavizado, configurar la velocidad de depuración y hacer clic sucesivamente en "Añadir" y "Aplicar" para insertar el programa. La instrucción de carga de trayectoria se utiliza principalmente para leer previamente el archivo de trayectoria y extraerlo como instrucción de trayectoria, aplicándose mejor en escenarios de seguimiento de cinta transportadora.
 
 .. note:: 
-   关于TPD详细操作可见示教编程（TPD）功能操作说明模块。
+   Para el funcionamiento detallado de TPD, consulte el módulo de descripción del funcionamiento de la función de enseñanza y programación (TPD).
 
 .. image:: coding/073.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-27 TPD指令界面
+.. centered:: Figura 9.5-27 Interfaz de la instrucción TPD
 
-机器人轨迹示教复现TPD功能
+Función TPD de reproducción de la enseñanza de trayectoria del robot
 *******************************************************************************
 
-概述
+Descripción general
 """"""""""""""""""""
-机器人轨迹示教复现TPD功能，可以让机器人精确记住并重复示教的复杂轨迹，从而在工业制造中实现高质量、高效率的自动化生产，并在危险环境作业中替代人类完成高风险的任务。
+La función TPD de reproducción de la enseñanza de trayectoria del robot permite que el robot recuerde con precisión y repita trayectorias complejas enseñadas, logrando así una producción automatizada de alta calidad y alta eficiencia en la fabricación industrial, y sustituyendo a los humanos en la realización de tareas de alto riesgo en entornos peligrosos.
 
-操作流程
-""""""""""""""""""""""""""""""""""""""""""""""""""
-**Step1**：TPD记录参数设置。点击界面下侧状态栏中的“TPD”，进入TPD功能项配置轨迹记录参数，设定好轨迹文件的名称、位姿类型以及采样周期，配置DI和DO。在记录TPD轨迹的过程中，通过触发DI，在复现TPD时，则会输出相应的DO。
+Flujo de operación
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+**Step1**: Configuración de parámetros de registro TPD. Hacer clic en "TPD" de la barra de estado de la parte inferior de la interfaz para entrar en la función TPD y configurar los parámetros de registro de trayectoria: establecer el nombre del archivo de trayectoria, el tipo de pose y el período de muestreo, y configurar DI y DO. Durante el proceso de registro de la trayectoria TPD, mediante la activación de DI, al reproducir TPD se emitirá el DO correspondiente.
 
 .. image:: coding/549.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.5-27-1 TPD参数设置
+.. centered:: Figura 9.5-27-1 Configuración de parámetros TPD
 
-**Step2**：切换为拖动模式。在手动模式下可通过两种方式切换到托动示教模式，一种是长按末端按钮，一种是界面拖动模式切换按键，在TPD记录功能中推荐从界面切换机器人进入托动示教模式。
+**Step2**: Cambiar al modo de arrastre. En el modo manual se puede cambiar al modo de enseñanza por arrastre de dos formas: una manteniendo pulsado el botón del extremo y otra mediante el botón de cambio al modo de arrastre de la interfaz; en la función de registro TPD se recomienda cambiar el robot al modo de enseñanza por arrastre desde la interfaz.
 
 .. image:: coding/550.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.5-27-2 机器人拖动模式设置
+.. centered:: Figura 9.5-27-2 Configuración del modo de arrastre del robot
 
-**Step3**：开始记录。点击“开始记录”按钮开始轨迹记录，拖动机器人进行动作示教。此外，末端DI配置中有“TPD记录启动/停止”功能配置项，通过配置此功能，用户可以通过外部信号触发“开始记录”轨迹功能，需要注意的是，通过外部信号开始记录轨迹，首先需在页面先进行TPD轨迹的信息配置。
+**Step3**: Iniciar el registro. Hacer clic en el botón "Iniciar registro" para comenzar el registro de trayectoria y arrastrar el robot para realizar la enseñanza de movimientos. Además, en la configuración de DI del extremo existe la opción de configuración "Inicio/detención del registro TPD"; mediante la configuración de esta función, el usuario puede activar por señal externa la función de registro de trayectoria "Iniciar registro"; tenga en cuenta que para iniciar el registro de trayectoria mediante señal externa es necesario configurar primero en la página la información de la trayectoria TPD.
 
-**Step4**：结束记录。动作示教完成后，点击“停止记录”按钮，停止轨迹记录，然后通过拖动示教切换按键使机器人退出拖动示教模式。同步骤3，在配置“TPD记录启动/停止”功能后，可以通过外部信号触发停止记录。
+**Step4**: Finalizar el registro. Tras completar la enseñanza de movimientos, hacer clic en el botón "Detener registro" para detener el registro de trayectoria y, a continuación, mediante el botón de cambio de la enseñanza por arrastre, hacer que el robot salga del modo de enseñanza por arrastre. Igual que en el paso 3, tras configurar la función "Inicio/detención del registro TPD", se puede activar la detención del registro mediante señal externa.
 
-**Step5**：TPD轨迹编辑。点击界面下侧状态栏中的“TPD”，进入TPD轨迹编辑功能，首先选择要编辑的轨迹，点击“获取”按钮，Start-index和End-index将会显示轨迹的开始序列号和结束序列号，可通过拖动滑条或手动输入进行调整；然后点击“复现”按钮，机器人将会在界面仿真运动（实际机器人并未运动）；最后点击“完成”按钮，完成对TPD轨迹的编辑。
+**Step5**: Edición de la trayectoria TPD. Hacer clic en "TPD" de la barra de estado de la parte inferior de la interfaz para entrar en la función de edición de trayectoria TPD; seleccionar primero la trayectoria que se desea editar y hacer clic en el botón "Obtener"; Start-index y End-index mostrarán el número de secuencia inicial y el número de secuencia final de la trayectoria, que se pueden ajustar arrastrando el control deslizante o introduciéndolos manualmente; a continuación, hacer clic en el botón "Reproducir" y el robot realizará el movimiento simulado en la interfaz (el robot real no se mueve); por último, hacer clic en el botón "Completar" para finalizar la edición de la trayectoria TPD.
 
 .. image:: coding/551.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.5-27-3 TPD轨迹编辑
+.. centered:: Figura 9.5-27-3 Edición de la trayectoria TPD
 
-**Step6**：编写轨迹示教复现TPD程序。点击“示教程序”-“轨迹复现”-“轨迹加载”，选择需要复现的轨迹，然后点击“添加”按钮。点击“轨迹复现”，选择同一条轨迹，并根据界面提示设置相应的参数，然后点击“添加”按钮。
+**Step6**: Escribir el programa TPD de reproducción de la enseñanza de trayectoria. Hacer clic en "Programa de enseñanza"-"Reproducción de trayectoria"-"Carga de trayectoria", seleccionar la trayectoria que se desea reproducir y hacer clic en el botón "Añadir". Hacer clic en "Reproducción de trayectoria", seleccionar la misma trayectoria, configurar los parámetros correspondientes según las indicaciones de la interfaz y hacer clic en el botón "Añadir".
 
 .. image:: coding/552.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-27-4 TPD轨迹加载设置
+.. centered:: Figura 9.5-27-4 Configuración de carga de trayectoria TPD
 
 .. image:: coding/553.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-27-5 TPD轨迹复现设置
+.. centered:: Figura 9.5-27-5 Configuración de reproducción de trayectoria TPD
 
-**Step7**：生成lua程序并运行。根据步骤6生成的典型lua程序，运行该程序，即可进行轨迹示教复现。
+**Step7**: Generar el programa lua y ejecutarlo. Según el programa lua típico generado en el paso 6, ejecutar dicho programa para realizar la reproducción de la enseñanza de trayectoria.
 
 .. image:: coding/554.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.5-27-6 TPD轨迹复现典型程序
+.. centered:: Figura 9.5-27-6 Programa típico de reproducción de trayectoria TPD
 
-点偏移命令
-++++++++++++++++
+Comando de desplazamiento de punto
+++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“点偏移”图标进入Offset命令编辑界面。
+Hacer clic en el icono "Desplazamiento de punto" para entrar en la interfaz de edición del comando Offset.
 
-该指令为整体偏移指令，输入各个偏移量，将开启指令和关闭指令添加到程序中，在开始和关闭中间的运动指令会基于基坐标（或工件坐标）进行偏移。
+Esta instrucción es una instrucción de desplazamiento global; introducir cada valor de desplazamiento y añadir al programa la instrucción de activación y la instrucción de desactivación; las instrucciones de movimiento entre el inicio y la desactivación se desplazarán basándose en el sistema de coordenadas base (o el sistema de coordenadas de pieza).
 
 .. image:: coding/074.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-28 Offset指令界面
+.. centered:: Figura 9.5-28 Interfaz de la instrucción Offset
 
-伺服命令
+Comando servo
 +++++++++++++++++++++++++++++++++++++++++
-点击“伺服”图标进入servoMotion命令编辑界面。伺服运动包括在笛卡尔空间的伺服运动和关节空间的伺服运动。
+Hacer clic en el icono "Servo" para entrar en la interfaz de edición del comando servoMotion. El movimiento servo incluye el movimiento servo en el espacio cartesiano y el movimiento servo en el espacio articular.
 
 .. image:: coding/075.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-29-1 伺服运动指令界面
+.. centered:: Figura 9.5-29-1 Interfaz de la instrucción de movimiento servo
 
-笛卡尔空间伺服运动
+Movimiento servo en el espacio cartesiano
 *************************************************************
-ServoCart伺服控制（笛卡尔空间运动）指令，该指令可以通过绝对位姿控制或基于当前位姿偏移来控制机器人运动。
+Instrucción de control servo ServoCart (movimiento en el espacio cartesiano): esta instrucción permite controlar el movimiento del robot mediante control de pose absoluta o mediante desplazamiento basado en la pose actual.
 
 .. image:: coding/076.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-29-2 ServoCart指令界面
+.. centered:: Figura 9.5-29-2 Interfaz de la instrucción ServoCart
  
-绝对位姿控制程序实例：
+Ejemplo de programa de control de pose absoluta:
 
 .. image:: coding/077.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-29-3 ServoCart绝对运动
+.. centered:: Figura 9.5-29-3 Movimiento absoluto ServoCart
 
-此例中，x，y，z，rx，ry，rz（笛卡尔位置）是获取的机器人当前位置，此外，用户可以通过读取轨迹数据文件，socket通讯发送轨迹数据等方式，控制机器人运动。
+En este ejemplo, x, y, z, rx, ry, rz (posición cartesiana) son la posición actual del robot obtenida; además, el usuario puede controlar el movimiento del robot leyendo archivos de datos de trayectoria, enviando datos de trayectoria mediante comunicación socket, etc.
 
-基于当前位姿偏移（基坐标偏移）控制程序实例：
+Ejemplo de programa de control basado en desplazamiento de la pose actual (desplazamiento del sistema de coordenadas base):
 
 .. image:: coding/519.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-29-4 ServoCart相对运动
+.. centered:: Figura 9.5-29-4 Movimiento relativo ServoCart
 
-关节空间伺服运动
+Movimiento servo en el espacio articular
 ********************************************************
-ServoJ伺服控制（关节空间运动）指令，该指令可以通过机器人绝对关节位置控制机器人运动。
+Instrucción de control servo ServoJ (movimiento en el espacio articular): esta instrucción permite controlar el movimiento del robot mediante la posición articular absoluta del robot.
 
-依次点击“示教程序”、“程序编程”、“伺服运动”，在servoMotion指令页面中选择“关节空间运动”。
+Hacer clic sucesivamente en "Programa de enseñanza", "Programación de programas", "Movimiento servo" y, en la página de la instrucción servoMotion, seleccionar "Movimiento en el espacio articular".
 
 .. image:: coding/520.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-29-5 ServoJ指令编辑
+.. centered:: Figura 9.5-29-5 Edición de la instrucción ServoJ
 
-指令中参数解释如下：
+La explicación de los parámetros de la instrucción es la siguiente:
 
-- **关节位置**：ServoJ运动的目标关节位置，从当前位置到目标位置的运动需要在设定的指令周期内完成，若目标位置与当前位置指令偏差过大，则机器人可能报出关节超速等错误。
-- **扩展轴位置**：ServoJ运动的目标扩展轴位置。
-- **加速度**：ServoJ运动的加速度百分比(暂未开放)。
-- **速度**：ServoJ运动的速度百分比（暂未开放，当前机器人实际运行速度取决于两条ServoJ指令的位置差距与指令周期）。
-- **指令周期**：ServoJ两条指令之间距离的执行时间。
+- **Posición articular**: posición articular objetivo del movimiento ServoJ; el movimiento desde la posición actual hasta la posición objetivo debe completarse dentro del período de instrucción establecido; si la desviación entre la posición objetivo y la instrucción de posición actual es demasiado grande, el robot puede informar de errores como sobrevelocidad articular.
+- **Posición del eje extendido**: posición objetivo del eje extendido del movimiento ServoJ.
+- **Aceleración**: porcentaje de aceleración del movimiento ServoJ (aún no disponible).
+- **Velocidad**: porcentaje de velocidad del movimiento ServoJ (aún no disponible; actualmente la velocidad real de funcionamiento del robot depende de la diferencia de posición entre dos instrucciones ServoJ y del período de instrucción).
+- **Período de instrucción**: tiempo de ejecución de la distancia entre dos instrucciones ServoJ.
 
-输入相应的目标位置，速度、加速度、指令周期，点击“添加”、“应用”按钮，即可在LUA程序中添加一条ServoJ指令。
+Introducir la posición objetivo, la velocidad, la aceleración y el período de instrucción correspondientes y hacer clic en los botones "Añadir" y "Aplicar" para añadir una instrucción ServoJ al programa LUA.
 
 .. image:: coding/521.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-29-6 ServoJ指令添加至lua程序
+.. centered:: Figura 9.5-29-6 Adición de la instrucción ServoJ al programa lua
 
-使用中常需要按照设定的指令周期连续下发多条ServoJ指令，这些ServoJ指令的目标关节位置组成一条连续的机器人运动曲线，实现机器人的灵活运动控制。指令的下发周期要与设定的指令周期相匹配。
+Durante el uso suele ser necesario enviar continuamente varias instrucciones ServoJ según el período de instrucción establecido; las posiciones articulares objetivo de estas instrucciones ServoJ forman una curva de movimiento continuo del robot, realizando un control flexible del movimiento del robot. El período de envío de las instrucciones debe coincidir con el período de instrucción establecido.
 
-可在LUA程序中通过循环或连续添加多条指令的方式实现ServoJ运动控制。
+El control del movimiento ServoJ se puede realizar en el programa LUA mediante bucles o añadiendo continuamente varias instrucciones.
 
 .. image:: coding/522.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-29-7 ServoJ连续运动示例
+.. centered:: Figura 9.5-29-7 Ejemplo de movimiento continuo ServoJ
 
 .. image:: coding/523.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-29-8 ServoJ连续运动示例1
+.. centered:: Figura 9.5-29-8 Ejemplo 1 de movimiento continuo ServoJ
 
-扩展轴调试指令
+Instrucción de depuración del eje extendido
 ***********************************************************
 
-概述
-""""""""""""""""""""""""""""""""""
+Descripción general
+"""""""""""""""""""""""""""""""""""""""
+La interfaz de instrucción de cinemática inversa GetInverseKinExaxis para la posición objetivo del eje extendido y la interfaz de instrucción ServoCart con posición de eje extendido admiten múltiples escenarios de uso simultáneo del eje extendido y el robot.
 
-扩展轴目标位置的逆运动学GetInverseKinExaxis指令接口和带扩展轴位置的ServoCart指令接口，支持扩展轴和机器人同时使用的多种场景。
+Flujo de operación
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-操作流程
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+**Step1**: Los parámetros y valores de retorno de la interfaz de instrucción de cinemática inversa GetInverseKinExaxis se muestran en la tabla siguiente.
 
-**Step1**：逆运动学GetInverseKinExaxis指令接口参数、返回值如下表所示。
-
-.. centered:: 表 9.5-1  GetInverseKinExaxis参数
+.. centered:: Tabla 9.5-1 Parámetros de GetInverseKinExaxis
 
 .. list-table::
    :widths: 10 20 30 40
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **数据类型**
-     - **变量名**
-     - **详细说明**
+   * - **Número**
+     - **Tipo de dato**
+     - **Nombre de variable**
+     - **Descripción detallada**
 
    * - 1
      - uint8_t
      - posMode
-     - 0：绝对位姿，1：相对位姿-基坐标系，2：相对位姿-工具坐标系
+     - 0: pose absoluta, 1: pose relativa- sistema de coordenadas base, 2: pose relativa- sistema de coordenadas de herramienta
 
    * - 2
      - float
      - desePos[6]
-     - 机器人笛卡尔位置
+     - Posición cartesiana del robot
 
    * - 3
      - float
      - exaxis[4]
-     - 扩展轴位置
+     - Posición del eje extendido
 
    * - 4
      - int
      - toolNum
-     - 工具号[0-14]
+     - Número de herramienta [0-14]
 
    * - 5
      - int
      - workPieceNum
-     - 工件号[0-14]
+     - Número de pieza [0-14]
 
-.. centered:: 表 9.5-2  GetInverseKinExaxis返回值
+.. centered:: Tabla 9.5-2 Valores de retorno de GetInverseKinExaxis
 
 .. list-table::
    :widths: 10 20 30 40
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **数据类型**
-     - **变量名**
-     - **详细说明**
+   * - **Número**
+     - **Tipo de dato**
+     - **Nombre de variable**
+     - **Descripción detallada**
 
    * - 1
      - float
      - jointPos[6]
-     - 关节位置
+     - Posición articular
 
-**Step2**：逆运动学GetInverseKinExaxis指令在lua程序中调用格式如图所示，只需输入表中所列参数，即可求出对应的关节值，在SDK中的调用需参考对应的SDK说明。
+**Step2**: El formato de llamada de la instrucción de cinemática inversa GetInverseKinExaxis en el programa lua se muestra en la figura; basta con introducir los parámetros enumerados en la tabla para obtener los valores articulares correspondientes; para la llamada en el SDK es necesario consultar la descripción correspondiente del SDK.
 
 .. image:: coding/543.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-29-9 GetInverseKinExaxis在lua中调用
+.. centered:: Figura 9.5-29-9 Llamada de GetInverseKinExaxis en lua
 
-**Step3**：带扩展轴位置的ServoCart指令接口如下表所示，无返回值。
+**Step3**: La interfaz de instrucción ServoCart con posición de eje extendido se muestra en la tabla siguiente y no tiene valor de retorno.
 
-.. centered:: 表 9.5-3  ServoCart参数
+.. centered:: Tabla 9.5-3 Parámetros de ServoCart
 
 .. list-table::
    :widths: 10 20 30 40
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **数据类型**
-     - **变量名**
-     - **详细说明**
+   * - **Número**
+     - **Tipo de dato**
+     - **Nombre de variable**
+     - **Descripción detallada**
 
    * - 1
      - uint8_t
      - posMode
-     - 0：绝对位姿，1：相对位姿-基坐标系，2：相对位姿-工具坐标系
+     - 0: pose absoluta, 1: pose relativa- sistema de coordenadas base, 2: pose relativa- sistema de coordenadas de herramienta
 
    * - 2
      - float
      - desePos[6]
-     - 机器人笛卡尔位置
+     - Posición cartesiana del robot
 
    * - 3
      - float
      - gain[6]
-     - 位姿比例系数，相对位姿情况下使用
+     - Coeficiente de proporción de pose, utilizado en el caso de pose relativa
 
    * - 4
      - float
      - exaxis[4]
-     - 扩展轴位置
+     - Posición del eje extendido
 
    * - 5
      - float
      - acc
-     - 加速度比例，0~100，默认为0
+     - Proporción de aceleración, 0~100, por defecto 0
 
    * - 6
      - float
      - vel
-     - 速度比例，0~100，默认为0
+     - Proporción de velocidad, 0~100, por defecto 0
 
    * - 7
      - float
      - interval
-     - 指令周期[s]
+     - Período de instrucción [s]
 
    * - 8
      - float
      - filterTime
-     - 滤波时间[s]，暂时不可用
+     - Tiempo de filtrado [s], temporalmente no disponible
 
    * - 9
      - float
      - posGain
-     - 目标位置的比例放大器，暂时不可用
+     - Ampliador de proporción de la posición objetivo, temporalmente no disponible
 
-**Step4**：带扩展轴位置的ServoCart指令在lua程序中调用格式如下图所示，只需输入表中所列参数，机器人即可执行带扩展轴位置的ServoCart运动，在SDK中的调用需参考对应的SDK说明。
+**Step4**: El formato de llamada de la instrucción ServoCart con posición de eje extendido en el programa lua se muestra en la figura siguiente; basta con introducir los parámetros enumerados en la tabla para que el robot ejecute el movimiento ServoCart con posición de eje extendido; para la llamada en el SDK es necesario consultar la descripción correspondiente del SDK.
 
 .. image:: coding/544.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-29-10 ServoCart在lua中调用
+.. centered:: Figura 9.5-29-10 Llamada de ServoCart en lua
 
-轨迹命令
-++++++++++++++++
+Comando de trayectoria
+++++++++++++++++++++++++++++++++
 
-点击“轨迹”图标进入Trajctory命令编辑界面。
+Hacer clic en el icono "Trayectoria" para entrar en la interfaz de edición del comando Trajctory.
 
 .. image:: coding/078.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-30 Trajctory指令界面
+.. centered:: Figura 9.5-30 Interfaz de la instrucción Trajctory
 
-轨迹J命令
-++++++++++++++++
+Comando de trayectoria J
+++++++++++++++++++++++++++++++++
 
-点击“轨迹J”图标进入TrajctoryJ命令编辑界面。
+Hacer clic en el icono "Trayectoria J" para entrar en la interfaz de edición del comando TrajctoryJ.
 
-Trajctory指令和TrajctoryJ指令适用于相机直接给定轨迹的通用接口，满足在已有固定格式的离散的轨迹点文件时，可导入系统使得机器人按照导入文件的轨迹进行运动。
+Las instrucciones Trajctory y TrajctoryJ son interfaces genéricas aplicables a trayectorias dadas directamente por la cámara; permiten que, cuando se dispone de un archivo de puntos de trayectoria discretos con un formato fijo, se pueda importar al sistema para que el robot se desplace según la trayectoria del archivo importado.
 
-1. 轨迹文件导入功能：选择本地计算机文件导入机器人控制系统。
+1. Función de importación de archivo de trayectoria: seleccionar un archivo del ordenador local para importarlo al sistema de control del robot.
 
-2. 轨迹预加载：选择已导入的轨迹文件通过指令加载。
+2. Precarga de trayectoria: seleccionar el archivo de trayectoria ya importado para cargarlo mediante la instrucción.
 
-3. 轨迹运动：通过预加载的轨迹文件和选择的调试速度组合指令下发机器人运动。
+3. Movimiento de trayectoria: enviar al robot el movimiento combinando el archivo de trayectoria precargado y la velocidad de depuración seleccionada.
 
-4. 打印轨迹点编号：在机器人运行轨迹的过程中打印轨迹点编号，以便查看当前运动的进度。
+4. Imprimir el número de punto de trayectoria: imprimir el número de punto de trayectoria durante la ejecución de la trayectoria por parte del robot, para poder consultar el progreso del movimiento actual.
 
 .. image:: coding/079.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-31 TrajctoryJ指令界面
+.. centered:: Figura 9.5-31 Interfaz de la instrucción TrajctoryJ
 
-DMP命令
+Comando DMP
 ++++++++++++++++
 
-点击“DMP”图标进入DMP命令编辑界面。
+Hacer clic en el icono "DMP" para entrar en la interfaz de edición del comando DMP.
 
-DMP是一种轨迹模仿学习的方法，需要事先规划参考轨迹。在命令编辑界面。 ，选择示教点作为新的起点，点击“添加”、“应用”后可保存该指令。DMP具体路径为以新的起点模仿参考轨迹的新轨迹。
+DMP es un método de aprendizaje por imitación de trayectoria y requiere planificar previamente una trayectoria de referencia. En la interfaz de edición del comando, seleccionar el punto de enseñanza como nuevo punto inicial y hacer clic en "Añadir" y "Aplicar" para guardar esta instrucción. La ruta concreta de DMP es la nueva trayectoria que imita la trayectoria de referencia tomando el nuevo punto inicial.
 
 .. image:: coding/080.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-32 DMP指令界面
+.. centered:: Figura 9.5-32 Interfaz de la instrucción DMP
 
-工件转换命令
-++++++++++++++++
+Comando de conversión de pieza
+++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“工件转换”图标进入WPTrsf命令编辑界面。
+Hacer clic en el icono "Conversión de pieza" para entrar en la interfaz de edición del comando WPTrsf.
 
-选择所要进行自动转换的工件坐标系，点击“添加”、“应用”后可保存该指令，该指令实现在执行内部的PTP、LIN指令时，工件坐标系下点位自动转换。使用示例区域展示并提示了指令的正确使用方式组合，具体指令在添加后可依据实际场景自行调整组合。
+Seleccionar el sistema de coordenadas de pieza sobre el que se desea realizar la conversión automática y hacer clic en "Añadir" y "Aplicar" para guardar esta instrucción; esta instrucción permite la conversión automática de los puntos del sistema de coordenadas de pieza al ejecutar internamente las instrucciones PTP y LIN. El área de ejemplo de uso muestra y sugiere la combinación correcta de uso de las instrucciones; las instrucciones concretas se pueden ajustar y combinar según el escenario real tras su adición.
 
 .. image:: coding/081.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-33 WPTrsf指令界面
+.. centered:: Figura 9.5-33 Interfaz de la instrucción WPTrsf
 
-工件转换和安全速度功能
+Función de conversión de pieza y velocidad de seguridad
 **************************************************************
 
-概述
-""""""""""""""""""""""""""""""""""""
+Descripción general
+""""""""""""""""""""""""""""""""""""""""
 
-工件转换功能是指将当前工件坐标系下的PTP\LIN\ARC\CIR运动轨迹迁移至目标工件坐标系下运行。
+La función de conversión de pieza consiste en trasladar la trayectoria de movimiento PTP\LIN\ARC\CIR bajo el sistema de coordenadas de pieza actual para ejecutarla bajo el sistema de coordenadas de pieza objetivo.
 
-安全速度功能是指机器人笛卡尔\关节空间中速度限制的开放配置，实现工作空间和关节空间的速度保护。
+La función de velocidad de seguridad consiste en la configuración abierta de los límites de velocidad en el espacio cartesiano\articular del robot, realizando la protección de velocidad del espacio de trabajo y del espacio articular.
 
-工件转换功能操作流程
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Flujo de operación de la función de conversión de pieza
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：通过WebApp标定机器人工件坐标系。该功能的具体操作步骤可参考相应章节的用户手册。
+**Step1**: Calibrar el sistema de coordenadas de pieza del robot mediante WebApp. Para los pasos concretos de esta función, consulte el manual de usuario del capítulo correspondiente.
 
-**Step2**：点位示教。通过WebApp示教PTP\LIN\ARC\CIR运动点位及编写LUA程序，该功能的具体操作步骤可参考相应章节的用户手册。
+**Step2**: Enseñanza de puntos. Enseñar mediante WebApp los puntos de movimiento PTP\LIN\ARC\CIR y escribir el programa LUA; para los pasos concretos de esta función, consulte el manual de usuario del capítulo correspondiente.
 
-**Step3**：转换工件坐标系设置。在WebApp主界面，点击“示教程序”-“程序编程”，进入“运动指令”指令区。
+**Step3**: Configuración del sistema de coordenadas de pieza de conversión. En la interfaz principal de WebApp, hacer clic en "Programa de enseñanza"-"Programación de programas" para entrar en el área de instrucciones "Instrucciones de movimiento".
 
 .. image:: coding/583.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.5-33-1 “运动指令”指令区
+.. centered:: Figura 9.5-33-1 Área de instrucciones "Instrucciones de movimiento"
 
-在“运动指令”指令区，点击“工件转换”按钮，进入“WPTrsf”指令配置界面。
+En el área de instrucciones "Instrucciones de movimiento", hacer clic en el botón "Conversión de pieza" para entrar en la interfaz de configuración de la instrucción "WPTrsf".
 
 .. image:: coding/584.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-33-2 WPTrsf指令配置
+.. centered:: Figura 9.5-33-2 Configuración de la instrucción WPTrsf
 
-“WPTrsf”指令配置界面->“指令编辑”配置区，“选择工件坐标系”下拉框中选择目标转换的工件坐标系编号，点击“添加”-“应用”按钮，完成工件转换功能配置。
+En la interfaz de configuración de la instrucción "WPTrsf"->área de configuración "Edición de instrucción", seleccionar en el cuadro desplegable "Seleccionar sistema de coordenadas de pieza" el número del sistema de coordenadas de pieza de conversión objetivo y hacer clic en los botones "Añadir"-"Aplicar" para completar la configuración de la función de conversión de pieza.
 
-**Step4**：编写工件转换功能的LUA程序。调整步骤2至步骤3生成的指令顺序，运行该LUA程序即可实现工件转换功能。
+**Step4**: Escribir el programa LUA de la función de conversión de pieza. Ajustar el orden de las instrucciones generadas en los pasos 2 y 3 y ejecutar dicho programa LUA para realizar la función de conversión de pieza.
 
 .. image:: coding/585.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.5-33-3 工件转换功能的LUA程序
+.. centered:: Figura 9.5-33-3 Programa LUA de la función de conversión de pieza
 
-安全速度功能操作流程
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Flujo de operación de la función de velocidad de seguridad
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-在WebApp主界面，点击“初始设置”-“安全”-“安全速度”，进入“安全速度”配置区。
+En la interfaz principal de WebApp, hacer clic en "Configuración inicial"-"Seguridad"-"Velocidad de seguridad" para entrar en el área de configuración "Velocidad de seguridad".
 
 .. image:: coding/586.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-33-4 安全速度指令配置
+.. centered:: Figura 9.5-33-4 Configuración de la instrucción de velocidad de seguridad
 
-“安全速度”配置区->“功能启用”下拉框中，可以选择“不启用”、“手动模式启用”及“所有模式启用”选项。
+En el área de configuración "Velocidad de seguridad"->cuadro desplegable "Activación de función", se pueden seleccionar las opciones "No activar", "Activar en modo manual" y "Activar en todos los modos".
 
-其中“手动模式启用”表示为在WebApp中切换为手动模式时启用；“所有模式启用”表示为在WebApp中切换为手动模式、自动模式及拖动模式时启用。
+"Activar en modo manual" significa que se activa al cambiar al modo manual en WebApp; "Activar en todos los modos" significa que se activa al cambiar al modo manual, al modo automático y al modo de arrastre en WebApp.
 
-下图所示的“安全速度”配置区，“TCP限制速度”、“J1限制速度”、“J2限制速度”、“J3限制速度”、“J4限制速度”、“J5限制速度”及“J6限制速度”输入框内，可以分别设置机器人笛卡尔和关节空间中的速度保护。
+En el área de configuración "Velocidad de seguridad" mostrada en la figura siguiente, en los cuadros de entrada "Velocidad límite del TCP", "Velocidad límite de J1", "Velocidad límite de J2", "Velocidad límite de J3", "Velocidad límite de J4", "Velocidad límite de J5" y "Velocidad límite de J6" se puede configurar respectivamente la protección de velocidad en el espacio cartesiano y en el espacio articular del robot.
 
-值得注意的是，上述速度保护在机器人运动过程中，按其中最小值优先触发。
+Cabe señalar que las protecciones de velocidad anteriores se activan, durante el movimiento del robot, dando prioridad al valor mínimo de entre ellas.
 
-“安全速度”配置区->“超速后模式”下拉框中，可以选择“停止报警”、“自动限速”及“停止报警后去使能”选项，如下表所示。
+En el área de configuración "Velocidad de seguridad"->cuadro desplegable "Modo tras sobrevelocidad", se pueden seleccionar las opciones "Parada con alarma", "Limitación automática de velocidad" y "Deshabilitar tras parada con alarma", como se muestra en la tabla siguiente.
 
-.. centered:: 表 9.5-4  不同“功能启用”选项下的“超速后模式”选择
+.. centered:: Tabla 9.5-4 Selección de "Modo tras sobrevelocidad" según las distintas opciones de "Activación de función"
 
 .. list-table::
    :widths: 25 25 25 25
@@ -1573,1043 +1571,1042 @@ DMP是一种轨迹模仿学习的方法，需要事先规划参考轨迹。在�
    :align: center
 
    * - \
-     - **停止报警**
-     - **自动限速**
-     - **停止报警后去使能**
+     - **Parada con alarma**
+     - **Limitación automática de velocidad**
+     - **Deshabilitar tras parada con alarma**
 
-   * - **手动模式启用**
-     - 支持
-     - 支持
-     - 支持
+   * - **Activar en modo manual**
+     - Compatible
+     - Compatible
+     - Compatible
 
-   * - **所有模式启用**
-     - 支持
-     - 不支持
-     - 支持
+   * - **Activar en todos los modos**
+     - Compatible
+     - No compatible
+     - Compatible
 			
-“停止报警”：当关节指令和反馈速度均超越安全速度时，WebApp提示超速警告；
+"Parada con alarma": cuando tanto la instrucción articular como la velocidad de realimentación superan la velocidad de seguridad, WebApp muestra una advertencia de sobrevelocidad;
 
-“自动限速”：当关节指令和反馈速度均超越安全速度时，将自动降速在安全速度内；
+"Limitación automática de velocidad": cuando tanto la instrucción articular como la velocidad de realimentación superan la velocidad de seguridad, se reduce automáticamente la velocidad hasta situarla dentro de la velocidad de seguridad;
 
-“停止报警后去使能”：当关节指令和反馈速度均超越安全速度时，WebApp提示超速警告且机器人全关节去使能。
+"Deshabilitar tras parada con alarma": cuando tanto la instrucción articular como la velocidad de realimentación superan la velocidad de seguridad, WebApp muestra una advertencia de sobrevelocidad y se deshabilitan todas las articulaciones del robot.
 
-工具转换命令
-++++++++++++++++
+Comando de conversión de herramienta
+++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“工具转换”图标进入ToolTrsf命令编辑界面。
+Hacer clic en el icono "Conversión de herramienta" para entrar en la interfaz de edición del comando ToolTrsf.
 
-添加PTP、Lin指令后，选择所要进行自动转换的工具坐标系，点击“添加”、“应用”后可保存该指令，指令内点位笛卡尔坐标根据当前设置的工件坐标系进行自动转换。
+Tras añadir las instrucciones PTP y Lin, seleccionar el sistema de coordenadas de herramienta sobre el que se desea realizar la conversión automática y hacer clic en "Añadir" y "Aplicar" para guardar esta instrucción; las coordenadas cartesianas de los puntos de la instrucción se convierten automáticamente según el sistema de coordenadas de pieza configurado actualmente.
 
-.. note:: 使用示例区域展示并提示了指令的正确使用方式组合，具体指令在添加后可依据实际场景自行调整组合。
+.. note:: El área de ejemplo de uso muestra y sugiere la combinación correcta de uso de las instrucciones; las instrucciones concretas se pueden ajustar y combinar según el escenario real tras su adición.
 
 .. image:: coding/276.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.5-34 ToolTrsf指令界面
+.. centered:: Figura 9.5-34 Interfaz de la instrucción ToolTrsf
 
-控制指令界面
-~~~~~~~~~~~~~
+Interfaz de instrucciones de control
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: coding/082.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6 控制指令界面
+.. centered:: Figura 9.6 Interfaz de instrucciones de control
 
-数字IO命令
-++++++++++++++++
+Comando de IO digital
+++++++++++++++++++++++++++++++++
 
-点击“数字IO”图标进入IO命令编辑界面。
+Hacer clic en el icono "IO digital" para entrar en la interfaz de edición del comando IO.
 
-“IO”指令分为设置IO（SetDO/SPLCSetDO）、获取IO（GetDI/SPLCGetDI）和获取DO（GetDO）三部分。
+La instrucción "IO" se divide en tres partes: establecer IO (SetDO/SPLCSetDO), obtener IO (GetDI/SPLCGetDI) y obtener DO (GetDO).
 
-“SetDO/SPLCSetDO”该指令可设定指定的输出DO状态，包括16路控制箱数字输出和2路工具数字输出，状态选项“False”为闭，“True”为开，是否阻塞选项选择“阻塞”表示运动停止后设置DO状态，选择“非阻塞”选项表示在上一条运动过程中设置DO状态。平滑轨迹选项选择“Break”表示在平滑过渡半径结束后设置DO状态，选择“Serious”表示在平滑过渡半径运动过程中设置DO状态。当该指令是添加在辅助线程中，是否应用线程需要选择是，其他地方使用该指令选择否。点击“添加”、“应用”即可。
+La instrucción "SetDO/SPLCSetDO" permite establecer el estado de la salida DO especificada, incluyendo 16 salidas digitales de la caja de control y 2 salidas digitales de la herramienta; en las opciones de estado, "False" es cerrado y "True" es abierto; en la opción de bloqueo, seleccionar "Bloqueante" significa establecer el estado DO después de que se detenga el movimiento, y seleccionar "No bloqueante" significa establecer el estado DO durante el movimiento anterior. En la opción de trayectoria suave, seleccionar "Break" significa establecer el estado DO después de finalizar el radio de transición suave, y seleccionar "Serious" significa establecer el estado DO durante el movimiento del radio de transición suave. Cuando esta instrucción se añade en un hilo auxiliar, es necesario seleccionar sí en la opción de si se aplica el hilo; cuando se utiliza esta instrucción en otros lugares, seleccionar no. Hacer clic en "Añadir" y "Aplicar".
 
 .. image:: coding/083.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-1 SetDO指令界面
+.. centered:: Figura 9.6-1 Interfaz de la instrucción SetDO
 
-在“GetDI/SPLCGetDI”指令中，选择想要获取端口号的数值，是否阻塞选项选择“阻塞”表示运动停止后获取DI状态，选择“非阻塞”选项表示在上一条运动过程中获取DI状态。当该指令是添加在辅助线程中，是否应用线程需要选择是，其他地方使用该指令选择否。选择完毕后点击“添加”、“应用”按钮即可。
+En la instrucción "GetDI/SPLCGetDI", seleccionar el valor del número de puerto que se desea obtener; en la opción de bloqueo, seleccionar "Bloqueante" significa obtener el estado DI después de que se detenga el movimiento, y seleccionar "No bloqueante" significa obtener el estado DI durante el movimiento anterior. Cuando esta instrucción se añade en un hilo auxiliar, es necesario seleccionar sí en la opción de si se aplica el hilo; cuando se utiliza esta instrucción en otros lugares, seleccionar no. Tras completar la selección, hacer clic en los botones "Añadir" y "Aplicar".
 
 .. image:: coding/084.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-2 GetDI指令界面
+.. centered:: Figura 9.6-2 Interfaz de la instrucción GetDI
 
-在“GetDO”指令中，选择想要获取端口号的数值，是否阻塞选项选择“阻塞”表示运动停止后获取DO状态，选择“非阻塞”选项表示在上一条运动过程中获取DO状态。选择完毕后点击“添加”、“应用”按钮即可。
+En la instrucción "GetDO", seleccionar el valor del número de puerto que se desea obtener; en la opción de bloqueo, seleccionar "Bloqueante" significa obtener el estado DO después de que se detenga el movimiento, y seleccionar "No bloqueante" significa obtener el estado DO durante el movimiento anterior. Tras completar la selección, hacer clic en los botones "Añadir" y "Aplicar".
 
 .. image:: coding/571.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-2-2 GetDO指令界面
+.. centered:: Figura 9.6-2-2 Interfaz de la instrucción GetDO
 
-模拟AI命令
-++++++++++++++++
+Comando AI analógica
+++++++++++++++++++++++++++++++++
 
-点击“模拟AI”图标进入AI命令编辑界面。
+Hacer clic en el icono "AI analógica" para entrar en la interfaz de edición del comando AI.
 
-在该指令中，分为设置模拟输出（SetAO/SPLCSetAO）和获取模拟输入（GetAI/SPLCGetAI）、获取模拟输出（GetAO）三部分功能。
+En esta instrucción se distinguen tres partes: establecer salida analógica (SetAO/SPLCSetAO), obtener entrada analógica (GetAI/SPLCGetAI) y obtener salida analógica (GetAO).
 
-“SetAO/SPLCSetAO”选择需要设置的模拟输出，输入需要设置的值，范围为0-10，是否阻塞选项选择“阻塞”表示运动停止后设置AO状态，选择“非阻塞”选项表示在上一条运动过程中设置AO状态。当该指令是添加在辅助线程中，是否应用线程需要选择是，其他地方使用该指令选择否。点击“添加”、“应用”即可。
+En "SetAO/SPLCSetAO", seleccionar la salida analógica que se desea establecer e introducir el valor que se desea establecer, con un rango de 0 a 10; en la opción de bloqueo, seleccionar "Bloqueante" significa establecer el estado AO después de que se detenga el movimiento, y seleccionar "No bloqueante" significa establecer el estado AO durante el movimiento anterior. Cuando esta instrucción se añade en un hilo auxiliar, es necesario seleccionar sí en la opción de si se aplica el hilo; cuando se utiliza esta instrucción en otros lugares, seleccionar no. Hacer clic en "Añadir" y "Aplicar".
 
 .. image:: coding/085.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-3 SetAO指令界面
+.. centered:: Figura 9.6-3 Interfaz de la instrucción SetAO
 
-“GetAI/SPLCGetAI”选择需要获取的模拟输入，是否阻塞选项选择“阻塞”表示运动停止后获取AI状态，选择“非阻塞”选项表示在上一条运动过程中获取AI状态。当该指令是添加在辅助线程中，是否应用线程需要选择是，其他地方使用该指令选择否。点击“添加”、“应用”即可。
+En "GetAI/SPLCGetAI", seleccionar la entrada analógica que se desea obtener; en la opción de bloqueo, seleccionar "Bloqueante" significa obtener el estado AI después de que se detenga el movimiento, y seleccionar "No bloqueante" significa obtener el estado AI durante el movimiento anterior. Cuando esta instrucción se añade en un hilo auxiliar, es necesario seleccionar sí en la opción de si se aplica el hilo; cuando se utiliza esta instrucción en otros lugares, seleccionar no. Hacer clic en "Añadir" y "Aplicar".
 
 .. image:: coding/086.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-4 GetAI指令界面
+.. centered:: Figura 9.6-4 Interfaz de la instrucción GetAI
 
-“GetAO”选择需要获取的模拟输入，是否阻塞选项选择“阻塞”表示运动停止后获取AI状态，选择“非阻塞”选项表示在上一条运动过程中获取AI状态。点击“添加”、“应用”即可。
+En "GetAO", seleccionar la entrada analógica que se desea obtener; en la opción de bloqueo, seleccionar "Bloqueante" significa obtener el estado AI después de que se detenga el movimiento, y seleccionar "No bloqueante" significa obtener el estado AI durante el movimiento anterior. Hacer clic en "Añadir" y "Aplicar".
 
 .. image:: coding/572.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-4-2 GetAO指令界面
+.. centered:: Figura 9.6-4-2 Interfaz de la instrucción GetAO
 
-虚拟IO命令
-++++++++++++++++
+Comando de IO virtual
+++++++++++++++++++++++++++++++++
 
-点击“虚拟IO”图标进入Vir-IO命令编辑界面。
+Hacer clic en el icono "IO virtual" para entrar en la interfaz de edición del comando Vir-IO.
 
-该指令虚拟的IO控制指令，可以实现设置模拟外部DI和AI状态，获取模拟DI和AI状态。
+Esta instrucción es un comando de control de IO virtual que permite establecer los estados simulados de DI y AI externas y obtener los estados simulados de DI y AI.
 
 .. image:: coding/087.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-5 Vir-IO指令界面
+.. centered:: Figura 9.6-5 Interfaz de la instrucción Vir-IO
 
-扩展IO命令
-++++++++++++++++
+Comando de IO extendida
+++++++++++++++++++++++++++++++++
 
-点击“扩展IO”图标进入Aux-IO命令编辑界面。
+Hacer clic en el icono "IO extendida" para entrar en la interfaz de edición del comando Aux-IO.
 
-Aux-IO是机器人与PLC通讯控制外部扩展IO的指令功能，需要机器人与PLC建立UDP通讯，在原有的16路输入输出基础上，可以扩展128路输入输出，该指令用法与前文所讲的通用IO用法类似。使用此功能，有一定技术难度，前请联系我们咨询。
+Aux-IO es la función de instrucción mediante la cual el robot controla IO extendidas externas comunicándose con el PLC; requiere que el robot establezca comunicación UDP con el PLC; sobre la base de las 16 entradas y salidas originales se pueden extender 128 entradas y salidas; el uso de esta instrucción es similar al uso de IO general descrito anteriormente. El uso de esta función tiene cierta dificultad técnica; póngase en contacto con nosotros para consultar antes de usarla.
 
 .. image:: coding/088.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-6 Aux-IO指令界面
+.. centered:: Figura 9.6-6 Interfaz de la instrucción Aux-IO
 
-运动DO命令
-++++++++++++++++
+Comando DO de movimiento
+++++++++++++++++++++++++++++++++
 
-点击“运动DO”图标进入MoveDO命令编辑界面。
+Hacer clic en el icono "DO de movimiento" para entrar en la interfaz de edición del comando MoveDO.
 
-该指令分为连续输出模式和单次输出模式。
+Esta instrucción se divide en modo de salida continua y modo de salida única.
 
-- 连续输出模式：实现直线运动过程中，根据设定的间隔，连续输出DO信号功能。
+- Modo de salida continua: permite emitir continuamente señales DO durante el movimiento en línea recta según el intervalo establecido.
 
 .. image:: coding/089.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-7 MoveDO指令连续输出界面
+.. centered:: Figura 9.6-7 Interfaz de salida continua de la instrucción MoveDO
 
-- 单次输出模式：可进行匀速段输出和自由配置两种选择。运动开始后输出置位时间，运动结束前输出复位时间，范围[0, 1000]。
+- Modo de salida única: permite elegir entre salida en el tramo de velocidad uniforme y configuración libre. El tiempo de activación de la salida tras el inicio del movimiento y el tiempo de desactivación de la salida antes del final del movimiento tienen un rango de [0, 1000].
 
 .. image:: coding/090.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-8 MoveDO指令单次输出界面
+.. centered:: Figura 9.6-8 Interfaz de salida única de la instrucción MoveDO
 
-运动AO命令
-++++++++++++++++
+Comando AO de movimiento
+++++++++++++++++++++++++++++++++
 
-点击“运动AO”图标进入MoveAO命令编辑界面。
+Hacer clic en el icono "AO de movimiento" para entrar en la interfaz de edición del comando MoveAO.
 
-1. 概述
+1. Descripción general
 
-该指令配合运动指令使用时，可实现在运动过程中，根据实时TCP速度按比例输出AO信号。
+Cuando esta instrucción se utiliza junto con instrucciones de movimiento, permite emitir señales AO de forma proporcional según la velocidad real del TCP durante el movimiento.
 
-2. 运动AO指令说明
+2. Descripción de la instrucción AO de movimiento
 
-运动AO指令位于示教模拟-程序示教指令编辑区域中，图标为控制指令-运动AO。
+La instrucción AO de movimiento se encuentra en el área de edición de instrucciones de enseñanza por simulación-programación de enseñanza; el icono es Instrucciones de control- AO de movimiento.
 
 .. image:: coding/091.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-9 运动AO指令
+.. centered:: Figura 9.6-9 Instrucción AO de movimiento
 
 .. image:: coding/092.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-10 运动AO指令明细
+.. centered:: Figura 9.6-10 Detalle de la instrucción AO de movimiento
 
-- AO编号：下拉列表选择，Ctrl-AO0对应控制箱AO0，Ctrl-AO1对应控制箱AO1，End-AO0对应末端AO0。
+- Número AO: seleccionar en la lista desplegable; Ctrl-AO0 corresponde a AO0 de la caja de control, Ctrl-AO1 corresponde a AO1 de la caja de control y End-AO0 corresponde a AO0 del extremo.
   
-- 最大TCP速度：机器人最大TCP速度值；作用：与实时TCP速度形成比例。
+- Velocidad máxima del TCP: valor de velocidad máxima del TCP del robot; función: formar una proporción con la velocidad real del TCP.
   
-- 最大TCP速度AO百分比：机器人最大TCP速度值对应的AO百分比；作用：设置AO输出的上限值。
+- Porcentaje AO de la velocidad máxima del TCP: porcentaje AO correspondiente al valor de velocidad máxima del TCP del robot; función: establecer el valor límite superior de la salida AO.
   
-- 死区补偿值AO百分比：当比例阀存在死区时，可设置该参数以保证AO输出；作用：设置AO输出的下限值。
+- Porcentaje AO del valor de compensación de zona muerta: cuando la válvula proporcional tiene zona muerta, se puede configurar este parámetro para garantizar la salida AO; función: establecer el valor límite inferior de la salida AO.
 
 .. important:: 
-   计算公式：输出AO百分比=实时TCP速度/设置最大TCP速度*设置最大TCP速度AO百分比。
+   Fórmula de cálculo: porcentaje AO de salida = velocidad real del TCP / velocidad máxima del TCP configurada * porcentaje AO de la velocidad máxima del TCP configurada.
 
-   该指令配套的运动指令如下：PTP/LIN/ARC/CIRCLE/SPLINE/NSPLINE/SERVOJ。
+   Las instrucciones de movimiento que acompañan a esta instrucción son: PTP/LIN/ARC/CIRCLE/SPLINE/NSPLINE/SERVOJ.
 
-坐标系命令
-++++++++++++++++
+Comando de sistema de coordenadas
+++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“坐标系”图标进入ToolList命令编辑界面。
+Hacer clic en el icono "Sistema de coordenadas" para entrar en la interfaz de edición del comando ToolList.
 
-选择工具坐标系名称，点击“应用”添加该指令到程序中，当程序运行该语句，会设定机器人的工具坐标系。
+Seleccionar el nombre del sistema de coordenadas de herramienta y hacer clic en "Aplicar" para añadir esta instrucción al programa; cuando el programa ejecute esta sentencia, se establecerá el sistema de coordenadas de herramienta del robot.
 
 .. image:: coding/093.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-11 ToolList指令界面
+.. centered:: Figura 9.6-11 Interfaz de la instrucción ToolList
 
-模式切换命令
-++++++++++++++++
+Comando de cambio de modo
+++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“模式切换”图标进入Mode命令编辑界面。
+Hacer clic en el icono "Cambio de modo" para entrar en la interfaz de edición del comando Mode.
 
-该指令可切换机器人到手动模式，通常在一个程序结尾处添加，以便用户在程序运行结束后，使机器人自动切换到手动模式，拖动机器人。
+Esta instrucción permite cambiar el robot al modo manual; normalmente se añade al final de un programa para que, tras finalizar la ejecución del programa, el usuario pueda hacer que el robot cambie automáticamente al modo manual y arrastrarlo.
 
 .. image:: coding/094.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-12 Mode指令界面
+.. centered:: Figura 9.6-12 Interfaz de la instrucción Mode
 
-碰撞等级命令
-++++++++++++++++
+Comando de nivel de colisión
+++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“碰撞等级”图标进入Collision命令编辑界面。
+Hacer clic en el icono "Nivel de colisión" para entrar en la interfaz de edición del comando Collision.
 
-该指令碰撞等级设置，通过该指令可以在程序运行中实时调节各轴碰撞等级，更灵活的部署应用场景。
+Esta instrucción permite configurar el nivel de colisión; mediante esta instrucción se puede ajustar en tiempo real durante la ejecución del programa el nivel de colisión de cada eje, desplegando los escenarios de aplicación de forma más flexible.
 
 .. image:: coding/095.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-13 Collision指令界面
+.. centered:: Figura 9.6-13 Interfaz de la instrucción Collision
 
-加速度命令
-++++++++++++++++
+Comando de aceleración
+++++++++++++++++++++++++++++++++
 
-点击“加速度”图标进入Acc命令编辑界面。
+Hacer clic en el icono "Aceleración" para entrar en la interfaz de edición del comando Acc.
 
-Acc指令是实现机器人加速度可单独设置功能，通过调节运动指令加速度缩放因子，可以增加或减小加减速时间，实现机器人动作节拍时间可调。
+La instrucción Acc permite configurar de forma independiente la aceleración del robot; mediante el ajuste del factor de escala de aceleración de la instrucción de movimiento se puede aumentar o reducir el tiempo de aceleración/deceleración, logrando un tiempo de ciclo de acción del robot ajustable.
 
 .. image:: coding/096.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.6-14 Acc指令界面
+.. centered:: Figura 9.6-14 Interfaz de la instrucción Acc
 
-外设指令界面 
-~~~~~~~~~~~~~
+Interfaz de instrucciones de periféricos 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: coding/097.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.7 外设指令界面  
+.. centered:: Figura 9.7 Interfaz de instrucciones de periféricos  
 
-夹爪命令
+Comando de pinza
 ++++++++++++++++
 
-点击“夹爪”图标进入Gripper命令编辑界面。
+Hacer clic en el icono "Pinza" para entrar en la interfaz de edición del comando Gripper.
 
-在该指令中，分为夹爪运动控制指令和夹爪激活/复位指令，夹爪控制指令中，显示完成配置并且已被激活的夹爪编号，用户可以通过编辑框编辑，或者滑动条滑动至所需的值来完成对夹爪开闭、开闭速度和开闭力矩的设置，数值为百分比，是否阻塞功能选项，选择阻塞即夹爪运动需等待上一条运动指令执行完才执行，选择非阻塞即夹爪运动与上一条运动指令并行。点击“添加”、“应用”按钮，即可将设置的值保存至示教文件中。夹爪复位/激活指令，显示已经配置的夹爪编号，可以添加复位/激活指令到程序中。
+En esta instrucción se distinguen las instrucciones de control del movimiento de la pinza y las instrucciones de activación/restablecimiento de la pinza. En las instrucciones de control de la pinza se muestra el número de la pinza que ha completado la configuración y ha sido activada; el usuario puede, mediante el cuadro de edición o deslizando el control deslizante hasta el valor deseado, configurar la apertura/cierre, la velocidad de apertura/cierre y el par de apertura/cierre de la pinza, con valores en porcentaje; en la opción de bloqueo, seleccionar bloqueante significa que el movimiento de la pinza debe esperar a que finalice la ejecución de la instrucción de movimiento anterior, mientras que seleccionar no bloqueante significa que el movimiento de la pinza es paralelo a la instrucción de movimiento anterior. Hacer clic en los botones "Añadir" y "Aplicar" para guardar los valores configurados en el archivo de enseñanza. Las instrucciones de restablecimiento/activación de la pinza muestran el número de la pinza ya configurada y permiten añadir la instrucción de restablecimiento/activación al programa.
 
 .. image:: coding/098.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.7-1 Gripper指令界面
+.. centered:: Figura 9.7-1 Interfaz de la instrucción Gripper
 
-喷枪命令
-++++++++++++++++
+Comando de pistola de pulverización
+++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“喷枪”图标进入Spray命令编辑界面。
+Hacer clic en el icono "Pistola de pulverización" para entrar en la interfaz de edición del comando Spray.
 
-该指令为喷涂相关指令，控制喷枪“开始喷涂”、“停止喷涂”、“开始清枪”和“停止轻枪”。在编辑该程序命令时，需确认已经配置好喷枪外设，详见机器人外设章节。
+Esta instrucción es una instrucción relacionada con la pulverización y controla "Iniciar pulverización", "Detener pulverización", "Iniciar limpieza de pistola" y "Detener limpieza de pistola" de la pistola de pulverización. Al editar este comando de programa es necesario confirmar que el periférico de la pistola de pulverización ya está configurado; consulte el capítulo de periféricos del robot para más detalles.
 
 .. image:: coding/099.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.7-2 Spray指令界面
+.. centered:: Figura 9.7-2 Interfaz de la instrucción Spray
 
-外部轴命令
-++++++++++++++++
+Comando de eje externo
+++++++++++++++++++++++++++++++++
 
-点击“外部轴”图标进入EAxis命令编辑界面。，选择组合模式：
+Hacer clic en el icono "Eje externo" para entrar en la interfaz de edición del comando EAxis. Seleccionar el modo de combinación:
 
-- 控制器+伺服驱动器(485)
-- 控制器+PLC(UDP)
+- Controlador + servomotor (485)
+- Controlador + PLC (UDP)
 
-选择控制器+PLC(UDP)，该指令针对使用外部轴的场景，与PTP指令组合使用，可将空间上一点X轴方向上的移动分解到外部轴运动。选择外部轴编号，运动方式选同步，选择需要到达的点，点击“添加”、“应用”后可保存该条指令。
+Seleccionar Controlador + PLC (UDP); esta instrucción está orientada a escenarios en los que se utiliza un eje externo y, combinada con la instrucción PTP, permite descomponer el movimiento de un punto en el espacio en la dirección del eje X en el movimiento del eje externo. Seleccionar el número de eje externo, seleccionar sincronizado como modo de movimiento, seleccionar el punto al que se desea llegar y hacer clic en "Añadir" y "Aplicar" para guardar esta instrucción.
 
 .. image:: coding/100.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.7-3 EAxis指令界面
+.. centered:: Figura 9.7-3 Interfaz de la instrucción EAxis
 
-选择控制器+伺服驱动器(485)，该指令可对扩展轴参数进行配置。根据不同的控制模式设置不同的参数。已配置好的扩展轴，可对其零点设定。
+Seleccionar Controlador + servomotor (485); esta instrucción permite configurar los parámetros del eje extendido. Configurar parámetros diferentes según los distintos modos de control. Para un eje extendido ya configurado se puede establecer su punto cero.
 
 .. image:: coding/101.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.7-4 扩展轴指令界面
+.. centered:: Figura 9.7-4 Interfaz de la instrucción de eje extendido
 
-传送带命令
-++++++++++++++++
+Comando de cinta transportadora
+++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“传送带”图标进入Convey命令编辑界面。
+Hacer clic en el icono "Cinta transportadora" para entrar en la interfaz de edición del comando Convey.
 
-该指令包含位置实时检测，IO实时检测，跟踪开启和跟踪关闭四条命令。详见机器人外设章节。
+Esta instrucción incluye cuatro comandos: detección de posición en tiempo real, detección de IO en tiempo real, inicio de seguimiento y fin de seguimiento. Consulte el capítulo de periféricos del robot para más detalles.
 
 .. image:: coding/102.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.7-5 Conveyor指令界面
+.. centered:: Figura 9.7-5 Interfaz de la instrucción Conveyor
    
-传送带原地跟踪运动功能
-***********************************************************************
+Función de movimiento de seguimiento en el lugar de la cinta transportadora
+****************************************************************************************
 
-概述
+Descripción general
 """""""""""""""""""""""""""""""""""
+Esta función permite al robot identificar y seguir de forma sincronizada un objeto que se mueve sobre la cinta transportadora y, sin detener la cinta transportadora, realizar el movimiento de "quietud relativa" entre el robot y el objeto.
 
-本功能是指机器人能够识别并同步追踪在传送带上运动的物体，然后在不停止传送带的情况下，实现机器人与物体的“相对静止”运动。
+Flujo de operación
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-操作流程
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+**Step1**: Hacer clic en "Aplicaciones auxiliares"-"Paquete de proceso"-"Seguimiento de cinta transportadora" para configurar los parámetros de seguimiento de cinta transportadora, incluidos "Configuración de I/O", "Configuración de parámetros", "Compensación del punto de agarre" (solo es necesario configurar para la función "Seguimiento y agarre") y "Configuración del punto de referencia". Entre ellos, la posición del "Punto inicial a" en la "Configuración del punto de referencia" es la posición del objeto al inicio del movimiento de la cinta transportadora; la posición del "Punto final b" es la posición del objeto al final del movimiento de la cinta transportadora. Para los pasos detallados de operación, consulte el capítulo correspondiente.
 
-**Step1**：点击“辅助应用”-“工艺包”-“传送带跟踪”进行传送带跟踪参数配置，包括“I/O配置”、“参数配置”、“抓取点补偿”（仅“跟踪抓取”功能需配置）和“参考点配置”。其中“参考点配置”中的“起始点a”的位置，为传送带运动开始时的物体位置；“终点b”的位置，为传送带运动结束的物体位置。详细操作步骤见相应章节。
+**Step2**: El movimiento de seguimiento utiliza el sistema de coordenadas de pieza como sistema de coordenadas de la cinta transportadora, por lo que es necesario configurar el sistema de coordenadas de pieza. Hacer clic en "Configuración inicial"-"Básico", seleccionar "Sistema de coordenadas de pieza" y hacer clic para seleccionar un sistema de coordenadas de pieza distinto de "wobjcoord0" para calibrarlo; el método de calibración se describe en el capítulo correspondiente.
 
-**Step2**：跟踪运动使用工件坐标系作为传送带坐标系，因此需要设置工件坐标系。点击“初始设置”-“基础”，选择“工件坐标系”，点击选择“wobjcoord0”以外的工件坐标系进行标定，标定方式参考相应章节。
+**Step3**: Hacer clic en "Programa de enseñanza"-"Programación de programas"-"Cinta transportadora" para entrar en la página de configuración de la función de cinta transportadora.
 
-**Step3**：点击“示教程序”-“程序编程”-“传送带”，进入传送带功能配置页面。
-
-**Step4**：点击“跟踪开启”按钮，工作模式选为“跟踪运动”，点击“添加”按钮。
+**Step4**: Hacer clic en el botón "Inicio de seguimiento", seleccionar "Seguimiento de movimiento" como modo de trabajo y hacer clic en el botón "Añadir".
 
 .. image:: coding/590.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.7-5-1 跟踪开启设置
+.. centered:: Figura 9.7-5-1 Configuración de inicio de seguimiento
 
-**Step5**：点击“I/O实时检测”按钮，设置最大等待时间，点击“添加”按钮。
+**Step5**: Hacer clic en el botón "Detección de I/O en tiempo real", configurar el tiempo máximo de espera y hacer clic en el botón "Añadir".
 
 .. image:: coding/591.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.7-5-2 I/O实时检测设置
+.. centered:: Figura 9.7-5-2 Configuración de detección de I/O en tiempo real
 
-**Step6**：点击“位置实时检测”按钮，工作模式选为“跟踪运动”，点击“添加”按钮。
+**Step6**: Hacer clic en el botón "Detección de posición en tiempo real", seleccionar "Seguimiento de movimiento" como modo de trabajo y hacer clic en el botón "Añadir".
 
 .. image:: coding/592.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.7-5-3 位置实时检测设置
+.. centered:: Figura 9.7-5-3 Configuración de detección de posición en tiempo real
 
-**Step7**：点击“原地跟踪运动”按钮，工作模式有“时间”、“距离”和“时间+距离”三种。其中，“时间”模式，需设置运动时间，从传送带跟踪开启处计算，满足设定的时间后，会停止跟踪运动；“距离”模式，需设置运动距离，从传送带跟踪开启处计算，满足设定的距离后，会停止跟踪运动；“时间+距离”模式，需同时设置运动时间和运动距离，从传送带跟踪开启处计算，满足设定的时间或距离的一个条件时，会停止跟踪运动。注意：为了运动环境的安全，这三种运动模式的最大跟踪位置，均不会超过传送带标定时“终点b”的位置。点击“添加”按钮。
+**Step7**: Hacer clic en el botón "Movimiento de seguimiento en el lugar"; los modos de trabajo son tres: "Tiempo", "Distancia" y "Tiempo + Distancia". Entre ellos, en el modo "Tiempo" es necesario configurar el tiempo de movimiento; calculado desde el inicio del seguimiento de la cinta transportadora, al cumplirse el tiempo establecido se detiene el movimiento de seguimiento; en el modo "Distancia" es necesario configurar la distancia de movimiento; calculada desde el inicio del seguimiento de la cinta transportadora, al cumplirse la distancia establecida se detiene el movimiento de seguimiento; en el modo "Tiempo + Distancia" es necesario configurar simultáneamente el tiempo de movimiento y la distancia de movimiento; calculados desde el inicio del seguimiento de la cinta transportadora, al cumplirse una de las dos condiciones, tiempo o distancia, se detiene el movimiento de seguimiento. Nota: por la seguridad del entorno de movimiento, la posición máxima de seguimiento de estos tres modos de movimiento no superará la posición del "Punto final b" de la calibración de la cinta transportadora. Hacer clic en el botón "Añadir".
 
 .. image:: coding/593.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.7-5-4 原地跟踪运动参数设置
+.. centered:: Figura 9.7-5-4 Configuración de parámetros del movimiento de seguimiento en el lugar
 
-**Step8**：点击“跟踪关闭”按钮，点击“添加”按钮。
+**Step8**: Hacer clic en el botón "Fin de seguimiento" y hacer clic en el botón "Añadir".
 
 .. image:: coding/594.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.7-5-5 跟踪关闭设置
+.. centered:: Figura 9.7-5-5 Configuración de fin de seguimiento
 
-**Step9**：生成的传送带原地跟踪运动的lua程序如图所示，运行该程序，即可实现传送带原地跟踪运动。
+**Step9**: El programa lua generado para el movimiento de seguimiento en el lugar de la cinta transportadora se muestra en la figura; ejecutar dicho programa permite realizar el movimiento de seguimiento en el lugar de la cinta transportadora.
 
 .. image:: coding/595.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.7-5-6 传送带原地跟踪运动lua程序
+.. centered:: Figura 9.7-5-6 Programa lua del movimiento de seguimiento en el lugar de la cinta transportadora
 
-打磨设备命令
-++++++++++++++++
+Comando de equipo de pulido
+++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“打磨设备”图标进入Polish命令编辑界面。
+Hacer clic en el icono "Equipo de pulido" para entrar en la interfaz de edición del comando Polish.
 
-该指令可设置打磨设备的转速、接触力、伸出距离和控制模式等。
+Esta instrucción permite configurar la velocidad de rotación, la fuerza de contacto, la distancia de extensión y el modo de control del equipo de pulido, etc.
 
 .. image:: coding/103.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.7-6 Polish命令界面
+.. centered:: Figura 9.7-6 Interfaz del comando Polish
 
-焊接指令界面
-~~~~~~~~~~~~~
+Interfaz de instrucciones de soldadura
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: coding/104.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8 焊接指令界面  
+.. centered:: Figura 9.8 Interfaz de instrucciones de soldadura  
 
-焊接命令
-++++++++++++++++
+Comando de soldadura
+++++++++++++++++++++++++++++++++
 
-点击“焊接”图标进入Weld命令编辑界面。
+Hacer clic en el icono "Soldadura" para entrar en la interfaz de edición del comando Weld.
 
-该指令主要用于焊机外设，在添加该指令前请确认在用户外设中焊机配置是否完成，详见机器人外设章节。
+Esta instrucción se utiliza principalmente para periféricos de máquina de soldar; antes de añadir esta instrucción, confirme si la configuración de la máquina de soldar en los periféricos del usuario está completa; consulte el capítulo de periféricos del robot para más detalles.
 
-- 焊接电压范围： 0~700V 
-- 焊接电流范围： 0~1000A
+- Rango de tensión de soldadura: 0~700V 
+- Rango de corriente de soldadura: 0~1000A
 
-.. important:: 配置输出AO、焊接电流、焊接电压时，需要选择I/O类型。若选择控制器I/O，则需选择对应得输出AO。
+.. important:: Al configurar la salida AO, la corriente de soldadura y la tensión de soldadura, es necesario seleccionar el tipo de I/O. Si se selecciona I/O del controlador, es necesario seleccionar la salida AO correspondiente.
 
 .. image:: coding/105.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-1 Weld指令界面
+.. centered:: Figura 9.8-1 Interfaz de la instrucción Weld
 
-段焊命令
-++++++++++++++++
+Comando de soldadura por segmentos
+++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“段焊”图标进入Segment命令编辑界面。
+Hacer clic en el icono "Soldadura por segmentos" para entrar en la interfaz de edición del comando Segment.
 
-协作机器人通过添加段焊指令可以进行段焊操作，在添加段焊指令前需要先选择段焊模式，并示教起始点和终点。段焊模式分为不变化姿态和变化姿态，机器人根据所选段焊模式，来考虑焊接轨迹过程中是否变化姿态。
+El robot colaborativo puede realizar operaciones de soldadura por segmentos añadiendo la instrucción de soldadura por segmentos; antes de añadir la instrucción de soldadura por segmentos es necesario seleccionar primero el modo de soldadura por segmentos y enseñar el punto inicial y el punto final. El modo de soldadura por segmentos se divide en actitud sin cambios y actitud cambiante; el robot, según el modo de soldadura por segmentos seleccionado, considera si cambia de actitud durante la trayectoria de soldadura.
 
-示教起始点位“segment01”和终点“segment02”，确认焊接轨迹起始点和终点位置，如下图。
+Enseñar el punto inicial "segment01" y el punto final "segment02" y confirmar la posición del punto inicial y del punto final de la trayectoria de soldadura, como se muestra en la figura siguiente.
 
 .. image:: coding/106.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.8-2-1 起始点位“segment01”
+.. centered:: Figura 9.8-2-1 Punto inicial "segment01"
 
 .. image:: coding/107.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.8-2-2 终点“segment02”
+.. centered:: Figura 9.8-2-2 Punto final "segment02"
 
-段焊指令添加
-**************
+Adición de la instrucción de soldadura por segmentos
+********************************************************
 
-**Step1**：新建用户程序“testSegment1.lua”，点击“段焊”按钮，打开段焊指令添加页面。
+**Step1**: Crear el programa de usuario "testSegment1.lua" y hacer clic en el botón "Soldadura por segmentos" para abrir la página de adición de la instrucción de soldadura por segmentos.
 
 .. image:: coding/108.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-2-3 添加段焊指令按钮
+.. centered:: Figura 9.8-2-3 Botón de adición de la instrucción de soldadura por segmentos
 
-**Step2**：在段焊指令添加页面中选择“起始点”为“segment01”，选择“终点”为“segment02”。
+**Step2**: En la página de adición de la instrucción de soldadura por segmentos, seleccionar "segment01" como "Punto inicial" y "segment02" como "Punto final".
 
 .. image:: coding/109.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-2-4 段焊起始点、终点
+.. centered:: Figura 9.8-2-4 Punto inicial y punto final de la soldadura por segmentos
 
-**Step3**：配置调试速度、执行长度、非执行长度、功能模式、摆动选择和取整规则，依次点击“添加”按钮和“应用”按钮。
+**Step3**: Configurar la velocidad de depuración, la longitud de ejecución, la longitud de no ejecución, el modo de función, la selección de oscilación y la regla de redondeo, y hacer clic sucesivamente en el botón "Añadir" y en el botón "Aplicar".
 
-**Step4**：此时“testSegment1.lua”已经增加段焊运动指令。
+**Step4**: En este momento "testSegment1.lua" ya tiene añadida la instrucción de movimiento de soldadura por segmentos.
 
 .. image:: coding/110.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-2-5 段焊运动指令添加
+.. centered:: Figura 9.8-2-5 Adición de la instrucción de movimiento de soldadura por segmentos
 
-段焊运动轨迹姿态变化
-**********************
+Cambio de actitud de la trayectoria de movimiento de soldadura por segmentos
+********************************************************************************************
 
-协作机器人的段焊运动可选择段焊模式，模式类型包括以下两种类型；
+El movimiento de soldadura por segmentos del robot colaborativo permite seleccionar el modo de soldadura por segmentos; los tipos de modo incluyen los dos siguientes:
 
-**不变化姿态**：机器人在焊接轨迹过程中始终保持焊接轨迹起始点姿态运行。
+**Actitud sin cambios**: el robot mantiene siempre la actitud del punto inicial de la trayectoria de soldadura durante el proceso de soldadura.
 
-**变化姿态**：机器人在焊接轨迹过程中，计算每一段轨迹的笛卡尔位姿和关节位置，在段焊运行过程中变化姿态。
+**Actitud cambiante**: el robot calcula la pose cartesiana y la posición articular de cada segmento de trayectoria durante el proceso de soldadura y cambia de actitud durante la ejecución de la soldadura por segmentos.
 
-下面分别演示“不变化姿态”和“变化姿态”的用法。
+A continuación se demuestra respectivamente el uso de "Actitud sin cambios" y "Actitud cambiante".
 
-1. 不变化姿态
+1. Actitud sin cambios
    
-打开段焊指令添加页面，“段焊模式”选择“不变化姿态”，同样选择起始点”为“segment01”，“终点”为“segment02”，执行长度设置100，非执行长度设置成50，并选择其他相关配置后保存程序。
+Abrir la página de adición de la instrucción de soldadura por segmentos, seleccionar "Actitud sin cambios" en "Modo de soldadura por segmentos", seleccionar igualmente "segment01" como punto inicial y "segment02" como "Punto final", configurar la longitud de ejecución en 100 y la longitud de no ejecución en 50, seleccionar las demás configuraciones relacionadas y guardar el programa.
 
 .. image:: coding/111.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-2-6 不变化姿态段焊模式
+.. centered:: Figura 9.8-2-6 Modo de soldadura por segmentos con actitud sin cambios
 
-2. 变化姿态
+2. Actitud cambiante
    
-打开段焊指令添加页面，“段焊模式”选择“变化姿态”，同样选择起始点”为“segment01”，“终点”为“segment02”，执行长度设置100，非执行长度设置成50，并选择其他相关配置后保存程序。
+Abrir la página de adición de la instrucción de soldadura por segmentos, seleccionar "Actitud cambiante" en "Modo de soldadura por segmentos", seleccionar igualmente "segment01" como punto inicial y "segment02" como "Punto final", configurar la longitud de ejecución en 100 y la longitud de no ejecución en 50, seleccionar las demás configuraciones relacionadas y guardar el programa.
 
 .. image:: coding/112.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-2-7 变化姿态段焊模式
+.. centered:: Figura 9.8-2-7 Modo de soldadura por segmentos con actitud cambiante
 
-3. 段焊运行类型
+3. Tipos de ejecución de la soldadura por segmentos
 
-运行程序，机器人段焊运行情况分为如下几种：
+Ejecutar el programa; las situaciones de ejecución de la soldadura por segmentos del robot son las siguientes:
 
-1) 若功能模式选择第一段执行功能，摆动选择执行段摆动，取整规则不取整。则机器人100mm执行摆动运动，50mm执行直线运动交替进行，到终点时停止；
+1) Si en el modo de función se selecciona la función de ejecución del primer segmento, en la selección de oscilación se selecciona la oscilación del segmento de ejecución y la regla de redondeo es sin redondeo. Entonces el robot ejecuta alternativamente movimiento de oscilación durante 100 mm y movimiento en línea recta durante 50 mm, y se detiene al llegar al punto final;
 
 .. image:: coding/113.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-2-8 第一段执行摆动功能不取整
+.. centered:: Figura 9.8-2-8 Función de oscilación de ejecución del primer segmento sin redondeo
 
-2) 若功能模式选择第一段不执行功能，摆动选择不执行段摆动，取整规则不取整。则机器人50mm执行摆动运动，100mm执行直线运动交替进行，到终点时停止；
+2) Si en el modo de función se selecciona la no ejecución de función del primer segmento, en la selección de oscilación se selecciona la no ejecución de oscilación del segmento y la regla de redondeo es sin redondeo. Entonces el robot ejecuta alternativamente movimiento de oscilación durante 50 mm y movimiento en línea recta durante 100 mm, y se detiene al llegar al punto final;
 
 .. image:: coding/114.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-2-9 第一段不执行摆动功能不取整
+.. centered:: Figura 9.8-2-9 Función de oscilación de no ejecución del primer segmento sin redondeo
 
-3) 若功能模式选择第一段执行功能，摆动选择执行段摆动，取整规则取整。则机器人100mm执行摆动运动，50mm执行直线运动交替进行，最后一段整体循环结束后，如果剩余距离小于150mm，则停止摆动；
+3) Si en el modo de función se selecciona la función de ejecución del primer segmento, en la selección de oscilación se selecciona la oscilación del segmento de ejecución y la regla de redondeo es redondeo. Entonces el robot ejecuta alternativamente movimiento de oscilación durante 100 mm y movimiento en línea recta durante 50 mm; tras finalizar el ciclo completo del último segmento, si la distancia restante es inferior a 150 mm, se detiene la oscilación;
 
 .. image:: coding/115.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-2-10 第一段执行摆动功能循环取整
+.. centered:: Figura 9.8-2-10 Función de oscilación de ejecución del primer segmento con redondeo de ciclo
 
-4) 若功能模式选择第一段执行功能，摆动选择不执行段摆动，取整规则取整。则机器人50mm执行摆动运动，100mm执行直线运动交替进行，最后一段整体循环结束后，如果剩余距离小于150mm，则停止摆动；
+4) Si en el modo de función se selecciona la función de ejecución del primer segmento, en la selección de oscilación se selecciona la no ejecución de oscilación del segmento y la regla de redondeo es redondeo. Entonces el robot ejecuta alternativamente movimiento de oscilación durante 50 mm y movimiento en línea recta durante 100 mm; tras finalizar el ciclo completo del último segmento, si la distancia restante es inferior a 150 mm, se detiene la oscilación;
 
 .. image:: coding/116.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-2-11 第一段不执行摆动功能循环取整
+.. centered:: Figura 9.8-2-11 Función de oscilación de no ejecución del primer segmento con redondeo de ciclo
 
-5) 若功能模式选择第一段执行功能，摆动选择执行段摆动，取整规则单段取整。则机器人100mm执行摆动运动，50mm执行直线运动交替进行，最后一段循环结束后，如果下一段是100mm执行摆动规划且剩余距离小于100mm，则停止摆动；如果下一段是50mm执行直线运动规划且剩余距离小于50mm，则运动停止；
+5) Si en el modo de función se selecciona la función de ejecución del primer segmento, en la selección de oscilación se selecciona la oscilación del segmento de ejecución y la regla de redondeo es redondeo de un solo segmento. Entonces el robot ejecuta alternativamente movimiento de oscilación durante 100 mm y movimiento en línea recta durante 50 mm; tras finalizar el ciclo del último segmento, si el siguiente segmento es de 100 mm de planificación de ejecución de oscilación y la distancia restante es inferior a 100 mm, se detiene la oscilación; si el siguiente segmento es de 50 mm de planificación de movimiento en línea recta y la distancia restante es inferior a 50 mm, se detiene el movimiento;
 
 .. image:: coding/117.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-2-12 第一段执行摆动功能单段取整
+.. centered:: Figura 9.8-2-12 Función de oscilación de ejecución del primer segmento con redondeo de un solo segmento
 
-6) 若功能模式选择第一段执行功能，摆动选择不执行段摆动，取整规则单段取整。则机器人50mm执行摆动运动，100mm执行直线运动交替进行，最后一段循环结束后，如果下一段是50mm执行摆动规划且剩余距离小于50mm，则停止摆动；如果下一段是100mm执行直线运动规划且剩余距离小于100mm，则运动停止。
+6) Si en el modo de función se selecciona la función de ejecución del primer segmento, en la selección de oscilación se selecciona la no ejecución de oscilación del segmento y la regla de redondeo es redondeo de un solo segmento. Entonces el robot ejecuta alternativamente movimiento de oscilación durante 50 mm y movimiento en línea recta durante 100 mm; tras finalizar el ciclo del último segmento, si el siguiente segmento es de 50 mm de planificación de ejecución de oscilación y la distancia restante es inferior a 50 mm, se detiene la oscilación; si el siguiente segmento es de 100 mm de planificación de movimiento en línea recta y la distancia restante es inferior a 100 mm, se detiene el movimiento.
 
 .. image:: coding/118.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-2-13 第一段不执行摆动功能单段取整
+.. centered:: Figura 9.8-2-13 Función de oscilación de no ejecución del primer segmento con redondeo de un solo segmento
 
-4. 姿态对比
+4. Comparación de actitudes
    
-配置不同段焊模式时，机器人焊接轨迹运行中的姿态也会不同，运行过程中姿态对比如下：
+Al configurar distintos modos de soldadura por segmentos, la actitud del robot durante la ejecución de la trayectoria de soldadura también será diferente; la comparación de actitudes durante la ejecución es la siguiente:
 
 .. image:: coding/119.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.8-2-14 焊接轨迹初始姿态
+.. centered:: Figura 9.8-2-14 Actitud inicial de la trayectoria de soldadura
 
 .. image:: coding/120.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.8-2-15 运行过程中不变化姿态
+.. centered:: Figura 9.8-2-15 Actitud sin cambios durante la ejecución
 
 .. image:: coding/121.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.8-2-16 运行过程中变化姿态
+.. centered:: Figura 9.8-2-16 Actitud cambiante durante la ejecución
 
-段焊实际场景
-**************
-在实际测试环境中，机器人需要安装焊枪等配置，根据创建的段焊指令，在焊接板上进行焊接操作，实际场景图如下：
+Escenario real de soldadura por segmentos
+********************************************************
+En un entorno de prueba real, el robot necesita instalar la antorcha de soldadura y otras configuraciones; según la instrucción de soldadura por segmentos creada, se realizan operaciones de soldadura sobre la placa de soldadura; la figura del escenario real es la siguiente:
 
 .. image:: coding/122.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.8-2-17 段焊实际场景
+.. centered:: Figura 9.8-2-17 Escenario real de soldadura por segmentos
 
-激光跟踪命令
-++++++++++++++++
+Comando de seguimiento láser
+++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“激光跟踪”图标进入Laser命令编辑界面。
+Hacer clic en el icono "Seguimiento láser" para entrar en la interfaz de edición del comando Laser.
 
-该指令包含激光命令、跟踪命令和寻位命令三部分，在添加该指令前，请确认用户外设中激光跟踪传感器是否已经配置成功。详见机器人外设章节。
+Esta instrucción incluye tres partes: comandos láser, comandos de seguimiento y comandos de búsqueda de posición; antes de añadir esta instrucción, confirme si el sensor de seguimiento láser en los periféricos del usuario se ha configurado correctamente. Consulte el capítulo de periféricos del robot para más detalles.
 
-传感器加载模块中，根据功能选择显示相应“传感器命令”界面后，进行传感器命令配置：
+En el módulo de carga de sensor, tras seleccionar la función correspondiente para mostrar la interfaz "Comando de sensor", configurar el comando de sensor:
 
-**睿牛/创想**：输入焊缝类型，范围：0~49整数
+**Ruineng/Chuangxiang**: introducir el tipo de soldadura, rango: entero de 0~49
 
 .. image:: coding/123.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-3-1 Laser指令界面(焊缝类型)
+.. centered:: Figura 9.8-3-1 Interfaz de la instrucción Laser (tipo de soldadura)
 
-**全视**：输入任务号，范围：0~255整数
+**Quanshi**: introducir el número de tarea, rango: entero de 0~255
 
 .. image:: coding/124.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-3-2 Laser指令界面(任务号)
+.. centered:: Figura 9.8-3-2 Interfaz de la instrucción Laser (número de tarea)
 
-激光传感器定点跟踪功能
-******************************************
+Función de seguimiento de punto fijo del sensor láser
+*******************************************************************
 
-概述
-""""""""""""""""""""""
-目前激光定点跟踪是基于扩展轴方式进行实现，新增加自定义跟踪时间跟踪或IO触发跟踪方式，以适配多种应用场景。当选择自定义跟踪时间跟踪方式时，需设定跟踪时间，程序开始运行时进行激光跟踪，运动到设定时间时退出跟踪；当选择IO触发跟踪方式时，运行lua程序或SDK程序，IO触发时进行跟踪，IO消除时退出激光跟踪。
+Descripción general
+""""""""""""""""""""""""
+Actualmente el seguimiento de punto fijo láser se implementa mediante el modo de eje extendido; se han añadido el modo de seguimiento por tiempo personalizado y el modo de seguimiento por activación IO, para adaptarse a múltiples escenarios de aplicación. Cuando se selecciona el modo de seguimiento por tiempo personalizado, es necesario establecer el tiempo de seguimiento: el programa inicia el seguimiento láser al comenzar la ejecución y sale del seguimiento al alcanzar el tiempo establecido; cuando se selecciona el modo de seguimiento por activación IO, al ejecutar el programa lua o el programa SDK se realiza el seguimiento al activarse la IO y se sale del seguimiento láser al desactivarse la IO.
 
-自定义跟踪时间跟踪操作流程
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Flujo de operación del seguimiento por tiempo personalizado
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”-“外设”-“线激光传感器”的“已适配设备”进入配置页面，配置页面包括“传感器配置”、“通信配置与加载”、“基准计算”等内容。点击“传感器配置”可设置传感器输入量滤波参数，最大差值根据实际情况进行设置，数据处理选为“原始数据（无变换）”，灵敏度系数X方向设置为0，Y方向和Z方向根据实际情况进行设置，推荐设置为1；点击“通信配置与加载”可输入对应通信参数连接激光传感器，详细配置见对应部分用户手册。
+**Step1**: Hacer clic en "Dispositivo adaptado" de "Configuración inicial"-"Periféricos"-"Sensor láser lineal" para entrar en la página de configuración; la página de configuración incluye "Configuración del sensor", "Configuración y carga de comunicación", "Cálculo de referencia", etc. Hacer clic en "Configuración del sensor" para configurar los parámetros de filtrado de la entrada del sensor; la diferencia máxima se configura según la situación real; seleccionar "Datos originales (sin transformación)" en procesamiento de datos; configurar el coeficiente de sensibilidad en la dirección X como 0, y las direcciones Y y Z según la situación real, recomendándose 1; hacer clic en "Configuración y carga de comunicación" para introducir los parámetros de comunicación correspondientes y conectar el sensor láser; para la configuración detallada, consulte la parte correspondiente del manual de usuario.
 
 .. image:: coding/524.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-3-3 线激光传感器配置
+.. centered:: Figura 9.8-3-3 Configuración del sensor láser lineal
 
-**Step2**：标定工具坐标系和激光传感器坐标系，工具坐标系使用“六点法”进行标定，激光传感器坐标系使用“五点法”进行标定。工具坐标系与激光传感器坐标系标定内容非本功能介绍重点，详细标定方法见对应部分用户手册。
+**Step2**: Calibrar el sistema de coordenadas de herramienta y el sistema de coordenadas del sensor láser; el sistema de coordenadas de herramienta se calibra con el "método de seis puntos" y el sistema de coordenadas del sensor láser con el "método de cinco puntos". El contenido de la calibración del sistema de coordenadas de herramienta y del sistema de coordenadas del sensor láser no es el punto central de la introducción de esta función; para los métodos de calibración detallados, consulte la parte correspondiente del manual de usuario.
 
-**Step3**：调整工件与激光束的位置示意如下图所示，其中黑色矩形为工件，红色线段为激光束，激光束需与待跟踪的工件边缘垂直，工件移动方向与激光束平行，工件匀速移动，速度推荐为15mm/s，过快会导致跟踪效果下降。
+**Step3**: Ajustar la posición de la pieza y del haz láser como se muestra en la figura siguiente, donde el rectángulo negro es la pieza y el segmento rojo es el haz láser; el haz láser debe ser perpendicular al borde de la pieza a seguir, la dirección de movimiento de la pieza debe ser paralela al haz láser y la pieza debe moverse a velocidad uniforme, recomendándose 15 mm/s; una velocidad demasiado alta provocará un deterioro del efecto de seguimiento.
 
 .. image:: coding/525.png
    :width: 2in
    :align: center
 
-.. centered:: 图表 9.8-3-4 工件与激光束相对位置示意
+.. centered:: Figura 9.8-3-4 Esquema de la posición relativa entre la pieza y el haz láser
 
-**Step4**：点击“示教程序”-“激光跟踪”-“数据记录”，功能选择设置为“边记录边复现”，定点跟踪运动类型设置为“机器人运动”，定点跟踪触发方式设置为“时间”，跟踪时长根据实际需求进行设置，手册中以21s为例，其余参数的设置与使用扩展轴时的激光跟踪相同，点击下方的“添加”按钮。
+**Step4**: Hacer clic en "Programa de enseñanza"-"Seguimiento láser"-"Registro de datos"; configurar la selección de función como "Registrar y reproducir simultáneamente", el tipo de movimiento de seguimiento de punto fijo como "Movimiento del robot" y el modo de activación del seguimiento de punto fijo como "Tiempo"; configurar la duración del seguimiento según las necesidades reales (en el manual se toma 21 s como ejemplo); la configuración del resto de parámetros es la misma que la del seguimiento láser al utilizar el eje extendido; hacer clic en el botón "Añadir" de la parte inferior.
 
 .. image:: coding/526.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-3-5 自定义时长跟踪参数设置
+.. centered:: Figura 9.8-3-5 Configuración de parámetros del seguimiento de duración personalizada
 
-**Step5**：点击“示教程序”-“激光跟踪”-“数据记录”，功能选择设置为“停止记录”，点击添加按钮，生成lua程序，当运行该程序时，机器人将跟踪21s后退出跟踪。
+**Step5**: Hacer clic en "Programa de enseñanza"-"Seguimiento láser"-"Registro de datos"; configurar la selección de función como "Detener registro" y hacer clic en el botón añadir para generar el programa lua; al ejecutar dicho programa, el robot realizará el seguimiento durante 21 s y después saldrá del seguimiento.
 
 .. image:: coding/527.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-3-6 自定义时长跟踪典型lua程序
+.. centered:: Figura 9.8-3-6 Programa lua típico de seguimiento de duración personalizada
 
-IO触发跟踪操作流程
+Flujo de operación del seguimiento por activación IO
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-**Step1**：点击“初始设置”-“外设”-“线激光传感器”的“已适配设备”进入配置页面，配置页面包括“传感器配置”、“通信配置与加载”、“基准计算”等内容。
+**Step1**: Hacer clic en "Dispositivo adaptado" de "Configuración inicial"-"Periféricos"-"Sensor láser lineal" para entrar en la página de configuración; la página de configuración incluye "Configuración del sensor", "Configuración y carga de comunicación", "Cálculo de referencia", etc.
 
-点击“传感器配置”可设置传感器输入量滤波参数，最大差值根据实际情况进行设置，数据处理选为“原始数据（无变换）”，灵敏度系数X方向设置为0，Y方向和Z方向根据实际情况进行设置，推荐设置为1；点击“通信配置与加载”可输入对应通信参数连接激光传感器，详细配置见对应部分用户手册。
+Hacer clic en "Configuración del sensor" para configurar los parámetros de filtrado de la entrada del sensor; la diferencia máxima se configura según la situación real; seleccionar "Datos originales (sin transformación)" en procesamiento de datos; configurar el coeficiente de sensibilidad en la dirección X como 0, y las direcciones Y y Z según la situación real, recomendándose 1; hacer clic en "Configuración y carga de comunicación" para introducir los parámetros de comunicación correspondientes y conectar el sensor láser; para la configuración detallada, consulte la parte correspondiente del manual de usuario.
 
 .. image:: coding/528.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-3-7 线激光传感器配置
+.. centered:: Figura 9.8-3-7 Configuración del sensor láser lineal
 
-**Step2**：标定工具坐标系和激光传感器坐标系，工具坐标系使用“六点法”进行标定，激光传感器坐标系使用“五点法”进行标定。工具坐标系与激光传感器坐标系标定内容非本功能介绍重点，详细标定方法见对应部分用户手册。
+**Step2**: Calibrar el sistema de coordenadas de herramienta y el sistema de coordenadas del sensor láser; el sistema de coordenadas de herramienta se calibra con el "método de seis puntos" y el sistema de coordenadas del sensor láser con el "método de cinco puntos". El contenido de la calibración del sistema de coordenadas de herramienta y del sistema de coordenadas del sensor láser no es el punto central de la introducción de esta función; para los métodos de calibración detallados, consulte la parte correspondiente del manual de usuario.
 
-**Step3**：调整工件与激光束的位置示意如下图所示，其中黑色矩形为工件，红色线段为激光束，激光束需与待跟踪的工件边缘垂直，工件移动方向与激光束平行，工件匀速移动，速度推荐为15mm/s，过快会导致跟踪效果下降。
+**Step3**: Ajustar la posición de la pieza y del haz láser como se muestra en la figura siguiente, donde el rectángulo negro es la pieza y el segmento rojo es el haz láser; el haz láser debe ser perpendicular al borde de la pieza a seguir, la dirección de movimiento de la pieza debe ser paralela al haz láser y la pieza debe moverse a velocidad uniforme, recomendándose 15 mm/s; una velocidad demasiado alta provocará un deterioro del efecto de seguimiento.
 
 .. image:: coding/525.png
    :width: 2in
    :align: center
 
-.. centered:: 图表 9.8-3-8 工件与激光束相对位置示意
+.. centered:: Figura 9.8-3-8 Esquema de la posición relativa entre la pieza y el haz láser
 
-**Step4**：点击“示教程序”-“激光跟踪”-“数据记录”，功能选择设置为“边记录边复现”，定点跟踪运动类型设置为“机器人运动”，定点跟踪触发方式设置为“IO”，当IO触发时开始跟踪，IO消除时停止跟踪，其余参数的设置与使用扩展轴时的激光跟踪相同，点击下方的“添加”按钮。
+**Step4**: Hacer clic en "Programa de enseñanza"-"Seguimiento láser"-"Registro de datos"; configurar la selección de función como "Registrar y reproducir simultáneamente", el tipo de movimiento de seguimiento de punto fijo como "Movimiento del robot" y el modo de activación del seguimiento de punto fijo como "IO"; el seguimiento comienza al activarse la IO y se detiene al desactivarse la IO; la configuración del resto de parámetros es la misma que la del seguimiento láser al utilizar el eje extendido; hacer clic en el botón "Añadir" de la parte inferior.
 
 .. image:: coding/529.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-3-9 IO跟踪参数设置
+.. centered:: Figura 9.8-3-9 Configuración de parámetros del seguimiento por IO
 
-**Step5**：点击“示教程序”-“激光跟踪”-“数据记录”，功能选择设置为“停止记录”，点击添加按钮，生成lua程序，当运行该程序时，IO触发时开始跟踪，IO消除时停止跟踪。
+**Step5**: Hacer clic en "Programa de enseñanza"-"Seguimiento láser"-"Registro de datos"; configurar la selección de función como "Detener registro" y hacer clic en el botón añadir para generar el programa lua; al ejecutar dicho programa, el seguimiento comienza al activarse la IO y se detiene al desactivarse la IO.
 
 .. image:: coding/530.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-3-10 IO跟踪典型lua程序
+.. centered:: Figura 9.8-3-10 Programa lua típico de seguimiento por IO
 
-激光记录命令
-++++++++++++++++
+Comando de registro láser
++++++++++++++++++++++++++++
 
-点击“激光记录”图标进入LT-Rec命令编辑界面。
+Hacer clic en el icono "Registro láser" para entrar en la interfaz de edición del comando LT-Rec.
 
-该指令实现激光跟踪记录起点、终点取出功能，使机器人可以自动运动到起点位置，适用于从工件外部开始运动并进行激光跟踪记录的场合，同时上位机可获取记录数据中起点、终点的信息，用于后续运动。
+Esta instrucción permite extraer el punto inicial y el punto final del registro de seguimiento láser, de modo que el robot pueda desplazarse automáticamente hasta la posición inicial, siendo aplicable a situaciones en las que se comienza el movimiento desde el exterior de la pieza y se realiza el registro de seguimiento láser; además, el ordenador superior puede obtener la información del punto inicial y del punto final de los datos registrados para su uso en movimientos posteriores.
 
-实现激光跟踪复现速度可调功能，使机器人可以用一个很快的速度进行记录，然后按照正常焊接速度进行复现，可以提高作业效率。
+Se implementa la función de velocidad ajustable de reproducción del seguimiento láser, de modo que el robot puede registrar a una velocidad muy rápida y luego reproducir a la velocidad normal de soldadura, lo que permite aumentar la eficiencia de la operación.
 
 .. image:: coding/125.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-4 LT-Rec指令界面
+.. centered:: Figura 9.8-4 Interfaz de la instrucción LT-Rec
 
-激光扫描轨迹复现叠加摆动
+Reproducción de trayectoria de escaneo láser superpuesta con oscilación
 ****************************************************************************************************************
 
-概述
-""""""""""""""""""""""""""""""""""""""""""""""
-激光扫描轨迹复现叠加摆动功能是指机器人在复现激光扫描轨迹的基础上，叠加三角波/垂直L型三角波/圆形顺时针波/圆形逆时针波/正弦波/垂直L型正弦波/立焊三角波摆动运动，支持常规摆动和定点摆动方式且可以适配扩展轴运动，如表1-1所示。
+Descripción general
+""""""""""""""""""""""""""""""""""""""""""""""""
+La función de reproducción de trayectoria de escaneo láser superpuesta con oscilación consiste en que el robot, sobre la base de reproducir la trayectoria de escaneo láser, superpone movimientos de oscilación triangular / oscilación triangular tipo L vertical / oscilación circular en sentido horario / oscilación circular en sentido antihorario / oscilación sinusoidal / oscilación sinusoidal tipo L vertical / oscilación triangular para soldadura vertical; admite el modo de oscilación convencional y el modo de oscilación en punto fijo y puede adaptarse al movimiento de ejes extendidos, como se muestra en la Tabla 1-1.
 
-.. centered:: 表格 9.8-1 激光扫描轨迹复现叠加摆动方式
+.. centered:: Tabla 9.8-1 Modos de oscilación superpuesta en la reproducción de trayectoria de escaneo láser
 
 .. list-table::
    :widths: 40 30 30
    :header-rows: 0
    :align: center
 
-   * - **轨迹复现**
-     - **常规摆动**
-     - **定点摆动**
+   * - **Reproducción de trayectoria**
+     - **Oscilación convencional**
+     - **Oscilación en punto fijo**
 
-   * - 机器人
+   * - Robot
      - Yes
      - Yes
 
-   * - 扩展轴
+   * - Eje extendido
      - No
      - Yes
 
-激光扫描轨迹复现叠加常规摆动
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Reproducción de trayectoria de escaneo láser superpuesta con oscilación convencional
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：通过WebApp配置线激光传感器外设。该功能的具体操作步骤可参考相应章节的用户手册。
+**Step1**: Configurar el periférico del sensor láser lineal mediante WebApp. Para los pasos concretos de esta función, consulte el manual de usuario del capítulo correspondiente.
 
-**Step2**：通过WebApp标定工具坐标系。该功能的具体操作步骤可参考相应章节的用户手册。
+**Step2**: Calibrar el sistema de coordenadas de herramienta mediante WebApp. Para los pasos concretos de esta función, consulte el manual de usuario del capítulo correspondiente.
 
-**Step3**：通过WebApp标定传感器坐标系。该功能的具体操作步骤可参考相应章节的用户手册。
+**Step3**: Calibrar el sistema de coordenadas del sensor mediante WebApp. Para los pasos concretos de esta función, consulte el manual de usuario del capítulo correspondiente.
 
-**Step4**：通过WebApp示教运动点位。示教目标工件的激光扫描轨迹复现的运动点位，并编写相应机器人LIN等运动的基础LUA程序，该功能的具体操作步骤可参考相应章节的用户手册。
+**Step4**: Enseñar los puntos de movimiento mediante WebApp. Enseñar los puntos de movimiento de la reproducción de la trayectoria de escaneo láser de la pieza objetivo y escribir el programa LUA básico de movimiento, como LIN, del robot correspondiente; para los pasos concretos de esta función, consulte el manual de usuario del capítulo correspondiente.
 
-**Step5**：通过WebApp配置摆动参数编号。该功能的具体操作步骤可参考相应章节的用户手册。
+**Step5**: Configurar el número de parámetros de oscilación mediante WebApp. Para los pasos concretos de esta función, consulte el manual de usuario del capítulo correspondiente.
 
-**Step6**：激光记录指令。在WebApp主界面，点击“示教程序”-“程序编程”，进入“焊接指令”指令区。
+**Step6**: Instrucción de registro láser. En la interfaz principal de WebApp, hacer clic en "Programa de enseñanza"-"Programación de programas" para entrar en el área de instrucciones "Instrucciones de soldadura".
 
 .. image:: coding/609.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.8-4-1 “焊接指令”指令区
+.. centered:: Figura 9.8-4-1 Área de instrucciones "Instrucciones de soldadura"
  
-**Step7**：激光开始记录。在“焊接指令”指令区中，点击“激光记录”按钮，进入“LT-Rec”指令配置区。
+**Step7**: Inicio del registro láser. En el área de instrucciones "Instrucciones de soldadura", hacer clic en el botón "Registro láser" para entrar en el área de configuración de la instrucción "LT-Rec".
 
-在“指令类型”配置区，点击“焊缝数据记录”按钮，在“功能选择”下拉框中，选择“开始记录”选项；在“延时时间”输入框，设置延时记录时间。
+En el área de configuración "Tipo de instrucción", hacer clic en el botón "Registro de datos de soldadura" y, en el cuadro desplegable "Selección de función", seleccionar la opción "Iniciar registro"; en el cuadro de entrada "Tiempo de retardo", configurar el tiempo de retardo del registro.
 
-在“LT-Rec”指令配置区，点击“添加”按钮，“程序预览”显示框将显示预生成的LUA程序，点击“应用”，完成激光开始记录操作。
+En el área de configuración de la instrucción "LT-Rec", hacer clic en el botón "Añadir"; el cuadro de visualización "Vista previa del programa" mostrará el programa LUA pregenerado; hacer clic en "Aplicar" para completar la operación de inicio del registro láser.
 
 .. image:: coding/610.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-4-2 激光开始记录
+.. centered:: Figura 9.8-4-2 Inicio del registro láser
 
-**Step8**：激光停止记录。在“LT-Rec”指令配置区，在“指令类型”配置区中，点击“焊缝数据记录”按钮，在“功能选择”下拉框中，选择“停止记录”选项；在“延时时间”输入框，设置延时记录时间。
+**Step8**: Detención del registro láser. En el área de configuración de la instrucción "LT-Rec", en el área de configuración "Tipo de instrucción", hacer clic en el botón "Registro de datos de soldadura" y, en el cuadro desplegable "Selección de función", seleccionar la opción "Detener registro"; en el cuadro de entrada "Tiempo de retardo", configurar el tiempo de retardo del registro.
 
-在“LT-Rec”指令配置区，点击“添加”按钮，“程序预览”显示框将显示预生成的LUA程序，点击“应用”，完成激光停止记录操作。
+En el área de configuración de la instrucción "LT-Rec", hacer clic en el botón "Añadir"; el cuadro de visualización "Vista previa del programa" mostrará el programa LUA pregenerado; hacer clic en "Aplicar" para completar la operación de detención del registro láser.
 
 .. image:: coding/611.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-4-3 激光停止记录
+.. centered:: Figura 9.8-4-3 Detención del registro láser
 
-**Step9**：运动至焊缝点。在“LT-Rec”指令配置区，在“指令类型”配置区中，点击“运动至焊缝点”按钮，在“运动方式”下拉框中，选择“PTP”或“LIN”运动方式选项；在“速度”输入框，设置指令速度；点击“起点”或“终点”按钮，选择目标运动点位。
+**Step9**: Movimiento hasta el punto de soldadura. En el área de configuración de la instrucción "LT-Rec", en el área de configuración "Tipo de instrucción", hacer clic en el botón "Movimiento hasta el punto de soldadura" y, en el cuadro desplegable "Modo de movimiento", seleccionar la opción de modo de movimiento "PTP" o "LIN"; en el cuadro de entrada "Velocidad", configurar la velocidad de la instrucción; hacer clic en el botón "Punto inicial" o "Punto final" para seleccionar el punto de movimiento objetivo.
 
-在“LT-Rec”指令配置区，点击“添加”按钮，“程序预览”显示框将显示预生成的LUA程序，点击“应用”，完成激光停止记录操作。
+En el área de configuración de la instrucción "LT-Rec", hacer clic en el botón "Añadir"; el cuadro de visualización "Vista previa del programa" mostrará el programa LUA pregenerado; hacer clic en "Aplicar" para completar la operación de detención del registro láser.
 
 .. image:: coding/612.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-4-4 运动至焊缝点
+.. centered:: Figura 9.8-4-4 Movimiento hasta el punto de soldadura
 
-**Step10**：激光轨迹复现。在“LT-Rec”指令配置区，在“指令类型”配置区中，点击“焊缝数据记录”按钮，在“功能选择”下拉框中，选择“轨迹复现”选项；在“延时时间”输入框，设置延时记录时间；在“速度”输入框，设置指令速度。
+**Step10**: Reproducción de la trayectoria láser. En el área de configuración de la instrucción "LT-Rec", en el área de configuración "Tipo de instrucción", hacer clic en el botón "Registro de datos de soldadura" y, en el cuadro desplegable "Selección de función", seleccionar la opción "Reproducción de trayectoria"; en el cuadro de entrada "Tiempo de retardo", configurar el tiempo de retardo del registro; en el cuadro de entrada "Velocidad", configurar la velocidad de la instrucción.
 
-在“LT-Rec”指令配置区，点击“添加”按钮，“程序预览”显示框将显示预生成的LUA程序，点击“应用”，完成激光轨迹复现操作。
+En el área de configuración de la instrucción "LT-Rec", hacer clic en el botón "Añadir"; el cuadro de visualización "Vista previa del programa" mostrará el programa LUA pregenerado; hacer clic en "Aplicar" para completar la operación de reproducción de la trayectoria láser.
 
 .. image:: coding/613.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-4-5 激光轨迹复现
+.. centered:: Figura 9.8-4-5 Reproducción de la trayectoria láser
 
-**Step11**：叠加常规摆动。在“LT-Rec”指令配置区，在“指令类型”配置区中，点击“激光跟踪复现”按钮，在“是否叠加摆动”下拉框中，选择“常规摆动”选项；在“选择编号”下拉框中，选择步骤5中，已配置完毕的摆动参数编号。
+**Step11**: Superposición de oscilación convencional. En el área de configuración de la instrucción "LT-Rec", en el área de configuración "Tipo de instrucción", hacer clic en el botón "Reproducción de seguimiento láser" y, en el cuadro desplegable "¿Superponer oscilación?", seleccionar la opción "Oscilación convencional"; en el cuadro desplegable "Seleccionar número", seleccionar el número de parámetros de oscilación ya configurado en el paso 5.
 
-在“LT-Rec”指令配置区，点击“添加”按钮，“程序预览”显示框将显示预生成的LUA程序，点击“应用”，完成叠加常规摆动操作。
+En el área de configuración de la instrucción "LT-Rec", hacer clic en el botón "Añadir"; el cuadro de visualización "Vista previa del programa" mostrará el programa LUA pregenerado; hacer clic en "Aplicar" para completar la operación de superposición de oscilación convencional.
 
 .. image:: coding/614.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-4-6 叠加常规摆动
+.. centered:: Figura 9.8-4-6 Superposición de oscilación convencional
 
-**Step12**：编写激光扫描轨迹复现+常规摆动的LUA程序。调整步骤4至步骤11生成的LUA指令顺序，运行该LUA程序即可实现激光扫描轨迹复现叠加常规摆动功能。
+**Step12**: Escribir el programa LUA de reproducción de trayectoria de escaneo láser + oscilación convencional. Ajustar el orden de las instrucciones LUA generadas en los pasos 4 a 11 y ejecutar dicho programa LUA para realizar la función de reproducción de trayectoria de escaneo láser superpuesta con oscilación convencional.
 
 .. image:: coding/615.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-4-7 激光扫描轨迹复现叠加常规摆动的LUA程序
+.. centered:: Figura 9.8-4-7 Programa LUA de reproducción de trayectoria de escaneo láser superpuesta con oscilación convencional
 
-激光扫描轨迹复现叠加定点摆动
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Reproducción de trayectoria de escaneo láser superpuesta con oscilación en punto fijo
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：通过WebApp配置线激光传感器外设。该功能的具体操作步骤可参考相应章节的用户手册。
+**Step1**: Configurar el periférico del sensor láser lineal mediante WebApp. Para los pasos concretos de esta función, consulte el manual de usuario del capítulo correspondiente.
 
-**Step2**：通过WebApp配置扩展轴外设。该功能的具体操作步骤可参考相应章节的用户手册。
+**Step2**: Configurar el periférico del eje extendido mediante WebApp. Para los pasos concretos de esta función, consulte el manual de usuario del capítulo correspondiente.
 
-**Step3**：通过WebApp标定工具坐标系。该功能的具体操作步骤可参考相应章节的用户手册。
+**Step3**: Calibrar el sistema de coordenadas de herramienta mediante WebApp. Para los pasos concretos de esta función, consulte el manual de usuario del capítulo correspondiente.
 
-**Step4**：通过WebApp标定传感器坐标系。该功能的具体操作步骤可参考相应章节的用户手册。
+**Step4**: Calibrar el sistema de coordenadas del sensor mediante WebApp. Para los pasos concretos de esta función, consulte el manual de usuario del capítulo correspondiente.
 
-**Step5**：通过WebApp示教运动点位。示教目标工件的激光扫描轨迹复现的运动点位，并编写相应机器人LIN等和扩展轴异步运动的基础LUA程序，该功能的具体操作步骤可参考相应章节的用户手册。
+**Step5**: Enseñar los puntos de movimiento mediante WebApp. Enseñar los puntos de movimiento de la reproducción de la trayectoria de escaneo láser de la pieza objetivo y escribir el programa LUA básico de movimiento del robot, como LIN, y del movimiento asíncrono del eje extendido correspondiente; para los pasos concretos de esta función, consulte el manual de usuario del capítulo correspondiente.
 
-**Step6**：通过WebApp配置摆动参数编号。该功能的具体操作步骤可参考相应章节的用户手册。
+**Step6**: Configurar el número de parámetros de oscilación mediante WebApp. Para los pasos concretos de esta función, consulte el manual de usuario del capítulo correspondiente.
 
-**Step7**：激光记录指令。在WebApp主界面，点击“示教程序”-“程序编程”，进入“焊接指令”指令区。
+**Step7**: Instrucción de registro láser. En la interfaz principal de WebApp, hacer clic en "Programa de enseñanza"-"Programación de programas" para entrar en el área de instrucciones "Instrucciones de soldadura".
 
 .. image:: coding/616.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.8-4-8 “焊接指令”指令区
+.. centered:: Figura 9.8-4-8 Área de instrucciones "Instrucciones de soldadura"
 
-**Step8**：激光开始记录。在“焊接指令”指令区中，点击“激光记录”按钮，进入“LT-Rec”指令配置区。
+**Step8**: Inicio del registro láser. En el área de instrucciones "Instrucciones de soldadura", hacer clic en el botón "Registro láser" para entrar en el área de configuración de la instrucción "LT-Rec".
 
-在“指令类型”配置区，点击“焊缝数据记录”按钮，在“功能选择”下拉框中，选择“开始记录”选项；在“延时时间”输入框，设置延时记录时间。
+En el área de configuración "Tipo de instrucción", hacer clic en el botón "Registro de datos de soldadura" y, en el cuadro desplegable "Selección de función", seleccionar la opción "Iniciar registro"; en el cuadro de entrada "Tiempo de retardo", configurar el tiempo de retardo del registro.
 
-在“LT-Rec”指令配置区，点击“添加”按钮，“程序预览”显示框将显示预生成的LUA程序，点击“应用”，完成激光开始记录操作。
+En el área de configuración de la instrucción "LT-Rec", hacer clic en el botón "Añadir"; el cuadro de visualización "Vista previa del programa" mostrará el programa LUA pregenerado; hacer clic en "Aplicar" para completar la operación de inicio del registro láser.
 
 .. image:: coding/617.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-4-9 激光开始记录
+.. centered:: Figura 9.8-4-9 Inicio del registro láser
  
-**Step9**：激光停止记录。在“LT-Rec”指令配置区，在“指令类型”配置区中，点击“焊缝数据记录”按钮，在“功能选择”下拉框中，选择“停止记录”选项；在“延时时间”输入框，设置延时记录时间。
+**Step9**: Detención del registro láser. En el área de configuración de la instrucción "LT-Rec", en el área de configuración "Tipo de instrucción", hacer clic en el botón "Registro de datos de soldadura" y, en el cuadro desplegable "Selección de función", seleccionar la opción "Detener registro"; en el cuadro de entrada "Tiempo de retardo", configurar el tiempo de retardo del registro.
 
-在“LT-Rec”指令配置区，点击“添加”按钮，“程序预览”显示框将显示预生成的LUA程序，点击“应用”，完成激光停止记录操作示。
+En el área de configuración de la instrucción "LT-Rec", hacer clic en el botón "Añadir"; el cuadro de visualización "Vista previa del programa" mostrará el programa LUA pregenerado; hacer clic en "Aplicar" para completar la operación de detención del registro láser.
 
 .. image:: coding/618.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-4-10 激光停止记录
+.. centered:: Figura 9.8-4-10 Detención del registro láser
   
-**Step10**：运动至焊缝点。在“LT-Rec”指令配置区，在“指令类型”配置区中，点击“运动至焊缝点”按钮，在“运动方式”下拉框中，选择“PTP”或“LIN”运动方式选项；在“速度”输入框，设置指令速度；点击“起点”或“终点”按钮，选择目标运动点位。
+**Step10**: Movimiento hasta el punto de soldadura. En el área de configuración de la instrucción "LT-Rec", en el área de configuración "Tipo de instrucción", hacer clic en el botón "Movimiento hasta el punto de soldadura" y, en el cuadro desplegable "Modo de movimiento", seleccionar la opción de modo de movimiento "PTP" o "LIN"; en el cuadro de entrada "Velocidad", configurar la velocidad de la instrucción; hacer clic en el botón "Punto inicial" o "Punto final" para seleccionar el punto de movimiento objetivo.
 
-在“LT-Rec”指令配置区，点击“添加”按钮，“程序预览”显示框将显示预生成的LUA程序，点击“应用”，完成激光停止记录操作。
+En el área de configuración de la instrucción "LT-Rec", hacer clic en el botón "Añadir"; el cuadro de visualización "Vista previa del programa" mostrará el programa LUA pregenerado; hacer clic en "Aplicar" para completar la operación de detención del registro láser.
 
 .. image:: coding/619.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-4-11 运动至焊缝点
+.. centered:: Figura 9.8-4-11 Movimiento hasta el punto de soldadura
   
-**Step11**：激光轨迹复现。在“LT-Rec”指令配置区，在“指令类型”配置区中，点击“焊缝数据记录”按钮，在“功能选择”下拉框中，选择“轨迹复现”选项；在“延时时间”输入框，设置延时记录时间；在“速度”输入框，设置指令速度。
+**Step11**: Reproducción de la trayectoria láser. En el área de configuración de la instrucción "LT-Rec", en el área de configuración "Tipo de instrucción", hacer clic en el botón "Registro de datos de soldadura" y, en el cuadro desplegable "Selección de función", seleccionar la opción "Reproducción de trayectoria"; en el cuadro de entrada "Tiempo de retardo", configurar el tiempo de retardo del registro; en el cuadro de entrada "Velocidad", configurar la velocidad de la instrucción.
 
-在“LT-Rec”指令配置区，点击“添加”按钮，“程序预览”显示框将显示预生成的LUA程序，点击“应用”，完成激光轨迹复现操作。
+En el área de configuración de la instrucción "LT-Rec", hacer clic en el botón "Añadir"; el cuadro de visualización "Vista previa del programa" mostrará el programa LUA pregenerado; hacer clic en "Aplicar" para completar la operación de reproducción de la trayectoria láser.
 
 .. image:: coding/620.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-4-12 激光轨迹复现
+.. centered:: Figura 9.8-4-12 Reproducción de la trayectoria láser
   
-**Step12**：叠加定点摆动。在“LT-Rec”指令配置区，在“指令类型”配置区中，点击“激光跟踪复现”按钮，在“是否叠加摆动”下拉框中，选择“定点摆动”选项；在“选择编号”下拉框中，选择步骤6中，已配置完毕的摆动参数编号。
+**Step12**: Superposición de oscilación en punto fijo. En el área de configuración de la instrucción "LT-Rec", en el área de configuración "Tipo de instrucción", hacer clic en el botón "Reproducción de seguimiento láser" y, en el cuadro desplegable "¿Superponer oscilación?", seleccionar la opción "Oscilación en punto fijo"; en el cuadro desplegable "Seleccionar número", seleccionar el número de parámetros de oscilación ya configurado en el paso 6.
 
-在“摆动基准”下拉框中，选择“参考点”选项；在“参考点”下拉框中，选择参考点位。
+En el cuadro desplegable "Referencia de oscilación", seleccionar la opción "Punto de referencia"; en el cuadro desplegable "Punto de referencia", seleccionar el punto de referencia.
 
-在“LT-Rec”指令配置区，点击“添加”按钮，“程序预览”显示框将显示预生成的LUA程序，点击“应用”，完成叠加常规摆动操作。
+En el área de configuración de la instrucción "LT-Rec", hacer clic en el botón "Añadir"; el cuadro de visualización "Vista previa del programa" mostrará el programa LUA pregenerado; hacer clic en "Aplicar" para completar la operación de superposición de oscilación convencional.
 
 .. image:: coding/621.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-4-13 摆动基准为参考点叠加定点摆动
+.. centered:: Figura 9.8-4-13 Superposición de oscilación en punto fijo con referencia de oscilación como punto de referencia
 
-.. note:: 注意，当在“摆动基准”下拉框中，选择“参考点”选项时，此时机器人的前进方向为当前点位与参考点位间的连线方向，且当前点位与参考点位需在相同的工具和工件坐标系中。
+.. note:: Nota: cuando en el cuadro desplegable "Referencia de oscilación" se selecciona la opción "Punto de referencia", la dirección de avance del robot es la dirección de la línea que une el punto actual con el punto de referencia, y el punto actual y el punto de referencia deben estar en el mismo sistema de coordenadas de herramienta y de pieza.
 
-当在“摆动基准”下拉框中，选择“工具坐标系”选项时，此时机器人的前进方向为当前工具坐标系的X轴方向。
+Cuando en el cuadro desplegable "Referencia de oscilación" se selecciona la opción "Sistema de coordenadas de herramienta", la dirección de avance del robot es la dirección del eje X del sistema de coordenadas de herramienta actual.
 
 .. image:: coding/622.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-4-14 摆动基准为工具坐标系叠加定点摆动
+.. centered:: Figura 9.8-4-14 Superposición de oscilación en punto fijo con referencia de oscilación como sistema de coordenadas de herramienta
  
-**Step13**：编写激光扫描轨迹复现+定点摆动的LUA程序。调整步骤5至步骤13生成的LUA指令顺序，运行该LUA程序即可实现激光扫描轨迹复现叠加定点摆动功能。
+**Step13**: Escribir el programa LUA de reproducción de trayectoria de escaneo láser + oscilación en punto fijo. Ajustar el orden de las instrucciones LUA generadas en los pasos 5 a 13 y ejecutar dicho programa LUA para realizar la función de reproducción de trayectoria de escaneo láser superpuesta con oscilación en punto fijo.
 
-.. note:: 注意，对比LUA程序，激光扫描轨迹复现叠加定点摆动LUA程序中不包括MoveLTR()指令，且默认生成的OriginPointWeaveStartt()指令最后一位摆动时间参数需修改为任意＞0的非负整数值，在机器人运行过程中由控制器自动将该参数转为实际复现轨迹运行时间。
+.. note:: Nota: en comparación con el programa LUA, el programa LUA de reproducción de trayectoria de escaneo láser superpuesta con oscilación en punto fijo no incluye la instrucción MoveLTR() y, además, el último parámetro de tiempo de oscilación de la instrucción OriginPointWeaveStartt() generada por defecto debe modificarse a cualquier valor entero no negativo > 0; durante el funcionamiento del robot, el controlador convertirá automáticamente este parámetro en el tiempo real de ejecución de la trayectoria reproducida.
 
 .. image:: coding/623.png
    :width: 6in
    :align: center
 
-.. centered:: (a)摆动基准为参考点
+.. centered:: (a) Referencia de oscilación como punto de referencia
 
 .. image:: coding/624.png
    :width: 6in
    :align: center
 
-.. centered:: (b)摆动基准为工具坐标系
+.. centered:: (b) Referencia de oscilación como sistema de coordenadas de herramienta
 
-.. centered:: 图表 9.8-4-15 激光扫描轨迹复现叠加定点摆动的LUA程序
+.. centered:: Figura 9.8-4-15 Programa LUA de reproducción de trayectoria de escaneo láser superpuesta con oscilación en punto fijo
 
-焊丝寻位命令
-++++++++++++++++
+Comando de búsqueda de posición del alambre de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“焊丝寻位”图标进入W-Search命令编辑界面。
+Hacer clic en el icono "Búsqueda de posición del alambre de soldadura" para entrar en la interfaz de edición del comando W-Search.
 
-该指令为焊丝寻位指令，包含寻位开始，寻位结束和计算偏移量三个指令，该指令一般应用于焊接场景中，需要焊机与机器人IO和运动指令相结合使用。
+Esta instrucción es la instrucción de búsqueda de posición del alambre de soldadura e incluye tres instrucciones: inicio de búsqueda de posición, fin de búsqueda de posición y cálculo del valor de desplazamiento; esta instrucción se aplica generalmente en escenarios de soldadura y requiere el uso combinado de la máquina de soldar con las IO del robot y las instrucciones de movimiento.
 
 .. image:: coding/126.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-5 W-Search指令界面
+.. centered:: Figura 9.8-5 Interfaz de la instrucción W-Search
 
-在编写程序中，通常先设置寻位开始指令，之后添加两条LIN指令，确定寻位的方向，寻位成功后，获取计算出来的偏移量，将该偏移量通过整体偏移指令，生效到真正的焊接运动指令中，程序示例如下。
+En la escritura del programa, normalmente se configura primero la instrucción de inicio de búsqueda de posición, después se añaden dos instrucciones LIN para determinar la dirección de búsqueda de posición; tras el éxito de la búsqueda de posición se obtiene el valor de desplazamiento calculado y este valor de desplazamiento se aplica mediante la instrucción de desplazamiento global a la instrucción de movimiento de soldadura real; un ejemplo de programa es el siguiente.
 
 .. image:: coding/127.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.8-5-1 W-Search示例（1D）
+.. centered:: Figura 9.8-5-1 Ejemplo de W-Search (1D)
 
-电弧跟踪命令
-++++++++++++++++
+Comando de seguimiento de arco
+++++++++++++++++++++++++++++++++
 
-点击“电弧跟踪”图标进入Weld-Trc命令编辑界面。
+Hacer clic en el icono "Seguimiento de arco" para entrar en la interfaz de edición del comando Weld-Trc.
 
-该指令实现机器人焊缝跟踪利用焊缝的偏差检测进行补偿轨迹，可以使用电弧传感器来检测焊缝偏差。
+Esta instrucción permite al robot realizar el seguimiento de soldadura utilizando la detección de desviación de la soldadura para compensar la trayectoria; se puede utilizar un sensor de arco para detectar la desviación de la soldadura.
 
-**Step1**：上下补偿基准电流设定方式：反馈，设置上下基准电流开始计数和上下基准电流计数
+**Step1**: Modo de establecimiento de la corriente de referencia de compensación superior e inferior: retroalimentación; configurar el inicio del conteo de la corriente de referencia superior e inferior y el conteo de la corriente de referencia superior e inferior.
 
 .. image:: coding/128.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-6-1 Weld-Trc指令界面-反馈
+.. centered:: Figura 9.8-6-1 Interfaz de la instrucción Weld-Trc- retroalimentación
 
-**Step2**：上下补偿基准电流设定方式：常数，设置上下基准电流
+**Step2**: Modo de establecimiento de la corriente de referencia de compensación superior e inferior: constante; configurar la corriente de referencia superior e inferior.
 
 .. image:: coding/129.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-6-2 Weld-Trc指令界面-常数
+.. centered:: Figura 9.8-6-2 Interfaz de la instrucción Weld-Trc- constante
 
-**Step3**：左右补偿参数交互页面
+**Step3**: Página de interacción de parámetros de compensación izquierda y derecha
 
 .. image:: coding/130.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-6-3 Weld-Trc指令界面-左右补偿参数
+.. centered:: Figura 9.8-6-3 Interfaz de la instrucción Weld-Trc- parámetros de compensación izquierda y derecha
 
-机器人电弧跟踪系统构成
-+++++++++++++++++++++++
+Composición del sistema de seguimiento de arco del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-协作机器人电弧跟踪焊接过程中，焊机将实时焊接电流、电压信号反馈至机器人；机器人根据实时反馈焊接电流、电压数值进行焊接轨迹位置补偿，实现电弧跟踪效果。上述焊机和机器人之间电流、电压信号反馈有如下四种方式，其中前两种需要外加一个PLC进行数据中转，后两种则是焊机与机器人控制箱直接连接：
+Durante el proceso de soldadura con seguimiento de arco del robot colaborativo, la máquina de soldar realimenta al robot las señales de corriente y tensión de soldadura en tiempo real; el robot compensa la posición de la trayectoria de soldadura según los valores de corriente y tensión de soldadura realimentados en tiempo real, realizando el efecto de seguimiento de arco. La realimentación de las señales de corriente y tensión entre la máquina de soldar y el robot puede realizarse de las cuatro formas siguientes; las dos primeras requieren un PLC adicional para la transferencia de datos, mientras que las dos últimas conectan directamente la máquina de soldar con la caja de control del robot:
 
-①CANopen或其他总线通讯：若您的焊机支持CANopen、EtherCAT、ModbusTCP等总线通讯协议（如奥太NBC-500RP、麦格米特A2系列等），PLC与焊机间可直接通过相关通讯协议进行数据通讯，相应焊接电流信号可直接通过通讯传输至PLC中，再由PLC通过UDP通讯反馈至机器人。
+①Comunicación CANopen u otro bus: si su máquina de soldar admite protocolos de comunicación de bus como CANopen, EtherCAT, ModbusTCP, etc. (como OTC NBC-500RP, Megmeet serie A2, etc.), el PLC y la máquina de soldar pueden comunicarse directamente mediante los protocolos de comunicación correspondientes; la señal de corriente de soldadura correspondiente se puede transmitir directamente al PLC mediante la comunicación y, a continuación, el PLC la realimenta al robot mediante comunicación UDP.
 
 .. image:: coding/277.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-6-4 机器人电弧跟踪系统构成拓扑图（PLC与焊机总线通讯）
-.. centered:: a-计算机；b-机器人及控制箱；c-PLC及总线通讯模块；d-焊机
+.. centered:: Figura 9.8-6-4 Topología de la composición del sistema de seguimiento de arco del robot (comunicación de bus entre PLC y máquina de soldar)
+.. centered:: a- ordenador; b- robot y caja de control; c- PLC y módulo de comunicación de bus; d- máquina de soldar
 
-②PLC + IO模拟量：PLC也可以直接采集模拟量信号，再将模拟量信号以一定的转换关系转换成电流数值反馈至机器人；若您的焊机具有实时焊接电流模拟量输出通道，可直接将该通道接入至PLC的模拟量输入模块中；若您的焊机不具有实时焊接电流模拟量输出通道，可外接一个霍尔电流传感器，传感器采集实时焊接电流信号，并将焊接电流信号转成模拟信号输出至PLC模拟量输入模块。
+②PLC + IO analógica: el PLC también puede recoger directamente señales analógicas y convertir las señales analógicas en valores de corriente según una determinada relación de conversión para realimentarlos al robot; si su máquina de soldar dispone de un canal de salida analógica de corriente de soldadura en tiempo real, se puede conectar directamente dicho canal al módulo de entrada analógica del PLC; si su máquina de soldar no dispone de un canal de salida analógica de corriente de soldadura en tiempo real, se puede conectar externamente un sensor de corriente Hall; el sensor recoge la señal de corriente de soldadura en tiempo real y convierte la señal de corriente de soldadura en una señal analógica que se emite al módulo de entrada analógica del PLC.
 
 .. image:: coding/278.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-6-5 机器人电弧跟踪系统构成拓扑图（PLC采集模拟量信号）
-.. centered:: a-计算机；b-机器人及控制箱；c-PLC及模拟量输入模块；d-焊机及霍尔电流传感器
+.. centered:: Figura 9.8-6-5 Topología de la composición del sistema de seguimiento de arco del robot (PLC recoge señal analógica)
+.. centered:: a- ordenador; b- robot y caja de control; c- PLC y módulo de entrada analógica; d- máquina de soldar y sensor de corriente Hall
 
-③控制箱AI：机器人控制箱IO端口中有两路模拟量输入(0 ~ 10V)，若您的焊机具有实时焊接电流模拟量输出通道，可直接将该通道接入至控制箱模拟量输入端口中；若您的焊机不具有实时焊接电流模拟量输出通道，可外接一个霍尔电流传感器，传感器采集实时焊接电流信号，并将焊接电流信号转成模拟信号输出至控制箱模拟量输入通道中。模拟量输入数值与实际焊接电流值常为线性关系，后文“电弧跟踪通道配置”中进行详细参数设置。
+③AI de la caja de control: entre los puertos IO de la caja de control del robot hay dos entradas analógicas (0 ~ 10V); si su máquina de soldar dispone de un canal de salida analógica de corriente de soldadura en tiempo real, se puede conectar directamente dicho canal al puerto de entrada analógica de la caja de control; si su máquina de soldar no dispone de un canal de salida analógica de corriente de soldadura en tiempo real, se puede conectar externamente un sensor de corriente Hall; el sensor recoge la señal de corriente de soldadura en tiempo real y convierte la señal de corriente de soldadura en una señal analógica que se emite al canal de entrada analógica de la caja de control. El valor de entrada analógica y el valor real de corriente de soldadura suelen tener una relación lineal; la configuración detallada de parámetros se realiza en el apartado "Configuración del canal de seguimiento de arco" más adelante.
 
 .. image:: coding/534.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 9.8-6-6 机器人电弧跟踪系统构成拓扑图（控制箱AI采集模拟量）
-.. centered:: a-计算机；b-机器人及控制箱；c-焊机及霍尔电流传感器
+.. centered:: Figura 9.8-6-6 Topología de la composición del sistema de seguimiento de arco del robot (AI de la caja de control recoge señal analógica)
+.. centered:: a- ordenador; b- robot y caja de control; c- máquina de soldar y sensor de corriente Hall
 
-④以太网通信：若您的焊机支持ModbusTCP通信，则机器人可以直接通过ModbusTCP控制焊接并读取实时电流电压反馈数值。机器人与焊机的ModbusTCP通讯使用控制箱外设开放协议，详见“8.6.6.数字通讯协议（Modbus TCP）”
+④Comunicación Ethernet: si su máquina de soldar admite comunicación ModbusTCP, el robot puede controlar directamente la soldadura mediante ModbusTCP y leer los valores de realimentación de corriente y tensión en tiempo real. La comunicación ModbusTCP entre el robot y la máquina de soldar utiliza el protocolo abierto de periféricos de la caja de control; consulte "8.6.6. Protocolo de comunicación digital (Modbus TCP)".
 
 .. image:: coding/535.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 9.8-6-7 机器人电弧跟踪系统构成拓扑图（ModbusTCP通讯）
-.. centered:: a-计算机；b-机器人及控制箱；c-焊机
+.. centered:: Figura 9.8-6-7 Topología de la composición del sistema de seguimiento de arco del robot (comunicación ModbusTCP)
+.. centered:: a- ordenador; b- robot y caja de control; c- máquina de soldar
 
-焊机型号与设定
-****************************************
+Modelos de máquina de soldar y configuración
+********************************************************
 
-.. centered:: 表格 9.8-1 焊机型号与设定
+.. centered:: Tabla 9.8-1 Modelos de máquina de soldar y configuración
 
 .. list-table::
    :widths: 70
    :header-rows: 0
    :align: center
 
-   * - **当前已测试可适配焊机型号**
+   * - **Modelos de máquina de soldar actualmente probados y compatibles**
 
-   * - 麦格米特ArtsenII CM350焊机
+   * - Máquina de soldar Megmeet ArtsenII CM350
   
-.. centered:: 表格 9.8-2 焊机功能设定
+.. centered:: Tabla 9.8-2 Configuración de funciones de la máquina de soldar
 
 .. list-table::
    :widths: 100 100
    :header-rows: 0
    :align: center
 
-   * - **功能号**
-     - **设定参数**
+   * - **Número de función**
+     - **Parámetro de configuración**
 
    * - F18
      - 20
@@ -2617,1912 +2614,1913 @@ IO触发跟踪操作流程
    * - F19
      - 56
 
-PLC型号与设定
-************************
-.. centered:: 表格 9.8-3 PLC型号与设定
+Modelos de PLC y configuración
+****************************************
+.. centered:: Tabla 9.8-3 Modelos de PLC y configuración
 
 .. list-table::
    :widths: 70
    :header-rows: 0
    :align: center
 
-   * - **当前已测试可适配PLC型号**
+   * - **Modelos de PLC actualmente probados y compatibles**
 
-   * - 汇川Easy521
+   * - Inovance Easy521
   
-.. centered:: 表格 9.8-4 PLC关键设定
+.. centered:: Tabla 9.8-4 Configuración clave del PLC
 
 .. list-table::
    :widths: 70 70
    :header-rows: 0
    :align: center
 
-   * - **设定项**
-     - **设定内容**
+   * - **Elemento de configuración**
+     - **Contenido de la configuración**
 
-   * - 通信协议
+   * - Protocolo de comunicación
      - CANOPEN
 
-   * - 反馈电流采样源
-     - 焊机CANOPEN反馈数据
+   * - Fuente de muestreo de corriente de realimentación
+     - Datos de realimentación CANOPEN de la máquina de soldar
 
-   * - 同步周期
+   * - Período de sincronización
      - 2ms
 
-:download:`附件：PLC程序 <../_static/_doc/MEGMEET PLC PROGRAME.zip>`
+:download:`Adjunto: programa PLC <../_static/_doc/MEGMEET PLC PROGRAME.zip>`
 
-电弧跟踪功能
-*********************
+Función de seguimiento de arco
+*************************************
 
-**1）功能界面参数简介**
+**1) Introducción a los parámetros de la interfaz de función**
 
 .. image:: coding/279.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.8-7-1 电弧跟踪典型场景
+.. centered:: Figura 9.8-7-1 Escenario típico de seguimiento de arco
 
-电弧跟踪功能的典型场景包含：a.焊接工件（焊接坡口为直角或锐角），b.焊枪，e为坡口中心线。
+El escenario típico de la función de seguimiento de arco incluye: a. pieza de soldadura (ranura de soldadura en ángulo recto o ángulo agudo), b. antorcha de soldadura, e. línea central de la ranura.
 
-电弧跟踪功能能够通过采集的焊接电流信息与机器人设定的摆动参数，实现对焊接坡口：c.上下（深度）方向跟踪和d.左右（中心）方向跟踪。
+La función de seguimiento de arco puede, mediante la información de corriente de soldadura recogida y los parámetros de oscilación configurados en el robot, realizar el seguimiento de la ranura de soldadura en: c. dirección superior-inferior (profundidad) y d. dirección izquierda-derecha (central).
 
-**2）通讯配置**
+**2) Configuración de comunicación**
 
-①CANopen或其他总线通讯：
+①Comunicación CANopen u otro bus:
 
-打开WebApp，依次点击“初始设置”->“用户外设配置”->“焊机配置”。
+Abrir WebApp y hacer clic sucesivamente en "Configuración inicial"->"Configuración de periféricos de usuario"->"Configuración de la máquina de soldar".
 
 .. image:: coding/280.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.8-7-2 打开焊机配置
+.. centered:: Figura 9.8-7-2 Abrir la configuración de la máquina de soldar
 
-选择控制类型为“数字通信协议”，配置UDP通信参数，其中各项参数的含义如下：
+Seleccionar el tipo de control como "Protocolo de comunicación digital" y configurar los parámetros de comunicación UDP; el significado de cada parámetro es el siguiente:
 
-**IP地址**：UDP通信PLC端的IP地址；
+**Dirección IP**: dirección IP del extremo PLC de la comunicación UDP;
 
-**端口号**：PLC端UDP通信端口号；
+**Número de puerto**: número de puerto de comunicación UDP del extremo PLC;
 
-**通信周期**：机器人与PLC进行UDP通信的周期，默认为2ms；
+**Período de comunicación**: período de comunicación UDP entre el robot y el PLC, por defecto 2 ms;
 
-**丢包检测周期、丢包次数**：在丢包检测周期内的丢包个数超过设定值时，机器人报“UDP通信丢包异常”错误，同时通信自动切断。
+**Período de detección de pérdida de paquetes, número de pérdidas de paquetes**: cuando el número de paquetes perdidos dentro del período de detección de pérdida de paquetes supera el valor establecido, el robot informa del error "Anomalía de pérdida de paquetes de comunicación UDP" y la comunicación se corta automáticamente.
 
-**通信中断确认时长**：机器人在该时长内未收到一帧完整的PLC反馈数据包即报“UDP通信中断”错误报警，同时切断UDP通信。
+**Duración de confirmación de interrupción de comunicación**: si el robot no recibe un paquete completo de datos de realimentación del PLC dentro de esta duración, informa de la alarma de error "Interrupción de comunicación UDP" y corta la comunicación UDP.
 
-**通信中断自动重连**：机器人检测到UDP通信中断后是否自动进行重连恢复；
+**Reconexión automática tras interrupción de comunicación**: indica si el robot vuelve a conectarse automáticamente tras detectar una interrupción de la comunicación UDP;
 
-**重连周期、重连次数**：使能UDP通信中断自动重连且检测到UDP通信中断后，机器人以设定的周期进行重连，当重连次数达到最大设定值仍未连接成功时，机器人报“UDP通信中断”错误报警，同时切断UDP通信。
+**Período de reconexión, número de reconexiones**: tras habilitar la reconexión automática tras interrupción de comunicación UDP y detectar una interrupción de la comunicación UDP, el robot se reconecta con el período establecido; cuando el número de reconexiones alcanza el valor máximo establecido y aún no se ha conectado correctamente, el robot informa de la alarma de error "Interrupción de comunicación UDP" y corta la comunicación UDP.
 
-配置完成上述参数后，依次点击“配置”和“加载”按钮。
+Tras configurar los parámetros anteriores, hacer clic sucesivamente en los botones "Configurar" y "Cargar".
 
 .. image:: coding/281.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.8-7-3 选择控制类型
+.. centered:: Figura 9.8-7-3 Selección del tipo de control
    
-②PLC + IO模拟量：
+②PLC + IO analógica:
 
-与“①CANopen或其他总线通讯”相同，PLC程序将输入模拟量数据转成UDP通讯协议中的电流电压数据，并发送至机器人。
+Igual que en "①Comunicación CANopen u otro bus", el programa del PLC convierte los datos de entrada analógica en datos de corriente y tensión del protocolo de comunicación UDP y los envía al robot.
 
-③控制箱AI：
+③AI de la caja de control:
 
-无需通讯配置，仅需要将控制箱与焊机的IO线正确连接即可。其中焊机的实时焊接电流、电压反馈模拟量线输入至机器人控制箱AI0和AI1上。
+No requiere configuración de comunicación; solo es necesario conectar correctamente las líneas IO de la caja de control y de la máquina de soldar. Las líneas analógicas de realimentación de corriente y tensión de soldadura en tiempo real de la máquina de soldar se introducen en AI0 y AI1 de la caja de control del robot.
 
-④以太网通信：
+④Comunicación Ethernet:
 
-正确连接机器人与焊机的网络连接线，在WebApp中依次点击“初始设置”、“外设”、“控制箱”、“外设开放协议”。将焊机通讯协议上传至机器人中，并依次点击“配置”和“加载”按钮，机器人即与焊机建立ModbusTCP通讯连接。
+Conectar correctamente el cable de red entre el robot y la máquina de soldar y hacer clic sucesivamente en WebApp en "Configuración inicial", "Periféricos", "Caja de control", "Protocolo abierto de periféricos". Cargar el protocolo de comunicación de la máquina de soldar en el robot y hacer clic sucesivamente en los botones "Configurar" y "Cargar"; el robot establecerá la conexión de comunicación ModbusTCP con la máquina de soldar.
 
 .. image:: coding/542.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.8-7-4 建立电弧跟踪以太网通信
+.. centered:: Figura 9.8-7-4 Establecimiento de la comunicación Ethernet para el seguimiento de arco
 
-.. note:: 电弧跟踪效果依赖于快速的实时焊接电流、电压数据反馈，若反馈频率较慢，则可能导致焊缝跟踪失败。因此使用ModbusTCP进行焊机通讯时，需要在协议中合理设置通讯周期，推荐通讯周期小于10ms。
+.. note:: El efecto del seguimiento de arco depende de una realimentación rápida de datos de corriente y tensión de soldadura en tiempo real; si la frecuencia de realimentación es lenta, puede provocar el fallo del seguimiento de soldadura. Por lo tanto, al utilizar ModbusTCP para la comunicación con la máquina de soldar, es necesario configurar razonablemente el período de comunicación en el protocolo; se recomienda un período de comunicación inferior a 10 ms.
 
-**3）通道配置**
+**3) Configuración de canales**
 
-①CANopen或其他总线通讯：
+①Comunicación CANopen u otro bus:
 
-依次点击“初始设置”->“外设”->“焊机”->“数字通信协议(UDP)”。
+Hacer clic sucesivamente en "Configuración inicial"->"Periféricos"->"Máquina de soldar"->"Protocolo de comunicación digital (UDP)".
 
 .. image:: coding/282.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.8-7-5 选择焊机控制类型为“数字通信协议(UDP)”
+.. centered:: Figura 9.8-7-5 Selección del tipo de control de la máquina de soldar como "Protocolo de comunicación digital (UDP)"
 
-在页面下方找到“电弧跟踪通道”，根据实际配置选择相应的扩展AI通道，默认焊接电流AI通道为“Aux-AI0”，焊接电压AI通道为Aux-AI1；点击“配置”按钮。
+En la parte inferior de la página, encontrar "Canal de seguimiento de arco" y seleccionar el canal AI extendido correspondiente según la configuración real; por defecto, el canal AI de corriente de soldadura es "Aux-AI0" y el canal AI de tensión de soldadura es Aux-AI1; hacer clic en el botón "Configurar".
 
 .. note:: 
-   机器人与PLC间UDP通讯协议见《附件一：机器人UDP通讯协议》，协议中PLC向机器人反馈数据包含序号74~77的实际焊接电流电压反馈输入通道；
+   El protocolo de comunicación UDP entre el robot y el PLC se describe en el "Anexo 1: Protocolo de comunicación UDP del robot"; en el protocolo, los datos que el PLC realimenta al robot incluyen los canales de entrada de realimentación de corriente y tensión de soldadura reales con números 74~77;
    
-   焊接过程中PLC通过CANOpen等总线采集实时焊接电流信号，并通过74~77字节实际焊接电流电压数值反馈至机器人进行电弧跟踪。
+   Durante el proceso de soldadura, el PLC recoge la señal de corriente de soldadura en tiempo real mediante buses como CANOpen y realimenta al robot los valores reales de corriente y tensión de soldadura mediante los bytes 74~77 para el seguimiento de arco.
 
 .. image:: coding/536.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.8-7-6 总线通讯电弧跟踪通道配置
+.. centered:: Figura 9.8-7-6 Configuración del canal de seguimiento de arco por comunicación de bus
 
-②PLC + IO模拟量：
+②PLC + IO analógica:
 
-配置同“①CANopen或其他总线通讯”，用户在PLC程序中将读取到的模拟量输入，经过数值转换得到实际的焊接电流、电压反馈数值，赋值给机器人与PLC间UDP通讯协议的PLC向机器人反馈数据包中序号74~77的实际焊接电流电压反馈输入通道。
+La configuración es la misma que en "①Comunicación CANopen u otro bus"; el usuario, en el programa del PLC, convierte la entrada analógica leída mediante conversión numérica en los valores reales de realimentación de corriente y tensión de soldadura y los asigna a los canales de entrada de realimentación de corriente y tensión de soldadura reales con números 74~77 del paquete de datos de realimentación del PLC al robot del protocolo de comunicación UDP entre el robot y el PLC.
 
-③控制箱AI：
+③AI de la caja de control:
 
-依次点击“初始设置”->“外设”->“焊机”、“控制器I/O”。
+Hacer clic sucesivamente en "Configuración inicial"->"Periféricos"->"Máquina de soldar", "I/O del controlador".
 
 .. image:: coding/537.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.8-7-7 选择焊机控制类型为“控制器I/O”
+.. centered:: Figura 9.8-7-7 Selección del tipo de control de la máquina de soldar como "I/O del controlador"
 
-在页面下方找到“电弧跟踪通道”，选择焊接电流AI为“Ctrl-AI0”，焊接电压AI为“Ctrl-AI1”，点击“配置”按钮。控制箱模拟量输入0~10V与实际反馈电流、电压数值往往成线程关系，因此需要配置不同模拟量输入对应的实际焊接电流、电压数值。
+En la parte inferior de la página, encontrar "Canal de seguimiento de arco", seleccionar "Ctrl-AI0" como AI de corriente de soldadura y "Ctrl-AI1" como AI de tensión de soldadura, y hacer clic en el botón "Configurar". La entrada analógica de 0~10V de la caja de control y los valores reales de corriente y tensión realimentados suelen tener una relación lineal, por lo que es necesario configurar los valores reales de corriente y tensión de soldadura correspondientes a las distintas entradas analógicas.
 
-在AI通道配置中的“模拟量电流电压关系图”栏，“A-V”和“V-V”界面的参数配置，需参考所使用的焊机模拟量接收与输出表/图。
+En la columna "Gráfico de relación corriente-tensión analógica" de la configuración del canal AI, la configuración de parámetros de las interfaces "A-V" y "V-V" debe referirse a la tabla/gráfico de recepción y salida analógica de la máquina de soldar utilizada.
 
-例如，配置控制箱电流模拟量AI的焊接电流的下限与上限分别为0A和500A；配置控制箱电流模拟量AI的输出电压的下限与上限分别为0V和5V，作为AI通道配置中的“模拟量电流电压关系图”栏的“A-V”界面的配置参数，点击“配置”，完成配置控制箱模拟量电流AI通道。
+Por ejemplo, configurar los límites inferior y superior de la corriente de soldadura de la AI analógica de corriente de la caja de control en 0A y 500A respectivamente; configurar los límites inferior y superior de la tensión de salida de la AI analógica de corriente de la caja de control en 0V y 5V respectivamente, como parámetros de configuración de la interfaz "A-V" de la columna "Gráfico de relación corriente-tensión analógica" de la configuración del canal AI; hacer clic en "Configurar" para completar la configuración del canal AI de corriente analógica de la caja de control.
 
 .. image:: coding/538.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.8-7-8 控制箱模拟量电流AI配置
+.. centered:: Figura 9.8-7-8 Configuración de la AI de corriente analógica de la caja de control
  
-例如，配置控制箱电压模拟量AI的焊接电压的下限与上限分别为0V和50V；配置控制箱电压模拟量AI的输出电压的下限与上限分别为1.018V和10V，作为AI通道配置中“模拟量电流电压关系图”栏的“V-V”界面的配置参数，点击“配置”，完成配置控制箱模拟量电压AI通道。
+Por ejemplo, configurar los límites inferior y superior de la tensión de soldadura de la AI analógica de tensión de la caja de control en 0V y 50V respectivamente; configurar los límites inferior y superior de la tensión de salida de la AI analógica de tensión de la caja de control en 1.018V y 10V respectivamente, como parámetros de configuración de la interfaz "V-V" de la columna "Gráfico de relación corriente-tensión analógica" de la configuración del canal AI; hacer clic en "Configurar" para completar la configuración del canal AI de tensión analógica de la caja de control.
 
 .. image:: coding/539.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.8-7-9 控制箱模拟量电压AI配置
+.. centered:: Figura 9.8-7-9 Configuración de la AI de tensión analógica de la caja de control
 
-④以太网通信：
+④Comunicación Ethernet:
 
-依次点击“初始设置”、“外设”、“焊机”、“数字通信协议(Modbus TCP)”。
+Hacer clic sucesivamente en "Configuración inicial", "Periféricos", "Máquina de soldar", "Protocolo de comunicación digital (Modbus TCP)".
 
 .. image:: coding/540.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.8-7-10 选择焊机控制类型为“数字通信协议(Modbus TCP)”
+.. centered:: Figura 9.8-7-10 Selección del tipo de control de la máquina de soldar como "Protocolo de comunicación digital (Modbus TCP)"
 
-在页面下方找到“电弧跟踪通道”，选择焊接电流AI为“以太网”，焊接电压AI为“以太网”，点击“配置”按钮。
+En la parte inferior de la página, encontrar "Canal de seguimiento de arco", seleccionar "Ethernet" como AI de corriente de soldadura y "Ethernet" como AI de tensión de soldadura, y hacer clic en el botón "Configurar".
 
 .. image:: coding/541.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.8-7-11 以太网通讯电弧跟踪通道配置
+.. centered:: Figura 9.8-7-11 Configuración del canal de seguimiento de arco por comunicación Ethernet
 
-**4）功能指令使用简介**
+**4) Introducción al uso de las instrucciones de función**
 
-电弧跟踪功能能够适配于摆动焊接运动中，在摆动焊接起弧后插入电弧跟踪开始指令、在摆动焊接灭弧前插入电弧跟踪结束指令。
+La función de seguimiento de arco puede adaptarse al movimiento de soldadura oscilante; tras el encendido del arco en la soldadura oscilante se inserta la instrucción de inicio de seguimiento de arco y, antes del apagado del arco en la soldadura oscilante, se inserta la instrucción de fin de seguimiento de arco.
 
 .. image:: coding/283.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-7-12 典型电弧跟踪示例程
+.. centered:: Figura 9.8-7-12 Programa típico de ejemplo de seguimiento de arco
 
-**5）功能界面参数简介**
+**5) Introducción a los parámetros de la interfaz de función**
 
-.. centered:: 表格 9.8-5 电弧跟踪上下补偿模块
-
-.. list-table::
-   :widths: 70 70 70
-   :header-rows: 0
-   :align: center
-
-   * - **参数名称**
-     - **含义**
-     - **备注**
-
-   * - 电弧跟踪滞后时间
-     - 反馈电流滞后的时间
-     - 默认0ms，请勿调整
-
-   * - 上下偏差补偿
-     - 上下补偿开关
-     - 可选择“开启”或“关闭”
-
-   * - 上下调节系数
-     - 电流与补偿距离的关系系数（调节灵敏度）
-     - 焊接趋于短路过渡状态，电流信噪比逐渐变低，建议调低灵敏度
-
-   * - 上下开始补偿时间
-     - 最快开始上下补偿的周期
-     - 与摆动频率相关，起弧后3~4s电流趋于稳定时开启较好。若摆动频率为1Hz，参数可为4；若频率2Hz，参数可为8，以此类推
-
-   * - 上下每次最大补偿量
-     - 每个上下补偿周期的最大补偿量
-     - 根据焊接场景设定，摆动频率越快补偿量越小
-
-   * - 上下总计最大补偿量
-     - 单次完整焊接过程最大累积补偿量
-     - 根据焊接场景设定，焊缝偏差越大设定相应越大
-
-   * - 上下坐标系选择
-     - 补偿值所补偿在的坐标系
-     - 若存在焊接摆动可选“摆动”，否则选择“工具”或“机座”
-
-   * - 上下基准电流设定方式
-     - 基准电流获得方式选择
-     - 可选择“反馈”通过读取反馈电流获得；或“常数”通过直接填写电流值获得
-
-   * - 上下基准电流采样开始计数
-     - 延迟开始采集基准电流的周期数
-     - 与摆动频率相关，起弧后3~4s电流趋于稳定时开启较好。若摆动频率为1Hz，参数可为4；若频率2Hz，参数可为8，以此类推
-
-   * - 上下基准电流采样计数
-     - 基准电流反馈模式，采集基准电流的统计周期
-     - 默认1cyc
-
-   * - 上下基准电流
-     - 基准电流常数模式，基准电流数值
-     - 可手动填写以达到预期的补偿高度
-
-.. centered:: 表格 9.8-6 电弧跟踪左右补偿模块
+.. centered:: Tabla 9.8-5 Módulo de compensación superior e inferior del seguimiento de arco
 
 .. list-table::
    :widths: 70 70 70
    :header-rows: 0
    :align: center
 
-   * - **参数名称**
-     - **含义**
-     - **参数说明**
+   * - **Nombre del parámetro**
+     - **Significado**
+     - **Observaciones**
 
-   * - 电弧跟踪滞后时间
-     - 反馈电流滞后的时间
-     - 默认0ms，请勿调整
+   * - Tiempo de retardo del seguimiento de arco
+     - Tiempo de retardo de la corriente de realimentación
+     - Por defecto 0 ms, no ajustar
 
-   * - 左右偏差补偿
-     - 左右补偿开关
-     - 可选择“开启”或“关闭”
+   * - Compensación de desviación superior e inferior
+     - Interruptor de compensación superior e inferior
+     - Se puede seleccionar "Activar" o "Desactivar"
 
-   * - 左右调节系数
-     - 电流与补偿距离的关系系数（调节灵敏度）
-     - 焊接趋于短路过渡状态，电流信噪比逐渐变低，建议调低灵敏度
+   * - Coeficiente de ajuste superior e inferior
+     - Coeficiente de relación entre la corriente y la distancia de compensación (ajuste de sensibilidad)
+     - Cuando la soldadura tiende a un estado de transición de cortocircuito, la relación señal-ruido de la corriente disminuye gradualmente; se recomienda reducir la sensibilidad
 
-   * - 左右开始补偿时间
-     - 最快开始左右补偿的周期
-     - 与摆动频率相关，起弧后3~4s电流趋于稳定时开启较好。若摆动频率为1Hz，参数可为4；若频率2Hz，参数可为8，以此类推
+   * - Tiempo de inicio de compensación superior e inferior
+     - Período de inicio más rápido de la compensación superior e inferior
+     - Relacionado con la frecuencia de oscilación; es mejor activarlo cuando la corriente se estabiliza 3~4 s después del encendido del arco. Si la frecuencia de oscilación es 1 Hz, el parámetro puede ser 4; si la frecuencia es 2 Hz, el parámetro puede ser 8, y así sucesivamente
 
-   * - 左右每次最大补偿量
-     - 每个左右补偿周期的最大补偿量
-     - 根据焊接场景设定，摆动频率越快补偿量越小
+   * - Cantidad máxima de compensación superior e inferior por vez
+     - Cantidad máxima de compensación de cada período de compensación superior e inferior
+     - Configurado según el escenario de soldadura; cuanto más rápida es la frecuencia de oscilación, menor es la cantidad de compensación
 
-   * - 左右总计最大补偿量
-     - 单次完整焊接过程最大累积补偿量
-     - 根据焊接场景设定，焊缝偏差越大设定相应越大
+   * - Cantidad máxima total de compensación superior e inferior
+     - Cantidad máxima de compensación acumulada de un proceso completo de soldadura
+     - Configurado según el escenario de soldadura; cuanto mayor es la desviación de la soldadura, mayor es el valor correspondiente
 
-**6）适用范围**
+   * - Selección del sistema de coordenadas superior e inferior
+     - Sistema de coordenadas en el que se aplica el valor de compensación
+     - Si existe oscilación de soldadura, se puede seleccionar "Oscilación"; de lo contrario, seleccionar "Herramienta" o "Base"
 
-.. centered:: 表格 9.8-7 上下补偿开启左右补偿关闭
+   * - Modo de establecimiento de la corriente de referencia superior e inferior
+     - Selección del modo de obtención de la corriente de referencia
+     - Se puede seleccionar "Retroalimentación" para obtenerla leyendo la corriente de realimentación; o "Constante" para obtenerla introduciendo directamente el valor de corriente
+
+   * - Inicio del conteo de muestreo de la corriente de referencia superior e inferior
+     - Número de períodos de retardo para iniciar la recogida de la corriente de referencia
+     - Relacionado con la frecuencia de oscilación; es mejor activarlo cuando la corriente se estabiliza 3~4 s después del encendido del arco. Si la frecuencia de oscilación es 1 Hz, el parámetro puede ser 4; si la frecuencia es 2 Hz, el parámetro puede ser 8, y así sucesivamente
+
+   * - Conteo de muestreo de la corriente de referencia superior e inferior
+     - Modo de retroalimentación de la corriente de referencia; período estadístico de recogida de la corriente de referencia
+     - Por defecto 1cyc
+
+   * - Corriente de referencia superior e inferior
+     - Modo de corriente de referencia constante; valor de la corriente de referencia
+     - Se puede introducir manualmente para alcanzar la altura de compensación esperada
+
+.. centered:: Tabla 9.8-6 Módulo de compensación izquierda y derecha del seguimiento de arco
+
+.. list-table::
+   :widths: 70 70 70
+   :header-rows: 0
+   :align: center
+
+   * - **Nombre del parámetro**
+     - **Significado**
+     - **Descripción del parámetro**
+
+   * - Tiempo de retardo del seguimiento de arco
+     - Tiempo de retardo de la corriente de realimentación
+     - Por defecto 0 ms, no ajustar
+
+   * - Compensación de desviación izquierda y derecha
+     - Interruptor de compensación izquierda y derecha
+     - Se puede seleccionar "Activar" o "Desactivar"
+
+   * - Coeficiente de ajuste izquierda y derecha
+     - Coeficiente de relación entre la corriente y la distancia de compensación (ajuste de sensibilidad)
+     - Cuando la soldadura tiende a un estado de transición de cortocircuito, la relación señal-ruido de la corriente disminuye gradualmente; se recomienda reducir la sensibilidad
+
+   * - Tiempo de inicio de compensación izquierda y derecha
+     - Período de inicio más rápido de la compensación izquierda y derecha
+     - Relacionado con la frecuencia de oscilación; es mejor activarlo cuando la corriente se estabiliza 3~4 s después del encendido del arco. Si la frecuencia de oscilación es 1 Hz, el parámetro puede ser 4; si la frecuencia es 2 Hz, el parámetro puede ser 8, y así sucesivamente
+
+   * - Cantidad máxima de compensación izquierda y derecha por vez
+     - Cantidad máxima de compensación de cada período de compensación izquierda y derecha
+     - Configurado según el escenario de soldadura; cuanto más rápida es la frecuencia de oscilación, menor es la cantidad de compensación
+
+   * - Cantidad máxima total de compensación izquierda y derecha
+     - Cantidad máxima de compensación acumulada de un proceso completo de soldadura
+     - Configurado según el escenario de soldadura; cuanto mayor es la desviación de la soldadura, mayor es el valor correspondiente
+
+**6) Ámbito de aplicación**
+
+.. centered:: Tabla 9.8-7 Compensación superior e inferior activada, compensación izquierda y derecha desactivada
 
 .. list-table::
    :widths: 70 70
    :header-rows: 0
    :align: center
 
-   * - **关键参数**
-     - **参数范围**
+   * - **Parámetro clave**
+     - **Rango del parámetro**
 
-   * - 摆动频率Hz
-     - 0(不使用焊接摆动)，0.5 到 2(使用焊接摆动)
+   * - Frecuencia de oscilación Hz
+     - 0 (sin oscilación de soldadura), 0,5 a 2 (con oscilación de soldadura)
 
-   * - 摆动幅度mm
-     - 0(不使用焊接摆动)，3 到 7(使用焊接摆动)
+   * - Amplitud de oscilación mm
+     - 0 (sin oscilación de soldadura), 3 a 7 (con oscilación de soldadura)
 
-   * - 设定电压V
+   * - Tensión establecida V
      - >17
 
-   * - 设定电流A
+   * - Corriente establecida A
      - >160
   
-.. centered:: 表格 9.8-8 上下补偿关闭左右补偿开启
+.. centered:: Tabla 9.8-8 Compensación superior e inferior desactivada, compensación izquierda y derecha activada
 
 .. list-table::
    :widths: 70 70
    :header-rows: 0
    :align: center
 
-   * - **关键参数**
-     - **参数范围**
+   * - **Parámetro clave**
+     - **Rango del parámetro**
 
-   * - 摆动频率Hz
-     - 0.5 到 2
+   * - Frecuencia de oscilación Hz
+     - 0,5 a 2
 
-   * - 摆动幅度mm
-     - 3 到 7
+   * - Amplitud de oscilación mm
+     - 3 a 7
 
-   * - 设定电压V
+   * - Tensión establecida V
      - >17
 
-   * - 设定电流A
+   * - Corriente establecida A
      - >160
   
-.. centered:: 表格 9.8-9 上下、左右补偿均开启
+.. centered:: Tabla 9.8-9 Compensación superior e inferior y compensación izquierda y derecha activadas
 
 .. list-table::
    :widths: 70 70
    :header-rows: 0
    :align: center
 
-   * - **关键参数**
-     - **参数范围**
+   * - **Parámetro clave**
+     - **Rango del parámetro**
 
-   * - 摆动频率Hz
-     - 0.5 到 2
+   * - Frecuencia de oscilación Hz
+     - 0,5 a 2
 
-   * - 摆动幅度mm
-     - 3 到 7
+   * - Amplitud de oscilación mm
+     - 3 a 7
 
-   * - 设定电压V
+   * - Tensión establecida V
      - >19
 
-   * - 设定电流A
+   * - Corriente establecida A
      - >210
 
-**7）注意事项**
+**7) Precauciones**
 
-1) 左右补偿电弧跟踪功能只可适配直线轨迹搭配对称的三角波或正弦波摆动情况。
-2) 使用补偿功能焊接起始位置一定需要准确处于焊缝上方（焊枪轴线处于角焊缝中心），焊枪距离焊缝不可过近，否则有撞焊枪的风险。
-3) 需工件坡口两边材料一致。
-4) 工件坐标尺寸与姿态需使用6点法精确标定。
-5) 设定轨迹与焊缝的偏差越大，每次最大补偿量与总计最大补偿量相应越大。
-6) 设定轨迹与焊缝的终止点偏差不应大于100mm/m，偏差过大可能会导致焊丝甚至焊枪撞工件，使焊接位置偏离预设轨迹(摆动不到位)，导致电弧跟踪功能无法正常起效。
-7) 若选择较小设定电流电压进行焊接时，电弧跟踪上下左右调节系数应相应减小，以减小反馈电流毛刺导致的不稳定补偿。
-8) 当选取不同坐标系进行电弧跟踪时，上下与左右补偿系数的正负号可能需要调整，除了通过对应坐标系方向进行判断外还可通过试焊的方式判别。若在倾斜平板上示教摆动焊接轨迹（左图）后，启用电弧跟踪后焊接轨迹（右图）顺基于摆动平面倾斜梯度下降方向运动，同时结束时焊枪高度与起始时接近，则调节系数的符号正确。
+1) La función de seguimiento de arco con compensación izquierda y derecha solo puede adaptarse a trayectorias en línea recta combinadas con oscilación triangular o sinusoidal simétrica.
+2) Con la función de compensación, la posición inicial de la soldadura debe estar necesariamente con precisión por encima de la soldadura (el eje de la antorcha de soldadura debe estar en el centro de la soldadura en ángulo); la antorcha de soldadura no debe estar demasiado cerca de la soldadura; de lo contrario, existe el riesgo de golpear la antorcha de soldadura.
+3) El material a ambos lados de la ranura de la pieza debe ser uniforme.
+4) Las dimensiones y la actitud del sistema de coordenadas de pieza deben calibrarse con precisión mediante el método de 6 puntos.
+5) Cuanto mayor es la desviación entre la trayectoria establecida y la soldadura, mayores deben ser la cantidad máxima de compensación por vez y la cantidad máxima total de compensación.
+6) La desviación entre la trayectoria establecida y el punto final de la soldadura no debe ser superior a 100 mm/m; una desviación demasiado grande puede provocar que el alambre de soldadura o incluso la antorcha de soldadura golpeen la pieza, haciendo que la posición de soldadura se desvíe de la trayectoria preestablecida (oscilación insuficiente), lo que provocará que la función de seguimiento de arco no funcione correctamente.
+7) Si se selecciona una corriente y tensión establecidas pequeñas para la soldadura, los coeficientes de ajuste superior-inferior e izquierda-derecha del seguimiento de arco deben reducirse correspondientemente, para reducir la compensación inestable provocada por las irregularidades de la corriente de realimentación.
+8) Al seleccionar distintos sistemas de coordenadas para el seguimiento de arco, puede ser necesario ajustar el signo de los coeficientes de compensación superior-inferior e izquierda-derecha; además de determinarlo mediante la dirección del sistema de coordenadas correspondiente, también se puede determinar mediante soldadura de prueba. Si tras enseñar la trayectoria de soldadura oscilante en una placa inclinada (figura izquierda) y activar el seguimiento de arco, la trayectoria de soldadura (figura derecha) se desplaza siguiendo la dirección de descenso del gradiente de inclinación del plano de oscilación y, al finalizar, la altura de la antorcha de soldadura es cercana a la inicial, entonces el signo de los coeficientes de ajuste es correcto.
 
 .. image:: coding/284.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-7-13 设置倾斜摆动轨迹（左），当符号正确时焊缝轨迹（右）
+.. centered:: Figura 9.8-7-13 Configuración de la trayectoria de oscilación inclinada (izquierda); cuando el signo es correcto, trayectoria de soldadura (derecha)
 
-姿态调整命令
-++++++++++++++++
+Comando de ajuste de actitud
++++++++++++++++++++++++++++++++
 
-点击“姿态调整”图标进入Adjust命令编辑界面。
+Hacer clic en el icono "Ajuste de actitud" para entrar en la interfaz de edición del comando Adjust.
 
-该指令针对焊接跟踪自适应调整焊枪姿态场景，记录好三个对应的姿态点后，根据机器人实际运动方向，添加姿态自适应调整指令。详见机器人外设章节。
+Esta instrucción está orientada al escenario de ajuste adaptativo de la actitud de la antorcha de soldadura en el seguimiento de soldadura; tras registrar tres puntos de actitud correspondientes, se añade la instrucción de ajuste adaptativo de actitud según la dirección real de movimiento del robot. Consulte el capítulo de periféricos del robot para más detalles.
 
 .. image:: coding/134.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.8-8 Adjust指令界面
+.. centered:: Figura 9.8-8 Interfaz de la instrucción Adjust
 
-力控指令界面 
-~~~~~~~~~~~~~
+Interfaz de instrucciones de control de fuerza 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: coding/135.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.9 力控指令界面 
+.. centered:: Figura 9.9 Interfaz de instrucciones de control de fuerza 
 
-力控集命令
-++++++++++++++++
+Comando de conjunto de control de fuerza
+++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“力控集”图标进入F/T命令编辑界面。
+Hacer clic en el icono "Conjunto de control de fuerza" para entrar en la interfaz de edición del comando F/T.
 
-该指令包含FT_Guard(碰撞检测)，FT_Control(恒力控制)，FT_Compliance(柔顺控制)，FT_Spiral(螺旋插入)，FT_Rot(旋转插入)，FT_Lin(直线插入)，FT_FindSurface(表面定位) ，FT_CalCenter(中心定位)八个指令，详见机器人外设章节。
+Esta instrucción incluye ocho instrucciones: FT_Guard (detección de colisiones), FT_Control (control de fuerza constante), FT_Compliance (control de conformidad), FT_Spiral (inserción en hélice), FT_Rot (inserción rotativa), FT_Lin (inserción en línea recta), FT_FindSurface (localización de superficie) y FT_CalCenter (localización de centro); consulte el capítulo de periféricos del robot para más detalles.
 
 .. image:: coding/136.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.9-1 F/T指令界面
+.. centered:: Figura 9.9-1 Interfaz de la instrucción F/T
 
-力控装配工艺包优化
-*************************************************
+Optimización del paquete de proceso de ensamblaje por control de fuerza
+*****************************************************************************************
 
-概述
-""""""""""""""""""""""""""""""""""
-力控螺旋插入、直线插入功能一般用于装配搜孔插入动作，表面定位功能一般用于寻找笛卡尔空间表面位置，根据应用场景，设定相应的运动参数和未检测到外力处理策略，当结束后检测到的外力未到达设定阈值时，可由用户自主选择停止整个程序（功能配置为“报错”，界面显示红色错误），或选择继续运动（功能配置为“警告”，界面显示黄色警告）。
+Descripción general
+""""""""""""""""""""""""""""""""""""
+Las funciones de inserción en hélice e inserción en línea recta por control de fuerza se utilizan generalmente para acciones de búsqueda de orificio e inserción en ensamblaje; la función de localización de superficie se utiliza generalmente para buscar la posición de una superficie en el espacio cartesiano; según el escenario de aplicación se configuran los parámetros de movimiento correspondientes y la estrategia de tratamiento cuando no se detecta fuerza externa; cuando al finalizar la fuerza externa detectada no alcanza el umbral establecido, el usuario puede elegir por sí mismo detener todo el programa (función configurada como "Error", la interfaz muestra un error en rojo) o elegir continuar el movimiento (función configurada como "Advertencia", la interfaz muestra una advertencia en amarillo).
 
-力控螺旋插入优化功能操作流程
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-**Step1**：依次点击“示教程序”->“程序编程”->“力控集”-“Rot”指令，根据实际应用场景设置相应的运动参数，未检测到外力处理策略可设置为“报错”或“警告”。当配置为“报错”，机器人检测外力始终小于设定的阈值，并且已经达到设定的旋转角度时，会在界面报错，停止执行后面程序；当配置为“警告”，机器人检测外力始终小于设定的阈值，并且已经达到设定的旋转角度时，会在界面报警告，继续执行后面的程序。
+Flujo de operación de la función de optimización de inserción en hélice por control de fuerza
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+**Step1**: Hacer clic sucesivamente en "Programa de enseñanza"->"Programación de programas"->"Conjunto de control de fuerza"-instrucción "Rot"; configurar los parámetros de movimiento correspondientes según el escenario de aplicación real; la estrategia de tratamiento cuando no se detecta fuerza externa se puede configurar como "Error" o "Advertencia". Cuando se configura como "Error", si el robot detecta que la fuerza externa es siempre inferior al umbral establecido y ya se ha alcanzado el ángulo de rotación establecido, la interfaz mostrará un error y se detendrá la ejecución de los programas posteriores; cuando se configura como "Advertencia", si el robot detecta que la fuerza externa es siempre inferior al umbral establecido y ya se ha alcanzado el ángulo de rotación establecido, la interfaz mostrará una advertencia y continuará la ejecución de los programas posteriores.
 
 .. image:: coding/531.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.9-2 力控旋转插入参数配置
+.. centered:: Figura 9.9-2 Configuración de parámetros de inserción rotativa por control de fuerza
 
-**Step2**：力控旋转插入功能需搭配“FT_Control”功能进行运动，设置相同的运动参数，未检测到外力处理策略设置为“报错”或“警告”的典型lua程序分别如图所示。
+**Step2**: La función de inserción rotativa por control de fuerza debe combinarse con la función "FT_Control" para el movimiento; configurando los mismos parámetros de movimiento y con la estrategia de tratamiento cuando no se detecta fuerza externa configurada como "Error" o "Advertencia", los programas lua típicos se muestran respectivamente en las figuras.
 
 .. image:: coding/532.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.9-3 配置为“报错”典型lua程序
+.. centered:: Figura 9.9-3 Programa lua típico configurado como "Error"
 
 .. image:: coding/533.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.9-4 配置为“警告”典型lua程序
+.. centered:: Figura 9.9-4 Programa lua típico configurado como "Advertencia"
 
-力控直线插入优化功能操作流程
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Flujo de operación de la función de optimización de inserción en línea recta por control de fuerza
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：依次点击“示教程序”-“程序编程”-“力控集”-“Lin”指令，根据实际应用场景设置相应的运动参数，未检测到外力处理策略可设置为“报错”或“警告”。当配置为“报错”，机器人检测外力始终小于设定的阈值，并且已经达到设定的插入距离时，会在界面报错，停止执行后面程序；当配置为“警告”，机器人检测外力始终小于设定的阈值，并且已经达到设定的插入距离时，会在界面报警告，继续执行后面的程序。如图3-1所示。
+**Step1**: Hacer clic sucesivamente en "Programa de enseñanza"-"Programación de programas"-"Conjunto de control de fuerza"-instrucción "Lin"; configurar los parámetros de movimiento correspondientes según el escenario de aplicación real; la estrategia de tratamiento cuando no se detecta fuerza externa se puede configurar como "Error" o "Advertencia". Cuando se configura como "Error", si el robot detecta que la fuerza externa es siempre inferior al umbral establecido y ya se ha alcanzado la distancia de inserción establecida, la interfaz mostrará un error y se detendrá la ejecución de los programas posteriores; cuando se configura como "Advertencia", si el robot detecta que la fuerza externa es siempre inferior al umbral establecido y ya se ha alcanzado la distancia de inserción establecida, la interfaz mostrará una advertencia y continuará la ejecución de los programas posteriores. Como se muestra en la Figura 3-1.
 
 .. image:: coding/603.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.9-5 力控直线插入参数配置
+.. centered:: Figura 9.9-5 Configuración de parámetros de inserción en línea recta por control de fuerza
 
-**Step2**：力控直线插入功能需搭配“FT_Control”功能进行运动，设置相同的运动参数，未检测到外力处理策略设置为“报错”或“警告”的典型lua程序分别如图3-2和图3-3所示。
+**Step2**: La función de inserción en línea recta por control de fuerza debe combinarse con la función "FT_Control" para el movimiento; configurando los mismos parámetros de movimiento y con la estrategia de tratamiento cuando no se detecta fuerza externa configurada como "Error" o "Advertencia", los programas lua típicos se muestran respectivamente en las Figuras 3-2 y 3-3.
 
 .. image:: coding/604.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.9-6 配置为“报错”典型lua程序
+.. centered:: Figura 9.9-6 Programa lua típico configurado como "Error"
 
 .. image:: coding/605.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.9-6 配置为“警告”典型lua程序
+.. centered:: Figura 9.9-6 Programa lua típico configurado como "Advertencia"
 
-力控表面定位优化功能操作流程
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Flujo de operación de la función de optimización de localización de superficie por control de fuerza
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：依次点击“示教程序”-“程序编程”-“力控集”-“FindSurface”指令，根据实际应用场景设置相应的运动参数，未检测到外力处理策略可设置为“报错”或“警告”。当配置为“报错”，机器人检测外力始终小于设定的阈值，并且已经达到设定的探索距离时，会在界面报错，停止执行后面程序；当配置为“警告”，机器人检测外力始终小于设定的阈值，并且已经达到设定的探索距离时，会在界面报警告，继续执行后面的程序。如图4-1所示。
+**Step1**: Hacer clic sucesivamente en "Programa de enseñanza"-"Programación de programas"-"Conjunto de control de fuerza"-instrucción "FindSurface"; configurar los parámetros de movimiento correspondientes según el escenario de aplicación real; la estrategia de tratamiento cuando no se detecta fuerza externa se puede configurar como "Error" o "Advertencia". Cuando se configura como "Error", si el robot detecta que la fuerza externa es siempre inferior al umbral establecido y ya se ha alcanzado la distancia de exploración establecida, la interfaz mostrará un error y se detendrá la ejecución de los programas posteriores; cuando se configura como "Advertencia", si el robot detecta que la fuerza externa es siempre inferior al umbral establecido y ya se ha alcanzado la distancia de exploración establecida, la interfaz mostrará una advertencia y continuará la ejecución de los programas posteriores. Como se muestra en la Figura 4-1.
 
 .. image:: coding/606.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.9-7 力控表面定位参数配置
+.. centered:: Figura 9.9-7 Configuración de parámetros de localización de superficie por control de fuerza
 
-**Step2**：力控表面定位功能需搭配“FT_Control”功能进行运动，设置相同的运动参数，未检测到外力处理策略设置为“报错”或“警告”的典型lua程序分别如图4-2和图4-3所示。
+**Step2**: La función de localización de superficie por control de fuerza debe combinarse con la función "FT_Control" para el movimiento; configurando los mismos parámetros de movimiento y con la estrategia de tratamiento cuando no se detecta fuerza externa configurada como "Error" o "Advertencia", los programas lua típicos se muestran respectivamente en las Figuras 4-2 y 4-3.
 
 .. image:: coding/607.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.9-8 配置为“报错”典型lua程序
+.. centered:: Figura 9.9-8 Programa lua típico configurado como "Error"
 
 .. image:: coding/608.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.9-9 配置为“警告”典型lua程序
+.. centered:: Figura 9.9-9 Programa lua típico configurado como "Advertencia"
 
-扭矩记录命令
-++++++++++++++++
+Comando de registro de par
+++++++++++++++++++++++++++++++++
 
-点击“扭矩记录”图标进入Torque命令编辑界面。
+Hacer clic en el icono "Registro de par" para entrar en la interfaz de edición del comando Torque.
 
-该指令为扭矩记录指令，实现扭矩实时记录碰撞检测功能。点击“扭矩记录启动”按钮，持续记录运动指令运行过程中的碰撞情况，记录的实时扭矩作为碰撞检测判断的理论值，以减少误报错概率。当超出设定阈值范围时，记录碰撞检测持续时间。点击“扭矩记录停止”按钮，停止记录。点击“扭矩记录复位”，状态恢复默认状态。
+Esta instrucción es una instrucción de registro de par que permite el registro en tiempo real del par para la detección de colisiones. Hacer clic en el botón "Iniciar registro de par" para registrar continuamente las situaciones de colisión durante la ejecución de las instrucciones de movimiento; el par en tiempo real registrado se utiliza como valor teórico para el juicio de detección de colisiones, con el fin de reducir la probabilidad de falsos avisos de error. Cuando se supera el rango del umbral establecido, se registra la duración de la detección de colisión. Hacer clic en el botón "Detener registro de par" para detener el registro. Hacer clic en "Restablecer registro de par" para que el estado vuelva al estado predeterminado.
 
 .. image:: coding/137.png
    :width: 6in
    :align: center 
 
-.. centered:: 图表 9.9-5 Torque指令界面
+.. centered:: Figura 9.9-5 Interfaz de la instrucción Torque
 
-视觉指令界面
-~~~~~~~~~~~~~
+Interfaz de instrucciones de visión
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: coding/138.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.10 视觉指令界面 
+.. centered:: Figura 9.10 Interfaz de instrucciones de visión 
 
-3D视觉命令
-++++++++++++++++
+Comando de visión 3D
+++++++++++++++++++++++++++++++++
 
-点击“3D视觉”图标进入3D命令编辑界面。
+Hacer clic en el icono "Visión 3D" para entrar en la interfaz de edición del comando 3D.
 
-该指令为3D视觉程序实例生成指令，用户可以根据生成的程序进行参考，与其他视觉设备进行通讯工作，包含相机标定和相机抓取两个程序案例参考。
+Esta instrucción es una instrucción de generación de ejemplos de programas de visión 3D; el usuario puede utilizar el programa generado como referencia para comunicarse con otros dispositivos de visión; incluye dos casos de referencia de programa: calibración de cámara y agarre por cámara.
 
 .. image:: coding/139.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.10-1 3D指令界面
+.. centered:: Figura 9.10-1 Interfaz de la instrucción 3D
 
-码垛指令界面
-~~~~~~~~~~~~~
+Interfaz de instrucciones de paletizado
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: coding/140.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.11 码垛指令界面 
+.. centered:: Figura 9.11 Interfaz de instrucciones de paletizado 
 
-矩阵移动命令
-++++++++++++++++
+Comando de movimiento matricial
+++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“矩阵移动”图标进入Pallet命令编辑界面。
+Hacer clic en el icono "Movimiento matricial" para entrar en la interfaz de edición del comando Pallet.
 
-该指令为码垛程序生成指令。
+Esta instrucción es una instrucción de generación de programas de paletizado.
 
 .. image:: coding/141.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.11-1 Pallet指令界面
+.. centered:: Figura 9.11-1 Interfaz de la instrucción Pallet
 
-此功能通过设定三点坐标及行列层和层高等数值，来控制机器手规则移动，适用于常见的码垛应用。第一步选择机器人运动方式，“PTP”或者“Line”，第二步设定机器人运动路径，“头到尾走法”或“弓字形走法”，第三步设定堆叠方式，“堆垛”或“卸垛”。
+Esta función, mediante el establecimiento de las coordenadas de tres puntos y valores como filas, columnas, capas y altura de capa, controla el movimiento regular del brazo robótico, siendo aplicable a las aplicaciones de paletizado habituales. El primer paso es seleccionar el modo de movimiento del robot, "PTP" o "Line"; el segundo paso es establecer la ruta de movimiento del robot, "recorrido de principio a fin" o "recorrido en zigzag"; el tercer paso es establecer el modo de apilado, "apilar" o "desapilar".
 
 .. image:: coding/142.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.11‑2 矩阵移动
+.. centered:: Figura 9.11‑2 Movimiento matricial
 
-第四步根据路径示教三个点，第一点为第一排起点，整个运动过程手臂姿态由该点决定，第二点为第一排终点，第三点为最后一排终点。第五步设点行数和列数，第六步设定层数和每一层高度。
+El cuarto paso es enseñar tres puntos según la ruta: el primer punto es el inicio de la primera fila, y la actitud del brazo durante todo el proceso de movimiento viene determinada por este punto; el segundo punto es el final de la primera fila; el tercer punto es el final de la última fila. El quinto paso es establecer el número de filas y columnas; el sexto paso es establecer el número de capas y la altura de cada capa.
 
 .. image:: coding/143.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.11‑3 矩阵移动
+.. centered:: Figura 9.11‑3 Movimiento matricial
 
-通讯指令界面
-~~~~~~~~~~~~~
+Interfaz de instrucciones de comunicación
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: coding/144.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.12 通讯指令界面
+.. centered:: Figura 9.12 Interfaz de instrucciones de comunicación
 
-Modbus命令
+Comando Modbus
 ++++++++++++++++
 
-点击“Mobus”图标进入Modbus命令编辑界面。
+Hacer clic en el icono "Mobus" para entrar en la interfaz de edición del comando Modbus.
 
-该指令功能为基于ModbusTCP协议的总线功能，用户可以通过相关指令控制机器人与ModbusTCP client或server通讯（主站与从站通讯），对线圈，离散量，寄存器进行读写操作。
+La función de esta instrucción es la función de bus basada en el protocolo ModbusTCP; el usuario puede, mediante las instrucciones correspondientes, controlar la comunicación del robot con el cliente o servidor ModbusTCP (comunicación entre maestro y esclavo) y realizar operaciones de lectura y escritura sobre bobinas, entradas discretas y registros.
 
 .. image:: coding/145.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.12-1 modbus指令主站界面
+.. centered:: Figura 9.12-1 Interfaz de maestro de la instrucción modbus
 
 .. image:: coding/146.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.12-2 modbus指令从站界面
+.. centered:: Figura 9.12-2 Interfaz de esclavo de la instrucción modbus
 
-关于ModbusTCP更多操作功能，请联系我们咨询。
+Para más funciones de operación de ModbusTCP, póngase en contacto con nosotros para consultar.
 
-Xmlrpc命令
+Comando Xmlrpc
 ++++++++++++++++
 
-点击“Xmlroc”图标进入Xmlrpc命令编辑界面。
+Hacer clic en el icono "Xmlroc" para entrar en la interfaz de edición del comando Xmlrpc.
 
-XML-RPC是一种通过sockets使用xml在程序之间传输数据的远程过程调用方法。通过这种方法，机器人控制器可以在远端的程序/服务调用功能函数（可带参数）并获取返回的结构性数据。机器人控制器负责处理编写XML-RPC客户端消息以及处理数据类型与XML之间转换的所有细节。
+XML-RPC es un método de llamada a procedimiento remoto que utiliza xml a través de sockets para transmitir datos entre programas. Mediante este método, el controlador del robot puede llamar a funciones de programa/servicio remotos (con parámetros) y obtener datos estructurados de retorno. El controlador del robot se encarga de todos los detalles de la redacción de los mensajes de cliente XML-RPC y del procesamiento de la conversión entre tipos de datos y XML.
 
 .. image:: coding/147.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.12-3 Xmlrpc指令界面
+.. centered:: Figura 9.12-3 Interfaz de la instrucción Xmlrpc
 
 .. important:: 
-  1) 控制器作为客户端连接远端自定义端口；
+  1) El controlador actúa como cliente y se conecta al puerto personalizado remoto;
 
-  2) 控制器作为客户端调用远端功能函数；
+  2) El controlador actúa como cliente y llama a la función remota;
 
-  3) 支持调用远端不同功能函数；
+  3) Admite la llamada a distintas funciones remotas;
 
-  4) 支持字符串数组参数传入与字符数组结果返回，数组元素个数可自定义；
+  4) Admite la entrada de parámetros de matriz de cadenas y el retorno de resultados de matriz de caracteres; el número de elementos de la matriz se puede personalizar;
 
-  支持double型数组参数传入与double型数组结果返回，数组元素个数个数可自定义；
+  Admite la entrada de parámetros de matriz de tipo double y el retorno de resultados de matriz de tipo double; el número de elementos de la matriz se puede personalizar;
 
 ::
 
    XmlrpcClientCall(serverUrl，methodName，tableType，param)
 
-   serverUrl 服务端url，例如："http://192.168.58.29:50000/RPC2"
+   serverUrl url del servidor, por ejemplo: "http://192.168.58.29:50000/RPC2"
 
-   methodName 调用函数名，“example.add”
+   methodName nombre de la función llamada, "example.add"
 
-   tableType 1-double型数组，2-string型数组
+   tableType 1-matriz de tipo double, 2-matriz de tipo string
 
-   param 调用函数参数
+   param parámetros de la función llamada
 
 ::
 
    XmlrpcClientCall(error， result)
 
-   error 0-无错误，1-错误
+   error 0-sin error, 1-error
 
-   result 若参数传入为double型数组，则result为double型数组，
+   result si el parámetro de entrada es una matriz de tipo double, result es una matriz de tipo double,
 
-   若参数传入为string型数组，则result为string型数组
+   si el parámetro de entrada es una matriz de tipo string, result es una matriz de tipo string
 
-辅助指令界面
-~~~~~~~~~~~~~
+Interfaz de instrucciones auxiliares
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: coding/148.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.13 辅助指令界面
+.. centered:: Figura 9.13 Interfaz de instrucciones auxiliares
 
-辅助线程命令
-++++++++++++++++
+Comando de hilo auxiliar
+++++++++++++++++++++++++++++++++
 
-点击“辅助线程”图标进入Thread命令编辑界面。
+Hacer clic en el icono "Hilo auxiliar" para entrar en la interfaz de edición del comando Thread.
 
-Thread命令为辅助线程功能，用户可以定义一个辅助线程与主线程同时运行，辅助线程主要与外部设备进行数据交互，支持socket通信，机器人DI状态获取，机器人DO状态设置，机器人状态信息获取，与主线程数据交互，主线程通过辅助线程获取的数据用于控制机器人运动逻辑的判断，用户程序示例截图：
+El comando Thread es una función de hilo auxiliar; el usuario puede definir un hilo auxiliar que se ejecute simultáneamente con el hilo principal; el hilo auxiliar se utiliza principalmente para el intercambio de datos con dispositivos externos y admite comunicación socket, obtención del estado DI del robot, establecimiento del estado DO del robot, obtención de información de estado del robot e intercambio de datos con el hilo principal; el hilo principal utiliza los datos obtenidos por el hilo auxiliar para el juicio de la lógica de control del movimiento del robot; captura de pantalla de ejemplo de programa de usuario:
 
 .. image:: coding/149.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.13-1 Thread程序示例
+.. centered:: Figura 9.13-1 Ejemplo de programa Thread
 
-调用函数命令
-++++++++++++++++
+Comando de llamada a función
+++++++++++++++++++++++++++++++++
 
-点击“调用函数”图标进入Function命令编辑界面。
+Hacer clic en el icono "Llamada a función" para entrar en la interfaz de edición del comando Function.
 
-该指令为调用函数接口功能，将机器人接口函数提供给客户选择，并提示客户该函数所需要的参数，方便客户编写脚本指令，更多函数陆续添加中。
+Esta instrucción es una función de interfaz de llamada a función, que ofrece al cliente las funciones de interfaz del robot para su selección y le indica los parámetros necesarios de dicha función, facilitando al cliente la escritura de instrucciones de script; se irán añadiendo más funciones sucesivamente.
 
 .. image:: coding/150.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.13-2 Function指令界面
+.. centered:: Figura 9.13-2 Interfaz de la instrucción Function
 
-点位表命令
-++++++++++++++++
+Comando de tabla de puntos
+++++++++++++++++++++++++++++++++
 
-点击“点位表”图标进入PT-Mode命令编辑界面。
+Hacer clic en el icono "Tabla de puntos" para entrar en la interfaz de edición del comando PT-Mode.
 
-该指令主要用于系统模式和点位表模式之间的模式切换，通过切换点位表来应用不同点位表内的示教点位。详情见章节11——示教点。
+Esta instrucción se utiliza principalmente para el cambio de modo entre el modo de sistema y el modo de tabla de puntos; mediante el cambio de tabla de puntos se aplican los puntos de enseñanza de distintas tablas de puntos. Para más detalles, consulte el capítulo 11——Puntos de enseñanza.
 
 .. image:: coding/151.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.13-3 点位表指令界面
+.. centered:: Figura 9.13-3 Interfaz de la instrucción de tabla de puntos
 
-示教程序未保存验证
-~~~~~~~~~~~~~~~~~~~
+Verificación de programa de enseñanza no guardado
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-在程序示教页面，打开/新建程序后，若示教程序发生改动未保存程序。
+En la página de enseñanza de programas, tras abrir/crear un programa, si el programa de enseñanza ha sufrido modificaciones y no se ha guardado.
 
-若点击“打开”、“新建”、“导出”、“重命名”等相关文件操作，则触发“是否保存此程序”弹出框，提示“当前程序已发生改变，是否保存此程序的更改？”，如下图。
+Si se hace clic en operaciones de archivo relacionadas como "Abrir", "Nuevo", "Exportar", "Cambiar nombre", etc., se activará la ventana emergente "¿Guardar este programa?", que muestra "El programa actual ha cambiado, ¿desea guardar los cambios de este programa?", como se muestra en la figura siguiente.
 
 .. image:: coding/152.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.14-1 当前页面程序未保存验证
+.. centered:: Figura 9.14-1 Verificación de programa no guardado en la página actual
 
-**Step1**：点击“不保存”按钮，程序恢复未修改之前数据，并继续执行之前的相关文件操作。
+**Step1**: Hacer clic en el botón "No guardar"; el programa vuelve a los datos anteriores a la modificación y continúa ejecutando la operación de archivo relacionada anterior.
 
-**Step2**：点击“保存”按钮，未保存的lua程序保存成功，并继续执行之前的相关文件操作。
+**Step2**: Hacer clic en el botón "Guardar"; el programa lua no guardado se guarda correctamente y continúa ejecutando la operación de archivo relacionada anterior.
 
-若离开程序示教页面，切换到其他页面时，同样触发“是否保存此程序”提示，且仍然停留在当前示教程序页面，如下图。
+Si se abandona la página de enseñanza de programas y se cambia a otra página, también se activa el aviso "¿Guardar este programa?" y se permanece en la página actual de programa de enseñanza, como se muestra en la figura siguiente.
 
 .. image:: coding/153.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.14-2 切换页面程序未保存验证
+.. centered:: Figura 9.14-2 Verificación de programa no guardado al cambiar de página
 
-**Step1**：点击“不保存”按钮，跳转到之前选择的页面。
+**Step1**: Hacer clic en el botón "No guardar"; se salta a la página seleccionada anteriormente.
 
-**Step2**：点击“保存”按钮，未保存的lua程序保存成功，并跳转到之前选择的页面。
+**Step2**: Hacer clic en el botón "Guardar"; el programa lua no guardado se guarda correctamente y se salta a la página seleccionada anteriormente.
 
-示教程序加密
-~~~~~~~~~~~~~~
+Cifrado de programas de enseñanza
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-示教程序分为加密和不加密的状态。加密级别分为一级加密和二级加密，其中一级加密保护程度最高，二级次之。
-所有示教程序在“系统设置--自定义信息”中以表格形式进行程序加密信息展示与设置。表格右侧配有加密级别说明。
+Los programas de enseñanza se dividen en estado cifrado y no cifrado. El nivel de cifrado se divide en cifrado de nivel uno y cifrado de nivel dos, donde el cifrado de nivel uno tiene el mayor grado de protección y el de nivel dos le sigue.
+Todos los programas de enseñanza se muestran y configuran en forma de tabla en "Configuración del sistema--Información personalizada" para la información de cifrado de programas. A la derecha de la tabla se incluye la descripción del nivel de cifrado.
 
 .. image:: coding/154.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.15-1 示教程序加密
+.. centered:: Figura 9.15-1 Cifrado de programas de enseñanza
 
-当程序为一级加密状态时，打开该程序后：
-操作栏中对应的“导出”、“保存”、“另存为”、“复制”、“剪切”、“粘贴”、“删除”、“上移”、“下移”和“编辑模式切换”等按钮图标都会变灰，点击图标无效并会提示当前程序处于加密状态。
-程序“重命名”图标将会隐藏。
-添加指令栏和程序编辑区域都会不可见且提示已处于一级加密锁定。
+Cuando el programa está en estado de cifrado de nivel uno, tras abrir dicho programa:
+Los iconos de botón correspondientes de la barra de operaciones, como "Exportar", "Guardar", "Guardar como", "Copiar", "Cortar", "Pegar", "Eliminar", "Subir", "Bajar" y "Cambio de modo de edición", se vuelven grises; hacer clic en los iconos no tiene efecto y se muestra un aviso de que el programa actual está en estado cifrado.
+El icono "Cambiar nombre" del programa se oculta.
+La barra de adición de instrucciones y el área de edición de programas se vuelven invisibles y se muestra un aviso de que se encuentra bloqueado por cifrado de nivel uno.
 
 .. image:: coding/155.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.15-2 程序一级加密界面
+.. centered:: Figura 9.15-2 Interfaz de cifrado de nivel uno del programa
 
-当程序为二级加密时，在“程序示教”页面打开该程序后：
-操作栏中对应的“保存”、“复制”、“剪切”、“粘贴”、“删除”、“上移”和“下移”等按钮图标都会变灰。点击图标无效并会提示当前程序处于加密状态。
-程序“重命名”图标将会隐藏。
-添加指令栏不可见且提示已处于二级加密锁定。
-程序编辑区域可正常浏览阅读程序。
+Cuando el programa está en estado de cifrado de nivel dos, tras abrir dicho programa en la página "Enseñanza de programas":
+Los iconos de botón correspondientes de la barra de operaciones, como "Guardar", "Copiar", "Cortar", "Pegar", "Eliminar", "Subir" y "Bajar", se vuelven grises. Hacer clic en los iconos no tiene efecto y se muestra un aviso de que el programa actual está en estado cifrado.
+El icono "Cambiar nombre" del programa se oculta.
+La barra de adición de instrucciones se vuelve invisible y se muestra un aviso de que se encuentra bloqueado por cifrado de nivel dos.
+El área de edición de programas permite navegar y leer el programa con normalidad.
 
 .. image:: coding/156.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.15-3 程序二级加密界面
+.. centered:: Figura 9.15-3 Interfaz de cifrado de nivel dos del programa
 
-一级加密和二级加密都可以使用“导出”功能，在导入时会进行验证操作，如果存在同名程序为加密文件，则会中断导入操作并提示不可导入覆盖加密程序。
+Tanto el cifrado de nivel uno como el de nivel dos permiten utilizar la función "Exportar"; al importar se realiza una operación de verificación; si existe un programa con el mismo nombre que sea un archivo cifrado, se interrumpe la operación de importación y se avisa de que no se puede importar ni sobrescribir el programa cifrado.
 
 .. image:: coding/157.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.15-4 程序导入
+.. centered:: Figura 9.15-4 Importación de programa
 
-局部示教点位
-~~~~~~~~~~~~~~
+Puntos de enseñanza locales
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-局部示教点位和当前示教程序绑定。添加程序命令时，只能应用于当前示教程序，不可用于其它示教程序。
+Los puntos de enseñanza locales están vinculados al programa de enseñanza actual. Al añadir comandos de programa, solo se pueden aplicar al programa de enseñanza actual y no se pueden utilizar en otros programas de enseñanza.
 
-**新增**：点击程序文件名最右侧的“新增局部示教点”图标，进行局部示教点的添加。(局部示教点位详情记录请翻阅机器人操作中的示教点记录)
+**Añadir**: Hacer clic en el icono "Añadir punto de enseñanza local" situado en el extremo derecho del nombre del archivo de programa para añadir puntos de enseñanza locales. (Para el registro detallado de los puntos de enseñanza locales, consulte el registro de puntos de enseñanza en la operación del robot)
 
 .. image:: coding/158.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.16-1 新增局部示教点
+.. centered:: Figura 9.16-1 Añadir punto de enseñanza local
 
-**删除**：点击表格序号栏选择需要删除的局部示教点后，点击局部示教点位标题右上角的“删除”图标，进行局部示教点的删除。
+**Eliminar**: Tras hacer clic en la columna del número de la tabla para seleccionar el punto de enseñanza local que se desea eliminar, hacer clic en el icono "Eliminar" de la esquina superior derecha del título de puntos de enseñanza locales para eliminar el punto de enseñanza local.
 
 .. image:: coding/159.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.16-2 删除局部示教点
+.. centered:: Figura 9.16-2 Eliminar punto de enseñanza local
 
-**运行**：点击局部示教点位表格数据操作栏中的“开始运行”图标，进行局部示教点的单点运行，将机器人移动到该点的位置。
+**Ejecutar**: Hacer clic en el icono "Iniciar ejecución" de la barra de operaciones de datos de la tabla de puntos de enseñanza locales para ejecutar de forma individual el punto de enseñanza local y desplazar el robot hasta la posición de dicho punto.
 
 .. image:: coding/160.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.16-3 运行局部示教点
+.. centered:: Figura 9.16-3 Ejecutar punto de enseñanza local
 
-**详情**：点击局部示教点位表格数据操作栏中的“详情”图标，查看局部示教点的详情。
+**Detalle**: Hacer clic en el icono "Detalle" de la barra de operaciones de datos de la tabla de puntos de enseñanza locales para consultar el detalle del punto de enseñanza local.
 
 .. image:: coding/161.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.16-4 局部示教点详情
+.. centered:: Figura 9.16-4 Detalle del punto de enseñanza local
 
-当前程序备份
-~~~~~~~~~~~~~~
+Copia de seguridad del programa actual
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-用户修改示教程序点击保存后，触发当前程序的“备份”功能(备份时间为1年)，将当前程序的初始内容进行保存展示在右侧，方便用户对比修改的内容。
-用户选择日期可以查看对应的程序备份内容，点击右上角“删除”图标可以删除当前程序备份内容。当前程序备份的内容只可查看，不可修改。
+Tras modificar el programa de enseñanza y hacer clic en guardar, se activa la función "Copia de seguridad" del programa actual (tiempo de copia de seguridad: 1 año), que guarda y muestra a la derecha el contenido inicial del programa actual para facilitar la comparación por parte del usuario del contenido modificado.
+El usuario puede seleccionar la fecha para consultar el contenido de la copia de seguridad del programa correspondiente; hacer clic en el icono "Eliminar" de la esquina superior derecha permite eliminar el contenido de la copia de seguridad del programa actual. El contenido de la copia de seguridad del programa actual solo se puede consultar, no modificar.
 
 .. image:: coding/162.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.17 当前程序备份
+.. centered:: Figura 9.17 Copia de seguridad del programa actual
 
-Modbus TCP通信
-~~~~~~~~~~~~~~~~~
-ModbusTCP是工业生产中常用的通信协议，法奥协作机器人提供ModbusTCP主站和ModbusTCP从站两种方式与您的设备进行通信。
+Comunicación Modbus TCP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-协作机器人最多支持8个ModbusTCP主站同时与外部设备进行通信，每个主站最多支持128个寄存器；协作机器人ModbusTCP从站具有128个线圈、128个离散输入、64个保持寄存器和64 个输入寄存器(保持寄存器和输入寄存器数据类型包含无符号、有符号和浮点型三种类型)，同时协作机器人部分ModbusTCP从站输入寄存器地址专用于反馈当前机器人的关节位置、运动速度等信息，部分线圈寄存器地址专用于控制机器人启动程序、停止程序、设置控制箱DO等功能。
+ModbusTCP es un protocolo de comunicación habitual en la producción industrial; el robot colaborativo FAIRINO ofrece dos modos, maestro ModbusTCP y esclavo ModbusTCP, para comunicarse con sus dispositivos.
 
-机器人ModbusTCP从站仅支持与一个主站建立连接，机器人可同时作为主站和从站与不同的设备通信。下面是详细使用方法。
+El robot colaborativo admite como máximo 8 maestros ModbusTCP comunicándose simultáneamente con dispositivos externos, y cada maestro admite como máximo 128 registros; el esclavo ModbusTCP del robot colaborativo dispone de 128 bobinas, 128 entradas discretas, 64 registros de retención y 64 registros de entrada (los tipos de datos de los registros de retención y de los registros de entrada incluyen sin signo, con signo y de coma flotante); además, algunas direcciones de los registros de entrada del esclavo ModbusTCP del robot colaborativo están dedicadas a la realimentación de información como la posición articular y la velocidad de movimiento del robot actual, y algunas direcciones de los registros de bobina están dedicadas a funciones como controlar el inicio del programa, la detención del programa y el establecimiento de DO de la caja de control del robot.
+
+El esclavo ModbusTCP del robot solo admite el establecimiento de conexión con un maestro; el robot puede actuar simultáneamente como maestro y como esclavo para comunicarse con distintos dispositivos. A continuación se describe el método de uso detallado.
  
-ModbusTCP主站
+Maestro ModbusTCP
 +++++++++++++++++
 
-在使用协作机器人做ModbusTCP主站与您的设备进行通信前，请先检查您的设备与机器人的网络连接，并确认网络接口在同一网段。
+Antes de utilizar el robot colaborativo como maestro ModbusTCP para comunicarse con sus dispositivos, compruebe primero la conexión de red entre su dispositivo y el robot y confirme que la interfaz de red está en el mismo segmento de red.
 
-使用机器人ModbusTCP主站有以下几个步骤：
+El uso del maestro ModbusTCP del robot consta de los siguientes pasos:
 
-- 添加主站；
-- 添加寄存器；
-- 通信测试；
-- 编写用户程序；
-- 执行用户程序。
+- Añadir maestro;
+- Añadir registros;
+- Prueba de comunicación;
+- Escribir el programa de usuario;
+- Ejecutar el programa de usuario.
 
-添加ModbusTCP主站
-********************
+Añadir maestro ModbusTCP
+****************************************
 
-打开WebApp，依次点击“示教模拟”、“程序示教”，新建用户程序“testModbusMaster.lua”。
+Abrir WebApp y hacer clic sucesivamente en "Enseñanza por simulación", "Enseñanza de programas" y crear el programa de usuario "testModbusMaster.lua".
 
 .. image:: coding/163.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-1 创建ModbusTCP主站用户程序
+.. centered:: Figura 9.18-1 Creación del programa de usuario del maestro ModbusTCP
 
-点击“ModbusTCP设置”按钮，打开ModbusTCP功能配置页面。
+Hacer clic en el botón "Configuración de ModbusTCP" para abrir la página de configuración de la función ModbusTCP.
 
 .. image:: coding/164.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-2 打开ModbusTCP设置
+.. centered:: Figura 9.18-2 Abrir la configuración de ModbusTCP
 
-依次点击“主站设置”、“添加Modbus主站”，即完成添加一个ModbusTCP主站。
+Hacer clic sucesivamente en "Configuración de maestro" y "Añadir maestro Modbus" para completar la adición de un maestro ModbusTCP.
 
 .. image:: coding/165.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-3 添加“ModbusTCP主站”
+.. centered:: Figura 9.18-3 Añadir "maestro ModbusTCP"
 
-根据您的设备情况依次输入“名称”、“从站ip”、“端口号”、“从站号”和“通信周期”和“超时时间”，上述参数的具体含义如下：
+Según la situación de su dispositivo, introducir sucesivamente "Nombre", "ip del esclavo", "Número de puerto", "Número de esclavo", "Período de comunicación" y "Tiempo de espera agotado"; el significado concreto de los parámetros anteriores es el siguiente:
 
-**名称**：机器人ModbusTCP主站名称，机器人最大支持创建8个主站与相应从站建立连接，不同主站可设置唯一的名称进行区分，如“PLC”、“相机”、“数据采集卡”、“FRRobot1”等；
+**Nombre**: nombre del maestro ModbusTCP del robot; el robot admite como máximo la creación de 8 maestros para establecer conexión con los esclavos correspondientes; a los distintos maestros se les puede asignar un nombre único para distinguirlos, como "PLC", "Cámara", "Tarjeta de adquisición de datos", "FRRobot1", etc.;
 
-**从站ip**：机器人ModbusTCP主站要连接的从站IP地址；
+**ip del esclavo**: dirección IP del esclavo al que se desea conectar el maestro ModbusTCP del robot;
 
-.. note:: 要先通过网线连接机器人与从站设备，并保证机器人与从站设备的IP地址在同一网段。
+.. note:: Primero hay que conectar mediante cable de red el robot y el dispositivo esclavo, y garantizar que las direcciones IP del robot y del dispositivo esclavo estén en el mismo segmento de red.
 
-**端口号**：要连接的ModbusTCP从站端口号；
+**Número de puerto**: número de puerto del esclavo ModbusTCP al que se desea conectar;
 
-**从站号**：要连接的ModbusTCP从站号；
+**Número de esclavo**: número de esclavo ModbusTCP al que se desea conectar;
 
-**通信周期**：机器人ModbusTCP主站查询从站状态的周期(ms)，该周期仅影响“ModbusTCP设置”页面查看从站寄存器数据的更新速度，而不影响用户lua程序中读取或写入ModbusTCP从站寄存器数值的速度。
+**Período de comunicación**: período (ms) con el que el maestro ModbusTCP del robot consulta el estado del esclavo; este período solo afecta a la velocidad de actualización de los datos de los registros del esclavo que se visualizan en la página "Configuración de ModbusTCP", y no afecta a la velocidad de lectura o escritura de los valores de los registros del esclavo ModbusTCP en el programa lua del usuario.
 
-**超时时间**：当调用ModbusTCP读写接口进行操作时，系统在超过超时时间后仍未连接成功，会报Modbus未连接错误。单位ms，有效范围为100-60000。
+**Tiempo de espera agotado**: cuando se llama a la interfaz de lectura/escritura de ModbusTCP para realizar una operación, si el sistema, tras superar el tiempo de espera agotado, aún no se ha conectado correctamente, informa del error de Modbus no conectado. Unidad: ms; rango válido: 100-60000.
 
 .. image:: coding/166.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-4 设置ModbusTCP主站参数
+.. centered:: Figura 9.18-4 Configuración de parámetros del maestro ModbusTCP
 
-正确输入上述参数后，机器人ModbusTCP主站自动与配置的从站建立连接，连接成功后，页面上的“连接状态”指示灯亮起。
+Tras introducir correctamente los parámetros anteriores, el maestro ModbusTCP del robot establece automáticamente la conexión con el esclavo configurado; tras una conexión correcta, se enciende el indicador "Estado de conexión" de la página.
 
 .. note:: 
-   若您已经确认对ModbusTCP主站的相关参数进行了正确的配置，但机器人与您的设备没有成功连接，请检查以下配置：
+   Si ya ha confirmado que ha configurado correctamente los parámetros relacionados del maestro ModbusTCP, pero el robot no se ha conectado correctamente con su dispositivo, compruebe las siguientes configuraciones:
    
-   ①机器人与从站设备的物理网络连接；
+   ①La conexión de red física entre el robot y el dispositivo esclavo;
 
-   ②机器人示教器和控制箱两个网络物理端口的IP地址不同，请确认是否连接到正确的网络端口；
+   ②Las direcciones IP de los dos puertos físicos de red del teach pendant y de la caja de control del robot son diferentes; confirme si se ha conectado al puerto de red correcto;
 
-   ③请确认机器人网络端口与从站设备的网络端口是否在同一网段，如机器人的IP地址为192.168.58.2，则从站设备的IP地址必须为192.168.58.0~192.168.58.255，且不能与机器人IP地址相同；
+   ③Confirme si el puerto de red del robot y el puerto de red del dispositivo esclavo están en el mismo segmento de red; por ejemplo, si la dirección IP del robot es 192.168.58.2, la dirección IP del dispositivo esclavo debe ser 192.168.58.0~192.168.58.255 y no puede ser igual a la dirección IP del robot;
    
-   ④检查从站设备的端口号与设置的端口号是否相同。若连接状态指示灯处于闪烁状态，则表示该主站中的寄存器地址有误，请检查寄存器类型和地址是否正确。
+   ④Compruebe si el número de puerto del dispositivo esclavo es igual al número de puerto configurado. Si el indicador de estado de conexión está parpadeando, significa que la dirección del registro de ese maestro es incorrecta; compruebe si el tipo y la dirección del registro son correctos.
 
 .. image:: coding/167.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-5 ModbusTCP主站连接状态
+.. centered:: Figura 9.18-5 Estado de conexión del maestro ModbusTCP
 
-至此我们已经完成一个机器人ModbusTCP主站的创建，若您再次点击“添加Modbus主站”，即可再次创建一个新的ModbusTCP主站，机器人最多支持8个主站同时与外部设备通信，双击Modbus主站右上角的“删除”按钮，即可删除该Modbus主站。
+Con esto hemos completado la creación de un maestro ModbusTCP del robot; si vuelve a hacer clic en "Añadir maestro Modbus", podrá crear de nuevo un nuevo maestro ModbusTCP; el robot admite como máximo 8 maestros comunicándose simultáneamente con dispositivos externos; haciendo doble clic en el botón "Eliminar" de la esquina superior derecha del maestro Modbus se puede eliminar dicho maestro Modbus.
 
 .. image:: coding/168.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-6 再次添加ModbusTCP主站
+.. centered:: Figura 9.18-6 Añadir de nuevo un maestro ModbusTCP
 
-ModbusTCP主站添加寄存器
-***************************
+Añadir registros al maestro ModbusTCP
+***********************************************
 
-点击“添加主站寄存器”按钮即可为该主站添加一个寄存器。
+Hacer clic en el botón "Añadir registro de maestro" para añadir un registro a dicho maestro.
 
 .. image:: coding/169.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-7 添加ModbusTCP主站寄存器
+.. centered:: Figura 9.18-7 Añadir registro al maestro ModbusTCP
 
-依次选择主站寄存器类型、输入地址编号和名称，各参数意义如下：
+Seleccionar sucesivamente el tipo de registro del maestro, introducir el número de dirección y el nombre; el significado de cada parámetro es el siguiente:
 
-**类型**：寄存器类型，DI-离散输入；DO-线圈；AI无符号-无符号型输入寄存器(0-65535)；AI有符号-有符号型输入寄存器(-32768-32767)；AI浮点型-浮点数型输入寄存器(浮点型寄存器数据长度32位，占用两个有符号或无符号型寄存器)；AO无符号-无符号型保持寄存器(0-65535)；AI有符号-有符号型保持寄存器(-32768-32767)；AI浮点型-浮点数型保持寄存器(浮点型寄存器数据长度32位，占用两个有符号或无符号型寄存器)，其中AI、AO中的浮点型寄存器为大端显示；
+**Tipo**: tipo de registro; DI- entrada discreta; DO- bobina; AI sin signo- registro de entrada sin signo (0-65535); AI con signo- registro de entrada con signo (-32768-32767); AI de coma flotante- registro de entrada de coma flotante (la longitud de datos del registro de coma flotante es de 32 bits y ocupa dos registros con signo o sin signo); AO sin signo- registro de retención sin signo (0-65535); AI con signo- registro de retención con signo (-32768-32767); AI de coma flotante- registro de retención de coma flotante (la longitud de datos del registro de coma flotante es de 32 bits y ocupa dos registros con signo o sin signo); los registros de coma flotante de AI y AO se muestran en big-endian;
 
-**地址编号**：要读取或写入的ModbusTCP从站寄存器地址；
+**Número de dirección**: dirección del registro del esclavo ModbusTCP que se desea leer o escribir;
 
-**名称**：寄存器的别名，机器人ModbusTCP主站最多可设置128个不同的寄存器，每个寄存器可根据实际意义设置不同的名称进行区分，如“开始”，“伺服到位”、“液位”等。
+**Nombre**: alias del registro; el maestro ModbusTCP del robot puede configurar como máximo 128 registros diferentes; a cada registro se le puede asignar un nombre diferente según su significado real para distinguirlo, como "Inicio", "Servo en posición", "Nivel de líquido", etc.
 
 .. image:: coding/170.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-8 设置ModbusTCP主站寄存器参数
+.. centered:: Figura 9.18-8 Configuración de parámetros del registro del maestro ModbusTCP
 
-再次点击“添加主站寄存器”按钮即可再添加一个主站寄存器，双击寄存器右侧的“删除”按钮，即可删除该寄存器，如下图为每种类型都添加了一个寄存器。
+Volver a hacer clic en el botón "Añadir registro de maestro" para añadir otro registro de maestro; haciendo doble clic en el botón "Eliminar" de la derecha del registro se puede eliminar dicho registro; en la figura siguiente se ha añadido un registro de cada tipo.
 
-.. note:: 若添加主站寄存后，主站连接状态指示灯闪烁，则表示该主站寄存器地址无法读取，请检查该寄存器类型和地址是否正确。
+.. note:: Si tras añadir el registro del maestro el indicador de estado de conexión del maestro parpadea, significa que la dirección de dicho registro del maestro no se puede leer; compruebe si el tipo y la dirección de dicho registro son correctos.
 
 .. image:: coding/171.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-9 添加多个主站寄存器
+.. centered:: Figura 9.18-9 Añadir varios registros de maestro
 
-ModbusTCP主站通信测试
-***********************
+Prueba de comunicación del maestro ModbusTCP
+***************************************************************
 
-在通信测试前，请先检查ModbusTCP主站“连接状态”指示灯是否处于常亮状态，若指示灯常亮则表示当前连接已成功。
+Antes de la prueba de comunicación, compruebe primero si el indicador "Estado de conexión" del maestro ModbusTCP está encendido de forma fija; si el indicador está encendido de forma fija, significa que la conexión actual se ha realizado correctamente.
 
-机器人Modbus主站寄存器有“地址值”数值框用于显示当前寄存器的值，其中DI(离散输入)和AI(输入寄存器)类型的寄存器为只读类型，对应的地址值为灰色不可编辑数值框。
+Los registros del maestro Modbus del robot disponen de un cuadro de valor "Valor de dirección" para mostrar el valor actual del registro; los registros de tipo DI (entrada discreta) y AI (registro de entrada) son de solo lectura y su valor de dirección correspondiente es un cuadro de valor gris no editable.
 
-当从站相应地址的数值改变时，机器人主站对应寄存器地址值同步显示当前的数值，而DO(线圈)和AO(保持寄存器)为可读可写寄存器，因此它的地址为白色可编辑数值框，既可以读取ModbusTCP从站相应寄存器的数值，也可以在机器人Modbus主站设置页面修改该寄存器数值。
+Cuando cambia el valor de la dirección correspondiente del esclavo, el valor de dirección del registro correspondiente del maestro del robot muestra sincronizadamente el valor actual; por su parte, DO (bobina) y AO (registro de retención) son registros de lectura y escritura, por lo que su dirección es un cuadro de valor blanco editable; se puede tanto leer el valor del registro correspondiente del esclavo ModbusTCP como modificar el valor de dicho registro en la página de configuración del maestro Modbus del robot.
 
 .. image:: coding/172.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-10 Modbus主站地址值
+.. centered:: Figura 9.18-10 Valor de dirección del maestro Modbus
 
-1. 主站DI、AI类型寄存器数值监控
+1. Monitorización del valor de los registros de tipo DI y AI del maestro
 
-在外部ModbusTCP从站设备上将DI(离散输入)寄存器的255号地址值设为1，将AI(输入寄存器)的257号地址值改为123，258号寄存器地址值改为-123，259号寄存器地址值改为123.3。此时机器人Modbus主站设置页面对应寄存器的地址值将进行相应的显示。
+En el dispositivo esclavo ModbusTCP externo, establecer el valor de la dirección 255 del registro DI (entrada discreta) en 1, cambiar el valor de la dirección 257 del registro AI (registro de entrada) a 123, el valor de la dirección del registro 258 a -123 y el valor de la dirección del registro 259 a 123.3. En este momento, el valor de dirección del registro correspondiente en la página de configuración del maestro Modbus del robot se mostrará de forma correspondiente.
 
 .. note:: 
-   由于设置地址259的寄存器为浮点型寄存器，因此它实际占用了259和260两个16位寄存器来存储一个浮点数，因此您不能再单独设置一个寄存器来操作AI的260号寄存器，否则会产生数值错误。
+   Dado que el registro con la dirección 259 es un registro de coma flotante, en realidad ocupa dos registros de 16 bits, 259 y 260, para almacenar un número de coma flotante; por lo tanto, no se puede configurar por separado otro registro para operar con el registro AI 260, de lo contrario se producirá un error de valor.
 
 .. image:: coding/173.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-11 Modbus主站显示DI、AI寄存器数值
+.. centered:: Figura 9.18-11 El maestro Modbus muestra los valores de los registros DI y AI
 
-2. 主站DO、AO类型寄存器数值写入
+2. Escritura del valor de los registros de tipo DO y AO del maestro
 
-在机器人Modbus主站设置页面中将名称为“开始”的DO(线圈)类型寄存器的255号地址值输入框中输入1，名称为“目标位置A”、“目标位置B”和“目标位置C”的AO(保持寄存器)的260、261、262号寄存器地址值输入框中分别输入65535、-32768和128.78，此时Modbus从站的相应寄存器地址已被写入相应的数值。
+En la página de configuración del maestro Modbus del robot, introducir 1 en el cuadro de entrada del valor de la dirección 255 del registro de tipo DO (bobina) denominado "Inicio"; introducir respectivamente 65535, -32768 y 128.78 en los cuadros de entrada de los valores de dirección de los registros 260, 261 y 262 de tipo AO (registro de retención) denominados "Posición objetivo A", "Posición objetivo B" y "Posición objetivo C"; en este momento, la dirección del registro correspondiente del esclavo Modbus ya tiene escrito el valor correspondiente.
 
 .. image:: coding/174.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-12 Modbus主站写入DO、AO寄存器
+.. centered:: Figura 9.18-12 El maestro Modbus escribe en los registros DO y AO
 
-3. 主站DO、AO类型寄存器数值监控
+3. Monitorización del valor de los registros de tipo DO y AO del maestro
 
-在ModbusTCP从站中更改DO(线圈)、AO(保持寄存器)的值，ModbusTCP主站设置页面的寄存器地址值不会立即更新显示，需要点击主站配置右上角的“刷新”按钮，此时页面上DO、AO寄存器地址值才会更新。
+Al cambiar el valor de DO (bobina) y AO (registro de retención) en el esclavo ModbusTCP, el valor de dirección del registro de la página de configuración del maestro ModbusTCP no se actualiza inmediatamente; es necesario hacer clic en el botón "Actualizar" de la esquina superior derecha de la configuración del maestro para que se actualicen los valores de dirección de los registros DO y AO de la página.
 
 .. image:: coding/175.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-13 刷新ModbusTCP主站DO、AO地址值
+.. centered:: Figura 9.18-13 Actualizar los valores de dirección de DO y AO del maestro ModbusTCP
 
-编写ModbusTCP主站程序
-++++++++++++++++++++++++++
+Escribir el programa del maestro ModbusTCP
+++++++++++++++++++++++++++++++++++++++++++++
 
-依次点击“通讯指令”，打开通讯指令添加页面。
+Hacer clic sucesivamente en "Instrucciones de comunicación" para abrir la página de adición de instrucciones de comunicación.
 
 .. image:: coding/176.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-14 打开通讯指令添加页面
+.. centered:: Figura 9.18-14 Abrir la página de adición de instrucciones de comunicación
 
-点击“Modbus”。
+Hacer clic en "Modbus".
 
 .. image:: coding/177.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-15 选择Modbus
+.. centered:: Figura 9.18-15 Seleccionar Modbus
 
-点击“Modbus_TCP”。
+Hacer clic en "Modbus_TCP".
 
 .. image:: coding/178.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-16 选择Modbus_TCP
+.. centered:: Figura 9.18-16 Seleccionar Modbus_TCP
    
-选择“主站(客户端)”，打开ModbusTCP主站指令添加页面。
+Seleccionar "Maestro (cliente)" para abrir la página de adición de instrucciones del maestro ModbusTCP.
 
 .. image:: coding/179.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-17 ModbusTCP主站指令添加
+.. centered:: Figura 9.18-17 Adición de instrucciones del maestro ModbusTCP
 
-1. 写单个数字输出DO(线圈)
+1. Escribir una única salida digital DO (bobina)
 
-选择“Modbus主站名称”为之前在Modbus主站设置页面添加的主站“PLC”，DO名称为“开始”，寄存器数量为1，寄存器值为1，点击“写数字输出”按钮。最后翻至该页面最底端，点击“应用”按钮。
+Seleccionar "Nombre del maestro Modbus" como el maestro "PLC" añadido anteriormente en la página de configuración del maestro Modbus, el nombre DO como "Inicio", el número de registros como 1 y el valor del registro como 1; hacer clic en el botón "Escribir salida digital". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar".
 
 .. image:: coding/180.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-18 添加写单个数字输出
+.. centered:: Figura 9.18-18 Añadir escritura de una única salida digital
 
-此时机器人程序“testModbusMaster.lua”中已经添加一条机器人Modbus主站写单个数字输出的指令，将机器人切换到自动模式，点击启动按钮，机器人将主站“PLC”对应的线圈寄存器“启动”的地址值写为1。
+En este momento, en el programa del robot "testModbusMaster.lua" ya se ha añadido una instrucción del maestro Modbus del robot para escribir una única salida digital; cambiar el robot al modo automático y hacer clic en el botón de inicio; el robot escribirá el valor de dirección del registro de bobina "Inicio" correspondiente al maestro "PLC" como 1.
 
 .. image:: coding/181.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-19 写单个线圈LUA程序
+.. centered:: Figura 9.18-19 Programa LUA de escritura de una única bobina
 
-2. 写多个数字输出DO(线圈)
+2. Escribir varias salidas digitales DO (bobinas)
 
-打开ModbusTCP主站指令添加页面，选择“Modbus主站名称”为之前在Modbus主站设置页面添加的主站“PLC”，DO名称为“开始”，寄存器数量为5，寄存器值为1,0,1,0,1，其中寄存器值的个数要与设置的寄存器数量对应，且多个寄存器值之间用英文逗号隔开，点击“写数字输出”按钮。最后翻至该页面最底端，点击“应用”按钮。
+Abrir la página de adición de instrucciones del maestro ModbusTCP, seleccionar "Nombre del maestro Modbus" como el maestro "PLC" añadido anteriormente en la página de configuración del maestro Modbus, el nombre DO como "Inicio", el número de registros como 5 y el valor del registro como 1,0,1,0,1; el número de valores de registro debe corresponder al número de registros configurado, y los distintos valores de registro deben separarse con comas en inglés; hacer clic en el botón "Escribir salida digital". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar".
 
 .. image:: coding/182.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-20 配置写多个数字输出
+.. centered:: Figura 9.18-20 Configuración de escritura de varias salidas digitales
 
-此时机器人程序“testModbusMaster.lua”中已经添加一条机器人Modbus主站写多个数字输出的指令，将机器人切换到自动模式，点击启动按钮，机器人将主站“PLC”对应的线圈寄存器“启动”及其后面4个线圈的值分别写为1、0、1、0、1。
+En este momento, en el programa del robot "testModbusMaster.lua" ya se ha añadido una instrucción del maestro Modbus del robot para escribir varias salidas digitales; cambiar el robot al modo automático y hacer clic en el botón de inicio; el robot escribirá respectivamente los valores del registro de bobina "Inicio" correspondiente al maestro "PLC" y de las 4 bobinas siguientes como 1, 0, 1, 0, 1.
    
 .. image:: coding/183.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-21 写多个线圈LUA程序
+.. centered:: Figura 9.18-21 Programa LUA de escritura de varias bobinas
 
-3. 读单个数字输出DO(线圈)
+3. Leer una única salida digital DO (bobina)
    
-打开ModbusTCP主站指令添加页面，选择“Modbus主站名称”为之前在Modbus主站设置页面添加的主站“PLC”，DO名称为“开始”，寄存器数量为1，寄存器值不需要填写，点击“读数字输出”。最后翻至该页面最底端，点击“应用”按钮。
+Abrir la página de adición de instrucciones del maestro ModbusTCP, seleccionar "Nombre del maestro Modbus" como el maestro "PLC" añadido anteriormente en la página de configuración del maestro Modbus, el nombre DO como "Inicio", el número de registros como 1; no es necesario rellenar el valor del registro; hacer clic en "Leer salida digital". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar".
    
 .. image:: coding/184.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-22 配置读单个数字输出
+.. centered:: Figura 9.18-22 Configuración de lectura de una única salida digital
 
-此时机器人程序“testModbusMaster.lua”中已经添加一条机器人Modbus主站读单个数字输出的指令。
+En este momento, en el programa del robot "testModbusMaster.lua" ya se ha añadido una instrucción del maestro Modbus del robot para leer una única salida digital.
       
 .. image:: coding/185.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-23 读单个线圈程序
+.. centered:: Figura 9.18-23 Programa de lectura de una única bobina
 
-通常读Modbus寄存器后将读到的数值存入变量里，因此需要定义一个变量用于存储读取的数值。点击“切换模式”按钮，将机器人lua程序切换至可编辑状态，在“ModbusMasterReadDO”指令前编写填加返回值变量“startValue”，执行程序后读到的数值将存在“startValue”里。
+Normalmente, tras leer un registro Modbus, el valor leído se almacena en una variable, por lo que es necesario definir una variable para almacenar el valor leído. Hacer clic en el botón "Cambiar modo" para cambiar el programa lua del robot a estado editable y, antes de la instrucción "ModbusMasterReadDO", escribir y añadir la variable de valor de retorno "startValue"; el valor leído tras ejecutar el programa se almacenará en "startValue".
       
 .. image:: coding/186.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-24 读单个数字输出存入变量
+.. centered:: Figura 9.18-24 Lectura de una única salida digital y almacenamiento en variable
 
-线圈类型的寄存器值只有0和1两种数值，在机器人程序中可以通过判断寄存器数值不同来进行不同的操作。点击“切换模式”按钮将机器人示教程序切换至不可编辑模式，添加两个关节运动指令分别运动到两个不同的点位“P1”和“P2”。
+El valor de los registros de tipo bobina solo puede ser 0 o 1; en el programa del robot se pueden realizar distintas operaciones según el valor del registro. Hacer clic en el botón "Cambiar modo" para cambiar el programa de enseñanza del robot a modo no editable y añadir dos instrucciones de movimiento articular para desplazarse respectivamente a dos puntos diferentes "P1" y "P2".
       
 .. image:: coding/187.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-25 添加不同点位的运动指令
+.. centered:: Figura 9.18-25 Añadir instrucciones de movimiento a distintos puntos
 
-再次将程序切换至可编辑模式，并编写线圈值“startValue”的判断条件，当“startValue”值为1时，机器人运动到“P1”点，否则机器人运动到“P2”点。
+Volver a cambiar el programa a modo editable y escribir la condición de juicio del valor de bobina "startValue": cuando el valor de "startValue" sea 1, el robot se desplazará al punto "P1"; de lo contrario, el robot se desplazará al punto "P2".
       
 .. image:: coding/188.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-26 根据线圈值不同运动到不同的点位
+.. centered:: Figura 9.18-26 Desplazarse a distintos puntos según el valor de la bobina
 
-最后再将机器人程序切换至不可编辑模式，将机器人切换到自动模式，在确认安全的前提下启动运行程序。由于该程序的前两行都将名称为“开始”线圈DO值设为1，因此执行程序后机器人将运动到“P1”点。
+Por último, volver a cambiar el programa del robot a modo no editable, cambiar el robot al modo automático y, tras confirmar la seguridad, iniciar la ejecución del programa. Dado que las dos primeras líneas del programa establecen el valor DO de la bobina denominada "Inicio" en 1, tras ejecutar el programa el robot se desplazará al punto "P1".
       
 .. image:: coding/189.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-27 读取单个线圈寄存器数值并运动
+.. centered:: Figura 9.18-27 Leer el valor del registro de una única bobina y moverse
 
-4. 读多个数字DO(线圈)
+4. Leer varias salidas digitales DO (bobinas)
 
-打开ModbusTCP主站指令添加页面，选择“Modbus主站名称”为之前在Modbus主站设置页面添加的主站“PLC”，DO名称为“开始”，寄存器数量为6，寄存器值不需要填写，点击“读数字输出”。最后翻至该页面最底端，点击“应用”按钮。
+Abrir la página de adición de instrucciones del maestro ModbusTCP, seleccionar "Nombre del maestro Modbus" como el maestro "PLC" añadido anteriormente en la página de configuración del maestro Modbus, el nombre DO como "Inicio", el número de registros como 6; no es necesario rellenar el valor del registro; hacer clic en "Leer salida digital". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar".
       
 .. image:: coding/190.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-28 配置读多个数字输出
+.. centered:: Figura 9.18-28 Configuración de lectura de varias salidas digitales
 
-此时机器人程序“testModbusMaster.lua”中已经添加一条机器人Modbus主站读多个数字输出的指令。
+En este momento, en el programa del robot "testModbusMaster.lua" ya se ha añadido una instrucción del maestro Modbus del robot para leer varias salidas digitales.
          
 .. image:: coding/191.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-29 读多个数字输出程序
+.. centered:: Figura 9.18-29 Programa de lectura de varias salidas digitales
 
-点击“切换模式”按钮，将机器人lua程序切换至可编辑状态，由于读取的数量为6个，因此需要在“ModbusMasterReadDO”指令前编写填加6个返回值变“value1,value2,value3,value4,value5,value6”，执行程序后读到的6个寄存器数值将分别存在上述6个变量里，同样您可以判断“value1”~“value6”的值使机器人进行不同的动作。
+Hacer clic en el botón "Cambiar modo" para cambiar el programa lua del robot a estado editable; dado que la cantidad leída es 6, es necesario escribir y añadir 6 variables de valor de retorno "value1,value2,value3,value4,value5,value6" antes de la instrucción "ModbusMasterReadDO"; los 6 valores de registro leídos tras ejecutar el programa se almacenarán respectivamente en las 6 variables anteriores; asimismo, puede juzgar los valores de "value1"~"value6" para que el robot realice distintas acciones.
          
 .. image:: coding/192.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-30 读多个数字输出存入变量
+.. centered:: Figura 9.18-30 Lectura de varias salidas digitales y almacenamiento en variables
 
-5. 读数字输入DI(离散输入)
+5. Leer entrada digital DI (entrada discreta)
 
-打开ModbusTCP主站指令添加页面，选择“Modbus主站名称”为之前在Modbus主站设置页面添加的主站“PLC”，DI名称为“伺服到位”，寄存器数量为2，点击“读数字输入”。最后翻至该页面最底端，点击“应用”按钮。
+Abrir la página de adición de instrucciones del maestro ModbusTCP, seleccionar "Nombre del maestro Modbus" como el maestro "PLC" añadido anteriormente en la página de configuración del maestro Modbus, el nombre DI como "Servo en posición" y el número de registros como 2; hacer clic en "Leer entrada digital". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar".
          
 .. image:: coding/193.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-31 配置读数字输入
+.. centered:: Figura 9.18-31 Configuración de lectura de entrada digital
 
-此时机器人程序“testModbusMaster.lua”中已经添加一条机器人Modbus主站读数字输入的指令。
+En este momento, en el programa del robot "testModbusMaster.lua" ya se ha añadido una instrucción del maestro Modbus del robot para leer entradas digitales.
             
 .. image:: coding/194.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-32 读数字输入程序指令
+.. centered:: Figura 9.18-32 Instrucción de programa de lectura de entrada digital
 
-点击“切换模式”按钮，将机器人lua程序切换至可编辑状态，在“ModbusMasterReadDO”指令前编写返回值变量“state1,state2”，执行程序后读到的两个数字输入数值将分别存在变量“state1”和“state2”里，您可以通过判断变量数值进而控制机器人做不同的操作。
+Hacer clic en el botón "Cambiar modo" para cambiar el programa lua del robot a estado editable y, antes de la instrucción "ModbusMasterReadDO", escribir las variables de valor de retorno "state1,state2"; los dos valores de entrada digital leídos tras ejecutar el programa se almacenarán respectivamente en las variables "state1" y "state2"; puede juzgar el valor de las variables para controlar que el robot realice distintas operaciones.
             
 .. image:: coding/195.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-33 读数字输入存入变量
+.. centered:: Figura 9.18-33 Lectura de entrada digital y almacenamiento en variables
 
-6. 模拟输入AI(输入寄存器)和模拟输出AO(保持寄存器)的读写操作
+6. Operaciones de lectura y escritura de entrada analógica AI (registro de entrada) y salida analógica AO (registro de retención)
 
-模拟输入AI(输入寄存器)、模拟输出AO(保持寄存器)的读写操作与数字输入DI(离散输入)、数字输出DO(线圈)的操作基本一致，区别在于后者的数据范围仅限于0或1，而前者的数据范围更大，因此具体的操作可参考数字输入和数字输出程序的编写，在此仅展示模拟输入AI的读操作和模拟输出AO的读写操作程序示例。
+Las operaciones de lectura y escritura de entrada analógica AI (registro de entrada) y salida analógica AO (registro de retención) son básicamente iguales a las operaciones de entrada digital DI (entrada discreta) y salida digital DO (bobina); la diferencia es que el rango de datos de estas últimas se limita a 0 o 1, mientras que el rango de datos de las primeras es mayor; por lo tanto, para las operaciones concretas se puede consultar la escritura de programas de entrada digital y salida digital; aquí solo se muestran ejemplos de programa de lectura de entrada analógica AI y de lectura/escritura de salida analógica AO.
             
 .. image:: coding/196.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-34 读模拟输入AI
+.. centered:: Figura 9.18-34 Lectura de entrada analógica AI
             
 .. image:: coding/197.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-35 读写模拟输出AO
+.. centered:: Figura 9.18-35 Lectura/escritura de salida analógica AO
 
-7. 等待数字输入
+7. Esperar entrada digital
 
-打开ModbusTCP主站指令添加页面，找到“等待数字输入设置”即等待DI离散输入设置，选择DI名称为配置的“伺服到位”寄存器，等待状态为“True”，超时时间为5000ms。点击“添加”按钮，最后点击“应用”按钮。
+Abrir la página de adición de instrucciones del maestro ModbusTCP, encontrar "Configuración de espera de entrada digital", es decir, la configuración de espera de entrada discreta DI; seleccionar el nombre DI como el registro "Servo en posición" configurado, el estado de espera como "True" y el tiempo de espera agotado como 5000 ms. Hacer clic en el botón "Añadir" y, por último, hacer clic en el botón "Aplicar".
             
 .. image:: coding/198.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-36 添加等待DI输入指令
+.. centered:: Figura 9.18-36 Añadir instrucción de espera de entrada DI
 
-此时机器人程序“testModbusMaster.lua”中已经添加一条机器人Modbus主站等待数字输入DI的指令，启动程序后，机器人会一直等待“PLC”主站的“伺服到位”寄存器值变为true，也就是数值1，由于设置的超时时间为5s，因此当机器人等待5s后“伺服到位”信号仍为0时，机器人程序将会报超时错误，程序也自动停止运行。
+En este momento, en el programa del robot "testModbusMaster.lua" ya se ha añadido una instrucción del maestro Modbus del robot para esperar la entrada digital DI; tras iniciar el programa, el robot esperará continuamente a que el valor del registro "Servo en posición" del maestro "PLC" cambie a true, es decir, al valor 1; dado que el tiempo de espera agotado configurado es de 5 s, cuando el robot haya esperado 5 s y la señal "Servo en posición" siga siendo 0, el programa del robot informará de un error de tiempo de espera agotado y el programa se detendrá automáticamente.
             
 .. image:: coding/199.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-37 等待数字输入DI程序
+.. centered:: Figura 9.18-37 Programa de espera de entrada digital DI
 
-8. 等待模拟输入
+8. Esperar entrada analógica
 
-打开ModbusTCP主站指令添加页面，找到“等待模拟输入设置”即等待AI输入寄存器设置，选择AI名称为配置的“液位”寄存器，等待状态为“>”，寄存器值为255，超时时间为5000ms。点击“添加”按钮，最后点击“应用”按钮。
+Abrir la página de adición de instrucciones del maestro ModbusTCP, encontrar "Configuración de espera de entrada analógica", es decir, la configuración de espera del registro de entrada AI; seleccionar el nombre AI como el registro "Nivel de líquido" configurado, el estado de espera como ">", el valor del registro como 255 y el tiempo de espera agotado como 5000 ms. Hacer clic en el botón "Añadir" y, por último, hacer clic en el botón "Aplicar".
             
 .. image:: coding/200.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-38 添加等待模拟输入
+.. centered:: Figura 9.18-38 Añadir espera de entrada analógica
 
-此时机器人程序“testModbusMaster.lua”中已经添加一条机器人Modbus主站等待AI输入寄存器值的指令，启动程序后，机器人会一直等待“PLC”主站的“液位”寄存器数值大于255，由于设置的超时时间为5s，因此当机器人等待5s后“液位”信号仍不大于255时，机器人程序将会报超时错误，程序也自动停止运行。
+En este momento, en el programa del robot "testModbusMaster.lua" ya se ha añadido una instrucción del maestro Modbus del robot para esperar el valor del registro de entrada AI; tras iniciar el programa, el robot esperará continuamente a que el valor del registro "Nivel de líquido" del maestro "PLC" sea mayor que 255; dado que el tiempo de espera agotado configurado es de 5 s, cuando el robot haya esperado 5 s y la señal "Nivel de líquido" siga sin ser mayor que 255, el programa del robot informará de un error de tiempo de espera agotado y el programa se detendrá automáticamente.
             
 .. image:: coding/201.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-39-1 等待AI输入寄存器程序
+.. centered:: Figura 9.18-39-1 Programa de espera del registro de entrada AI
 
-打开ModbusTCP主站指令添加页面，找到“等待模拟输入设置”即等待AI输入寄存器设置，选择AI名称为配置的“液位”寄存器，等待状态为“=”，寄存器值为255，超时时间为5000ms。点击“添加”按钮，最后点击“应用”按钮。
+Abrir la página de adición de instrucciones del maestro ModbusTCP, encontrar "Configuración de espera de entrada analógica", es decir, la configuración de espera del registro de entrada AI; seleccionar el nombre AI como el registro "Nivel de líquido" configurado, el estado de espera como "=", el valor del registro como 255 y el tiempo de espera agotado como 5000 ms. Hacer clic en el botón "Añadir" y, por último, hacer clic en el botón "Aplicar".
             
 .. image:: coding/494.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-39-2 添加等待模拟输入
+.. centered:: Figura 9.18-39-2 Añadir espera de entrada analógica
 
-此时机器人程序“test.lua”中已经添加一条机器人Modbus主站等待AI输入寄存器值的指令，启动程序后，机器人会一直等待“PLC”主站的“液位”寄存器数值等于255，由于设置的超时时间为5s，因此当机器人等待5s后“液位”信号仍不等于255时，机器人程序将会报超时错误，程序也自动停止运行。
+En este momento, en el programa del robot "test.lua" ya se ha añadido una instrucción del maestro Modbus del robot para esperar el valor del registro de entrada AI; tras iniciar el programa, el robot esperará continuamente a que el valor del registro "Nivel de líquido" del maestro "PLC" sea igual a 255; dado que el tiempo de espera agotado configurado es de 5 s, cuando el robot haya esperado 5 s y la señal "Nivel de líquido" siga sin ser igual a 255, el programa del robot informará de un error de tiempo de espera agotado y el programa se detendrá automáticamente.
 
-ModbusTCP从站
+Esclavo ModbusTCP
 ++++++++++++++++++
 
-机器人ModbusTCP从站提供通用数字输入(线圈)，通用数字输出(离散输入)，通用模拟输入(保持寄存器)和通用模拟输出(输入寄存器)四种类型的寄存器，其中通用数字输入和模拟输入主要用于机器人读取外部ModbusTCP主站数据从而控制机器人操作，而通用数字输出和模拟输出主要用于机器人向外部ModbusTCP主站设备发送数据信号，由外部主站设备读取相关寄存器数值进而控制其设备运行。除上述通用输入输出外，机器人还提供部分“功能数字输入(线圈)”用于外部主站设备控制机器人启动程序、停止程序等操作，提供部分输入寄存器用于显示当前机器人的状态信息，包括机器人当前笛卡尔位置、机器人当前运行状态等(具体定义请查看附件一：ModbusTCP从站地址映射表)。机器人ModbusTCP从站使用过程主要包括：①参数配置；②通讯测试；③程序编写。
+El esclavo ModbusTCP del robot ofrece cuatro tipos de registros: entrada digital general (bobina), salida digital general (entrada discreta), entrada analógica general (registro de retención) y salida analógica general (registro de entrada); entre ellos, la entrada digital general y la entrada analógica general se utilizan principalmente para que el robot lea los datos del maestro ModbusTCP externo y controle así el funcionamiento del robot, mientras que la salida digital general y la salida analógica general se utilizan principalmente para que el robot envíe señales de datos al dispositivo maestro ModbusTCP externo, y el dispositivo maestro externo lea los valores de los registros correspondientes para controlar el funcionamiento de su dispositivo. Además de las entradas y salidas generales anteriores, el robot ofrece también algunas "entradas digitales funcionales (bobinas)" para que el dispositivo maestro externo controle el inicio del programa, la detención del programa y otras operaciones del robot, y ofrece algunos registros de entrada para mostrar la información de estado actual del robot, incluida la posición cartesiana actual del robot, el estado de funcionamiento actual del robot, etc. (para la definición concreta, consulte el Anexo 1: Tabla de mapeo de direcciones del esclavo ModbusTCP). El proceso de uso del esclavo ModbusTCP del robot incluye principalmente: ① configuración de parámetros; ② prueba de comunicación; ③ escritura del programa.
 
-ModbusTCP从站通讯参数配置
-*******************************
+Configuración de los parámetros de comunicación del esclavo ModbusTCP
+*******************************************************************************
 
-打开WebApp，依次点击“示教模拟”、“程序示教”，新建用户程序“testModbusSlave.lua”。
+Abrir WebApp y hacer clic sucesivamente en "Enseñanza por simulación", "Enseñanza de programas" y crear el programa de usuario "testModbusSlave.lua".
             
 .. image:: coding/202.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-40 创建ModbusTCP从站用户程序
+.. centered:: Figura 9.18-40 Creación del programa de usuario del esclavo ModbusTCP
 
-点击“ModbusTCP设置”按钮，打开ModbusTCP功能配置页面。
+Hacer clic en el botón "Configuración de ModbusTCP" para abrir la página de configuración de la función ModbusTCP.
             
 .. image:: coding/203.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-41 打开ModbusTCP设置
+.. centered:: Figura 9.18-41 Abrir la configuración de ModbusTCP
 
-依次点击“从站设置”，输入机器人从站的IP，端口号和从站号，其中“IP”为机器人从站ip地址，法奥协作机器人具有示教器和控制箱两个网络端口，两个端口的IP地址不同，根据外部设备连接机器人从站的网络端口输入正确的IP地址（推荐您使用控制箱上的网络端口），更改机器人ModbusTCP从站IP地址、端口号或从站号后需要重新启动机器人使其生效。
+Hacer clic sucesivamente en "Configuración de esclavo" e introducir la IP del esclavo del robot, el número de puerto y el número de esclavo; "IP" es la dirección ip del esclavo del robot; el robot colaborativo FAIRINO dispone de dos puertos de red, el del teach pendant y el de la caja de control, con direcciones IP diferentes; introducir la dirección IP correcta según el puerto de red al que se conecte el dispositivo externo al esclavo del robot (se recomienda utilizar el puerto de red de la caja de control); tras cambiar la dirección IP, el número de puerto o el número de esclavo del esclavo ModbusTCP del robot, es necesario reiniciar el robot para que surta efecto.
             
 .. image:: coding/204.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-42 ModbusTCP从站设置
+.. centered:: Figura 9.18-42 Configuración del esclavo ModbusTCP
 
-ModbusTCP从站参数设置完成并重启机器人后，外部主站设备即可通过设置的参数与机器人从站建立连接，连接成功后，机器人从站设置页面“连接状态”指示灯会亮起。
+Tras completar la configuración de los parámetros del esclavo ModbusTCP y reiniciar el robot, el dispositivo maestro externo puede establecer conexión con el esclavo del robot mediante los parámetros configurados; tras una conexión correcta, se encenderá el indicador "Estado de conexión" de la página de configuración del esclavo del robot.
             
 .. image:: coding/205.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-43 从站连接状态指示灯
+.. centered:: Figura 9.18-43 Indicador de estado de conexión del esclavo
 
-ModbusTCP从站通讯测试
-*****************************
+Prueba de comunicación del esclavo ModbusTCP
+*************************************************************
 
-1. 通用数字输入(线圈)
+1. Entrada digital general (bobina)
 
-机器人ModbusTCP从站提供128个线圈寄存器，它们的寄存器地址为100~127。
+El esclavo ModbusTCP del robot ofrece 128 registros de bobina, cuyas direcciones de registro son 100~127.
 
-.. note:: 具体定义请查看附件一：ModbusTCP从站地址映射表。
+.. note:: Para la definición concreta, consulte el Anexo 1: Tabla de mapeo de direcciones del esclavo ModbusTCP.
 
-机器人ModbusTCP从站的通用寄存器均可设置别名，修改机器人从站线圈寄存器DI0的名称为“A到位”，DI1的名称为“B到位”，根据地址映射表，“A到位”和“B到位”的Modbus线圈地址分别为100和101，在外部ModbusTCP主站设备上将机器人从站线圈寄存器地址100和101都置1，此时机器人ModbusTCP从站监控页面上两寄存器指示灯亮起。
+Los registros generales del esclavo ModbusTCP del robot permiten establecer alias; cambiar el nombre del registro de bobina DI0 del esclavo del robot a "A en posición" y el nombre de DI1 a "B en posición"; según la tabla de mapeo de direcciones, las direcciones Modbus de bobina de "A en posición" y "B en posición" son 100 y 101 respectivamente; en el dispositivo maestro ModbusTCP externo, poner a 1 las direcciones de los registros de bobina 100 y 101 del esclavo del robot; en este momento, en la página de monitorización del esclavo ModbusTCP del robot se encienden los indicadores de los dos registros.
             
 .. image:: coding/206.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-44 ModbusTCP从站线圈状态监控
+.. centered:: Figura 9.18-44 Monitorización del estado de las bobinas del esclavo ModbusTCP
 
-2. 通用数字输出(离散输入)
+2. Salida digital general (entrada discreta)
 
-机器人ModbusTCP从站提供128个离散输入寄存器，它们的寄存器地址为100~127。
+El esclavo ModbusTCP del robot ofrece 128 registros de entrada discreta, cuyas direcciones de registro son 100~127.
 
-.. note:: 具体定义请查看附件一：ModbusTCP从站地址映射表。
+.. note:: Para la definición concreta, consulte el Anexo 1: Tabla de mapeo de direcciones del esclavo ModbusTCP.
 
-同样机器人ModbusTCP从站的离散输入寄存器也可以设置别名，点击“通用数字输出(离散输入)”修改机器人从站离散输入寄存器DO0的名称为“A启动”，DO1的名称为“B启动”，根据地址映射表，“A启动”和“B启动”的Modbus离散输入地址分别为100和101，点击“A启动”对应离散输入指示灯，该指示灯亮起，相应寄存器地址100的数值变为1，从外部ModbusTCP主站设备上可读到该寄存器数值。
+Asimismo, los registros de entrada discreta del esclavo ModbusTCP del robot también permiten establecer alias; hacer clic en "Salida digital general (entrada discreta)" para cambiar el nombre del registro de entrada discreta DO0 del esclavo del robot a "A inicio" y el nombre de DO1 a "B inicio"; según la tabla de mapeo de direcciones, las direcciones Modbus de entrada discreta de "A inicio" y "B inicio" son 100 y 101 respectivamente; hacer clic en el indicador de entrada discreta correspondiente a "A inicio"; el indicador se enciende, el valor de la dirección del registro correspondiente 100 pasa a ser 1 y desde el dispositivo maestro ModbusTCP externo se puede leer el valor de dicho registro.
 
 .. image:: coding/207.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-45 ModbusTCP从站离散输入控制
+.. centered:: Figura 9.18-45 Control de la entrada discreta del esclavo ModbusTCP
 
-3. 模拟输入(保持寄存器)
+3. Entrada analógica (registro de retención)
 
-机器人提供无符号、有符号和浮点型三种类型的保持寄存器共64个，AI0~AI63的地址为100~195
+El robot ofrece 64 registros de retención de tres tipos: sin signo, con signo y de coma flotante; las direcciones de AI0~AI63 son 100~195.
 
 .. note:: 
-   具体定义请查看附件一：ModbusTCP从站地址映射表，其中无符号类型寄存器数据范围为0~65535，有符号型寄存器数据范围为-32768~32767，浮点型寄存器为大端显示。
+   Para la definición concreta, consulte el Anexo 1: Tabla de mapeo de direcciones del esclavo ModbusTCP; el rango de datos de los registros sin signo es 0~65535, el de los registros con signo es -32768~32767 y los registros de coma flotante se muestran en big-endian.
    
-   更改AI0和AI1的名称分别为“电压”和“电流”，从ModbusTCP从站地址映射表中查出两寄存器的地址分别为100和101，因此当连接的主站设备修改保持寄存器100和101寄存器地址值时，机器人ModbusTCP从站监控页面“电压”和“电流”寄存器地址值相应同步更新显示，机器人的模拟输入主要用于机器人读取外部主站设备数值信号。
+   Cambiar los nombres de AI0 y AI1 a "Tensión" y "Corriente" respectivamente; consultando la tabla de mapeo de direcciones del esclavo ModbusTCP se obtiene que las direcciones de ambos registros son 100 y 101 respectivamente; por lo tanto, cuando el dispositivo maestro conectado modifica el valor de la dirección de los registros de retención 100 y 101, los valores de dirección de los registros "Tensión" y "Corriente" de la página de monitorización del esclavo ModbusTCP del robot se actualizan sincronizadamente; la entrada analógica del robot se utiliza principalmente para que el robot lea las señales de valor del dispositivo maestro externo.
 
 .. image:: coding/208.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-46 ModbusTCP从站模拟输入监控
+.. centered:: Figura 9.18-46 Monitorización de la entrada analógica del esclavo ModbusTCP
 
-4. 模拟输出(输入寄存器)
+4. Salida analógica (registro de entrada)
 
-机器人提供无符号、有符号和浮点型三种类型的输入寄存器共64个，AO0~AO63的地址为100~195
+El robot ofrece 64 registros de entrada de tres tipos: sin signo, con signo y de coma flotante; las direcciones de AO0~AO63 son 100~195.
    
 .. note:: 
-   具体定义请查看附件一：ModbusTCP从站地址映射表，其中无符号类型寄存器数据范围为0~65535，有符号型寄存器数据范围为-32768~32767，浮点型寄存器为大端显示。
+   Para la definición concreta, consulte el Anexo 1: Tabla de mapeo de direcciones del esclavo ModbusTCP; el rango de datos de los registros sin signo es 0~65535, el de los registros con signo es -32768~32767 y los registros de coma flotante se muestran en big-endian.
    
-   更改AO0和AO1的名称分别为“目标位置A”和“目标位置B”，输入量寄存器数值分别为2000和1500，从ModbusTCP从站地址映射表中查出两寄存器的地址分别为100和101，因此当连接的主站设备读取输入寄存器100和101寄存器地址值时，即可得到所设置的数值，机器人从站模拟输出主要用于机器人向外部主站设备传递数值信号。
+   Cambiar los nombres de AO0 y AO1 a "Posición objetivo A" y "Posición objetivo B" respectivamente, con valores de registro de entrada de 2000 y 1500; consultando la tabla de mapeo de direcciones del esclavo ModbusTCP se obtiene que las direcciones de ambos registros son 100 y 101 respectivamente; por lo tanto, cuando el dispositivo maestro conectado lee los valores de dirección de los registros de entrada 100 y 101, obtiene los valores configurados; la salida analógica del esclavo del robot se utiliza principalmente para que el robot transmita señales de valor al dispositivo maestro externo.
 
 .. image:: coding/209.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-47 Modbus从站修改模拟输入
+.. centered:: Figura 9.18-47 Modificación de la entrada analógica del esclavo Modbus
 
-ModbusTCP从站程序编写
+Escritura del programa del esclavo ModbusTCP
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-依次点击“全部”、“通讯指令”，打开通讯指令添加页面。
+Hacer clic sucesivamente en "Todo", "Instrucciones de comunicación" para abrir la página de adición de instrucciones de comunicación.
 
 .. image:: coding/210.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-48 打开通讯指令添加页面
+.. centered:: Figura 9.18-48 Abrir la página de adición de instrucciones de comunicación
 
-点击“Modbus”。
+Hacer clic en "Modbus".
 
 .. image:: coding/211.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-49 选择Modbus
+.. centered:: Figura 9.18-49 Seleccionar Modbus
 
-点击“Modbus_TCP”。
+Hacer clic en "Modbus_TCP".
 
 .. image:: coding/178.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-50 选择Modbus_TCP
+.. centered:: Figura 9.18-50 Seleccionar Modbus_TCP
 
-选择“从站”，打开ModbusTCP从站指令添加页面。
+Seleccionar "Esclavo" para abrir la página de adición de instrucciones del esclavo ModbusTCP.
 
 .. image:: coding/212.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-51 ModbusTCP从站指令添加
+.. centered:: Figura 9.18-51 Adición de instrucciones del esclavo ModbusTCP
 
-1. 写单个数字输出DO(离散输入)
+1. Escribir una única salida digital DO (entrada discreta)
 
-选择DO名称为“A启动”，寄存器数量为1，寄存器值为0，点击“写单个数字输出”。最后翻至该页面最底端，点击“应用”按钮。
+Seleccionar el nombre DO como "A inicio", el número de registros como 1 y el valor del registro como 0; hacer clic en "Escribir una única salida digital". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar".
 
 .. image:: coding/213.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-52 添加写单个数字输出指令
+.. centered:: Figura 9.18-52 Añadir instrucción de escritura de una única salida digital
 
-此时机器人程序“testModbusSlave.lua”中已经添加一条机器人Modbus从站写单个数字输出的指令，将机器人切换到自动模式，点击启动按钮，机器人将名称为“A启动”对应的数字输出的地址值写为0。
+En este momento, en el programa del robot "testModbusSlave.lua" ya se ha añadido una instrucción del esclavo Modbus del robot para escribir una única salida digital; cambiar el robot al modo automático y hacer clic en el botón de inicio; el robot escribirá el valor de dirección de la salida digital correspondiente al nombre "A inicio" como 0.
    
 .. image:: coding/214.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-53 写单个数字输出LUA程序
+.. centered:: Figura 9.18-53 Programa LUA de escritura de una única salida digital
 
-2. 写多个数字输出DO(离散输入)
+2. Escribir varias salidas digitales DO (entradas discretas)
 
-打开ModbusTCP从站指令添加页面，找到“数字输出设置”，选择DO名称为“A启动”，寄存器数量为5，寄存器值为1,0,1,0,1，其中寄存器值的个数要与设置的寄存器数量对应，且多个寄存器值之间用英文逗号隔开，点击“写数字输出”。最后翻至该页面最底端，点击“应用”按钮。
+Abrir la página de adición de instrucciones del esclavo ModbusTCP, encontrar "Configuración de salida digital", seleccionar el nombre DO como "A inicio", el número de registros como 5 y el valor del registro como 1,0,1,0,1; el número de valores de registro debe corresponder al número de registros configurado, y los distintos valores de registro deben separarse con comas en inglés; hacer clic en "Escribir salida digital". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar".
    
 .. image:: coding/215.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-54 配置写多个数字输出
+.. centered:: Figura 9.18-54 Configuración de escritura de varias salidas digitales
 
-此时机器人程序“testModbusSlave.lua”中已经添加一条机器人Modbus从站写多个数字输出的指令，将机器人切换到自动模式，点击启动按钮，机器人将从站“A启动”其后面4个离散输入寄存器的值分别写为1、0、1、0、1。
+En este momento, en el programa del robot "testModbusSlave.lua" ya se ha añadido una instrucción del esclavo Modbus del robot para escribir varias salidas digitales; cambiar el robot al modo automático y hacer clic en el botón de inicio; el robot escribirá respectivamente los valores del registro de entrada discreta "A inicio" del esclavo y de los 4 registros de entrada discreta siguientes como 1, 0, 1, 0, 1.
       
 .. image:: coding/216.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-55 写多个数字输出LUA程序
+.. centered:: Figura 9.18-55 Programa LUA de escritura de varias salidas digitales
 
-3. 读单个数字输出DO(离散输入)
+3. Leer una única salida digital DO (entrada discreta)
 
-打开ModbusTCP主站指令添加页面，找到“数字输出设置”，DO名称为“A启动”，寄存器数量为1，寄存器值不需要填写，点击“读数字输出”。最后翻至该页面最底端，点击“应用”按钮。
+Abrir la página de adición de instrucciones del maestro ModbusTCP, encontrar "Configuración de salida digital", el nombre DO como "A inicio", el número de registros como 1; no es necesario rellenar el valor del registro; hacer clic en "Leer salida digital". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar".
       
 .. image:: coding/217.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-56 配置读单个数字输出
+.. centered:: Figura 9.18-56 Configuración de lectura de una única salida digital
 
-此时机器人程序“testModbusSlave.lua”中已经添加一条机器人Modbus从站读单个数字输出的指令。
+En este momento, en el programa del robot "testModbusSlave.lua" ya se ha añadido una instrucción del esclavo Modbus del robot para leer una única salida digital.
          
 .. image:: coding/218.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-57 读单个数字输出程序
+.. centered:: Figura 9.18-57 Programa de lectura de una única salida digital
 
-通常读Modbus寄存器后将读到的数值存入变量里，因此需要定义一个变量用于存储读取的数值。点击“切换模式”按钮，将机器人lua程序切换至可编辑状态，在“ModbusSlaveReadDO”指令前编写填加返回值变量“AStartValue”，执行程序后读到的数值将存在“AStartValue”里。
+Normalmente, tras leer un registro Modbus, el valor leído se almacena en una variable, por lo que es necesario definir una variable para almacenar el valor leído. Hacer clic en el botón "Cambiar modo" para cambiar el programa lua del robot a estado editable y, antes de la instrucción "ModbusSlaveReadDO", escribir y añadir la variable de valor de retorno "AStartValue"; el valor leído tras ejecutar el programa se almacenará en "AStartValue".
          
 .. image:: coding/219.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-58 读单个数字输出存入变量
+.. centered:: Figura 9.18-58 Lectura de una única salida digital y almacenamiento en variable
 
-线圈类型的寄存器值只有0和1两种数值，在机器人程序中可以通过判断寄存器数值不同来进行不同的操作。点击“切换模式”按钮将机器人示教程序切换至不可编辑模式，添加两个关节运动指令分别运动到两个不同的点位“P1”和“P2”。
+El valor de los registros de tipo bobina solo puede ser 0 o 1; en el programa del robot se pueden realizar distintas operaciones según el valor del registro. Hacer clic en el botón "Cambiar modo" para cambiar el programa de enseñanza del robot a modo no editable y añadir dos instrucciones de movimiento articular para desplazarse respectivamente a dos puntos diferentes "P1" y "P2".
          
 .. image:: coding/220.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-59 添加不同点位的运动指令
+.. centered:: Figura 9.18-59 Añadir instrucciones de movimiento a distintos puntos
 
-再次将程序切换至可编辑模式，并编写数字输出值“AStartValue”的判断条件，当“AStartValue”值为1时，机器人运动到“P1”点，否则机器人运动到“P2”点。
+Volver a cambiar el programa a modo editable y escribir la condición de juicio del valor de salida digital "AStartValue": cuando el valor de "AStartValue" sea 1, el robot se desplazará al punto "P1"; de lo contrario, el robot se desplazará al punto "P2".
          
 .. image:: coding/221.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-60 根据数字输出值不同运动到不同的点位
+.. centered:: Figura 9.18-60 Desplazarse a distintos puntos según el valor de la salida digital
 
-最后再将机器人程序切换至不可编辑模式，将机器人切换到自动模式，在确认安全的前提下启动运行程序。由于该程序的第二行将名称为“A启动”数字输出DO值设为1，因此执行程序后机器人将运动到“P1”点。
+Por último, volver a cambiar el programa del robot a modo no editable, cambiar el robot al modo automático y, tras confirmar la seguridad, iniciar la ejecución del programa. Dado que la segunda línea del programa establece el valor DO de la salida digital denominada "A inicio" en 1, tras ejecutar el programa el robot se desplazará al punto "P1".
          
 .. image:: coding/222.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-61 读取单个线圈寄存器数值并运动
+.. centered:: Figura 9.18-61 Leer el valor del registro de una única bobina y moverse
 
-4. 读多个数字输出DO(离散输入)
+4. Leer varias salidas digitales DO (entradas discretas)
 
-打开ModbusTCP主站指令添加页面，找到“数字输出设置”，选择DO名称为“A启动”，寄存器数量为2，寄存器值不需要填写，点击“读数字输出”。最后翻至该页面最底端，点击“应用”按钮。
+Abrir la página de adición de instrucciones del maestro ModbusTCP, encontrar "Configuración de salida digital", seleccionar el nombre DO como "A inicio", el número de registros como 2; no es necesario rellenar el valor del registro; hacer clic en "Leer salida digital". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar".
          
 .. image:: coding/223.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-62 配置读多个数字输出
+.. centered:: Figura 9.18-62 Configuración de lectura de varias salidas digitales
 
-此时机器人程序“testModbusSlave.lua”中已经添加一条机器人Modbus从站读多个数字输出的指令。
+En este momento, en el programa del robot "testModbusSlave.lua" ya se ha añadido una instrucción del esclavo Modbus del robot para leer varias salidas digitales.
             
 .. image:: coding/224.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-63 读多个数字输出程序
+.. centered:: Figura 9.18-63 Programa de lectura de varias salidas digitales
 
-点击“切换模式”按钮，将机器人lua程序切换至可编辑状态，由于读取的数量为2个，因此需要在“ModbusSlaveReadDO”指令前编写填加2个返回值变“value1,value2”，执行程序后读到的2个数字输出寄存器数值将分别存在上述2个变量里，同样您可以判断“value1”、“value6”的值使机器人进行不同的动作。
+Hacer clic en el botón "Cambiar modo" para cambiar el programa lua del robot a estado editable; dado que la cantidad leída es 2, es necesario escribir y añadir 2 variables de valor de retorno "value1,value2" antes de la instrucción "ModbusSlaveReadDO"; los 2 valores de registro de salida digital leídos tras ejecutar el programa se almacenarán respectivamente en las 2 variables anteriores; asimismo, puede juzgar los valores de "value1" y "value6" para que el robot realice distintas acciones.
             
 .. image:: coding/225.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-64 读多个数字输出存入变量
+.. centered:: Figura 9.18-64 Lectura de varias salidas digitales y almacenamiento en variables
 
-5. 读数字输入DI(线圈)
+5. Leer entrada digital DI (bobina)
 
-打开ModbusTCP从站指令添加页面，找到“数字输入设置”，选择DI名称为“A到位”，寄存器数量为2，点击“读数字输入”。最后翻至该页面最底端，点击“应用”按钮。
+Abrir la página de adición de instrucciones del esclavo ModbusTCP, encontrar "Configuración de entrada digital", seleccionar el nombre DI como "A en posición" y el número de registros como 2; hacer clic en "Leer entrada digital". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar".
             
 .. image:: coding/226.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-65 配置读数字输入
+.. centered:: Figura 9.18-65 Configuración de lectura de entrada digital
 
-此时机器人程序“testModbusSlave.lua”中已经添加一条机器人Modbus从站读数字输入的指令。
+En este momento, en el programa del robot "testModbusSlave.lua" ya se ha añadido una instrucción del esclavo Modbus del robot para leer entradas digitales.
                
 .. image:: coding/227.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-66 读数字输入程序指令
+.. centered:: Figura 9.18-66 Instrucción de programa de lectura de entrada digital
 
-点击“切换模式”按钮，将机器人lua程序切换至可编辑状态，在“ModbusSlaveReadDI”指令前编写返回值变量“AState,BState”，执行程序后读到的两个数字输入数值将分别存在变量“AState”和“BState”里，您可以通过判断变量数值进而控制机器人做不同的操作。
+Hacer clic en el botón "Cambiar modo" para cambiar el programa lua del robot a estado editable y, antes de la instrucción "ModbusSlaveReadDI", escribir las variables de valor de retorno "AState,BState"; los dos valores de entrada digital leídos tras ejecutar el programa se almacenarán respectivamente en las variables "AState" y "BState"; puede juzgar el valor de las variables para controlar que el robot realice distintas operaciones.
               
 .. image:: coding/228.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-67 读数字输入程序
+.. centered:: Figura 9.18-67 Programa de lectura de entrada digital
 
-6. 模拟输出AO(输入寄存器)和模拟输入AI(保持寄存器)的读写操作
+6. Operaciones de lectura y escritura de salida analógica AO (registro de entrada) y entrada analógica AI (registro de retención)
 
-模拟输出(输入寄存器)、模拟输入(保持寄存器)的读写操作与数字输出(离散输入)、数字输入(线圈)的操作基本一致，区别在于后者的数据范围仅限于0或1，而前者的数据范围更大，因此具体的操作可参考数字输出和数字输入程序的编写，在此仅展示模拟输入的读操作和模拟输出的读写操作程序示例。
+Las operaciones de lectura y escritura de salida analógica (registro de entrada) y entrada analógica (registro de retención) son básicamente iguales a las operaciones de salida digital (entrada discreta) y entrada digital (bobina); la diferencia es que el rango de datos de estas últimas se limita a 0 o 1, mientras que el rango de datos de las primeras es mayor; por lo tanto, para las operaciones concretas se puede consultar la escritura de programas de salida digital y entrada digital; aquí solo se muestran ejemplos de programa de lectura de entrada analógica y de lectura/escritura de salida analógica.
               
 .. image:: coding/229.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-68 读模拟输入
+.. centered:: Figura 9.18-68 Lectura de entrada analógica
               
 .. image:: coding/230.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-69 读写模拟输出
+.. centered:: Figura 9.18-69 Lectura/escritura de salida analógica
 
-7. 等待数字输入
+7. Esperar entrada digital
 
-打开ModbusTCP从站指令添加页面，找到“等待数字输入设置”，选择DI名称为配置的“A到位”寄存器，等待状态为“True”，超时时间为5000ms。点击“添加”按钮，最后点击“应用”按钮。
+Abrir la página de adición de instrucciones del esclavo ModbusTCP, encontrar "Configuración de espera de entrada digital", seleccionar el nombre DI como el registro "A en posición" configurado, el estado de espera como "True" y el tiempo de espera agotado como 5000 ms. Hacer clic en el botón "Añadir" y, por último, hacer clic en el botón "Aplicar".
               
 .. image:: coding/231.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-70 添加等待数字输入指令
+.. centered:: Figura 9.18-70 Añadir instrucción de espera de entrada digital
 
-此时机器人程序“testModbusSlave.lua”中已经添加一条机器人Modbus从站等待数字输入的指令，启动程序后，机器人会一直等待从站的“A到位”线圈寄存器值变为true，也就是数值1，由于设置的超时时间为5s，因此当机器人等待5s后“A到位”信号仍为0时，机器人程序将会报超时错误，程序也自动停止运行。
+En este momento, en el programa del robot "testModbusSlave.lua" ya se ha añadido una instrucción del esclavo Modbus del robot para esperar la entrada digital; tras iniciar el programa, el robot esperará continuamente a que el valor del registro de bobina "A en posición" del esclavo cambie a true, es decir, al valor 1; dado que el tiempo de espera agotado configurado es de 5 s, cuando el robot haya esperado 5 s y la señal "A en posición" siga siendo 0, el programa del robot informará de un error de tiempo de espera agotado y el programa se detendrá automáticamente.
               
 .. image:: coding/232.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-71 等待数字输入程序
+.. centered:: Figura 9.18-71 Programa de espera de entrada digital
 
-8. 等待模拟输入
+8. Esperar entrada analógica
 
-打开ModbusTCP从站指令添加页面，找到“等待模拟输入设置”选择AI名称为配置的“电压”寄存器，等待状态为“>”，寄存器值为255，超时时间为5000ms。点击“添加”按钮，最后点击“应用”按钮。
+Abrir la página de adición de instrucciones del esclavo ModbusTCP, encontrar "Configuración de espera de entrada analógica", seleccionar el nombre AI como el registro "Tensión" configurado, el estado de espera como ">", el valor del registro como 255 y el tiempo de espera agotado como 5000 ms. Hacer clic en el botón "Añadir" y, por último, hacer clic en el botón "Aplicar".
 
 .. image:: coding/233.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-72 添加等待模拟输入指令
+.. centered:: Figura 9.18-72 Añadir instrucción de espera de entrada analógica
 
-此时机器人程序“testModbusSlave.lua”中已经添加一条机器人Modbus从站等待模拟输入值的指令，启动程序后，机器人会一直等待从站的“电压”寄存器数值大于255，由于设置的超时时间为5s，因此当机器人等待5s后“电压”信号仍不大于255时，机器人程序将会报超时错误，程序也自动停止运行。
+En este momento, en el programa del robot "testModbusSlave.lua" ya se ha añadido una instrucción del esclavo Modbus del robot para esperar el valor de entrada analógica; tras iniciar el programa, el robot esperará continuamente a que el valor del registro "Tensión" del esclavo sea mayor que 255; dado que el tiempo de espera agotado configurado es de 5 s, cuando el robot haya esperado 5 s y la señal "Tensión" siga sin ser mayor que 255, el programa del robot informará de un error de tiempo de espera agotado y el programa se detendrá automáticamente.
               
 .. image:: coding/234.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-73 等待模拟输入寄存器程序
+.. centered:: Figura 9.18-73 Programa de espera del registro de entrada analógica
 
-打开ModbusTCP从站指令添加页面，找到“等待模拟输入设置”即等待AI输入寄存器设置，选择AI名称为配置的“液位”寄存器，等待状态为“=”，寄存器值为255，超时时间为5000ms。点击“添加”按钮，最后点击“应用”按钮。
+Abrir la página de adición de instrucciones del esclavo ModbusTCP, encontrar "Configuración de espera de entrada analógica", es decir, la configuración de espera del registro de entrada AI; seleccionar el nombre AI como el registro "Nivel de líquido" configurado, el estado de espera como "=", el valor del registro como 255 y el tiempo de espera agotado como 5000 ms. Hacer clic en el botón "Añadir" y, por último, hacer clic en el botón "Aplicar".
             
 .. image:: coding/495.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-73-2 添加等待模拟输入
+.. centered:: Figura 9.18-73-2 Añadir espera de entrada analógica
 
-此时机器人程序“test.lua”中已经添加一条机器人Modbus从站等待AI输入寄存器值的指令，启动程序后，机器人会一直等待“液位”寄存器数值等于255，由于设置的超时时间为5s，因此当机器人等待5s后“液位”信号仍不等于255时，机器人程序将会报超时错误，程序也自动停止运行。
+En este momento, en el programa del robot "test.lua" ya se ha añadido una instrucción del esclavo Modbus del robot para esperar el valor del registro de entrada AI; tras iniciar el programa, el robot esperará continuamente a que el valor del registro "Nivel de líquido" sea igual a 255; dado que el tiempo de espera agotado configurado es de 5 s, cuando el robot haya esperado 5 s y la señal "Nivel de líquido" siga sin ser igual a 255, el programa del robot informará de un error de tiempo de espera agotado y el programa se detendrá automáticamente.
 
-ModbusTCP从站机器人状态反馈与控制
-***********************************
+Realimentación de estado y control del robot desde el esclavo ModbusTCP
+*******************************************************************************************
 
-协作机器人ModbusTCP从站输入寄存器地址310~473用于反馈机器人实时状态(具体地址定义见附件一：ModbusTCP从站地址映射表)，您只需要用主站设备读取对应寄存器的数值即可获取对应的机器人实时状态数据。
+Las direcciones de registro de entrada 310~473 del esclavo ModbusTCP del robot colaborativo se utilizan para realimentar el estado en tiempo real del robot (para la definición concreta de direcciones, consulte el Anexo 1: Tabla de mapeo de direcciones del esclavo ModbusTCP); basta con que el dispositivo maestro lea el valor del registro correspondiente para obtener los datos de estado en tiempo real del robot correspondientes.
 
-协作机器人ModbusTCP从站线圈寄存器地址300~599用于主站设备对机器人进行控制(具体地址定义见附件一：ModbusTCP从站地址映射表)，以线圈地址502为例，该地址功能表示“启动程序”。
+Las direcciones de registro de bobina 300~599 del esclavo ModbusTCP del robot colaborativo se utilizan para que el dispositivo maestro controle el robot (para la definición concreta de direcciones, consulte el Anexo 1: Tabla de mapeo de direcciones del esclavo ModbusTCP); tomando como ejemplo la dirección de bobina 502, la función de esta dirección es "Iniciar programa".
 
-当机器人处于自动模式下，主站设备将地址502的值从0置1时，机器人自动开始运行当前配置的程序；再以线圈地址300为例，它用于控制机器人控制箱DO0的输出，当外部主站将线圈地址300从0置1时，控制箱DO0自动输出有效，同样外部主站将线圈地址300从1置0时，控制箱DO0输出无效。在ModbusTCP从站设置页面点击“功能数字输入(线圈)”，即可监控当前所有的功能数字输入情况。
+Cuando el robot está en modo automático y el dispositivo maestro cambia el valor de la dirección 502 de 0 a 1, el robot comienza automáticamente a ejecutar el programa configurado actualmente; tomando como ejemplo la dirección de bobina 300, se utiliza para controlar la salida DO0 de la caja de control del robot; cuando el maestro externo cambia la dirección de bobina 300 de 0 a 1, la salida DO0 de la caja de control se activa automáticamente; asimismo, cuando el maestro externo cambia la dirección de bobina 300 de 1 a 0, la salida DO0 de la caja de control se desactiva. En la página de configuración del esclavo ModbusTCP, hacer clic en "Entradas digitales funcionales (bobinas)" para monitorizar todas las entradas digitales funcionales actuales.
               
 .. image:: coding/235.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-74 机器人从站功能数字输入
+.. centered:: Figura 9.18-74 Entradas digitales funcionales del esclavo del robot
                  
 .. image:: coding/434.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.18-74 Modbus从站地址映射表
+.. centered:: Figura 9.18-74 Tabla de mapeo de direcciones del esclavo Modbus
 
-附件一：:download:`Modbus从站地址映射表 <../_static/_doc/ModbusTCP Slave station address mapping table.xlsx>`
+Anexo 1: :download:`Tabla de mapeo de direcciones del esclavo Modbus <../_static/_doc/ModbusTCP Slave station address mapping table.xlsx>`
 
-机器人后台程序
-~~~~~~~~~~~~~~~~~
+Programas en segundo plano del robot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-机器人后台程序功能
-+++++++++++++++++++++++
+Función de programas en segundo plano del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-机器人后台程序就是机器人在前台运动程序运行过程中，同时后台也可以运行的一种用于处理信号逻辑关系的控制程序，二者在运行关系上相互独立。
+El programa en segundo plano del robot es un programa de control utilizado para procesar relaciones lógicas de señales que puede ejecutarse en segundo plano mientras el programa de movimiento en primer plano del robot se está ejecutando; ambos son independientes entre sí en su relación de ejecución.
 
-后台程序可以监视前台的运行状态，同时也可以向前台发送控制信号。后台程序也可以通过I/O通信，与外部设备连接对机器人周边设备进行运行监视与控制。后台逻辑程序可运行指令与前台示教程序不同，其不能控制任何运动轴。因此在编程时不能含有任何机器人轴运动指令。只保留逻辑控制功能及 I/O 通信功能。
+El programa en segundo plano puede monitorizar el estado de ejecución del primer plano y también puede enviar señales de control al primer plano. El programa en segundo plano también puede, mediante comunicación de I/O, conectarse con dispositivos externos para monitorizar y controlar los dispositivos periféricos del robot. Las instrucciones ejecutables de los programas lógicos en segundo plano son diferentes de las de los programas de enseñanza en primer plano: no pueden controlar ningún eje de movimiento. Por lo tanto, al programar no pueden contener ninguna instrucción de movimiento de ejes del robot. Solo se conservan las funciones de control lógico y las funciones de comunicación de I/O.
 
-使用后台程序时，程序从头至尾周而复始的循环扫描。系统内后台程序运行周期为1毫秒，可在后台程序中添加延时函数控制运行周期。后台程序执行过程中不受急停、暂停、报警的影响。
+Al utilizar programas en segundo plano, el programa se escanea de principio a fin de forma cíclica y repetida. El período de ejecución de los programas en segundo plano dentro del sistema es de 1 milisegundo; se pueden añadir funciones de retardo en el programa en segundo plano para controlar el período de ejecución. El proceso de ejecución de los programas en segundo plano no se ve afectado por paradas de emergencia, pausas ni alarmas.
 
-.. note:: 最多同时运行8个后台程序。
+.. note:: Se pueden ejecutar como máximo 8 programas en segundo plano simultáneamente.
 
-电源切断后，在下次通电时，后台逻辑程序将被自动加载，按照设置的状态进行运行。
+Tras cortar la alimentación, en el siguiente encendido el programa lógico en segundo plano se cargará automáticamente y se ejecutará según el estado configurado.
 
-后台指令界面
+Interfaz de instrucciones en segundo plano
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-界面左侧主要为程序命令的添加区域，点击各关键字上方的图标，即可进入右侧程序命令添加的详细界面。
+La parte izquierda de la interfaz es principalmente el área de adición de comandos de programa; hacer clic en el icono situado encima de cada palabra clave permite entrar en la interfaz detallada de adición de comandos de programa de la derecha.
 
 .. image:: coding/253.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-1-1 后台程序界面
+.. centered:: Figura 9.19-1-1 Interfaz de programas en segundo plano
 
-逻辑指令界面
+Interfaz de instrucciones lógicas
 ********************************************************************************
 
-逻辑指令其使用方法与前台程序保持一致，包含判断、变量、打印。
+El modo de uso de las instrucciones lógicas es el mismo que el de los programas en primer plano e incluye juicio, variable e impresión.
 
-控制指令界面
+Interfaz de instrucciones de control
 ********************************************************************************
 
-运行控制指令
+Instrucciones de control de ejecución
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-用于控制前台程序，包含运行指令、暂停指令、恢复指令、停止指令；
+Se utilizan para controlar el programa en primer plano e incluyen instrucciones de ejecución, instrucciones de pausa, instrucciones de reanudación e instrucciones de detención;
 
 .. image:: coding/626.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-1-2 后台程序控制指令
+.. centered:: Figura 9.19-1-2 Instrucciones de control de programas en segundo plano
 
 DelayMS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-DelayMS 为后台程序专用延时指令，其等待时间单位为毫秒。
+DelayMS es una instrucción de retardo exclusiva de los programas en segundo plano; su tiempo de espera está en unidades de milisegundos.
 
 .. image:: coding/627.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-1-3 DelayMS指令
+.. centered:: Figura 9.19-1-3 Instrucción DelayMS
 
-后台DIO
+DIO en segundo plano
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-该部分指令用于在后台程序中对控制箱IO进行控制，包括设置DO、获取DI以及读取DO状态。为保证后台程序的循环执行，建议在后台程序指令中采用非阻塞模式。
+Esta parte de instrucciones se utiliza para controlar las IO de la caja de control en los programas en segundo plano, incluidos el establecimiento de DO, la obtención de DI y la lectura del estado DO. Para garantizar la ejecución cíclica de los programas en segundo plano, se recomienda utilizar el modo no bloqueante en las instrucciones de los programas en segundo plano.
 
 .. image:: coding/628.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-1-4 后台DIO指令界面
+.. centered:: Figura 9.19-1-4 Interfaz de instrucciones DIO en segundo plano
 
-后台AIO
+AIO en segundo plano
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-该部分指令用于在后台程序中对模拟量AO及AI信号进行控制，包括设置AO、获取AI以及读取AO状态。为保证后台程序的循环执行，建议在后台程序指令中采用非阻塞模式。
+Esta parte de instrucciones se utiliza para controlar las señales analógicas AO y AI en los programas en segundo plano, incluidos el establecimiento de AO, la obtención de AI y la lectura del estado AO. Para garantizar la ejecución cíclica de los programas en segundo plano, se recomienda utilizar el modo no bloqueante en las instrucciones de los programas en segundo plano.
 
 .. image:: coding/629.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-1-5 后台AIO指令界面
+.. centered:: Figura 9.19-1-5 Interfaz de instrucciones AIO en segundo plano
 
-后台扩展IO
+IO extendida en segundo plano
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-该部分指令用于在后台程序中对扩展IO信号进行控制，包括设置或及读取AuxDO、AuxAO、AuxDI、AuxAI。为保证后台程序的循环执行，建议在后台程序指令中采用非阻塞模式，或指令选项应用线程。
+Esta parte de instrucciones se utiliza para controlar las señales de IO extendidas en los programas en segundo plano, incluidos el establecimiento o la lectura de AuxDO, AuxAO, AuxDI y AuxAI. Para garantizar la ejecución cíclica de los programas en segundo plano, se recomienda utilizar el modo no bloqueante en las instrucciones de los programas en segundo plano, o la opción de instrucción de aplicar hilo.
 
 .. image:: coding/630.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-1-6 后台扩展IO指令界面
+.. centered:: Figura 9.19-1-6 Interfaz de instrucciones de IO extendida en segundo plano
 
-通讯指令界面
+Interfaz de instrucciones de comunicación
 ********************************************************************************
 
-Modbus指令
+Instrucciones Modbus
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-该部分指令与前台程序使用方法一致，基于ModbusTCP/RTU协议的总线功能，用户可以通过相关指令对线圈，离散量，寄存器进行读写操作。
+El modo de uso de esta parte de instrucciones es el mismo que el de los programas en primer plano; basadas en la función de bus del protocolo ModbusTCP/RTU, el usuario puede, mediante las instrucciones correspondientes, realizar operaciones de lectura y escritura sobre bobinas, entradas discretas y registros.
 
 .. image:: coding/631.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-1-7 后台Modbus指令界面
+.. centered:: Figura 9.19-1-7 Interfaz de instrucciones Modbus en segundo plano
 
-板卡指令
+Instrucciones de placa
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-该部分指令与前台程序使用方法一致，在与板卡建立通信后可以通过后台板卡指令设置或获取从站DO、AO、DI、AI。
+El modo de uso de esta parte de instrucciones es el mismo que el de los programas en primer plano; tras establecer comunicación con la placa, se pueden establecer u obtener mediante las instrucciones de placa en segundo plano los DO, AO, DI y AI del esclavo.
 
 .. image:: coding/632.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-1-8 板卡指令
+.. centered:: Figura 9.19-1-8 Instrucciones de placa
 
-Socket指令
+Instrucciones Socket
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-该部分指令与前台程序使用方法一致，在后台程序仅可使用Socket收发指令。在使用时请注意：Socket收发指令具有阻塞特性：若在后台程序中调用，会阻塞同程序内其他指令执行，同时影响前台程序对同一Socket数据的操作。建议Socket指令在同一前台或后台程序内单独使用，避免影响其他指令。
+El modo de uso de esta parte de instrucciones es el mismo que el de los programas en primer plano; en los programas en segundo plano solo se pueden utilizar las instrucciones de envío y recepción Socket. Al utilizarlas, tenga en cuenta que las instrucciones de envío y recepción Socket tienen carácter bloqueante: si se llaman en un programa en segundo plano, bloquearán la ejecución de otras instrucciones del mismo programa y afectarán además a las operaciones del programa en primer plano sobre los datos del mismo Socket. Se recomienda utilizar las instrucciones Socket de forma independiente en un mismo programa en primer plano o en segundo plano, para evitar afectar a otras instrucciones.
 
 .. image:: coding/633.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-1-9 后台socket指令
+.. centered:: Figura 9.19-1-9 Instrucciones socket en segundo plano
 
-机器人后台程序保存
-************************************
+Guardado de programas en segundo plano del robot
+**************************************************************
 
-后台程序创建、编辑及保存只能在后台程序界面下使用。
+La creación, edición y guardado de programas en segundo plano solo pueden realizarse en la interfaz de programas en segundo plano.
 
-**Step1**：打开机器人后台程序界面。打开示教页面，依次点击“示教程序”、“程序编程”。选择左上方指令后台程序，即可进入后台程序界面。
+**Step1**: Abrir la interfaz de programas en segundo plano del robot. Abrir la página de enseñanza y hacer clic sucesivamente en "Programa de enseñanza", "Programación de programas". Seleccionar en la parte superior izquierda la instrucción de programas en segundo plano para entrar en la interfaz de programas en segundo plano.
 
-**Step2**：手动模式下，打开后台示教程序文件。点击“新建”，新建示教程序文件，进行程序编辑，点击“保存”进行文件保存。
+**Step2**: En modo manual, abrir el archivo de programa de enseñanza en segundo plano. Hacer clic en "Nuevo" para crear un nuevo archivo de programa de enseñanza, editar el programa y hacer clic en "Guardar" para guardar el archivo.
 
-.. note:: 后台程序运行周期为1毫秒，程序内可使用提供的延时函数，如下图程序第4行，增加1秒延时来控制运行周期。
+.. note:: El período de ejecución de los programas en segundo plano es de 1 milisegundo; en el programa se puede utilizar la función de retardo proporcionada, como en la línea 4 del programa de la figura siguiente, para añadir un retardo de 1 segundo y controlar el período de ejecución.
 
 .. image:: coding/254.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-2 后台程序文件新建及保存
+.. centered:: Figura 9.19-2 Creación y guardado del archivo de programa en segundo plano
 
-机器人后台程序管理
-****************************
+Gestión de programas en segundo plano del robot
+******************************************************
 
-保存成功的后台程序，可以在后台程序管理界面进行创建、暂停、恢复及删除。后台程序管理界面可以直观的看见所有已经创建的后台程序的运行状态。绿色即为正在运行，红色表示暂停状态。
+Los programas en segundo plano guardados correctamente se pueden crear, pausar, reanudar y eliminar en la interfaz de gestión de programas en segundo plano. La interfaz de gestión de programas en segundo plano permite ver de forma intuitiva el estado de ejecución de todos los programas en segundo plano ya creados. El verde indica que se está ejecutando y el rojo indica estado de pausa.
 
-**Step1**：创建后台程序。点击后台程序管理按钮，通过下拉框选择已经保存的后台程序，点击“开始运行”，即可运行相应的后台程序。
+**Step1**: Crear un programa en segundo plano. Hacer clic en el botón de gestión de programas en segundo plano, seleccionar en el cuadro desplegable el programa en segundo plano ya guardado y hacer clic en "Iniciar ejecución" para ejecutar el programa en segundo plano correspondiente.
 
 .. image:: coding/255.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-3 创建后台程序
+.. centered:: Figura 9.19-3 Creación de un programa en segundo plano
 
-**Step2**：恢复、暂停后台程序。在后台程序管理界面中，对监控程序点击“恢复”和“暂停”按钮，即可恢复和暂停相应的后台程序。点击“删除”按钮，即可删除相应的后台程序。
+**Step2**: Reanudar y pausar programas en segundo plano. En la interfaz de gestión de programas en segundo plano, hacer clic en los botones "Reanudar" y "Pausar" del programa de monitorización para reanudar y pausar el programa en segundo plano correspondiente. Hacer clic en el botón "Eliminar" para eliminar el programa en segundo plano correspondiente.
 
 .. image:: coding/256.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-4 后台程序暂停、恢复、删除
+.. centered:: Figura 9.19-4 Pausa, reanudación y eliminación de programas en segundo plano
 
-机器人用户变量使用
-+++++++++++++++++++++++
+Uso de variables de usuario del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-.. note:: 协作机器人新增用户变量功能，适用于机器人后台程序与前台程序，或者不同后台程序间的数据交互。
+.. note:: El robot colaborativo incorpora la función de variables de usuario, aplicable al intercambio de datos entre programas en segundo plano y programas en primer plano del robot, o entre distintos programas en segundo plano.
 
-机器人用户变量管理
-*************************************
+Gestión de variables de usuario del robot
+*******************************************************
 
-使用用户变量前，可先将用户变量根据喜好进行重命名。打开示教页面，依次点击“示教程序”、“程序编程”、“用户变量管理”，该页面在前台程序、和后台程序内均可使用。点击变量名即可直接更改变量名。
+Antes de utilizar las variables de usuario, se pueden cambiar sus nombres según se prefiera. Abrir la página de enseñanza y hacer clic sucesivamente en "Programa de enseñanza", "Programación de programas", "Gestión de variables de usuario"; esta página se puede utilizar tanto en programas en primer plano como en programas en segundo plano. Hacer clic en el nombre de la variable para cambiar directamente el nombre de la variable.
 
 .. image:: coding/257.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-5 用户变量管理
+.. centered:: Figura 9.19-5 Gestión de variables de usuario
 
-机器人用户变量使用
-*************************
+Uso de variables de usuario del robot
+*******************************************
 
-用户变量在前、后台程序中使用时仅可使用用户变量读写接口操作。
+Cuando se utilizan variables de usuario en programas en primer y segundo plano, solo se pueden manejar mediante las interfaces de lectura y escritura de variables de usuario.
 
-**Step1**：手动模式下，打开示教程序文件。打开示教页面，依次点击“示教程序”、“程序编程”，点击“新建”，新建示教程序文件。
+**Step1**: En modo manual, abrir el archivo de programa de enseñanza. Abrir la página de enseñanza, hacer clic sucesivamente en "Programa de enseñanza", "Programación de programas" y hacer clic en "Nuevo" para crear un nuevo archivo de programa de enseñanza.
 
 .. image:: coding/258.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-6 新建示教程序文件
+.. centered:: Figura 9.19-6 Creación de un nuevo archivo de programa de enseñanza
 
-**Step2**：使用用户变量读接口。点击“变量”指令，选择“用户变量”，点击获取变量值下拉框，选择需要读取的用户变量，点击“添加”、“应用”按钮，即可编写用户变量读取接口程序。
+**Step2**: Utilizar la interfaz de lectura de variables de usuario. Hacer clic en la instrucción "Variable", seleccionar "Variable de usuario", hacer clic en el cuadro desplegable de obtención del valor de variable, seleccionar la variable de usuario que se desea leer y hacer clic en los botones "Añadir" y "Aplicar" para escribir el programa de la interfaz de lectura de variables de usuario.
 
 .. image:: coding/259.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-7 使用用户变量读接口
+.. centered:: Figura 9.19-7 Uso de la interfaz de lectura de variables de usuario
 
-**Step3**：使用用户变量写接口。点击“变量”指令，选择“用户变量”，点击设置变量值下拉框，选择需要设置的用户变量，填写对应的设置值，该值支持常数和变量值。点击“添加”、“应用”按钮，即可编写用户变量写接口程序。
+**Step3**: Utilizar la interfaz de escritura de variables de usuario. Hacer clic en la instrucción "Variable", seleccionar "Variable de usuario", hacer clic en el cuadro desplegable de establecimiento del valor de variable, seleccionar la variable de usuario que se desea establecer y rellenar el valor de establecimiento correspondiente; este valor admite constantes y valores de variable. Hacer clic en los botones "Añadir" y "Aplicar" para escribir el programa de la interfaz de escritura de variables de usuario.
 
 .. image:: coding/260.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.19-8 使用用户变量写接口
+.. centered:: Figura 9.19-8 Uso de la interfaz de escritura de variables de usuario
 
-XY方向横向恒力打磨
-~~~~~~~~~~~~~~~~~~~~~~~~
+Pulido de fuerza constante transversal en dirección XY
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
-+++++++++++++++
+Descripción general
++++++++++++++++++++++++
 
-XY方向横向恒力打磨原理如下：横向恒力打磨是指在指定的工件表面上，以恒定的力施加打磨工具（如砂轮、打磨盘等），并沿XY方向控制工具的移动，使得在接触点始终维持恒定的打磨力。
+El principio del pulido de fuerza constante transversal en dirección XY es el siguiente: el pulido de fuerza constante transversal consiste en aplicar una herramienta de pulido (como una muela, un disco de pulido, etc.) con una fuerza constante sobre una superficie de pieza especificada y controlar el movimiento de la herramienta a lo largo de la dirección XY, de modo que en el punto de contacto se mantenga siempre una fuerza de pulido constante.
 
-XY方向横向恒力打磨功能操作流程
-+++++++++++++++++++++++++++++++++
+Flujo de operación de la función de pulido de fuerza constante transversal en dirección XY
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-利用力传感器进行恒力打磨，需要在力传感器下安装打磨工具，并配置工具坐标系，依次点击“初始设置”->“基础”->“坐标系”->“工具”按钮，会进入“工具坐标系设置”界面。在“坐标系名称”中选择要进行设置的坐标系（以toolcoord0坐标系为例），根据末端工具的尺寸进行设置。
+Para el pulido de fuerza constante con sensor de fuerza es necesario instalar la herramienta de pulido bajo el sensor de fuerza y configurar el sistema de coordenadas de herramienta; hacer clic sucesivamente en "Configuración inicial"->"Básico"->"Sistema de coordenadas"->"Herramienta" para entrar en la interfaz "Configuración del sistema de coordenadas de herramienta". En "Nombre del sistema de coordenadas", seleccionar el sistema de coordenadas que se desea configurar (tomando como ejemplo el sistema de coordenadas toolcoord0) y configurarlo según las dimensiones de la herramienta del extremo.
 
 .. image:: coding/246.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.20-1 设置工具坐标系
+.. centered:: Figura 9.20-1 Configuración del sistema de coordenadas de herramienta
 
-力控参考坐标系设置。web界面中，依次点击“FT”->“参考坐标系”，选择“自定义坐标系”，并将各参数设置为“0”。力传感器工作时，不同的参考坐标系会影响传感器获取外力的大小。
+Configuración del sistema de coordenadas de referencia del control de fuerza. En la interfaz web, hacer clic sucesivamente en "FT"->"Sistema de coordenadas de referencia", seleccionar "Sistema de coordenadas personalizado" y configurar todos los parámetros como "0". Cuando el sensor de fuerza está funcionando, los distintos sistemas de coordenadas de referencia afectan a la magnitud de la fuerza externa obtenida por el sensor.
 
 .. image:: coding/261.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.20-2 设置参考坐标系
+.. centered:: Figura 9.20-2 Configuración del sistema de coordenadas de referencia
 
-固定待打磨平板于机器人作业空间内，平板不可有晃动，将工具末端近似垂直打磨板，示教始末点位。
+Fijar la placa que se desea pulir en el espacio de trabajo del robot; la placa no debe balancearse; colocar el extremo de la herramienta aproximadamente perpendicular a la placa de pulido y enseñar los puntos inicial y final.
 
 .. image:: coding/262.png
    :width: 2in
    :align: center
 
-.. centered:: 图表 9.20-3 打磨布局示意
+.. centered:: Figura 9.20-3 Esquema de la disposición del pulido
 
-依次点击“示教程序”->“程序编程”->“力控集”按钮，添加“FT_Control”指令。“FT_Control”指令为力控运动指令，可以使机器人在设定力的附近运动。
+Hacer clic sucesivamente en "Programa de enseñanza"->"Programación de programas"->"Conjunto de control de fuerza" y añadir la instrucción "FT_Control". La instrucción "FT_Control" es una instrucción de movimiento de control de fuerza que permite al robot moverse en las proximidades de una fuerza establecida.
 
 .. image:: coding/263.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.20-4 添加力控指令
+.. centered:: Figura 9.20-4 Añadir instrucción de control de fuerza
 
 .. image:: coding/264.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.20-5 力控打磨指令示例
+.. centered:: Figura 9.20-5 Ejemplo de instrucción de pulido por control de fuerza
 
-参数的具体作用：
+Función concreta de los parámetros:
 
-**坐标系名称**：设置传感器坐标系时对应的名称；
+**Nombre del sistema de coordenadas**: nombre correspondiente al configurar el sistema de coordenadas del sensor;
 
-**勾选力方向检测**：设置检测阈值：选择控制力的方向，在横向打磨中，勾选Fx、Fy并设置对应的期望恒力；
+**Marcar detección de dirección de fuerza**: configurar el umbral de detección: seleccionar la dirección de la fuerza de control; en el pulido transversal, marcar Fx, Fy y configurar la fuerza constante esperada correspondiente;
 
-**PID参数**：设置力和力矩的PID比例系数，一般设置F_P_gain为0.001；
+**Parámetros PID**: configurar los coeficientes de proporción PID de fuerza y par; generalmente se configura F_P_gain como 0.001;
 
-**最大调整距离**：对应X,Y,Z方向的最大移动距离；
+**Distancia máxima de ajuste**: distancia máxima de movimiento correspondiente a las direcciones X, Y, Z;
 
-**最大调整角度**：对应RX,RY,RZ的最大转动角度；
+**Ángulo máximo de ajuste**: ángulo máximo de rotación correspondiente a RX, RY, RZ;
 
-**打磨盘半径**：由实际末端打磨工具的半径确定。
+**Radio del disco de pulido**: determinado por el radio de la herramienta de pulido real del extremo.
 
-轨迹自动规避奇异点功能
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Función de evitación automática de puntos singulares en la trayectoria
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
-+++++++++++++++
+Descripción general
++++++++++++++++++++++++
 
-当机器人在LIN、ARC指令轨迹中遇到经过机器人无法经过的奇异范围时，机器人会报错，提示下一位姿奇异或出现奇异警告。若想要能够抵达会经过奇异范围的下一路径点时，可以使用本功能通过关节空间或笛卡尔空间规避奇异点达到下一目标位姿。
+Cuando el robot, en una trayectoria de instrucción LIN o ARC, se encuentra con un rango singular por el que no puede pasar, informa de un error indicando que la siguiente pose es singular o mostrando una advertencia de singularidad. Si se desea poder alcanzar el siguiente punto de ruta que pasará por el rango singular, se puede utilizar esta función para evitar el punto singular mediante el espacio articular o el espacio cartesiano y alcanzar la siguiente pose objetivo.
 
 .. image:: coding/265.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.21-1 机器人奇异点简易示意图
+.. centered:: Figura 9.21-1 Esquema simplificado de los puntos singulares del robot
 
-上图为机器人奇异点的示意图，机器人奇异包含肩、肘、腕三种奇异，图中A为5关节中心WCP（Wrist Center Point），用于判断肩部奇异；B为肩奇异范围，形似圆柱体，其半径为机器人DH参数d4的长度，当WCP进入圆柱体B时机器人进入奇异状态；C为机器人肘奇异边界，当J3=0或180°时机器人处于肘奇异点状态；D为机器人内部空间，在内部空间任意位置当J5=0或180°时处于腕奇异状态。
+La figura anterior es el esquema de los puntos singulares del robot; las singularidades del robot incluyen tres tipos: hombro, codo y muñeca; en la figura, A es el centro de la muñeca WCP (Wrist Center Point) de la articulación 5, utilizado para determinar la singularidad de hombro; B es el rango de singularidad de hombro, con forma de cilindro, cuyo radio es la longitud del parámetro DH d4 del robot; cuando el WCP entra en el cilindro B, el robot entra en estado singular; C es el límite de singularidad de codo del robot; cuando J3=0 o 180°, el robot se encuentra en estado de punto singular de codo; D es el espacio interior del robot; en cualquier posición del espacio interior, cuando J5=0 o 180°, se encuentra en estado de singularidad de muñeca.
 
-.. note:: 奇异是机器人物理结构决定的运动特性，实际运行时应尽量避免，通过算法规避时会导致末端位姿与速度甚至构型配置的变化，需考量规避的副作用是否影响需求再进行选择。
+.. note:: La singularidad es una característica de movimiento determinada por la estructura física del robot; en el funcionamiento real debe evitarse en la medida de lo posible; la evitación mediante algoritmos provocará cambios en la pose y la velocidad del extremo e incluso en la configuración de la estructura; es necesario considerar si los efectos secundarios de la evitación afectan a los requisitos antes de elegir.
 
-轨迹自动规避奇异点功能操作流程
-+++++++++++++++++++++++++++++++++++
+Flujo de operación de la función de evitación automática de puntos singulares en la trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-在新建的程序中，点击添加机器人LIN/ARC类型的运动指令。
+En el programa recién creado, hacer clic para añadir una instrucción de movimiento de tipo LIN/ARC del robot.
 
 .. image:: coding/266.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.21-2 添加LIN/ARC运动指令
+.. centered:: Figura 9.21-2 Añadir instrucción de movimiento LIN/ARC
 
-点击“直线”指令，选择途径机器人奇异点的路点，在指令参数配置界面“运动保护”子选项中点击“奇异点规避”按钮。
+Hacer clic en la instrucción "Línea recta", seleccionar el punto de ruta que pasa por el punto singular del robot y, en la subopción "Protección de movimiento" de la interfaz de configuración de parámetros de la instrucción, hacer clic en el botón "Evitación de puntos singulares".
 
 .. image:: coding/267.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.21-3 开启奇异点规避功能
+.. centered:: Figura 9.21-3 Activar la función de evitación de puntos singulares
 
-“奇异点规避”参数包括“保护模式”、“肩奇异调整”、“肘奇异调整”与“腕奇异调整”相关参数。其中，“保护模式”分为“关节模式”和“笛卡尔模式”，意味着机器人可以从关节空间跨过奇异或者从笛卡尔空间绕过奇异；“奇异调整”的参数指定了判定奇异的范围与奇异规避的最大偏差，对于肩与肘奇异单位是mm，对于腕奇异单位是°。
+Los parámetros de "Evitación de puntos singulares" incluyen los parámetros relacionados "Modo de protección", "Ajuste de singularidad de hombro", "Ajuste de singularidad de codo" y "Ajuste de singularidad de muñeca". Entre ellos, el "Modo de protección" se divide en "Modo articular" y "Modo cartesiano", lo que significa que el robot puede atravesar la singularidad desde el espacio articular o rodear la singularidad desde el espacio cartesiano; los parámetros de "Ajuste de singularidad" especifican el rango de determinación de la singularidad y la desviación máxima de evitación de la singularidad; para la singularidad de hombro y de codo la unidad es mm, y para la singularidad de muñeca la unidad es °.
 
-.. note:: 关节空间会选取关节间最近的轨迹因此不会出现限位的情况，笛卡尔空间规避时可能出现关节限位的情况，需在示教时关注与调整。
+.. note:: El espacio articular selecciona la trayectoria más cercana entre articulaciones, por lo que no se producirán situaciones de límite; la evitación en el espacio cartesiano puede provocar situaciones de límite articular, que deben tenerse en cuenta y ajustarse durante la enseñanza.
 
-在选取与设定完奇异点规避参数后，即可点击“添加”按钮添加指令，之后点击“应用”将lua指令添加到程序中。
+Tras seleccionar y configurar los parámetros de evitación de puntos singulares, hacer clic en el botón "Añadir" para añadir la instrucción y, a continuación, hacer clic en "Aplicar" para añadir la instrucción lua al programa.
 
 .. image:: coding/268.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.21-4 配置奇异点规避参数，添加lua指令
+.. centered:: Figura 9.21-4 Configuración de los parámetros de evitación de puntos singulares y adición de la instrucción lua
 
-示教完成一段典型的LIN奇异规避运动lua程序如下所示：
+Un programa lua típico de movimiento de evitación de singularidad LIN tras completar la enseñanza es el siguiente:
 
 .. image:: coding/269.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.21-5 包含奇异点规避指令的lua程序
+.. centered:: Figura 9.21-5 Programa lua que incluye la instrucción de evitación de puntos singulares
 
-实现规避的效果如下所示，红色为机器人末端轨迹线：
+El efecto de evitación logrado es el siguiente; el rojo es la línea de trayectoria del extremo del robot:
 
 .. image:: coding/270.png
    :width: 4in
@@ -4532,7 +4530,7 @@ XY方向横向恒力打磨功能操作流程
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.21-6 肩关节奇异规避轨迹示例（上：笛卡尔空间，下：关节空间）
+.. centered:: Figura 9.21-6 Ejemplo de trayectoria de evitación de singularidad de hombro (arriba: espacio cartesiano, abajo: espacio articular)
 
 .. image:: coding/272.png
    :width: 4in
@@ -4542,74 +4540,74 @@ XY方向横向恒力打磨功能操作流程
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.21-7 肘关节奇异规避轨迹示例（上：笛卡尔空间，下：关节空间）
+.. centered:: Figura 9.21-7 Ejemplo de trayectoria de evitación de singularidad de codo (arriba: espacio cartesiano, abajo: espacio articular)
 
 .. image:: coding/274.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.21-8 腕关节奇异规避轨迹示例（关节空间）
+.. centered:: Figura 9.21-8 Ejemplo de trayectoria de evitación de singularidad de muñeca (espacio articular)
 
-目前本功能支持规避LIN/ARC运动时经过单种奇异点的情况，若运动起止点处于设定的奇异范围内、运动时途经不止一种奇异甚至同时发生两种及以上奇异的情况时，界面将会显示“[警告]奇异位姿”弹窗，提示当前奇异情况无法规避。
+Actualmente esta función admite la evitación de un solo tipo de punto singular al pasar por el movimiento LIN/ARC; si los puntos inicial y final del movimiento se encuentran dentro del rango de singularidad establecido, o si durante el movimiento se pasa por más de un tipo de singularidad o incluso se producen dos o más singularidades simultáneamente, la interfaz mostrará la ventana emergente "[Advertencia] Pose singular", indicando que la situación singular actual no puede evitarse.
 
 .. image:: coding/275.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.21-9 警告当前奇异情况无法规避
+.. centered:: Figura 9.21-9 Advertencia de que la situación singular actual no puede evitarse
 
-自动模式下奇异点穿越功能
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Función de cruce de puntos singulares en modo automático
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
-++++++++++++
+Descripción general
+++++++++++++++++++++
 
-当机器人在运行LIN或ARC指令并经过奇异点时，机器人的速度将会发生突变，从而导致运动控制不稳定，甚至对设备造成损坏。通过奇异点穿越功能，可使机器人能够平稳通过奇异点，本手册以通过腕奇异的LIN指令为例，说明自动模式下奇异点穿越功能的使用方法。
+Cuando el robot ejecuta una instrucción LIN o ARC y pasa por un punto singular, la velocidad del robot sufrirá un cambio brusco, lo que provocará inestabilidad en el control del movimiento e incluso daños en el equipo. Mediante la función de cruce de puntos singulares, el robot puede atravesar el punto singular de forma suave; este manual explica el método de uso de la función de cruce de puntos singulares en modo automático tomando como ejemplo la instrucción LIN que pasa por la singularidad de muñeca.
 
-操作流程
-++++++++++++++++
+Flujo de operación
++++++++++++++++++++++++++
 
-1. 示教机器人执行LIN指令的两个运动控制点（本手册分别命名为wristlin1和wristlin2）。
+1. Enseñar los dos puntos de control de movimiento en los que el robot ejecuta la instrucción LIN (en este manual se denominan respectivamente wristlin1 y wristlin2).
 
-2. 依次点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“点到点”指令，添加第一个运动点。
+2. Hacer clic sucesivamente en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Punto a punto" de las "Instrucciones de movimiento" y añadir el primer punto de movimiento.
 
 .. image:: coding/285.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.22-1 添加第一个运动点
+.. centered:: Figura 9.22-1 Añadir el primer punto de movimiento
 
-3. 选择“运动指令”中的“直线”指令，添加第二个运动点，在“运动保护”中选择“奇异点穿越”，并分别设置肩奇异、肘奇异和腕奇异的调整范围。
+3. Seleccionar la instrucción "Línea recta" de las "Instrucciones de movimiento", añadir el segundo punto de movimiento, seleccionar "Cruce de puntos singulares" en "Protección de movimiento" y configurar respectivamente el rango de ajuste de la singularidad de hombro, de la singularidad de codo y de la singularidad de muñeca.
 
 .. image:: coding/286.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.22-2 设置奇异点穿越参数
+.. centered:: Figura 9.22-2 Configuración de los parámetros de cruce de puntos singulares
 
-4. 生成lua程序并运行，自动模式下奇异点穿越的典型LIN指令程序。
+4. Generar el programa lua y ejecutarlo; programa típico de instrucción LIN de cruce de puntos singulares en modo automático.
 
 .. image:: coding/287.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.22-3 典型奇异点穿越LIN指令
+.. centered:: Figura 9.22-3 Instrucción LIN típica de cruce de puntos singulares
 
-5. 观察机器人的运动结果，并可通过调整机器人的运动速度和奇异设置范围，以获得不同的运动精度和冲击。
+5. Observar el resultado del movimiento del robot; además, se puede ajustar la velocidad de movimiento del robot y el rango de configuración de singularidad para obtener distintas precisiones e impactos de movimiento.
 
-精度冲击对照表
-++++++++++++++++++++++++++++++++++
+Tabla comparativa de precisión e impacto
++++++++++++++++++++++++++++++++++++++++++++
 
-1. 腕奇异是机器人最容易触发的奇异类型，整理了腕奇异LIN指令和ARC指令的精度和冲击对照表，其中LIN/ARC指令的对照表如下所示（〇表示触发了碰撞警告）。
+1. La singularidad de muñeca es el tipo de singularidad que el robot activa con mayor facilidad; se han elaborado tablas comparativas de precisión e impacto para las instrucciones LIN y ARC de singularidad de muñeca, cuyas tablas comparativas de las instrucciones LIN/ARC son las siguientes (〇 indica que se ha activado la advertencia de colisión).
    
-.. centered:: 表格 9.22-3-1 腕奇异LIN指令的误差（单位：mm）
+.. centered:: Tabla 9.22-3-1 Error de la instrucción LIN de singularidad de muñeca (unidad: mm)
 
 .. list-table::
    :widths: 35 20 20 20 20 20 20
    :header-rows: 0
    :class: sheet-center
 
-   * - **奇异范围/界面速度**
+   * - **Rango de singularidad/velocidad de interfaz**
      - **2**
      - **20**
      - **40**
@@ -4657,14 +4655,14 @@ XY方向横向恒力打磨功能操作流程
      - 1.39
      - 1.41  
    
-.. centered:: 表格 9.22-3-2 腕奇异LIN指令的线加加速度（单位：m/s\ :sup:`3`）
+.. centered:: Tabla 9.22-3-2 Aceleración lineal de la instrucción LIN de singularidad de muñeca (unidad: m/s\ :sup:`3`)
 
 .. list-table::
    :widths: 35 20 20 20 20 20 20
    :header-rows: 0
    :class: sheet-center
 
-   * - **奇异范围/界面速度**
+   * - **Rango de singularidad/velocidad de interfaz**
      - **2**
      - **20**
      - **40**
@@ -4712,14 +4710,14 @@ XY方向横向恒力打磨功能操作流程
      - 649.300
      - 953.300  
    
-.. centered:: 表格 9.22-3-3 腕奇异LIN指令的角加加速度（单位：°/s\ :sup:`3`）
+.. centered:: Tabla 9.22-3-3 Aceleración angular de la instrucción LIN de singularidad de muñeca (unidad: °/s\ :sup:`3`)
 
 .. list-table::
    :widths: 35 20 20 20 20 20 20
    :header-rows: 0
    :class: sheet-center
 
-   * - **奇异范围/界面速度**
+   * - **Rango de singularidad/velocidad de interfaz**
      - **2**
      - **20**
      - **40**
@@ -4744,7 +4742,7 @@ XY方向横向恒力打磨功能操作流程
      - 80330
 
    * - 6 mm
-     - 219														
+     - 219													
      - 8161
      - 19450
      - 84700
@@ -4752,7 +4750,7 @@ XY方向横向恒力打磨功能操作流程
      - 143400 
 
    * - 8 mm
-     - 478													
+     - 478												
      - 6651
      - 19780
      - 121600
@@ -4760,21 +4758,21 @@ XY方向横向恒力打磨功能操作流程
      - 162100 
 
    * - 10 mm
-     - 281												
+     - 281											
      - 5296
      - 14470
      - 161600
      - 177300
      - 256000
    
-.. centered:: 表格 9.22-3-4 腕奇异ARC指令的误差（单位：mm）
+.. centered:: Tabla 9.22-3-4 Error de la instrucción ARC de singularidad de muñeca (unidad: mm)
 
 .. list-table::
    :widths: 35 20 20 20 20 20 20
    :header-rows: 0
    :class: sheet-center
 
-   * - **奇异范围/界面速度**
+   * - **Rango de singularidad/velocidad de interfaz**
      - **2**
      - **20**
      - **40**
@@ -4791,7 +4789,7 @@ XY方向横向恒力打磨功能操作流程
      - 〇  
 
    * - 4 mm
-     - 1.58														
+     - 1.58													
      - 1.59
      - 1.60
      - 1.62
@@ -4799,7 +4797,7 @@ XY方向横向恒力打磨功能操作流程
      - 〇 
 
    * - 6 mm
-     - 3.31																			
+     - 3.31																	
      - 3.34
      - 3.35
      - 3.32
@@ -4807,7 +4805,7 @@ XY方向横向恒力打磨功能操作流程
      - 3.33 
 
    * - 8 mm
-     - 5.81																		
+     - 5.81																
      - 5.83
      - 5.87
      - 5.87
@@ -4815,21 +4813,21 @@ XY方向横向恒力打磨功能操作流程
      - 5.96 
 
    * - 10 mm
-     - 9.06																	
+     - 9.06															
      - 9.09
      - 9.12
      - 9.17
      - 9.17
      - 9.22
    
-.. centered:: 表格 9.22-3-5 腕奇异ARC指令的线加加速度（单位：m/s\ :sup:`3`）
+.. centered:: Tabla 9.22-3-5 Aceleración lineal de la instrucción ARC de singularidad de muñeca (unidad: m/s\ :sup:`3`)
 
 .. list-table::
    :widths: 35 20 20 20 20 20 20
    :header-rows: 0
    :class: sheet-center
 
-   * - **奇异范围/界面速度**
+   * - **Rango de singularidad/velocidad de interfaz**
      - **2**
      - **20**
      - **40**
@@ -4838,7 +4836,7 @@ XY方向横向恒力打磨功能操作流程
      - **100**
 
    * - 2 mm
-     - 13.970										
+     - 13.970									
      - 643.000	
      - 2230.000	
      - 3408.000	
@@ -4846,7 +4844,7 @@ XY方向横向恒力打磨功能操作流程
      - 〇  
 
    * - 4 mm
-     - 0.635																	
+     - 0.635															
      - 24.850
      - 42.480
      - 76.990
@@ -4854,7 +4852,7 @@ XY方向横向恒力打磨功能操作流程
      - 〇 
 
    * - 6 mm
-     - 3.000																						
+     - 3.000																					
      - 19.960
      - 45.350
      - 57.120
@@ -4862,7 +4860,7 @@ XY方向横向恒力打磨功能操作流程
      - 59.800	 
 
    * - 8 mm
-     - 1.494																						
+     - 1.494																					
      - 27.830
      - 90.290
      - 124.200
@@ -4870,21 +4868,21 @@ XY方向横向恒力打磨功能操作流程
      - 168.000
 
    * - 10 mm
-     - 0.460																					
+     - 0.460																				
      - 31.870
      - 112.600
      - 211.000
      - 229.300
      - 117.500
    
-.. centered:: 表格 9.22-3-6 腕奇异ARC指令的角加加速度（单位：°/s\ :sup:`3`）
+.. centered:: Tabla 9.22-3-6 Aceleración angular de la instrucción ARC de singularidad de muñeca (unidad: °/s\ :sup:`3`)
 
 .. list-table::
    :widths: 35 20 20 20 20 20 20
    :header-rows: 0
    :class: sheet-center
 
-   * - **奇异范围/界面速度**
+   * - **Rango de singularidad/velocidad de interfaz**
      - **2**
      - **20**
      - **40**
@@ -4893,7 +4891,7 @@ XY方向横向恒力打磨功能操作流程
      - **100**
 
    * - 2 mm
-     - 3378													
+     - 3378									
      - 85380
      - 228600	
      - 351900
@@ -4901,7 +4899,7 @@ XY方向横向恒力打磨功能操作流程
      - 〇  
 
    * - 4 mm
-     - 1098																				
+     - 1098																
      - 31360
      - 71460
      - 104800
@@ -4909,7 +4907,7 @@ XY方向横向恒力打磨功能操作流程
      - 〇 
 
    * - 6 mm
-     - 390																											
+     - 390																							
      - 15770
      - 43650
      - 79330
@@ -4917,7 +4915,7 @@ XY方向横向恒力打磨功能操作流程
      - 124200 
 
    * - 8 mm
-     - 315																											
+     - 315																							
      - 10270
      - 28770
      - 57000
@@ -4925,23 +4923,23 @@ XY方向横向恒力打磨功能操作流程
      - 94050
 
    * - 10 mm
-     - 504																										
+     - 504																						
      - 6108
      - 21470
      - 34920
      - 47280
      - 97160
 
-2. 因肩奇异和肘奇异分别对应机器人的最小工作边界和最大工作边界，不能以精度作为衡量指标。因此，整理了肩奇异的冲击对照表，肘奇异的冲击对照表如下，其中〇表示触发了碰撞警告）。
+2. Dado que la singularidad de hombro y la singularidad de codo corresponden respectivamente al límite de trabajo mínimo y al límite de trabajo máximo del robot, no se puede utilizar la precisión como indicador de medida. Por lo tanto, se han elaborado la tabla comparativa de impacto de la singularidad de hombro y la tabla comparativa de impacto de la singularidad de codo, cuyas tablas son las siguientes (〇 indica que se ha activado la advertencia de colisión).
    
-.. centered:: 表格 9.22-3-7 肩奇异的线加加速度（单位：m/s\ :sup:`3`）
+.. centered:: Tabla 9.22-3-7 Aceleración lineal de la singularidad de hombro (unidad: m/s\ :sup:`3`)
 
 .. list-table::
    :widths: 35 20 20 20 20 20 20
    :header-rows: 0
    :class: sheet-center
 
-   * - **奇异范围/界面速度**
+   * - **Rango de singularidad/velocidad de interfaz**
      - **2**
      - **20**
      - **40**
@@ -4950,7 +4948,7 @@ XY方向横向恒力打磨功能操作流程
      - **100**
 
    * - 40 mm
-     - 1.166																
+     - 1.166														
      - 99.730
      - 253.200	
      - 273.500
@@ -4958,7 +4956,7 @@ XY方向横向恒力打磨功能操作流程
      - 〇  
 
    * - 70 mm
-     - 1.047																								
+     - 1.047																				
      - 92.440
      - 328.900
      - 634.500
@@ -4966,21 +4964,21 @@ XY方向横向恒力打磨功能操作流程
      - 1499.000	 
 
    * - 100 mm
-     - 1.060																															
+     - 1.060																													
      - 90.250
      - 273.900
      - 506.600
      - 926.300
      - 1555.000	 
 
-.. centered:: 表格 9.22-3-8 肩奇异的的角加加速度（单位：°/s\ :sup:`3`）
+.. centered:: Tabla 9.22-3-8 Aceleración angular de la singularidad de hombro (unidad: °/s\ :sup:`3`)
 
 .. list-table::
    :widths: 35 20 20 20 20 20 20
    :header-rows: 0
    :class: sheet-center
 
-   * - **奇异范围/界面速度**
+   * - **Rango de singularidad/velocidad de interfaz**
      - **2**
      - **20**
      - **40**
@@ -4989,7 +4987,7 @@ XY方向横向恒力打磨功能操作流程
      - **100**
 
    * - 40 mm
-     - 396																		
+     - 396															
      - 89.83
      - 824
      - 348
@@ -4997,7 +4995,7 @@ XY方向横向恒力打磨功能操作流程
      - 〇  
 
    * - 70 mm
-     - 428																													
+     - 428																									
      - 121
      - 681
      - 167
@@ -5005,21 +5003,21 @@ XY方向横向恒力打磨功能操作流程
      - 35690 
 
    * - 100 mm
-     - 440																																				
+     - 440																																
      - 151
      - 473
      - 246
      - 1495
      - 39280
 
-.. centered:: 表格 9.22-3-9 肘奇异的线加加速度（单位：m/s\ :sup:`3`）
+.. centered:: Tabla 9.22-3-9 Aceleración lineal de la singularidad de codo (unidad: m/s\ :sup:`3`)
 
 .. list-table::
    :widths: 35 20 20 20 20 20 20
    :header-rows: 0
    :class: sheet-center
 
-   * - **奇异范围/界面速度**
+   * - **Rango de singularidad/velocidad de interfaz**
      - **2**
      - **20**
      - **40**
@@ -5028,7 +5026,7 @@ XY方向横向恒力打磨功能操作流程
      - **100**
 
    * - 40 mm
-     - 0.905																						
+     - 0.905																		
      - 14.430
      - 52.080
      - 87.380
@@ -5036,7 +5034,7 @@ XY方向横向恒力打磨功能操作流程
      - 657.000  
 
    * - 70 mm
-     - 1.144																																		
+     - 1.144																														
      - 24.320
      - 79.580
      - 270.300
@@ -5044,21 +5042,21 @@ XY方向横向恒力打磨功能操作流程
      - 1478.000 
 
    * - 100 mm
-     - 1.852																																									
+     - 1.852																																							
      - 27.930
      - 112.700
      - 328.100
      - 583.000
      - 758.600
 
-.. centered:: 表格 9.22-3-10 肘奇异的的角加加速度（单位：°/s\ :sup:`3`）
+.. centered:: Tabla 9.22-3-10 Aceleración angular de la singularidad de codo (unidad: °/s\ :sup:`3`)
 
 .. list-table::
    :widths: 35 20 20 20 20 20 20
    :header-rows: 0
    :class: sheet-center
 
-   * - **奇异范围/界面速度**
+   * - **Rango de singularidad/velocidad de interfaz**
      - **2**
      - **20**
      - **40**
@@ -5067,7 +5065,7 @@ XY方向横向恒力打磨功能操作流程
      - **100**
 
    * - 40 mm
-     - 347																										
+     - 347																						
      - 128
      - 148
      - 142
@@ -5075,7 +5073,7 @@ XY方向横向恒力打磨功能操作流程
      - 38050 
 
    * - 70 mm
-     - 424																																						
+     - 424																																				
      - 132
      - 141
      - 21780
@@ -5083,337 +5081,337 @@ XY方向横向恒力打磨功能操作流程
      - 95610 
 
    * - 100 mm
-     - 46																																														
+     - 46																																													
      - 1443
      - 6194
      - 19940
      - 35170
      - 46770
 
-实时前瞻轨迹规划功能
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Función de planificación de trayectoria con previsión en tiempo real
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
-++++++++++++
+Descripción general
+++++++++++++++++++++
 
-实时前瞻轨迹规划是基于当前和未来的路径信息，动态调整机器人速度和加速度等运动参数，以确保运动的平滑性、连续性和精准性。通过预测机器人未来位置和姿态，前瞻控制能够在路径的关键点前做出响应，从而避免由于速度和加速度的突变而导致运动不平稳或轨迹误差。
+La planificación de trayectoria con previsión en tiempo real consiste en ajustar dinámicamente parámetros de movimiento como la velocidad y la aceleración del robot basándose en la información de la ruta actual y futura, para garantizar la suavidad, continuidad y precisión del movimiento. Mediante la predicción de la posición y la actitud futuras del robot, el control con previsión puede responder antes de los puntos clave de la ruta, evitando así la inestabilidad del movimiento o los errores de trayectoria provocados por cambios bruscos de velocidad y aceleración.
 
-操作流程
-++++++++++++
+Flujo de operación
+++++++++++++++++++++
 
-**Step1**：准备好“txt”格式的轨迹点文件，其中每个轨迹点以笛卡尔位姿表示。
+**Step1**: Preparar un archivo de puntos de trayectoria en formato "txt", donde cada punto de trayectoria se representa mediante una pose cartesiana.
    
-**Step2**：依次点击“示教程序”->“程序编程”按钮，选择“运动指令”中的“轨迹前瞻”指令，在“指令配置”中进行轨迹文件的导入与删除。
+**Step2**: Hacer clic sucesivamente en "Programa de enseñanza"->"Programación de programas", seleccionar la instrucción "Previsión de trayectoria" de las "Instrucciones de movimiento" y realizar la importación y eliminación del archivo de trayectoria en "Configuración de instrucción".
 
 .. image:: coding/288.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.23-1 轨迹文件导入与删除
+.. centered:: Figura 9.23-1 Importación y eliminación de archivo de trayectoria
 
-**Step3**：选择要运行的轨迹文件，添加“轨迹预加载”指令：首先在“曲线拟合方式”中选择对轨迹点的拟合方式，包括“直线连接”、“直线拟合”、“B样条曲线”、“多项式优化方法”等，当选择“直线拟合”时，需额外设置误差限制，其他方式无需进行此设置；其次设置平滑方式和平滑精度；最后设置运行过程中的最大速度、最大加速度和最大加加速度，并可通过“匀速运动”选择是否开启匀速前瞻，当开启时，机器人将会以匀速进行前瞻。
+**Step3**: Seleccionar el archivo de trayectoria que se desea ejecutar y añadir la instrucción "Precarga de trayectoria": en primer lugar, en "Método de ajuste de curva" seleccionar el método de ajuste de los puntos de trayectoria, incluidos "Conexión por líneas rectas", "Ajuste por líneas rectas", "Curva B-spline", "Método de optimización polinómica", etc.; cuando se selecciona "Ajuste por líneas rectas" es necesario configurar además el límite de error, mientras que los demás métodos no requieren esta configuración; a continuación, configurar el método de suavizado y la precisión de suavizado; por último, configurar la velocidad máxima, la aceleración máxima y la aceleración máxima (jerk) máximas durante la ejecución, y seleccionar mediante "Movimiento a velocidad uniforme" si se activa la previsión a velocidad uniforme; cuando se activa, el robot realizará la previsión a velocidad uniforme.
 
 .. image:: coding/289.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.23-2 设置轨迹预"直线拟合"加载参数
+.. centered:: Figura 9.23-2 Configuración de parámetros de precarga de trayectoria "Ajuste por líneas rectas"
 
 .. image:: coding/292.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.23-3 设置轨迹预加载参数
+.. centered:: Figura 9.23-3 Configuración de parámetros de precarga de trayectoria
 
-**Step4**：添加“轨迹运动”指令并生成lua程序，通过运行lua程序即可对导入的轨迹文件进行实时前瞻轨迹规划，实时前瞻轨迹规划的典型程序如下图。
+**Step4**: Añadir la instrucción "Movimiento de trayectoria" y generar el programa lua; mediante la ejecución del programa lua se puede realizar la planificación de trayectoria con previsión en tiempo real del archivo de trayectoria importado; el programa típico de planificación de trayectoria con previsión en tiempo real se muestra en la figura siguiente.
 
 .. image:: coding/290.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 9.23-4 实时前瞻轨迹规划的典型程序（B样条曲线）
+.. centered:: Figura 9.23-4 Programa típico de planificación de trayectoria con previsión en tiempo real (curva B-spline)
 
-**Step5**：针对lua程序中的“LoadTrajectory”命令行，点击编辑按钮，可实现设置参数的修改，以实现不同的轨迹规划效果。
+**Step5**: Para la línea de comando "LoadTrajectory" del programa lua, hacer clic en el botón de edición para modificar los parámetros de configuración y lograr distintos efectos de planificación de trayectoria.
 
 .. image:: coding/291.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.23-5 修改设置参数
+.. centered:: Figura 9.23-5 Modificación de los parámetros de configuración
 
-摆幅单调渐变电弧跟踪功能
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Función de seguimiento de arco con amplitud de oscilación de variación monótona gradual
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-摆动运动可实现“突变”与“渐变”两种摆幅切换方式。
+El movimiento de oscilación permite dos modos de conmutación de la amplitud de oscilación: "cambio brusco" y "variación gradual".
 
-“突变”方式是指前一段摆动参数与后一段摆动参数直接切换的方式，可通过设置两段相邻但参数不同的摆动运动实现，也可在摆动运动运行过程中实时下发新摆动编号实现（详见功能对应手册部分，此处不赘述）。
+El modo "cambio brusco" se refiere al modo en que los parámetros de oscilación del segmento anterior y los del segmento siguiente se conmutan directamente; se puede realizar configurando dos movimientos de oscilación adyacentes pero con parámetros diferentes, o enviando en tiempo real un nuevo número de oscilación durante la ejecución del movimiento de oscilación (consulte la parte del manual correspondiente a la función; no se detalla aquí).
 
-“渐变”方式是指在当前段摆动运动中，起始处设置的摆动幅度逐渐变化至结束处设置的摆动幅度。
+El modo "variación gradual" se refiere a que, en el movimiento de oscilación del segmento actual, la amplitud de oscilación establecida en el inicio varía gradualmente hasta la amplitud de oscilación establecida en el final.
 
-摆动参数渐变切换方式只支持直线摆动过程中进行。
+El modo de conmutación gradual de los parámetros de oscilación solo es compatible con el movimiento de oscilación en línea recta.
 
-简介
-+++++++++++++
+Introducción
++++++++++++++++++++++
 
-摆幅单调渐变摆动运动轨迹如下图所示。
+La trayectoria del movimiento de oscilación con amplitud de variación monótona gradual se muestra en la figura siguiente.
 
 .. image:: coding/293.png
    :width: 4in
    :align: center
 
-其中，蓝线为摆动运动方向，a为起始点摆动幅度，b为结束点摆动幅度，摆动幅度在运动过程中逐渐过渡变化。
+Donde la línea azul es la dirección del movimiento de oscilación, a es la amplitud de oscilación del punto inicial y b es la amplitud de oscilación del punto final; la amplitud de oscilación varía gradualmente durante el movimiento.
 
-.. note:: 需注意，当前仅支持起始点与终止点为同类型、摆幅不同（由a变为b）其余参数一致的渐变摆动，执行摆动前建议核对摆动参数。
+.. note:: Tenga en cuenta que actualmente solo se admite la oscilación gradual cuyo punto inicial y punto final son del mismo tipo, con amplitud de oscilación diferente (de a a b) y el resto de parámetros idénticos; antes de ejecutar la oscilación se recomienda verificar los parámetros de oscilación.
 
-设置一段摆幅渐变摆动操作流程如下：
+El flujo de operación para configurar un segmento de oscilación con amplitud gradual es el siguiente:
 
-**Step 1**：点击“示教程序”，“程序编程”，选择并点击“运动指令”下属的“摆动”按钮进入摆动指令配置页面。
+**Step 1**: Hacer clic en "Programa de enseñanza", "Programación de programas", seleccionar y hacer clic en el botón "Oscilación" de las "Instrucciones de movimiento" para entrar en la página de configuración de la instrucción de oscilación.
 
 .. image:: coding/294.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.24-1 点击摆动功能按钮
+.. centered:: Figura 9.24-1 Hacer clic en el botón de la función de oscilación
 
-**Step 2**：在指令编辑中选择摆动起始时的摆动参数编号，点击“开始摆动”后点击“添加”按钮。
+**Step 2**: En la edición de la instrucción, seleccionar el número de parámetros de oscilación del inicio de la oscilación y hacer clic en "Iniciar oscilación" y, a continuación, hacer clic en el botón "Añadir".
    
 .. image:: coding/295.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.24-2 添加起始摆动参数
+.. centered:: Figura 9.24-2 Añadir los parámetros de oscilación inicial
 
-**Step 3**：选择摆动渐变的目标编号，点选“摆动渐变开始”，点击“添加”按钮。
+**Step 3**: Seleccionar el número objetivo de la variación gradual de oscilación, marcar "Inicio de variación gradual de oscilación" y hacer clic en el botón "Añadir".
    
 .. image:: coding/296.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.24-3 添加渐变摆动参数
+.. centered:: Figura 9.24-3 Añadir los parámetros de oscilación gradual
 
-**Step 4**：添加对应直线运动后，点选“摆动渐变结束”点击添加，在点选“停止摆动”并添加，完成一段摆幅渐变摆动运动的设置，点击“应用”添加至LUA程序。
+**Step 4**: Tras añadir el movimiento en línea recta correspondiente, marcar "Fin de variación gradual de oscilación" y hacer clic en añadir; a continuación, marcar "Detener oscilación" y añadir, completando así la configuración de un segmento de movimiento de oscilación con amplitud gradual; hacer clic en "Aplicar" para añadirlo al programa LUA.
    
 .. image:: coding/297.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.24-4 实现一段完整的摆幅渐变运动LUA指令
+.. centered:: Figura 9.24-4 Instrucción LUA para realizar un segmento completo de movimiento de oscilación con amplitud gradual
 
-偏置电弧跟踪功能
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Función de seguimiento de arco con desplazamiento
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-在电弧跟踪焊接过程，机器人默认根据电流信息调整焊枪摆动中心跟踪工件坡口中心保持一致，而部分工艺要求下希望焊枪摆动中心相对工件坡口中心存在一定偏置。
+Durante el proceso de soldadura con seguimiento de arco, el robot, por defecto, ajusta el centro de oscilación de la antorcha de soldadura según la información de corriente para mantenerlo alineado con el centro de la ranura de la pieza; sin embargo, en algunos procesos se desea que el centro de oscilación de la antorcha de soldadura tenga un determinado desplazamiento respecto al centro de la ranura de la pieza.
    
 .. image:: coding/298.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.25-1 偏置电弧跟踪典型场景
+.. centered:: Figura 9.25-1 Escenario típico de seguimiento de arco con desplazamiento
 
-偏置电弧跟踪功能的典型场景包含：a.焊接工件（焊接坡口为直角或锐角），b.焊枪，e.坡口中心线。电弧跟踪功能实现对焊接坡口：c.上下（深度）方向跟踪和d.左右（中心）方向跟踪，f.左右方向跟踪偏置距离。
+El escenario típico de la función de seguimiento de arco con desplazamiento incluye: a. pieza de soldadura (ranura de soldadura en ángulo recto o ángulo agudo), b. antorcha de soldadura, e. línea central de la ranura. La función de seguimiento de arco realiza el seguimiento de la ranura de soldadura en: c. dirección superior-inferior (profundidad) y d. dirección izquierda-derecha (central), f. distancia de desplazamiento del seguimiento en dirección izquierda-derecha.
 
-为实现偏置电弧跟踪，可选两种设置左右偏移量的方式，分别为“采样”和“百分比”调整方式。
+Para realizar el seguimiento de arco con desplazamiento se pueden elegir dos modos de configuración del desplazamiento izquierdo-derecho: el modo de ajuste "Muestreo" y el modo "Porcentaje".
 
-采样偏置电弧跟踪
-+++++++++++++++++++++++++++++
+Seguimiento de arco con desplazamiento por muestreo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-采样方法是在摆动焊接起弧后，采集某一周期内摆动时左右电流值作为基准，在后续焊接过程中采样电流与基准电流进行比较得出跟踪方向。
+El método de muestreo consiste en, tras el encendido del arco en la soldadura oscilante, recoger los valores de corriente izquierdo y derecho de la oscilación en un determinado período como referencia; en el proceso de soldadura posterior, se comparan la corriente muestreada y la corriente de referencia para obtener la dirección de seguimiento.
 
-采样方法要求示教摆焊起始位置至需求的偏置量，偏置量不得大于摆幅，焊缝需要覆盖拼接坡口。
+El método de muestreo requiere enseñar desde la posición inicial de la soldadura oscilante hasta el valor de desplazamiento requerido; el valor de desplazamiento no debe ser mayor que la amplitud de oscilación, y la soldadura debe cubrir la ranura de unión.
 
-采样偏置指令设置流程如下：
+El flujo de configuración de la instrucción de desplazamiento por muestreo es el siguiente:
    
 .. image:: coding/299.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.25-2 点击电弧跟踪指令按钮
+.. centered:: Figura 9.25-2 Hacer clic en el botón de la instrucción de seguimiento de arco
 
-**Step 1**：点击“示教程序”，“程序编程”，选择并点击“焊接指令”下属的“电弧跟踪”按钮进入电弧跟踪指令配置页面。
+**Step 1**: Hacer clic en "Programa de enseñanza", "Programación de programas", seleccionar y hacer clic en el botón "Seguimiento de arco" de las "Instrucciones de soldadura" para entrar en la página de configuración de la instrucción de seguimiento de arco.
    
 .. image:: coding/300.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.25-3 采样偏置电弧跟踪配置页面
+.. centered:: Figura 9.25-3 Página de configuración del seguimiento de arco con desplazamiento por muestreo
 
-**Step 2**：偏置电弧跟踪作用于左右补偿，点击“左右补偿”子页面，在偏置方式中下拉选择“采样”，设置采样开始周期（采样开始周期需小于左右补偿开始时间），指令类型选择“开始”，点击添加按钮生成LUA指令。
+**Step 2**: El seguimiento de arco con desplazamiento actúa sobre la compensación izquierda y derecha; hacer clic en la subpágina "Compensación izquierda y derecha", seleccionar "Muestreo" en el cuadro desplegable de modo de desplazamiento, configurar el período de inicio del muestreo (el período de inicio del muestreo debe ser menor que el tiempo de inicio de la compensación izquierda y derecha), seleccionar "Inicio" como tipo de instrucción y hacer clic en el botón añadir para generar la instrucción LUA.
    
 .. image:: coding/301.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.25-4 添加采样偏置电弧跟踪结束指令
+.. centered:: Figura 9.25-4 Añadir la instrucción de fin de seguimiento de arco con desplazamiento por muestreo
 
-**Step 3**：在添加完摆动运动指令后，点击选择电弧跟踪指令类型“结束”，点击添加生成对应LUA指令。
+**Step 3**: Tras añadir la instrucción de movimiento de oscilación, hacer clic para seleccionar el tipo de instrucción de seguimiento de arco "Fin" y hacer clic en añadir para generar la instrucción LUA correspondiente.
 
-百分比偏置电弧跟踪
-+++++++++++++++++++++++
+Seguimiento de arco con desplazamiento porcentual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-百分比偏置是在电弧跟踪过程中将输入的采样电流进行百分比增益，使左右摆动周期的电流产生偏差，机器人自动对偏差后的信号进行补偿。
+El desplazamiento porcentual consiste en, durante el proceso de seguimiento de arco, aplicar una ganancia porcentual a la corriente muestreada de entrada, de modo que las corrientes del ciclo de oscilación izquierdo y derecho presenten una desviación, y el robot compense automáticamente la señal desviada.
 
-.. note:: 需要注意摆幅越小、坡口夹角越大，左右电流的偏差越小，调整百分比越小。建议以每1%作为调整间隔进行调试。
+.. note:: Tenga en cuenta que cuanto menor es la amplitud de oscilación y mayor es el ángulo de la ranura, menor es la desviación de corriente izquierda y derecha y menor debe ser el porcentaje de ajuste. Se recomienda ajustar con intervalos de 1%.
 
-百分比偏置指令设置流程如下：
+El flujo de configuración de la instrucción de desplazamiento porcentual es el siguiente:
    
 .. image:: coding/299.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.25-5 点击电弧跟踪指令按钮
+.. centered:: Figura 9.25-5 Hacer clic en el botón de la instrucción de seguimiento de arco
 
-**Step 1**：点击“示教程序”，“程序编程”，选择并点击“焊接指令”下属的“电弧跟踪”按钮进入电弧跟踪指令配置页面。
+**Step 1**: Hacer clic en "Programa de enseñanza", "Programación de programas", seleccionar y hacer clic en el botón "Seguimiento de arco" de las "Instrucciones de soldadura" para entrar en la página de configuración de la instrucción de seguimiento de arco.
    
 .. image:: coding/302.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.25-6 采样偏置电弧跟踪配置页面
+.. centered:: Figura 9.25-6 Página de configuración del seguimiento de arco con desplazamiento por muestreo
 
-**Step 2**：偏置电弧跟踪作用于左右补偿，点击“左右补偿”子页面，在偏置方式中下拉选择“百分比”，设置百分比值（正值对前半周期电流增益、向后半周期所在方向进行补偿，负值则相反），指令类型选择“开始”，点击添加按钮生成LUA指令。
+**Step 2**: El seguimiento de arco con desplazamiento actúa sobre la compensación izquierda y derecha; hacer clic en la subpágina "Compensación izquierda y derecha", seleccionar "Porcentaje" en el cuadro desplegable de modo de desplazamiento, configurar el valor porcentual (un valor positivo aplica ganancia a la corriente de la primera mitad del ciclo y compensa en la dirección de la segunda mitad del ciclo; un valor negativo hace lo contrario), seleccionar "Inicio" como tipo de instrucción y hacer clic en el botón añadir para generar la instrucción LUA.
    
 .. image:: coding/303.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.25-7 添加百分比偏置电弧跟踪结束指令
+.. centered:: Figura 9.25-7 Añadir la instrucción de fin de seguimiento de arco con desplazamiento porcentual
 
-**Step 3**：在添加完摆动运动指令后，点击选择电弧跟踪指令类型“结束”，点击添加生成对应LUA指令。
+**Step 3**: Tras añadir la instrucción de movimiento de oscilación, hacer clic para seleccionar el tipo de instrucción de seguimiento de arco "Fin" y hacer clic en añadir para generar la instrucción LUA correspondiente.
 
-一段偏置跟踪的典型LUA程序结构如下所示：
+La estructura típica de un programa LUA de seguimiento con desplazamiento es la siguiente:
    
 .. image:: coding/304.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.25-8 一段典型的偏置电弧跟踪LUA程序
+.. centered:: Figura 9.25-8 Programa LUA típico de seguimiento de arco con desplazamiento
 
-自定义碰撞检测阈值功能
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Función de umbral personalizado de detección de colisiones
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
-++++++++
+Descripción general
+++++++++++++++++++++++++
 
-自定义碰撞检测阈值功能是对当前手动设置碰撞等级功能的完善。若当前碰撞等级的设置不满足使用场景，用户可以根据实际情况，设置自定义碰撞检测阈值。碰撞检测阈值分为关节检测阈值和TCP检测阈值。
+La función de umbral personalizado de detección de colisiones es una mejora de la función actual de establecimiento manual del nivel de colisión. Si el establecimiento del nivel de colisión actual no satisface el escenario de uso, el usuario puede, según la situación real, configurar un umbral personalizado de detección de colisiones. El umbral de detección de colisiones se divide en umbral de detección articular y umbral de detección del TCP.
 
-功能设置说明
-++++++++++++++++++++++++++++
+Descripción de la configuración de la función
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-**Step1**：点击“示教程序”，选择“程序编程”，打开对应界面。
+**Step1**: Hacer clic en "Programa de enseñanza", seleccionar "Programación de programas" y abrir la interfaz correspondiente.
 
-**Step2**：点击上方“新建”按钮，输入“example”，选择“empty.lua”，建立新的lua脚本，如图所示。
+**Step2**: Hacer clic en el botón "Nuevo" de la parte superior, introducir "example", seleccionar "empty.lua" y crear un nuevo script lua, como se muestra en la figura.
    
 .. image:: coding/305.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.26-1 新建lua脚本
+.. centered:: Figura 9.26-1 Crear un nuevo script lua
 
-关节检测阈值功能设置说明
-***********************************
+Descripción de la configuración de la función de umbral de detección articular
+*********************************************************************************************************
 
-参数设置说明
-""""""""""""""""""""
+Descripción de la configuración de parámetros
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：在控制指令界面，选择“碰撞检测”功能，如图2所示。点击“碰撞检测开启”，在检测状态栏下，选择“仅关节”。根据实际需要，对J1-J6的输入值进行修改，数值范围为，单位是NM。在这种模式下，修改X-RZ方向的TCP阈值不生效。根据实际需要，是否阻塞选择“非阻塞”或“阻塞”。点击添加按钮，开启指令添加完成。
+**Step1**: En la interfaz de instrucciones de control, seleccionar la función "Detección de colisiones", como se muestra en la Figura 2. Hacer clic en "Activar detección de colisiones" y, en la barra de estado de detección, seleccionar "Solo articular". Según las necesidades reales, modificar los valores de entrada de J1-J6; el rango de valores es, en unidades de NM. En este modo, la modificación del umbral del TCP en la dirección X-RZ no surte efecto. Según las necesidades reales, seleccionar "No bloqueante" o "Bloqueante" en la opción de bloqueo. Hacer clic en el botón añadir y la instrucción de activación queda añadida.
 
-**Step2**：点击“碰撞检测关闭”，点击添加按钮，关闭指令添加完成。程序预览界面如图3所示，点击“应用”按钮，完成功能添加。
+**Step2**: Hacer clic en "Desactivar detección de colisiones" y hacer clic en el botón añadir; la instrucción de desactivación queda añadida. La interfaz de vista previa del programa se muestra en la Figura 3; hacer clic en el botón "Aplicar" para completar la adición de la función.
 
-.. note:: 自定义碰撞检测阈值功能为一组指令，开启后需要及时关闭。
+.. note:: La función de umbral personalizado de detección de colisiones es un conjunto de instrucciones; tras activarla es necesario desactivarla a tiempo.
 
-**Step3**：在碰撞检测功能内，添加相应的运动指令，如图4所示。
+**Step3**: Dentro de la función de detección de colisiones, añadir las instrucciones de movimiento correspondientes, como se muestra en la Figura 4.
    
 .. image:: coding/306.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.26-2 关节检测阈值设置界面
+.. centered:: Figura 9.26-2 Interfaz de configuración del umbral de detección articular
    
 .. image:: coding/307.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.26-3 程序预览界面
+.. centered:: Figura 9.26-3 Interfaz de vista previa del programa
    
 .. image:: coding/308.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.26-4 lua脚本程序示例界面
+.. centered:: Figura 9.26-4 Interfaz de ejemplo del script lua
 
-TCP检测阈值功能设置说明
-**********************************
+Descripción de la configuración de la función de umbral de detección del TCP
+**********************************************************************************************
 
-参数设置说明
-""""""""""""""""""""
+Descripción de la configuración de parámetros
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：在控制指令界面，选择“碰撞检测”功能，如图5所示。点击“碰撞检测开启”，在检测状态栏下，选择“仅TCP”。根据实际需要，对X-RZ方向的输入值进行修改，数值范围为，单位是N。在这种模式下，修改J1-J6的关节阈值不生效。根据实际需要，是否阻塞选择“非阻塞”或“阻塞”。点击添加按钮，开启指令添加完成。
+**Step1**: En la interfaz de instrucciones de control, seleccionar la función "Detección de colisiones", como se muestra en la Figura 5. Hacer clic en "Activar detección de colisiones" y, en la barra de estado de detección, seleccionar "Solo TCP". Según las necesidades reales, modificar los valores de entrada de la dirección X-RZ; el rango de valores es, en unidades de N. En este modo, la modificación del umbral articular de J1-J6 no surte efecto. Según las necesidades reales, seleccionar "No bloqueante" o "Bloqueante" en la opción de bloqueo. Hacer clic en el botón añadir y la instrucción de activación queda añadida.
 
-**Step2**：点击“碰撞检测关闭”，点击添加按钮，关闭指令添加完成。程序预览界面如图6所示，点击“应用”按钮，完成功能添加。
+**Step2**: Hacer clic en "Desactivar detección de colisiones" y hacer clic en el botón añadir; la instrucción de desactivación queda añadida. La interfaz de vista previa del programa se muestra en la Figura 6; hacer clic en el botón "Aplicar" para completar la adición de la función.
 
-.. note:: 自定义碰撞检测阈值功能为一组指令，开启后需要及时关闭。
+.. note:: La función de umbral personalizado de detección de colisiones es un conjunto de instrucciones; tras activarla es necesario desactivarla a tiempo.
    
 .. image:: coding/309.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.26-5 TCP检测阈值设置界面
+.. centered:: Figura 9.26-5 Interfaz de configuración del umbral de detección del TCP
    
 .. image:: coding/310.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.26-6 程序预览界面
+.. centered:: Figura 9.26-6 Interfaz de vista previa del programa
 
-**Step3**：在碰撞检测功能内，添加相应的运动指令，如图7所示。
+**Step3**: Dentro de la función de detección de colisiones, añadir las instrucciones de movimiento correspondientes, como se muestra en la Figura 7.
    
 .. image:: coding/311.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.26-7 lua脚本程序示例界面
+.. centered:: Figura 9.26-7 Interfaz de ejemplo del script lua
 
-关节与TCP检测阈值功能设置说明
-*********************************
+Descripción de la configuración de la función de umbral de detección articular y del TCP
+*********************************************************************************************
 
-参数设置说明
-""""""""""""""""""""
+Descripción de la configuración de parámetros
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：在控制指令界面，选择“碰撞检测”功能，如图8所示。点击“碰撞检测开启”，在检测状态栏下，选择“关节与TCP”。根据实际需要，对J1-J6和X-RZ方向的输入值进行修改。其中J1-J6的数值范围为，单位是NM；X-RZ方向的输入值为，单位是N。根据实际需要，是否阻塞选择“非阻塞”或“阻塞”。点击添加按钮，开启指令添加完成。
+**Step1**: En la interfaz de instrucciones de control, seleccionar la función "Detección de colisiones", como se muestra en la Figura 8. Hacer clic en "Activar detección de colisiones" y, en la barra de estado de detección, seleccionar "Articular y TCP". Según las necesidades reales, modificar los valores de entrada de J1-J6 y de la dirección X-RZ. El rango de valores de J1-J6 es, en unidades de NM; los valores de entrada de la dirección X-RZ son, en unidades de N. Según las necesidades reales, seleccionar "No bloqueante" o "Bloqueante" en la opción de bloqueo. Hacer clic en el botón añadir y la instrucción de activación queda añadida.
    
 .. image:: coding/312.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.26-8 关节与TCP检测阈值设置界面
+.. centered:: Figura 9.26-8 Interfaz de configuración del umbral de detección articular y del TCP
  
-**Step2**：点击“碰撞检测关闭”，点击添加按钮，关闭指令添加完成。程序预览界面如图9所示，点击“应用”按钮，完成功能添加。
+**Step2**: Hacer clic en "Desactivar detección de colisiones" y hacer clic en el botón añadir; la instrucción de desactivación queda añadida. La interfaz de vista previa del programa se muestra en la Figura 9; hacer clic en el botón "Aplicar" para completar la adición de la función.
 
-.. note:: 自定义碰撞检测阈值功能为一组指令，开启后需要及时关闭。
+.. note:: La función de umbral personalizado de detección de colisiones es un conjunto de instrucciones; tras activarla es necesario desactivarla a tiempo.
    
 .. image:: coding/313.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.26-9 程序预览界面
+.. centered:: Figura 9.26-9 Interfaz de vista previa del programa
 
-**Step3**：在碰撞检测功能内，添加相应的运动指令，如图10所示。
+**Step3**: Dentro de la función de detección de colisiones, añadir las instrucciones de movimiento correspondientes, como se muestra en la Figura 10.
    
 .. image:: coding/314.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.26-10 lua脚本程序示例界面
+.. centered:: Figura 9.26-10 Interfaz de ejemplo del script lua
 
-检测阈值的推荐设置
-***********************
+Configuración recomendada del umbral de detección
+*********************************************************************
 
-关节检测阈值
-""""""""""""""""""""
+Umbral de detección articular
+""""""""""""""""""""""""""""""""
 
-推荐的关节检测阈值相当于设置碰撞等级为10级。数值越大，碰撞检测越不灵敏，数值范围为，单位为NM。表中数据仅供参考，实际数值需要根据机器人运行速度和负载情况进行调整。
+El umbral de detección articular recomendado equivale a establecer el nivel de colisión en 10. Cuanto mayor es el valor, menos sensible es la detección de colisiones; el rango de valores es, en unidades de NM. Los datos de la tabla son solo de referencia; los valores reales deben ajustarse según la velocidad de funcionamiento y la carga del robot.
 
-.. centered:: 表格 9.26-1 关节推荐阈值
+.. centered:: Tabla 9.26-1 Umbral articular recomendado
 
 .. list-table::
    :widths: 30 20 20 20 20 20 20
@@ -5421,7 +5419,7 @@ TCP检测阈值功能设置说明
    :class: sheet-center
    :align: center
 
-   * - **机器人类型**
+   * - **Tipo de robot**
      - **J1**
      - **J2**
      - **J3**
@@ -5501,12 +5499,12 @@ TCP检测阈值功能设置说明
      - 0.9
      - 0.9 
 
-TCP检测阈值
-""""""""""""""""""""
+Umbral de detección del TCP
+""""""""""""""""""""""""""""""""
 
-TCP检测阈值数值越大，碰撞检测越不灵敏，数值范围为，单位为N。表中数据仅供参考，实际数值需要根据机器人运行速度和负载情况进行调整。
+Cuanto mayor es el valor del umbral de detección del TCP, menos sensible es la detección de colisiones; el rango de valores es, en unidades de N. Los datos de la tabla son solo de referencia; los valores reales deben ajustarse según la velocidad de funcionamiento y la carga del robot.
 
-.. centered:: 表格 9.26-2 TCP检测阈值
+.. centered:: Tabla 9.26-2 Umbral de detección del TCP
 
 .. list-table::
    :widths: 30 20 20 20 20 20 20
@@ -5514,7 +5512,7 @@ TCP检测阈值数值越大，碰撞检测越不灵敏，数值范围为，单�
    :class: sheet-center
    :align: center
 
-   * - **机器人类型**
+   * - **Tipo de robot**
      - **X**
      - **Y**
      - **Z**
@@ -5594,1624 +5592,1624 @@ TCP检测阈值数值越大，碰撞检测越不灵敏，数值范围为，单�
      - 60
      - 60 
 
-T形速度特性优化+blending平滑功能
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Optimización de características de velocidad en forma de T + función de suavizado blending
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
-++++++++++++++
-
-在两段轨迹之间进行blending，可避免因完全停止而带来的频繁启停问题，从而提升机器人的运动效率。本功能主要针对PTP、LIN、ARC和CIRCLE指令间进行blending，均可通过两种方式实现：使用Lua指令方式、使用运动配置开关方式。
-
-操作流程
+Descripción general
 ++++++++++++++++++++++++++++
 
-PTP-PTP的blending
+Realizar blending entre dos tramos de trayectoria permite evitar el problema de arranques y paradas frecuentes provocado por la detención completa, mejorando así la eficiencia de movimiento del robot. Esta función se dirige principalmente al blending entre las instrucciones PTP, LIN, ARC y CIRCLE, que se puede implementar de dos formas: mediante el modo de instrucciones Lua y mediante el modo de interruptor de configuración de movimiento.
+
+Flujo de operación
+++++++++++++++++++++++++++++
+
+Blending PTP-PTP
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行PTP-PTP功能的示教点，本手册以“A0”~“A5”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función PTP-PTP; este manual utiliza "A0"~"A5" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“点到点”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“平滑过渡”参数。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Punto a punto" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/315.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-1 加速度平滑PTP指令的blending指令设置
+.. centered:: Figura 9.27-1 Configuración de la instrucción de blending de la instrucción PTP con suavizado de aceleración
 
-**Step3**：添加多条PTP指令，生成Lua程序并运行，即可实现对PTP-PTP的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones PTP, generar el programa Lua y ejecutarlo para implementar la función de blending PTP-PTP; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/316.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-2 Lua指令方式进行PTP-PTP间blending典型程序
+.. centered:: Figura 9.27-2 Programa típico de blending entre PTP-PTP mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-3 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-3 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行PTP-PTP功能的示教点，本手册以“A0”~“A5”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función PTP-PTP; este manual utiliza "A0"~"A5" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“点到点”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“平滑过渡”参数。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Punto a punto" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/318.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-4 常规PTP指令的blending指令设置
+.. centered:: Figura 9.27-4 Configuración de la instrucción de blending de la instrucción PTP convencional
 
-**Step4**：添加多条PTP指令，生成Lua程序并运行，即可实现对PTP-PTP的blending功能，典型程序和常规PTP-PTP程序相同，该方式会对所有指令使用优化后的T形速度运动。
+**Step4**: Añadir varias instrucciones PTP, generar el programa Lua y ejecutarlo para implementar la función de blending PTP-PTP; el programa típico es el mismo que el programa PTP-PTP convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/319.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-5 使用配置开关进行PTP-PTP间blending的典型程序
+.. centered:: Figura 9.27-5 Programa típico de blending entre PTP-PTP mediante el interruptor de configuración
 
-PTP-LIN的blending
+Blending PTP-LIN
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行PTP-LIN功能的示教点，本手册以“A0”~“A5”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función PTP-LIN; este manual utiliza "A0"~"A5" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“点到点”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“平滑过渡”参数。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Punto a punto" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/315.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-6 加速度平滑PTP指令的blending指令设置
+.. centered:: Figura 9.27-6 Configuración de la instrucción de blending de la instrucción PTP con suavizado de aceleración
 
-**Step3**：添加多条PTP和LIN指令，生成Lua程序并运行，即可实现对PTP-LIN的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones PTP y LIN, generar el programa Lua y ejecutarlo para implementar la función de blending PTP-LIN; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/415.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-7 Lua指令方式进行PTP-LIN间blending典型程序
+.. centered:: Figura 9.27-7 Programa típico de blending entre PTP-LIN mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-8 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-8 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行PTP-LIN功能的示教点，本手册以“A0”~“A5”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función PTP-LIN; este manual utiliza "A0"~"A5" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“点到点”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“平滑过渡”参数。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Punto a punto" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/318.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-9 常规PTP指令的blending指令设置
+.. centered:: Figura 9.27-9 Configuración de la instrucción de blending de la instrucción PTP convencional
 
-**Step4**：添加多条PTP和LIN指令，生成Lua程序并运行，即可实现对PTP-LIN的blending功能，典型程序和常规PTP-LIN程序相同，该方式会对所有指令使用优化后的T形速度运动。
+**Step4**: Añadir varias instrucciones PTP y LIN, generar el programa Lua y ejecutarlo para implementar la función de blending PTP-LIN; el programa típico es el mismo que el programa PTP-LIN convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/397.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-10 使用配置开关进行PTP-LIN间blending的典型程序
+.. centered:: Figura 9.27-10 Programa típico de blending entre PTP-LIN mediante el interruptor de configuración
 
-PTP-ARC的blending
+Blending PTP-ARC
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行PTP-ARC功能的示教点，本手册以“A0”~“A8”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función PTP-ARC; este manual utiliza "A0"~"A8" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“点到点”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“平滑过渡”参数。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Punto a punto" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/315.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-11 加速度平滑PTP指令的blending指令设置
+.. centered:: Figura 9.27-11 Configuración de la instrucción de blending de la instrucción PTP con suavizado de aceleración
 
-**Step3**：添加多条PTP和ARC指令，生成Lua程序并运行，即可实现对PTP-ARC的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones PTP y ARC, generar el programa Lua y ejecutarlo para implementar la función de blending PTP-ARC; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/398.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-12 Lua指令方式进行PTP-ARC间blending典型程序
+.. centered:: Figura 9.27-12 Programa típico de blending entre PTP-ARC mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-13 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-13 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行PTP-ARC功能的示教点，本手册以“A0”~“A8”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función PTP-ARC; este manual utiliza "A0"~"A8" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“点到点”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“平滑过渡”参数。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Punto a punto" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/318.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-14 常规PTP指令的blending指令设置
+.. centered:: Figura 9.27-14 Configuración de la instrucción de blending de la instrucción PTP convencional
 
-**Step4**：添加多条PTP和ARC指令，生成Lua程序并运行，即可实现对PTP-ARC的blending功能，典型程序和常规PTP-ARC程序相同，该方式会对所有指令使用优化后的T形速度运动。
+**Step4**: Añadir varias instrucciones PTP y ARC, generar el programa Lua y ejecutarlo para implementar la función de blending PTP-ARC; el programa típico es el mismo que el programa PTP-ARC convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/399.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-15 使用配置开关进行PTP-ARC间blending的典型程序
+.. centered:: Figura 9.27-15 Programa típico de blending entre PTP-ARC mediante el interruptor de configuración
    
-PTP-CIRCLE的blending
+Blending PTP-CIRCLE
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行PTP-CIRCLE功能的示教点，本手册以“A0”~“A8”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función PTP-CIRCLE; este manual utiliza "A0"~"A8" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“点到点”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“平滑过渡”参数。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Punto a punto" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/315.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-16 加速度平滑PTP指令的blending指令设置
+.. centered:: Figura 9.27-16 Configuración de la instrucción de blending de la instrucción PTP con suavizado de aceleración
 
-**Step3**：添加多条PTP和CIRCLE指令，生成Lua程序并运行，即可实现对PTP-CIRCLE的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones PTP y CIRCLE, generar el programa Lua y ejecutarlo para implementar la función de blending PTP-CIRCLE; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/400.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-17 Lua指令方式进行PTP-CIRCLE间blending典型程序
+.. centered:: Figura 9.27-17 Programa típico de blending entre PTP-CIRCLE mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-18 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-18 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行PTP-CIRCLE功能的示教点，本手册以“A0”~“A8”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función PTP-CIRCLE; este manual utiliza "A0"~"A8" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“点到点”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“平滑过渡”参数。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Punto a punto" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/318.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-19 常规PTP指令的blending指令设置
+.. centered:: Figura 9.27-19 Configuración de la instrucción de blending de la instrucción PTP convencional
 
-**Step4**：添加多条PTP和CIRCLE指令，生成Lua程序并运行，即可实现对PTP-CIRCLE的blending功能，典型程序和常规PTP-CIRCLE程序相同，该方式会对所有指令使用优化后的T形速度运动。
+**Step4**: Añadir varias instrucciones PTP y CIRCLE, generar el programa Lua y ejecutarlo para implementar la función de blending PTP-CIRCLE; el programa típico es el mismo que el programa PTP-CIRCLE convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/401.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-20 使用配置开关进行PTP-CIRCLE间blending的典型程序
+.. centered:: Figura 9.27-20 Programa típico de blending entre PTP-CIRCLE mediante el interruptor de configuración
    
-LIN-PTP的blending
+Blending LIN-PTP
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行LIN-PTP功能的示教点，本手册以“A0”~“A5”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función LIN-PTP; este manual utiliza "A0"~"A5" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“直线”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“过渡半径”和“过渡方式”参数，过渡方式可选择“角点过渡”和“内切过渡”。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Línea recta" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar los parámetros "Radio de transición" y "Modo de transición" en los puntos que requieran suavizado; el modo de transición puede ser "Transición en esquina" o "Transición inscrita".
    
 .. image:: coding/402.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-21 加速度平滑PTP指令的blending指令设置
+.. centered:: Figura 9.27-21 Configuración de la instrucción de blending de la instrucción LIN con suavizado de aceleración
 
-**Step3**：添加多条LIN和PTP指令，生成Lua程序并运行，即可实现对LIN-PTP的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones LIN y PTP, generar el programa Lua y ejecutarlo para implementar la función de blending LIN-PTP; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/403.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-22 Lua指令方式进行LIN-PTP间blending典型程序
+.. centered:: Figura 9.27-22 Programa típico de blending entre LIN-PTP mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-23 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-23 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行LIN-PTP功能的示教点，本手册以“A0”~“A5”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función LIN-PTP; este manual utiliza "A0"~"A5" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“直线”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“过渡半径”和“过渡方式”参数，过渡方式可选择“角点过渡”和“内切过渡”。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Línea recta" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar los parámetros "Radio de transición" y "Modo de transición" en los puntos que requieran suavizado; el modo de transición puede ser "Transición en esquina" o "Transición inscrita".
    
 .. image:: coding/404.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-24 常规LIN指令的blending指令设置
+.. centered:: Figura 9.27-24 Configuración de la instrucción de blending de la instrucción LIN convencional
 
-**Step4**：生成Lua程序并运行，即可实现对LIN-PTP的blending功能，典型程序和常规LIN-PTP程序相同，该方式会对所有指令使用优化后的T形速度运动。
+**Step4**: Generar el programa Lua y ejecutarlo para implementar la función de blending LIN-PTP; el programa típico es el mismo que el programa LIN-PTP convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/405.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-25 使用配置开关进行LIN-PTP间blending的典型程序
+.. centered:: Figura 9.27-25 Programa típico de blending entre LIN-PTP mediante el interruptor de configuración
    
-LIN-LIN的blending
+Blending LIN-LIN
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行LIN-LIN功能的示教点，本手册以“A0”~“A5”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función LIN-LIN; este manual utiliza "A0"~"A5" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“直线”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“过渡半径”和“过渡方式”参数，过渡方式可选择“角点过渡”和“内切过渡”。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Línea recta" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar los parámetros "Radio de transición" y "Modo de transición" en los puntos que requieran suavizado; el modo de transición puede ser "Transición en esquina" o "Transición inscrita".
    
 .. image:: coding/402.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-26 加速度平滑LIN指令的blending指令设置
+.. centered:: Figura 9.27-26 Configuración de la instrucción de blending de la instrucción LIN con suavizado de aceleración
 
-**Step3**：添加多条LIN和LIN指令，生成Lua程序并运行，即可实现对LIN-LIN的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones LIN y LIN, generar el programa Lua y ejecutarlo para implementar la función de blending LIN-LIN; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/416.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-27 Lua指令方式进行LIN-LIN间blending典型程序
+.. centered:: Figura 9.27-27 Programa típico de blending entre LIN-LIN mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-28 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-28 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行LIN-LIN功能的示教点，本手册以“A0”~“A5”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función LIN-LIN; este manual utiliza "A0"~"A5" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“直线”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“过渡半径”和“过渡方式”参数，过渡方式可选择“角点过渡”和“内切过渡”。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Línea recta" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar los parámetros "Radio de transición" y "Modo de transición" en los puntos que requieran suavizado; el modo de transición puede ser "Transición en esquina" o "Transición inscrita".
    
 .. image:: coding/404.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-29 常规LIN指令的blending指令设置
+.. centered:: Figura 9.27-29 Configuración de la instrucción de blending de la instrucción LIN convencional
 
-**Step4**：生成Lua程序并运行，即可实现对LIN-LIN的blending功能，典型程序和常规LIN-LIN程序相同，该方式会对所有指令使用优化后的T形速度运动。
+**Step4**: Generar el programa Lua y ejecutarlo para implementar la función de blending LIN-LIN; el programa típico es el mismo que el programa LIN-LIN convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/417.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-30 使用配置开关进行LIN-LIN间blending的典型程序
+.. centered:: Figura 9.27-30 Programa típico de blending entre LIN-LIN mediante el interruptor de configuración
    
-LIN-ARC的blending
+Blending LIN-ARC
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行LIN-ARC功能的示教点，本手册以“A0”~“A8”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función LIN-ARC; este manual utiliza "A0"~"A8" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“直线”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“过渡半径”和“过渡方式”参数，过渡方式可选择“角点过渡”和“内切过渡”。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Línea recta" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar los parámetros "Radio de transición" y "Modo de transición" en los puntos que requieran suavizado; el modo de transición puede ser "Transición en esquina" o "Transición inscrita".
    
 .. image:: coding/402.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-31 加速度平滑LIN指令的blending指令设置
+.. centered:: Figura 9.27-31 Configuración de la instrucción de blending de la instrucción LIN con suavizado de aceleración
 
-**Step3**：添加多条LIN和ARC指令，生成Lua程序并运行，即可实现对LIN-ARC的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones LIN y ARC, generar el programa Lua y ejecutarlo para implementar la función de blending LIN-ARC; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/406.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-32 Lua指令方式进行LIN-ARC间blending典型程序
+.. centered:: Figura 9.27-32 Programa típico de blending entre LIN-ARC mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-33 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-33 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行LIN-ARC功能的示教点，本手册以“A0”~“A8”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función LIN-ARC; este manual utiliza "A0"~"A8" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“直线”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“过渡半径”和“过渡方式”参数，过渡方式可选择“角点过渡”和“内切过渡”。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Línea recta" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar los parámetros "Radio de transición" y "Modo de transición" en los puntos que requieran suavizado; el modo de transición puede ser "Transición en esquina" o "Transición inscrita".
    
 .. image:: coding/404.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-34 常规LIN指令的blending指令设置
+.. centered:: Figura 9.27-34 Configuración de la instrucción de blending de la instrucción LIN convencional
 
-**Step4**：生成Lua程序并运行，即可实现对LIN-LIN的blending功能，典型程序和常规LIN-LIN程序相同，该方式会对所有指令使用优化后的T形速度运动。
+**Step4**: Generar el programa Lua y ejecutarlo para implementar la función de blending LIN-LIN; el programa típico es el mismo que el programa LIN-LIN convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/407.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-35 使用配置开关进行LIN-ARC间blending的典型程序
+.. centered:: Figura 9.27-35 Programa típico de blending entre LIN-ARC mediante el interruptor de configuración
    
-LIN-CIRCLE的blending
+Blending LIN-CIRCLE
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行LIN-CIRCLE功能的示教点，本手册以“A0”~“A8”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función LIN-CIRCLE; este manual utiliza "A0"~"A8" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“直线”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“过渡半径”和“过渡方式”参数，过渡方式可选择“角点过渡”和“内切过渡”。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Línea recta" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar los parámetros "Radio de transición" y "Modo de transición" en los puntos que requieran suavizado; el modo de transición puede ser "Transición en esquina" o "Transición inscrita".
    
 .. image:: coding/402.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-36 加速度平滑LIN指令的blending指令设置
+.. centered:: Figura 9.27-36 Configuración de la instrucción de blending de la instrucción LIN con suavizado de aceleración
 
-**Step3**：添加多条LIN和CIRCLE指令，生成Lua程序并运行，即可实现对LIN-CIRCLE的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones LIN y CIRCLE, generar el programa Lua y ejecutarlo para implementar la función de blending LIN-CIRCLE; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/408.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-37 Lua指令方式进行LIN-CIRCLE间blending典型程序
+.. centered:: Figura 9.27-37 Programa típico de blending entre LIN-CIRCLE mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-38 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-38 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行LIN-CIRCLE功能的示教点，本手册以“A0”~“A8”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función LIN-CIRCLE; este manual utiliza "A0"~"A8" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“直线”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“过渡半径”和“过渡方式”参数，过渡方式可选择“角点过渡”和“内切过渡”。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Línea recta" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar los parámetros "Radio de transición" y "Modo de transición" en los puntos que requieran suavizado; el modo de transición puede ser "Transición en esquina" o "Transición inscrita".
    
 .. image:: coding/404.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-39 常规LIN指令的blending指令设置
+.. centered:: Figura 9.27-39 Configuración de la instrucción de blending de la instrucción LIN convencional
 
-**Step4**：添加多条LIN和CIRCLE指令，生成Lua程序并运行，即可实现对LIN-CIRCLE的blending功能，典型程序和常规LIN-ARC程序相同，该方式会对所有指令使用优化后的T形速度进行运动。
+**Step4**: Añadir varias instrucciones LIN y CIRCLE, generar el programa Lua y ejecutarlo para implementar la función de blending LIN-CIRCLE; el programa típico es el mismo que el programa LIN-ARC convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/409.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-40 使用配置开关进行LIN-CIRCLE间blending的典型程序
+.. centered:: Figura 9.27-40 Programa típico de blending entre LIN-CIRCLE mediante el interruptor de configuración
    
-ARC-PTP的blending
+Blending ARC-PTP
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行ARC-PTP功能的示教点，本手册以“A0”~“A9”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función ARC-PTP; este manual utiliza "A0"~"A9" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“圆弧”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“平滑过渡”参数。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Arco" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/410.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-41 加速度平滑ARC指令的blending指令设置
+.. centered:: Figura 9.27-41 Configuración de la instrucción de blending de la instrucción ARC con suavizado de aceleración
 
-**Step3**：添加多条ARC和PTP指令，生成Lua程序并运行，即可实现对ARC-PTP的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones ARC y PTP, generar el programa Lua y ejecutarlo para implementar la función de blending ARC-PTP; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/411.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-42 Lua指令方式进行ARC-PTP间blending典型程序
+.. centered:: Figura 9.27-42 Programa típico de blending entre ARC-PTP mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-43 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-43 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行ARC-PTP功能的示教点，本手册以“A0”~“A9”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función ARC-PTP; este manual utiliza "A0"~"A9" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“圆弧”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“平滑过渡”参数。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Arco" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/418.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-44 常规ARC指令的blending指令设置
+.. centered:: Figura 9.27-44 Configuración de la instrucción de blending de la instrucción ARC convencional
 
-**Step4**：添加多条ARC和PTP指令，生成Lua程序并运行，即可实现对ARC-PTP的blending功能，典型程序和常规ARC-PTP程序相同，该方式会对所有指令使用优化后的T形速度运动。
+**Step4**: Añadir varias instrucciones ARC y PTP, generar el programa Lua y ejecutarlo para implementar la función de blending ARC-PTP; el programa típico es el mismo que el programa ARC-PTP convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/412.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-45 使用配置开关进行ARC-PTP间blending的典型程序
+.. centered:: Figura 9.27-45 Programa típico de blending entre ARC-PTP mediante el interruptor de configuración
    
-ARC-LIN的blending
+Blending ARC-LIN
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行ARC-LIN功能的示教点，本手册以“A0”~“A9”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función ARC-LIN; este manual utiliza "A0"~"A9" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“圆弧”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“平滑过渡”参数。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Arco" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/410.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-46 加速度平滑ARC指令的blending指令设置
+.. centered:: Figura 9.27-46 Configuración de la instrucción de blending de la instrucción ARC con suavizado de aceleración
 
-**Step3**：添加多条ARC和LIN指令，生成Lua程序并运行，即可实现对ARC-LIN的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones ARC y LIN, generar el programa Lua y ejecutarlo para implementar la función de blending ARC-LIN; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/413.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-47 Lua指令方式进行ARC-LIN间blending典型程序
+.. centered:: Figura 9.27-47 Programa típico de blending entre ARC-LIN mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-48 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-48 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行ARC-LIN功能的示教点，本手册以“A0”~“A9”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función ARC-LIN; este manual utiliza "A0"~"A9" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“圆弧”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“平滑过渡”参数。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Arco" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/419.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-49 常规ARC指令的blending指令设置
+.. centered:: Figura 9.27-49 Configuración de la instrucción de blending de la instrucción ARC convencional
 
-**Step4**：添加多条ARC和LIN指令，生成Lua程序并运行，即可实现对ARC-LIN的blending功能，典型程序和常规ARC-LIN程序相同，该方式会对所有指令使用优化后的T形速度运动。
+**Step4**: Añadir varias instrucciones ARC y LIN, generar el programa Lua y ejecutarlo para implementar la función de blending ARC-LIN; el programa típico es el mismo que el programa ARC-LIN convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/414.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-50 使用配置开关进行ARC-LIN间blending的典型程序
+.. centered:: Figura 9.27-50 Programa típico de blending entre ARC-LIN mediante el interruptor de configuración
    
-ARC-ARC的blending
+Blending ARC-ARC
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行ARC-ARC功能的示教点，本手册以“A0”~“A12”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función ARC-ARC; este manual utiliza "A0"~"A12" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“圆弧”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“平滑过渡”参数。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Arco" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/410.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-51 加速度平滑ARC指令的blending指令设置
+.. centered:: Figura 9.27-51 Configuración de la instrucción de blending de la instrucción ARC con suavizado de aceleración
 
-**Step3**：添加多条ARC指令，生成Lua程序并运行，即可实现对ARC-ARC的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones ARC, generar el programa Lua y ejecutarlo para implementar la función de blending ARC-ARC; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/420.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-52 Lua指令方式进行ARC-ARC间blending典型程序
+.. centered:: Figura 9.27-52 Programa típico de blending entre ARC-ARC mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-53 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-53 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行ARC-ARC功能的示教点，本手册以“A0”~“A12”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función ARC-ARC; este manual utiliza "A0"~"A12" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“圆弧”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“平滑过渡”参数。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Arco" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/419.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-54 常规ARC指令的blending指令设置
+.. centered:: Figura 9.27-54 Configuración de la instrucción de blending de la instrucción ARC convencional
 
-**Step4**：添加多条ARC指令，生成Lua程序并运行，即可实现对ARC-ARC的blending功能，典型程序和常规ARC-ARC程序相同，该方式会对所有指令使用优化后的T形速度运动。
+**Step4**: Añadir varias instrucciones ARC, generar el programa Lua y ejecutarlo para implementar la función de blending ARC-ARC; el programa típico es el mismo que el programa ARC-ARC convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/421.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-55 使用配置开关进行ARC-ARC间blending的典型程序
+.. centered:: Figura 9.27-55 Programa típico de blending entre ARC-ARC mediante el interruptor de configuración
    
-ARC-CIRCLE的blending
+Blending ARC-CIRCLE
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行ARC-CIRCLE功能的示教点，本手册以“A0”~“A12”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función ARC-CIRCLE; este manual utiliza "A0"~"A12" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“圆弧”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“平滑过渡”参数。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Arco" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/410.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-56 加速度平滑ARC指令的blending指令设置
+.. centered:: Figura 9.27-56 Configuración de la instrucción de blending de la instrucción ARC con suavizado de aceleración
 
-**Step3**：添加多条ARC和CIRCLE指令，生成Lua程序并运行，即可实现对ARC-CIRCLE的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones ARC y CIRCLE, generar el programa Lua y ejecutarlo para implementar la función de blending ARC-CIRCLE; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/422.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-57 Lua指令方式进行ARC-CIRCLE间blending典型程序
+.. centered:: Figura 9.27-57 Programa típico de blending entre ARC-CIRCLE mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-58 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-58 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行ARC-CIRCLE功能的示教点，本手册以“A0”~“A12”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función ARC-CIRCLE; este manual utiliza "A0"~"A12" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“圆弧”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“平滑过渡”参数。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Arco" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/419.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-59 常规ARC指令的blending指令设置
+.. centered:: Figura 9.27-59 Configuración de la instrucción de blending de la instrucción ARC convencional
 
-**Step4**：添加多条ARC和CIRCLE指令，生成Lua程序并运行，即可实现对ARC-CIRCLE的blending功能，典型程序和常规ARC-CIRCLE程序相同，该方式会对所有指令使用优化后的T形速度运动。
+**Step4**: Añadir varias instrucciones ARC y CIRCLE, generar el programa Lua y ejecutarlo para implementar la función de blending ARC-CIRCLE; el programa típico es el mismo que el programa ARC-CIRCLE convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/423.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-60 使用配置开关进行ARC-CIRCLE间blending的典型程序
+.. centered:: Figura 9.27-60 Programa típico de blending entre ARC-CIRCLE mediante el interruptor de configuración
    
-CIRCLE-PTP的blending
+Blending CIRCLE-PTP
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行CIRCLE-PTP功能的示教点，本手册以“A0”~“A9”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función CIRCLE-PTP; este manual utiliza "A0"~"A9" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“整圆”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“平滑过渡”参数。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Círculo completo" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/424.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-61 加速度平滑CIRCLE指令的blending指令设置
+.. centered:: Figura 9.27-61 Configuración de la instrucción de blending de la instrucción CIRCLE con suavizado de aceleración
 
-**Step3**：添加多条CIRCLE和PTP指令，生成Lua程序并运行，即可实现对CIRCLE-PTP的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones CIRCLE y PTP, generar el programa Lua y ejecutarlo para implementar la función de blending CIRCLE-PTP; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/425.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-62 Lua指令方式进行CIRCLE-PTP间blending典型程序
+.. centered:: Figura 9.27-62 Programa típico de blending entre CIRCLE-PTP mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-63 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-63 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行CIRCLE-PTP功能的示教点，本手册以“A0”~“A9”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función CIRCLE-PTP; este manual utiliza "A0"~"A9" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“整圆”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“平滑过渡”参数。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Círculo completo" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/426.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-64 常规CIRCLE指令的blending指令设置
+.. centered:: Figura 9.27-64 Configuración de la instrucción de blending de la instrucción CIRCLE convencional
 
-**Step4**：添加多条CIRCLE和PTP指令，生成Lua程序并运行，即可实现对CIRCLE-PTP的blending功能，典型程序和常规CIRCLE-PTP程序相同，该方式会对所有指令使用优化后的T形速度运动。
+**Step4**: Añadir varias instrucciones CIRCLE y PTP, generar el programa Lua y ejecutarlo para implementar la función de blending CIRCLE-PTP; el programa típico es el mismo que el programa CIRCLE-PTP convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/427.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-65 使用配置开关进行CIRCLE-PTP间blending的典型程序
+.. centered:: Figura 9.27-65 Programa típico de blending entre CIRCLE-PTP mediante el interruptor de configuración
    
-CIRCLE-LIN的blending
+Blending CIRCLE-LIN
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行CIRCLE-LIN功能的示教点，本手册以“A0”~“A12”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función CIRCLE-LIN; este manual utiliza "A0"~"A12" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“整圆”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“平滑过渡”参数。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Círculo completo" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/424.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-66 加速度平滑CIRCLE指令的blending指令设置
+.. centered:: Figura 9.27-66 Configuración de la instrucción de blending de la instrucción CIRCLE con suavizado de aceleración
 
-**Step3**：添加多条CIRCLE和LIN指令，生成Lua程序并运行，即可实现对CIRCLE-LIN的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones CIRCLE y LIN, generar el programa Lua y ejecutarlo para implementar la función de blending CIRCLE-LIN; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/428.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-67 Lua指令方式进行CIRCLE-LIN间blending典型程序
+.. centered:: Figura 9.27-67 Programa típico de blending entre CIRCLE-LIN mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-68 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-68 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行CIRCLE-LIN功能的示教点，本手册以“A0”~“A12”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función CIRCLE-LIN; este manual utiliza "A0"~"A12" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“整圆”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“平滑过渡”参数。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Círculo completo" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/426.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-69 常规CIRCLE指令的blending指令设置
+.. centered:: Figura 9.27-69 Configuración de la instrucción de blending de la instrucción CIRCLE convencional
 
-**Step4**：添加多条CIRCLE和LIN指令，生成Lua程序并运行，即可实现对CIRCLE-LIN的blending功能，典型程序和常规CIRCLE-LIN程序相同，该方式会对所有指令使用优化后的T形速度运动。
+**Step4**: Añadir varias instrucciones CIRCLE y LIN, generar el programa Lua y ejecutarlo para implementar la función de blending CIRCLE-LIN; el programa típico es el mismo que el programa CIRCLE-LIN convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/429.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-70 使用配置开关进行CIRCLE-LIN间blending的典型程序
+.. centered:: Figura 9.27-70 Programa típico de blending entre CIRCLE-LIN mediante el interruptor de configuración
    
-CIRCLE-ARC的blending
+Blending CIRCLE-ARC
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行CIRCLE-ARC功能的示教点，本手册以“A0”~“A12”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función CIRCLE-ARC; este manual utiliza "A0"~"A12" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“整圆”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“平滑过渡”参数。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Círculo completo" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/424.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-71 加速度平滑CIRCLE指令的blending指令设置
+.. centered:: Figura 9.27-71 Configuración de la instrucción de blending de la instrucción CIRCLE con suavizado de aceleración
 
-**Step3**：添加多条CIRCLE和ARC指令，生成Lua程序并运行，即可实现对CIRCLE-ARC的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones CIRCLE y ARC, generar el programa Lua y ejecutarlo para implementar la función de blending CIRCLE-ARC; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/430.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-72 Lua指令方式进行CIRCLE-ARC间blending典型程序
+.. centered:: Figura 9.27-72 Programa típico de blending entre CIRCLE-ARC mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-73 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-73 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行CIRCLE-ARC功能的示教点，本手册以“A0”~“A12”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función CIRCLE-ARC; este manual utiliza "A0"~"A12" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“整圆”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“平滑过渡”参数。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Círculo completo" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/426.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-74 常规CIRCLE指令的blending指令设置
+.. centered:: Figura 9.27-74 Configuración de la instrucción de blending de la instrucción CIRCLE convencional
 
-**Step4**：添加多条CIRCLE和ARC指令，生成Lua程序并运行，即可实现对CIRCLE-ARC的blending功能，典型程序和常规CIRCLE-ARC程序相同，该方式会对所有指令使用优化后的T形速度运动。
+**Step4**: Añadir varias instrucciones CIRCLE y ARC, generar el programa Lua y ejecutarlo para implementar la función de blending CIRCLE-ARC; el programa típico es el mismo que el programa CIRCLE-ARC convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/431.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-75 使用配置开关进行CIRCLE-ARC间blending的典型程序
+.. centered:: Figura 9.27-75 Programa típico de blending entre CIRCLE-ARC mediante el interruptor de configuración
    
-CIRCLE-CIRCLE的blending
+Blending CIRCLE-CIRCLE
 ***************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择要执行CIRCLE-CIRCLE功能的示教点，本手册以“A0”~“A12”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función CIRCLE-CIRCLE; este manual utiliza "A0"~"A12" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“整圆”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“平滑过渡”参数。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Círculo completo" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/424.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-76 加速度平滑CIRCLE指令的blending指令设置
+.. centered:: Figura 9.27-76 Configuración de la instrucción de blending de la instrucción CIRCLE con suavizado de aceleración
 
-**Step3**：添加多条CIRCLE指令，生成Lua程序并运行，即可实现对CIRCLE-CIRCLE的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用优化后的T形速度运动，对其余指令使用原T形速度运动。
+**Step3**: Añadir varias instrucciones CIRCLE, generar el programa Lua y ejecutarlo para implementar la función de blending CIRCLE-CIRCLE; este modo solo utiliza la velocidad en forma de T optimizada para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la velocidad en forma de T original para el movimiento de las demás instrucciones.
    
 .. image:: coding/432.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-77 Lua指令方式进行CIRCLE-CIRCLE间blending典型程序
+.. centered:: Figura 9.27-77 Programa típico de blending entre CIRCLE-CIRCLE mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-78 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-78 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择要执行CIRCLE-CIRCLE功能的示教点，本手册以“A0”~“A12”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función CIRCLE-CIRCLE; este manual utiliza "A0"~"A12" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“运动指令”中的“整圆”指令，在“指令编辑”中选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“平滑过渡”参数。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Círculo completo" de las "Instrucciones de movimiento", seleccionar el punto de enseñanza en "Edición de instrucción" y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/426.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-79 常规CIRCLE指令的blending指令设置
+.. centered:: Figura 9.27-79 Configuración de la instrucción de blending de la instrucción CIRCLE convencional
 
-**Step4**：添加多条CIRCLE指令，生成Lua程序并运行，即可实现对CIRCLE-CIRCLE的blending功能，典型程序和常规CIRCLE-CIRCLE程序相同，该方式会对所有指令使用优化后的T形速度运动。
+**Step4**: Añadir varias instrucciones CIRCLE, generar el programa Lua y ejecutarlo para implementar la función de blending CIRCLE-CIRCLE; el programa típico es el mismo que el programa CIRCLE-CIRCLE convencional; este modo utiliza la velocidad en forma de T optimizada para el movimiento de todas las instrucciones.
    
 .. image:: coding/433.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-80 使用配置开关进行CIRCLE-CIRCLE间blending的典型程序
+.. centered:: Figura 9.27-80 Programa típico de blending entre CIRCLE-CIRCLE mediante el interruptor de configuración
    
-扩展轴异步运动的blending
-***************************************
+Blending del movimiento asíncrono del eje extendido
+************************************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择执行扩展轴异步运动blending功能的示教点，本手册以“A0”~“A5”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función de blending del movimiento asíncrono del eje extendido; este manual utiliza "A0"~"A5" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“外设指令”中的“扩展轴”指令，“运动方式”选为“异步”，选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“平滑过渡”参数。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Eje extendido" de las "Instrucciones de periféricos", seleccionar "Asíncrono" en "Modo de movimiento", seleccionar el punto de enseñanza y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/435.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-81 扩展轴异步运动的blending指令设置
+.. centered:: Figura 9.27-81 Configuración de la instrucción de blending del movimiento asíncrono del eje extendido
 
-**Step3**：添加运动指令，生成Lua程序并运行，即可实现扩展轴异步运动的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用S型速度规划并进行blending，对其余指令使用T形速度规划。
+**Step3**: Añadir instrucciones de movimiento, generar el programa Lua y ejecutarlo para implementar la función de blending del movimiento asíncrono del eje extendido; este modo solo utiliza la planificación de velocidad en forma de S y realiza blending para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la planificación de velocidad en forma de T para el movimiento de las demás instrucciones.
    
 .. image:: coding/436.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-82 Lua指令方式进行扩展轴异步运动blending典型程序
+.. centered:: Figura 9.27-82 Programa típico de blending del movimiento asíncrono del eje extendido mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-83 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-83 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择执行扩展轴异步运动blending功能的示教点，本手册以“A0”~“A5”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función de blending del movimiento asíncrono del eje extendido; este manual utiliza "A0"~"A5" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“外设指令”中的“扩展轴”指令，“运动方式”选为“异步”，选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“平滑过渡”参数。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Eje extendido" de las "Instrucciones de periféricos", seleccionar "Asíncrono" en "Modo de movimiento", seleccionar el punto de enseñanza y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/437.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-84 常规扩展轴异步运动的blending指令设置
+.. centered:: Figura 9.27-84 Configuración de la instrucción de blending del movimiento asíncrono del eje extendido convencional
 
-**Step4**：添加多条运动指令，生成Lua程序并运行，即可实现扩展轴异步运动的blending功能，典型程序和常规扩展轴运动程序相同，该方式会对所有使用S型速度规划并进行blending运动。
+**Step4**: Añadir varias instrucciones de movimiento, generar el programa Lua y ejecutarlo para implementar la función de blending del movimiento asíncrono del eje extendido; el programa típico es el mismo que el programa de movimiento del eje extendido convencional; este modo utiliza la planificación de velocidad en forma de S y realiza blending para todos los movimientos.
    
 .. image:: coding/438.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-85 使用配置开关进行扩展轴异步运动blending典型程序
+.. centered:: Figura 9.27-85 Programa típico de blending del movimiento asíncrono del eje extendido mediante el interruptor de configuración
    
-扩展轴同步运动的blending
-***************************************
+Blending del movimiento síncrono del eje extendido
+*********************************************************************
 
-使用Lua指令方式
-""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de instrucciones Lua
+""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：选择执行扩展轴同步运动blending功能的示教点，本手册以“A0”~“A5”作为示教点的名称。
+**Step1**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función de blending del movimiento síncrono del eje extendido; este manual utiliza "A0"~"A5" como nombres de los puntos de enseñanza.
 
-**Step2**：点击“示教程序”—>“程序编程”按钮，选择“外设指令”中的“扩展轴”指令，“运动方式”选为“同步”，选择示教点并设置调试速度，运动保护选择“加速度平滑模式”，在需要平滑的点处设置“平滑过渡”参数。
+**Step2**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Eje extendido" de las "Instrucciones de periféricos", seleccionar "Síncrono" en "Modo de movimiento", seleccionar el punto de enseñanza y configurar la velocidad de depuración, seleccionar "Modo de suavizado de aceleración" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/439.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-86 扩展轴同步运动的blending指令设置
+.. centered:: Figura 9.27-86 Configuración de la instrucción de blending del movimiento síncrono del eje extendido
 
-**Step3**：添加运动指令，生成Lua程序并运行，即可实现扩展轴同步运动的blending功能，该方式仅对AccSmoothStart()和AccSmoothEnd()之间的指令使用S型速度规划并进行blending，对其余指令使用T形速度规划。
+**Step3**: Añadir instrucciones de movimiento, generar el programa Lua y ejecutarlo para implementar la función de blending del movimiento síncrono del eje extendido; este modo solo utiliza la planificación de velocidad en forma de S y realiza blending para el movimiento de las instrucciones entre AccSmoothStart() y AccSmoothEnd(), y utiliza la planificación de velocidad en forma de T para el movimiento de las demás instrucciones.
    
 .. image:: coding/440.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-87 Lua指令方式进行扩展轴同步运动blending典型程序
+.. centered:: Figura 9.27-87 Programa típico de blending del movimiento síncrono del eje extendido mediante el modo de instrucciones Lua
 
-使用运动配置开关方式
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Utilización del modo de interruptor de configuración de movimiento
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：点击“初始设置”—>“安全”—>“运动配置”按钮，打开“加速度平滑模式”的开关。
+**Step1**: Hacer clic en "Configuración inicial"—>"Seguridad"—>"Configuración de movimiento" y activar el interruptor de "Modo de suavizado de aceleración".
    
 .. image:: coding/317.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-88 加速度平滑模式配置开关设置
+.. centered:: Figura 9.27-88 Configuración del interruptor del modo de suavizado de aceleración
 
-**Step2**：选择执行扩展轴同步运动blending功能的示教点，本手册以“A0”~“A5”作为示教点的名称。
+**Step2**: Seleccionar los puntos de enseñanza sobre los que se desea ejecutar la función de blending del movimiento síncrono del eje extendido; este manual utiliza "A0"~"A5" como nombres de los puntos de enseñanza.
 
-**Step3**：点击“示教程序”—>“程序编程”按钮，选择“外设指令”中的“扩展轴”指令，“运动方式”选为“同步”，选择示教点并设置调试速度，运动保护选择“无”，在需要平滑的点处设置“平滑过渡”参数。
+**Step3**: Hacer clic en "Programa de enseñanza"—>"Programación de programas", seleccionar la instrucción "Eje extendido" de las "Instrucciones de periféricos", seleccionar "Síncrono" en "Modo de movimiento", seleccionar el punto de enseñanza y configurar la velocidad de depuración, seleccionar "Ninguna" en protección de movimiento y configurar el parámetro "Transición suave" en los puntos que requieran suavizado.
    
 .. image:: coding/441.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.27-89 常规扩展轴同步运动的blending指令设置
+.. centered:: Figura 9.27-89 Configuración de la instrucción de blending del movimiento síncrono del eje extendido convencional
 
-**Step4**：添加多条运动指令，生成Lua程序并运行，即可实现扩展轴同步运动的blending功能，典型程序和常规扩展轴运动程序相同，该方式会对所有使用S型速度规划并进行blending运动。
+**Step4**: Añadir varias instrucciones de movimiento, generar el programa Lua y ejecutarlo para implementar la función de blending del movimiento síncrono del eje extendido; el programa típico es el mismo que el programa de movimiento del eje extendido convencional; este modo utiliza la planificación de velocidad en forma de S y realiza blending para todos los movimientos.
    
 .. image:: coding/442.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.27-90 使用配置开关进行扩展轴同步运动blending典型程序
+.. centered:: Figura 9.27-90 Programa típico de blending del movimiento síncrono del eje extendido mediante el interruptor de configuración
    
-摆动侧倾角功能
+Función de ángulo de inclinación lateral de oscilación
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
-++++++++++++++
-
-机器人摆动侧倾角功能支持机器人末端工具在摆动运动过程中绕摆动坐标系Rx方向自定义摆动角度，实现在搭接焊等作业过程中减少角焊缝与两侧被连接材料之间接触长度的差异。
-
-操作流程
+Descripción general
 ++++++++++++++++++++++++++++
 
-在机器人Web控制界面，依次点击“示教程序”->“程序编辑”，进入“运动指令”界面，如下图。
+La función de ángulo de inclinación lateral de oscilación del robot permite que la herramienta del extremo del robot, durante el movimiento de oscilación, gire un ángulo de oscilación personalizado alrededor de la dirección Rx del sistema de coordenadas de oscilación, logrando reducir la diferencia de longitud de contacto entre la soldadura en ángulo y los materiales conectados a ambos lados en operaciones como la soldadura de solape.
+
+Flujo de operación
+++++++++++++++++++++++++++++
+
+En la interfaz de control Web del robot, hacer clic sucesivamente en "Programa de enseñanza"->"Edición de programas" para entrar en la interfaz "Instrucciones de movimiento", como se muestra en la figura siguiente.
    
 .. image:: coding/320.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.28-1 运动指令界面
+.. centered:: Figura 9.28-1 Interfaz de instrucciones de movimiento
 
-在“运动指令”界面，点击“摆动”，进入“Weave”指令编辑界面。
+En la interfaz "Instrucciones de movimiento", hacer clic en "Oscilación" para entrar en la interfaz de edición de la instrucción "Weave".
    
 .. image:: coding/321.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.28-2 Weave指令编辑界面
+.. centered:: Figura 9.28-2 Interfaz de edición de la instrucción Weave
 
-在“Weave”指令编辑界面，点击“选择编号”下拉框，可选择不同编号的摆动参数配置；点击“选择编号”下拉框右侧“按钮”，可修改该编号下的摆动参数配置。
+En la interfaz de edición de la instrucción "Weave", hacer clic en el cuadro desplegable "Seleccionar número" para seleccionar la configuración de parámetros de oscilación de distintos números; hacer clic en el "botón" situado a la derecha del cuadro desplegable "Seleccionar número" para modificar la configuración de parámetros de oscilación de dicho número.
    
 .. image:: coding/322.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.28-3 摆动参数配置
+.. centered:: Figura 9.28-3 Configuración de parámetros de oscilación
 
-摆动参数配置中“摆动方向侧倾角”栏，可输入自定义绕摆动坐标系Rx方向旋转的角度，点击“配置”，完成摆动参数配置。
+En la columna "Ángulo de inclinación lateral de la dirección de oscilación" de la configuración de parámetros de oscilación se puede introducir el ángulo de rotación personalizado alrededor de la dirección Rx del sistema de coordenadas de oscilación; hacer clic en "Configurar" para completar la configuración de parámetros de oscilación.
 
-.. note:: 注意，“摆动方向侧倾角”参数适配于“摆动类型”参数中的“三角波摆动”、“正弦波摆动”、“圆形摆动-顺时针”及“圆形摆动-逆时针”。
+.. note:: Nota: el parámetro "Ángulo de inclinación lateral de la dirección de oscilación" es aplicable a "Oscilación triangular", "Oscilación sinusoidal", "Oscilación circular- sentido horario" y "Oscilación circular- sentido antihorario" del parámetro "Tipo de oscilación".
 
-下述以Lin运动为例，实现摆动侧倾角功能：
+A continuación se toma como ejemplo el movimiento Lin para realizar la función de ángulo de inclinación lateral de oscilación:
 
-**Step1**：“Weave”指令编辑类界面，在“指令编辑”界面中的“选择编号”下拉框，选择已配置完毕摆动侧倾角参数的配置编号；在“指令类型”栏中，点击“开始摆动”，点击“添加”，表示开启摆动功能。
+**Step1**: En la interfaz de edición de la instrucción "Weave", en el cuadro desplegable "Seleccionar número" de la interfaz "Edición de instrucción", seleccionar el número de configuración con los parámetros de ángulo de inclinación lateral de oscilación ya configurados; en la columna "Tipo de instrucción", hacer clic en "Iniciar oscilación" y hacer clic en "Añadir", lo que indica la activación de la función de oscilación.
    
 .. image:: coding/323.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.28-4 添加开始摆动
+.. centered:: Figura 9.28-4 Añadir inicio de oscilación
 
-**Step2**：“运动指令”界面，点击“直线”，可创建Lin直线运动，该步骤为基本运动指令不做赘述。
+**Step2**: En la interfaz "Instrucciones de movimiento", hacer clic en "Línea recta" para crear el movimiento lineal Lin; este paso es una instrucción de movimiento básica y no se detalla.
 
-**Step3**：“Weave”指令编辑界面，在“指令类型”栏中，点击“结束摆动”，点击“添加”，表示关闭摆动功能。
+**Step3**: En la interfaz de edición de la instrucción "Weave", en la columna "Tipo de instrucción", hacer clic en "Finalizar oscilación" y hacer clic en "Añadir", lo que indica la desactivación de la función de oscilación.
    
 .. image:: coding/324.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.28-5 添加停止摆动
+.. centered:: Figura 9.28-5 Añadir detención de oscilación
 
-**Step4**：完成步骤1~3后，在“Weave”指令编辑界面“程序预览”栏中，可检查步骤1~3是否设置正确。
+**Step4**: Tras completar los pasos 1 a 3, en la columna "Vista previa del programa" de la interfaz de edición de la instrucción "Weave" se puede comprobar si los pasos 1 a 3 se han configurado correctamente.
    
 .. image:: coding/325.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.28-6 摆动程序预览
+.. centered:: Figura 9.28-6 Vista previa del programa de oscilación
 
-**Step5**：在“程序预览”栏中检查程序设置完毕后，点击“应用”，将自动生成可执行的LUA程序。
+**Step5**: Tras comprobar en la columna "Vista previa del programa" que la configuración del programa es correcta, hacer clic en "Aplicar" y se generará automáticamente el programa LUA ejecutable.
    
 .. image:: coding/326.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.28-7 典型LUA摆动运动程序
+.. centered:: Figura 9.28-7 Programa típico LUA de movimiento de oscilación
 
-焊接工艺参数渐变(电流、电压、沿焊缝前进速度)功能
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Función de variación gradual de los parámetros del proceso de soldadura (corriente, tensión, velocidad de avance a lo largo de la soldadura)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
-++++++++++++++
+Descripción general
++++++++++++++++++++++++++
 
-焊接工艺参数渐变（电流、电压及沿焊缝前进速度）功能支持自定义焊接过程中工艺参数的变化范围。
+La función de variación gradual de los parámetros del proceso de soldadura (corriente, tensión y velocidad de avance a lo largo de la soldadura) permite personalizar el rango de variación de los parámetros del proceso durante la soldadura.
 
-电流电压参数渐变流程
-++++++++++++++++++++++++++++++++++
+Flujo de variación gradual de los parámetros de corriente y tensión
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-电流参数渐变
-*****************************
+Variación gradual del parámetro de corriente
+*************************************************************************
 
-在机器人Web控制界面，依次点击“示教程序”->“程序编程”，进入“焊接指令”界面，如下图。
+En la interfaz de control Web del robot, hacer clic sucesivamente en "Programa de enseñanza"->"Programación de programas" para entrar en la interfaz "Instrucciones de soldadura", como se muestra en la figura siguiente.
    
 .. image:: coding/327.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-1 焊接指令界面
+.. centered:: Figura 9.29-1 Interfaz de instrucciones de soldadura
 
-在“焊接指令”界面，点击“焊接”，进入“Weld”指令配置界面。
+En la interfaz "Instrucciones de soldadura", hacer clic en "Soldadura" para entrar en la interfaz de configuración de la instrucción "Weld".
    
 .. image:: coding/328.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-2 Weld指令配置界面
+.. centered:: Figura 9.29-2 Interfaz de configuración de la instrucción Weld
 
-在“Weld”指令配置界面的“指令类型”栏中，点击“焊接电流渐变开始”，配置“开始电流”、“结束电流”、“焊接电流控制AO”及“平滑选择”参数。
+En la columna "Tipo de instrucción" de la interfaz de configuración de la instrucción "Weld", hacer clic en "Inicio de variación gradual de la corriente de soldadura" y configurar los parámetros "Corriente inicial", "Corriente final", "AO de control de corriente de soldadura" y "Selección de suavizado".
 
-例如，配置“开始电流”为260 A、“结束电流”为220 A、“焊接电流控制AO”为“Ctrl-AO0”控制箱模拟量通道及“平滑选择”为“Break”，点击“添加”，即配置完毕，在“程序预览”栏中，检查指令参数是否存在错误配置。
+Por ejemplo, configurar "Corriente inicial" como 260 A, "Corriente final" como 220 A, "AO de control de corriente de soldadura" como canal analógico de la caja de control "Ctrl-AO0" y "Selección de suavizado" como "Break"; hacer clic en "Añadir" y la configuración queda completada; en la columna "Vista previa del programa", comprobar si existe una configuración errónea de los parámetros de la instrucción.
    
 .. image:: coding/329.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-3 焊接电流渐变开始指令参数
+.. centered:: Figura 9.29-3 Parámetros de la instrucción de inicio de variación gradual de la corriente de soldadura
 
-在“Weld”指令配置界面的“指令类型”栏中，点击“焊接电流渐变结束”，无需配置参数，点击“添加”，即配置完毕，在“程序预览”栏中，检查指令参数是否存在错误配置。
+En la columna "Tipo de instrucción" de la interfaz de configuración de la instrucción "Weld", hacer clic en "Fin de variación gradual de la corriente de soldadura"; no es necesario configurar parámetros; hacer clic en "Añadir" y la configuración queda completada; en la columna "Vista previa del programa", comprobar si existe una configuración errónea de los parámetros de la instrucción.
    
 .. image:: coding/330.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-4 焊接电流渐变结束指令参数
+.. centered:: Figura 9.29-4 Parámetros de la instrucción de fin de variación gradual de la corriente de soldadura
 
-配置完毕“焊接电流渐变开始”指令与“焊接电流渐变结束”指令参数后，点击“应用”，自动生成可执行的LUA程序。
+Tras configurar los parámetros de la instrucción "Inicio de variación gradual de la corriente de soldadura" y de la instrucción "Fin de variación gradual de la corriente de soldadura", hacer clic en "Aplicar" y se generará automáticamente el programa LUA ejecutable.
 
-.. note:: 在配置“焊接电流渐变开始”指令与“焊接电流渐变结束”指令参数过程中，需配置运动指令，以一段电弧跟踪运动指令结合电流参数渐变的典型LUA程序为例。
+.. note:: Al configurar los parámetros de la instrucción "Inicio de variación gradual de la corriente de soldadura" y de la instrucción "Fin de variación gradual de la corriente de soldadura" es necesario configurar instrucciones de movimiento; se toma como ejemplo un programa LUA típico de una instrucción de movimiento de seguimiento de arco combinada con la variación gradual del parámetro de corriente.
    
 .. image:: coding/331.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-5 一段典型电流参数渐变的电弧跟踪LUA程序
+.. centered:: Figura 9.29-5 Programa LUA típico de seguimiento de arco con variación gradual del parámetro de corriente
 
-电压参数渐变
-**********************************
+Variación gradual del parámetro de tensión
+********************************************************
 
-“Weld”指令配置界面的“指令类型”栏中，点击“焊接电压渐变开始”，配置“开始电压”、“结束电压”、“焊接电压控制AO”及“平滑选择”参数。
+En la columna "Tipo de instrucción" de la interfaz de configuración de la instrucción "Weld", hacer clic en "Inicio de variación gradual de la tensión de soldadura" y configurar los parámetros "Tensión inicial", "Tensión final", "AO de control de tensión de soldadura" y "Selección de suavizado".
 
-例如，配置“开始电压”为25 V、“结束电压”为22 V、“焊接电压控制AO”为“Ctrl-AO1”控制箱模拟量通道及“平滑选择”为“Break”，点击“添加”，即配置完毕，在“程序预览”栏中，检查指令是否存在错误配置，如下图。
+Por ejemplo, configurar "Tensión inicial" como 25 V, "Tensión final" como 22 V, "AO de control de tensión de soldadura" como canal analógico de la caja de control "Ctrl-AO1" y "Selección de suavizado" como "Break"; hacer clic en "Añadir" y la configuración queda completada; en la columna "Vista previa del programa", comprobar si existe una configuración errónea de la instrucción, como se muestra en la figura siguiente.
    
 .. image:: coding/332.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-6 焊接电压渐变开始指令参数
+.. centered:: Figura 9.29-6 Parámetros de la instrucción de inicio de variación gradual de la tensión de soldadura
 
-在“Weld”指令配置界面的“指令类型”栏中，点击“焊接电压渐变结束”，无需配置参数，点击“添加”，即配置完毕，在“程序预览”栏中，检查指令是否存在错误配置。
+En la columna "Tipo de instrucción" de la interfaz de configuración de la instrucción "Weld", hacer clic en "Fin de variación gradual de la tensión de soldadura"; no es necesario configurar parámetros; hacer clic en "Añadir" y la configuración queda completada; en la columna "Vista previa del programa", comprobar si existe una configuración errónea de la instrucción.
    
 .. image:: coding/333.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-7 焊接电压渐变结束指令参数
+.. centered:: Figura 9.29-7 Parámetros de la instrucción de fin de variación gradual de la tensión de soldadura
 
-配置完毕“焊接电压渐变开始”指令与“焊接电压渐变结束”指令参数后，点击“应用”，自动生成可执行的LUA程序。
+Tras configurar los parámetros de la instrucción "Inicio de variación gradual de la tensión de soldadura" y de la instrucción "Fin de variación gradual de la tensión de soldadura", hacer clic en "Aplicar" y se generará automáticamente el programa LUA ejecutable.
    
 .. image:: coding/334.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-8 一段典型电压参数渐变的电弧跟踪LUA程序
+.. centered:: Figura 9.29-8 Programa LUA típico de seguimiento de arco con variación gradual del parámetro de tensión
 
-前进速度参数渐变流程
-+++++++++++++++++++++++++++++++++++++++++++++++
+Flujo de variación gradual del parámetro de velocidad de avance
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-在机器人Web控制界面，依次点击“示教程序”->“程序编程”，进入“运动指令”界面。
+En la interfaz de control Web del robot, hacer clic sucesivamente en "Programa de enseñanza"->"Programación de programas" para entrar en la interfaz "Instrucciones de movimiento".
    
 .. image:: coding/335.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.29-9 运动指令界面
+.. centered:: Figura 9.29-9 Interfaz de instrucciones de movimiento
 
-在“运动指令”界面，点击“摆动”，进入“Weave”指令配置界面。
+En la interfaz "Instrucciones de movimiento", hacer clic en "Oscilación" para entrar en la interfaz de configuración de la instrucción "Weave".
    
 .. image:: coding/336.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-10 Weave指令配置界面
+.. centered:: Figura 9.29-10 Interfaz de configuración de la instrucción Weave
 
-在“Weave”指令配置界面的“指令类型”栏中，点击“摆动渐变开始”，配置“开始速度”、“结束速度”及“渐变模式”参数。
+En la columna "Tipo de instrucción" de la interfaz de configuración de la instrucción "Weave", hacer clic en "Inicio de variación gradual de oscilación" y configurar los parámetros "Velocidad inicial", "Velocidad final" y "Modo de variación gradual".
 
-例如，配置“渐变模式”为“摆动+前进速度”、“开始速度”为24 cm/min及“结束速度”为30 cm/min，点击“添加”，即配置完毕，在“程序预览”栏中，检查指令是否存在错误配置。
+Por ejemplo, configurar "Modo de variación gradual" como "Oscilación + velocidad de avance", "Velocidad inicial" como 24 cm/min y "Velocidad final" como 30 cm/min; hacer clic en "Añadir" y la configuración queda completada; en la columna "Vista previa del programa", comprobar si existe una configuración errónea de la instrucción.
    
 .. image:: coding/337.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-11 摆动+前进速度渐变开始指令参数
+.. centered:: Figura 9.29-11 Parámetros de la instrucción de inicio de variación gradual de oscilación + velocidad de avance
 
-在“Weave”指令界面的“指令类型”栏中，点击“摆动渐变结束”，无需配置参数，点击“添加”，即配置完毕，在“程序预览”栏中，检查指令是否存在错误配置。
+En la columna "Tipo de instrucción" de la interfaz de la instrucción "Weave", hacer clic en "Fin de variación gradual de oscilación"; no es necesario configurar parámetros; hacer clic en "Añadir" y la configuración queda completada; en la columna "Vista previa del programa", comprobar si existe una configuración errónea de la instrucción.
    
 .. image:: coding/338.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-12 摆动+前进速度渐变结束指令参数
+.. centered:: Figura 9.29-12 Parámetros de la instrucción de fin de variación gradual de oscilación + velocidad de avance
 
-配置完毕“摆动渐变开始”指令与“摆动渐变结束”指令参数后，点击“应用”，自动生成可执行的LUA程序。
+Tras configurar los parámetros de la instrucción "Inicio de variación gradual de oscilación" y de la instrucción "Fin de variación gradual de oscilación", hacer clic en "Aplicar" y se generará automáticamente el programa LUA ejecutable.
 
-.. note:: 配置“摆动渐变开始”指令与“摆动渐变结束”指令参数过程中，需配置运动指令，以一段电弧跟踪运动指令结合前进速度参数渐变的典型LUA程序为例。
+.. note:: Al configurar los parámetros de la instrucción "Inicio de variación gradual de oscilación" y de la instrucción "Fin de variación gradual de oscilación" es necesario configurar instrucciones de movimiento; se toma como ejemplo un programa LUA típico de una instrucción de movimiento de seguimiento de arco combinada con la variación gradual del parámetro de velocidad de avance.
    
 .. image:: coding/339.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-13 一段典型前进速度参数渐变的电弧跟踪LUA程序
+.. centered:: Figura 9.29-13 Programa LUA típico de seguimiento de arco con variación gradual del parámetro de velocidad de avance
 
-.. note:: “Weld”指令配置界面与“Weave”指令配置界面，进行焊接工艺参数渐变指令参数配置时，均需首先确定控制箱与焊机的通信方式，对于模拟量通信和数字量通信，分别点击“控制器I/O”或“数字通讯协议”。
+.. note:: En la interfaz de configuración de la instrucción "Weld" y en la interfaz de configuración de la instrucción "Weave", al configurar los parámetros de las instrucciones de variación gradual de los parámetros del proceso de soldadura es necesario determinar primero el modo de comunicación entre la caja de control y la máquina de soldar; para la comunicación analógica y la comunicación digital, hacer clic respectivamente en "I/O del controlador" o "Protocolo de comunicación digital".
 
-摆动停留时间渐变功能
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Función de variación gradual del tiempo de permanencia de la oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-概述
+Descripción general
 ***********************************
 
-针对三角波摆动、垂直L型三角波摆动、正弦波摆动和垂直L型正弦波摆动开始摆动与结束摆动时的摆幅和停留时间不一致的工况，本功能将摆幅与停留时间逐渐由开始设定值变为结束设定值。
+Para las condiciones de trabajo en las que la amplitud de oscilación y el tiempo de permanencia al inicio y al final de la oscilación no son consistentes en la oscilación triangular, la oscilación triangular tipo L vertical, la oscilación sinusoidal y la oscilación sinusoidal tipo L vertical, esta función hace que la amplitud de oscilación y el tiempo de permanencia varíen gradualmente desde el valor establecido al inicio hasta el valor establecido al final.
 
-针对三角波摆动和正弦波摆动开始摆动与结束摆动时的摆幅、停留时间与前进速度不一致的工况，本功能将摆幅、停留时间与前进速度逐渐由开始设定值变为结束设定值。
+Para las condiciones de trabajo en las que la amplitud de oscilación, el tiempo de permanencia y la velocidad de avance al inicio y al final de la oscilación no son consistentes en la oscilación triangular y la oscilación sinusoidal, esta función hace que la amplitud de oscilación, el tiempo de permanencia y la velocidad de avance varíen gradualmente desde el valor establecido al inicio hasta el valor establecido al final.
 
-操作流程
+Flujo de operación
 ***********************************
 
-**Step1**：摆动参数设置。点击“示教程序”-“程序编程”-“摆动”按钮，选择初始摆动编号并设置摆动参数，然后选择结束摆动编号并设置摆动参数，需注意：初始摆动参数和结束摆动参数只有摆动幅度、摆动左停留时间、摆动右停留时间可以不一致，其余参数均需一致。
+**Step1**: Configuración de los parámetros de oscilación. Hacer clic en "Programa de enseñanza"-"Programación de programas"-botón "Oscilación", seleccionar el número de oscilación inicial y configurar los parámetros de oscilación; a continuación, seleccionar el número de oscilación final y configurar los parámetros de oscilación; tenga en cuenta que: entre los parámetros de oscilación inicial y los parámetros de oscilación final solo pueden ser diferentes la amplitud de oscilación, el tiempo de permanencia izquierdo de oscilación y el tiempo de permanencia derecho de oscilación; el resto de parámetros deben ser idénticos.
    
 .. image:: coding/545.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-14 摆动参数设置
+.. centered:: Figura 9.29-14 Configuración de los parámetros de oscilación
 
-**Step2**：渐变模式设置。点击“摆动渐变开始”设置相应的渐变模式：三角波摆动、垂直L型三角波摆动、正弦波摆动和垂直L型正弦波摆动的渐变模式可以设置为“摆动”；三角波摆动和正弦波摆动的渐变模式还可以设置为“摆动+前进速度”，并需要额外设置摆动时的开始速度和结束速度。
+**Step2**: Configuración del modo de variación gradual. Hacer clic en "Inicio de variación gradual de oscilación" y configurar el modo de variación gradual correspondiente: el modo de variación gradual de la oscilación triangular, la oscilación triangular tipo L vertical, la oscilación sinusoidal y la oscilación sinusoidal tipo L vertical se puede configurar como "Oscilación"; el modo de variación gradual de la oscilación triangular y la oscilación sinusoidal también se puede configurar como "Oscilación + velocidad de avance", y es necesario configurar además la velocidad inicial y la velocidad final durante la oscilación.
    
 .. image:: coding/546.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-15 “摆动”渐变模式设置
+.. centered:: Figura 9.29-15 Configuración del modo de variación gradual "Oscilación"
    
 .. image:: coding/547.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-16 “摆动+前进速度”渐变模式设置
+.. centered:: Figura 9.29-16 Configuración del modo de variación gradual "Oscilación + velocidad de avance"
 
-**Step3**：编写摆动渐变程序。点击“开始摆动”，选择开始摆动编号并添加；再点击“摆动渐变开始”，设置结束摆动编号和渐变模式并添加；在依次点击“摆动渐变结束”和“停止摆动”并添加；最后在lua程序中手动加入摆动开始点位置和结束点位置，即生成了典型lua程序。
+**Step3**: Escribir el programa de variación gradual de oscilación. Hacer clic en "Iniciar oscilación", seleccionar el número de oscilación inicial y añadir; a continuación, hacer clic en "Inicio de variación gradual de oscilación", configurar el número de oscilación final y el modo de variación gradual y añadir; después, hacer clic sucesivamente en "Fin de variación gradual de oscilación" y "Detener oscilación" y añadir; por último, añadir manualmente en el programa lua la posición del punto inicial y la posición del punto final de la oscilación, con lo que se genera el programa lua típico.
    
 .. image:: coding/548.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-17 摆动停留时间渐变典型程序
+.. centered:: Figura 9.29-17 Programa típico de variación gradual del tiempo de permanencia de la oscilación
 
-定点摆动功能
+Función de oscilación en punto fijo
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-概述
+Descripción general
 ***********************************
 
-对三角波摆动、垂直L型三角波摆动、圆形摆动-顺时针、圆形摆动-逆时针、正弦波摆动、垂直L型正弦波摆动和立焊三角摆动，新增定点摆动功能：机器人末端仅进行摆动而不进行前进。需注意：该功能需先标定工具中心点坐标（TCP）。
+Para la oscilación triangular, la oscilación triangular tipo L vertical, la oscilación circular en sentido horario, la oscilación circular en sentido antihorario, la oscilación sinusoidal, la oscilación sinusoidal tipo L vertical y la oscilación triangular para soldadura vertical, se añade la función de oscilación en punto fijo: el extremo del robot solo realiza la oscilación sin avanzar. Tenga en cuenta que: esta función requiere calibrar primero las coordenadas del punto central de la herramienta (TCP).
 
-操作流程
+Flujo de operación
 ***********************************
 
-**Step1**：摆动参数设置。点击“示教程序”-“程序编程”-“摆动”按钮，对摆动编号进行编辑以设置摆动参数，需注意：若需要实际定点摆动时间与设定定点摆动时间一致，则不能设定停留时间。
+**Step1**: Configuración de los parámetros de oscilación. Hacer clic en "Programa de enseñanza"-"Programación de programas"-botón "Oscilación" y editar el número de oscilación para configurar los parámetros de oscilación; tenga en cuenta que: si se desea que el tiempo real de oscilación en punto fijo coincida con el tiempo de oscilación en punto fijo establecido, no se puede establecer el tiempo de permanencia.
    
 .. image:: coding/558.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-18 摆动参数设置
+.. centered:: Figura 9.29-18 Configuración de los parámetros de oscilación
  
-**Step2**：定点摆动参数设置。点击“示教程序”-“程序编程”-“摆动”-“定点摆动开始”按钮，设置摆动基准和摆动时间参数，点击“添加”，然后点击“定点摆动结束”按钮，点击“添加”。其中，摆动基准可选择“工具坐标系”和“参考点”两种类型，当选择“工具坐标系”作为摆动基准时，将以当前点的工具坐标系的X方向作为前进方向、当前点的工具坐标系的Y方向作为摆动方向；当选择“参考点”作为摆动基准时，将以当前点与参考点间的连线作为前进方向，摆动方向由摆动算法确定。需注意：参考点和当前位置需具有相同的工具坐标系和工件坐标系。两种摆动基准分别如图所示。
+**Step2**: Configuración de los parámetros de oscilación en punto fijo. Hacer clic en "Programa de enseñanza"-"Programación de programas"-"Oscilación"-botón "Inicio de oscilación en punto fijo", configurar los parámetros de referencia de oscilación y tiempo de oscilación y hacer clic en "Añadir"; a continuación, hacer clic en el botón "Fin de oscilación en punto fijo" y hacer clic en "Añadir". Entre ellos, la referencia de oscilación puede ser de dos tipos: "Sistema de coordenadas de herramienta" y "Punto de referencia"; cuando se selecciona "Sistema de coordenadas de herramienta" como referencia de oscilación, se toma la dirección X del sistema de coordenadas de herramienta del punto actual como dirección de avance y la dirección Y del sistema de coordenadas de herramienta del punto actual como dirección de oscilación; cuando se selecciona "Punto de referencia" como referencia de oscilación, se toma la línea que une el punto actual con el punto de referencia como dirección de avance, y la dirección de oscilación la determina el algoritmo de oscilación. Tenga en cuenta que: el punto de referencia y la posición actual deben tener el mismo sistema de coordenadas de herramienta y sistema de coordenadas de pieza. Las dos referencias de oscilación se muestran respectivamente en las figuras.
    
 .. image:: coding/559.png
    :width: 2in
    :align: center
 
-.. centered:: 图表 9.29-19 摆动基准为“工具坐标系”
+.. centered:: Figura 9.29-19 Referencia de oscilación "Sistema de coordenadas de herramienta"
    
 .. image:: coding/560.png
    :width: 2in
    :align: center
 
-.. centered:: 图表 9.29-20 摆动基准为“参考点”
+.. centered:: Figura 9.29-20 Referencia de oscilación "Punto de referencia"
 
-**Step3**：编写定点摆动程序。两种摆动基准生成的lua程序分别如图所示，运行该lua程序即可实现定点摆动功能。
+**Step3**: Escribir el programa de oscilación en punto fijo. Los programas lua generados con las dos referencias de oscilación se muestran respectivamente en las figuras; ejecutar dicho programa lua permite realizar la función de oscilación en punto fijo.
    
 .. image:: coding/561.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-21 摆动基准为“工具坐标系”的定点摆动程序
+.. centered:: Figura 9.29-21 Programa de oscilación en punto fijo con referencia de oscilación "Sistema de coordenadas de herramienta"
    
 .. image:: coding/562.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-22 摆动基准为“参考点”的定点摆动程序
+.. centered:: Figura 9.29-22 Programa de oscilación en punto fijo con referencia de oscilación "Punto de referencia"
 
-激光定点摆动功能
+Función de oscilación en punto fijo con láser
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-概述
+Descripción general
 ***********************************
 
-激光定点摆动功能是机器人定点摆动功能和激光跟踪功能的结合：在原有机器人定点摆动的基础上，可以通过激光跟踪功能对摆动位置进行调整，并且可以适配扩展轴运动。该功能只针对“三角波摆动”和“正弦波摆动”类型生效。
+La función de oscilación en punto fijo con láser es la combinación de la función de oscilación en punto fijo del robot y la función de seguimiento láser: sobre la base de la oscilación en punto fijo original del robot, se puede ajustar la posición de oscilación mediante la función de seguimiento láser, y puede adaptarse al movimiento de ejes extendidos. Esta función solo es efectiva para los tipos "Oscilación triangular" y "Oscilación sinusoidal".
 
-激光+定点摆动功能操作流程
+Flujo de operación de la función de láser + oscilación en punto fijo
 ****************************************************************************
 
-**Step1**：配置激光通讯。具体操作步骤参考相应章节的用户手册。如果进行实际焊接等场景的应用时，需注意：
+**Step1**: Configurar la comunicación láser. Para los pasos concretos de operación, consulte el manual de usuario del capítulo correspondiente. Si se realiza una aplicación como soldadura real, tenga en cuenta:
 
-   - （1）线激光传感器需添加防护装置，以避免强光、焊渣的影响；
-   - （2）线激光数据采集识别点应与焊接点保持一定距离，以减少焊接时的强光影响激光数据采集质量。
+   - (1) El sensor láser lineal debe incorporar un dispositivo de protección para evitar la influencia de la luz intensa y las escorias de soldadura;
+   - (2) El punto de identificación de recogida de datos del láser lineal debe mantener una cierta distancia respecto al punto de soldadura, para reducir la influencia de la luz intensa de la soldadura en la calidad de la recogida de datos del láser.
 
-**Step2**：标定机器人工具坐标系、激光坐标系。具体操作步骤参考相应章节的用户手册。
+**Step2**: Calibrar el sistema de coordenadas de herramienta del robot y el sistema de coordenadas del láser. Para los pasos concretos de operación, consulte el manual de usuario del capítulo correspondiente.
 
-**Step3**：调整工件与激光束的位置。示意如下图所示，其中黑色矩形为工件，红色线段为激光束，激光束与待跟踪的工件边缘垂直可保证较好的跟踪效果。
+**Step3**: Ajustar la posición de la pieza y del haz láser. Como se muestra en la figura siguiente, donde el rectángulo negro es la pieza y el segmento rojo es el haz láser; el haz láser perpendicular al borde de la pieza a seguir garantiza un mejor efecto de seguimiento.
    
 .. image:: coding/563.png
    :width: 2in
    :align: center
 
-.. centered:: 图表 9.29-23 工件与激光束示意
+.. centered:: Figura 9.29-23 Esquema de la pieza y el haz láser
 
-**Step4**：摆动参数设置。点击“示教程序”-“程序编程”-“摆动”按钮，对摆动编号进行编辑以设置摆动参数，需注意：（1）激光+定点摆动功能只针对“三角波摆动”和“正弦波摆动”类型生效；（2）若需要实际定点摆动时间与设定定点摆动时间一致，则不能设定左、右停留时间；（3）若要保证激光跟踪效果，左右停留时间需一致。
+**Step4**: Configuración de los parámetros de oscilación. Hacer clic en "Programa de enseñanza"-"Programación de programas"-botón "Oscilación" y editar el número de oscilación para configurar los parámetros de oscilación; tenga en cuenta: (1) la función de láser + oscilación en punto fijo solo es efectiva para los tipos "Oscilación triangular" y "Oscilación sinusoidal"; (2) si se desea que el tiempo real de oscilación en punto fijo coincida con el tiempo de oscilación en punto fijo establecido, no se pueden establecer los tiempos de permanencia izquierdo y derecho; (3) para garantizar el efecto de seguimiento láser, los tiempos de permanencia izquierdo y derecho deben ser iguales.
    
 .. image:: coding/564.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.29-24 摆动参数设置
+.. centered:: Figura 9.29-24 Configuración de los parámetros de oscilación
 
-**Step5**：定点摆动参数设置。点击“示教程序”-“程序编程”-“摆动”-“定点摆动开始”按钮，设置摆动基准和摆动时间参数，点击“添加”，然后点击“定点摆动结束”按钮，点击“添加”。其中，摆动基准可选择“工具坐标系”和“参考点”两种类型，当选择“工具坐标系”作为摆动基准时，将以当前点的工具坐标系的X方向作为前进方向、当前点的工具坐标系的Y方向作为摆动方向；当选择“参考点”作为摆动基准时，将以当前点与参考点间的连线作为前进方向，摆动方向由摆动算法确定。需注意：参考点和当前位置需具有相同的工具坐标系和工件坐标系。
+**Step5**: Configuración de los parámetros de oscilación en punto fijo. Hacer clic en "Programa de enseñanza"-"Programación de programas"-"Oscilación"-botón "Inicio de oscilación en punto fijo", configurar los parámetros de referencia de oscilación y tiempo de oscilación y hacer clic en "Añadir"; a continuación, hacer clic en el botón "Fin de oscilación en punto fijo" y hacer clic en "Añadir". Entre ellos, la referencia de oscilación puede ser de dos tipos: "Sistema de coordenadas de herramienta" y "Punto de referencia"; cuando se selecciona "Sistema de coordenadas de herramienta" como referencia de oscilación, se toma la dirección X del sistema de coordenadas de herramienta del punto actual como dirección de avance y la dirección Y del sistema de coordenadas de herramienta del punto actual como dirección de oscilación; cuando se selecciona "Punto de referencia" como referencia de oscilación, se toma la línea que une el punto actual con el punto de referencia como dirección de avance, y la dirección de oscilación la determina el algoritmo de oscilación. Tenga en cuenta que: el punto de referencia y la posición actual deben tener el mismo sistema de coordenadas de herramienta y sistema de coordenadas de pieza.
    
 .. image:: coding/559.png
    :width: 2in
    :align: center
 
-.. centered:: 图表 9.29-25 摆动基准为“工具坐标系”
+.. centered:: Figura 9.29-25 Referencia de oscilación "Sistema de coordenadas de herramienta"
    
 .. image:: coding/560.png
    :width: 2in
    :align: center
 
-.. centered:: 图表 9.29-26 摆动基准为“参考点”
+.. centered:: Figura 9.29-26 Referencia de oscilación "Punto de referencia"
 
-**Step6**：添加激光跟踪指令。依次点击“示教程序”-“程序编程”-“激光跟踪”按钮，再点击“开始跟踪”并选择步骤2中标定的激光坐标系（本手册以toolcoord5为例），最后点击“停止跟踪”。
+**Step6**: Añadir la instrucción de seguimiento láser. Hacer clic sucesivamente en "Programa de enseñanza"-"Programación de programas"-botón "Seguimiento láser", hacer clic en "Iniciar seguimiento" y seleccionar el sistema de coordenadas del láser calibrado en el paso 2 (en este manual se toma toolcoord5 como ejemplo); por último, hacer clic en "Detener seguimiento".
    
 .. image:: coding/565.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.29-27 激光跟踪设置
+.. centered:: Figura 9.29-27 Configuración del seguimiento láser
 
-**Step7**：编写激光+定点摆动的lua程序。调整步骤5和步骤6生成的指令顺序，两种定点摆动基准生成的lua程序分别如下图所示，程序运行时间仅与定点摆动的设置时间有关，与界面速度无关。运行该lua程序即可实现激光+定点摆动功能。
+**Step7**: Escribir el programa lua de láser + oscilación en punto fijo. Ajustar el orden de las instrucciones generadas en los pasos 5 y 6; los programas lua generados con las dos referencias de oscilación en punto fijo se muestran respectivamente en las figuras siguientes; el tiempo de ejecución del programa solo está relacionado con el tiempo establecido de oscilación en punto fijo y no tiene relación con la velocidad de la interfaz. Ejecutar dicho programa lua permite realizar la función de láser + oscilación en punto fijo.
    
 .. image:: coding/566.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-28 激光+定点摆动程序1
+.. centered:: Figura 9.29-28 Programa 1 de láser + oscilación en punto fijo
    
 .. image:: coding/567.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-29 激光+定点摆动程序2
+.. centered:: Figura 9.29-29 Programa 2 de láser + oscilación en punto fijo
 
-激光+扩展轴+定点摆动功能操作流程
+Flujo de operación de la función de láser + eje extendido + oscilación en punto fijo
 ****************************************************************************************
 
-**Step1**：配置激光通讯。具体操作步骤参考相应章节的用户手册。如果进行实际焊接等场景的应用时，需注意：
+**Step1**: Configurar la comunicación láser. Para los pasos concretos de operación, consulte el manual de usuario del capítulo correspondiente. Si se realiza una aplicación como soldadura real, tenga en cuenta:
 
-   - （1）线激光传感器需添加防护装置，以避免强光、焊渣的影响；
-   - （2）线激光数据采集识别点应与焊接点保持一定距离，以减少焊接时的强光影响激光数据采集质量。
+   - (1) El sensor láser lineal debe incorporar un dispositivo de protección para evitar la influencia de la luz intensa y las escorias de soldadura;
+   - (2) El punto de identificación de recogida de datos del láser lineal debe mantener una cierta distancia respecto al punto de soldadura, para reducir la influencia de la luz intensa de la soldadura en la calidad de la recogida de datos del láser.
 
-**Step2**：配置扩展轴通讯。具体操作步骤参考相应章节的用户手册。
+**Step2**: Configurar la comunicación del eje extendido. Para los pasos concretos de operación, consulte el manual de usuario del capítulo correspondiente.
 
-**Step3**：标定机器人工具坐标系、激光坐标系。具体操作步骤参考相应章节的用户手册。
+**Step3**: Calibrar el sistema de coordenadas de herramienta del robot y el sistema de coordenadas del láser. Para los pasos concretos de operación, consulte el manual de usuario del capítulo correspondiente.
 
-**Step4**：调整工件与激光束的位置。示意如下图所示，其中黑色矩形为工件，红色线段为激光束，激光束与待跟踪的工件边缘垂直可保证较好的跟踪效果。
+**Step4**: Ajustar la posición de la pieza y del haz láser. Como se muestra en la figura siguiente, donde el rectángulo negro es la pieza y el segmento rojo es el haz láser; el haz láser perpendicular al borde de la pieza a seguir garantiza un mejor efecto de seguimiento.
    
 .. image:: coding/563.png
    :width: 2in
    :align: center
 
-.. centered:: 图表 9.29-30 工件与激光束相对位置示意
+.. centered:: Figura 9.29-30 Esquema de la posición relativa entre la pieza y el haz láser
 
-**Step5**：摆动参数设置。点击“示教程序”-“程序编程”-“摆动”按钮，对摆动编号进行编辑以设置摆动参数，需注意：（1）激光+扩展轴+定点摆动功能只针对“三角波摆动”和“正弦波摆动”类型生效；（2）若需要实际定点摆动时间与设定定点摆动时间一致，则不能设定左、右停留时间；（3）若要保证激光跟踪效果，左右停留时间需一致。
+**Step5**: Configuración de los parámetros de oscilación. Hacer clic en "Programa de enseñanza"-"Programación de programas"-botón "Oscilación" y editar el número de oscilación para configurar los parámetros de oscilación; tenga en cuenta: (1) la función de láser + eje extendido + oscilación en punto fijo solo es efectiva para los tipos "Oscilación triangular" y "Oscilación sinusoidal"; (2) si se desea que el tiempo real de oscilación en punto fijo coincida con el tiempo de oscilación en punto fijo establecido, no se pueden establecer los tiempos de permanencia izquierdo y derecho; (3) para garantizar el efecto de seguimiento láser, los tiempos de permanencia izquierdo y derecho deben ser iguales.
    
 .. image:: coding/564.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.29-31 摆动参数设置
+.. centered:: Figura 9.29-31 Configuración de los parámetros de oscilación
 
-**Step6**：定点摆动参数设置。点击“示教程序”-“程序编程”-“摆动”-“定点摆动开始”按钮，设置摆动基准和摆动时间参数，点击“添加”，然后点击“定点摆动结束”按钮，点击“添加”。其中，摆动基准可选择“工具坐标系”和“参考点”两种类型，当选择“工具坐标系”作为摆动基准时，将以当前点的工具坐标系的X方向作为前进方向、当前点的工具坐标系的Y方向作为摆动方向；当选择“参考点”作为摆动基准时，将以当前点与参考点间的连线作为前进方向，摆动方向由摆动算法确定。需注意：参考点和当前位置需具有相同的工具坐标系和工件坐标系。
+**Step6**: Configuración de los parámetros de oscilación en punto fijo. Hacer clic en "Programa de enseñanza"-"Programación de programas"-"Oscilación"-botón "Inicio de oscilación en punto fijo", configurar los parámetros de referencia de oscilación y tiempo de oscilación y hacer clic en "Añadir"; a continuación, hacer clic en el botón "Fin de oscilación en punto fijo" y hacer clic en "Añadir". Entre ellos, la referencia de oscilación puede ser de dos tipos: "Sistema de coordenadas de herramienta" y "Punto de referencia"; cuando se selecciona "Sistema de coordenadas de herramienta" como referencia de oscilación, se toma la dirección X del sistema de coordenadas de herramienta del punto actual como dirección de avance y la dirección Y del sistema de coordenadas de herramienta del punto actual como dirección de oscilación; cuando se selecciona "Punto de referencia" como referencia de oscilación, se toma la línea que une el punto actual con el punto de referencia como dirección de avance, y la dirección de oscilación la determina el algoritmo de oscilación. Tenga en cuenta que: el punto de referencia y la posición actual deben tener el mismo sistema de coordenadas de herramienta y sistema de coordenadas de pieza.
    
 .. image:: coding/559.png
    :width: 2in
    :align: center
 
-.. centered:: 图表 9.29-32 摆动基准为“工具坐标系”
+.. centered:: Figura 9.29-32 Referencia de oscilación "Sistema de coordenadas de herramienta"
    
 .. image:: coding/560.png
    :width: 2in
    :align: center
 
-.. centered:: 图表 9.29-33 摆动基准为“参考点”
+.. centered:: Figura 9.29-33 Referencia de oscilación "Punto de referencia"
 
-**Step7**：添加扩展轴运动指令。依次点击“示教程序”-“程序编程”-“扩展轴”按钮，再点击“运动指令”，运动方式选为“异步”，并选择运动的开始点和结束点，点击“添加”按钮。
+**Step7**: Añadir la instrucción de movimiento del eje extendido. Hacer clic sucesivamente en "Programa de enseñanza"-"Programación de programas"-botón "Eje extendido", hacer clic en "Instrucciones de movimiento", seleccionar "Asíncrono" como modo de movimiento, seleccionar el punto inicial y el punto final del movimiento y hacer clic en el botón "Añadir".
    
 .. image:: coding/568.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-34 添加扩展轴运动
+.. centered:: Figura 9.29-34 Añadir movimiento del eje extendido
 
-**Step8**：添加激光跟踪指令。依次点击“示教程序”-“程序编程”-“激光跟踪”按钮，再点击“开始跟踪”并选择步骤3中标定的激光坐标系（本手册以toolcoord5为例），最后点击“停止跟踪”。
+**Step8**: Añadir la instrucción de seguimiento láser. Hacer clic sucesivamente en "Programa de enseñanza"-"Programación de programas"-botón "Seguimiento láser", hacer clic en "Iniciar seguimiento" y seleccionar el sistema de coordenadas del láser calibrado en el paso 3 (en este manual se toma toolcoord5 como ejemplo); por último, hacer clic en "Detener seguimiento".
    
 .. image:: coding/565.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.29-35 激光跟踪设置
+.. centered:: Figura 9.29-35 Configuración del seguimiento láser
 
-**Step9**：编写激光+扩展轴+定点摆动的lua程序。调整步骤5、步骤6和步骤7生成的指令顺序，两种定点摆动基准生成的lua程序分别如图3-7和图3-8所示，程序运行时间仅与定点摆动的设置时间有关，与界面速度无关。运行该lua程序即可实现激光+扩展轴+定点摆动功能。
+**Step9**: Escribir el programa lua de láser + eje extendido + oscilación en punto fijo. Ajustar el orden de las instrucciones generadas en los pasos 5, 6 y 7; los programas lua generados con las dos referencias de oscilación en punto fijo se muestran respectivamente en las Figuras 3-7 y 3-8; el tiempo de ejecución del programa solo está relacionado con el tiempo establecido de oscilación en punto fijo y no tiene relación con la velocidad de la interfaz. Ejecutar dicho programa lua permite realizar la función de láser + eje extendido + oscilación en punto fijo.
    
 .. image:: coding/569.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-36 激光+扩展轴+定点摆动程序1
+.. centered:: Figura 9.29-36 Programa 1 de láser + eje extendido + oscilación en punto fijo
    
 .. image:: coding/570.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.29-37 激光+扩展轴+定点摆动程序2
+.. centered:: Figura 9.29-37 Programa 2 de láser + eje extendido + oscilación en punto fijo
 
-机器人ModbusRTU通信
+Comunicación ModbusRTU del robot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
-++++++++++++++
+Descripción general
+++++++++++++++++++++++++++++
 
-ModbusRTU是工业生产中常用的通信协议，法奥协作机器人提供ModbusRTU主站和ModbusRTU从站两种方式与您的设备进行通信。协作机器人最多支持8个ModbusRTU主站同时与外部设备进行通信，每个主站最多支持128个寄存器；协作机器人ModbusRTU从站具有64个线圈、64个离散输入、32个保持寄存器和32个输入寄存器(保持寄存器和输入寄存器数据类型包含有符号和浮点型两种类型)。
+ModbusRTU es un protocolo de comunicación habitual en la producción industrial; el robot colaborativo FAIRINO ofrece dos modos, maestro ModbusRTU y esclavo ModbusRTU, para comunicarse con sus dispositivos. El robot colaborativo admite como máximo 8 maestros ModbusRTU comunicándose simultáneamente con dispositivos externos, y cada maestro admite como máximo 128 registros; el esclavo ModbusRTU del robot colaborativo dispone de 64 bobinas, 64 entradas discretas, 32 registros de retención y 32 registros de entrada (los tipos de datos de los registros de retención y de los registros de entrada incluyen con signo y de coma flotante).
 
-同时协作机器人部分ModbusRTU从站输入寄存器地址专用于反馈当前机器人的关节位置、运动速度等信息，部分线圈寄存器地址专用于控制机器人启动程序、停止程序、设置控制箱DO等功能，机器人ModbusRTU从站仅支持与一个主站建立连接。下面是详细使用方法。 
+Además, algunas direcciones de los registros de entrada del esclavo ModbusRTU del robot colaborativo están dedicadas a la realimentación de información como la posición articular y la velocidad de movimiento del robot actual, y algunas direcciones de los registros de bobina están dedicadas a funciones como controlar el inicio del programa, la detención del programa y el establecimiento de DO de la caja de control del robot; el esclavo ModbusRTU del robot solo admite el establecimiento de conexión con un maestro. A continuación se describe el método de uso detallado. 
 
-机器人ModbusRTU主站相关操作说明
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Descripción de las operaciones relacionadas con el maestro ModbusRTU del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-在使用协作机器人做ModbusRTU主站与您的设备进行通信前，请先检查您的设备与机器人的485硬件连接。使用机器人ModbusRTU主站有以下几个步骤：①添加主站；②添加寄存器；③通信测试；④编写用户程序；⑤执行用户程序；
+Antes de utilizar el robot colaborativo como maestro ModbusRTU para comunicarse con sus dispositivos, compruebe primero la conexión hardware 485 entre su dispositivo y el robot. El uso del maestro ModbusRTU del robot consta de los siguientes pasos: ① añadir maestro; ② añadir registros; ③ prueba de comunicación; ④ escribir el programa de usuario; ⑤ ejecutar el programa de usuario;
 
-添加ModbusRTU主站
+Añadir maestro ModbusRTU
 *******************************************
-打开WebApp，依次点击“示教模拟”、“程序示教”，新建用户程序“testModbusRTUMaster.lua”。
+Abrir WebApp y hacer clic sucesivamente en "Enseñanza por simulación", "Enseñanza de programas" y crear el programa de usuario "testModbusRTUMaster.lua".
    
 .. image:: coding/340.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.30-1 创建ModbusRTU主站用户程序
+.. centered:: Figura 9.30-1 Creación del programa de usuario del maestro ModbusRTU
 
-点击“ModbusRTU设置”按钮，打开ModbusRTU功能配置页面。
+Hacer clic en el botón "Configuración de ModbusRTU" para abrir la página de configuración de la función ModbusRTU.
    
 .. image:: coding/341.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-2 打开ModbusRTU设置
+.. centered:: Figura 9.30-2 Abrir la configuración de ModbusRTU
 
-依次点击“主站设置”、“添加Modbus主站”，即完成添加一个ModbusRTU主站。
+Hacer clic sucesivamente en "Configuración de maestro" y "Añadir maestro Modbus" para completar la adición de un maestro ModbusRTU.
    
 .. image:: coding/342.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-3 添加“ModbusRTU主站”
+.. centered:: Figura 9.30-3 Añadir "maestro ModbusRTU"
 
-根据您的从站设备情况依次选择 “波特率”、“数据位”、“校验”和“停止位”，上述参数的具体含义如下：
+Según la situación de su dispositivo esclavo, seleccionar sucesivamente "Velocidad en baudios", "Bits de datos", "Paridad" y "Bits de parada"; el significado concreto de los parámetros anteriores es el siguiente:
 
-**波特率**： ModbusRTU用于通信的波特率，支持：9600、14400、19200、38400、56000、67600、115200、128000，默认为115200，设置为与从站一致。
+**Velocidad en baudios**: velocidad en baudios utilizada por ModbusRTU para la comunicación; compatible con: 9600, 14400, 19200, 38400, 56000, 67600, 115200, 128000; por defecto 115200; configurar igual que el esclavo.
 
-**数据位**：目前仅支持设置为8位，设置为与从站一致。
+**Bits de datos**: actualmente solo se admite la configuración en 8 bits; configurar igual que el esclavo.
 
-**校验**：校验方式，支持None、Odd、Even，默认为None，设置为与从站一致；
+**Paridad**: modo de paridad; compatible con None, Odd, Even; por defecto None; configurar igual que el esclavo;
 
-**停止位**：支持0.5、1、1.5、2，默认为1，设置为与从站一致。
+**Bits de parada**: compatible con 0,5, 1, 1,5, 2; por defecto 1; configurar igual que el esclavo.
    
 .. image:: coding/343.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-4 设置ModbusRTU主站参数
+.. centered:: Figura 9.30-4 Configuración de parámetros del maestro ModbusRTU
 
-正确输入上述参数后，机器人ModbusRTU主站即可进行与从站的通信。(若您已经确认对ModbusRTU主站的相关参数进行了正确的配置，但机器人与您的设备通信成功，请检查以下配置：
+Tras introducir correctamente los parámetros anteriores, el maestro ModbusRTU del robot puede comunicarse con el esclavo. (Si ya ha confirmado que ha configurado correctamente los parámetros relacionados del maestro ModbusRTU, pero el robot se comunica correctamente con su dispositivo, compruebe las siguientes configuraciones:
 
-①机器人与从站设备的物理485连接；②检查从站设备的通信配置，并建议先用串口调试助手测试通信链路是否正确。如在PC端配置与机器人一致的ModbusRTU参数，在机器人web界面新建一个寄存器并进行0x03读保持寄存器的操作，查看串口调试助手是否能够收到数据。如下图所示，通过0x03指令读取0x1000地址的寄存器，PC端可正常收到数据，说明通信配置正确。
+①La conexión física 485 entre el robot y el dispositivo esclavo; ② comprobar la configuración de comunicación del dispositivo esclavo; se recomienda probar primero con un asistente de depuración de puerto serie si el enlace de comunicación es correcto. Por ejemplo, configurar en el PC los mismos parámetros ModbusRTU que el robot, crear un registro en la interfaz web del robot y realizar la operación 0x03 de lectura de registro de retención, y comprobar si el asistente de depuración de puerto serie puede recibir datos. Como se muestra en la figura siguiente, mediante la instrucción 0x03 se lee el registro de la dirección 0x1000 y el PC puede recibir datos con normalidad, lo que indica que la configuración de comunicación es correcta.
    
 .. image:: coding/344.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-5 验证Modbus连接状态
+.. centered:: Figura 9.30-5 Verificación del estado de conexión Modbus
 
-至此我们已经完成一个机器人ModbusRTU主站的创建，若您再次点击“添加Modbus主站”，即可再次创建一个新的ModbusRTU主站(图2-6)，机器人最多支持8个主站同时与外部设备通信，双击Modbus主站右上角的“删除”按钮，即可删除该Modbus主站。
+Con esto hemos completado la creación de un maestro ModbusRTU del robot; si vuelve a hacer clic en "Añadir maestro Modbus", podrá crear de nuevo un nuevo maestro ModbusRTU (Figura 2-6); el robot admite como máximo 8 maestros comunicándose simultáneamente con dispositivos externos; haciendo doble clic en el botón "Eliminar" de la esquina superior derecha del maestro Modbus se puede eliminar dicho maestro Modbus.
    
 .. image:: coding/345.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-6 再次添加ModbusRTU主站
+.. centered:: Figura 9.30-6 Añadir de nuevo un maestro ModbusRTU
 
-ModbusRTU主站添加寄存器
+Añadir registros al maestro ModbusRTU
 *******************************************
 
-点击“添加主站寄存器”按钮即可为该主站添加一个寄存器。
+Hacer clic en el botón "Añadir registro de maestro" para añadir un registro a dicho maestro.
    
 .. image:: coding/346.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-7 添加ModbusRTU主站寄存器
+.. centered:: Figura 9.30-7 Añadir registro al maestro ModbusRTU
 
-依次选择主站寄存器类型、输入地址编号和名称，各参数意义如下：
+Seleccionar sucesivamente el tipo de registro del maestro, introducir el número de dirección y el nombre; el significado de cada parámetro es el siguiente:
 
-**类型**：modbus功能码，0x01-读线圈；0x02-读离散量；0x03 -读保持寄存器(有符号型-32768-32767)；0x03-读保持寄存器(浮点型寄存器数据长度32位，占用两个寄存器，4个字节)；0x04 -读输入寄存器(有符号型-32768-32767)；0x04-读输入寄存器(浮点型寄存器数据长度32位，占用两个寄存器，4个字节)；0x05-写单个线圈；0x06-写单个保持寄存器；0x0F-写多个线圈；0x03 -读保持寄存器(有符号型-32768-32767)；0x03-读保持寄存器(浮点型寄存器数据长度32位，占用两个寄存器，4个字节)；其中读写的浮点型寄存器为大端显示。
+**Tipo**: código de función modbus; 0x01- lectura de bobina; 0x02- lectura de entrada discreta; 0x03 - lectura de registro de retención (con signo -32768-32767); 0x03- lectura de registro de retención (la longitud de datos del registro de coma flotante es de 32 bits y ocupa dos registros, 4 bytes); 0x04 - lectura de registro de entrada (con signo -32768-32767); 0x04- lectura de registro de entrada (la longitud de datos del registro de coma flotante es de 32 bits y ocupa dos registros, 4 bytes); 0x05- escritura de una única bobina; 0x06- escritura de un único registro de retención; 0x0F- escritura de varias bobinas; 0x03 - lectura de registro de retención (con signo -32768-32767); 0x03- lectura de registro de retención (la longitud de datos del registro de coma flotante es de 32 bits y ocupa dos registros, 4 bytes); los registros de coma flotante de lectura y escritura se muestran en big-endian.
 
-**寄存器地址**：要读取或写入的ModbusRTU从站寄存器地址；
+**Dirección del registro**: dirección del registro del esclavo ModbusRTU que se desea leer o escribir;
 
-**寄存器数量**：多读或多写时需要操作的寄存器数量（0x05、0x06数量只能为1），最大支持12个寄存器操作。
+**Número de registros**: número de registros que se deben manejar en la lectura o escritura múltiple (en 0x05 y 0x06 el número solo puede ser 1); se admite como máximo la operación de 12 registros.
 
-**地址值**：读取显示值，或写入操作值（写入多个值时用英文逗号“,”隔开）
+**Valor de dirección**: valor mostrado en la lectura, o valor de la operación de escritura (al escribir varios valores, separarlos con comas en inglés ",")
    
 .. image:: coding/347.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-8 设置ModbusRTU主站寄存器参数
+.. centered:: Figura 9.30-8 Configuración de parámetros del registro del maestro ModbusRTU
 
-再次点击“添加主站寄存器”按钮即可再添加一个主站寄存器，双击寄存器右侧的“删除”按钮，即可删除该寄存器，如下图为支持的功能码寄存器。
+Volver a hacer clic en el botón "Añadir registro de maestro" para añadir otro registro de maestro; haciendo doble clic en el botón "Eliminar" de la derecha del registro se puede eliminar dicho registro; en la figura siguiente se muestran los registros de los códigos de función compatibles.
    
 .. image:: coding/348.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-9 添加多个主站寄存器
+.. centered:: Figura 9.30-9 Añadir varios registros de maestro
 
-ModbusRTU主站通信测试
+Prueba de comunicación del maestro ModbusRTU
 **********************************************************
 
-机器人Modbus主站寄存器有“地址值”数值框用于显示当前寄存器的值，其中0x01、0x02、0x03、0x04类型的寄存器为只读类型，对应的地址值为灰色不可编辑数值框，当从站相应地址的数值改变时，机器人主站通过点击读取按钮即可读取对应寄存器地址值并同步显示当前的数值。0x05、0x06、0x0F、0x10功能码为写入操作，它的地址为白色可编辑数值框，可以在机器人Modbus主站设置页面修改该寄存器数值。
+Los registros del maestro Modbus del robot disponen de un cuadro de valor "Valor de dirección" para mostrar el valor actual del registro; los registros de tipo 0x01, 0x02, 0x03 y 0x04 son de solo lectura y su valor de dirección correspondiente es un cuadro de valor gris no editable; cuando cambia el valor de la dirección correspondiente del esclavo, el maestro del robot puede, haciendo clic en el botón de lectura, leer el valor de dirección del registro correspondiente y mostrar sincronizadamente el valor actual. Los códigos de función 0x05, 0x06, 0x0F y 0x10 son operaciones de escritura y su dirección es un cuadro de valor blanco editable; se puede modificar el valor de dicho registro en la página de configuración del maestro Modbus del robot.
    
 .. image:: coding/349.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-10 Modbus主站地址值
+.. centered:: Figura 9.30-10 Valor de dirección del maestro Modbus
 
-主站读取寄存器测试
-""""""""""""""""""""""""""""""""""
-对在外部ModbusRTU从站设备上，对地址为0x4000的线圈连续读取10个，对地址为0x3000的离散量连续读取12个，对地址为0x2010的保持寄存器采用int16连续读两个，对地址为0x1029的输入寄存器读一个浮点数。此时机器人Modbus主站设置页面对应寄存器的地址值将进行相应的显示，发送的数据帧如下图(由于设置地址0x1029的寄存器读取方式为浮点型，因此它实际读取了0x1029和0x102A两个16位寄存器来存储一个浮点数，但是读取数量设置为1即可)。
+Prueba de lectura de registros del maestro
+""""""""""""""""""""""""""""""""""""""""""""""""
+En el dispositivo esclavo ModbusRTU externo, leer continuamente 10 bobinas de la dirección 0x4000, leer continuamente 12 entradas discretas de la dirección 0x3000, leer continuamente dos registros de retención de la dirección 0x2010 con int16 y leer un número de coma flotante del registro de entrada de la dirección 0x1029. En este momento, el valor de dirección del registro correspondiente en la página de configuración del maestro Modbus del robot se mostrará de forma correspondiente; la trama de datos enviada se muestra en la figura siguiente (dado que el registro con la dirección 0x1029 se configura con modo de lectura de coma flotante, en realidad lee dos registros de 16 bits, 0x1029 y 0x102A, para almacenar un número de coma flotante, pero basta con configurar la cantidad de lectura en 1).
    
 .. image:: coding/350.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-11 Modbus主站显示读取的寄存器数值（指令帧截图）
+.. centered:: Figura 9.30-11 El maestro Modbus muestra los valores de registro leídos (captura de pantalla de la trama de instrucción)
 
-主站写入寄存器测试
-""""""""""""""""""""""""""""""""""
+Prueba de escritura de registros del maestro
+""""""""""""""""""""""""""""""""""""""""""""""""
 
-在机器人ModbusRTU主站设置页面中，对地址0x1000写单个线圈，写入值为1；对0x1001地址写单个寄存器，值为2001；对地址为0x2000写5个线圈，值为1,1,0,1,1；对地址0x2010写2个保持寄存器，数据类型为int16，值为3001、3002；对地址为0x1029写一个浮点型的保持寄存器（实际为两个16位寄存器），值为21.55；Modbus从站的相应寄存器地址已被写入相应的数值。
+En la página de configuración del maestro ModbusRTU del robot, escribir una única bobina en la dirección 0x1000 con valor 1; escribir un único registro en la dirección 0x1001 con valor 2001; escribir 5 bobinas en la dirección 0x2000 con valores 1,1,0,1,1; escribir 2 registros de retención en la dirección 0x2010 con tipo de dato int16 y valores 3001 y 3002; escribir un registro de retención de coma flotante (en realidad dos registros de 16 bits) en la dirección 0x1029 con valor 21.55; la dirección del registro correspondiente del esclavo Modbus ya tiene escrito el valor correspondiente.
    
 .. image:: coding/351.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-12 ModbusRTU主站写操作（指令帧截图）
+.. centered:: Figura 9.30-12 Operación de escritura del maestro ModbusRTU (captura de pantalla de la trama de instrucción)
 
-编写ModbusRTU主站程序
+Escribir el programa del maestro ModbusRTU
 ************************************************
 
-打开通讯指令添加页面。
+Abrir la página de adición de instrucciones de comunicación.
    
 .. image:: coding/352.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-13 打开通讯指令添加页面
+.. centered:: Figura 9.30-13 Abrir la página de adición de instrucciones de comunicación
 
-点击“Modbus”。
+Hacer clic en "Modbus".
    
 .. image:: coding/353.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-14 选择Modbus
+.. centered:: Figura 9.30-14 Seleccionar Modbus
 
-点击“Modbus_RTU”，选择“主站(客户端)”，打开ModbusRTU主站指令添加页面。
+Hacer clic en "Modbus_RTU", seleccionar "Maestro (cliente)" y abrir la página de adición de instrucciones del maestro ModbusRTU.
    
 .. image:: coding/354.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-15 选择Modbus_RTU
+.. centered:: Figura 9.30-15 Seleccionar Modbus_RTU
 
-写单个线圈
-""""""""""""""""""""""""""""
+Escribir una única bobina
+""""""""""""""""""""""""""""""
 
-选择“写寄存器”，功能码为0x05-单个线圈，寄存器、线圈地址为0x1000，寄存器值、线圈数量为1，字节数组为{1}，点击“添加”按钮。最后翻至该页面最底端，点击“应用”按钮(图2-16)。
+Seleccionar "Escribir registro", código de función 0x05- bobina única, dirección de registro/bobina 0x1000, valor de registro/cantidad de bobinas 1, matriz de bytes {1}, y hacer clic en el botón "Añadir". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar" (Figura 2-16).
    
 .. image:: coding/355.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-16 写单个线圈
+.. centered:: Figura 9.30-16 Escritura de una única bobina
 
-此时机器人程序“testModbusRTUSlave.lua”中已经添加一条机器人Modbus主站写单个数字输出的指令，将机器人切换到自动模式，点击启动按钮，机器人将主站将对应的线圈寄存器0x1000的地址值写为1。
+En este momento, en el programa del robot "testModbusRTUSlave.lua" ya se ha añadido una instrucción del maestro Modbus del robot para escribir una única salida digital; cambiar el robot al modo automático y hacer clic en el botón de inicio; el robot escribirá el valor de dirección del registro de bobina 0x1000 correspondiente del maestro como 1.
    
 .. image:: coding/356.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.30-17 写单个线圈LUA程序
+.. centered:: Figura 9.30-17 Programa LUA de escritura de una única bobina
 
-写多个线圈
-""""""""""""""""""""""""""""""""""""""""
-选择“写寄存器”，功能码为0x0F-多个线圈，寄存器、线圈地址为0x1010，寄存器值、线圈数量为3，字节数组为{1,0,1}，点击“添加”按钮。最后翻至该页面最底端，点击“应用”按钮(图2-18)。
+Escribir varias bobinas
+""""""""""""""""""""""""""""""""""""""""""""
+Seleccionar "Escribir registro", código de función 0x0F- varias bobinas, dirección de registro/bobina 0x1010, valor de registro/cantidad de bobinas 3, matriz de bytes {1,0,1}, y hacer clic en el botón "Añadir". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar" (Figura 2-18).
    
 .. image:: coding/357.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-18 写多个线圈
+.. centered:: Figura 9.30-18 Escritura de varias bobinas
 
-此时机器人程序“testModbusRTUSlave.lua”中已经添加一条机器人Modbus主站写单个数字输出的指令，将机器人切换到自动模式，点击启动按钮，机器人将主站将对应的线圈寄存器0x1000的地址值写为1。
+En este momento, en el programa del robot "testModbusRTUSlave.lua" ya se ha añadido una instrucción del maestro Modbus del robot para escribir una única salida digital; cambiar el robot al modo automático y hacer clic en el botón de inicio; el robot escribirá el valor de dirección del registro de bobina 0x1000 correspondiente del maestro como 1.
    
 .. image:: coding/358.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-19 写多个线圈LUA程序
+.. centered:: Figura 9.30-19 Programa LUA de escritura de varias bobinas
 
-读线圈、离散量
-""""""""""""""""""""""""""""""
+Leer bobinas y entradas discretas
+""""""""""""""""""""""""""""""""""
 
-选择“读寄存器指令”，功能码为0x01-线圈（如果需要读离散量则选择0x02-离散量），寄存器、线圈地址为0x2000，寄存器、线圈数量为3，点击“添加”按钮。同时选择“读寄存器数据”，寄存器、线圈、离散量数量为3，点击“添加”按钮。最后翻至该页面最底端，点击“应用”按钮(图2-20)。
+Seleccionar "Instrucción de lectura de registro", código de función 0x01- bobina (si se necesita leer entradas discretas, seleccionar 0x02- entrada discreta), dirección de registro/bobina 0x2000, cantidad de registro/bobinas 3, y hacer clic en el botón "Añadir". Al mismo tiempo, seleccionar "Datos de lectura de registro", cantidad de registro/bobina/entrada discreta 3, y hacer clic en el botón "Añadir". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar" (Figura 2-20).
    
 .. image:: coding/359.png
    :width: 4in
@@ -7221,29 +7219,29 @@ ModbusRTU主站通信测试
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-20 读线圈
+.. centered:: Figura 9.30-20 Lectura de bobinas
 
-此时机器人程序“testModbusRTUSlave.lua”中已经添加两条机器人Modbus主站读线圈的指令。
+En este momento, en el programa del robot "testModbusRTUSlave.lua" ya se han añadido dos instrucciones del maestro Modbus del robot para leer bobinas.
    
 .. image:: coding/360.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.30-21 读单个线圈程序
+.. centered:: Figura 9.30-21 Programa de lectura de una única bobina
 
-通常读Modbus寄存器后将读到的数值存入变量里，因此需要定义一个变量用于存储读取的数值。点击“切换模式”按钮，将机器人lua程序切换至可编辑状态，在“ModbusRegRead”指令前编写填加返回值变量“value1”、“value2”、“value3”，执行程序后读到的数值将存在“value1”、“value2”、“value3”里。
+Normalmente, tras leer un registro Modbus, el valor leído se almacena en una variable, por lo que es necesario definir una variable para almacenar el valor leído. Hacer clic en el botón "Cambiar modo" para cambiar el programa lua del robot a estado editable y, antes de la instrucción "ModbusRegRead", escribir y añadir las variables de valor de retorno "value1", "value2" y "value3"; el valor leído tras ejecutar el programa se almacenará en "value1", "value2" y "value3".
    
 .. image:: coding/361.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.30-22 读多个线圈值存入变量
+.. centered:: Figura 9.30-22 Lectura de varios valores de bobina y almacenamiento en variables
 
-线圈和离散输入类型的寄存器值只有0和1两种数值，在机器人程序中可以通过判断寄存器数值不同来进行不同的操作。
+El valor de los registros de tipo bobina y entrada discreta solo puede ser 0 o 1; en el programa del robot se pueden realizar distintas operaciones según el valor del registro.
 
-读保持寄存器、输入寄存器
-""""""""""""""""""""""""""""""""""""""""""""""
-选择“读寄存器指令”，功能码为0x03-线圈（如果需要读输入寄存器则选择0x04-输入寄存器），寄存器、线圈地址为0x4000，寄存器、线圈数量为5，点击“添加”按钮。同时选择“读寄存器数据”，寄存器、线圈、离散量数量为5，点击“添加”按钮。最后翻至该页面最底端，点击“应用”按钮(图2-23)。
+Leer registros de retención y registros de entrada
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Seleccionar "Instrucción de lectura de registro", código de función 0x03- bobina (si se necesita leer registros de entrada, seleccionar 0x04- registro de entrada), dirección de registro/bobina 0x4000, cantidad de registro/bobinas 5, y hacer clic en el botón "Añadir". Al mismo tiempo, seleccionar "Datos de lectura de registro", cantidad de registro/bobina/entrada discreta 5, y hacer clic en el botón "Añadir". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar" (Figura 2-23).
    
 .. image:: coding/362.png
    :width: 4in
@@ -7253,1926 +7251,1926 @@ ModbusRTU主站通信测试
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-23 读保持寄存器
+.. centered:: Figura 9.30-23 Lectura de registros de retención
 
-此时机器人程序“testModbusRTUSlave.lua”中已经添加两条机器人Modbus主站读线圈的指令。
+En este momento, en el programa del robot "testModbusRTUSlave.lua" ya se han añadido dos instrucciones del maestro Modbus del robot para leer bobinas.
    
 .. image:: coding/363.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-24 读单个线圈程序
+.. centered:: Figura 9.30-24 Programa de lectura de una única bobina
 
-通常读Modbus寄存器后将读到的数值存入变量里，因此需要定义变量用于存储读取的数值。点击“切换模式”按钮，将机器人lua程序切换至可编辑状态，在“ModbusRegRead”指令前编写填加返回值变量“value1”、“value2”、“value3” 、“value4” 、“value5”，执行程序后读到的数值将存在“value1”、“value2”、“value3” 、“value4” 、“value5”里。
+Normalmente, tras leer un registro Modbus, el valor leído se almacena en una variable, por lo que es necesario definir una variable para almacenar el valor leído. Hacer clic en el botón "Cambiar modo" para cambiar el programa lua del robot a estado editable y, antes de la instrucción "ModbusRegRead", escribir y añadir las variables de valor de retorno "value1", "value2", "value3", "value4" y "value5"; el valor leído tras ejecutar el programa se almacenará en "value1", "value2", "value3", "value4" y "value5".
    
 .. image:: coding/364.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.30-25 读多个保持寄存器值存入变量
+.. centered:: Figura 9.30-25 Lectura de varios valores de registro de retención y almacenamiento en variables
 
-机器人ModbusRTU从站相关操作说明
-+++++++++++++++++++++++++++++++++++++++++++++++++++
+Descripción de las operaciones relacionadas con el esclavo ModbusRTU del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-机器人ModbusRTU从站提供通用数字输入(线圈)，通用数字输出(离散输入)，通用模拟输入(保持寄存器)和通用模拟输出(输入寄存器)四种类型的寄存器，其中通用数字输入和模拟输入主要用于机器人读取外部ModbusRTU主站数据从而控制机器人操作，而通用数字输出和模拟输出主要用于机器人向外部ModbusRTU主站设备发送数据信号，由外部主站设备读取相关寄存器数值进而控制其设备运行。
+El esclavo ModbusRTU del robot ofrece cuatro tipos de registros: entrada digital general (bobina), salida digital general (entrada discreta), entrada analógica general (registro de retención) y salida analógica general (registro de entrada); entre ellos, la entrada digital general y la entrada analógica general se utilizan principalmente para que el robot lea los datos del maestro ModbusRTU externo y controle así el funcionamiento del robot, mientras que la salida digital general y la salida analógica general se utilizan principalmente para que el robot envíe señales de datos al dispositivo maestro ModbusRTU externo, y el dispositivo maestro externo lea los valores de los registros correspondientes para controlar el funcionamiento de su dispositivo.
 
-除上述通用输入输出外，机器人还提供部分“功能数字输入(线圈)”用于外部主站设备控制机器人启动程序、停止程序等操作，提供部分输入寄存器用于显示当前机器人的状态信息，包括机器人当前笛卡尔位置、机器人当前运行状态等(具体定义请查看附件一：ModbusRTU从站地址映射表)。机器人ModbusRTU从站使用过程主要包括：①参数配置；②通讯测试；③程序编写。
+Además de las entradas y salidas generales anteriores, el robot ofrece también algunas "entradas digitales funcionales (bobinas)" para que el dispositivo maestro externo controle el inicio del programa, la detención del programa y otras operaciones del robot, y ofrece algunos registros de entrada para mostrar la información de estado actual del robot, incluida la posición cartesiana actual del robot, el estado de funcionamiento actual del robot, etc. (para la definición concreta, consulte el Anexo 1: Tabla de mapeo de direcciones del esclavo ModbusRTU). El proceso de uso del esclavo ModbusRTU del robot incluye principalmente: ① configuración de parámetros; ② prueba de comunicación; ③ escritura del programa.
 
-ModbusRTU从站通讯参数配置
-******************************************************
+Configuración de los parámetros de comunicación del esclavo ModbusRTU
+************************************************************************************
 
-打开WebApp，依次点击“示教模拟”、“程序示教”，新建用户程序“testModbusRTUSlave.lua”。
+Abrir WebApp y hacer clic sucesivamente en "Enseñanza por simulación", "Enseñanza de programas" y crear el programa de usuario "testModbusRTUSlave.lua".
    
 .. image:: coding/365.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.30-26 创建ModbusRTU从站用户程序
+.. centered:: Figura 9.30-26 Creación del programa de usuario del esclavo ModbusRTU
 
-点击“ModbusRTU设置”按钮，打开ModbusRTU功能配置页面。
+Hacer clic en el botón "Configuración de ModbusRTU" para abrir la página de configuración de la función ModbusRTU.
    
 .. image:: coding/366.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.30-27 打开ModbusRTU设置
+.. centered:: Figura 9.30-27 Abrir la configuración de ModbusRTU
 
-依次点击“从站设置”，输入机器人从站的波特率、数据位、校验、停止位和从站号，其中“波特率”、“数据位”、“校验”、“停止位”为机器人作为ModbusRTU从站的参数配置。“从站号”为外部主站发送指令的从站设备号。
+Hacer clic sucesivamente en "Configuración de esclavo" e introducir la velocidad en baudios, los bits de datos, la paridad, los bits de parada y el número de esclavo del esclavo del robot; "Velocidad en baudios", "Bits de datos", "Paridad" y "Bits de parada" son la configuración de parámetros del robot como esclavo ModbusRTU. El "Número de esclavo" es el número de dispositivo esclavo al que el maestro externo envía las instrucciones.
    
 .. image:: coding/367.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-28 ModbusRTU从站设置
+.. centered:: Figura 9.30-28 Configuración del esclavo ModbusRTU
 
-ModbusRTU从站通讯测试
-****************************************
+Prueba de comunicación del esclavo ModbusRTU
+*******************************************************
 
-通用数字输入(线圈)
-""""""""""""""""""""""""""""""""""""""""""""""
-机器人ModbusRTU从站提供64个线圈寄存器，它们的寄存器地址为0x4000~0x403F(具体定义请查看附件一：ModbusRTU从站地址映射表)。机器人ModbusRTU从站的通用寄存器均可设置别名，修改机器人从站线圈寄存器DI0的名称为“A到位”，DI1的名称为“B到位”，根据地址映射表，“A到位”和“B到位”的Modbus线圈地址分别为0x4000和0x4001，在外部ModbusRTU主站设备上将机器人从站线圈寄存器地址0x4000和0x4001都置1，此时机器人ModbusRTU从站监控页面上两寄存器指示灯亮起。
+Entrada digital general (bobina)
+"""""""""""""""""""""""""""""""""""""""""""""""
+El esclavo ModbusRTU del robot ofrece 64 registros de bobina, cuyas direcciones de registro son 0x4000~0x403F (para la definición concreta, consulte el Anexo 1: Tabla de mapeo de direcciones del esclavo ModbusRTU). Los registros generales del esclavo ModbusRTU del robot permiten establecer alias; cambiar el nombre del registro de bobina DI0 del esclavo del robot a "A en posición" y el nombre de DI1 a "B en posición"; según la tabla de mapeo de direcciones, las direcciones Modbus de bobina de "A en posición" y "B en posición" son 0x4000 y 0x4001 respectivamente; en el dispositivo maestro ModbusRTU externo, poner a 1 las direcciones de los registros de bobina 0x4000 y 0x4001 del esclavo del robot; en este momento, en la página de monitorización del esclavo ModbusRTU del robot se encienden los indicadores de los dos registros.
    
 .. image:: coding/368.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-29 ModbusRTU从站线圈状态监控（指令帧截图）
+.. centered:: Figura 9.30-29 Monitorización del estado de las bobinas del esclavo ModbusRTU (captura de pantalla de la trama de instrucción)
 
-通用数字输出(离散输入)
-""""""""""""""""""""""""""""""""""""""""""""""
+Salida digital general (entrada discreta)
+"""""""""""""""""""""""""""""""""""""""""""""""
 
-机器人ModbusRTU从站提供64个离散输入寄存器，它们的寄存器地址为0x3000-0x303F(具体定义请查看附件一：ModbusRTU从站地址映射表)。同样机器人ModbusRTU从站的离散输入寄存器也可以设置别名，点击“通用数字输出(离散输入)”修改机器人从站离散输入寄存器DO0的名称为“A启动”，DO1的名称为“B启动”，根据地址映射表，“A启动”和“B启动”的Modbus离散输入地址分别为0x3000和0x3001，点击“A启动”对应离散输入指示灯，该指示灯亮起，相应寄存器地址0x3000的数值变为1，从外部ModbusRTU主站设备上可读到该寄存器数值。
+El esclavo ModbusRTU del robot ofrece 64 registros de entrada discreta, cuyas direcciones de registro son 0x3000-0x303F (para la definición concreta, consulte el Anexo 1: Tabla de mapeo de direcciones del esclavo ModbusRTU). Asimismo, los registros de entrada discreta del esclavo ModbusRTU del robot también permiten establecer alias; hacer clic en "Salida digital general (entrada discreta)" para cambiar el nombre del registro de entrada discreta DO0 del esclavo del robot a "A inicio" y el nombre de DO1 a "B inicio"; según la tabla de mapeo de direcciones, las direcciones Modbus de entrada discreta de "A inicio" y "B inicio" son 0x3000 y 0x3001 respectivamente; hacer clic en el indicador de entrada discreta correspondiente a "A inicio"; el indicador se enciende, el valor de la dirección del registro correspondiente 0x3000 pasa a ser 1 y desde el dispositivo maestro ModbusRTU externo se puede leer el valor de dicho registro.
    
 .. image:: coding/369.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-30 ModbusRTU从站离散输入控制
+.. centered:: Figura 9.30-30 Control de la entrada discreta del esclavo ModbusRTU
 
-模拟输入(保持寄存器)
-""""""""""""""""""""""""""""""""""""""""
-机器人提供无符号、有符号和浮点型三种类型的保持寄存器共32个，AI0~AI32的地址为0x2000-0x202F(具体定义请查看附件一：ModbusRTU从站地址映射表)，其中有符号型寄存器数据范围为-32768~32767，浮点型寄存器为大端显示。更改AI0和AI1的名称分别为“电压”和“电流”，从ModbusRTU从站地址映射表中查出两寄存器的地址分别为0x2000和0x2001，因此当连接的主站设备修改保持寄存器0x2000和0x2001寄存器地址值时，机器人ModbusRTU从站监控页面“电压”和“电流”寄存器地址值相应同步更新显示，机器人的模拟输入主要用于机器人获取外部主站设备数值信号。
+Entrada analógica (registro de retención)
+""""""""""""""""""""""""""""""""""""""""""""
+El robot ofrece 32 registros de retención de tres tipos: sin signo, con signo y de coma flotante; las direcciones de AI0~AI32 son 0x2000-0x202F (para la definición concreta, consulte el Anexo 1: Tabla de mapeo de direcciones del esclavo ModbusRTU); el rango de datos de los registros con signo es -32768~32767 y los registros de coma flotante se muestran en big-endian. Cambiar los nombres de AI0 y AI1 a "Tensión" y "Corriente" respectivamente; consultando la tabla de mapeo de direcciones del esclavo ModbusRTU se obtiene que las direcciones de ambos registros son 0x2000 y 0x2001 respectivamente; por lo tanto, cuando el dispositivo maestro conectado modifica el valor de la dirección de los registros de retención 0x2000 y 0x2001, los valores de dirección de los registros "Tensión" y "Corriente" de la página de monitorización del esclavo ModbusRTU del robot se actualizan sincronizadamente; la entrada analógica del robot se utiliza principalmente para que el robot obtenga las señales de valor del dispositivo maestro externo.
    
 .. image:: coding/370.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-31 ModbusRTU从站模拟输入监控（指令帧截图）
+.. centered:: Figura 9.30-31 Monitorización de la entrada analógica del esclavo ModbusRTU (captura de pantalla de la trama de instrucción)
 
-模拟输出(输入寄存器)
-""""""""""""""""""""""""""""""""""""""""
-机器人提供无符号、有符号和浮点型三种类型的输入寄存器共64个，AO0~AO63的地址为0x1000-0x100F、0x104D-0x106C(具体定义请查看附件一：ModbusRTU从站地址映射表)，其中有符号型寄存器数据范围为-32768~32767，浮点型寄存器为大端显示。更改AO0和AO1的名称分别为“目标位置A”和“目标位置B”，输入量寄存器数值分别为2000和1500，从ModbusRTU从站地址映射表中查出两寄存器的地址分别为0x1000和0x1001，因此当连接的主站设备读取输入寄存器0x1000和0x1001寄存器地址值时，即可得到所设置的数值，机器人从站模拟输出主要用于机器人向外部主站设备传递数值信号。
+Salida analógica (registro de entrada)
+""""""""""""""""""""""""""""""""""""""""""""
+El robot ofrece 64 registros de entrada de tres tipos: sin signo, con signo y de coma flotante; las direcciones de AO0~AO63 son 0x1000-0x100F y 0x104D-0x106C (para la definición concreta, consulte el Anexo 1: Tabla de mapeo de direcciones del esclavo ModbusRTU); el rango de datos de los registros con signo es -32768~32767 y los registros de coma flotante se muestran en big-endian. Cambiar los nombres de AO0 y AO1 a "Posición objetivo A" y "Posición objetivo B" respectivamente, con valores de registro de entrada de 2000 y 1500; consultando la tabla de mapeo de direcciones del esclavo ModbusRTU se obtiene que las direcciones de ambos registros son 0x1000 y 0x1001 respectivamente; por lo tanto, cuando el dispositivo maestro conectado lee los valores de dirección de los registros de entrada 0x1000 y 0x1001, obtiene los valores configurados; la salida analógica del esclavo del robot se utiliza principalmente para que el robot transmita señales de valor al dispositivo maestro externo.
    
 .. image:: coding/371.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-32 Modbus从站修改模拟输入
+.. centered:: Figura 9.30-32 Modificación de la entrada analógica del esclavo Modbus
 
-ModbusRTU从站程序编写
+Escritura del programa del esclavo ModbusRTU
 **************************************************
 
-打开通讯指令添加页面。
+Abrir la página de adición de instrucciones de comunicación.
    
 .. image:: coding/372.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-33 打开通讯指令添加页面
+.. centered:: Figura 9.30-33 Abrir la página de adición de instrucciones de comunicación
 
-点击“Modbus”。
+Hacer clic en "Modbus".
    
 .. image:: coding/373.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.30-34 选择Modbus
+.. centered:: Figura 9.30-34 Seleccionar Modbus
 
-点击“Modbus_RTU” ，选择“从站”，打开ModbusRTU从站指令添加页面。
+Hacer clic en "Modbus_RTU", seleccionar "Esclavo" y abrir la página de adición de instrucciones del esclavo ModbusRTU.
    
 .. image:: coding/374.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-35 选择Modbus_RTU、从站
+.. centered:: Figura 9.30-35 Seleccionar Modbus_RTU, esclavo
 
-写单个数字输出DO(离散输入)
-""""""""""""""""""""""""""""""""""""""""""""""""
+Escribir una única salida digital DO (entrada discreta)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-选择DO名称为“A启动”，寄存器数量为1，寄存器值为0，点击“写单个数字输出”。最后翻至该页面最底端，点击“应用”按钮。
+Seleccionar el nombre DO como "A inicio", el número de registros como 1 y el valor del registro como 0; hacer clic en "Escribir una única salida digital". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar".
    
 .. image:: coding/375.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-36 添加写单个数字输出指令、应用写单个数字输出指令
+.. centered:: Figura 9.30-36 Añadir instrucción de escritura de una única salida digital y aplicar la instrucción de escritura de una única salida digital
 
-此时机器人程序“testModbusRTUSlave.lua”中已经添加一条机器人Modbus从站写单个数字输出的指令，将机器人切换到自动模式，点击启动按钮，机器人将名称为“A启动”对应的数字输出的地址值写为0。
+En este momento, en el programa del robot "testModbusRTUSlave.lua" ya se ha añadido una instrucción del esclavo Modbus del robot para escribir una única salida digital; cambiar el robot al modo automático y hacer clic en el botón de inicio; el robot escribirá el valor de dirección de la salida digital correspondiente al nombre "A inicio" como 0.
    
 .. image:: coding/376.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.30-37 写单个数字输出LUA程序
+.. centered:: Figura 9.30-37 Programa LUA de escritura de una única salida digital
 
-写多个数字输出DO(离散输入)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Escribir varias salidas digitales DO (entradas discretas)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-打开ModbusRTU从站指令添加页面，找到“数字输出设置”，选择DO名称为“A启动”，寄存器数量为5，寄存器值为1,0,1,0,1，其中寄存器值的个数要与设置的寄存器数量对应，且多个寄存器值之间用英文逗号隔开，点击“写数字输出”。最后翻至该页面最底端，点击“应用”按钮。
+Abrir la página de adición de instrucciones del esclavo ModbusRTU, encontrar "Configuración de salida digital", seleccionar el nombre DO como "A inicio", el número de registros como 5 y el valor del registro como 1,0,1,0,1; el número de valores de registro debe corresponder al número de registros configurado, y los distintos valores de registro deben separarse con comas en inglés; hacer clic en "Escribir salida digital". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar".
    
 .. image:: coding/377.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-38 配置写多个数字输出、应用写多个数字输出
+.. centered:: Figura 9.30-38 Configuración de escritura de varias salidas digitales y aplicación de la escritura de varias salidas digitales
 
-此时机器人程序“testModbusRTUSlave.lua”中已经添加一条机器人Modbus从站写多个数字输出的指令，将机器人切换到自动模式，点击启动按钮，机器人将从站“A启动”其后面4个离散输入寄存器的值分别写为1、0、1、0、1。
+En este momento, en el programa del robot "testModbusRTUSlave.lua" ya se ha añadido una instrucción del esclavo Modbus del robot para escribir varias salidas digitales; cambiar el robot al modo automático y hacer clic en el botón de inicio; el robot escribirá respectivamente los valores del registro de entrada discreta "A inicio" del esclavo y de los 4 registros de entrada discreta siguientes como 1, 0, 1, 0, 1.
    
 .. image:: coding/378.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.30-39 写多个数字输出LUA程序
+.. centered:: Figura 9.30-39 Programa LUA de escritura de varias salidas digitales
 
-读单个数字输出DO(离散输入)
-""""""""""""""""""""""""""""""""""""""""""""""
+Leer una única salida digital DO (entrada discreta)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-打开ModbusRTU主站指令添加页面，找到“数字输出设置”，DO名称为“A启动”，寄存器数量为1，寄存器值不需要填写，点击“读数字输出”。最后翻至该页面最底端，点击“应用”按钮。
+Abrir la página de adición de instrucciones del maestro ModbusRTU, encontrar "Configuración de salida digital", el nombre DO como "A inicio", el número de registros como 1; no es necesario rellenar el valor del registro; hacer clic en "Leer salida digital". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar".
    
 .. image:: coding/379.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-40 配置读单个数字输出、应用读单个数字输出
+.. centered:: Figura 9.30-40 Configuración de lectura de una única salida digital y aplicación de la lectura de una única salida digital
 
-此时机器人程序“testModbusRTUSlave.lua”中已经添加一条机器人Modbus从站读单个数字输出的指令。
+En este momento, en el programa del robot "testModbusRTUSlave.lua" ya se ha añadido una instrucción del esclavo Modbus del robot para leer una única salida digital.
    
 .. image:: coding/380.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-41 读单个数字输出程序
+.. centered:: Figura 9.30-41 Programa de lectura de una única salida digital
 
-通常读Modbus寄存器后将读到的数值存入变量里，因此需要定义一个变量用于存储读取的数值。点击“切换模式”按钮，将机器人lua程序切换至可编辑状态，在“ModbusSlaveReadDO_RTU”指令前编写填加返回值变量“AStartValue”，执行程序后读到的数值将存在“AStartValue”里。
+Normalmente, tras leer un registro Modbus, el valor leído se almacena en una variable, por lo que es necesario definir una variable para almacenar el valor leído. Hacer clic en el botón "Cambiar modo" para cambiar el programa lua del robot a estado editable y, antes de la instrucción "ModbusSlaveReadDO_RTU", escribir y añadir la variable de valor de retorno "AStartValue"; el valor leído tras ejecutar el programa se almacenará en "AStartValue".
    
 .. image:: coding/381.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-42 读单个数字输出存入变量
+.. centered:: Figura 9.30-42 Lectura de una única salida digital y almacenamiento en variable
 
-线圈类型的寄存器值只有0和1两种数值，在机器人程序中可以通过判断寄存器数值不同来进行不同的操作。
+El valor de los registros de tipo bobina solo puede ser 0 o 1; en el programa del robot se pueden realizar distintas operaciones según el valor del registro.
 
-读多个数字输出DO(离散输入)
-""""""""""""""""""""""""""""""""""""""""""""""""
+Leer varias salidas digitales DO (entradas discretas)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-打开ModbusRTU主站指令添加页面，找到“数字输出设置”，选择DO名称为“A启动”，寄存器数量为2，寄存器值不需要填写，点击“读数字输出”。最后翻至该页面最底端，点击“应用”按钮。
+Abrir la página de adición de instrucciones del maestro ModbusRTU, encontrar "Configuración de salida digital", seleccionar el nombre DO como "A inicio", el número de registros como 2; no es necesario rellenar el valor del registro; hacer clic en "Leer salida digital". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar".
    
 .. image:: coding/382.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-43 配置读多个数字输出、应用读多个数字输出
+.. centered:: Figura 9.30-43 Configuración de lectura de varias salidas digitales y aplicación de la lectura de varias salidas digitales
 
-此时机器人程序“testModbusRTUSlave.lua”中已经添加一条机器人Modbus从站读多个数字输出的指令。
+En este momento, en el programa del robot "testModbusRTUSlave.lua" ya se ha añadido una instrucción del esclavo Modbus del robot para leer varias salidas digitales.
    
 .. image:: coding/383.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-44 读多个数字输出程序
+.. centered:: Figura 9.30-44 Programa de lectura de varias salidas digitales
 
-点击“切换模式”按钮，将机器人lua程序切换至可编辑状态，由于读取的数量为2个，因此需要在“ModbusSlaveReadDO_RTU”指令前编写填加2个返回值变“value1,value2”，执行程序后读到的2个数字输出寄存器数值将分别存在上述2个变量里，同样您可以判断“value1”、“value2”的值使机器人进行不同的动作。
+Hacer clic en el botón "Cambiar modo" para cambiar el programa lua del robot a estado editable; dado que la cantidad leída es 2, es necesario escribir y añadir 2 variables de valor de retorno "value1,value2" antes de la instrucción "ModbusSlaveReadDO_RTU"; los 2 valores de registro de salida digital leídos tras ejecutar el programa se almacenarán respectivamente en las 2 variables anteriores; asimismo, puede juzgar los valores de "value1" y "value2" para que el robot realice distintas acciones.
    
 .. image:: coding/384.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-45 读多个数字输出存入变量
+.. centered:: Figura 9.30-45 Lectura de varias salidas digitales y almacenamiento en variables
 
-读数字输入DI(线圈)
+Leer entrada digital DI (bobina)
 """""""""""""""""""""""""""""""""""""""""""
 
-打开ModbusRTU从站指令添加页面，找到“数字输入设置”，选择DI名称为“A到位”，寄存器数量为2，点击“读数字输入”。最后翻至该页面最底端，点击“应用”按钮。
+Abrir la página de adición de instrucciones del esclavo ModbusRTU, encontrar "Configuración de entrada digital", seleccionar el nombre DI como "A en posición" y el número de registros como 2; hacer clic en "Leer entrada digital". Por último, desplazarse hasta la parte inferior de la página y hacer clic en el botón "Aplicar".
    
 .. image:: coding/385.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-46 配置读数字输入、应用读数字输入
+.. centered:: Figura 9.30-46 Configuración de lectura de entrada digital y aplicación de la lectura de entrada digital
 
-此时机器人程序“testModbusRTUSlave.lua”中已经添加一条机器人Modbus从站读数字输入的指令。
+En este momento, en el programa del robot "testModbusRTUSlave.lua" ya se ha añadido una instrucción del esclavo Modbus del robot para leer entradas digitales.
    
 .. image:: coding/386.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-47 读数字输入程序指令
+.. centered:: Figura 9.30-47 Instrucción de programa de lectura de entrada digital
 
-点击“切换模式”按钮，将机器人lua程序切换至可编辑状态，在“ModbusSlaveReadDI_RTU”指令前编写返回值变量“AState,BState”，执行程序后读到的两个数字输入数值将分别存在变量“AState”和“BState”里，您可以通过判断变量数值进而控制机器人做不同的操作。
+Hacer clic en el botón "Cambiar modo" para cambiar el programa lua del robot a estado editable y, antes de la instrucción "ModbusSlaveReadDI_RTU", escribir las variables de valor de retorno "AState,BState"; los dos valores de entrada digital leídos tras ejecutar el programa se almacenarán respectivamente en las variables "AState" y "BState"; puede juzgar el valor de las variables para controlar que el robot realice distintas operaciones.
    
 .. image:: coding/387.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-48 读数字输入程序
+.. centered:: Figura 9.30-48 Programa de lectura de entrada digital
 
-模拟输出AO(输入寄存器)和模拟输入AI(保持寄存器)的读写操作
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Operaciones de lectura y escritura de salida analógica AO (registro de entrada) y entrada analógica AI (registro de retención)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-模拟输出(输入寄存器)、模拟输入(保持寄存器)的读写操作与数字输出(离散输入)、数字输入(线圈)的操作基本一致，区别在于后者的数据范围仅限于0或1，而前者的数据范围更大，因此具体的操作可参考数字输出和数字输入程序的编写，在此仅展示模拟输入的读操作和模拟输出的读写操作程序示例。
+Las operaciones de lectura y escritura de salida analógica (registro de entrada) y entrada analógica (registro de retención) son básicamente iguales a las operaciones de salida digital (entrada discreta) y entrada digital (bobina); la diferencia es que el rango de datos de estas últimas se limita a 0 o 1, mientras que el rango de datos de las primeras es mayor; por lo tanto, para las operaciones concretas se puede consultar la escritura de programas de salida digital y entrada digital; aquí solo se muestran ejemplos de programa de lectura de entrada analógica y de lectura/escritura de salida analógica.
    
 .. image:: coding/388.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-49 读模拟输入
+.. centered:: Figura 9.30-49 Lectura de entrada analógica
    
 .. image:: coding/389.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.30-50 读写模拟输出
+.. centered:: Figura 9.30-50 Lectura/escritura de salida analógica
 
-等待数字输入
+Esperar entrada digital
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-打开ModbusRTU从站指令添加页面，找到“等待数字输入设置”，选择DI名称为配置的“A到位”寄存器，等待状态为“True”，超时时间为5000ms。点击“添加”按钮，最后点击“应用”按钮。
+Abrir la página de adición de instrucciones del esclavo ModbusRTU, encontrar "Configuración de espera de entrada digital", seleccionar el nombre DI como el registro "A en posición" configurado, el estado de espera como "True" y el tiempo de espera agotado como 5000 ms. Hacer clic en el botón "Añadir" y, por último, hacer clic en el botón "Aplicar".
    
 .. image:: coding/390.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-51 添加等待数字输入指令
+.. centered:: Figura 9.30-51 Añadir instrucción de espera de entrada digital
 
-此时机器人程序“testModbusRTUSlave.lua”中已经添加一条机器人Modbus从站等待数字输入的指令，启动程序后，机器人会一直等待从站的“A到位”线圈寄存器值变为true，也就是数值1，由于设置的超时时间为5s，因此当机器人等待5s后“A到位”信号仍为0时，机器人程序将会报超时错误，程序也自动停止运行。
+En este momento, en el programa del robot "testModbusRTUSlave.lua" ya se ha añadido una instrucción del esclavo Modbus del robot para esperar la entrada digital; tras iniciar el programa, el robot esperará continuamente a que el valor del registro de bobina "A en posición" del esclavo cambie a true, es decir, al valor 1; dado que el tiempo de espera agotado configurado es de 5 s, cuando el robot haya esperado 5 s y la señal "A en posición" siga siendo 0, el programa del robot informará de un error de tiempo de espera agotado y el programa se detendrá automáticamente.
    
 .. image:: coding/391.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-52 等待数字输入程序
+.. centered:: Figura 9.30-52 Programa de espera de entrada digital
 
-等待模拟输入
-""""""""""""""""""""""""""""""""""
-打开ModbusRTU从站指令添加页面，找到“等待模拟输入设置”选择AI名称为配置的“电流”寄存器，等待状态为“>”，寄存器值为255，超时时间为5000ms。点击“添加”按钮，最后点击“应用”按钮。
+Esperar entrada analógica
+""""""""""""""""""""""""""""""""""""
+Abrir la página de adición de instrucciones del esclavo ModbusRTU, encontrar "Configuración de espera de entrada analógica", seleccionar el nombre AI como el registro "Corriente" configurado, el estado de espera como ">", el valor del registro como 255 y el tiempo de espera agotado como 5000 ms. Hacer clic en el botón "Añadir" y, por último, hacer clic en el botón "Aplicar".
    
 .. image:: coding/392.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-53 添加等待模拟输入指令
+.. centered:: Figura 9.30-53 Añadir instrucción de espera de entrada analógica
 
-此时机器人程序“testModbusRTUSlave.lua”中已经添加一条机器人Modbus从站等待模拟输入值的指令，启动程序后，机器人会一直等待从站的“电流”寄存器数值大于255，由于设置的超时时间为5s，因此当机器人等待5s后“电流”信号仍不大于255时，机器人程序将会报超时错误，程序也自动停止运行。
+En este momento, en el programa del robot "testModbusRTUSlave.lua" ya se ha añadido una instrucción del esclavo Modbus del robot para esperar el valor de entrada analógica; tras iniciar el programa, el robot esperará continuamente a que el valor del registro "Corriente" del esclavo sea mayor que 255; dado que el tiempo de espera agotado configurado es de 5 s, cuando el robot haya esperado 5 s y la señal "Corriente" siga sin ser mayor que 255, el programa del robot informará de un error de tiempo de espera agotado y el programa se detendrá automáticamente.
    
 .. image:: coding/393.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-54 等待模拟输入寄存器程序
+.. centered:: Figura 9.30-54 Programa de espera del registro de entrada analógica
 
-打开ModbusRTU从站指令添加页面，找到“等待模拟输入设置”即等待AI输入寄存器设置，选择AI名称为配置的“液位”寄存器，等待状态为“=”，寄存器值为255，超时时间为5000ms。点击“添加”按钮，最后点击“应用”按钮。
+Abrir la página de adición de instrucciones del esclavo ModbusRTU, encontrar "Configuración de espera de entrada analógica", es decir, la configuración de espera del registro de entrada AI; seleccionar el nombre AI como el registro "Nivel de líquido" configurado, el estado de espera como "=", el valor del registro como 255 y el tiempo de espera agotado como 5000 ms. Hacer clic en el botón "Añadir" y, por último, hacer clic en el botón "Aplicar".
             
 .. image:: coding/496.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.30-54-2 添加等待模拟输入
+.. centered:: Figura 9.30-54-2 Añadir espera de entrada analógica
 
-此时机器人程序“test.lua”中已经添加一条机器人Modbus Rtu从站等待AI输入寄存器值的指令，启动程序后，机器人会一直等待“液位”寄存器数值等于255，由于设置的超时时间为5s，因此当机器人等待5s后“液位”信号仍不等于255时，机器人程序将会报超时错误，程序也自动停止运行。
+En este momento, en el programa del robot "test.lua" ya se ha añadido una instrucción del esclavo Modbus Rtu del robot para esperar el valor del registro de entrada AI; tras iniciar el programa, el robot esperará continuamente a que el valor del registro "Nivel de líquido" sea igual a 255; dado que el tiempo de espera agotado configurado es de 5 s, cuando el robot haya esperado 5 s y la señal "Nivel de líquido" siga sin ser igual a 255, el programa del robot informará de un error de tiempo de espera agotado y el programa se detendrá automáticamente.
 
-ModbusRTU从站机器人状态反馈与控制
+Realimentación de estado y control del robot desde el esclavo ModbusRTU
 ***********************************************************************************
-协作机器人ModbusRTU从站输入寄存器地址0x1010-0x104C用于反馈机器人实时状态(具体地址定义见附件一：ModbusRTU从站地址映射表)，您只需要用主站设备读取对应寄存器的数值即可获取对应的机器人实时状态数据。
+Las direcciones de registro de entrada 0x1010-0x104C del esclavo ModbusRTU del robot colaborativo se utilizan para realimentar el estado en tiempo real del robot (para la definición concreta de direcciones, consulte el Anexo 1: Tabla de mapeo de direcciones del esclavo ModbusRTU); basta con que el dispositivo maestro lea el valor del registro correspondiente para obtener los datos de estado en tiempo real del robot correspondientes.
 
-协作机器人ModbusRTU从站线圈寄存器地址0x4040-0x405C用于主站设备对机器人进行控制(具体地址定义见附件一：ModbusRTU从站地址映射表)，以线圈地址0x4054为例，该地址功能表示“启动程序”，当机器人处于自动模式下，主站设备将地址0x4054的值从0置1时，机器人自动开始运行当前配置的程序；再以线圈地址0x4040为例，它用于控制机器人控制箱DO0的输出，当外部主站将线圈地址0x4040从0置1时，控制箱DO0自动输出有效，同样外部主站将线圈地址0x4040从1置0时，控制箱DO0输出无效。在ModbusRTU从站设置页面点击“功能数字输入(线圈)”，即可监控当前所有的功能数字输入情况。
+Las direcciones de registro de bobina 0x4040-0x405C del esclavo ModbusRTU del robot colaborativo se utilizan para que el dispositivo maestro controle el robot (para la definición concreta de direcciones, consulte el Anexo 1: Tabla de mapeo de direcciones del esclavo ModbusRTU); tomando como ejemplo la dirección de bobina 0x4054, la función de esta dirección es "Iniciar programa"; cuando el robot está en modo automático y el dispositivo maestro cambia el valor de la dirección 0x4054 de 0 a 1, el robot comienza automáticamente a ejecutar el programa configurado actualmente; tomando como ejemplo la dirección de bobina 0x4040, se utiliza para controlar la salida DO0 de la caja de control del robot; cuando el maestro externo cambia la dirección de bobina 0x4040 de 0 a 1, la salida DO0 de la caja de control se activa automáticamente; asimismo, cuando el maestro externo cambia la dirección de bobina 0x4040 de 1 a 0, la salida DO0 de la caja de control se desactiva. En la página de configuración del esclavo ModbusRTU, hacer clic en "Entradas digitales funcionales (bobinas)" para monitorizar todas las entradas digitales funcionales actuales.
    
 .. image:: coding/396.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.30-55 机器人从站功能数字输入
+.. centered:: Figura 9.30-55 Entradas digitales funcionales del esclavo del robot
 
-附件一：Modbus Rtu从站地址映射表
+Anexo 1: Tabla de mapeo de direcciones del esclavo Modbus Rtu
 
 .. list-table::
    :widths: 15 20 25 15 20 10
    :header-rows: 0
    :align: center
 
-   * - **第三方控制器下发地址**
-     - **类型**
-     - **名称**
-     - **数据类型**
-     - **功能码**
-     - **读/写**
+   * - **Dirección emitida por el controlador de terceros**
+     - **Tipo**
+     - **Nombre**
+     - **Tipo de dato**
+     - **Código de función**
+     - **Lectura/Escritura**
 
    * - 0x3000
-     - 通用数字输出（离散）
+     - Salida digital general (discreta)
      - DO0
      - BOOL 
      - 0x02 
-     - 只读  
+     - Solo lectura  
 
    * - 0x3001
-     - 通用数字输出（离散）
+     - Salida digital general (discreta)
      - DO1
      - BOOL 
      - 0x02 
-     - 只读  
+     - Solo lectura  
 
    * - 0x3002
-     - 通用数字输出（离散）
+     - Salida digital general (discreta)
      - DO2
      - BOOL 
      - 0x02 
-     - 只读  
+     - Solo lectura  
 
    * - 0x3003
-     - 通用数字输出（离散）
+     - Salida digital general (discreta)
      - DO3
      - BOOL 
      - 0x02 
-     - 只读  
+     - Solo lectura  
 
    * - ...
-     - 通用数字输出（离散）
+     - Salida digital general (discreta)
      - ...
      - BOOL 
      - 0x02 
-     - 只读  
+     - Solo lectura  
 
    * - 0x303F
-     - 通用数字输出（离散）
+     - Salida digital general (discreta)
      - DO127
      - BOOL 
      - 0x02 
-     - 只读  
+     - Solo lectura  
 
    * - 0x4000
-     - 通用数字输入（线圈）
+     - Entrada digital general (bobina)
      - DI0
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4001
-     - 通用数字输入（线圈）
+     - Entrada digital general (bobina)
      - DI1
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4002
-     - 通用数字输入（线圈）
+     - Entrada digital general (bobina)
      - DI2
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4003
-     - 通用数字输入（线圈）
+     - Entrada digital general (bobina)
      - DI3
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - ...
-     - 通用数字输入（线圈）
+     - Entrada digital general (bobina)
      - ...
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x403F
-     - 通用数字输入（线圈）
+     - Entrada digital general (bobina)
      - DI64
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4040
-     - 机器人控制
-     - 控制箱DO0
+     - Control del robot
+     - DO0 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4041
-     - 机器人控制
-     - 控制箱DO1
+     - Control del robot
+     - DO1 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4042
-     - 机器人控制
-     - 控制箱DO2
+     - Control del robot
+     - DO2 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4043
-     - 机器人控制
-     - 控制箱DO3
+     - Control del robot
+     - DO3 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4044
-     - 机器人控制
-     - 控制箱DO4
+     - Control del robot
+     - DO4 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4045
-     - 机器人控制
-     - 控制箱DO5
+     - Control del robot
+     - DO5 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4046
-     - 机器人控制
-     - 控制箱DO6
+     - Control del robot
+     - DO6 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4047
-     - 机器人控制
-     - 控制箱DO7
+     - Control del robot
+     - DO7 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4048
-     - 机器人控制
-     - 控制箱CO0
+     - Control del robot
+     - CO0 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4049
-     - 机器人控制
-     - 控制箱CO1
+     - Control del robot
+     - CO1 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x404A
-     - 机器人控制
-     - 控制箱CO2
+     - Control del robot
+     - CO2 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x404B
-     - 机器人控制
-     - 控制箱CO3
+     - Control del robot
+     - CO3 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x404C
-     - 机器人控制
-     - 控制箱CO4
+     - Control del robot
+     - CO4 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x404D
-     - 机器人控制
-     - 控制箱CO5
+     - Control del robot
+     - CO5 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x404E
-     - 机器人控制
-     - 控制箱CO6
+     - Control del robot
+     - CO6 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x404F
-     - 机器人控制
-     - 控制箱CO7
+     - Control del robot
+     - CO7 de la caja de control
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4050
-     - 机器人控制
-     - 工具DO0
+     - Control del robot
+     - DO0 de la herramienta
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4051
-     - 机器人控制
-     - 工具DO1
+     - Control del robot
+     - DO1 de la herramienta
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4052
-     - 机器人控制
-     - 暂停
+     - Control del robot
+     - Pausa
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4053
-     - 机器人控制
-     - 恢复
+     - Control del robot
+     - Reanudar
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4054
-     - 机器人控制
-     - 启动
+     - Control del robot
+     - Inicio
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4055
-     - 机器人控制
-     - 停止
+     - Control del robot
+     - Detener
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4056
-     - 机器人控制
-     - 移至作业原点
+     - Control del robot
+     - Mover al origen de trabajo
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4057
-     - 机器人控制
-     - 手自动切换
+     - Control del robot
+     - Conmutación manual/automático
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4058
-     - 机器人控制
-     - 启动主程序
+     - Control del robot
+     - Iniciar programa principal
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x4059
-     - 机器人控制
-     - 一级缩减模式
+     - Control del robot
+     - Modo reducido de nivel uno
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x405A
-     - 机器人控制
-     - 二级缩减模式
+     - Control del robot
+     - Modo reducido de nivel dos
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x405B
-     - 机器人控制
-     - 三级缩减模式(停止)
+     - Control del robot
+     - Modo reducido de nivel tres (parada)
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x405C
-     - 机器人控制
-     - 清除所有故障
+     - Control del robot
+     - Borrar todos los fallos
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x405D
-     - 机器人控制
-     - 预留
+     - Control del robot
+     - Reservado
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x405E
-     - 机器人控制
-     - 预留
+     - Control del robot
+     - Reservado
      - BOOL 
      - 0x01、0x05、0x0F 
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x1000
-     - 模拟输入
+     - Entrada analógica
      - AO0
      - INT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1001
-     - 模拟输入
+     - Entrada analógica
      - AO1
      - INT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1002
-     - 模拟输入
+     - Entrada analógica
      - AO2
      - INT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - ...
-     - 模拟输入
+     - Entrada analógica
      - ...
      - INT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x100F
-     - 模拟输入
+     - Entrada analógica
      - AO15
      - INT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1010
-     - 机器人状态
-     - 使能状态 0-未使能，1-使能
+     - Estado del robot
+     - Estado de habilitación 0- no habilitado, 1- habilitado
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1011
-     - 机器人状态
-     - 机器人模式，1-手动模式，0-自动模式
+     - Estado del robot
+     - Modo del robot, 1- modo manual, 0- modo automático
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1012
-     - 机器人状态
-     - 机器人运行状态 1-停止，2-运行，3-暂停，4-拖动
+     - Estado del robot
+     - Estado de funcionamiento del robot 1- parado, 2- en ejecución, 3- pausado, 4- arrastre
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1013
-     - 机器人状态
-     - 工具号
+     - Estado del robot
+     - Número de herramienta
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1014
-     - 机器人状态
-     - 工件号
+     - Estado del robot
+     - Número de pieza
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1015
-     - 机器人状态
-     - 急停状态 0-未急停，1-急停
+     - Estado del robot
+     - Estado de parada de emergencia 0- sin parada de emergencia, 1- parada de emergencia
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1016
-     - 机器人状态
-     - 超软限位故障
+     - Estado del robot
+     - Fallo de superación del límite suave
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1017
-     - 机器人状态
-     - 主故障码
+     - Estado del robot
+     - Código de fallo principal
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1018
-     - 机器人状态
-     - 子故障码
+     - Estado del robot
+     - Código de subfallo
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1019
-     - 机器人状态
-     - 碰撞检测，1-碰撞，0-无碰撞
+     - Estado del robot
+     - Detección de colisiones, 1- colisión, 0- sin colisión
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x101A
-     - 机器人状态
-     - 运动到位信号
+     - Estado del robot
+     - Señal de movimiento en posición
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x101B
-     - 机器人状态
-     - 安全停止信号SI0
+     - Estado del robot
+     - Señal de parada de seguridad SI0
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x101C
-     - 机器人状态
-     - 安全停止信号SI1
+     - Estado del robot
+     - Señal de parada de seguridad SI1
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x101D
-     - 机器人状态
-     - 控制箱模拟量输入AI0
+     - Estado del robot
+     - Entrada analógica AI0 de la caja de control
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x101E
-     - 机器人状态
-     - 控制箱模拟量输入AI1
+     - Estado del robot
+     - Entrada analógica AI1 de la caja de control
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x101F
-     - 机器人状态
-     - 工具模拟量输入AI0
+     - Estado del robot
+     - Entrada analógica AI0 de la herramienta
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1020
-     - 机器人状态
-     - 控制箱模拟量输出AO0
+     - Estado del robot
+     - Salida analógica AO0 de la caja de control
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1021
-     - 机器人状态
-     - 控制箱模拟量输出AO1
+     - Estado del robot
+     - Salida analógica AO1 de la caja de control
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1022
-     - 机器人状态
-     - 工具模拟量输出AO0
+     - Estado del robot
+     - Salida analógica AO0 de la herramienta
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1023
-     - 机器人状态
-     - 控制箱数字输入Bit0-Bit7对应DI0-DI7 Bit8-Bit15对应CI0-CI7
+     - Estado del robot
+     - Entrada digital de la caja de control Bit0-Bit7 corresponde a DI0-DI7 Bit8-Bit15 corresponde a CI0-CI7
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1024
-     - 机器人状态
-     - 工具端数字输入 Bit0-Bit15对应DI0-DI15
+     - Estado del robot
+     - Entrada digital del extremo de la herramienta Bit0-Bit15 corresponde a DI0-DI15
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1025
-     - 机器人状态
-     - 控制箱数字输出Bit0-Bit7对应DO0-DO7 Bit8-Bit15对应CO0-CO7
+     - Estado del robot
+     - Salida digital de la caja de control Bit0-Bit7 corresponde a DO0-DO7 Bit8-Bit15 corresponde a CO0-CO7
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1026
-     - 机器人状态
-     - 工具端数字输出 Bit0-Bit15对应DO0-DO15
+     - Estado del robot
+     - Salida digital del extremo de la herramienta Bit0-Bit15 corresponde a DO0-DO15
      - UINT16 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1027
-     - 机器人状态
-     - TCP速度
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Velocidad del TCP
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1028
-     - 机器人状态
-     - TCP速度
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Velocidad del TCP
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1029
-     - 机器人状态
-     - 关节1位置
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición de la articulación 1
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x102A
-     - 机器人状态
-     - 关节1位置
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición de la articulación 1
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x102B
-     - 机器人状态
-     - 关节2位置
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición de la articulación 2
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x102C
-     - 机器人状态
-     - 关节2位置
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición de la articulación 2
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x102D
-     - 机器人状态
-     - 关节3位置
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición de la articulación 3
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x102E
-     - 机器人状态
-     - 关节3位置
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición de la articulación 3
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x102F
-     - 机器人状态
-     - 关节4位置
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición de la articulación 4
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1030
-     - 机器人状态
-     - 关节4位置
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición de la articulación 4
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1031
-     - 机器人状态
-     - 关节5位置
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición de la articulación 5
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1032
-     - 机器人状态
-     - 关节5位置
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición de la articulación 5
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1033
-     - 机器人状态
-     - 关节6位置
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición de la articulación 6
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1034
-     - 机器人状态
-     - 关节6位置
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición de la articulación 6
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1035
-     - 机器人状态
-     - 关节1速度
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Velocidad de la articulación 1
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1036
-     - 机器人状态
-     - 关节1速度
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Velocidad de la articulación 1
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1037
-     - 机器人状态
-     - 关节2速度
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Velocidad de la articulación 2
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1038
-     - 机器人状态
-     - 关节2速度
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Velocidad de la articulación 2
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1039
-     - 机器人状态
-     - 关节3速度
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Velocidad de la articulación 3
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x103A
-     - 机器人状态
-     - 关节3速度
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Velocidad de la articulación 3
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x103B
-     - 机器人状态
-     - 关节4速度
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Velocidad de la articulación 4
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x103C
-     - 机器人状态
-     - 关节4速度
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Velocidad de la articulación 4
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x103D
-     - 机器人状态
-     - 关节5速度
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Velocidad de la articulación 5
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x103E
-     - 机器人状态
-     - 关节5速度
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Velocidad de la articulación 5
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x103F
-     - 机器人状态
-     - 关节6速度
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Velocidad de la articulación 6
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1040
-     - 机器人状态
-     - 关节6速度
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Velocidad de la articulación 6
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1041
-     - 机器人状态
-     - TCP位置X
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición X del TCP
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1042
-     - 机器人状态
-     - TCP位置X
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición X del TCP
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1043
-     - 机器人状态
-     - TCP位置Y
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición Y del TCP
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1044
-     - 机器人状态
-     - TCP位置Y
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición Y del TCP
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1045
-     - 机器人状态
-     - TCP位置Z
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición Z del TCP
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1046
-     - 机器人状态
-     - TCP位置Z
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición Z del TCP
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1047
-     - 机器人状态
-     - TCP位置RX
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición RX del TCP
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1048
-     - 机器人状态
-     - TCP位置RX
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición RX del TCP
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1049
-     - 机器人状态
-     - TCP位置RY
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición RY del TCP
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x104A
-     - 机器人状态
-     - TCP位置RY
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición RY del TCP
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x104B
-     - 机器人状态
-     - TCP位置RZ
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición RZ del TCP
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x104C
-     - 机器人状态
-     - TCP位置RZ
-     - FLOAT32 (大端显示) 
+     - Estado del robot
+     - Posición RZ del TCP
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x104D
-     - 模拟输入
+     - Entrada analógica
      - AO16
-     - FLOAT32 (大端显示) 
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x104E
-     - 模拟输入
+     - Entrada analógica
      - AO16
-     - FLOAT32 (大端显示) 
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x104F
-     - 模拟输入
+     - Entrada analógica
      - AO17
-     - FLOAT32 (大端显示) 
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x1050
-     - 模拟输入
+     - Entrada analógica
      - AO17
-     - FLOAT32 (大端显示) 
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - ...
-     - 模拟输入
+     - Entrada analógica
      - ...
-     - FLOAT32 (大端显示) 
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x106B
-     - 模拟输入
+     - Entrada analógica
      - AO31
-     - FLOAT32 (大端显示) 
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x106C
-     - 模拟输入
+     - Entrada analógica
      - AO31
-     - FLOAT32 (大端显示) 
+     - FLOAT32 (visualización big-endian) 
      - 0x04
-     - 只读  
+     - Solo lectura  
 
    * - 0x2000
-     - 模拟输出
+     - Salida analógica
      - AI0
      - INT16 
      - 0x03、0x06、0x10
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x2001
-     - 模拟输出
+     - Salida analógica
      - AI1
      - INT16 
      - 0x03、0x06、0x10
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x2002
-     - 模拟输出
+     - Salida analógica
      - AI2
      - INT16 
      - 0x03、0x06、0x10
-     - 读写  
+     - Lectura/escritura  
 
    * - ...
-     - 模拟输出
+     - Salida analógica
      - ...
      - INT16 
      - 0x03、0x06、0x10
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x200F
-     - 模拟输出
+     - Salida analógica
      - AI15
      - INT16 
      - 0x03、0x06、0x10
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x2010
-     - 模拟输出
+     - Salida analógica
      - AI16
-     - FLOAT32(大端显示) 
+     - FLOAT32(visualización big-endian) 
      - 0x03、0x06、0x10
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x2011
-     - 模拟输出
+     - Salida analógica
      - AI16
-     - FLOAT32(大端显示) 
+     - FLOAT32(visualización big-endian) 
      - 0x03、0x06、0x10
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x2012
-     - 模拟输出
+     - Salida analógica
      - AI17
-     - FLOAT32(大端显示) 
+     - FLOAT32(visualización big-endian) 
      - 0x03、0x06、0x10
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x2013
-     - 模拟输出
+     - Salida analógica
      - AI17
-     - FLOAT32(大端显示) 
+     - FLOAT32(visualización big-endian) 
      - 0x03、0x06、0x10
-     - 读写  
+     - Lectura/escritura  
 
    * - ...
-     - 模拟输出
+     - Salida analógica
      - ...
-     - FLOAT32(大端显示) 
+     - FLOAT32(visualización big-endian) 
      - 0x03、0x06、0x10
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x202E
-     - 模拟输出
+     - Salida analógica
      - AI31
-     - FLOAT32(大端显示) 
+     - FLOAT32(visualización big-endian) 
      - 0x03、0x06、0x10
-     - 读写  
+     - Lectura/escritura  
 
    * - 0x202F
-     - 模拟输出
+     - Salida analógica
      - AI31
-     - FLOAT32(大端显示) 
+     - FLOAT32(visualización big-endian) 
      - 0x03、0x06、0x10
-     - 读写  
+     - Lectura/escritura  
 
-基于六维力传感器姿态顺应功能保护
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Protección de la función de conformidad de actitud basada en el sensor de fuerza de seis ejes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
-++++++++++++++
+Descripción general
+++++++++++++++++++++++++++
 
-当前FR机器人在恒力FT_Control下的姿态顺应功能未进行最大调整角度限制，六维力传感器受到外力矩后机器人末端会持续偏移，在此情况下容易发生危险。
+Actualmente, la función de conformidad de actitud de los robots FR bajo FT_Control de fuerza constante no limita el ángulo máximo de ajuste; tras recibir un par externo el sensor de fuerza de seis ejes, el extremo del robot se desplaza continuamente, lo que fácilmente puede provocar situaciones peligrosas en estas condiciones.
 
-在FT_Control姿态顺应功能的基础上增加最大调整角度限制，设置自定义阈值，使姿态顺应功能更平滑。
+Sobre la base de la función de conformidad de actitud de FT_Control se añade la limitación del ángulo máximo de ajuste, estableciendo un umbral personalizado para hacer la función de conformidad de actitud más suave.
 
-操作流程
+Flujo de operación
 ++++++++++++++++++++++++++++++++++++++++
 
-**Step1**：点击“初始设置”->“基础”-> “工具坐标”，进入工具坐标系设置界面，选择“坐标系名称”并设置末端工具对应的坐标系参数。
+**Step1**: Hacer clic en "Configuración inicial"->"Básico"-> "Coordenadas de herramienta" para entrar en la interfaz de configuración del sistema de coordenadas de herramienta, seleccionar el "Nombre del sistema de coordenadas" y configurar los parámetros del sistema de coordenadas correspondientes a la herramienta del extremo.
    
 .. image:: coding/443.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.31-1 工具坐标系设置
+.. centered:: Figura 9.31-1 Configuración del sistema de coordenadas de herramienta
 
-**Step2**：点击“示教程序”->“程序编程”，编写恒力控制lua脚本，选择“力控集”->“Control”，添加力控运动指令，姿态顺应设置“开启”，最大调整角度设置为姿态顺应角度的阈值。
+**Step2**: Hacer clic en "Programa de enseñanza"->"Programación de programas", escribir el script lua de control de fuerza constante, seleccionar "Conjunto de control de fuerza"->"Control", añadir la instrucción de movimiento de control de fuerza, configurar la conformidad de actitud como "Activada" y configurar el ángulo máximo de ajuste como el umbral del ángulo de conformidad de actitud.
    
 .. image:: coding/444.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.31-2 力控运动指令
+.. centered:: Figura 9.31-2 Instrucción de movimiento de control de fuerza
 
-**Step3**：web界面点击“FT”，设置六维力传感器参考坐标系，选择参考坐标系为“自定义坐标系”并设置对应的坐标系参数。
-姿态顺应角度调整绕工具坐标系转动，设置参考坐标系参数为“0”；姿态顺应角度调整绕末端法兰坐标系转动，设置参考坐标系参数为末端工具对应的坐标系参数。
+**Step3**: En la interfaz web, hacer clic en "FT", configurar el sistema de coordenadas de referencia del sensor de fuerza de seis ejes, seleccionar el sistema de coordenadas de referencia como "Sistema de coordenadas personalizado" y configurar los parámetros del sistema de coordenadas correspondientes.
+Si el ajuste del ángulo de conformidad de actitud gira alrededor del sistema de coordenadas de herramienta, configurar los parámetros del sistema de coordenadas de referencia como "0"; si el ajuste del ángulo de conformidad de actitud gira alrededor del sistema de coordenadas de la brida del extremo, configurar los parámetros del sistema de coordenadas de referencia como los parámetros del sistema de coordenadas correspondientes a la herramienta del extremo.
    
 .. image:: coding/445.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.31-3 设置六维力传感器参考坐标系
+.. centered:: Figura 9.31-3 Configuración del sistema de coordenadas de referencia del sensor de fuerza de seis ejes
 
-**Step4**：运行脚本，查看姿态顺应效果，恒力下的姿态顺应调整角度会限制在自定义的最大调整角度范围内。
+**Step4**: Ejecutar el script y observar el efecto de conformidad de actitud; el ángulo de ajuste de conformidad de actitud bajo fuerza constante se limitará al rango del ángulo máximo de ajuste personalizado.
 
-Socket通信界面功能
+Función de la interfaz de comunicación Socket
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Socket配置
+Configuración de Socket
 ++++++++++++++++++++++++++++++++++
 
-使用Socket通信界面功能时，在机器人上电启动后需要先进入web页面进行Socket协议配置，配置断电保存。
+Al utilizar la función de la interfaz de comunicación Socket, tras el encendido y arranque del robot es necesario entrar primero en la página web para configurar el protocolo Socket; la configuración se guarda ante corte de energía.
 
-点击“示教程序”-“程序编程”，点击右上菜单栏内的“Socket网络调试”即可进入Socket配置界面。点击“添加Socket”，即可配置Socket参数，最多可添加四个Socket。
+Hacer clic en "Programa de enseñanza"-"Programación de programas" y hacer clic en "Depuración de red Socket" del menú de la esquina superior derecha para entrar en la interfaz de configuración de Socket. Hacer clic en "Añadir Socket" para configurar los parámetros de Socket; se pueden añadir como máximo cuatro Socket.
 
 .. image:: coding/446.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.32-1 Socket网络调试界面
+.. centered:: Figura 9.32-1 Interfaz de depuración de red Socket
 
 .. image:: coding/447.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.32-2 Socket配置参数界面
+.. centered:: Figura 9.32-2 Interfaz de parámetros de configuración de Socket
 
-通信参数设置
+Configuración de los parámetros de comunicación
+**********************************************************
+
+El protocolo de comunicación admite UDP, servidor TCP y cliente TCP.
+
+El tipo de datos admite ASCII y HEX; tras configurar el tipo de datos, todo el envío y recepción de datos de dicha conexión Socket se procesa según el tipo configurado.
+
+Mecanismo de detección de latido
 ********************************************
+El mecanismo de detección de latido solo es aplicable al servidor TCP y al cliente TCP.
 
-通信协议支持UDP、TCP服务端，TCP客户端。
+El mecanismo de detección de latido utiliza el mecanismo Keepalive para detectar y mantener el estado activo de la conexión y evitar que las conexiones inactivas durante mucho tiempo se interrumpan inesperadamente. Incluye principalmente los siguientes parámetros:
 
-数据类型支持ASCII和HEX两种，当配置完数据类型，该Socket连接的所有数据收发均按照配置类型进行处理。
+- Intervalo de sondeo: tiempo de inactividad tras el cual se empiezan a enviar paquetes de sondeo keepalive, en segundos;
+- Tiempo de sondeo: intervalo de envío de los paquetes de sondeo, en segundos;
+- Número de sondeos: número máximo de veces que se envían paquetes de sondeo.
 
-心跳检测机制
+Mecanismo de reconexión tras desconexión
 ********************************************
-心跳检测机制只适用于TCP服务端和TCP客户端。
+El mecanismo de reconexión tras desconexión solo es aplicable al cliente TCP.
 
-心跳检测机制采用Keepalive机制，用于检测和维护连接的活跃状态，防止长时间空闲的连接被意外中断。主要包含以下参数：
+Tras activar el mecanismo de reconexión tras desconexión, al activar el cliente TCP y detectar la desconexión del servidor, se iniciará activamente el mecanismo de reconexión tras desconexión; si tras alcanzar el número máximo de reconexiones sigue sin conectarse, se desconectará. Incluye principalmente los siguientes parámetros:
 
-- 探测间隔：空闲多长时间开始发送keepalive探测包，单位秒；
-- 探测时间：探测包发送间隔时间，单位秒；
-- 探测次数：最多发送多少次探测包。
-
-断线重连机制
-********************************************
-断线重连机制只适用于TCP客户端。
-
-当开启断线重连机制后，开启TCP客户端时检测到服务端断连，会主动进行断连重连机制，在达到最大重连次数后依然未连接，则会断开连接。主要包含以下参数：
-
-- 重连间隔：重连间隔时间，单位ms，建议时间秒级；
-- 最大重连次数：最多重连多少次。
+- Intervalo de reconexión: tiempo de intervalo de reconexión, en ms; se recomienda un tiempo de nivel de segundos;
+- Número máximo de reconexiones: número máximo de veces que se reconecta.
   
-自定义协议解析
+Análisis de protocolo personalizado
 ********************************************
-开启自定义协议解析后，会根据协议配置内容对收发的数据进行封装或解析。
+Tras activar el análisis de protocolo personalizado, los datos enviados y recibidos se encapsulan o analizan según el contenido de la configuración del protocolo.
 
-自定义协议可根据配置参数自动生成，ASCII模式下支持帧头、帧计数、数据长度、帧尾组合使用。可使用分隔符进行数据分割。HEX模式下，支持帧头、帧计数、数据长度、校验方法，帧尾组合使用。
+El protocolo personalizado se puede generar automáticamente según los parámetros de configuración; en modo ASCII se admite el uso combinado de cabecera de trama, contador de trama, longitud de datos y cola de trama. Se pueden utilizar separadores para dividir los datos. En modo HEX se admite el uso combinado de cabecera de trama, contador de trama, longitud de datos, método de verificación y cola de trama.
 
 .. image:: coding/448.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.32-3 ASCII模式自定义协议配置
+.. centered:: Figura 9.32-3 Configuración de protocolo personalizado en modo ASCII
 
 .. image:: coding/449.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.32-4 HEX模式自定义协议配置
+.. centered:: Figura 9.32-4 Configuración de protocolo personalizado en modo HEX
 
-配置完自定义协议后，点击“生成”按钮，可自动生成对应的lua文件，lua文件支持导入、导出功能。可根据文件代码自定义修改协议类型进行灵活配置。
+Tras configurar el protocolo personalizado, hacer clic en el botón "Generar" y se generará automáticamente el archivo lua correspondiente; el archivo lua admite funciones de importación y exportación. Se puede modificar personalmente el tipo de protocolo en el código del archivo para una configuración flexible.
 
-Socket连接
+Conexión Socket
 ++++++++++++++++++++++++++++++++++++++++++
 
-界面连接显示
+Visualización de la conexión en la interfaz
 ********************************************
-配置Socket信息后可以建立该Socket连接，连接状态包含以下三种状态：
+Tras configurar la información de Socket se puede establecer dicha conexión Socket; el estado de la conexión incluye los tres estados siguientes:
 
-- 白色：连接为建立。
+- Blanco: conexión establecida.
 
 .. image:: coding/450.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.32-5 未连接状态
+.. centered:: Figura 9.32-5 Estado no conectado
 
-- 黄色：TCP服务端等待连接或TCP客户端请求连接。
+- Amarillo: el servidor TCP espera conexión o el cliente TCP solicita conexión.
 
 .. image:: coding/451.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.32-6 等待连接状态
+.. centered:: Figura 9.32-6 Estado de espera de conexión
 
-- 绿色：连接成功。
+- Verde: conexión correcta.
 
 .. image:: coding/452.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.32-7 连接成功状态
+.. centered:: Figura 9.32-7 Estado de conexión correcta
 
-连接指令模块
+Módulo de instrucciones de conexión
 ********************************************
 
-点击“示教程序”-“程序编程”-“通讯指令”，选择“Socket”指令，可生成打开Socket连接，关闭Socket连接指令，用于lua编程。SocketID只能选择已配置的Socket连接。
+Hacer clic en "Programa de enseñanza"-"Programación de programas"-"Instrucciones de comunicación", seleccionar la instrucción "Socket" y se pueden generar las instrucciones de abrir conexión Socket y cerrar conexión Socket, para la programación en lua. En SocketID solo se pueden seleccionar conexiones Socket ya configuradas.
 
 .. image:: coding/453.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.32-8 Socket连接指令模块
+.. centered:: Figura 9.32-8 Módulo de instrucciones de conexión Socket
 
-指令详解：
+Explicación detallada de las instrucciones:
 
-- 打开连接指令：OpenSockeConnect(id)；
-- 参数id:已配置好的socket ID,返回值0成功；
-- 关闭连接指令：CloseSockeConnect(id)；
-- 参数id:已配置好的socket ID,返回值0成功。
+- Instrucción de abrir conexión: OpenSockeConnect(id);
+- Parámetro id: ID de socket ya configurado; valor de retorno 0 si se realiza correctamente;
+- Instrucción de cerrar conexión: CloseSockeConnect(id);
+- Parámetro id: ID de socket ya configurado; valor de retorno 0 si se realiza correctamente.
 
-Scoket通信
+Comunicación Scoket
 +++++++++++++++++++++++++++++++++++++++++
 
-通信测试
+Prueba de comunicación
 ***********************************
-界面提供通信测试，可进行数据收发测试，如下图。
+La interfaz ofrece una prueba de comunicación para realizar pruebas de envío y recepción de datos, como se muestra en la figura siguiente.
 
 .. image:: coding/454.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.32-9 通信测试
+.. centered:: Figura 9.32-9 Prueba de comunicación
  
-界面发送数据默认采取阻塞模式，等待运动完成后进行数据发送。数据接收默认超时时间为5秒，超时后报错停止。以上参数可在指令模块下发时进行调整。
+El envío de datos desde la interfaz adopta por defecto el modo bloqueante, esperando a que finalice el movimiento para enviar los datos. La recepción de datos tiene por defecto un tiempo de espera agotado de 5 segundos; tras superarlo se informa de un error y se detiene. Los parámetros anteriores se pueden ajustar al enviar el módulo de instrucciones.
 
-通信指令模块
-***********************************
+Módulo de instrucciones de comunicación
+*************************************************
 
-点击“示教程序”-“程序编程”-“通讯指令”，选择“Socket”指令，可生成Socket通信指令，进行数据收发，用于lua编程。SocketID只能选择已配置的Socket连接，发送数据。
+Hacer clic en "Programa de enseñanza"-"Programación de programas"-"Instrucciones de comunicación", seleccionar la instrucción "Socket" y se pueden generar instrucciones de comunicación Socket para el envío y recepción de datos, para la programación en lua. En SocketID solo se pueden seleccionar conexiones Socket ya configuradas para enviar datos.
 
 .. image:: coding/455.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.32-10 发送Socket数据
+.. centered:: Figura 9.32-10 Envío de datos Socket
 
-指令参数分别为Socket ID，发送的数据，以及是否等待运动完成。
+Los parámetros de la instrucción son respectivamente el Socket ID, los datos a enviar y si se espera a que finalice el movimiento.
 
-指令详解：
+Explicación detallada de las instrucciones:
 
-- 发送指令：SocketSend(id,data,block)；
-- 参数：id,已连接的socket ID；data:要发送的数据，字符串形式，内容数据需要和配置的数据类型一致，如“hello”或“FA54DE”;block:是否阻塞运动，0：等待运动完成发送，1：立即发送。返回值0成功。
+- Instrucción de envío: SocketSend(id,data,block);
+- Parámetros: id, ID de socket ya conectado; data: datos a enviar, en forma de cadena; el contenido de los datos debe coincidir con el tipo de datos configurado, como "hello" o "FA54DE"; block: si se bloquea el movimiento, 0: esperar a que finalice el movimiento para enviar, 1: enviar inmediatamente. Valor de retorno 0 si se realiza correctamente.
 
-接收数据如下图所示。
+La recepción de datos se muestra en la figura siguiente.
 
 .. image:: coding/456.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.32-11 接收Socket数据
+.. centered:: Figura 9.32-11 Recepción de datos Socket
 
-指令参数分别为Socket ID，接收超时时间，单位毫秒，以及超时后状态。
+Los parámetros de la instrucción son respectivamente el Socket ID, el tiempo de espera agotado de recepción en milisegundos y el estado tras el tiempo de espera agotado.
 
-指令详解：
+Explicación detallada de las instrucciones:
 
-- 接收指令：SocketReceive(id,timeout,stopStartegy)；
-- 参数：id,已连接的socket ID；timeout:接收超时时间;stopStartegy:超时后策略，0：超时后报错停止，1：超时后继续运行；
-- 返回值：time:接收时间，data:接收数据。
+- Instrucción de recepción: SocketReceive(id,timeout,stopStartegy);
+- Parámetros: id, ID de socket ya conectado; timeout: tiempo de espera agotado de recepción; stopStartegy: estrategia tras el tiempo de espera agotado, 0: informar de error y detener tras el tiempo de espera agotado, 1: continuar la ejecución tras el tiempo de espera agotado;
+- Valor de retorno: time: tiempo de recepción, data: datos recibidos.
 
-机器人运动过程中阻抗控制功能
+Función de control de impedancia durante el movimiento del robot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
+Descripción general
 ++++++++++++++++++++++++++++++++
 
-阻抗控制功能通过外力的实时检测，当达到设定阈值后主动顺应外力，偏离运动轨迹，当外力降至阈值后回归运动轨迹，从而更好地实现人机交互。此功能在检测到外力超出预先设定的力阈值时，会驱动机械臂朝着受力方向产生偏移，达成主动避让效果，待外力撤销后，机械臂会回到原运动轨迹附近，进而提升了人机协作过程中的安全性。
+La función de control de impedancia, mediante la detección en tiempo real de la fuerza externa, cuando se alcanza el umbral establecido se adapta activamente a la fuerza externa y se desvía de la trayectoria de movimiento; cuando la fuerza externa desciende por debajo del umbral, regresa a la trayectoria de movimiento, logrando así una mejor interacción humano-máquina. Esta función, al detectar que la fuerza externa supera el umbral de fuerza preestablecido, impulsa el brazo mecánico a desplazarse en la dirección de la fuerza aplicada, logrando un efecto de evitación activa; una vez retirada la fuerza externa, el brazo mecánico regresa a las proximidades de la trayectoria de movimiento original, mejorando así la seguridad en el proceso de colaboración humano-máquina.
 
-阻抗控制功能
+Función de control de impedancia
 ++++++++++++++++++++++++++++++++
 
-笛卡尔空间下阻抗控制设置及功能启停
-*****************************************************************
+Configuración del control de impedancia en el espacio cartesiano y activación/desactivación de la función
+*************************************************************************************************************************
 
-**Step1**：登录web界面，依次点击“初始设置”→“基础”→“关节”→“碰撞等级”，进入机器人碰撞等级设置模块，设置合理的碰撞系数。
+**Step1**: Iniciar sesión en la interfaz web y hacer clic sucesivamente en "Configuración inicial"→"Básico"→"Articulación"→"Nivel de colisión" para entrar en el módulo de configuración del nivel de colisión del robot y configurar un coeficiente de colisión razonable.
 
 .. image:: coding/473.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.34-1 机器人碰撞系数设置模块
+.. centered:: Figura 9.34-1 Módulo de configuración del coeficiente de colisión del robot
 
-**Step2**：使用力传感器来实现阻抗控制功能，需在“外设”→“末端工具”的末端外设配置中进行力传感器的配置；选择不使用力传感器来实现阻抗控制功能，则无需进行这一步操作。
+**Step2**: Para realizar la función de control de impedancia con sensor de fuerza, es necesario configurar el sensor de fuerza en la configuración de periféricos del extremo de "Periféricos"→"Herramienta del extremo"; si se selecciona realizar la función de control de impedancia sin utilizar sensor de fuerza, no es necesario realizar este paso.
 
-**Step3**：依次点击“示教程序”→“程序编程”→“力控集”，添加“Impedance”指令。“Impedance”指令可以使机器人在运行轨迹上实现阻抗控制。
+**Step3**: Hacer clic sucesivamente en "Programa de enseñanza"→"Programación de programas"→"Conjunto de control de fuerza" y añadir la instrucción "Impedance". La instrucción "Impedance" permite al robot realizar el control de impedancia sobre la trayectoria de movimiento.
 
 .. image:: coding/474.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.34-2 添加力控指令
+.. centered:: Figura 9.34-2 Añadir instrucción de control de fuerza
 
-**Step4**：在力控指令中模块中，空间选择下拉框中选择“笛卡尔空间”，在文本框中设置合适的力的阈值、质量系数、阻尼系数、刚度系数、最大线速度、最大线加速度、最大角速度和最大角加速度。在指令类型中点击“开启”，点击“添加”，添加阻抗控制开启指令；在指令类型中点击“关闭”，点击“添加”，添加阻抗控制关闭指令。
+**Step4**: En el módulo de instrucciones de control de fuerza, seleccionar "Espacio cartesiano" en el cuadro desplegable de selección de espacio y configurar en los cuadros de texto el umbral de fuerza, el coeficiente de masa, el coeficiente de amortiguación, el coeficiente de rigidez, la velocidad lineal máxima, la aceleración lineal máxima, la velocidad angular máxima y la aceleración angular máxima adecuados. En el tipo de instrucción, hacer clic en "Activar" y hacer clic en "Añadir" para añadir la instrucción de activación del control de impedancia; en el tipo de instrucción, hacer clic en "Desactivar" y hacer clic en "Añadir" para añadir la instrucción de desactivación del control de impedancia.
 
 .. image:: coding/475.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.34-3 阻抗控制指令示例
+.. centered:: Figura 9.34-3 Ejemplo de instrucción de control de impedancia
 
-**Step5**：在运行过程中，若机械臂停止运行，且Web界面左下角显示“500错误：当前碰撞等级过低”，这是由于设置的力的阈值大于碰撞等级的触发阈值所致。此时，提高碰撞等级或者降低力的阈值，即可解除该错误。
+**Step5**: Durante la ejecución, si el brazo mecánico se detiene y en la esquina inferior izquierda de la interfaz Web se muestra "Error 500: el nivel de colisión actual es demasiado bajo", esto se debe a que el umbral de fuerza configurado es mayor que el umbral de activación del nivel de colisión. En este momento, aumentar el nivel de colisión o reducir el umbral de fuerza permite eliminar dicho error.
 
 .. image:: coding/476.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.34-4 碰撞等级过低警告
+.. centered:: Figura 9.34-4 Advertencia de nivel de colisión demasiado bajo
 
-**Step6**：在运行过程中，若机械臂停止运行，且Web界面右下角显示“碰撞故障”，这是因为机械臂所受外力超过了碰撞等级的触发阈值，进而触发了碰撞故障。
+**Step6**: Durante la ejecución, si el brazo mecánico se detiene y en la esquina inferior derecha de la interfaz Web se muestra "Fallo de colisión", esto se debe a que la fuerza externa recibida por el brazo mecánico ha superado el umbral de activación del nivel de colisión, activando así el fallo de colisión.
 
 .. image:: coding/477.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.34-5 碰撞故障警告
+.. centered:: Figura 9.34-5 Advertencia de fallo de colisión
 
-参数具体作用及推荐值：
+Función concreta de los parámetros y valores recomendados:
 
-- 空间选择：设置阻抗控制的运行空间，目前只开放了笛卡尔空间阻抗控制；
-- 力的阈值：阻抗控制的最小触发力，平动方向力的阈值范围为30–150N，旋转方向力的阈值范围为7–30Nm；
-- 质量系数：增大质量系数会导致偏移缓慢，减小质量系数会导致机器人偏移过快，平动方向范围为[0.01-1]，建议为0.04，旋转方向范围为[0.001-1]，建议为0.01；
-- 阻尼系数：增大阻尼系数会导致偏移缓慢，减小阻尼系数会导致机器人偏移过快，产生震荡，平动方向范围为[0.1-2]，建议为0.1，旋转方向范围为[0.008-1.5]，建议为0.08；
-- 刚度系数：增大刚度系数会导致偏移缓慢，建议为0；
-- 最大线速度：限制外力产生平动方向的速度，建议为250mm/s；
-- 最大线加速度：限制外力产生平动方向的加速度，建议为500mm/s2；
-- 最大角速度：限制外力产生旋转方向的角速度，建议为90°/s；
-- 最大角加速度：限制外力产生旋转方向的角加速度，建议为180°/s2。
+- Selección de espacio: configurar el espacio de ejecución del control de impedancia; actualmente solo se ha abierto el control de impedancia en el espacio cartesiano;
+- Umbral de fuerza: fuerza mínima de activación del control de impedancia; el rango del umbral de fuerza en la dirección de traslación es 30–150N, y el rango del umbral de fuerza en la dirección de rotación es 7–30Nm;
+- Coeficiente de masa: aumentar el coeficiente de masa provoca un desplazamiento lento; reducirlo provoca que el robot se desplace demasiado rápido; el rango en la dirección de traslación es [0.01-1], recomendándose 0.04; el rango en la dirección de rotación es [0.001-1], recomendándose 0.01;
+- Coeficiente de amortiguación: aumentar el coeficiente de amortiguación provoca un desplazamiento lento; reducirlo provoca que el robot se desplace demasiado rápido y se produzcan oscilaciones; el rango en la dirección de traslación es [0.1-2], recomendándose 0.1; el rango en la dirección de rotación es [0.008-1.5], recomendándose 0.08;
+- Coeficiente de rigidez: aumentar el coeficiente de rigidez provoca un desplazamiento lento; se recomienda 0;
+- Velocidad lineal máxima: limita la velocidad en la dirección de traslación generada por la fuerza externa; se recomienda 250mm/s;
+- Aceleración lineal máxima: limita la aceleración en la dirección de traslación generada por la fuerza externa; se recomienda 500mm/s2;
+- Velocidad angular máxima: limita la velocidad angular en la dirección de rotación generada por la fuerza externa; se recomienda 90°/s;
+- Aceleración angular máxima: limita la aceleración angular en la dirección de rotación generada por la fuerza externa; se recomienda 180°/s2.
 
-关节空间下阻抗控制设置及功能启停
-*****************************************************************************************
+Configuración del control de impedancia en el espacio articular y activación/desactivación de la función
+*********************************************************************************************************************
 
-**Step1**：登录web界面，依次点击“初始设置”→“基础”→“关节”→“碰撞等级”，进入机器人碰撞等级设置模块，设置合理的碰撞系数。
+**Step1**: Iniciar sesión en la interfaz web y hacer clic sucesivamente en "Configuración inicial"→"Básico"→"Articulación"→"Nivel de colisión" para entrar en el módulo de configuración del nivel de colisión del robot y configurar un coeficiente de colisión razonable.
 
 .. image:: coding/555.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.34-6 机器人碰撞系数设置模块
+.. centered:: Figura 9.34-6 Módulo de configuración del coeficiente de colisión del robot
 
-**Step2**：依次点击“示教程序”→“程序编程”→“力控集”，添加“Impedance”指令。“Impedance”指令可以使机器人在运行轨迹上实现阻抗控制。
+**Step2**: Hacer clic sucesivamente en "Programa de enseñanza"→"Programación de programas"→"Conjunto de control de fuerza" y añadir la instrucción "Impedance". La instrucción "Impedance" permite al robot realizar el control de impedancia sobre la trayectoria de movimiento.
 
 .. image:: coding/556.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.34-7 添加力控指令
+.. centered:: Figura 9.34-7 Añadir instrucción de control de fuerza
 
-**Step3**：在力控指令中模块中，空间选择下拉框中选择“关节空间”，在文本框中设置合适的力的阈值、质量系数、阻尼系数、刚度系数、最大速度和最大加速度。在指令类型中点击“开启”，点击“添加”，添加阻抗控制开启指令；在指令类型中点击“关闭”，点击“添加”，添加阻抗控制关闭指令。
+**Step3**: En el módulo de instrucciones de control de fuerza, seleccionar "Espacio articular" en el cuadro desplegable de selección de espacio y configurar en los cuadros de texto el umbral de fuerza, el coeficiente de masa, el coeficiente de amortiguación, el coeficiente de rigidez, la velocidad máxima y la aceleración máxima adecuados. En el tipo de instrucción, hacer clic en "Activar" y hacer clic en "Añadir" para añadir la instrucción de activación del control de impedancia; en el tipo de instrucción, hacer clic en "Desactivar" y hacer clic en "Añadir" para añadir la instrucción de desactivación del control de impedancia.
 
 .. image:: coding/557.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.34-8 阻抗控制指
+.. centered:: Figura 9.34-8 Control de impedancia
 
-参数具体作用及推荐值：
+Función concreta de los parámetros y valores recomendados:
 
-- 空间选择：设置阻抗控制的运行空间为关节空间；
-- 力的阈值：阻抗控制的最小触发力，J1-J3的阈值范围为10–50Nm，旋转方向力的阈值范围为1–10Nm；
-- 质量系数：增大质量系数会导致偏移缓慢，减小质量系数会导致机器人偏移过快，J1-J3设置范围为[0.01-1]，建议为0.04，J4-J6设置范围为[0.001-1]，建议为0.01；
-- 阻尼系数：增大阻尼系数会导致偏移缓慢，减小阻尼系数会导致机器人偏移过快，产生震荡，J1-J3设置范围为[0.1-2]，建议为0.1，J4-J6设置范围为[0.008-1.5]，建议为0.08；
-- 刚度系数：增大刚度系数会导致偏移缓慢，建议为0；
-- 最大速度：限制外力产生关节转动的速度，建议为50°/s；
-- 最大加速度：限制外力产生关节转动的加速度，建议为50°/s2。
+- Selección de espacio: configurar el espacio de ejecución del control de impedancia como espacio articular;
+- Umbral de fuerza: fuerza mínima de activación del control de impedancia; el rango del umbral de J1-J3 es 10–50Nm, y el rango del umbral de fuerza en la dirección de rotación es 1–10Nm;
+- Coeficiente de masa: aumentar el coeficiente de masa provoca un desplazamiento lento; reducirlo provoca que el robot se desplace demasiado rápido; el rango de configuración de J1-J3 es [0.01-1], recomendándose 0.04; el rango de configuración de J4-J6 es [0.001-1], recomendándose 0.01;
+- Coeficiente de amortiguación: aumentar el coeficiente de amortiguación provoca un desplazamiento lento; reducirlo provoca que el robot se desplace demasiado rápido y se produzcan oscilaciones; el rango de configuración de J1-J3 es [0.1-2], recomendándose 0.1; el rango de configuración de J4-J6 es [0.008-1.5], recomendándose 0.08;
+- Coeficiente de rigidez: aumentar el coeficiente de rigidez provoca un desplazamiento lento; se recomienda 0;
+- Velocidad máxima: limita la velocidad de rotación articular generada por la fuerza externa; se recomienda 50°/s;
+- Aceleración máxima: limita la aceleración de rotación articular generada por la fuerza externa; se recomienda 50°/s2.
 
-自定义摆动焊接功能
+Función de soldadura oscilante personalizada
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
+Descripción general
 ++++++++++++++++++++++++++++++++
 
-自定义摆动焊接功能，就是使用用户自己设计的摆焊模式去执行摆焊的一种的功能。
+La función de soldadura oscilante personalizada es una función que utiliza un modo de soldadura oscilante diseñado por el propio usuario para ejecutar la soldadura oscilante.
 
-自定义摆动焊接功能说明：
+Descripción de la función de soldadura oscilante personalizada:
 
-- (1)在摆动参数参数界面的摆动类型选择“自定义摆动0”、“自定义摆动1”、“自定义摆动2”中的任何一个，自定义摆动焊接模式最多可以设置3个。
-- (2)自定义摆动端点个数最多可以设置10个，最少设置2个，且最后一个端点的X、Y、Z数据为0，不可修改，停留时间都可以设置。
-- (3)自定义摆动端点的X、Y、Z的值要在-10mm~10mm范围内，摆动频率不超过10。
-- (4)目前直线、圆弧、整圆轨迹据能够进行自定义摆动焊接，但还不支持摆动渐变功能。
-- (5)需要注意当摆动等待时间设置为“包括”时，摆动总停留时间不能超过摆动周期时间的一半。
+- (1) En la interfaz de parámetros de oscilación, seleccionar cualquiera de "Oscilación personalizada 0", "Oscilación personalizada 1" y "Oscilación personalizada 2" como tipo de oscilación; se pueden configurar como máximo 3 modos de soldadura oscilante personalizada.
+- (2) El número máximo de extremos de oscilación personalizada que se puede configurar es 10 y el mínimo es 2; los datos X, Y, Z del último extremo son 0 y no se pueden modificar; el tiempo de permanencia se puede configurar en todos.
+- (3) Los valores X, Y, Z de los extremos de oscilación personalizada deben estar en el rango de -10mm~10mm, y la frecuencia de oscilación no debe superar 10.
+- (4) Actualmente, las trayectorias en línea recta, en arco y en círculo completo pueden realizar soldadura oscilante personalizada, pero aún no se admite la función de variación gradual de oscilación.
+- (5) Tenga en cuenta que cuando el tiempo de espera de oscilación se configura como "Incluido", el tiempo total de permanencia de la oscilación no puede superar la mitad del tiempo del período de oscilación.
 
-自定义摆动焊接功能操作流程
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Flujo de operación de la función de soldadura oscilante personalizada
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-自定义摆动焊接功能的操作流程如下：
+El flujo de operación de la función de soldadura oscilante personalizada es el siguiente:
 
-**Step 1**:首先记录直线轨迹的开始和结束示教点，然后点击“示教程序”、“程序编程”，选择“点到点”让机器人末端移动到直线开始点“custWeaveP1”，最后选择“直线”让机器人移动到直线结束点“custWeaveP2”。
+**Step 1**: En primer lugar, registrar los puntos de enseñanza de inicio y fin de la trayectoria en línea recta; a continuación, hacer clic en "Programa de enseñanza", "Programación de programas", seleccionar "Punto a punto" para que el extremo del robot se desplace hasta el punto inicial de la línea recta "custWeaveP1" y, por último, seleccionar "Línea recta" para que el robot se desplace hasta el punto final de la línea recta "custWeaveP2".
 
-**Step 2**:选择“摆动”按钮，点击摆动工艺编辑按钮，进入摆动参数设置界面，“摆动类型”选择“自定义摆动N”(N=0, 1, 2)。
+**Step 2**: Seleccionar el botón "Oscilación", hacer clic en el botón de edición del proceso de oscilación para entrar en la interfaz de configuración de parámetros de oscilación y seleccionar "Oscilación personalizada N" (N=0, 1, 2) en "Tipo de oscilación".
 
 .. image:: coding/478.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.35-1 摆动参数设置界面
+.. centered:: Figura 9.35-1 Interfaz de configuración de parámetros de oscilación
 
-**Step 3**:“摆动类型”选择好后，摆动参数设置界面下拉。在界面里选择自定义摆动端点个数，设置每个点在摆动坐标系下的位置和停留时间，最后点击“配置”按钮。
+**Step 3**: Tras seleccionar el "Tipo de oscilación", desplegar la interfaz de configuración de parámetros de oscilación. En la interfaz, seleccionar el número de extremos de oscilación personalizada, configurar la posición y el tiempo de permanencia de cada punto en el sistema de coordenadas de oscilación y, por último, hacer clic en el botón "Configurar".
 
 .. image:: coding/479.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.35-2 自定义摆动设置界面
+.. centered:: Figura 9.35-2 Interfaz de configuración de oscilación personalizada
 
-**Step 4**:在摆动界面的“指令类型”里依次选择“开始摆动”、“结束摆动”并点击“添加”按钮，最后点击“应用”按钮。
+**Step 4**: En el "Tipo de instrucción" de la interfaz de oscilación, seleccionar sucesivamente "Iniciar oscilación" y "Finalizar oscilación" y hacer clic en el botón "Añadir"; por último, hacer clic en el botón "Aplicar".
 
 .. image:: coding/480.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.35-3 摆动指令设置界面
+.. centered:: Figura 9.35-3 Interfaz de configuración de la instrucción de oscilación
 
-**Step 5**:在程序编辑界面选择摆动开始指令，点击界面上方的“上移”按钮，最后保存程序，机器人切换为自动模式，点击“开始”按钮，机器人便能开始直线轨迹的自定义摆动。
+**Step 5**: En la interfaz de edición de programas, seleccionar la instrucción de inicio de oscilación, hacer clic en el botón "Subir" de la parte superior de la interfaz y, por último, guardar el programa; cambiar el robot al modo automático y hacer clic en el botón "Inicio" para que el robot comience la oscilación personalizada de la trayectoria en línea recta.
 
 .. image:: coding/481.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.35-4 原LUA指令界面
+.. centered:: Figura 9.35-4 Interfaz de la instrucción LUA original
 
 .. image:: coding/482.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.35-5 修改后LUA指令界面
+.. centered:: Figura 9.35-5 Interfaz de la instrucción LUA modificada
 
-**Step 6**:圆弧轨迹和整圆轨迹的自定义摆动设置步骤同上Step 1-Step 5。
+**Step 6**: Los pasos de configuración de la oscilación personalizada de la trayectoria en arco y de la trayectoria en círculo completo son los mismos que los pasos 1 a 5.
 
-示教点配置
+Configuración de puntos de enseñanza
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-点击“示教点配置”进入示教点配置功能界面。
+Hacer clic en "Configuración de puntos de enseñanza" para entrar en la interfaz de la función de configuración de puntos de enseñanza.
 
-用户在使用按钮盒或其它IO信号记录示教点功能前，首先对示教点名称前缀，编号上限和示教方法进行配置，名称前缀支持自定义前缀和以当前程序名作为前缀两种模式。例如，自定义名称前缀“P”，编号上限“3”，示教方法“机器人示教”，记录机器人当前末端（工具）点依次为：P1、P2、P3，再次记录将覆盖之前记录点。
+Antes de utilizar la caja de botones u otras señales de IO para registrar puntos de enseñanza, el usuario debe configurar primero el prefijo del nombre de los puntos de enseñanza, el límite superior de numeración y el método de enseñanza; el prefijo del nombre admite dos modos: prefijo personalizado y prefijo con el nombre del programa actual. Por ejemplo, con el prefijo de nombre personalizado "P", el límite superior de numeración "3" y el método de enseñanza "Enseñanza del robot", los puntos del extremo (herramienta) actual del robot registrados serán sucesivamente: P1, P2, P3; un nuevo registro sobrescribirá los puntos registrados anteriormente.
 
 .. image:: coding/483.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.36-1 示教点配置
+.. centered:: Figura 9.36-1 Configuración de puntos de enseñanza
 
-末端记点自动覆盖更新lua程序
-++++++++++++++++++++++++++++++++++++++++++
+Actualización automática por sobrescritura del programa lua al registrar puntos en el extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-末端记点功能配置
-****************************
+Configuración de la función de registro de puntos en el extremo
+**********************************************************************
 
-1. 打开末端记点功能，点击设置。可以通过开关，选择需要更新点位的lua程序。
+1. Activar la función de registro de puntos en el extremo y hacer clic en configurar. Mediante el interruptor se puede seleccionar el programa lua cuyos puntos se desea actualizar.
 
 .. image:: coding/484.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.36‑2 开启末端记点功能
+.. centered:: Figura 9.36‑2 Activar la función de registro de puntos en el extremo
 
-2. 配置完成，此时末端记点的名称为test前缀，编号上限为10，选择所有Lua程序启用更新。关闭webApp，该功能依然生效。
+2. Configuración completada; en este momento el nombre del registro de puntos en el extremo tiene el prefijo test, el límite superior de numeración es 10 y se selecciona la actualización habilitada para todos los programas Lua. Al cerrar WebApp, esta función sigue estando activa.
    
-末端按钮记点自动更新Lua程序
-******************************************
+Actualización automática del programa Lua al registrar puntos con el botón del extremo
+**************************************************************************************************
 
-1. 点击机器人末端记点按钮。
+1. Hacer clic en el botón de registro de puntos del extremo del robot.
 
 .. image:: coding/485.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.36‑3 末端记点按钮
+.. centered:: Figura 9.36‑3 Botón de registro de puntos del extremo
 
-2. 此时末端LED闪烁情况：紫灯闪烁（开始）->蓝灯常亮（记点并更新Lua中）->绿灯常亮（记点完成），选中的Lua程序对应名称的点位信息同步更新。
+2. En este momento, el LED del extremo parpadea de la siguiente forma: luz morada parpadeante (inicio) -> luz azul fija (registro y actualización en Lua) -> luz verde fija (registro completado); la información de posición del punto con el nombre correspondiente del programa Lua seleccionado se actualiza sincronizadamente.
 
 .. image:: coding/486.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.36‑3 末端记点并更新Lua程序LED变化
+.. centered:: Figura 9.36‑3 Cambio del LED del extremo al registrar puntos y actualizar el programa Lua
 
-3. 记点失败时末端LED闪烁情况：紫灯闪烁（开始）->红灯闪烁（记点失败）->绿灯常亮（恢复正常）。
+3. En caso de fallo del registro, el LED del extremo parpadea de la siguiente forma: luz morada parpadeante (inicio) -> luz roja parpadeante (fallo del registro) -> luz verde fija (recuperación normal).
 
 .. image:: coding/487.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.36‑4 末端记点失败LED变化
+.. centered:: Figura 9.36‑4 Cambio del LED del extremo en caso de fallo del registro
 
-功能使用实例
-**************
+Ejemplo de uso de la función
+******************************************
 
-1. 自定义前缀：test，编号上限5，示教方法选择机器人示教，末端记点功能开启，点击设置。
+1. Prefijo personalizado: test; límite superior de numeración: 5; método de enseñanza: seleccionar enseñanza del robot; función de registro de puntos en el extremo activada; hacer clic en configurar.
 
-2. 启用需要更新点位的lua程序program1。
+2. Habilitar el programa lua program1 cuyos puntos se desea actualizar.
 
 .. image:: coding/488.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.36‑5 示教点配置
+.. centered:: Figura 9.36‑5 Configuración de puntos de enseñanza
 
-3. 如下图为program1程序及当前的运行轨迹。
+3. La figura siguiente muestra el programa program1 y su trayectoria de ejecución actual.
 
 .. image:: coding/489.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.36‑6 program1程序及当前的运行轨迹
+.. centered:: Figura 9.36‑6 Programa program1 y su trayectoria de ejecución actual
 
-4. 页面切换为手动模式，拖动机器人到新的点位，点击末端记点按钮，等待末端LED闪烁完成，紫灯闪烁（开始）->蓝灯常亮（记点并更新Lua中）->绿灯常亮（记点完成），此时所记点为test1。
-5. 重复步骤4，依次记下test2、test3、test4、test5，完成5个点记录，此时program1程序点位已同步更新。
-6. 重新运行program1程序，此时运动轨迹已更新，运动轨迹如下图。
+4. Cambiar la página al modo manual, arrastrar el robot hasta un nuevo punto y hacer clic en el botón de registro de puntos del extremo; esperar a que finalice el parpadeo del LED del extremo: luz morada parpadeante (inicio) -> luz azul fija (registro y actualización en Lua) -> luz verde fija (registro completado); en este momento el punto registrado es test1.
+5. Repetir el paso 4 y registrar sucesivamente test2, test3, test4 y test5, completando el registro de 5 puntos; en este momento los puntos del programa program1 ya se han actualizado sincronizadamente.
+6. Volver a ejecutar el programa program1; en este momento la trayectoria de movimiento ya se ha actualizado; la trayectoria de movimiento se muestra en la figura siguiente.
 
 .. image:: coding/490.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.36‑7 更新后的运行轨迹
+.. centered:: Figura 9.36‑7 Trayectoria de ejecución actualizada
 
-主程序配置
+Configuración del programa principal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-点击“主程序配置”进入主程序配置功能界面。
+Hacer clic en "Configuración del programa principal" para entrar en la interfaz de la función de configuración del programa principal.
 
-配置主程序可以与DI配置主程序启动配合使用，配置的主程序需要先试运行以确保安全，在机器人设置中配置对应DI为启动主程序信号功能后，用户可以控制该DI信号实现运行主程序。
+El programa principal configurado se puede utilizar junto con la configuración de DI de inicio del programa principal; el programa principal configurado debe probarse primero para garantizar la seguridad; tras configurar en la configuración del robot la función de señal de inicio del programa principal en la DI correspondiente, el usuario puede controlar dicha señal DI para ejecutar el programa principal.
 
 .. image:: coding/491.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.37‑1 主程序配置
+.. centered:: Figura 9.37‑1 Configuración del programa principal
 
-机器人扩展轴相贯线焊接
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Soldadura de línea de intersección de tubos con eje extendido del robot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-系统构成
+Composición del sistema
 ++++++++++++++++++++++++++++++++++
 
 .. image:: coding/497.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑1 机器人扩展轴相贯线焊接系统构成
+.. centered:: Figura 9.38‑1 Composición del sistema de soldadura de línea de intersección de tubos con eje extendido del robot
 
-系统中，（a）为计算机，（b）为机器人及其控制箱，（c）为变位机及驱动设备，（d）为焊机与配套设备。
+En el sistema, (a) es el ordenador, (b) es el robot y su caja de control, (c) es el posicionador y el equipo de accionamiento, y (d) es la máquina de soldar y el equipo complementario.
 
-扩展轴通讯配置
+Configuración de comunicación del eje extendido
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-机器人与扩展轴的通讯方式包括使用UDP或RS485这两种形式。
+Los modos de comunicación entre el robot y el eje extendido incluyen el uso de UDP o RS485.
 
 .. image:: coding/498.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑2 扩展轴配置页面
+.. centered:: Figura 9.38‑2 Página de configuración del eje extendido
  
-在机器人操作界面点击“初始设置”、“外设”、“扩展轴”按钮，进入扩展轴配置页面。以使用PLC通过UDP通讯与机器人相连为例，点击“UDP通信”图标进入UDP通讯的扩展轴配置页面。
+En la interfaz de operación del robot, hacer clic en los botones "Configuración inicial", "Periféricos", "Eje extendido" para entrar en la página de configuración del eje extendido. Tomando como ejemplo el uso de un PLC conectado al robot mediante comunicación UDP, hacer clic en el icono "Comunicación UDP" para entrar en la página de configuración del eje extendido por comunicación UDP.
 
 .. image:: coding/499.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑3 UDP通信配置界面
+.. centered:: Figura 9.38‑3 Interfaz de configuración de la comunicación UDP
  
-在UDP通讯的扩展轴配置页面，能够选择对应的扩展轴号，连接与配置UDP通讯参数（地址、端口、周期、丢包检测等），以及扩展轴定位完成时间。
+En la página de configuración del eje extendido por comunicación UDP se puede seleccionar el número de eje extendido correspondiente, conectar y configurar los parámetros de comunicación UDP (dirección, puerto, período, detección de pérdida de paquetes, etc.), así como el tiempo de finalización de posicionamiento del eje extendido.
 
-扩展轴配置内容非本功能介绍重点，详细配置见对应部分用户手册。
+El contenido de la configuración del eje extendido no es el punto central de la introducción de esta función; para la configuración detallada, consulte la parte correspondiente del manual de usuario.
 
-焊机连接配置
+Conexión y configuración de la máquina de soldar
 +++++++++++++++++++++++++++++++++++++++++++++++++++
-通过以下配置页面配置焊机：
+Configurar la máquina de soldar mediante las siguientes páginas de configuración:
 
 .. image:: coding/500.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑4 焊机配置页面
+.. centered:: Figura 9.38‑4 Página de configuración de la máquina de soldar
 
-焊机通信可使用IO通信或RS485通信，点击“初始设置”、“外设”、“焊机”进入配置与连接界面，可配置“控制类型”、“I/O配置”、“焊接工艺参数”、“焊机调试”等模块。
+La comunicación de la máquina de soldar puede utilizar comunicación IO o comunicación RS485; hacer clic en "Configuración inicial", "Periféricos", "Máquina de soldar" para entrar en la interfaz de configuración y conexión, donde se pueden configurar los módulos "Tipo de control", "Configuración de I/O", "Parámetros del proceso de soldadura", "Depuración de la máquina de soldar", etc.
 
-焊机配置内容非本功能介绍重点，详细配置见对应部分用户手册。
+El contenido de la configuración de la máquina de soldar no es el punto central de la introducción de esta función; para la configuración detallada, consulte la parte correspondiente del manual de usuario.
 
-工具坐标系标定
-++++++++++++++++++++++++++++++++++++++++++++++++++++
-在机器人末端安装焊枪后，对焊枪进行标定：
+Calibración del sistema de coordenadas de herramienta
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Tras instalar la antorcha de soldadura en el extremo del robot, calibrar la antorcha de soldadura:
 
 .. image:: coding/501.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑5 工具坐标系配置页面
+.. centered:: Figura 9.38‑5 Página de configuración del sistema de coordenadas de herramienta
 
-点击“初始设置”、“基础”、“工具坐标”进入工具坐标系设置页面。
+Hacer clic en "Configuración inicial", "Básico", "Coordenadas de herramienta" para entrar en la página de configuración del sistema de coordenadas de herramienta.
 
 .. image:: coding/502.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑6 选择6点法对焊枪进行标定
+.. centered:: Figura 9.38‑6 Selección del método de 6 puntos para calibrar la antorcha de soldadura
 
-选择一个空坐标系，选择工具类型为“工具”，选择6点法进行焊枪工具标定，建议工具坐标系的姿态如下图4-3所示进行标定。
+Seleccionar un sistema de coordenadas vacío, seleccionar "Herramienta" como tipo de herramienta y seleccionar el método de 6 puntos para la calibración de la herramienta de la antorcha de soldadura; se recomienda calibrar la actitud del sistema de coordenadas de herramienta como se muestra en la Figura 4-3.
 
 .. image:: coding/503.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.38‑7 焊枪坐标系姿态图
+.. centered:: Figura 9.38‑7 Diagrama de actitud del sistema de coordenadas de la antorcha de soldadura
 
-工具坐标系标定内容非本功能介绍重点，详细标定方法见对应部分用户手册。
+El contenido de la calibración del sistema de coordenadas de herramienta no es el punto central de la introducción de esta función; para el método de calibración detallado, consulte la parte correspondiente del manual de usuario.
 
-相贯线焊接功能
-+++++++++++++++++++++++++++++++++++++++
+Función de soldadura de línea de intersección de tubos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-相贯线焊接的轨迹运动有两种形式，一是使用两自由度L型变位机进行相贯线运动，二是不使用变位机直接进行相贯线运动。
+El movimiento de trayectoria de la soldadura de línea de intersección de tubos tiene dos formas: una es utilizar un posicionador tipo L de dos grados de libertad para realizar el movimiento de línea de intersección de tubos, y la otra es realizar directamente el movimiento de línea de intersección de tubos sin utilizar posicionador.
 
-扩展轴坐标系标定
-***************************************************
+Calibración del sistema de coordenadas del eje extendido
+******************************************************************
 
-使用扩展轴坐标系实现变位机与机器人同步运动时需要标定扩展轴坐标系。
+Cuando se utiliza el sistema de coordenadas del eje extendido para realizar el movimiento síncrono del posicionador y el robot, es necesario calibrar el sistema de coordenadas del eje extendido.
 
 .. image:: coding/504.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑8 扩展轴坐标系设置页面
+.. centered:: Figura 9.38‑8 Página de configuración del sistema de coordenadas del eje extendido
 
-点击“初始设置”、“外设”、“扩展轴”进入扩展轴坐标系设置界面，选择需要设置的扩展轴号，点击编辑按钮，选择“1-两自由度L型变位机”并保存。
+Hacer clic en "Configuración inicial", "Periféricos", "Eje extendido" para entrar en la interfaz de configuración del sistema de coordenadas del eje extendido, seleccionar el número de eje extendido que se desea configurar, hacer clic en el botón editar, seleccionar "1- Posicionador tipo L de dos grados de libertad" y guardar.
 
 .. image:: coding/505.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑9 扩展轴标定页面
+.. centered:: Figura 9.38‑9 Página de calibración del eje extendido
  
-在标定扩展轴时注意选择“机器人相对扩展轴位置”为“扩展轴外”。对于变位机的情况，选择4点法进行标定。
+Al calibrar el eje extendido, tenga en cuenta seleccionar "Posición del robot respecto al eje extendido" como "Exterior al eje extendido". Para el caso del posicionador, seleccionar el método de 4 puntos para la calibración.
 
-扩展轴标定内容非本功能介绍重点，详细标定方法见对应部分用户手册。
+El contenido de la calibración del eje extendido no es el punto central de la introducción de esta función; para el método de calibración detallado, consulte la parte correspondiente del manual de usuario.
 
-相贯线轨迹焊接
-***************************************************
+Soldadura de trayectoria de línea de intersección de tubos
+******************************************************************
 
-根据主管和拼接管横截面上记录的示教点，可以建立如下图所示的工件坐标系，其中坐标系的原点位于主管和拼接管轴线的交点位置，X轴与主管轴线平行，指向记录示教点的截面，Z轴与拼接管轴线平行，指向记录示教点的平面。
+Según los puntos de enseñanza registrados en las secciones transversales del tubo principal y del tubo de unión, se puede establecer el sistema de coordenadas de pieza mostrado en la figura siguiente, donde el origen del sistema de coordenadas se encuentra en la intersección de los ejes del tubo principal y del tubo de unión, el eje X es paralelo al eje del tubo principal y apunta a la sección transversal donde se registran los puntos de enseñanza, y el eje Z es paralelo al eje del tubo de unión y apunta al plano donde se registran los puntos de enseñanza.
 
 .. image:: coding/506.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 9.38‑10 相贯线轨迹工件坐标系
+.. centered:: Figura 9.38‑10 Sistema de coordenadas de pieza de la trayectoria de línea de intersección de tubos
 
-不使用变位机的方式
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-**Step 1**: 分别在主管和拼接管横截面上横截面上记录6个示教点。
+Modo sin utilizar posicionador
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+**Step 1**: Registrar respectivamente 6 puntos de enseñanza en las secciones transversales del tubo principal y del tubo de unión.
 
-**Step 2**: 点击“示教程序”、“程序编程”，在“运动指令”里找到“相贯线”，进入到相贯线轨迹设置页面。
+**Step 2**: Hacer clic en "Programa de enseñanza", "Programación de programas" y encontrar "Línea de intersección de tubos" en las "Instrucciones de movimiento" para entrar en la página de configuración de la trayectoria de línea de intersección de tubos.
 
 .. image:: coding/507.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑11 相贯线轨迹设置页面
+.. centered:: Figura 9.38‑11 Página de configuración de la trayectoria de línea de intersección de tubos
 
-**Step 3**: 在相贯线轨迹设置页面，“扩展轴点位”选择“不启用”，完成起始点运动、运动方向、速度和加速度、偏移值的设置，其中运动方向的逆时针是右手握住工件坐标系的Z轴四根手指的方向。
+**Step 3**: En la página de configuración de la trayectoria de línea de intersección de tubos, seleccionar "No activar" en "Punto del eje extendido" y completar la configuración del movimiento del punto inicial, la dirección de movimiento, la velocidad y la aceleración, y los valores de desplazamiento; la dirección de movimiento en sentido antihorario es la dirección de los cuatro dedos de la mano derecha al agarrar el eje Z del sistema de coordenadas de pieza.
 
-**Step 4**: 在相贯线轨迹设置页面的“相贯线点数据”部分，选择记录的示教点。设置完成后，点击“添加”、“应用”按钮。
+**Step 4**: En la parte "Datos de puntos de la línea de intersección de tubos" de la página de configuración de la trayectoria de línea de intersección de tubos, seleccionar los puntos de enseñanza registrados. Tras completar la configuración, hacer clic en los botones "Añadir" y "Aplicar".
 
 .. image:: coding/508.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑12 相贯线轨迹指令设置
+.. centered:: Figura 9.38‑12 Configuración de la instrucción de trayectoria de línea de intersección de tubos
 
-**Step 5**: 点击“焊接指令”下属的“焊接”按钮，进入焊接设置页面，选择“起弧”和“收弧”指令，点击“添加”、“应用”按钮。添加成功后将起弧LUA指令上移一行。
+**Step 5**: Hacer clic en el botón "Soldadura" de las "Instrucciones de soldadura" para entrar en la página de configuración de soldadura, seleccionar las instrucciones "Encendido del arco" y "Apagado del arco" y hacer clic en los botones "Añadir" y "Aplicar". Tras añadirlas correctamente, subir una línea la instrucción LUA de encendido del arco.
 
 .. image:: coding/509.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑13 焊接指令设置
+.. centered:: Figura 9.38‑13 Configuración de las instrucciones de soldadura
  
-以下为一段典型的无变位机-相贯线焊接的LUA程序：
+A continuación se muestra un programa LUA típico de soldadura de línea de intersección de tubos sin posicionador:
 
 .. image:: coding/510.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑14 无变位机-相贯线焊接示例程序
+.. centered:: Figura 9.38‑14 Programa de ejemplo de soldadura de línea de intersección de tubos sin posicionador
 
-使用两自由度L型变位机的方式
+Modo con posicionador tipo L de dos grados de libertad
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step 1**: 分别在主管和拼接管横截面上横截面上记录6个示教点，转动变位机的1和2轴记录4个变位机示教点。
+**Step 1**: Registrar respectivamente 6 puntos de enseñanza en las secciones transversales del tubo principal y del tubo de unión, y girar los ejes 1 y 2 del posicionador para registrar 4 puntos de enseñanza del posicionador.
 
-**Step 2**: 点击“示教程序”、“程序编程”，在“运动指令”里找到“相贯线”，进入到相贯线轨迹设置页面。
+**Step 2**: Hacer clic en "Programa de enseñanza", "Programación de programas" y encontrar "Línea de intersección de tubos" en las "Instrucciones de movimiento" para entrar en la página de configuración de la trayectoria de línea de intersección de tubos.
 
 .. image:: coding/511.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑15 相贯线轨迹设置页面
+.. centered:: Figura 9.38‑15 Página de configuración de la trayectoria de línea de intersección de tubos
 
-**Step 3**: 在相贯线轨迹设置页面，“扩展轴点位”选择“启用”，选择记录的变位机示教点，完成起始点运动、运动方向、速度和加速度、偏移值的设置。
+**Step 3**: En la página de configuración de la trayectoria de línea de intersección de tubos, seleccionar "Activar" en "Punto del eje extendido", seleccionar los puntos de enseñanza del posicionador registrados y completar la configuración del movimiento del punto inicial, la dirección de movimiento, la velocidad y la aceleración, y los valores de desplazamiento.
 
-**Step 4**: 在相贯线轨迹设置页面的“相贯线点数据”部分，选择记录的示教点。设置完成后，点击“添加”、“应用”按钮。
+**Step 4**: En la parte "Datos de puntos de la línea de intersección de tubos" de la página de configuración de la trayectoria de línea de intersección de tubos, seleccionar los puntos de enseñanza registrados. Tras completar la configuración, hacer clic en los botones "Añadir" y "Aplicar".
 
 .. image:: coding/512.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑16 相贯线轨迹指令设置
+.. centered:: Figura 9.38‑16 Configuración de la instrucción de trayectoria de línea de intersección de tubos
 
-**Step 5**: 点击“焊接指令”下属的“焊接”按钮，进入焊接设置页面，选择“起弧”和“收弧”指令，点击“添加”、“应用”按钮。添加成功后将起弧LUA指令上移一行。
+**Step 5**: Hacer clic en el botón "Soldadura" de las "Instrucciones de soldadura" para entrar en la página de configuración de soldadura, seleccionar las instrucciones "Encendido del arco" y "Apagado del arco" y hacer clic en los botones "Añadir" y "Aplicar". Tras añadirlas correctamente, subir una línea la instrucción LUA de encendido del arco.
 
 .. image:: coding/513.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑17 焊接指令设置
+.. centered:: Figura 9.38‑17 Configuración de las instrucciones de soldadura
  
-以下为一段典型的变位机-相贯线焊接的LUA程序：
+A continuación se muestra un programa LUA típico de soldadura de línea de intersección de tubos con posicionador:
 
 .. image:: coding/514.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.38‑18 变位机-相贯线焊接示例程序
+.. centered:: Figura 9.38‑18 Programa de ejemplo de soldadura de línea de intersección de tubos con posicionador
 
-机器人LUA程序PrintMsg()打印功能
+Función de impresión PrintMsg() del programa LUA del robot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-机器人 LUA 程序内置打印指令，可将指定信息输出至 WebApp 打印窗口。该功能支持数值、字符串、表（table）、布尔值（bool）等类型的打印展示，同时配套打印日志存储、内容检索、日志下载等辅助能力，方便调试与数据追溯。
+El programa LUA del robot incorpora una instrucción de impresión integrada que permite enviar información especificada a la ventana de impresión de WebApp. Esta función admite la visualización de impresión de tipos como valores numéricos, cadenas, tablas (table) y valores booleanos (bool); además, incluye capacidades auxiliares como el almacenamiento del registro de impresión, la búsqueda de contenido y la descarga de registros, facilitando la depuración y la trazabilidad de datos.
 
-打印指令编辑与添加
+Edición y adición de la instrucción de impresión
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-在“逻辑指令”页面中点击“打印”按钮，打开PrintMsg()打印指令编辑页面，首先分别设置打印文本与数据类型。
+En la página "Instrucciones lógicas", hacer clic en el botón "Imprimir" para abrir la página de edición de la instrucción de impresión PrintMsg(); en primer lugar, configurar respectivamente el texto de impresión y el tipo de dato.
 
 .. image:: coding/573.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.39‑1 打印指令编辑页面   
+.. centered:: Figura 9.39‑1 Página de edición de la instrucción de impresión   
 
-- **文本**：填写自定义描述字符串，用于标注打印内容含义，例如“robot current pos :”、“recv socket value :”等。
-- **类型**：分为“变量”、“函数”两类，按需选择。
-- **变量**：打印自定义变量数值，支持数值、字符串、表(table)、布尔值(bool)等类型变量。
-- **函数**：打印指定指令函数的返回值。选中该类型后，可在下方函数列表中选择目标函数，如获取机器人 TCP 点位函数GetActualTCPPose()、读取控制器 DI 输入状态函数GetDI()、获取机器人当前关节角度函数GetActualJointPosDegree()等。
+- **Texto**: introducir una cadena de descripción personalizada, utilizada para indicar el significado del contenido impreso, por ejemplo "robot current pos :", "recv socket value :", etc.
+- **Tipo**: se divide en dos categorías, "Variable" y "Función"; seleccionar según sea necesario.
+- **Variable**: imprimir el valor de una variable personalizada; admite variables de tipo numérico, cadena, tabla (table), booleano (bool), etc.
+- **Función**: imprimir el valor de retorno de una función de instrucción especificada. Tras seleccionar este tipo, se puede seleccionar en la lista de funciones inferior la función objetivo, como la función de obtención de la posición del TCP del robot GetActualTCPPose(), la función de lectura del estado de entrada DI del controlador GetDI(), la función de obtención del ángulo articular actual del robot GetActualJointPosDegree(), etc.
 
-以打印机器人当前关节位置为例：输入打印文本“robot current joint pos :”，数据类型选择函数，并选定函数GetActualJointPosDegree()，依次点击添加、应用按钮。系统将自动在 LUA 程序中生成对应打印指令：
+Tomando como ejemplo la impresión de la posición articular actual del robot: introducir el texto de impresión "robot current joint pos :", seleccionar función como tipo de dato y seleccionar la función GetActualJointPosDegree(); hacer clic sucesivamente en los botones añadir y aplicar. El sistema generará automáticamente en el programa LUA la instrucción de impresión correspondiente:
 
 .. code-block:: console
     :linenos:
@@ -9183,166 +9181,166 @@ Scoket通信
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.39‑2 添加打印指令   
+.. centered:: Figura 9.39‑2 Añadir instrucción de impresión   
 
-同时可以将程序栏切换至可编辑页面，输入指令名称PrintMsg()，并在参数中输入要打印的内容，多个打印内容用“,”隔开。
+Asimismo, se puede cambiar la barra de programas a la página editable, introducir el nombre de la instrucción PrintMsg() y escribir en los parámetros el contenido que se desea imprimir; los distintos contenidos de impresión se separan con ",".
 
 .. image:: coding/575.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.39‑3 编写自定义打印信息  
+.. centered:: Figura 9.39‑3 Escribir información de impresión personalizada  
 
-打印信息查看与基础操作
+Visualización de la información de impresión y operaciones básicas
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击打印显示按钮，调出打印信息弹窗。将机器人切换至自动模式并运行程序，窗口内将实时输出打印内容。每条信息包含时间戳、LUA 程序名称、代码行号、打印内容四项信息。
+Hacer clic en el botón de visualización de impresión para que aparezca la ventana emergente de información de impresión. Cambiar el robot al modo automático y ejecutar el programa; en la ventana se mostrará en tiempo real el contenido impreso. Cada información incluye cuatro elementos: marca de tiempo, nombre del programa LUA, número de línea de código y contenido impreso.
 
 .. image:: coding/576.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.39‑4 打印内容显示框  
+.. centered:: Figura 9.39‑4 Cuadro de visualización del contenido impreso  
 
-打印内容清空
+Borrado del contenido impreso
 *******************************************************************
 
-点击打印窗口上方的“清除”按钮，可一键清除窗口内所有展示内容。
+Hacer clic en el botón "Borrar" de la parte superior de la ventana de impresión para borrar de una vez todo el contenido mostrado en la ventana.
 
 .. image:: coding/577.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.39‑5 打印内容清除  
+.. centered:: Figura 9.39‑5 Borrado del contenido impreso  
 
-打印内容检索
+Búsqueda del contenido impreso
 *******************************************************************
 
-在搜索输入框中填写目标关键词，点击查找，窗口将仅展示包含关键词的打印记录，隐藏其余内容；清空检索框后再次点击查找，即可恢复展示全部打印信息。
+Introducir la palabra clave objetivo en el cuadro de entrada de búsqueda y hacer clic en buscar; la ventana solo mostrará los registros de impresión que contengan la palabra clave y ocultará el resto del contenido; tras vaciar el cuadro de búsqueda y volver a hacer clic en buscar, se recupera la visualización de toda la información de impresión.
 
 .. image:: coding/578.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.39‑6 打印内容查找  
+.. centered:: Figura 9.39‑6 Búsqueda del contenido impreso  
 
-打印日志配置与管理
+Configuración y gestión del registro de impresión
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-打印日志保存参数配置
-*******************************************************************
+Configuración de los parámetros de guardado del registro de impresión
+**********************************************************************************
 
-在webapp中依次点击“系统设置”、“维护模式”进入维护模式，找到“日志管理”、“打印日志”模块，可配置开启/关闭打印日志保存功能、设置保存文件个数、单份日志文件最大保存打印条数。启用打印日志保存后，所有打印数据将自动写入日志文件。
+En webapp, hacer clic sucesivamente en "Configuración del sistema", "Modo de mantenimiento" para entrar en el modo de mantenimiento y encontrar el módulo "Gestión de registros", "Registro de impresión", donde se puede configurar la activación/desactivación de la función de guardado del registro de impresión, el número de archivos a guardar y el número máximo de entradas de impresión guardadas por archivo de registro. Tras activar el guardado del registro de impresión, todos los datos de impresión se escribirán automáticamente en el archivo de registro.
 
 .. image:: coding/579.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.39‑7 打印日志保存参数配置 
+.. centered:: Figura 9.39‑7 Configuración de los parámetros de guardado del registro de impresión 
 
-当机器人设备重启系统或单份日志文件存储条数达到设定上限时自动新建日志文件并触发日志轮转。当日志文件总数超出最大保存数量时，系统将自动删除最早的日志文件。
+Cuando el dispositivo robot reinicia el sistema o el número de entradas almacenadas en un archivo de registro alcanza el límite establecido, se crea automáticamente un nuevo archivo de registro y se activa la rotación de registros. Cuando el número total de archivos de registro supera la cantidad máxima de guardado, el sistema elimina automáticamente el archivo de registro más antiguo.
 
-打印日志下载
+Descarga del registro de impresión
 *******************************************************************
 
-点击打印窗口上方的下载按钮，可将当前窗口内所有打印内容下载至本地电脑。
+Hacer clic en el botón de descarga de la parte superior de la ventana de impresión para descargar al ordenador local todo el contenido de impresión de la ventana actual.
 
 .. image:: coding/580.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.39‑8 打印日志下载 
+.. centered:: Figura 9.39‑8 Descarga del registro de impresión 
 
-除直接下载打印日志外，下载控制器日志、全量数据源文件时，打印日志也会同步包含在内。
+Además de la descarga directa del registro de impresión, al descargar el registro del controlador o los archivos de datos completos, el registro de impresión también se incluye de forma sincronizada.
 
-打印指令代码示例
+Ejemplos de código de la instrucción de impresión
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-打印机器人接收目标位置
+Imprimir la posición objetivo recibida por el robot
 *******************************************************************
 
-如下是一个机器人从ModbusTCP从站读取目标笛卡尔x、y、z位置并控制机器人运动到目标位置的程序，程序中每次读到目标位置时均通过PrintMsg()指令将目标位置打印出来。
+A continuación se muestra un programa en el que el robot lee la posición cartesiana objetivo x, y, z de un esclavo ModbusTCP y controla el movimiento del robot hasta la posición objetivo; en el programa, cada vez que se lee la posición objetivo se imprime mediante la instrucción PrintMsg().
 
 .. image:: coding/581.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.39‑9 打印机器人目标运行位置示例 
+.. centered:: Figura 9.39‑9 Ejemplo de impresión de la posición objetivo de ejecución del robot 
 
-打印机器人实时位置和控制箱DI数据
-*******************************************************************
+Imprimir la posición en tiempo real del robot y los datos DI de la caja de control
+*****************************************************************************************
 
-如下是一个机器人非阻塞运动，并在运动过程中实时打印机器人位置与控制箱DI值的程序。
+A continuación se muestra un programa en el que el robot realiza un movimiento no bloqueante y, durante el movimiento, imprime en tiempo real la posición del robot y los valores DI de la caja de control.
 
-.. note:: 注意：在循环调用PrintMsg()打印指令时，需要通过sleep_ms()指令设置循环睡眠间隔，避免死循环。
+.. note:: Nota: al llamar cíclicamente a la instrucción de impresión PrintMsg(), es necesario establecer el intervalo de suspensión del bucle mediante la instrucción sleep_ms() para evitar bucles infinitos.
 
 .. image:: coding/582.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.39‑10 机器人运动中打印当前位置及DI示例 
+.. centered:: Figura 9.39‑10 Ejemplo de impresión de la posición actual y de las DI durante el movimiento del robot 
       
-大型LUA程序及子程序web加载功能优化功能
+Función de optimización de la carga web de programas LUA de gran tamaño y subprogramas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-背景
+Antecedentes
 ++++++++++++++++++++++++++++++++++++++++++++++
 
-当前机器人无法处理大型lua程序（20w+），当上传大型lua程序时web页面无法进行加载及使用；
+Actualmente el robot no puede procesar programas lua de gran tamaño (20w+); al cargar programas lua de gran tamaño, la página web no puede cargarlos ni utilizarlos;
 
-同时导入程序时，当前导入逻辑不进行程序解析校验，导入程序后需手动打开保存校验，当使用同时大量子程序调用时，需手动逐一打开，耗时严重，极大的降低工作效率。
+además, al importar programas, la lógica de importación actual no realiza la verificación de análisis del programa; tras importar el programa es necesario abrirlo y guardarlo manualmente para verificarlo; cuando se utilizan simultáneamente una gran cantidad de llamadas a subprogramas, es necesario abrirlos manualmente uno a uno, lo que consume mucho tiempo y reduce enormemente la eficiencia del trabajo.
 
-概述
+Descripción general
 ++++++++++++++++++++++++++++++++++++++++++++++
 
-此次优化针对导入的程序，后端自动进行解析保存，后续子程序上传后无需手动打开保存可直接调用。
+Esta optimización está orientada a los programas importados: el backend realiza automáticamente el análisis y guardado, y los subprogramas posteriores, tras su carga, pueden llamarse directamente sin necesidad de abrirlos y guardarlos manualmente.
 
-其中针对大型lua程序，web前端导入大型lua程序（不需要二次解析的原生lua程序）时以RAW前缀命名，如RAW_test.lua.此类程序代表该程序均为原生lua语句，不包含应用业务信息，可直接放入lua解释器中运行的程序，控制器只需要对其进行语法校验，不再逐行进行解析，此举可大幅减少文件导入解析时间，同时前端不再针对大型lua程序进行动画渲染，程序以文本形式进行展示，不再动态显示高亮以及运行行号，提高前端的数据渲染效率。具体需要解析语句可参考1.4章节。
+Entre ellos, para los programas lua de gran tamaño, cuando el frontend web importa un programa lua de gran tamaño (un programa lua nativo que no requiere un segundo análisis) lo nombra con el prefijo RAW, como RAW_test.lua. Este tipo de programas representa que el programa está compuesto por sentencias lua nativas, no contiene información de negocio de la aplicación y puede ejecutarse directamente en el intérprete lua; el controlador solo necesita realizar la verificación de sintaxis y ya no lo analiza línea por línea, lo que permite reducir en gran medida el tiempo de análisis de la importación de archivos; además, el frontend ya no realiza la renderización de animación para los programas lua de gran tamaño, y el programa se muestra en forma de texto, sin mostrar dinámicamente el resaltado ni el número de línea de ejecución, mejorando la eficiencia de renderización de datos del frontend. Para las sentencias concretas que requieren análisis, consulte el capítulo 1.4.
 
-Web在导入程序后需增加进度条提示，同时导入成功后进行提示。
+Web debe añadir un aviso de barra de progreso tras importar el programa y, además, mostrar un aviso tras una importación correcta.
 
-针对大型lua程序，建议使用子程序+RAW_方式配合使用，可提高操作效率。
+Para los programas lua de gran tamaño, se recomienda utilizar de forma conjunta subprogramas + `RAW_` para mejorar la eficiencia de la operación.
 
-大型lua程序操作流程
+Flujo de operación de programas lua de gran tamaño
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-**Step1**：将大型lua程序以RAW_命名，如RAW_test200000.lua。
+**Step1**: Nombrar el programa lua de gran tamaño con el prefijo `RAW_`, como RAW_test200000.lua.
 
-**Step2**：打开web页面，依次点击“示教程序”->“程序编程”按钮，选择“导入”指令，在“导入”文件中选择RAW_test200000.lua。
+**Step2**: Abrir la página web, hacer clic sucesivamente en "Programa de enseñanza"->"Programación de programas", seleccionar la instrucción "Importar" y seleccionar RAW_test200000.lua en el archivo "Importar".
 
 .. image:: coding/587.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.40‑1 RAW_文件导入    
+.. centered:: Figura 9.40‑1 Importación de archivo `RAW_`    
 
-**Step3**：等待导入完成，导入完成时已完成导入、解析、保存、渲染等操作，此时文件可直接运行。
+**Step3**: Esperar a que finalice la importación; al finalizar la importación ya se han completado operaciones como la importación, el análisis, el guardado y la renderización; en este momento el archivo puede ejecutarse directamente.
 
 .. image:: coding/588.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.40‑2 导入等待提示   
+.. centered:: Figura 9.40‑2 Aviso de espera de importación   
 
-子程序操作流程
+Flujo de operación de subprogramas
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-**Step1**：打开web页面，依次点击“示教程序”->“程序编程”按钮，选择“导入”指令，在“导入”文件中批量选择主程序以及子程序。
+**Step1**: Abrir la página web, hacer clic sucesivamente en "Programa de enseñanza"->"Programación de programas", seleccionar la instrucción "Importar" y seleccionar por lotes el programa principal y los subprogramas en el archivo "Importar".
 
-**Step2**：等待所有程序导入成功，切换机器人为自动模式，即可直接运行主程序。
+**Step2**: Esperar a que todos los programas se importen correctamente, cambiar el robot al modo automático y se podrá ejecutar directamente el programa principal.
 
-注意事项
+Precauciones
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-RAW_文件只对语法进行校验，不对文件内容进行逐行解析生成，包含点位信息，IO操作等便于客户使用的自定义集成lua函数，此类函数需要结合用户自定义数据进行二次生成可直接运行的lua函数，无法在RAW_文件中使用。
+El archivo `RAW_` solo verifica la sintaxis y no realiza el análisis línea por línea para generar el contenido del archivo, incluyendo información de puntos, operaciones de IO y otras funciones lua integradas personalizadas de uso cómodo para el cliente; este tipo de funciones requieren combinarse con datos personalizados del usuario para generar un segundo paso y obtener funciones lua ejecutables directamente, por lo que no se pueden utilizar en archivos `RAW_`.
 
 .. image:: coding/589.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.40‑3 导入LUA程序流程图 
+.. centered:: Figura 9.40‑3 Diagrama de flujo de importación del programa LUA 
 
-RAW_文件编写可参考FRLua编程脚本用户手册，其中以下lua函数需要进行解析，不适用于RAW_文件。
+Para la escritura de archivos `RAW_` se puede consultar el manual de usuario de scripts de programación FRLua; entre las funciones lua, las siguientes requieren análisis y no son aplicables a archivos `RAW_`.
 
 laserPTP(), EXT_AXIS_PTP(), SPTP(), NewSP(), SplinePTP(), laserLin(), SLIN(), Lin(), laserARC(), ARC() 
 laserCircle(), Circle(), TCPComputeCircleCenter(), unifCircle(), NewSpiral(), Spiral(), SCIRC() 
@@ -9354,80 +9352,80 @@ FieldBusSlaveWaitAI(), WaitToolAI(), WaitAuxAI(), SPLCSetAO(), SPLCSetToolAO(), 
 LTSearchStart(), PointTableSwitch(), GetSegmentWeldPoint(), LaserRecordPoint(), GetIntersectionThrough3Point(), GetIntersectionThrough4Point(), GetUserVal(), SetUserVal(), MoveToIntersectLineStart(), MoveIntersectLine(), OriginPointWeaveStart()
 MatrixMoveStart(), MatrixMoveEnd(), MatrixSetCountPlus(), MatrixGetCount(), MatrixSetStartCount().
 
-Lua程序单步调试功能
+Función de depuración paso a paso de programas Lua
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-背景
+Antecedentes
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-FR系列机器人现有平台已具备完整的 Lua 程序执行能力，整个链路稳定运行，但执行过程对用户是黑盒程序一跑到底，中间出了什么问题只能靠日志或试错。
+La plataforma existente de los robots de la serie FR ya dispone de una capacidad completa de ejecución de programas Lua y toda la cadena funciona de forma estable, pero el proceso de ejecución para el usuario es una caja negra que se ejecuta de principio a fin; los problemas que surgen en el proceso solo se pueden resolver mediante registros o prueba y error.
 
-本次工作是在不改变现有框架的前提下，新增单步调试能力，让用户能够逐步观察程序执行、查看运行状态、定位问题。
+Este trabajo consiste en, sin cambiar el marco existente, añadir la capacidad de depuración paso a paso, de modo que el usuario pueda observar paso a paso la ejecución del programa, consultar el estado de ejecución y localizar problemas.
 
-单步调试功能介绍
+Introducción a la función de depuración paso a paso
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-单步调试功能入口放于web页面“初始设置”->“示教程序”->“程序编程”页面中进行维护。调试功能入口按钮位于已打开程序名称后方，单步调试功能只能手动模式下进行，并且调试过程中机器人禁止拖动。
+La entrada de la función de depuración paso a paso se mantiene en la página web "Configuración inicial"->"Programa de enseñanza"->"Programación de programas". El botón de entrada de la función de depuración se encuentra detrás del nombre del programa abierto; la función de depuración paso a paso solo puede realizarse en modo manual, y durante el proceso de depuración está prohibido arrastrar el robot.
 
 .. image:: coding/634.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.41‑1 单步调试功能入口
+.. centered:: Figura 9.41‑1 Entrada de la función de depuración paso a paso
 
-点击“开启单步调试”后，可进入lua程序调试，程序会暂停在入口处，等待下一个指令到来，单步调试功能提供三种指令：
+Tras hacer clic en "Activar depuración paso a paso" se puede entrar en la depuración del programa lua; el programa se pausa en la entrada y espera la llegada de la siguiente instrucción. La función de depuración paso a paso ofrece tres instrucciones:
 
-单步调试（step_over）:把当前行“整个”执行完，然后停在下一行，不会进入当前行所调用的函数内部。如果被调用的函数内部设置了断点，或者遇到了异常/停止语句，程序仍然会暂停在函数内部，而不会直接跳到下一行。
+Depuración paso a paso (step_over): ejecuta "completamente" la línea actual y luego se detiene en la línea siguiente, sin entrar en el interior de la función llamada por la línea actual. Si dentro de la función llamada se ha establecido un punto de interrupción o se ha encontrado una sentencia de excepción/detención, el programa seguirá pausándose dentro de la función en lugar de saltar directamente a la línea siguiente.
 
 .. image:: coding/635.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.41‑2 单步运行指令
+.. centered:: Figura 9.41‑2 Instrucción de ejecución paso a paso
 
-- **继续**：让程序从当前位置恢复运行，直到遇到下一个断点、程序结束或发生异常时才暂停。
+- **Continuar**: permite que el programa reanude la ejecución desde la posición actual hasta que encuentre el siguiente punto de interrupción, finalice el programa o se produzca una excepción, momento en que se pausa.
 
 .. image:: coding/636.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.41‑3 继续运行指令
+.. centered:: Figura 9.41‑3 Instrucción de continuación de ejecución
 
-- **退出**：退出单步调试功能。
+- **Salir**: salir de la función de depuración paso a paso.
 
 .. image:: coding/637.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.41‑4 退出指令
+.. centered:: Figura 9.41‑4 Instrucción de salida
 
-单步调试信息面板
+Panel de información de la depuración paso a paso
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-“单步调试”面板用于在程序逐行执行时，实时反馈底层运行状态。操作人员可通过该面板监控程序的执行轨迹、当前运行环境及内存数据，精准定位逻辑错误或异常。
+El panel "Depuración paso a paso" se utiliza para, durante la ejecución línea por línea del programa, realimentar en tiempo real el estado de ejecución de bajo nivel. El operador puede, mediante este panel, monitorizar la trayectoria de ejecución del programa, el entorno de ejecución actual y los datos de memoria, localizando con precisión errores lógicos o excepciones.
 
-- 状态：显示当前程序的执行情况。包括空闲、运行中、暂停中、已结束。
-- 行号：显示当前即将执行的代码行数。
-- 暂停原因：解释程序为何在此处停下。包括入口、单步、继续。
-- 栈信息：展示程序当前的调用堆栈轨迹。
-- 局部变量：实时展示当前代码行所在作用域内的所有变量及其当前数值。LUA中只有定义为local的变量可直接打印出名称。
-- 栈错误信息：当程序因运行时错误（如除以零、空指针引用、数组越界）导致崩溃或中断时，此区域将显示具体的错误代码和错误描述。
+- Estado: muestra la situación de ejecución del programa actual. Incluye inactivo, en ejecución, en pausa y finalizado.
+- Número de línea: muestra el número de línea del código que se va a ejecutar actualmente.
+- Motivo de la pausa: explica por qué el programa se ha detenido aquí. Incluye entrada, paso a paso, continuar.
+- Información de pila: muestra la traza de la pila de llamadas actual del programa.
+- Variables locales: muestra en tiempo real todas las variables del ámbito de la línea de código actual y su valor actual. En LUA solo las variables definidas como local pueden imprimir directamente su nombre.
+- Información de error de pila: cuando el programa se bloquea o se interrumpe debido a un error en tiempo de ejecución (como división por cero, referencia a puntero nulo, desbordamiento de matriz), esta área muestra el código de error concreto y la descripción del error.
 
 .. image:: coding/638.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 9.41‑5 单步调试信息面板
+.. centered:: Figura 9.41‑5 Panel de información de la depuración paso a paso
 
-断点管理
+Gestión de puntos de interrupción
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-断点属于程序本身，而不是某次调试会话。每个 Lua 文件单独维护断点信息，刷新或重启设备断点依然保存。
+Los puntos de interrupción pertenecen al propio programa, no a una sesión de depuración concreta. Cada archivo Lua mantiene su información de puntos de interrupción de forma independiente; al actualizar o reiniciar el dispositivo, los puntos de interrupción se conservan.
 
-用户可在前端点击代码行号设置或取消断点，支持多个断点同时存在，支持调试前和调试中设置断点，断点在调试过程中即时生效。
+El usuario puede, en el frontend, hacer clic en el número de línea de código para establecer o cancelar puntos de interrupción; se admite la existencia simultánea de varios puntos de interrupción y el establecimiento de puntos de interrupción antes y durante la depuración; los puntos de interrupción surten efecto inmediatamente durante el proceso de depuración.
 
 .. image:: coding/639.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 9.41‑6 断点管理
+.. centered:: Figura 9.41‑6 Gestión de puntos de interrupción

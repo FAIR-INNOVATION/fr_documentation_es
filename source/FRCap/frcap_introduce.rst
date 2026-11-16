@@ -1,12 +1,12 @@
-简介
+Introducción
 ===================
 
-FRCap是一个基于Web的插件，可集成到协作机器人WebApp中。FRCap通过基于Node.js和Vue3的Element plus，frcap-ui和frcap-api等模块构建一个协作机器人WebApp配置页面或者应用来扩展机器人功能及应用场景。
+FRCap es un plugin basado en Web que puede integrarse en WebApp del robot colaborativo. FRCap, mediante los módulos Element plus, frcap-ui y frcap-api basados en Node.js y Vue3, construye una página de configuración o una aplicación de WebApp del robot colaborativo para ampliar las funciones y los escenarios de aplicación del robot.
 
-从本质上讲，FRCap是一个运行在Node.js环境下的Web应用，与WebApp相互独立，WebApp提供管理和访问服务。FRCap可以通过提供的官方接口与机器人控制器交互，或者客户依据实际需求编写自定义接口指令和处理逻辑进行个性化开发。
+En esencia, FRCap es una aplicación Web que se ejecuta en el entorno Node.js, independiente de WebApp; WebApp proporciona los servicios de gestión y acceso. FRCap puede interactuar con el controlador del robot mediante las interfaces oficiales proporcionadas, o el cliente puede desarrollar personalizadamente escribiendo instrucciones de interfaz y lógica de tratamiento según sus necesidades reales.
 
 .. image:: frcap_pictures/001.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 1.1 WebApp + FRCap展示图
+.. centered:: Figura 1.1 Esquema de WebApp + FRCap

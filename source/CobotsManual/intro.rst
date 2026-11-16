@@ -1,19 +1,16 @@
-协作机器人
-================
+Robot colaborativo
+==================
 
-产品矩阵
-------------
+Matriz de productos
+--------------------
 
 .. figure:: ../_static/fr_series_collaborative_robot.png
     :align: center
     :figclass: align-center
 
-PDF下载
-------------------
-    :download:`法奥协作机器人用户手册 <https://pan.baidu.com/s/1h2MI4tcTjbdaK9hXUqEVYA?pwd=g3nd>`
 
-快速开始
-------------
+Inicio rápido
+--------------
 .. toctree:: 
     :maxdepth: 6
     :numbered: 5
@@ -24,8 +21,8 @@ PDF下载
     manual_teaching
     quick_programming
 
-使用手册
-------------
+Manual de usuario
+-------------------
 .. toctree:: 
     :maxdepth: 6
     :numbered: 8
@@ -52,8 +49,8 @@ PDF下载
     appendix
     term
 
-版本说明
------------
+Descripción de la versión
+---------------------------
 
 .. toctree:: 
     :maxdepth: 6

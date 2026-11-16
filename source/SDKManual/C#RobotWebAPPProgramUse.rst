@@ -1,116 +1,116 @@
-机器人WebAPP程序使用
-======================
+Uso de programas en la WebAPP del robot
+=======================================
 
 .. toctree:: 
     :maxdepth: 5
 
-设置开机自动加载默认的作业程序
-+++++++++++++++++++++++++++++++++++
+Establecer la carga automática del programa de trabajo predeterminado al arrancar
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  设置开机自动加载默认的作业程序
-    * @param  [in] flag  0-开机不自动加载默认程序，1-开机自动加载默认程序
-    * @param  [in] program_name 作业程序名及路径，如"movej.lua"
-    * @return  错误码
+    * @brief  Establecer la carga automática del programa de trabajo predeterminado al arrancar
+    * @param  [in] flag  0-no cargar automáticamente el programa predeterminado al arrancar, 1-cargar automáticamente el programa predeterminado al arrancar
+    * @param  [in] program_name Nombre y ruta del programa de trabajo, como "movej.lua"
+    * @return  Código de error
     */
     int LoadDefaultProgConfig(byte flag, string program_name); 
 
-加载指定的作业程序
-+++++++++++++++++++++++++++++++++++
+Cargar el programa de trabajo especificado
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  加载指定的作业程序
-    * @param  [in] program_name 作业程序名及路径，如"movej.lua"
-    * @return  错误码
+    * @brief  Cargar el programa de trabajo especificado
+    * @param  [in] program_name Nombre y ruta del programa de trabajo, como "movej.lua"
+    * @return  Código de error
     */
     int ProgramLoad(string program_name); 
 
-获取已加载的作业程序名
-+++++++++++++++++++++++++++++++++++
+Obtener el nombre del programa de trabajo cargado
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  获取已加载的作业程序名
-    * @param  [out] program_name 作业程序名及路径，如"movej.lua"
-    * @return  错误码
+    * @brief  Obtener el nombre del programa de trabajo cargado
+    * @param  [out] program_name Nombre y ruta del programa de trabajo, como "movej.lua"
+    * @return  Código de error
     */
     int GetLoadedProgram(ref string program_name); 
 
-获取当前机器人作业程序的执行行号
-+++++++++++++++++++++++++++++++++++
+Obtener el número de línea de ejecución del programa de trabajo actual del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  获取当前机器人作业程序执行的行号
-    * @param  [out] line  行号
-    * @return  错误码
+    * @brief  Obtener el número de línea de ejecución del programa de trabajo actual del robot
+    * @param  [out] line  Número de línea
+    * @return  Código de error
     */   
     int GetCurrentLine(ref int line);
 
-运行当前加载的作业程序
-+++++++++++++++++++++++++++++++++++
+Ejecutar el programa de trabajo cargado actualmente
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  运行当前加载的作业程序
-    * @return  错误码
+    * @brief  Ejecutar el programa de trabajo cargado actualmente
+    * @return  Código de error
     */
     int ProgramRun();
 
-暂停当前运行的作业程序
-+++++++++++++++++++++++++++++++++++
+Pausar el programa de trabajo en ejecución actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  暂停当前运行的作业程序
-    * @return  错误码
+    * @brief  Pausar el programa de trabajo en ejecución actual
+    * @return  Código de error
     */ 
     int ProgramPause();
 
-恢复当前暂停的作业程序
-+++++++++++++++++++++++++++++++++++
+Reanudar el programa de trabajo pausado actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  恢复当前暂停的作业程序
-    * @return  错误码
+    * @brief  Reanudar el programa de trabajo pausado actual
+    * @return  Código de error
     */ 
     int ProgramResume(); 
 
-终止当前运行的作业程序
-+++++++++++++++++++++++++++++++++++
+Terminar el programa de trabajo en ejecución actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  终止当前运行的作业程序
-    * @return  错误码
+    * @brief  Terminar el programa de trabajo en ejecución actual
+    * @return  Código de error
     */ 
     int ProgramStop();   
 
-获取机器人作业程序执行状态
-+++++++++++++++++++++++++++++++++++
+Obtener el estado de ejecución del programa de trabajo del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  获取机器人作业程序执行状态
-    * @param  [out]  state 1-程序停止或无程序运行，2-程序运行中，3-程序暂停
-    * @return  错误码
+    * @brief  Obtener el estado de ejecución del programa de trabajo del robot
+    * @param  [out]  state 1-programa detenido o sin programa en ejecución, 2-programa en ejecución, 3-programa en pausa
+    * @return  Código de error
     */
     int GetProgramState(ref byte state);
 
-机器人LUA程序操作代码示例
-++++++++++++++++++++++++++++++++++++
+Ejemplo de código de operación de programas LUA del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -140,70 +140,67 @@
         Thread.Sleep(1000);
     }
 
-下载Lua文件
-+++++++++++++++++++++++++++++++++++
+Descargar archivo Lua
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C#SDK-v1.0.5
 
 .. code-block:: c#
     :linenos:
 
     /** 
-    * @brief 下载Lua文件
-    * @param [in] fileName 要下载的作业程序"test.lua"或"test.tar.gz"
-    * @param [in] savePath 保存作业程序本地路径“D://Down/”
-    * @return 错误码 
+    * @brief Descargar archivo Lua
+    * @param [in] fileName Programa de trabajo a descargar "test.lua" o "test.tar.gz"
+    * @param [in] savePath Ruta local de guardado del programa de trabajo "D://Down/"
+    * @return Código de error 
     */
     public int LuaDownLoad(string fileName, string savePath);
 
-上传Lua文件
-+++++++++++++++++++++++++++++++++++
+Cargar archivo Lua
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C#SDK-v1.0.5
 
 .. code-block:: c#
     :linenos:
 
     /** 
-    * @brief 上传Lua文件
-    * @param [in] filePath 本地作业程序路径名 ".../test.lua"或".../test.tar.gz"
-    * @param [out] errStr 错误信息
-    * @return 错误码 
+    * @brief Cargar archivo Lua
+    * @param [in] filePath Ruta y nombre del programa de trabajo local ".../test.lua" o ".../test.tar.gz"
+    * @param [out] errStr Información de error
+    * @return Código de error 
     */
     public int LuaUpload(string filePath, ref string errStr);
 
-删除Lua文件
-+++++++++++++++++++++++++++++++++++
-
+Eliminar archivo Lua
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C#SDK-v1.0.5
 
 .. code-block:: c#
     :linenos:
 
     /** 
-    * @brief 删除Lua文件
-    * @param [in] fileName 要删除的作业程序名"test.lua"
-    * @return 错误码 
+    * @brief Eliminar archivo Lua
+    * @param [in] fileName Nombre del programa de trabajo a eliminar "test.lua"
+    * @return Código de error 
     */
     public int LuaDelete(string fileName);
 
-获取当前所有lua文件名称
-+++++++++++++++++++++++++++++++++++
-
+Obtener el nombre de todos los archivos lua actuales
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C#SDK-v1.0.5
 
 .. code-block:: c#
     :linenos:
 
     /** 
-    * @brief 获取当前所有lua文件名称
-    * @param [out] luaNames 作业程序名称列表
-    * @return 错误码 
+    * @brief Obtener el nombre de todos los archivos lua actuales
+    * @param [out] luaNames Lista de nombres de programas de trabajo
+    * @return Código de error 
     */
     public int GetLuaList(ref List<string> luaNames) ;
 
 
-机器人LUA文件上传下载代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++
-
+Ejemplo de código de carga y descarga de archivos LUA del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C#SDK-v1.0.5
 
 .. code-block:: c#

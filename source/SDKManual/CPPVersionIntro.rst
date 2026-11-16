@@ -1,5 +1,5 @@
-版本更新说明
-====================
+Descripción de actualización de versión
+========================================
 
 .. toctree:: 
     :maxdepth: 5
@@ -9,325 +9,325 @@
    :header-rows: 0
    :align: center
 
-   * - **版本号**
-     - **日期**
-     - **更新描述**
+   * - **Número de versión**
+     - **Fecha**
+     - **Descripción de la actualización**
 
    * - V4.0.1
      - 2026-10-27
-     - | 1.修改GetGripperMotionDone()获取夹爪运动状态、GripperWaitMotionDone()等待夹爪运动完成指令参数描述，夹爪运动状态参数增加运动完成检测到物体掉落状态；
-       | 2.修改ServoMoveStart()伺服运动开始指令，增加滤波时间和增益参数设置；
-       | 3.新增DataPackageUpgrade()、GetDataPackageUpgradeProgress()机器人数据备份包上传升级、获取升级进度百分比指令及代码示例；
-       | 4.新增GetJointAllParamUpgradeProgress()获取机器人关节全参数升级进度百分比及代码示例；
+     - | 1.Modificar la descripción de los parámetros de las instrucciones GetGripperMotionDone() para obtener el estado de movimiento de la pinza y GripperWaitMotionDone() para esperar a que finalice el movimiento de la pinza; el parámetro de estado de movimiento de la pinza añade el estado de detección de caída de objeto al completarse el movimiento;
+       | 2.Modificar la instrucción ServoMoveStart() de inicio de movimiento servo, añadiendo la configuración de parámetros de tiempo de filtrado y ganancia;
+       | 3.Añadir las instrucciones DataPackageUpgrade() y GetDataPackageUpgradeProgress() para la carga y actualización del paquete de copia de seguridad de datos del robot y la obtención del porcentaje de progreso de la actualización, junto con ejemplos de código;
+       | 4.Añadir la instrucción GetJointAllParamUpgradeProgress() para obtener el porcentaje de progreso de la actualización de todos los parámetros de las articulaciones del robot, junto con un ejemplo de código;
 
    * - V4.0.0
      - 2026-09-23
-     - | 1.修改FRRobot()实例化机器人接口，增加SDK中集成指令协议通讯TLS加密使能参数配置；
-       | 2.修改SetWeldMachineCtrlMode()设置焊机控制模式接口参数描述，增加松下焊机的有脉冲、无脉冲模式；
-       | 3.新增SendTCPFrame()通过TCP 8080发送自定义指令帧指令及代码示例；
-       | 4.新增TCFToAllJoint()获取机器人8组逆解指令及代码示例；
-       | 5.新增SetPhySpeedInstant()即时设置物理速度指令及代码示例；
-       | 6.新增MtlsLink()设置SDK中集成指令协议TLS通讯加密证书路径指令及代码示例；
-       | 7.新增部分SDK错误码说明。
+     - | 1.Modificar la interfaz de instanciación del robot FRRobot(), añadiendo la configuración del parámetro de habilitación del cifrado TLS para la comunicación del protocolo de instrucciones integrado en el SDK;
+       | 2.Modificar la descripción de los parámetros de la interfaz SetWeldMachineCtrlMode() para establecer el modo de control de la máquina de soldar, añadiendo los modos con pulso y sin pulso de la máquina de soldar Panasonic;
+       | 3.Añadir la instrucción SendTCPFrame() para enviar tramas de instrucciones personalizadas a través de TCP 8080, junto con un ejemplo de código;
+       | 4.Añadir la instrucción TCFToAllJoint() para obtener las 8 soluciones de cinemática inversa del robot, junto con un ejemplo de código;
+       | 5.Añadir la instrucción SetPhySpeedInstant() para establecer la velocidad física en tiempo real, junto con un ejemplo de código;
+       | 6.Añadir la instrucción MtlsLink() para establecer la ruta del certificado de cifrado de comunicación TLS del protocolo de instrucciones integrado en el SDK, junto con un ejemplo de código;
+       | 7.Añadir la descripción de algunos códigos de error del SDK.
 
    * - V3.9.9
      - 2026-09-01
-     - | 1.修改GetGripperMotionDone()获取夹爪状态接口参数描述，更新夹爪状态定义；
-       | 2.修改GetInverseKinExaxis()包含扩展轴位置的逆运动学求解接口，增加关节配置参数，默认值为-1参考当前关节配置；
-       | 3.修改FT_SpiralSearch()、FT_LinInsertion()、FT_FindSurface()力控接口增加未检测到力/力矩的处理策略参数；
-       | 4.修改SetDIConfig()、GetDIConfig()、SetDOConfig()、GetDOConfig()机器人控制箱CIO功能配置接口参数描述，更新新增的功能名称及功能码；
-       | 5.修改机器人基础控制代码示例，增加手动高速模式切换代码示例；
-       | 6.新增ServoJ()关节空间伺服模式运动(多点位输入)指令及代码示例；
-       | 7.新增GetSafetyParamsCheckSum()获取安全配置参数校验和指令、SafetyOPPasswordCheck()安全操作密码校验指令及代码示例；
-       | 8.新增GripperWaitMotionDone()等待夹爪运动完成指令及代码示例；
-       | 9.新增SetRobotTime()同步系统时间至机器人指令及代码示例；
-       | 10.新增SetSafetyDIConfig()安全双通道CI功能配置、SetSafetyDOConfig()安全双通道CO功能配置及代码示例；
-       | 11.新增HiSpeedManualSwitch()切换手动高速模式指令；
-       | 12.新增激光传感器轨迹复现时叠加摆动代码示例；
+     - | 1.Modificar la descripción de los parámetros de la interfaz GetGripperMotionDone() para obtener el estado de la pinza, actualizando la definición del estado de la pinza;
+       | 2.Modificar la interfaz GetInverseKinExaxis() de solución de cinemática inversa que incluye la posición del eje extendido, añadiendo el parámetro de configuración de articulaciones, con valor predeterminado -1 para referenciar la configuración actual de articulaciones;
+       | 3.Modificar las interfaces de control de fuerza FT_SpiralSearch(), FT_LinInsertion() y FT_FindSurface(), añadiendo el parámetro de estrategia de tratamiento cuando no se detecta fuerza/par;
+       | 4.Modificar la descripción de los parámetros de las interfaces SetDIConfig(), GetDIConfig(), SetDOConfig() y GetDOConfig() de configuración de funciones CIO de la caja de control del robot, actualizando los nombres de función y códigos de función añadidos;
+       | 5.Modificar el ejemplo de código de control básico del robot, añadiendo un ejemplo de código de conmutación del modo manual de alta velocidad;
+       | 6.Añadir la instrucción ServoJ() de movimiento en modo servo del espacio de articulaciones (entrada de múltiples puntos), junto con un ejemplo de código;
+       | 7.Añadir las instrucciones GetSafetyParamsCheckSum() para obtener la suma de verificación de los parámetros de configuración de seguridad y SafetyOPPasswordCheck() para la verificación de la contraseña de operación de seguridad, junto con ejemplos de código;
+       | 8.Añadir la instrucción GripperWaitMotionDone() para esperar a que finalice el movimiento de la pinza, junto con un ejemplo de código;
+       | 9.Añadir la instrucción SetRobotTime() para sincronizar la hora del sistema con el robot, junto con un ejemplo de código;
+       | 10.Añadir SetSafetyDIConfig() para la configuración de la función CI de doble canal de seguridad, SetSafetyDOConfig() para la configuración de la función CO de doble canal de seguridad, junto con ejemplos de código;
+       | 11.Añadir la instrucción HiSpeedManualSwitch() para conmutar el modo manual de alta velocidad;
+       | 12.Añadir un ejemplo de código de superposición de oscilación durante la reproducción de trayectoria del sensor láser;
 
    * - V3.9.8
      - 2026-07-27
-     - | 1.更新机器人状态反馈结构体，增加当前机器人lua程序运行状态，0-程序未运行；1-程序运行中(包含程序暂停)；
-       | 2.SetExToolCoord()、SetExToolList()设置外部工具坐标系和工具坐标系列表接口更新参数描述，其中外部工具坐标系编号更新为20-39。并更新外部工具坐标系操作代码示例。
-       | 3.GetToolCoordWithID()获取工具坐标系参数接口增加工具类型、安装位置、工具ID、负载编号参数获取。
-       | 4.GetWObjCoordWithID()获取工件坐标系参数接口增加参考坐标系参数获取；
-       | 5.GetExToolCoordWithID()获取外部工具坐标系参数接口增加机器人末端安装工件坐标系位姿参数获取。
-       | 6.GetExAxisCoordWithID()获取扩展轴坐标系参数接口增加扩展轴号和标定标志参数获取。
-       | 7.SetVelReducePara()设置机器人安全速度接口增加机器人关节安全速度参数设置。
-       | 8.设置焊接参数代码示例中增加焊机控制模式获取示例。
-       | 9.设置扩展IO焊接信号代码示例增加获取扩展DI、扩展DO功能配置代码示例。
-       | 10.新增设置机器人关节安全速度代码示例；
-       | 11.新增WaitStationaryMotionDone()等待原地空运动完成接口；
-       | 12.新增SetStationaryTrackPara()传送带原地跟踪参数配置接口，及传送带原地跟踪代码示例；
-       | 13.新增WorkPieceTrsfStart()、WorkPieceTrsfEnd()工件坐标系转换开始、结束接口，及工件坐标系转换代码示例。
-       | 14.增加GetWeldMachineCtrlMode()获取焊机控制模式接口。
-       | 15.增加GetExtDIConfig()、GetExtDOConfig()获取扩展DI功能、扩展DI功能接口。
+     - | 1.Actualizar la estructura de retroalimentación de estado del robot, añadiendo el estado de ejecución actual del programa lua del robot, 0-programa no en ejecución; 1-programa en ejecución (incluye programa pausado);
+       | 2.Actualizar la descripción de los parámetros de las interfaces SetExToolCoord() y SetExToolList() para establecer el sistema de coordenadas de herramienta externa y la lista de sistemas de coordenadas de herramienta, donde el número del sistema de coordenadas de herramienta externa se actualiza a 20-39. Y actualizar el ejemplo de código de operación del sistema de coordenadas de herramienta externa.
+       | 3.La interfaz GetToolCoordWithID() para obtener los parámetros del sistema de coordenadas de herramienta añade la obtención de los parámetros de tipo de herramienta, posición de instalación, ID de herramienta y número de carga.
+       | 4.La interfaz GetWObjCoordWithID() para obtener los parámetros del sistema de coordenadas de la pieza añade la obtención del parámetro del sistema de coordenadas de referencia;
+       | 5.La interfaz GetExToolCoordWithID() para obtener los parámetros del sistema de coordenadas de herramienta externa añade la obtención del parámetro de pose del sistema de coordenadas de la pieza instalada en el extremo del robot.
+       | 6.La interfaz GetExAxisCoordWithID() para obtener los parámetros del sistema de coordenadas del eje extendido añade la obtención de los parámetros de número de eje extendido y marca de calibración.
+       | 7.La interfaz SetVelReducePara() para establecer la velocidad de seguridad del robot añade la configuración del parámetro de velocidad de seguridad de las articulaciones del robot.
+       | 8.En el ejemplo de código de configuración de los parámetros de soldadura se añade un ejemplo de obtención del modo de control de la máquina de soldar.
+       | 9.En el ejemplo de código de configuración de las señales de soldadura de IO extendida se añade un ejemplo de código de obtención de la configuración de funciones de DI extendida y DO extendida;
+       | 10.Añadir un ejemplo de código de configuración de la velocidad de seguridad de las articulaciones del robot;
+       | 11.Añadir la interfaz WaitStationaryMotionDone() para esperar a que finalice el movimiento en vacío en el lugar;
+       | 12.Añadir la interfaz SetStationaryTrackPara() de configuración de parámetros de seguimiento en el lugar de la cinta transportadora, junto con un ejemplo de código de seguimiento en el lugar de la cinta transportadora;
+       | 13.Añadir las interfaces WorkPieceTrsfStart() y WorkPieceTrsfEnd() de inicio y fin de la transformación del sistema de coordenadas de la pieza, junto con un ejemplo de código de transformación del sistema de coordenadas de la pieza.
+       | 14.Añadir la interfaz GetWeldMachineCtrlMode() para obtener el modo de control de la máquina de soldar.
+       | 15.Añadir las interfaces GetExtDIConfig() y GetExtDOConfig() para obtener la función de DI extendida y la función de DO extendida.
 
    * - V3.9.7
      - 2026-06-25
-     - | 1.更新机器人状态反馈结构体，夹爪运动完成信号新增是否检测到物体状态；夹爪故障新增2-指令错误、3-工件掉落、其他-夹爪故障码+3；
-       | 2.更新设置LUA程序停止/暂停后输出复位代码示例，优化加载lua文件接口仅需要输入lua文件名称，不再需要输入路径。
-       | 3.更新光电传感器TCP标定代码示例，优化加载文件接口仅需要输入lua文件名称，不再需要输入路径。
-       | 4.更新设置轨迹运行中的速度代码示例，优化加载轨迹J文件接口仅需要输入轨迹J文件名称，不再需要输入路径。
-       | 5.更新机器人轨迹J文件复现代码示例	，优化加载轨迹J文件接口仅需要输入轨迹J文件名称，不再需要输入路径。
-       | 6.更新轨迹复现（轨迹前瞻）代码示例，优化加载轨迹J文件接口仅需要输入轨迹J文件名称，不再需要输入路径。
-       | 7.LoadDefaultProgConfig()接口作业程序名称参数仅需要输入lua文件名称，不再需要输入路径。
-       | 8.ProgramLoad()接口作业程序名称参数仅需要输入lua文件名称，不再需要输入路径。
-       | 9.GetLoadedProgram()接口作业程序名称参数仅需要输入lua文件名称，不再需要输入路径。
-       | 10.更新机器人LUA程序操作代码示例，优化加载文件接口仅需要输入lua文件名称，不再需要输入路径。
-       | 11.SetAxleLuaEnableDeviceType()接口增加灵巧手启用状态参数；
-       | 12.GetAxleLuaEnableDeviceType()接口增加灵巧手启用状态参数；
-       | 13.GetAxleLuaEnableDevice()接口增加灵巧手启用设备编号状态参数；
-       | 14.SetAxleLuaGripperFunc()接口夹爪功能码数组扩充至32个，增加旋转夹爪控制等；
-       | 15.GetAxleLuaGripperFunc()接口夹爪功能码数组扩充至32个，增加旋转夹爪状态等；
-       | 16.SetCoderCompenParams()更新接口名称错误；
-       | 17.新增SetDexterousHandsMove ()控制灵巧手运动接口。
-       | 18.新增SetDexterousHandsAct ()控制灵巧手复位激活接口。
-       | 19.新增ClearDexterousHandsError ()清除灵巧手错误接口。
-       | 20.新增SetDexterousHandsFunc()设置启用灵巧手动作控制功能接口。
-       | 21.新增GetDexterousHandsFunc()获取启用灵巧手动作控制功能接口。
-       | 22.新增SetWeaveBackCenterConfig()、GetWeaveBackCenterConfig()设置、获取摆动结束回周期零点参数。
-       | 23.新增SetWeaveOffsetRT()设置摆动实时偏移接口；
-       | 24.新增SetSpeedInstant()实时设置速度接口；
+     - | 1.Actualizar la estructura de retroalimentación de estado del robot, la señal de finalización de movimiento de la pinza añade el estado de detección de objeto; el fallo de la pinza añade 2-error de instrucción, 3-caída de la pieza, otros-código de fallo de la pinza +3;
+       | 2.Actualizar el ejemplo de código de reinicio de salida tras detener/pausar el programa LUA, optimizando la interfaz de carga de archivos lua para que solo requiera el nombre del archivo lua, sin necesidad de introducir la ruta.
+       | 3.Actualizar el ejemplo de código de calibración TCP del sensor fotoeléctrico, optimizando la interfaz de carga de archivos para que solo requiera el nombre del archivo lua, sin necesidad de introducir la ruta.
+       | 4.Actualizar el ejemplo de código de establecimiento de la velocidad durante la ejecución de la trayectoria, optimizando la interfaz de carga de archivos de trayectoria J para que solo requiera el nombre del archivo de trayectoria J, sin necesidad de introducir la ruta.
+       | 5.Actualizar el ejemplo de código de reproducción de archivos de trayectoria J del robot, optimizando la interfaz de carga de archivos de trayectoria J para que solo requiera el nombre del archivo de trayectoria J, sin necesidad de introducir la ruta.
+       | 6.Actualizar el ejemplo de código de reproducción de trayectoria (previsión de trayectoria), optimizando la interfaz de carga de archivos de trayectoria J para que solo requiera el nombre del archivo de trayectoria J, sin necesidad de introducir la ruta.
+       | 7.El parámetro de nombre del programa de trabajo de la interfaz LoadDefaultProgConfig() solo requiere el nombre del archivo lua, sin necesidad de introducir la ruta.
+       | 8.El parámetro de nombre del programa de trabajo de la interfaz ProgramLoad() solo requiere el nombre del archivo lua, sin necesidad de introducir la ruta.
+       | 9.El parámetro de nombre del programa de trabajo de la interfaz GetLoadedProgram() solo requiere el nombre del archivo lua, sin necesidad de introducir la ruta.
+       | 10.Actualizar el ejemplo de código de operación del programa LUA del robot, optimizando la interfaz de carga de archivos para que solo requiera el nombre del archivo lua, sin necesidad de introducir la ruta.
+       | 11.La interfaz SetAxleLuaEnableDeviceType() añade el parámetro de estado de habilitación de la mano diestra;
+       | 12.La interfaz GetAxleLuaEnableDeviceType() añade el parámetro de estado de habilitación de la mano diestra;
+       | 13.La interfaz GetAxleLuaEnableDevice() añade el parámetro de estado del número de dispositivo habilitado de la mano diestra;
+       | 14.El arreglo de códigos de función de la pinza de la interfaz SetAxleLuaGripperFunc() se amplía a 32, añadiendo el control de la pinza giratoria, etc.;
+       | 15.El arreglo de códigos de función de la pinza de la interfaz GetAxleLuaGripperFunc() se amplía a 32, añadiendo el estado de la pinza giratoria, etc.;
+       | 16.Corregir el error de nombre de la interfaz SetCoderCompenParams();
+       | 17.Añadir la interfaz SetDexterousHandsMove () para controlar el movimiento de la mano diestra.
+       | 18.Añadir la interfaz SetDexterousHandsAct () para controlar la activación de reinicio de la mano diestra.
+       | 19.Añadir la interfaz ClearDexterousHandsError () para borrar los errores de la mano diestra.
+       | 20.Añadir la interfaz SetDexterousHandsFunc() para establecer la habilitación de la función de control de acciones de la mano diestra.
+       | 21.Añadir la interfaz GetDexterousHandsFunc() para obtener la habilitación de la función de control de acciones de la mano diestra.
+       | 22.Añadir SetWeaveBackCenterConfig() y GetWeaveBackCenterConfig() para establecer y obtener el parámetro de retorno al punto cero del ciclo al final de la oscilación.
+       | 23.Añadir la interfaz SetWeaveOffsetRT() para establecer el desplazamiento en tiempo real de la oscilación;
+       | 24.Añadir la interfaz SetSpeedInstant() para establecer la velocidad en tiempo real;
 
    * - V3.9.6
      - 2026-05-26
-     - | 1.更新机器人状态反馈结构体，增加扩展轴坐标系编号状态；
-       | 2.更新机器人状态反馈配置枚举类型，增加扩展轴坐标系编号配置枚举；
-       | 3.新增ExtAxisGetParamConfig()获取UDP扩展轴参数配置接口。
-       | 4.新增ServoJV()机器人关节空间速度伺服模式运动接口。
-       | 5.新增ServoMITStart()机器人关节MIT控制开始接口。
-       | 6.新增ServoMITEnd()机器人关节MIT控制结束接口。
-       | 7.新增ServoMIT()机器人关节MIT控制接口。
-       | 8.新增SetLaserWeldingParam()机器人激光焊接参数配置接口。
-       | 9.新增SetLaserWeldingStartEnd()设置机器人激光焊接开启停止接口。
-       | 10.新增SetLaserWeldingEnable()设置激光焊机使能去使能接口。
-       | 11.新增ResetLaserWeldingErr()设置激光焊机故障复位接口。
-       | 12.新增GetLaserWeldingRunningState()获取激光焊机运行状态接口。
-       | 13.新增GetLaserWeldingErrState()获取激光焊机故障状态接口。
-       | 14.新增GetLaserWeldingParamTarget()获取激光焊接配置参数接口。
-       | 15.新增GetLaserWeldingParamActual()获取当前激光焊机生效的配置参数接口。
-       | 16.新增SetLaserWeldingEnableExtDoNum()配置激光焊机扩展IO使能DO端口接口。
-       | 17.新增SetLaserWeldingStartExtDoNum()配置激光焊机扩展IO启动DO端口接口。
-       | 18.新增SetLaserWeldingErrResetExtDoNum()配置激光焊机扩展IO故障复位DO端口接口。
-       | 19.新增SetLaserWeldingRunningStateExtDiNum()配置激光焊机扩展IO运行状态（出光状态）DI端口接口。
-       | 20.新增SetLaserWeldingErrStateExtDiNum()配置激光焊机扩展IO故障状态DI端口接口。
+     - | 1.Actualizar la estructura de retroalimentación de estado del robot, añadiendo el estado del número del sistema de coordenadas del eje extendido;
+       | 2.Actualizar la enumeración de tipos de configuración de retroalimentación de estado del robot, añadiendo la enumeración de configuración del número del sistema de coordenadas del eje extendido;
+       | 3.Añadir la interfaz ExtAxisGetParamConfig() para obtener la configuración de parámetros del eje extendido UDP.
+       | 4.Añadir la interfaz ServoJV() de movimiento en modo servo de velocidad del espacio de articulaciones del robot.
+       | 5.Añadir la interfaz ServoMITStart() de inicio de control MIT de las articulaciones del robot.
+       | 6.Añadir la interfaz ServoMITEnd() de fin de control MIT de las articulaciones del robot.
+       | 7.Añadir la interfaz ServoMIT() de control MIT de las articulaciones del robot.
+       | 8.Añadir la interfaz SetLaserWeldingParam() de configuración de parámetros de soldadura láser del robot.
+       | 9.Añadir la interfaz SetLaserWeldingStartEnd() para establecer el inicio y la parada de la soldadura láser del robot.
+       | 10.Añadir la interfaz SetLaserWeldingEnable() para establecer la habilitación y deshabilitación de la máquina de soldadura láser.
+       | 11.Añadir la interfaz ResetLaserWeldingErr() para establecer el reinicio de fallos de la máquina de soldadura láser.
+       | 12.Añadir la interfaz GetLaserWeldingRunningState() para obtener el estado de funcionamiento de la máquina de soldadura láser.
+       | 13.Añadir la interfaz GetLaserWeldingErrState() para obtener el estado de fallo de la máquina de soldadura láser.
+       | 14.Añadir la interfaz GetLaserWeldingParamTarget() para obtener los parámetros de configuración de la soldadura láser.
+       | 15.Añadir la interfaz GetLaserWeldingParamActual() para obtener los parámetros de configuración vigentes actualmente de la máquina de soldadura láser.
+       | 16.Añadir la interfaz SetLaserWeldingEnableExtDoNum() para configurar el puerto DO extendido de habilitación de IO de la máquina de soldadura láser.
+       | 17.Añadir la interfaz SetLaserWeldingStartExtDoNum() para configurar el puerto DO extendido de inicio de IO de la máquina de soldadura láser.
+       | 18.Añadir la interfaz SetLaserWeldingErrResetExtDoNum() para configurar el puerto DO extendido de reinicio de fallos de IO de la máquina de soldadura láser.
+       | 19.Añadir la interfaz SetLaserWeldingRunningStateExtDiNum() para configurar el puerto DI extendido del estado de funcionamiento (estado de emisión de luz) de IO de la máquina de soldadura láser.
+       | 20.Añadir la interfaz SetLaserWeldingErrStateExtDiNum() para configurar el puerto DI extendido del estado de fallo de IO de la máquina de soldadura láser.
   
    * - V3.9.5
      - 2026-04-24
-     - | 1.SetTrajectoryJSpeed()接口新增模式降速模式、直接切换；
-       | 2.FieldBusSlaveWriteAO()接口更改写入数值类型为double类型，其中AO0~AO15为整型，AO16~AO31为浮点型；
-       | 3.FieldBusSlaveReadAI()接口更改读取数值类型为double类型，其中AI0~AI15为整形，AO16~AI31为浮点型；
-       | 4.更新机器人状态反馈结构体类型；
-       | 5.新增机器人状态反馈配置枚举类型；
-       | 6.新增SetRobotRealtimeStateConfig()配置机器人CNDE状态反馈接口；
-       | 7.新增AddRobotRealtimeState()CNDE状态配置添加一个机器人状态接口；
-       | 8.新增DeleteRobotRealtimeState()CNDE状态配置删除一个机器人状态接口；
-       | 9.新增SetRobotRealtimeStatePeriod()设置CNDE状态反馈周期接口；
-       | 10.新增GetRobotRealtimeStateConfig()获取当前CNDE状态反馈所有状态集合和周期接口。
+     - | 1.La interfaz SetTrajectoryJSpeed() añade el modo de reducción de velocidad y el cambio directo;
+       | 2.La interfaz FieldBusSlaveWriteAO() cambia el tipo de valor de escritura a tipo double, donde AO0~AO15 son de tipo entero y AO16~AO31 son de tipo flotante;
+       | 3.La interfaz FieldBusSlaveReadAI() cambia el tipo de valor de lectura a tipo double, donde AI0~AI15 son de tipo entero y AO16~AI31 son de tipo flotante;
+       | 4.Actualizar el tipo de estructura de retroalimentación de estado del robot;
+       | 5.Añadir el tipo de enumeración de configuración de retroalimentación de estado del robot;
+       | 6.Añadir la interfaz SetRobotRealtimeStateConfig() para configurar la retroalimentación de estado CNDE del robot;
+       | 7.Añadir la interfaz AddRobotRealtimeState() para añadir un estado del robot a la configuración de estado CNDE;
+       | 8.Añadir la interfaz DeleteRobotRealtimeState() para eliminar un estado del robot de la configuración de estado CNDE;
+       | 9.Añadir la interfaz SetRobotRealtimeStatePeriod() para establecer el período de retroalimentación de estado CNDE;
+       | 10.Añadir la interfaz GetRobotRealtimeStateConfig() para obtener el conjunto de todos los estados y el período de la retroalimentación de estado CNDE actual.
 
    * - V3.9.4
      - 2026-03-25
-     - | 1.ServoJTStart()接口新增通信类型选择参数，支持XMLPRC/UDP通信；
-       | 2.ServoJTEnd()接口新增通信类型选择参数，支持XMLPRC/UDP通信；
-       | 3.ServoJT()接口新增通信类型选择参数，支持XMLPRC/UDP通信；
-       | 4.ServoMoveStart()接口新增通信类型选择参数，支持XMLPRC/UDP通信；
-       | 5.ServoMoveEnd()接口新增通信类型选择参数，支持XMLPRC/UDP通信；
-       | 6.ServoJ()接口新增通信类型选择参数，支持XMLPRC/UDP通信；
-       | 7.SetWeldMachineCtrlMode()接口新增控制模式选择参数；
-       | 8.ExtDevGetUDPComParam()接口新增获取UDP通信参数：重启控制箱后是否自动重连；
-       | 9.新增SetAxleGenComEnable()开启末端通用透传功能接口；
-       | 10.新增SndRcvAxleGenComCmdData()末端发送非周期数据并等待应答接口；
-       | 11.新增SetRobotStopOnComDisc()设置端口通讯断开时停止机器人运行接口；
-       | 12.新增GetRobotStopOnComDisc()获取端口通讯断开时停止机器人运行参数接口；
-       | 13.新增SetDIConfig()设置控制箱可配置 CI 端口功能接口；
-       | 14.新增GetDIConfig()获取控制箱可配置 CI 端口功能接口；
-       | 15.新增SetDOConfig()设置控制箱可配置 CO 端口功能接口；
-       | 16.新增GetDOConfig()获取控制箱可配置 CO 端口功能接口；
-       | 17.新增SetToolDIConfig()设置末端可配置 End-CI 端口功能接口；
-       | 18.新增GetToolDIConfig()获取末端可配置 End-CI 端口功能接口；
-       | 19.新增SetDIConfigLevel()设置控制箱可配置 CI 有效状态接口；
-       | 20.新增GetDIConfigLevel()获取控制箱可配置 CI 有效状态接口；
-       | 21.新增SetDOConfigLevel()设置控制箱可配置 CO 有效状态接口；
-       | 22.新增GetDOConfigLevel()获取控制箱可配置 CO 有效状态接口；
-       | 23.新增SetToolDIConfigLevel()设置末端可配置 CI 有效状态接口；
-       | 24.新增GetToolDIConfigLevel()获取末端可配置 CI 有效状态接口；
-       | 25.新增SetStandardDILevel()设置控制箱标准 DI 有效状态接口；
-       | 26.新增GetStandardDILevel()获取控制箱标准 DI 有效状态接口；
-       | 27.新增SetStandardDOLevel()设置控制箱标准 DO 有效状态接口；
-       | 28.新增GetStandardDOLevel()获取控制箱标准 DO 有效状态接口；
-       | 29.新增SetExAxisCmdDoneTimeUDP() 扩展轴定位完成时间设置接口；
-       | 30.新增OpenLuaDownload()下载开放协议 Lua 文件接口；
-       | 31.新增OpenLuaDelete()删除开放协议 Lua 文件接口；
-       | 32.新增AllOpenLuaDelete()删除开放协议 Lua 文件接口；
-       | 33.新增SendUDPFrameUDP ()发送指令帧接口；
-       | 34.新增SetCmdRpyCallback()设置 SDK 通过 UDP 发送指令的执行结果回调函数接口；
-       | 35.新增SetVelReducePara()设置安全速度参数接口；
-       | 36.新增OriginPointWeaveStart()定点摆动开始接口；
-       | 37.新增OriginPointWeaveEnd()定点摆动结束接口；
-       | 38.新增SetUserLEDColor()设置用户自定义机器人末端灯色接口；
-       | 39.新增MoveToTPDStart()运动到 TPD 轨迹记录起点接口；
+     - | 1.La interfaz ServoJTStart() añade el parámetro de selección de tipo de comunicación, compatible con comunicación XMLPRC/UDP;
+       | 2.La interfaz ServoJTEnd() añade el parámetro de selección de tipo de comunicación, compatible con comunicación XMLPRC/UDP;
+       | 3.La interfaz ServoJT() añade el parámetro de selección de tipo de comunicación, compatible con comunicación XMLPRC/UDP;
+       | 4.La interfaz ServoMoveStart() añade el parámetro de selección de tipo de comunicación, compatible con comunicación XMLPRC/UDP;
+       | 5.La interfaz ServoMoveEnd() añade el parámetro de selección de tipo de comunicación, compatible con comunicación XMLPRC/UDP;
+       | 6.La interfaz ServoJ() añade el parámetro de selección de tipo de comunicación, compatible con comunicación XMLPRC/UDP;
+       | 7.La interfaz SetWeldMachineCtrlMode() añade el parámetro de selección del modo de control;
+       | 8.La interfaz ExtDevGetUDPComParam() añade la obtención del parámetro de comunicación UDP: si se reconecta automáticamente tras reiniciar la caja de control;
+       | 9.Añadir la interfaz SetAxleGenComEnable() para habilitar la función de transmisión transparente general del extremo;
+       | 10.Añadir la interfaz SndRcvAxleGenComCmdData() para enviar datos no periódicos desde el extremo y esperar la respuesta;
+       | 11.Añadir la interfaz SetRobotStopOnComDisc() para establecer la detención del robot cuando se desconecta la comunicación del puerto;
+       | 12.Añadir la interfaz GetRobotStopOnComDisc() para obtener el parámetro de detención del robot cuando se desconecta la comunicación del puerto;
+       | 13.Añadir la interfaz SetDIConfig() para establecer la función del puerto CI configurable de la caja de control;
+       | 14.Añadir la interfaz GetDIConfig() para obtener la función del puerto CI configurable de la caja de control;
+       | 15.Añadir la interfaz SetDOConfig() para establecer la función del puerto CO configurable de la caja de control;
+       | 16.Añadir la interfaz GetDOConfig() para obtener la función del puerto CO configurable de la caja de control;
+       | 17.Añadir la interfaz SetToolDIConfig() para establecer la función del puerto End-CI configurable del extremo;
+       | 18.Añadir la interfaz GetToolDIConfig() para obtener la función del puerto End-CI configurable del extremo;
+       | 19.Añadir la interfaz SetDIConfigLevel() para establecer el estado válido del CI configurable de la caja de control;
+       | 20.Añadir la interfaz GetDIConfigLevel() para obtener el estado válido del CI configurable de la caja de control;
+       | 21.Añadir la interfaz SetDOConfigLevel() para establecer el estado válido del CO configurable de la caja de control;
+       | 22.Añadir la interfaz GetDOConfigLevel() para obtener el estado válido del CO configurable de la caja de control;
+       | 23.Añadir la interfaz SetToolDIConfigLevel() para establecer el estado válido del CI configurable del extremo;
+       | 24.Añadir la interfaz GetToolDIConfigLevel() para obtener el estado válido del CI configurable del extremo;
+       | 25.Añadir la interfaz SetStandardDILevel() para establecer el estado válido del DI estándar de la caja de control;
+       | 26.Añadir la interfaz GetStandardDILevel() para obtener el estado válido del DI estándar de la caja de control;
+       | 27.Añadir la interfaz SetStandardDOLevel() para establecer el estado válido del DO estándar de la caja de control;
+       | 28.Añadir la interfaz GetStandardDOLevel() para obtener el estado válido del DO estándar de la caja de control;
+       | 29.Añadir la interfaz SetExAxisCmdDoneTimeUDP() para establecer el tiempo de finalización del posicionamiento del eje extendido;
+       | 30.Añadir la interfaz OpenLuaDownload() para descargar el archivo Lua de protocolo abierto;
+       | 31.Añadir la interfaz OpenLuaDelete() para eliminar el archivo Lua de protocolo abierto;
+       | 32.Añadir la interfaz AllOpenLuaDelete() para eliminar el archivo Lua de protocolo abierto;
+       | 33.Añadir la interfaz SendUDPFrameUDP () para enviar tramas de instrucciones;
+       | 34.Añadir la interfaz SetCmdRpyCallback() para establecer la función de devolución de llamada del resultado de ejecución de las instrucciones enviadas por el SDK a través de UDP;
+       | 35.Añadir la interfaz SetVelReducePara() para establecer los parámetros de velocidad de seguridad;
+       | 36.Añadir la interfaz OriginPointWeaveStart() de inicio de oscilación de punto fijo;
+       | 37.Añadir la interfaz OriginPointWeaveEnd() de fin de oscilación de punto fijo;
+       | 38.Añadir la interfaz SetUserLEDColor() para establecer el color de la luz del extremo del robot personalizado por el usuario;
+       | 39.Añadir la interfaz MoveToTPDStart() para moverse al punto de inicio del registro de trayectoria TPD;
 
    * - V3.9.3
      - 2026-02-11
-     - | 1.ServoCart()接口增加扩展轴参数
-       | 2.SetOutputResetCtlBoxDO()接口增加暂停恢复后是否重加载复位前DO状态参数
-       | 3.SetOutputResetCtlBoxAO()接口增加暂停恢复后是否重加载复位前DO状态参数
-       | 4.SetOutputResetAxleDO()接口增加暂停恢复后是否重加载复位前DO状态参数
-       | 5.SetOutputResetAxleAO()接口增加暂停恢复后是否重加载复位前DO状态参数
-       | 6.SetOutputResetExtDO()接口增加暂停恢复后是否重加载复位前DO状态参数
-       | 7.SetOutputResetExtAO()接口增加暂停恢复后是否重加载复位前DO状态参数
-       | 8.SetOutputResetSmartToolDO()接口增加暂停恢复后是否重加载复位前DO状态参数
-       | 9.增加GetInverseKinExaxis()包含扩展轴位置的逆运动学求解接口
+     - | 1.La interfaz ServoCart() añade el parámetro de eje extendido
+       | 2.La interfaz SetOutputResetCtlBoxDO() añade el parámetro de si se recarga el estado DO antes del reinicio tras la reanudación de la pausa
+       | 3.La interfaz SetOutputResetCtlBoxAO() añade el parámetro de si se recarga el estado DO antes del reinicio tras la reanudación de la pausa
+       | 4.La interfaz SetOutputResetAxleDO() añade el parámetro de si se recarga el estado DO antes del reinicio tras la reanudación de la pausa
+       | 5.La interfaz SetOutputResetAxleAO() añade el parámetro de si se recarga el estado DO antes del reinicio tras la reanudación de la pausa
+       | 6.La interfaz SetOutputResetExtDO() añade el parámetro de si se recarga el estado DO antes del reinicio tras la reanudación de la pausa
+       | 7.La interfaz SetOutputResetExtAO() añade el parámetro de si se recarga el estado DO antes del reinicio tras la reanudación de la pausa
+       | 8.La interfaz SetOutputResetSmartToolDO() añade el parámetro de si se recarga el estado DO antes del reinicio tras la reanudación de la pausa
+       | 9.Añadir la interfaz GetInverseKinExaxis() de solución de cinemática inversa que incluye la posición del eje extendido
        
    * - V3.9.2
      - 2026-01-26
-     - | 1.FT_RotInsertion()接口增加未检测到力/力矩的处理策略参数
-       | 2.LaserSensorRecordandReplay()接口增加机器人定点跟踪相关参数
-       | 3.增加MoveStationary()接口
-       | 4.增加TCPComputeRPY()接口
-       | 5.增加TCPComputeXYZ()接口
-       | 6.增加TCPRecordFlangePosStart()接口
-       | 7.增加TCPRecordFlangePosEnd()接口
-       | 8.增加TCPGetRecordFlangePos()接口
-       | 9.增加PhotoelectricSensorTCPCalibration()接口
+     - | 1.La interfaz FT_RotInsertion() añade el parámetro de estrategia de tratamiento cuando no se detecta fuerza/par
+       | 2.La interfaz LaserSensorRecordandReplay() añade los parámetros relacionados con el seguimiento de punto fijo del robot
+       | 3.Añadir la interfaz MoveStationary()
+       | 4.Añadir la interfaz TCPComputeRPY()
+       | 5.Añadir la interfaz TCPComputeXYZ()
+       | 6.Añadir la interfaz TCPRecordFlangePosStart()
+       | 7.Añadir la interfaz TCPRecordFlangePosEnd()
+       | 8.Añadir la interfaz TCPGetRecordFlangePos()
+       | 9.Añadir la interfaz PhotoelectricSensorTCPCalibration()
 
    * - V3.9.1
      - 2025-12-25
-     - | 1.MoveL()接口增加oacc速度缩放因子参数/物理加速度参数；
-       | 2.MoveC()接口增加oacc速度缩放因子参数/物理加速度参数；
-       | 3.Circle()接口优化关于物理速度和物理加速度的参数描述；
-       | 4.增加FT_Control()重载函数，具有rx、ry启动阈值、力矩调节系数参数；
-       | 5.增加SerCoderCompenParams()接口；
+     - | 1.La interfaz MoveL() añade el parámetro de factor de escala de velocidad oacc / parámetro de aceleración física;
+       | 2.La interfaz MoveC() añade el parámetro de factor de escala de velocidad oacc / parámetro de aceleración física;
+       | 3.La interfaz Circle() optimiza la descripción de los parámetros de velocidad física y aceleración física;
+       | 4.Añadir la función sobrecargada FT_Control(), con los parámetros de umbral de activación de rx, ry y coeficiente de ajuste de par;
+       | 5.Añadir la interfaz SerCoderCompenParams();
    
    * - V3.9.0
      - 2025-11-26
-     - | 1.JointSensitivityCalibration()接口增加j1~j6关节线性度返回
-       | 2.增加JointHysteresisError()接口
-       | 3.增加JointRepeatability()接口
-       | 4.增加SetAdmittanceParams()接口
-       | 5.增加MoveToIntersectLineStart()接口
-       | 6.增加MoveIntersectLine()接口
+     - | 1.La interfaz JointSensitivityCalibration() añade el retorno de la linealidad de las articulaciones j1~j6
+       | 2.Añadir la interfaz JointHysteresisError()
+       | 3.Añadir la interfaz JointRepeatability()
+       | 4.Añadir la interfaz SetAdmittanceParams()
+       | 5.Añadir la interfaz MoveToIntersectLineStart()
+       | 6.Añadir la interfaz MoveIntersectLine()
 
    * - V3.8.7
      - 2025-10-21
-     - | 1.FT_Control()增加质量参数和阻尼参数接口
-       | 2.增加JointSensitivityCalibration()接口
-       | 3.增加JointSensitivityCollect()接口
-       | 4.增加MotionQueueClear()接口
-       | 5.增加GetSlavePortErrCounter()接口
-       | 6.增加SlavePortErrCounterClear()接口
-       | 7.增加SetVelFeedForwardRatio()接口
-       | 8.增加GetVelFeedForwardRatio()接口
-       | 9.增加RobotMCULogCollect()接口
-       | 10.状态结构体增加ServoJ指令计数及最后一个指令目标位置数据
-       | 11.新螺旋线参数结构体SpiralParam增加速度加速度参数模式
+     - | 1.FT_Control() añade los parámetros de masa y amortiguación
+       | 2.Añadir la interfaz JointSensitivityCalibration()
+       | 3.Añadir la interfaz JointSensitivityCollect()
+       | 4.Añadir la interfaz MotionQueueClear()
+       | 5.Añadir la interfaz GetSlavePortErrCounter()
+       | 6.Añadir la interfaz SlavePortErrCounterClear()
+       | 7.Añadir la interfaz SetVelFeedForwardRatio()
+       | 8.Añadir la interfaz GetVelFeedForwardRatio()
+       | 9.Añadir la interfaz RobotMCULogCollect()
+       | 10.La estructura de estado añade el contador de instrucciones ServoJ y los datos de la posición objetivo de la última instrucción
+       | 11.La nueva estructura de parámetros de hélice SpiralParam añade el modo de parámetros de velocidad y aceleración
 
    * - V3.8.6
      - 2025-09-19
-     - | 1.SetLoadCoord()接口增加负载编号参数
-       | 2.增加LaserTrackingLaserOnOff()接口
-       | 3.增加LaserTrackingTrackOnOff()接口
-       | 4.增加LaserTrackingSearchStart_xyz()接口
-       | 5.增加LaserTrackingSearchStart_point()接口
-       | 6.增加LaserTrackingSearchStop()接口
-       | 7.增加LaserTrackingSensorConfig()接口
-       | 8.增加LaserTrackingSensorSamplePeriod()接口
-       | 9.增加LoadPosSensorDriver()接口
-       | 10.增加UnLoadPosSensorDriver()接口
-       | 11.增加LaserSensorRecord1()接口
-       | 12.增加LaserSensorReplay()接口
-       | 13.增加MoveLTR()接口
-       | 14.增加LaserSensorRecordandReplay()接口
-       | 15.增加MoveToLaserRecordStart()接口
-       | 16.增加MoveToLaserRecordEnd()接口
-       | 17.增加MoveToLaserSeamPos()接口
-       | 18.增加GetLaserSeamPos()接口
-       | 19.增加ImpedanceControlStartStop()接口
-       | 20.增加GetToolCoordWithID()接口
-       | 21.增加GetWObjCoordWithID()接口
-       | 22.增加GetExToolCoordWithID()接口
-       | 23.增加GetExAxisCoordWithID()接口
-       | 24.增加GetTargetPayloadWithID()接口
-       | 25.增加GetExAxisCoordWithID()接口
-       | 26.增加GetCurWObjCoord()接口
-       | 27.增加GetCurExToolCoord()接口
-       | 28.增加GetCurExToolCoord()接口
-       | 29.增加KernelUpgrade()接口
-       | 30.增加GetKernelUpgradeResult()接口
-       | 31.增加CustomWeaveSetPara()接口
-       | 32.增加CustomWeaveGetPara()接口
-       | 33.状态结构体增加工具、工件、外部工具、扩展轴坐标系和负载质量、质心数据
+     - | 1.La interfaz SetLoadCoord() añade el parámetro de número de carga
+       | 2.Añadir la interfaz LaserTrackingLaserOnOff()
+       | 3.Añadir la interfaz LaserTrackingTrackOnOff()
+       | 4.Añadir la interfaz LaserTrackingSearchStart_xyz()
+       | 5.Añadir la interfaz LaserTrackingSearchStart_point()
+       | 6.Añadir la interfaz LaserTrackingSearchStop()
+       | 7.Añadir la interfaz LaserTrackingSensorConfig()
+       | 8.Añadir la interfaz LaserTrackingSensorSamplePeriod()
+       | 9.Añadir la interfaz LoadPosSensorDriver()
+       | 10.Añadir la interfaz UnLoadPosSensorDriver()
+       | 11.Añadir la interfaz LaserSensorRecord1()
+       | 12.Añadir la interfaz LaserSensorReplay()
+       | 13.Añadir la interfaz MoveLTR()
+       | 14.Añadir la interfaz LaserSensorRecordandReplay()
+       | 15.Añadir la interfaz MoveToLaserRecordStart()
+       | 16.Añadir la interfaz MoveToLaserRecordEnd()
+       | 17.Añadir la interfaz MoveToLaserSeamPos()
+       | 18.Añadir la interfaz GetLaserSeamPos()
+       | 19.Añadir la interfaz ImpedanceControlStartStop()
+       | 20.Añadir la interfaz GetToolCoordWithID()
+       | 21.Añadir la interfaz GetWObjCoordWithID()
+       | 22.Añadir la interfaz GetExToolCoordWithID()
+       | 23.Añadir la interfaz GetExAxisCoordWithID()
+       | 24.Añadir la interfaz GetTargetPayloadWithID()
+       | 25.Añadir la interfaz GetExAxisCoordWithID()
+       | 26.Añadir la interfaz GetCurWObjCoord()
+       | 27.Añadir la interfaz GetCurExToolCoord()
+       | 28.Añadir la interfaz GetCurExToolCoord()
+       | 29.Añadir la interfaz KernelUpgrade()
+       | 30.Añadir la interfaz GetKernelUpgradeResult()
+       | 31.Añadir la interfaz CustomWeaveSetPara()
+       | 32.Añadir la interfaz CustomWeaveGetPara()
+       | 33.La estructura de estado añade los datos de herramienta, pieza, herramienta externa, sistema de coordenadas del eje extendido y masa y centro de masa de la carga
 
    * - V3.8.5
      - 2025-08-20
-     - | 1.MoveL()、MoveC()、Circle()指令增加velAccParamMode参数
-       | 2.增加MoveJ()、SplinePTP()、ExtAxisSyncMoveJ()自动正运动学计算接口
-       | 3.LoadTrajectoryLA()增加匀速前瞻开关开启参数
-       | 4.增加MoveL()、MoveC()、Circle()、NewSplinePoint()、NewSpiral()、ExtAxisSyncMoveL()、ExtAxisSyncMoveC()自动逆运动学计算接口
-       | 5.增加SetSuckerCtrl()、GetSuckerState()、WaitSuckerState()等吸盘控制接口，SetExAxisRobotPlan()同步运动策略接口
-       | 6.增加OpenLuaUpload()、GetFieldBusConfig()、FieldBusSlaveWriteDO()、FieldBusSlaveWriteAO()、FieldBusSlaveReadDI()、FieldBusSlaveReadAI()、FieldBusSlaveWaitDI()、FieldBusSlaveWaitAI()等机器人从站模式控制指令
+     - | 1.Las instrucciones MoveL(), MoveC() y Circle() añaden el parámetro velAccParamMode
+       | 2.Añadir las interfaces de cálculo automático de cinemática directa MoveJ(), SplinePTP() y ExtAxisSyncMoveJ()
+       | 3.LoadTrajectoryLA() añade el parámetro de activación del interruptor de previsión de velocidad constante
+       | 4.Añadir las interfaces de cálculo automático de cinemática inversa MoveL(), MoveC(), Circle(), NewSplinePoint(), NewSpiral(), ExtAxisSyncMoveL() y ExtAxisSyncMoveC()
+       | 5.Añadir las interfaces de control de ventosa SetSuckerCtrl(), GetSuckerState(), WaitSuckerState(), etc., y la interfaz de estrategia de movimiento sincronizado SetExAxisRobotPlan()
+       | 6.Añadir las instrucciones de control del modo esclavo del robot OpenLuaUpload(), GetFieldBusConfig(), FieldBusSlaveWriteDO(), FieldBusSlaveWriteAO(), FieldBusSlaveReadDI(), FieldBusSlaveReadAI(), FieldBusSlaveWaitDI(), FieldBusSlaveWaitAI(), etc.
 
    * - V3.8.4
      - 2025-07-17
-     - | 1.ExtAxisMove()接口增加blend平滑参数
-       | 2.增加SetFocusCalibPoint()接口
-       | 3.增加ComputeFocusCalib()接口
-       | 4.增加SetFocusPosition()接口
-       | 5.增加FocusStart()接口
-       | 6.增加FocusEnd()接口
-       | 7.增加SetJointFirmwareUpgrade()接口
-       | 8.增加SetCtrlFirmwareUpgrade()接口
-       | 9.增加SetEndFirmwareUpgrade()接口
-       | 10.增加JointAllParamUpgrade()接口
+     - | 1.La interfaz ExtAxisMove() añade el parámetro de suavizado blend
+       | 2.Añadir la interfaz SetFocusCalibPoint()
+       | 3.Añadir la interfaz ComputeFocusCalib()
+       | 4.Añadir la interfaz SetFocusPosition()
+       | 5.Añadir la interfaz FocusStart()
+       | 6.Añadir la interfaz FocusEnd()
+       | 7.Añadir la interfaz SetJointFirmwareUpgrade()
+       | 8.Añadir la interfaz SetCtrlFirmwareUpgrade()
+       | 9.Añadir la interfaz SetEndFirmwareUpgrade()
+       | 10.Añadir la interfaz JointAllParamUpgrade()
        
    * - V3.8.3
      - 2025-06-24
-     - | 1.Circle()接口增加加速度百分比及平滑半径参数
-       | 2.EndForceDragControl()接口增加辅助拖动时机器人碰撞检测标志参数
-       | 3.ServoJ()接口增加指令ID参数
-       | 4.增加SetWideBoxTempFanMonitorParam()接口
-       | 5.增加GetWideBoxTempFanMonitorParam()接口
-       | 6.状态结构体增加控制箱温度和风扇电流状态数据
+     - | 1.La interfaz Circle() añade los parámetros de porcentaje de aceleración y radio de suavizado
+       | 2.La interfaz EndForceDragControl() añade el parámetro del indicador de detección de colisión del robot durante el arrastre asistido
+       | 3.La interfaz ServoJ() añade el parámetro de ID de instrucción
+       | 4.Añadir la interfaz SetWideBoxTempFanMonitorParam()
+       | 5.Añadir la interfaz GetWideBoxTempFanMonitorParam()
+       | 6.La estructura de estado añade los datos de estado de la temperatura de la caja de control y la corriente del ventilador
               
    * - V3.8.2
      - 2025-06-13
-     - | 1.WeaveSetPara()接口增加摆动方向侧倾角(绕摆动X轴偏转)参数
-       | 2.WeaveChangeStart()接口增加摆动编号、焊接开始速度、焊接结束速度参数
-       | 3.ExtDevSetUDPComParam()接口增加断电重启后是否自动建立连接参数
-       | 4.SetCollisionDetectionMethod()接口增加碰撞等级阈值方式选择
-       | 5.PtpFIRPlanningStart()接口增加统一关节急动度极值
-       | 6.增加WeldingSetVoltageGradualChangeStart()接口
-       | 7.增加WeldingSetVoltageGradualChangeEnd()接口
-       | 8.增加WeldingSetCurrentGradualChangeStart()接口
-       | 9.增加WeldingSetCurrentGradualChangeEnd()接口
-       | 10.增加ArcWeldTraceAIChannelCurrent()接口
-       | 11.增加ArcWeldTraceAIChannelVoltage()接口
-       | 12.增加ArcWeldTraceCurrentPara()接口
-       | 13.增加ArcWeldTraceVoltagePara()接口
-       | 14.增加GetSmarttoolBtnState()接口
-       | 15.增加ExtAxisGetCoord()接口
+     - | 1.La interfaz WeaveSetPara() añade el parámetro de ángulo de inclinación lateral de la dirección de oscilación (desviación alrededor del eje X de oscilación)
+       | 2.La interfaz WeaveChangeStart() añade los parámetros de número de oscilación, velocidad de inicio de soldadura y velocidad de fin de soldadura
+       | 3.La interfaz ExtDevSetUDPComParam() añade el parámetro de si se establece automáticamente la conexión tras un reinicio por corte de energía
+       | 4.La interfaz SetCollisionDetectionMethod() añade la selección del modo de umbral del nivel de colisión
+       | 5.La interfaz PtpFIRPlanningStart() añade el valor extremo unificado de sobreaceleración (jerk) de las articulaciones
+       | 6.Añadir la interfaz WeldingSetVoltageGradualChangeStart()
+       | 7.Añadir la interfaz WeldingSetVoltageGradualChangeEnd()
+       | 8.Añadir la interfaz WeldingSetCurrentGradualChangeStart()
+       | 9.Añadir la interfaz WeldingSetCurrentGradualChangeEnd()
+       | 10.Añadir la interfaz ArcWeldTraceAIChannelCurrent()
+       | 11.Añadir la interfaz ArcWeldTraceAIChannelVoltage()
+       | 12.Añadir la interfaz ArcWeldTraceCurrentPara()
+       | 13.Añadir la interfaz ArcWeldTraceVoltagePara()
+       | 14.Añadir la interfaz GetSmarttoolBtnState()
+       | 15.Añadir la interfaz ExtAxisGetCoord()
                      
    * - V3.8.1
      - 2025-04-24
-     - | 1.ConveyorSetParam()接口增加跟踪运动类型、跟踪起始距离、跟踪终止距离参数
-       | 2.增加AccSmoothStart()接口
-       | 3.增加AccSmoothEnd()接口
-       | 4.增加RbLogDownload()接口
-       | 5.增加AllDataSourceDownload()接口
-       | 6.增加DataPackageDownload()接口
-       | 7.增加GetRobotSN()接口
-       | 8.增加ShutDownRobotOS()接口
-       | 9.增加ConveyorComDetect()接口
-       | 10.增加ConveyorComDetectTrigger()接口
+     - | 1.La interfaz ConveyorSetParam() añade los parámetros de tipo de movimiento de seguimiento, distancia de inicio de seguimiento y distancia de fin de seguimiento
+       | 2.Añadir la interfaz AccSmoothStart()
+       | 3.Añadir la interfaz AccSmoothEnd()
+       | 4.Añadir la interfaz RbLogDownload()
+       | 5.Añadir la interfaz AllDataSourceDownload()
+       | 6.Añadir la interfaz DataPackageDownload()
+       | 7.Añadir la interfaz GetRobotSN()
+       | 8.Añadir la interfaz ShutDownRobotOS()
+       | 9.Añadir la interfaz ConveyorComDetect()
+       | 10.Añadir la interfaz ConveyorComDetectTrigger()
                      
    * - V3.8.0
      - 2025-02-12
-     - | 1.EndForceDragControl()接口增加奇异点规避参数
-       | 2.ArcWeldTraceControl()接口增加偏置参数
-       | 3.增加WeaveChangeStart()接口
-       | 4.增加WeaveChangeEnd()接口
-       | 5.增加LoadTrajectoryLA()接口
-       | 6.增加MoveTrajectoryLA()接口
-       | 7.增加CustomCollisionDetectionStart()接口
-       | 8.增加CustomCollisionDetectionEnd()接口
+     - | 1.La interfaz EndForceDragControl() añade el parámetro de evitación de puntos singulares
+       | 2.La interfaz ArcWeldTraceControl() añade el parámetro de desplazamiento
+       | 3.Añadir la interfaz WeaveChangeStart()
+       | 4.Añadir la interfaz WeaveChangeEnd()
+       | 5.Añadir la interfaz LoadTrajectoryLA()
+       | 6.Añadir la interfaz MoveTrajectoryLA()
+       | 7.Añadir la interfaz CustomCollisionDetectionStart()
+       | 8.Añadir la interfaz CustomCollisionDetectionEnd()

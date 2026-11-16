@@ -1,69 +1,69 @@
-机器人IO
+IO del robot
 ============
 
 .. toctree:: 
     :maxdepth: 5
 
-设置控制箱数字量输出
-++++++++++++++++++++++++++++++++++
+Establecer la salida digital del armario de control
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  设置控制箱数字量输出
-    * @param  [in] id  io编号，范围[0~15]
-    * @param  [in] status 0-关，1-开
-    * @param  [in] smooth 0-不平滑， 1-平滑
-    * @param  [in] block  0-阻塞，1-非阻塞
-    * @return  错误码
+    * @brief  Establecer la salida digital del armario de control
+    * @param  [in] id  Número de io, rango [0~15]
+    * @param  [in] status 0-desactivado, 1-activado
+    * @param  [in] smooth 0-sin suavizado, 1-suavizado
+    * @param  [in] block  0-bloqueante, 1-no bloqueante
+    * @return  Código de error
     */
     int SetDO(int id, byte status, byte smooth, byte block); 
 
-设置工具数字量输出
-++++++++++++++++++++++++++++++++++
+Establecer la salida digital de la herramienta
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  设置工具数字量输出
-    * @param  [in] id  io编号，范围[0~1]
-    * @param  [in] status 0-关，1-开
-    * @param  [in] smooth 0-不平滑， 1-平滑
-    * @param  [in] block  0-阻塞，1-非阻塞
-    * @return  错误码
+    * @brief  Establecer la salida digital de la herramienta
+    * @param  [in] id  Número de io, rango [0~1]
+    * @param  [in] status 0-desactivado, 1-activado
+    * @param  [in] smooth 0-sin suavizado, 1-suavizado
+    * @param  [in] block  0-bloqueante, 1-no bloqueante
+    * @return  Código de error
     */
     int SetToolDO(int id, byte status, byte smooth, byte block); 
 
-设置控制箱模拟量输出
-++++++++++++++++++++++++++++++++++
+Establecer la salida analógica del armario de control
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  设置控制箱模拟量输出
-    * @param  [in] id  io编号，范围[0~1]
-    * @param  [in] value 电流或电压值百分比，范围[0~100]对应电流值[0~20mA]或电压[0~10V]
-    * @param  [in] block  0-阻塞，1-非阻塞
-    * @return  错误码
+    * @brief  Establecer la salida analógica del armario de control
+    * @param  [in] id  Número de io, rango [0~1]
+    * @param  [in] value Porcentaje del valor de corriente o tensión, rango [0~100] corresponde al valor de corriente [0~20mA] o tensión [0~10V]
+    * @param  [in] block  0-bloqueante, 1-no bloqueante
+    * @return  Código de error
     */
     int SetAO(int id, float value, byte block); 
 
-设置工具模拟量输出
-++++++++++++++++++++++++++++++++++
+Establecer la salida analógica de la herramienta
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  设置工具模拟量输出
-    * @param  [in] id  io编号，范围[0]
-    * @param  [in] value 电流或电压值百分比，范围[0~100]对应电流值[0~20mA]或电压[0~10V]
-    * @param  [in] block  0-阻塞，1-非阻塞
-    * @return  错误码
+    * @brief  Establecer la salida analógica de la herramienta
+    * @param  [in] id  Número de io, rango [0]
+    * @param  [in] value Porcentaje del valor de corriente o tensión, rango [0~100] corresponde al valor de corriente [0~20mA] o tensión [0~10V]
+    * @param  [in] block  0-bloqueante, 1-no bloqueante
+    * @return  Código de error
     */
     int SetToolAO(int id, float value, byte block);
 
-设置数字量、模拟量输出代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración de salidas digitales y analógicas
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos: 
 
@@ -121,101 +121,101 @@
 
     }
 
-获取控制箱数字量输入
-++++++++++++++++++++++++++++++++++
+Obtener la entrada digital del armario de control
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  获取控制箱数字量输入
-    * @param  [in] id  io编号，范围[0~15]
-    * @param  [in] block  0-阻塞，1-非阻塞
-    * @param  [out] result  0-低电平，1-高电平
-    * @return  错误码
+    * @brief  Obtener la entrada digital del armario de control
+    * @param  [in] id  Número de io, rango [0~15]
+    * @param  [in] block  0-bloqueante, 1-no bloqueante
+    * @param  [out] result  0-nivel bajo, 1-nivel alto
+    * @return  Código de error
     */   
     int GetDI(int id, byte block, ref byte level);
 
-获取工具数字量输入
-++++++++++++++++++++++++++++++++++
+Obtener la entrada digital de la herramienta
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  获取工具数字量输入
-    * @param  [in] id  io编号，范围[0~1]
-    * @param  [in] block  0-阻塞，1-非阻塞
-    * @param  [out] result  0-低电平，1-高电平
-    * @return  错误码
+    * @brief  Obtener la entrada digital de la herramienta
+    * @param  [in] id  Número de io, rango [0~1]
+    * @param  [in] block  0-bloqueante, 1-no bloqueante
+    * @param  [out] result  0-nivel bajo, 1-nivel alto
+    * @return  Código de error
     */   
     int GetToolDI(int id, byte block, ref byte level); 
 
-获取控制箱模拟量输入
-+++++++++++++++++++++++++
+Obtener la entrada analógica del armario de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  获取控制箱模拟量输入
-    * @param  [in] id  io编号，范围[0~1]
-    * @param  [in] block  0-阻塞，1-非阻塞
-    * @param  [out] result  输入电流或电压值百分比，范围[0~100]对应电流值[0~20mS]或电压[0~10V]
-    * @return  错误码
+    * @brief  Obtener la entrada analógica del armario de control
+    * @param  [in] id  Número de io, rango [0~1]
+    * @param  [in] block  0-bloqueante, 1-no bloqueante
+    * @param  [out] result  Porcentaje del valor de corriente o tensión de entrada, rango [0~100] corresponde al valor de corriente [0~20mS] o tensión [0~10V]
+    * @return  Código de error
     */   
     int GetAI(int id, byte block, ref float persent); 
 
-获取工具模拟量输入
-+++++++++++++++++++++++++
+Obtener la entrada analógica de la herramienta
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  获取工具模拟量输入
-    * @param  [in] id  io编号，范围[0]
-    * @param  [in] block  0-阻塞，1-非阻塞
-    * @param  [out] result  输入电流或电压值百分比，范围[0~100]对应电流值[0~20mS]或电压[0~10V]
-    * @return  错误码
+    * @brief  Obtener la entrada analógica de la herramienta
+    * @param  [in] id  Número de io, rango [0]
+    * @param  [in] block  0-bloqueante, 1-no bloqueante
+    * @param  [out] result  Porcentaje del valor de corriente o tensión de entrada, rango [0~100] corresponde al valor de corriente [0~20mS] o tensión [0~10V]
+    * @return  Código de error
     */   
     int GetToolAI(int id, byte block, ref float persent); 
 
-获取机器人末端记录按钮状态
-++++++++++++++++++++++++++
+Obtener el estado del botón de registro del extremo del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /** 
-    * @brief 获取机器人末端记录按钮状态
-    * @param [out] state 按钮状态，0-按下，1-松开
-    * @return 错误码 
+    * @brief Obtener el estado del botón de registro del extremo del robot
+    * @param [out] state Estado del botón, 0-pulsado, 1-suelto
+    * @return Código de error 
     */ 
     int GetAxlePointRecordBtnState(ref byte state); 
 
-获取机器人末端DO输出状态
-++++++++++++++++++++++++
+Obtener el estado de la salida DO del extremo del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /** 
-    * @brief 获取机器人末端DO输出状态 
-    * @param [out] do_state DO输出状态，do0~do1对应bit1~bit2,从bit0开始 
-    * @return 错误码 
+    * @brief Obtener el estado de la salida DO del extremo del robot 
+    * @param [out] do_state Estado de la salida DO, do0~do1 corresponden a bit1~bit2, empezando desde bit0 
+    * @return Código de error 
     */ 
     int GetToolDO(ref byte do_state);
 
-获取机器控制器DO输出状态
-++++++++++++++++++++++++++++++++++
+Obtener el estado de la salida DO del controlador del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /** 
-    * @brief 获取机器人控制器DO输出状态 
-    * @param [out] do_state_h DO输出状态，co0~co7对应bit0~bit7 
-    * @param [out] do_state_l DO输出状态，do0~do7对应bit0~bit7
-    * @return 错误码 
+    * @brief Obtener el estado de la salida DO del controlador del robot 
+    * @param [out] do_state_h Estado de la salida DO, co0~co7 corresponden a bit0~bit7 
+    * @param [out] do_state_l Estado de la salida DO, do0~do7 corresponden a bit0~bit7
+    * @return Código de error 
     */ 
     int GetDO(ref int do_state_h, ref int do_state_l);   
 
-获取机器人DI、DO状态代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de obtención del estado DI y DO del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -254,86 +254,86 @@
         Console.WriteLine($"DO state high is: {do_state_h}\n DO state low is: {do_state_l}");
     }
 
-等待控制箱数字量输入
-++++++++++++++++++++++++++++++++++
+Esperar la entrada digital del armario de control
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 等待控制箱数字量输入
-    * @param  [in] id  io编号，范围[0~15]
-    * @param  [in]  status 0-关，1-开
-    * @param  [in]  max_time  最大等待时间，单位ms
-    * @param  [in]  opt  超时后策略，0-程序停止并提示超时，1-忽略超时提示程序继续执行，2-一直等待
-    * @return  错误码
+    * @brief Esperar la entrada digital del armario de control
+    * @param  [in] id  Número de io, rango [0~15]
+    * @param  [in]  status 0-desactivado, 1-activado
+    * @param  [in]  max_time  Tiempo máximo de espera, unidad ms
+    * @param  [in]  opt  Estrategia tras tiempo de espera agotado, 0-el programa se detiene y muestra tiempo de espera agotado, 1-ignorar el aviso de tiempo de espera agotado y continuar la ejecución del programa, 2-esperar siempre
+    * @return  Código de error
     */
     int WaitDI(int id, byte status, int max_time, int opt); 
 
-等待控制箱多路数字量输入
-++++++++++++++++++++++++++++++++++
+Esperar múltiples entradas digitales del armario de control
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 等待控制箱多路数字量输入
-    * @param  [in] mode 0-多路与，1-多路或
-    * @param  [in] id  io编号，bit0~bit7对应DI0~DI7，bit8~bit15对应CI0~CI7
-    * @param  [in]  status 0-关，1-开
-    * @param  [in]  max_time  最大等待时间，单位ms
-    * @param  [in]  opt  超时后策略，0-程序停止并提示超时，1-忽略超时提示程序继续执行，2-一直等待
-    * @return  错误码
+    * @brief Esperar múltiples entradas digitales del armario de control
+    * @param  [in] mode 0-múltiples en AND, 1-múltiples en OR
+    * @param  [in] id  Número de io, bit0~bit7 corresponden a DI0~DI7, bit8~bit15 corresponden a CI0~CI7
+    * @param  [in]  status 0-desactivado, 1-activado
+    * @param  [in]  max_time  Tiempo máximo de espera, unidad ms
+    * @param  [in]  opt  Estrategia tras tiempo de espera agotado, 0-el programa se detiene y muestra tiempo de espera agotado, 1-ignorar el aviso de tiempo de espera agotado y continuar la ejecución del programa, 2-esperar siempre
+    * @return  Código de error
     */
     int WaitMultiDI(int mode, int id, byte status, int max_time, int opt); 
 
-等待工具数字量输入
-++++++++++++++++++++++++++++++++++
+Esperar la entrada digital de la herramienta
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 等待工具数字量输入
-    * @param  [in] id  io编号，范围[0~1]
-    * @param  [in]  status 0-关，1-开
-    * @param  [in]  max_time  最大等待时间，单位ms
-    * @param  [in]  opt  超时后策略，0-程序停止并提示超时，1-忽略超时提示程序继续执行，2-一直等待
-    * @return  错误码
+    * @brief Esperar la entrada digital de la herramienta
+    * @param  [in] id  Número de io, rango [0~1]
+    * @param  [in]  status 0-desactivado, 1-activado
+    * @param  [in]  max_time  Tiempo máximo de espera, unidad ms
+    * @param  [in]  opt  Estrategia tras tiempo de espera agotado, 0-el programa se detiene y muestra tiempo de espera agotado, 1-ignorar el aviso de tiempo de espera agotado y continuar la ejecución del programa, 2-esperar siempre
+    * @return  Código de error
     */
     int WaitToolDI(int id, byte status, int max_time, int opt); 
 
-等待控制箱模拟量输入
-+++++++++++++++++++++++++
+Esperar la entrada analógica del armario de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 等待控制箱模拟量输入
-    * @param  [in] id  io编号，范围[0~1]
-    * @param  [in]  sign 0-大于，1-小于
-    * @param  [in]  value 输入电流或电压值百分比，范围[0~100]对应电流值[0~20mS]或电压[0~10V]
-    * @param  [in]  max_time  最大等待时间，单位ms
-    * @param  [in]  opt  超时后策略，0-程序停止并提示超时，1-忽略超时提示程序继续执行，2-一直等待
-    * @return  错误码
+    * @brief Esperar la entrada analógica del armario de control
+    * @param  [in] id  Número de io, rango [0~1]
+    * @param  [in]  sign 0-mayor que, 1-menor que
+    * @param  [in]  value Porcentaje del valor de corriente o tensión de entrada, rango [0~100] corresponde al valor de corriente [0~20mS] o tensión [0~10V]
+    * @param  [in]  max_time  Tiempo máximo de espera, unidad ms
+    * @param  [in]  opt  Estrategia tras tiempo de espera agotado, 0-el programa se detiene y muestra tiempo de espera agotado, 1-ignorar el aviso de tiempo de espera agotado y continuar la ejecución del programa, 2-esperar siempre
+    * @return  Código de error
     */
     int WaitAI(int id, int sign, float value, int max_time, int opt);   
 
-等待工具模拟量输入
-+++++++++++++++++++++++++
+Esperar la entrada analógica de la herramienta
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 等待工具模拟量输入
-    * @param  [in] id  io编号，范围[0]
-    * @param  [in]  sign 0-大于，1-小于
-    * @param  [in]  value 输入电流或电压值百分比，范围[0~100]对应电流值[0~20mS]或电压[0~10V]
-    * @param  [in]  max_time  最大等待时间，单位ms
-    * @param  [in]  opt  超时后策略，0-程序停止并提示超时，1-忽略超时提示程序继续执行，2-一直等待
-    * @return  错误码
+    * @brief Esperar la entrada analógica de la herramienta
+    * @param  [in] id  Número de io, rango [0]
+    * @param  [in]  sign 0-mayor que, 1-menor que
+    * @param  [in]  value Porcentaje del valor de corriente o tensión de entrada, rango [0~100] corresponde al valor de corriente [0~20mS] o tensión [0~10V]
+    * @param  [in]  max_time  Tiempo máximo de espera, unidad ms
+    * @param  [in]  opt  Estrategia tras tiempo de espera agotado, 0-el programa se detiene y muestra tiempo de espera agotado, 1-ignorar el aviso de tiempo de espera agotado y continuar la ejecución del programa, 2-esperar siempre
+    * @return  Código de error
     */
     int WaitToolAI(int id, int sign, float value, int max_time, int opt); 
 
-等待控制箱数字、模拟输入信号代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de espera de señales de entrada digitales y analógicas del armario de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -362,99 +362,99 @@
         Console.WriteLine("WaitToolAI over; rtn is: " + rtn);
     }
     
-设置控制箱DO停止/暂停后输出是否复位
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer si la salida DO del armario de control se restablece tras la parada/pausa
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置控制箱DO停止/暂停后输出是否复位
-    * @param [in] resetFlag 0-不复位；1-复位
-    * @param [in] reloadFlag 暂停恢复后是否重加载，0-不加载；1-加载
-    * @return 错误码
+    * @brief Establecer si la salida DO del armario de control se restablece tras la parada/pausa
+    * @param [in] resetFlag 0-no restablecer; 1-restablecer
+    * @param [in] reloadFlag Si se recarga tras reanudar la pausa, 0-no cargar; 1-cargar
+    * @return Código de error
     */
     public int SetOutputResetCtlBoxDO(int resetFlag, int reloadFlag);
 
-设置控制箱AO停止/暂停后输出是否复位
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer si la salida AO del armario de control se restablece tras la parada/pausa
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置控制箱AO停止/暂停后输出是否复位
-    * @param [in] resetFlag  0-不复位；1-复位
-    * @param [in] reloadFlag 暂停恢复后是否重加载，0-不加载；1-加载
-    * @return 错误码
+    * @brief Establecer si la salida AO del armario de control se restablece tras la parada/pausa
+    * @param [in] resetFlag  0-no restablecer; 1-restablecer
+    * @param [in] reloadFlag Si se recarga tras reanudar la pausa, 0-no cargar; 1-cargar
+    * @return Código de error
     */
     public int SetOutputResetCtlBoxAO(int resetFlag, int reloadFlag);
 
-设置末端工具DO停止/暂停后输出是否复位
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer si la salida DO de la herramienta del extremo se restablece tras la parada/pausa
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置末端工具DO停止/暂停后输出是否复位
-    * @param [in] resetFlag  0-不复位；1-复位
-    * @param [in] reloadFlag 暂停恢复后是否重加载，0-不加载；1-加载
-    * @return 错误码
+    * @brief Establecer si la salida DO de la herramienta del extremo se restablece tras la parada/pausa
+    * @param [in] resetFlag  0-no restablecer; 1-restablecer
+    * @param [in] reloadFlag Si se recarga tras reanudar la pausa, 0-no cargar; 1-cargar
+    * @return Código de error
     */
     public int SetOutputResetAxleDO(int resetFlag, int reloadFlag);
 
-设置末端工具AO停止/暂停后输出是否复位
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer si la salida AO de la herramienta del extremo se restablece tras la parada/pausa
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置末端工具AO停止/暂停后输出是否复位
-    * @param [in] resetFlag 0-不复位；1-复位
-    * @param [in] reloadFlag 暂停恢复后是否重加载，0-不加载；1-加载
-    * @return 错误码
+    * @brief Establecer si la salida AO de la herramienta del extremo se restablece tras la parada/pausa
+    * @param [in] resetFlag 0-no restablecer; 1-restablecer
+    * @param [in] reloadFlag Si se recarga tras reanudar la pausa, 0-no cargar; 1-cargar
+    * @return Código de error
     */
     public int SetOutputResetAxleAO(int resetFlag, int reloadFlag);
 
-设置扩展DO停止/暂停后输出是否复位
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer si la salida DO extendida se restablece tras la parada/pausa
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置扩展DO停止/暂停后输出是否复位
-    * @param [in] resetFlag  0-不复位；1-复位
-    * @param [in] reloadFlag 暂停恢复后是否重加载，0-不加载；1-加载
-    * @return  错误码
+    * @brief Establecer si la salida DO extendida se restablece tras la parada/pausa
+    * @param [in] resetFlag  0-no restablecer; 1-restablecer
+    * @param [in] reloadFlag Si se recarga tras reanudar la pausa, 0-no cargar; 1-cargar
+    * @return  Código de error
     */
     public int SetOutputResetExtDO(int resetFlag, int reloadFlag);
 
-设置扩展AO停止/暂停后输出是否复位
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer si la salida AO extendida se restablece tras la parada/pausa
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置扩展AO停止/暂停后输出是否复位
-    * @param [in] resetFlag 0-不复位；1-复位
-    * @param [in] reloadFlag 暂停恢复后是否重加载，0-不加载；1-加载
-    * @return 错误码
+    * @brief Establecer si la salida AO extendida se restablece tras la parada/pausa
+    * @param [in] resetFlag 0-no restablecer; 1-restablecer
+    * @param [in] reloadFlag Si se recarga tras reanudar la pausa, 0-no cargar; 1-cargar
+    * @return Código de error
     */
     public int SetOutputResetExtAO(int resetFlag, int reloadFlag);
 
-设置SmartTool停止/暂停后输出是否复位
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer si la salida de SmartTool se restablece tras la parada/pausa
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置SmartTool停止/暂停后输出是否复位
-    * @param [in] resetFlag 0-不复位；1-复位
-    * @param [in] reloadFlag 暂停恢复后是否重加载，0-不加载；1-加载
-    * @return 错误码
+    * @brief Establecer si la salida de SmartTool se restablece tras la parada/pausa
+    * @param [in] resetFlag 0-no restablecer; 1-restablecer
+    * @param [in] reloadFlag Si se recarga tras reanudar la pausa, 0-no cargar; 1-cargar
+    * @return Código de error
     */
     public int SetOutputResetSmartToolDO(int resetFlag, int reloadFlag);
 
-设置LUA程序停止/暂停后输出复位代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de restablecimiento de salidas tras la parada/pausa del programa LUA
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -488,133 +488,133 @@
         Thread.Sleep(2000);
     }
 
-设置控制箱可配置CI端口功能
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer la función del puerto CI configurable del armario de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置控制箱可配置CI端口功能
-    * @param [in] config CI0-CI7功能编码；
-    * 0-无;1-起弧成功;2-焊机准备;3-传送带检测;4-暂停;5-恢复;6-启动;7-停止;
-    8-暂停/恢复;9-启动/停止;10-脚踏拖动;11-移至作业原点;12-手自动切换;
-    13-焊丝寻位成功;14-运动中断;15-启动主程序;16-启动倒带;17-启动确认;
-    18-光电检测信号X;19-光电检测信号Y;20-外部急停输入信号1;21-外部急停输入信号2;
-    22-一级缩减模式;23-二级缩减模式;24-三级缩减模式(停止);25-恢复焊接;26-终止焊接;
-    27-辅助拖动开启;28-辅助拖动关闭;29-辅助拖动开启/关闭;30-清除所有错误;
-    31-手自动切换(高低电平);32-使能;33-去使能;34-使能/去使能(上升下降沿);35-定点跟踪开始/结束
-    36-进入安全速度移动;37-电流环拖动锁定;38-力传感器辅助锁定
-    * @return 错误码
+    * @brief Establecer la función del puerto CI configurable del armario de control
+    * @param [in] config Código de función de CI0-CI7;
+    * 0-ninguna;1-éxito de inicio de arco;2-soldadora preparada;3-detección de cinta transportadora;4-pausa;5-reanudar;6-iniciar;7-detener;
+    8-pausa/reanudar;9-iniciar/detener;10-arrastre por pedal;11-mover al origen de trabajo;12-conmutación manual/automático;
+    13-éxito de búsqueda de posición del alambre de soldadura;14-interrupción de movimiento;15-iniciar programa principal;16-iniciar rebobinado;17-confirmación de inicio;
+    18-señal de detección fotoeléctrica X;19-señal de detección fotoeléctrica Y;20-señal de entrada de parada de emergencia externa 1;21-señal de entrada de parada de emergencia externa 2;
+    22-modo de reducción de nivel 1;23-modo de reducción de nivel 2;24-modo de reducción de nivel 3 (parada);25-reanudar soldadura;26-terminar soldadura;
+    27-activar arrastre asistido;28-desactivar arrastre asistido;29-activar/desactivar arrastre asistido;30-borrar todos los errores;
+    31-conmutación manual/automático (nivel alto/bajo);32-habilitar;33-deshabilitar;34-habilitar/deshabilitar (flanco de subida/bajada);35-inicio/fin de seguimiento de punto fijo
+    36-entrar en movimiento a velocidad de seguridad;37-bloqueo de arrastre por bucle de corriente;38-bloqueo asistido por sensor de fuerza
+    * @return Código de error
     */
     public int SetDIConfig(int[] config)
 
-获取控制箱可配置CI端口功能
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener la función del puerto CI configurable del armario de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 获取控制箱可配置CI端口功能
-    * @param [in] config CI0-CI7功能编码；
-    * 0-无;1-起弧成功;2-焊机准备;3-传送带检测;4-暂停;5-恢复;6-启动;7-停止;
-    8-暂停/恢复;9-启动/停止;10-脚踏拖动;11-移至作业原点;12-手自动切换;
-    13-焊丝寻位成功;14-运动中断;15-启动主程序;16-启动倒带;17-启动确认;
-    18-光电检测信号X;19-光电检测信号Y;20-外部急停输入信号1;21-外部急停输入信号2;
-    22-一级缩减模式;23-二级缩减模式;24-三级缩减模式(停止);25-恢复焊接;26-终止焊接;
-    27-辅助拖动开启;28-辅助拖动关闭;29-辅助拖动开启/关闭;30-清除所有错误;
-    31-手自动切换(高低电平);32-使能;33-去使能;34-使能/去使能(上升下降沿);35-定点跟踪开始/结束
-    36-进入安全速度移动;37-电流环拖动锁定;38-力传感器辅助锁定
-    201-外部急停输入信号1-双通道; 202-外部急停输入信号2-双通道; 203-一级缩减模式-双通道;
-    204-二级缩减模式-双通道; 205-三级缩减模式-双通道; 206-常规停止-双通道; 207-安全墙1-双通道; 208-安全墙2-双通道;
-    209-安全墙3-双通道; 210-安全墙4-双通道; 211-安全墙5-双通道; 212-安全墙6-双通道; 213-安全墙7-双通道;
-    214-安全墙8-双通道; 215-安全停止重置-双通道;
-    * @return 错误码
+    * @brief Obtener la función del puerto CI configurable del armario de control
+    * @param [in] config Código de función de CI0-CI7;
+    * 0-ninguna;1-éxito de inicio de arco;2-soldadora preparada;3-detección de cinta transportadora;4-pausa;5-reanudar;6-iniciar;7-detener;
+    8-pausa/reanudar;9-iniciar/detener;10-arrastre por pedal;11-mover al origen de trabajo;12-conmutación manual/automático;
+    13-éxito de búsqueda de posición del alambre de soldadura;14-interrupción de movimiento;15-iniciar programa principal;16-iniciar rebobinado;17-confirmación de inicio;
+    18-señal de detección fotoeléctrica X;19-señal de detección fotoeléctrica Y;20-señal de entrada de parada de emergencia externa 1;21-señal de entrada de parada de emergencia externa 2;
+    22-modo de reducción de nivel 1;23-modo de reducción de nivel 2;24-modo de reducción de nivel 3 (parada);25-reanudar soldadura;26-terminar soldadura;
+    27-activar arrastre asistido;28-desactivar arrastre asistido;29-activar/desactivar arrastre asistido;30-borrar todos los errores;
+    31-conmutación manual/automático (nivel alto/bajo);32-habilitar;33-deshabilitar;34-habilitar/deshabilitar (flanco de subida/bajada);35-inicio/fin de seguimiento de punto fijo
+    36-entrar en movimiento a velocidad de seguridad;37-bloqueo de arrastre por bucle de corriente;38-bloqueo asistido por sensor de fuerza
+    201-señal de entrada de parada de emergencia externa 1-doble canal; 202-señal de entrada de parada de emergencia externa 2-doble canal; 203-modo de reducción de nivel 1-doble canal;
+    204-modo de reducción de nivel 2-doble canal; 205-modo de reducción de nivel 3-doble canal; 206-parada normal-doble canal; 207-pared de seguridad 1-doble canal; 208-pared de seguridad 2-doble canal;
+    209-pared de seguridad 3-doble canal; 210-pared de seguridad 4-doble canal; 211-pared de seguridad 5-doble canal; 212-pared de seguridad 6-doble canal; 213-pared de seguridad 7-doble canal;
+    214-pared de seguridad 8-doble canal; 215-restablecimiento de parada de seguridad-doble canal;
+    * @return Código de error
     */
     public int GetDIConfig(out int[] config)
 
-设置控制箱可配置CO端口功能
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer la función del puerto CO configurable del armario de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置控制箱可配置CO端口功能
-    * @param [out] config CO0-CO7功能编码；
-    * 0-无;1-机器人报错;2-机器人运动中;3-喷涂启停;4-喷涂清枪;5-送气信号;6-起弧信号;7-点动送丝;
-    8-反向送丝;9-JOB输入口1;10-JOB输入口2;11-JOB输入口3;12-传送带启停控制;13-机器人暂停中;14-到达作业原点;
-    15-到达干涉区;16-焊丝寻位启停控制;17-机器人启动完成;18-程序启动停止;19-自动手动模式;20-急停输出信号1-安全;
-    21-急停输出信号2-安全;22-LUA脚本程序运行停止;23-安全状态输出-安全;24-保护性停止状态输出-安全;
-    25-机器人运动中-安全;26-机器人缩减模式-安全;27-机器人非缩减模式-安全;28-机器人非停止;29-机器人报错-指令点错误;
-    30-机器人报错-驱动器错误;31-机器人报错-超出软限位错误;32-机器人报错-碰撞错误;33-机器人报错-活动从站数量错误;
-    34-机器人报错-从站错误;35-机器人报错-IO错误;36-机器人报错-夹爪错误;37-机器人报错-文件错误;38-机器人报错-奇异位姿错误;
-    39-机器人报错-驱动器通信错误;40-机器人报错-参数错误;41-机器人报错-外部轴超出软限位错误;42-机器人警告-警告;
-    43-机器人警告-安全门警告;44-机器人警告-运动警告;45-机器人警告-干涉区警告;46-机器人警告-安全墙警告;
-    47-使能状态;48-断线自动抬升中;49-立方体1干涉警告;50-立方体2干涉警告;51-立方体3干涉警告;52-立方体4干涉警告;
-    * @return 错误码
+    * @brief Establecer la función del puerto CO configurable del armario de control
+    * @param [out] config Código de función de CO0-CO7;
+    * 0-ninguna;1-error del robot;2-robot en movimiento;3-inicio/parada de pulverización;4-limpieza de pistola de pulverización;5-señal de suministro de aire;6-señal de inicio de arco;7-avance de alambre por pulsación;
+    8-retroceso de alambre;9-entrada JOB 1;10-entrada JOB 2;11-entrada JOB 3;12-control de inicio/parada de cinta transportadora;13-robot en pausa;14-llegada al origen de trabajo;
+    15-llegada a la zona de interferencia;16-control de inicio/parada de búsqueda de posición del alambre de soldadura;17-inicio del robot completado;18-inicio/parada del programa;19-modo automático/manual;20-señal de salida de parada de emergencia 1-seguridad;
+    21-señal de salida de parada de emergencia 2-seguridad;22-inicio/parada del programa de script LUA;23-salida de estado de seguridad-seguridad;24-salida de estado de parada protectora-seguridad;
+    25-robot en movimiento-seguridad;26-modo de reducción del robot-seguridad;27-modo no reducido del robot-seguridad;28-robot no detenido;29-error del robot-error de punto de instrucción;
+    30-error del robot-error del accionamiento;31-error del robot-error de superación del límite software;32-error del robot-error de colisión;33-error del robot-error del número de esclavos activos;
+    34-error del robot-error de esclavo;35-error del robot-error de IO;36-error del robot-error de pinza;37-error del robot-error de archivo;38-error del robot-error de posición singular;
+    39-error del robot-error de comunicación del accionamiento;40-error del robot-error de parámetros;41-error del robot-error de superación del límite software del eje externo;42-advertencia del robot-advertencia;
+    43-advertencia del robot-advertencia de puerta de seguridad;44-advertencia del robot-advertencia de movimiento;45-advertencia del robot-advertencia de zona de interferencia;46-advertencia del robot-advertencia de pared de seguridad;
+    47-estado de habilitación;48-elevación automática en curso por rotura de hilo;49-advertencia de interferencia del cubo 1;50-advertencia de interferencia del cubo 2;51-advertencia de interferencia del cubo 3;52-advertencia de interferencia del cubo 4;
+    * @return Código de error
     */
     public int SetDOConfig(int[] config)
 
-获取控制箱可配置CO端口功能
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener la función del puerto CO configurable del armario de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 获取控制箱可配置CO端口功能
-    * @param [out] config CO0-CO7功能编码；
-    * 0-无;1-机器人报错;2-机器人运动中;3-喷涂启停;4-喷涂清枪;5-送气信号;6-起弧信号;7-点动送丝;
-    8-反向送丝;9-JOB输入口1;10-JOB输入口2;11-JOB输入口3;12-传送带启停控制;13-机器人暂停中;14-到达作业原点;
-    15-到达干涉区;16-焊丝寻位启停控制;17-机器人启动完成;18-程序启动停止;19-自动手动模式;20-急停输出信号1-安全;
-    21-急停输出信号2-安全;22-LUA脚本程序运行停止;23-安全状态输出-安全;24-保护性停止状态输出-安全;
-    25-机器人运动中-安全;26-机器人缩减模式-安全;27-机器人非缩减模式-安全;28-机器人非停止;29-机器人报错-指令点错误;
-    30-机器人报错-驱动器错误;31-机器人报错-超出软限位错误;32-机器人报错-碰撞错误;33-机器人报错-活动从站数量错误;
-    34-机器人报错-从站错误;35-机器人报错-IO错误;36-机器人报错-夹爪错误;37-机器人报错-文件错误;38-机器人报错-奇异位姿错误;
-    39-机器人报错-驱动器通信错误;40-机器人报错-参数错误;41-机器人报错-外部轴超出软限位错误;42-机器人警告-警告;
-    43-机器人警告-安全门警告;44-机器人警告-运动警告;45-机器人警告-干涉区警告;46-机器人警告-安全墙警告;
-    47-使能状态;48-断线自动抬升中;49-立方体1干涉警告;50-立方体2干涉警告;51-立方体3干涉警告;52-立方体4干涉警告;
-    201-急停输出信号1-双通道; 202-急停输出信号2-双通道; 203-安全状态输出-双通道; 204-保护性停止状态输出-双通道; 205-机器人运动中-双通道;
-	206-机器人缩减模式-双通道; 207-机器人非缩减模式-双通道;
-    * @return 错误码
+    * @brief Obtener la función del puerto CO configurable del armario de control
+    * @param [out] config Código de función de CO0-CO7;
+    * 0-ninguna;1-error del robot;2-robot en movimiento;3-inicio/parada de pulverización;4-limpieza de pistola de pulverización;5-señal de suministro de aire;6-señal de inicio de arco;7-avance de alambre por pulsación;
+    8-retroceso de alambre;9-entrada JOB 1;10-entrada JOB 2;11-entrada JOB 3;12-control de inicio/parada de cinta transportadora;13-robot en pausa;14-llegada al origen de trabajo;
+    15-llegada a la zona de interferencia;16-control de inicio/parada de búsqueda de posición del alambre de soldadura;17-inicio del robot completado;18-inicio/parada del programa;19-modo automático/manual;20-señal de salida de parada de emergencia 1-seguridad;
+    21-señal de salida de parada de emergencia 2-seguridad;22-inicio/parada del programa de script LUA;23-salida de estado de seguridad-seguridad;24-salida de estado de parada protectora-seguridad;
+    25-robot en movimiento-seguridad;26-modo de reducción del robot-seguridad;27-modo no reducido del robot-seguridad;28-robot no detenido;29-error del robot-error de punto de instrucción;
+    30-error del robot-error del accionamiento;31-error del robot-error de superación del límite software;32-error del robot-error de colisión;33-error del robot-error del número de esclavos activos;
+    34-error del robot-error de esclavo;35-error del robot-error de IO;36-error del robot-error de pinza;37-error del robot-error de archivo;38-error del robot-error de posición singular;
+    39-error del robot-error de comunicación del accionamiento;40-error del robot-error de parámetros;41-error del robot-error de superación del límite software del eje externo;42-advertencia del robot-advertencia;
+    43-advertencia del robot-advertencia de puerta de seguridad;44-advertencia del robot-advertencia de movimiento;45-advertencia del robot-advertencia de zona de interferencia;46-advertencia del robot-advertencia de pared de seguridad;
+    47-estado de habilitación;48-elevación automática en curso por rotura de hilo;49-advertencia de interferencia del cubo 1;50-advertencia de interferencia del cubo 2;51-advertencia de interferencia del cubo 3;52-advertencia de interferencia del cubo 4;
+    201-señal de salida de parada de emergencia 1-doble canal; 202-señal de salida de parada de emergencia 2-doble canal; 203-salida de estado de seguridad-doble canal; 204-salida de estado de parada protectora-doble canal; 205-robot en movimiento-doble canal;
+	206-modo de reducción del robot-doble canal; 207-modo no reducido del robot-doble canal;
+    * @return Código de error
     */
     public int GetDOConfig(out int[] config)
 
-安全双通道CI功能配置
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configuración de la función CI de doble canal de seguridad
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 安全双通道CI功能配置
-    * @param [in] ID 双通道ID; [0-3]
-    * @param [in] config 功能配置; 0-无配置; 201-外部急停输入信号1; 202-外部急停输入信号2; 203-一级缩减模式; 204-二级缩减模式; 205-三级缩减模式;
-                        206-常规停止; 207-安全墙1; 208-安全墙2; 209-安全墙3; 210-安全墙4; 211-安全墙5; 212-安全墙6; 213-安全墙7;
-                        214-安全墙8; 215-安全停止重置;
-    * @return 错误码
+    * @brief Configuración de la función CI de doble canal de seguridad
+    * @param [in] ID ID del doble canal; [0-3]
+    * @param [in] config Configuración de la función; 0-sin configuración; 201-señal de entrada de parada de emergencia externa 1; 202-señal de entrada de parada de emergencia externa 2; 203-modo de reducción de nivel 1; 204-modo de reducción de nivel 2; 205-modo de reducción de nivel 3;
+                        206-parada normal; 207-pared de seguridad 1; 208-pared de seguridad 2; 209-pared de seguridad 3; 210-pared de seguridad 4; 211-pared de seguridad 5; 212-pared de seguridad 6; 213-pared de seguridad 7;
+                        214-pared de seguridad 8; 215-restablecimiento de parada de seguridad;
+    * @return Código de error
     */
     public int SetSafetyDIConfig(int ID, int config)
 
-安全双通道CO功能配置
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configuración de la función CO de doble canal de seguridad
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 安全双通道CO功能配置
-    * @param [in] ID 双通道ID; [0-3]
-    * @param [in] config 功能配置; 0-无配置; 201-急停输出信号1; 202-急停输出信号2; 203-安全状态输出; 204-保护性停止状态输出; 205-机器人运动中;
-                        206-机器人缩减模式; 207-机器人非缩减模式;
-    * @return 错误码
+    * @brief Configuración de la función CO de doble canal de seguridad
+    * @param [in] ID ID del doble canal; [0-3]
+    * @param [in] config Configuración de la función; 0-sin configuración; 201-señal de salida de parada de emergencia 1; 202-señal de salida de parada de emergencia 2; 203-salida de estado de seguridad; 204-salida de estado de parada protectora; 205-robot en movimiento;
+                        206-modo de reducción del robot; 207-modo no reducido del robot;
+    * @return Código de error
     */
     public int SetSafetyDOConfig(int ID, int config)
 
-安全双通道CI/CO功能配置验证代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de verificación de la configuración de las funciones CI/CO de doble canal de seguridad
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
@@ -674,174 +674,174 @@
         Console.WriteLine($"GetDOConfig rtn is {rtn}, value is {string.Join(" ", getDOConfig)}");
     }
 
-设置末端可配置End-CI端口功能
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer la función del puerto End-CI configurable del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置末端可配置End-CI端口功能
-    * @param [in] config End CI0-CI1功能编码；
-    * 0-无;1-拖动示教工具开关;2-点记录信号;3-手自动切换（脉冲信号）;4-TPD记录启动/停止;5-暂停运动;
-    6-恢复运动;7-启动;8-停止;9-暂停/恢复;10-启动/停止;11-力传感器辅助拖动开启;12-力传感器辅助拖动关闭;
-    13-力传感器辅助拖动开启/关闭;14-激光检测信号X;15-激光检测信号Y;16-PTP运动至作业原点;17-运动中断，根据信号停止当前运动;
-    18-启动主程序;19-启动倒带;20-启动确认;21-恢复焊接;22-终止焊接;23-清除错误;24-手自动切换（高低电平）
-    25-使能;26-去使能;27-使能/去使能;28-激光伺服跟踪启停信号;
-    * @return 错误码
+    * @brief Establecer la función del puerto End-CI configurable del extremo
+    * @param [in] config Código de función de End CI0-CI1;
+    * 0-ninguna;1-interruptor de herramienta de enseñanza por arrastre;2-señal de registro de punto;3-conmutación manual/automático (señal de pulso);4-inicio/parada de registro TPD;5-pausar movimiento;
+    6-reanudar movimiento;7-iniciar;8-detener;9-pausa/reanudar;10-iniciar/detener;11-activar arrastre asistido por sensor de fuerza;12-desactivar arrastre asistido por sensor de fuerza;
+    13-activar/desactivar arrastre asistido por sensor de fuerza;14-señal de detección láser X;15-señal de detección láser Y;16-movimiento PTP al origen de trabajo;17-interrupción de movimiento, detener el movimiento actual según la señal;
+    18-iniciar programa principal;19-iniciar rebobinado;20-confirmación de inicio;21-reanudar soldadura;22-terminar soldadura;23-borrar errores;24-conmutación manual/automático (nivel alto/bajo)
+    25-habilitar;26-deshabilitar;27-habilitar/deshabilitar;28-señal de inicio/parada de seguimiento servo láser;
+    * @return Código de error
     */
     public int SetToolDIConfig(int[] config)
 
-获取末端可配置End-CI端口功能
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener la función del puerto End-CI configurable del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 获取末端可配置End-CI端口功能
-    * @param [out] config End CI0-CI1功能编码；
-    * 0-无;1-拖动示教工具开关;2-点记录信号;3-手自动切换（脉冲信号）;4-TPD记录启动/停止;5-暂停运动;
-    6-恢复运动;7-启动;8-停止;9-暂停/恢复;10-启动/停止;11-力传感器辅助拖动开启;12-力传感器辅助拖动关闭;
-    13-力传感器辅助拖动开启/关闭;14-激光检测信号X;15-激光检测信号Y;16-PTP运动至作业原点;17-运动中断，根据信号停止当前运动;
-    18-启动主程序;19-启动倒带;20-启动确认;21-恢复焊接;22-终止焊接;23-清除错误;24-手自动切换（高低电平）
-    25-使能;26-去使能;27-使能/去使能;28-激光伺服跟踪启停信号;
-    * @return 错误码
+    * @brief Obtener la función del puerto End-CI configurable del extremo
+    * @param [out] config Código de función de End CI0-CI1;
+    * 0-ninguna;1-interruptor de herramienta de enseñanza por arrastre;2-señal de registro de punto;3-conmutación manual/automático (señal de pulso);4-inicio/parada de registro TPD;5-pausar movimiento;
+    6-reanudar movimiento;7-iniciar;8-detener;9-pausa/reanudar;10-iniciar/detener;11-activar arrastre asistido por sensor de fuerza;12-desactivar arrastre asistido por sensor de fuerza;
+    13-activar/desactivar arrastre asistido por sensor de fuerza;14-señal de detección láser X;15-señal de detección láser Y;16-movimiento PTP al origen de trabajo;17-interrupción de movimiento, detener el movimiento actual según la señal;
+    18-iniciar programa principal;19-iniciar rebobinado;20-confirmación de inicio;21-reanudar soldadura;22-terminar soldadura;23-borrar errores;24-conmutación manual/automático (nivel alto/bajo)
+    25-habilitar;26-deshabilitar;27-habilitar/deshabilitar;28-señal de inicio/parada de seguimiento servo láser;
+    * @return Código de error
     */
     public int GetToolDIConfig(out int[] config)
     
-设置控制箱可配置CI有效状态
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el estado activo del CI configurable del armario de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置控制箱可配置CI有效状态
-    * @param [in] config CI0-CI7端口有效状态；0-高电平有效；1-低电平有效
-    * @return 错误码
+    * @brief Establecer el estado activo del CI configurable del armario de control
+    * @param [in] config Estado activo de los puertos CI0-CI7; 0-activo a nivel alto; 1-activo a nivel bajo
+    * @return Código de error
     */
     public int SetDIConfigLevel(int[] config)
         
-获取控制箱可配置CI有效状态
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado activo del CI configurable del armario de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 获取控制箱可配置CI有效状态
-    * @param [out] config CI0-CI7端口有效状态；0-高电平有效；1-低电平有效
-    * @return 错误码
+    * @brief Obtener el estado activo del CI configurable del armario de control
+    * @param [out] config Estado activo de los puertos CI0-CI7; 0-activo a nivel alto; 1-activo a nivel bajo
+    * @return Código de error
     */
     public int GetDIConfigLevel(out int[] config)
         
-设置控制箱可配置CO有效状态
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el estado activo del CO configurable del armario de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置控制箱可配置CO有效状态
-    * @param [in] config CO0-CO7端口有效状态；0-高电平有效；1-低电平有效
-    * @return 错误码
+    * @brief Establecer el estado activo del CO configurable del armario de control
+    * @param [in] config Estado activo de los puertos CO0-CO7; 0-activo a nivel alto; 1-activo a nivel bajo
+    * @return Código de error
     */
     public int SetDOConfigLevel(int[] config)
 
-获取控制箱可配置CO有效状态
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado activo del CO configurable del armario de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 获取控制箱可配置CO有效状态
-    * @param [out] config CO0-CO7端口有效状态；0-高电平有效；1-低电平有效
-    * @return 错误码
+    * @brief Obtener el estado activo del CO configurable del armario de control
+    * @param [out] config Estado activo de los puertos CO0-CO7; 0-activo a nivel alto; 1-activo a nivel bajo
+    * @return Código de error
     */
     public int GetDOConfigLevel(out int[] config)
     
-设置末端可配置CI有效状态
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el estado activo del CI configurable del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置末端可配置CI有效状态
-    * @param [in] config CI0-CI1端口有效状态；0-高电平有效；1-低电平有效
-    * @return 错误码
+    * @brief Establecer el estado activo del CI configurable del extremo
+    * @param [in] config Estado activo de los puertos CI0-CI1; 0-activo a nivel alto; 1-activo a nivel bajo
+    * @return Código de error
     */
     public int SetToolDIConfigLevel(int[] config)
     
-获取末端可配置CI有效状态
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado activo del CI configurable del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 获取末端可配置CI有效状态
-    * @param [out] config CI0-CI1端口有效状态；0-高电平有效；1-低电平有效
-    * @return 错误码
+    * @brief Obtener el estado activo del CI configurable del extremo
+    * @param [out] config Estado activo de los puertos CI0-CI1; 0-activo a nivel alto; 1-activo a nivel bajo
+    * @return Código de error
     */
     public int GetToolDIConfigLevel(out int[] config)
     
-设置控制箱标准DI有效状态
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el estado activo del DI estándar del armario de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置控制箱标准DI有效状态
-    * @param [in] config DI0-DI7端口有效状态；0-高电平有效；1-低电平有效
-    * @return 错误码
+    * @brief Establecer el estado activo del DI estándar del armario de control
+    * @param [in] config Estado activo de los puertos DI0-DI7; 0-activo a nivel alto; 1-activo a nivel bajo
+    * @return Código de error
     */
     public int SetStandardDILevel(int[] config)
     
-获取控制箱标准DI有效状态
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado activo del DI estándar del armario de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 获取控制箱标准DI有效状态
-    * @param [out] config DI0-DI7端口有效状态；0-高电平有效；1-低电平有效
-    * @return 错误码
+    * @brief Obtener el estado activo del DI estándar del armario de control
+    * @param [out] config Estado activo de los puertos DI0-DI7; 0-activo a nivel alto; 1-activo a nivel bajo
+    * @return Código de error
     */
     public int GetStandardDILevel(out int[] config)
 
-设置控制箱标准DO有效状态
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el estado activo del DO estándar del armario de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置控制箱标准DO有效状态
-    * @param [in] config DO0-DO7端口有效状态；0-高电平有效；1-低电平有效
-    * @return 错误码
+    * @brief Establecer el estado activo del DO estándar del armario de control
+    * @param [in] config Estado activo de los puertos DO0-DO7; 0-activo a nivel alto; 1-activo a nivel bajo
+    * @return Código de error
     */
     public int SetStandardDOLevel(int[] config)
     
-获取控制箱标准DO有效状态
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado activo del DO estándar del armario de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 获取控制箱标准DO有效状态
-    * @param [out] config DO0-DO7端口有效状态；0-高电平有效；1-低电平有效
-    * @return 错误码
+    * @brief Obtener el estado activo del DO estándar del armario de control
+    * @param [out] config Estado activo de los puertos DO0-DO7; 0-activo a nivel alto; 1-activo a nivel bajo
+    * @return Código de error
     */
     public int GetStandardDOLevel(out int[] config)
         
-机器人IO配置代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración de IO del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
@@ -850,17 +850,17 @@
     {
         int rtn = 0;
 
-        // ---------- 测试可配置CI端口功能 ----------
+        // ---------- Probar la función del puerto CI configurable ----------
         int[] setDIConfig = new int[] { 3, 9, 1, 4, 5, 6, 7, 8 };
         rtn = robot.SetDIConfig(setDIConfig);
         Console.WriteLine($"SetDIConfig rtn is {rtn}");
 
-        // 使用 out 参数接收获取到的配置数组
+        // Utilizar el parámetro out para recibir el array de configuración obtenido
         int[] getDIConfig;
         rtn = robot.GetDIConfig(out getDIConfig);  
         Console.WriteLine($"GetDIConfig rtn is {rtn}, value is {string.Join(" ", getDIConfig)}");
 
-        // ---------- 测试可配置CO端口功能 ----------
+        // ---------- Probar la función del puerto CO configurable ----------
         int[] setDOConfig = new int[] { 9, 10, 11, 12, 13, 14, 15, 16 };
         rtn = robot.SetDOConfig(setDOConfig);
         Console.WriteLine($"SetDOConfig rtn is {rtn}");
@@ -869,7 +869,7 @@
         rtn = robot.GetDOConfig(out getDOConfig);
         Console.WriteLine($"GetDOConfig rtn is {rtn}, value is {string.Join(" ", getDOConfig)}");
 
-        // ---------- 测试末端可配置CI端口功能 ----------
+        // ---------- Probar la función del puerto CI configurable del extremo ----------
         int[] setToolDIConfig = new int[] { 17, 18 };
         rtn = robot.SetToolDIConfig(setToolDIConfig);
         Console.WriteLine($"SetToolDIConfig rtn is {rtn}");
@@ -878,7 +878,7 @@
         rtn = robot.GetToolDIConfig(out getToolDIConfig);
         Console.WriteLine($"GetToolDIConfig rtn is {rtn}, value is {string.Join(" ", getToolDIConfig)}");
 
-        // ---------- 测试控制箱可配置CI有效状态 ----------
+        // ---------- Probar el estado activo del CI configurable del armario de control ----------
         int[] setDIConfigLevel = new int[] { 1, 1, 1, 1, 0, 0, 0, 0 };
         rtn = robot.SetDIConfigLevel(setDIConfigLevel);
         Console.WriteLine($"SetDIConfigLevel rtn is {rtn}");
@@ -887,7 +887,7 @@
         rtn = robot.GetDIConfigLevel(out getDIConfigLevel);
         Console.WriteLine($"GetDIConfigLevel rtn is {rtn}, value is {string.Join(" ", getDIConfigLevel)}");
 
-        // ---------- 测试控制箱可配置CO有效状态 ----------
+        // ---------- Probar el estado activo del CO configurable del armario de control ----------
         int[] setDOConfigLevel = new int[] { 0, 0, 0, 0, 1, 1, 1, 1 };
         rtn = robot.SetDIConfigLevel(setDOConfigLevel);
         Console.WriteLine($"SetDOConfigLevel rtn is {rtn}");
@@ -896,7 +896,7 @@
         rtn = robot.GetDOConfigLevel(out getDOConfigLevel);
         Console.WriteLine($"GetDOConfigLevel rtn is {rtn}, value is {string.Join(" ", getDOConfigLevel)}");
 
-        // ---------- 测试末端可配置CI有效状态 ----------
+        // ---------- Probar el estado activo del CI configurable del extremo ----------
         int[] setToolDIConfigLevel = new int[] { 1, 0 };
         rtn = robot.SetToolDIConfigLevel(setToolDIConfigLevel);
         Console.WriteLine($"SetToolDIConfigLevel rtn is {rtn}");
@@ -905,7 +905,7 @@
         rtn = robot.GetToolDIConfigLevel(out getToolDIConfigLevel);
         Console.WriteLine($"GetToolDIConfigLevel rtn is {rtn}, value is {string.Join(" ", getToolDIConfigLevel)}");
 
-        // ---------- 测试控制箱标准DI有效状态 ----------
+        // ---------- Probar el estado activo del DI estándar del armario de control ----------
         int[] setStandardDILevel = new int[] { 1, 1, 1, 1, 0, 0, 0, 0 };
         rtn = robot.SetStandardDILevel(setStandardDILevel);
         Console.WriteLine($"SetStandardDILevel rtn is {rtn}");
@@ -914,7 +914,7 @@
         rtn = robot.GetStandardDILevel(out getStandardDILevel);
         Console.WriteLine($"GetStandardDILevel rtn is {rtn}, value is {string.Join(" ", getStandardDILevel)}");
 
-        // ---------- 测试控制箱标准DO有效状态 ----------
+        // ---------- Probar el estado activo del DO estándar del armario de control ----------
         int[] setStandardDOLevel = new int[] { 0, 0, 0, 0, 1, 1, 1, 1 };
         rtn = robot.SetStandardDOLevel(setStandardDOLevel);
         Console.WriteLine($"SetStandardDOLevel rtn is {rtn}");

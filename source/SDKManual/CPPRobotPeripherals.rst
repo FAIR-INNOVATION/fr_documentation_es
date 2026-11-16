@@ -1,57 +1,57 @@
-机器人外设
-============
+Periféricos del robot
+=====================
 
 .. toctree:: 
     :maxdepth: 5
 
-配置夹爪
+Configurar la pinza
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
 	/**
-	 * @brief  配置夹爪
-	 * @param  [in] company  夹爪厂商，1-ROBOTIQ，2-慧灵，3-天机，4-大寰，5-知行，6-钧舵，7-美团，8-增广
-	 * @param  [in] device  设备号，ROBOTIQ(0-2F-85;1-2F-140;2-真空夹爪;3-三指夹爪;4-Hand-E)，
-								   慧灵(0-Z-EFG-RNM;1-Z-EFG-100;2-Z-EFG-20P;3-Z-EFG-50)，天机(0-TEG-110)，大寰(0-PGI-140)，
-								   知行(0-CTPM2F20)，钧舵(0-RG,1-REG)，美团(0-MT-ACTUATOR)，增广(0-RM-GB-11-40-2-ITG)
-	 * @param  [in] softvesion  软件版本号，暂不使用，默认为0
-	 * @param  [in] bus 设备挂在末端总线位置，暂不使用，默认为0
-	 * @return  错误码
+	 * @brief  Configurar la pinza
+	 * @param  [in] company  Fabricante de la pinza, 1-ROBOTIQ, 2-Huiling, 3-Tianji, 4-Dahuan, 5-Zhixing, 6-Junduo, 7-Meituan, 8-Zengguang
+	 * @param  [in] device  Número de dispositivo, ROBOTIQ(0-2F-85;1-2F-140;2-pinza de vacío;3-pinza de tres dedos;4-Hand-E),
+								   Huiling(0-Z-EFG-RNM;1-Z-EFG-100;2-Z-EFG-20P;3-Z-EFG-50), Tianji(0-TEG-110), Dahuan(0-PGI-140),
+								   Zhixing(0-CTPM2F20), Junduo(0-RG,1-REG), Meituan(0-MT-ACTUATOR), Zengguang(0-RM-GB-11-40-2-ITG)
+	 * @param  [in] softvesion  Número de versión del software, no se utiliza por ahora, por defecto 0
+	 * @param  [in] bus Posición del bus del extremo donde está conectado el dispositivo, no se utiliza por ahora, por defecto 0
+	 * @return  Código de error
 	 */
 	errno_t SetGripperConfig(int company, int device, int softvesion, int bus);
 
-获取夹爪配置
+Obtener la configuración de la pinza
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
 	/**
-	 *@brief  获取夹爪配置
-	 *@param  [out] company  夹爪厂商，1-Robotiq，2-慧灵，3-天机，4-大寰，5-知行，6-钧舵，7-美团，8-增广
-	 *@param  [out] device  设备号，ROBOTIQ(0-2F-85;1-2F-140;2-真空夹爪;3-三指夹爪;4-Hand-E)，
-								   慧灵(0-Z-EFG-RNM;1-Z-EFG-100;2-Z-EFG-20P;3-Z-EFG-50)，天机(0-TEG-110)，大寰(0-PGI-140)，
-								   知行(0-CTPM2F20)，钧舵(0-RG,1-REG)，美团(0-MT-ACTUATOR)，增广(0-RM-GB-11-40-2-ITG)
-	 *@param  [out] softvesion  软件版本号，暂不使用，默认为0
-	 *@param  [out] bus 设备挂在末端总线位置，暂不使用，默认为0
-	 *@return  错误码
+	 *@brief  Obtener la configuración de la pinza
+	 *@param  [out] company  Fabricante de la pinza, 1-Robotiq, 2-Huiling, 3-Tianji, 4-Dahuan, 5-Zhixing, 6-Junduo, 7-Meituan, 8-Zengguang
+	 *@param  [out] device  Número de dispositivo, ROBOTIQ(0-2F-85;1-2F-140;2-pinza de vacío;3-pinza de tres dedos;4-Hand-E),
+								   Huiling(0-Z-EFG-RNM;1-Z-EFG-100;2-Z-EFG-20P;3-Z-EFG-50), Tianji(0-TEG-110), Dahuan(0-PGI-140),
+								   Zhixing(0-CTPM2F20), Junduo(0-RG,1-REG), Meituan(0-MT-ACTUATOR), Zengguang(0-RM-GB-11-40-2-ITG)
+	 *@param  [out] softvesion  Número de versión del software, no se utiliza por ahora, por defecto 0
+	 *@param  [out] bus Posición del bus del extremo donde está conectado el dispositivo, no se utiliza por ahora, por defecto 0
+	 *@return  Código de error
 	 */
 	errno_t GetGripperConfig(int *company, int *device, int *softvesion, int *bus);
 
-激活夹爪
+Activar la pinza
 ++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  激活夹爪
-    * @param  [in] index  夹爪编号
-    * @param  [in] act  0-复位，1-激活
-    * @return  错误码
+    * @brief  Activar la pinza
+    * @param  [in] index  Número de la pinza
+    * @param  [in] act  0-restablecer, 1-activar
+    * @return  Código de error
     */
     errno_t  ActGripper(int index, uint8_t act);
 
-控制夹爪
+Controlar la pinza
 ++++++++++++++++++++++++++
 .. versionchanged:: C++SDK-v2.1.5.0
 
@@ -59,141 +59,141 @@
     :linenos:
 
     /**
-	 * @brief  控制夹爪
-	 * @param  [in] index  夹爪编号
-	 * @param  [in] pos  位置百分比，范围[0~100]
-	 * @param  [in] vel  速度百分比，范围[0~100]
-	 * @param  [in] force  力矩百分比，范围[0~100]
-	 * @param  [in] max_time  最大等待时间，范围[0~30000]，单位ms
-	 * @param  [in] block  0-阻塞，1-非阻塞
-	 * @param  [in] type 夹爪类型，0-平行夹爪；1-旋转夹爪
-	 * @param  [in] rotNum 旋转圈数
-	 * @param  [in] rotVel 旋转速度百分比[0-100]
-	 * @param  [in] rotTorque 旋转力矩百分比[0-100]
-	 * @return  错误码
+	 * @brief  Controlar la pinza
+	 * @param  [in] index  Número de la pinza
+	 * @param  [in] pos  Porcentaje de posición, rango [0~100]
+	 * @param  [in] vel  Porcentaje de velocidad, rango [0~100]
+	 * @param  [in] force  Porcentaje de par, rango [0~100]
+	 * @param  [in] max_time  Tiempo máximo de espera, rango [0~30000], unidad ms
+	 * @param  [in] block  0-bloqueante, 1-no bloqueante
+	 * @param  [in] type Tipo de pinza, 0-pinza paralela; 1-pinza rotativa
+	 * @param  [in] rotNum Número de vueltas de rotación
+	 * @param  [in] rotVel Porcentaje de velocidad de rotación [0-100]
+	 * @param  [in] rotTorque Porcentaje de par de rotación [0-100]
+	 * @return  Código de error
 	 */
 	errno_t MoveGripper(int index, int pos, int vel, int force, int max_time, uint8_t block, int type, double rotNum, int rotVel, int rotTorque);
 
-获取夹爪运动状态
-++++++++++++++++++++++++++
+Obtener el estado de movimiento de la pinza
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取夹爪运动状态（401版本起，末端协议与已适配设备夹爪运动状态反馈定义统一）
-    * @param [out] fault 0-无错误，其他-有错误
-    * @param [out] status 0-运动未完成，1-运动完成未检测到物体;2-运动完成检测到物体;3-运动完成检测到物体掉落;
-    * @return 错误码
+    * @brief Obtener el estado de movimiento de la pinza (a partir de la versión 401, el protocolo del extremo está unificado con la definición de retroalimentación del estado de movimiento de la pinza de los dispositivos ya adaptados)
+    * @param [out] fault 0-sin error, otro-con error
+    * @param [out] status 0-movimiento no completado, 1-movimiento completado sin detección de objeto;2-movimiento completado con detección de objeto;3-movimiento completado con detección de caída del objeto;
+    * @return Código de error
     */
     errno_t GetGripperMotionDone(int& fault,int& status);
 
-获取夹爪激活状态
-++++++++++++++++++++++++++
+Obtener el estado de activación de la pinza
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  获取夹爪激活状态
-     * @param  [out] fault  0-无错误，1-有错误
-     * @param  [out] status  bit0~bit15对应夹爪编号0~15，bit=0为未激活，bit=1为激活
-     * @return  错误码
+     * @brief  Obtener el estado de activación de la pinza
+     * @param  [out] fault  0-sin error, 1-con error
+     * @param  [out] status  bit0~bit15 corresponden a los números de pinza 0~15; bit=0 no activada, bit=1 activada
+     * @return  Código de error
      */
     errno_t  GetGripperActivateStatus(uint16_t *fault, uint16_t *status);
 
-获取夹爪位置
-++++++++++++++++++++++++++
+Obtener la posición de la pinza
++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  获取夹爪位置
-     * @param  [out] fault  0-无错误，1-有错误
-     * @param  [out] position  位置百分比，范围0~100%
-     * @return  错误码
+     * @brief  Obtener la posición de la pinza
+     * @param  [out] fault  0-sin error, 1-con error
+     * @param  [out] position  Porcentaje de posición, rango 0~100%
+     * @return  Código de error
      */
     errno_t  GetGripperCurPosition(uint16_t *fault, uint8_t *position);
 
-获取夹爪速度
-++++++++++++++++++++++++++
+Obtener la velocidad de la pinza
+++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  获取夹爪速度
-     * @param  [out] fault  0-无错误，1-有错误
-     * @param  [out] speed  速度百分比，范围0~100%
-     * @return  错误码
+     * @brief  Obtener la velocidad de la pinza
+     * @param  [out] fault  0-sin error, 1-con error
+     * @param  [out] speed  Porcentaje de velocidad, rango 0~100%
+     * @return  Código de error
      */
     errno_t  GetGripperCurSpeed(uint16_t *fault, int8_t *speed);
 
-获取夹爪电流
-++++++++++++++++++++++++++
+Obtener la corriente de la pinza
+++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  获取夹爪电流
-     * @param  [out] fault  0-无错误，1-有错误
-     * @param  [out] current  电流百分比，范围0~100%
-     * @return  错误码
+     * @brief  Obtener la corriente de la pinza
+     * @param  [out] fault  0-sin error, 1-con error
+     * @param  [out] current  Porcentaje de corriente, rango 0~100%
+     * @return  Código de error
      */
     errno_t  GetGripperCurCurrent(uint16_t *fault, int8_t *current);
 
-获取夹爪电压
-++++++++++++++++++++++++++
+Obtener la tensión de la pinza
+++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  获取夹爪电压
-     * @param  [out] fault  0-无错误，1-有错误
-     * @param  [out] voltage  电压,单位0.1V
-     * @return  错误码
+     * @brief  Obtener la tensión de la pinza
+     * @param  [out] fault  0-sin error, 1-con error
+     * @param  [out] voltage  Tensión, unidad 0.1V
+     * @return  Código de error
      */
     errno_t  GetGripperVoltage(uint16_t *fault, int *voltage);
 
-获取夹爪温度
-++++++++++++++++++++++++++
+Obtener la temperatura de la pinza
+++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  获取夹爪温度
-     * @param  [out] fault  0-无错误，1-有错误
-     * @param  [out] temp  温度，单位℃
-     * @return  错误码
+     * @brief  Obtener la temperatura de la pinza
+     * @param  [out] fault  0-sin error, 1-con error
+     * @param  [out] temp  Temperatura, unidad ℃
+     * @return  Código de error
      */
     errno_t  GetGripperTemp(uint16_t *fault, int *temp);
 
-计算预抓取点-视觉
-++++++++++++++++++++++++++
+Calcular el punto de preagarre - visión
+++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  计算预抓取点-视觉
-     * @param  [in] desc_pos  抓取点笛卡尔位姿
-     * @param  [in] zlength  z轴偏移量
-     * @param  [in] zangle   绕z轴旋转偏移量
-     * @return  错误码 
+     * @brief  Calcular el punto de preagarre - visión
+     * @param  [in] desc_pos  Pose cartesiana del punto de agarre
+     * @param  [in] zlength  Desplazamiento del eje z
+     * @param  [in] zangle   Desplazamiento de rotación alrededor del eje z
+     * @return  Código de error 
      */
     errno_t  ComputePrePick(DescPose *desc_pos, double zlength, double zangle, DescPose *pre_pos);
 
-计算撤退点-视觉
-++++++++++++++++++++++++++
+Calcular el punto de retirada - visión
+++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  计算撤退点-视觉
-     * @param  [in] desc_pos  抓取点笛卡尔位姿
-     * @param  [in] zlength  z轴偏移量
-     * @param  [in] zangle   绕z轴旋转偏移量
-     * @return  错误码 
+     * @brief  Calcular el punto de retirada - visión
+     * @param  [in] desc_pos  Pose cartesiana del punto de agarre
+     * @param  [in] zlength  Desplazamiento del eje z
+     * @param  [in] zangle   Desplazamiento de rotación alrededor del eje z
+     * @return  Código de error 
      */
     errno_t  ComputePostPick(DescPose *desc_pos, double zlength, double zangle, DescPose *post_pos);
 
-机器人夹爪操作代码示例
+Ejemplo de código de operación de la pinza del robot
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
@@ -268,24 +268,24 @@
       return 0;
     }
 
-获取旋转夹爪的旋转圈数
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el número de vueltas de la pinza rotativa
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-.. versionadded:: 3.7.6版本加入
+.. versionadded:: añadido en la versión 3.7.6
 
 .. code-block:: c++
     :linenos:
 
     /**
-	 * @brief  获取旋转夹爪的旋转圈数
-	 * @param  [out] fault  0-无错误，1-有错误
-	 * @param  [out] num  旋转圈数
-	 * @return  错误码
+	 * @brief  Obtener el número de vueltas de la pinza rotativa
+	 * @param  [out] fault  0-sin error, 1-con error
+	 * @param  [out] num  Número de vueltas de rotación
+	 * @return  Código de error
 	 */
 	errno_t GetGripperRotNum(uint16_t* fault, double* num);
 
-获取旋转夹爪的旋转速度
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener la velocidad de rotación de la pinza rotativa
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: V3.7.6
 
@@ -293,15 +293,15 @@
     :linenos:
 
     /**
-	 * @brief  获取旋转夹爪的旋转速度
-	 * @param  [out] fault  0-无错误，1-有错误
-	 * @param  [out] speed  旋转速度百分比
-	 * @return  错误码
+	 * @brief  Obtener la velocidad de rotación de la pinza rotativa
+	 * @param  [out] fault  0-sin error, 1-con error
+	 * @param  [out] speed  Porcentaje de velocidad de rotación
+	 * @return  Código de error
 	 */
 	errno_t GetGripperRotSpeed(uint16_t* fault, int* speed);
 
-获取旋转夹爪的旋转力矩
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el par de rotación de la pinza rotativa
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: V3.7.6
 
@@ -309,15 +309,15 @@
     :linenos:
 
     /**
-	 * @brief  获取旋转夹爪的旋转力矩
-	 * @param  [out] fault  0-无错误，1-有错误
-	 * @param  [out] torque  旋转力矩百分比
-	 * @return  错误码
+	 * @brief  Obtener el par de rotación de la pinza rotativa
+	 * @param  [out] fault  0-sin error, 1-con error
+	 * @param  [out] torque  Porcentaje de par de rotación
+	 * @return  Código de error
 	 */
 	errno_t GetGripperRotTorque(uint16_t* fault, int* torque);
 
-获取旋转夹爪状态代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de obtención del estado de la pinza rotativa
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
@@ -345,22 +345,22 @@
       return 0;
     }
 
-等待夹爪运动状态
+Esperar el estado de movimiento de la pinza
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 等待夹爪运动状态（401版本起，末端协议与已适配设备夹爪运动状态反馈定义统一）
-    * @param [in] staus 0-运动未完成，1-运动完成未检测到物体;2-运动完成检测到物体;3-运动完成检测到物体掉落
-    * @param [in] timeout 超时时间（ms） -1永久等待
-    * @param [in] strategy 0-停止报错，1-继续运行
-    * @param [in] type 0-平行夹爪，1-旋转夹爪
-    * @return 错误码
+    * @brief Esperar el estado de movimiento de la pinza (a partir de la versión 401, el protocolo del extremo está unificado con la definición de retroalimentación del estado de movimiento de la pinza de los dispositivos ya adaptados)
+    * @param [in] staus 0-movimiento no completado, 1-movimiento completado sin detección de objeto;2-movimiento completado con detección de objeto;3-movimiento completado con detección de caída del objeto
+    * @param [in] timeout Tiempo de espera agotado (ms) -1 espera permanente
+    * @param [in] strategy 0-detener con error, 1-continuar en ejecución
+    * @param [in] type 0-pinza paralela, 1-pinza rotativa
+    * @return Código de error
     */
     errno_t GripperWaitMotionDone(int staus, int timeout, int strategy, int type);
     
-等待夹爪运动状态代码示例
+Ejemplo de código de espera del estado de movimiento de la pinza
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
@@ -379,19 +379,19 @@
         }
         uint8_t status = 0;
         uint16_t fault = 0;
-        // Gripper open
+        // Abrir la pinza
         rtn = robot.MoveGripper(2, 50, 50, 100, 30000, 0, 0, 0, 0, 0);
         printf("MoveGripper(open) ret=%d\n", rtn);
         std::this_thread::sleep_for(std::chrono::milliseconds(2000));
         robot.GetRobotRealTimeState(&pkg);
         printf(" gripper_motiondone %d)\n", pkg.gripper_motiondone);
-        // Gripper close
+        // Cerrar la pinza
         rtn = robot.MoveGripper(2, 90, 100, 100, 30000, 0, 0, 0, 0, 0);
         printf("MoveGripper(close) ret=%d\n", rtn);
         std::this_thread::sleep_for(std::chrono::milliseconds(2000));
         robot.GetRobotRealTimeState(&pkg);
         printf(" gripper_motiondone %d)\n", pkg.gripper_motiondone);
-        // Wait for motion completion without object detection, timeout 5s, stop and report error
+        // Esperar a que finalice el movimiento sin detección de objeto, tiempo de espera 5 s, detener con error
         rtn = robot.GripperWaitMotionDone(2, 5000, 0, 0);
         printf("GripperWaitMotionDone(wait for completion, no object detected) ret=%d\n", rtn);
         while (true)
@@ -407,183 +407,183 @@
         return 0;
     }
 
-传动带启动、停止
+Inicio y parada de la cinta transportadora
 +++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 传动带启动、停止
-    * @param [in] status 状态，1-启动，0-停止 
-    * @return 错误码
+    * @brief Inicio y parada de la cinta transportadora
+    * @param [in] status Estado, 1-iniciar, 0-detener 
+    * @return Código de error
     */
     errno_t ConveyorStartEnd(uint8_t status);
 
-记录IO检测点
+Registro del punto de detección IO
 +++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 记录IO检测点
-    * @return 错误码
+    * @brief Registro del punto de detección IO
+    * @return Código de error
     */
     errno_t ConveyorPointIORecord();
 
-记录A点
+Registro del punto A
 +++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 记录A点
-    * @return 错误码
+    * @brief Registro del punto A
+    * @return Código de error
     */
     errno_t ConveyorPointARecord();
 
-记录参考点
+Registro del punto de referencia
 +++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 记录参考点
-    * @return 错误码
+    * @brief Registro del punto de referencia
+    * @return Código de error
     */
     errno_t ConveyorRefPointRecord();
 
-记录B点
+Registro del punto B
 +++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 记录B点
-    * @return 错误码
+    * @brief Registro del punto B
+    * @return Código de error
     */
     errno_t ConveyorPointBRecord();
 
-传送带工件IO检测
-+++++++++++++++++++++++++++++++++++++++++++++
+Detección IO de piezas en la cinta transportadora
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 传送带工件IO检测
-    * @param [in] max_t 最大检测时间，单位ms
-    * @return 错误码
+    * @brief Detección IO de piezas en la cinta transportadora
+    * @param [in] max_t Tiempo máximo de detección, unidad ms
+    * @return Código de error
     */
     errno_t ConveyorIODetect(int max_t);
 
-获取物体当前位置
+Obtener la posición actual del objeto
 +++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取物体当前位置
+    * @brief Obtener la posición actual del objeto
     * @param [in] mode 
-    * @return 错误码
+    * @return Código de error
     */
     errno_t ConveyorGetTrackData(int mode);
 
-传动带跟踪开始
-+++++++++++++++++++++++++++++++++++++++++++++
+Inicio del seguimiento de la cinta transportadora
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 传动带跟踪开始
-    * @param [in] status 状态，1-启动，0-停止 
-    * @return 错误码
+    * @brief Inicio del seguimiento de la cinta transportadora
+    * @param [in] status Estado, 1-iniciar, 0-detener 
+    * @return Código de error
     */
     errno_t ConveyorTrackStart(uint8_t status);
 
-传动带跟踪停止
-+++++++++++++++++++++++++++++++++++++++++++++
+Parada del seguimiento de la cinta transportadora
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 传动带跟踪停止
-    * @return 错误码
+    * @brief Parada del seguimiento de la cinta transportadora
+    * @return Código de error
     */
     errno_t ConveyorTrackEnd();
 
-传动带参数配置
-+++++++++++++++++++++++++++++++++++++++++++++
+Configuración de parámetros de la cinta transportadora
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: C++SDK-v2.2.1-3.8.1
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 传动带参数配置
-    * @param [in] para[0] 编码器通道 1~2
-    * @param [in] para[1] 编码器转一圈的脉冲数
-    * @param [in] para[2] 编码器转一圈传送带行走距离
-    * @param [in] para[3] 工件坐标系编号 针对跟踪运动功能选择工件坐标系编号，跟踪抓取、TPD跟踪设为0
-    * @param [in] para[4] 是否配视觉 0 不配 1 配
-    * @param [in] para[5] 速度比 针对传送带跟踪抓取选项（1-100） 其他选项默认为1 
-    * @return 错误码
+    * @brief Configuración de parámetros de la cinta transportadora
+    * @param [in] para[0] Canal del codificador 1~2
+    * @param [in] para[1] Número de pulsos por vuelta del codificador
+    * @param [in] para[2] Distancia recorrida por la cinta transportadora por vuelta del codificador
+    * @param [in] para[3] Número del sistema de coordenadas de pieza; para la función de movimiento con seguimiento seleccione el número del sistema de coordenadas de pieza; para el agarre con seguimiento y el seguimiento TPD se establece en 0
+    * @param [in] para[4] Si se configura visión 0 no configurar 1 configurar
+    * @param [in] para[5] Relación de velocidad para la opción de agarre con seguimiento de cinta transportadora (1-100); para otras opciones el valor predeterminado es 1 
+    * @return Código de error
     */
     errno_t ConveyorSetParam(float para[6], int followType = 0, int startDis = 0, int endDis = 100);
 
-传动带抓取点补偿
-+++++++++++++++++++++++++++++++++++++++++++++
+Compensación del punto de agarre de la cinta transportadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: C++SDK-v2.1.2.0
 
 .. code-block:: c++
     :linenos:
 
 	/**
-	 * @brief 传动带抓取点补偿
-	 * @param [in] cmp 补偿位置 double[3]{x, y, z}
-	 * @return 错误码
+	 * @brief Compensación del punto de agarre de la cinta transportadora
+	 * @param [in] cmp Posición de compensación double[3]{x, y, z}
+	 * @return Código de error
 	 */
     errno_t ConveyorCatchPointComp(double cmp[3]);
 
-传送带直线运动
+Movimiento lineal de la cinta transportadora
 +++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 传送带直线运动
-    * @param [in] status 状态，1-启动，0-停止 
-    * @return 错误码
+    * @brief Movimiento lineal de la cinta transportadora
+    * @param [in] status Estado, 1-iniciar, 0-detener 
+    * @return Código de error
     */
     errno_t TrackMoveL(char name[32], int tool, int wobj, float vel, float acc, float ovl, float blendR, uint8_t flag, uint8_t type);
 
-传送带通讯输入检测
-++++++++++++++++++++++++++++++++++++++++++
+Detección de entrada de comunicación de la cinta transportadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.2.1-3.8.1
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 传送带通讯输入检测
-    * @param [in] timeout 等待超时时间ms
-    * @return 错误码
+    * @brief Detección de entrada de comunicación de la cinta transportadora
+    * @param [in] timeout Tiempo de espera máximo ms
+    * @return Código de error
     */
     errno_t ConveyorComDetect(int timeout);
 
-传送带通讯输入检测触发
-++++++++++++++++++++++++++++++++++++++++++
+Disparo de la detección de entrada de comunicación de la cinta transportadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.2.1-3.8.1
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 传送带通讯输入检测触发
-    * @return 错误码
+    * @brief Disparo de la detección de entrada de comunicación de la cinta transportadora
+    * @return Código de error
     */
     errno_t ConveyorComDetectTrigger();
 
-机器人传送带操作示例程序
-++++++++++++++++++++++++++++++++++++++++
+Ejemplo de programa de operación de la cinta transportadora del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
@@ -656,7 +656,7 @@
       return 0;
     }
 
-末端传感器配置
+Configuración del seguimiento en el lugar de la cinta transportadora
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.9.8
     
@@ -664,15 +664,15 @@
     :linenos:
 
     /**
-    * @brief 传送带原地跟踪参数配置
-    * @param [in] trackMode 0-时间；1-距离；2-时间和距离任意满足一个
-    * @param [in] trackTime 跟踪时间，单位s
-    * @param [in] trackDis 跟踪距离，单位mm
-    * @return 错误码
+    * @brief Configuración de parámetros del seguimiento en el lugar de la cinta transportadora
+    * @param [in] trackMode 0-tiempo; 1-distancia; 2-tiempo y distancia, se cumple cualquiera de los dos
+    * @param [in] trackTime Tiempo de seguimiento, unidad s
+    * @param [in] trackDis Distancia de seguimiento, unidad mm
+    * @return Código de error
     */
     int SetStationaryTrackPara(int trackMode, double trackTime, int trackDis);
     
-传送带原地跟踪代码示例
+Ejemplo de código de seguimiento en el lugar de la cinta transportadora
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.9.8
     
@@ -691,7 +691,7 @@
             return -1;
         }
         robot.SetReConnectParam(true, 30000, 500);
-        printf("\n========== 传送带静止跟踪测试 ==========");
+        printf("\n========== Prueba de seguimiento estacionario de cinta transportadora ==========");
         JointPos j1(-35.146, -102.684, 120.805, -100.401, -90.295, 150.105);
         DescPose d1(-121.814, -348.341, 209.978, -173.152, -3.585, -5.446);
         ExaxisPos ex(0, 0, 0, 0);
@@ -701,44 +701,44 @@
         float conveyorParam[6] = { 0, 10000, 200, 0, 0, 10 };
         rtn = robot.ConveyorSetParam(conveyorParam);
         robot.MoveJ(&j1, &d1, tool, workpiece, 100, 100, 100, &ex, -1, 0, &zeroOff);
-        // Step 1: SetDO 控制信号
-        printf("--- Step 1: SetDO(6,1) ---\n");
+        // Paso 1: Señal de control SetDO
+        printf("--- Paso 1: SetDO(6,1) ---\n");
         rtn = robot.SetDO(6, 1, 0, 0);
         printf("  SetDO(6,1) rtn={0}\n", rtn);
-        // Step 2: 传送带跟踪开始
-        printf("--- Step 2: ConveyorTrackStart(2) ---\n");
+        // Paso 2: Inicio del seguimiento de la cinta transportadora
+        printf("--- Paso 2: ConveyorTrackStart(2) ---\n");
         rtn = robot.ConveyorTrackStart(2);
         printf("  ConveyorTrackStart(2) rtn={0}\n", rtn);
-        // Step 3: 工件IO检测
-        printf("--- Step 3: ConveyorIODetect(10000) ---\n");
+        // Paso 3: Detección IO de pieza
+        printf("--- Paso 3: ConveyorIODetect(10000) ---\n");
         rtn = robot.ConveyorIODetect(10000);
         printf("  ConveyorIODetect(10000) rtn={0}\n", rtn);
-        // Step 4: 获取跟踪数据
-        printf("--- Step 4: ConveyorGetTrackData(2) ---\n");
+        // Paso 4: Obtener datos de seguimiento
+        printf("--- Paso 4: ConveyorGetTrackData(2) ---\n");
         rtn = robot.ConveyorGetTrackData(2);
         printf("  ConveyorGetTrackData(2) rtn={0}\n", rtn);
-        // Step 5: 静止跟踪参数配置 (时间模式, 200s, 距离5)
-        printf("--- Step 5: SetStationaryTrackPara(0,200,5) ---\n");
+        // Paso 5: Configuración de parámetros de seguimiento estacionario (modo tiempo, 200s, distancia 5)
+        printf("--- Paso 5: SetStationaryTrackPara(0,200,5) ---\n");
         rtn = robot.SetStationaryTrackPara(0, 5, 5);
         printf("  SetStationaryTrackPara(0,200,5) rtn={0}\n", rtn);
-        // Step 6: 执行静止跟踪运动
-        printf("--- Step 6: MoveStationary() ---\n");
+        // Paso 6: Ejecutar el movimiento de seguimiento estacionario
+        printf("--- Paso 6: MoveStationary() ---\n");
         rtn = robot.MoveStationary();
         rtn = robot.WaitStationaryMotionDone();
         printf("  MoveStationary() rtn={0}\n", rtn);
-        // Step 7: 传送带跟踪结束
-        printf("--- Step 7: ConveyorTrackEnd() ---\n");
+        // Paso 7: Fin del seguimiento de la cinta transportadora
+        printf("--- Paso 7: ConveyorTrackEnd() ---\n");
         rtn = robot.ConveyorTrackEnd();
         printf("  ConveyorTrackEnd() rtn={0}\n", rtn);
-        // Step 8: SetDO 关闭信号
-        printf("--- Step 8: SetDO(6,0) ---\n");
+        // Paso 8: Señal de cierre SetDO
+        printf("--- Paso 8: SetDO(6,0) ---\n");
         rtn = robot.SetDO(6, 0, 0, 0);
         printf("  SetDO(6,0) rtn={0}\n", rtn);
-        printf("\n========== 静止跟踪测试完成 ==========\n");
+        printf("\n========== Prueba de seguimiento estacionario completada ==========\n");
         return 0;
     }
 
-末端传感器配置
+Configuración del sensor del extremo
 +++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
@@ -746,31 +746,31 @@
     :linenos:
 
     /**
-    * @brief 末端传感器配置
-    * @param [in] idCompany 厂商，18-JUNKONG；25-HUIDE
-    * @param [in] idDevice 类型，0-JUNKONG/RYR6T.V1.0
-    * @param [in] idSoftware 软件版本，0-J1.0/HuiDe1.0(暂未开放)
-    * @param [in] idBus 挂载位置，1-末端1号口；2-末端2号口...8-末端8号口(暂未开放)
-    * @return 错误码
+    * @brief Configuración del sensor del extremo
+    * @param [in] idCompany Fabricante, 18-JUNKONG; 25-HUIDE
+    * @param [in] idDevice Tipo, 0-JUNKONG/RYR6T.V1.0
+    * @param [in] idSoftware Versión del software, 0-J1.0/HuiDe1.0 (aún no disponible)
+    * @param [in] idBus Posición de montaje, 1-puerto 1 del extremo; 2-puerto 2 del extremo... 8-puerto 8 del extremo (aún no disponible)
+    * @return Código de error
     */
     errno_t AxleSensorConfig(int idCompany, int idDevice, int idSoftware, int idBus);
 
-获取末端传感器配置
-+++++++++++++++++++++++++++++++++++++++
+Obtener la configuración del sensor del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 获取末端传感器配置
-     * @param [out] idCompany 厂商，18-JUNKONG；25-HUIDE
-     * @param [out] idDevice 类型，0-JUNKONG/RYR6T.V1.0
-     * @return 错误码
+     * @brief Obtener la configuración del sensor del extremo
+     * @param [out] idCompany Fabricante, 18-JUNKONG; 25-HUIDE
+     * @param [out] idDevice Tipo, 0-JUNKONG/RYR6T.V1.0
+     * @return Código de error
      */
     errno_t AxleSensorConfigGet(int& idCompany, int& idDevice);
 
-末端传感器激活
+Activación del sensor del extremo
 +++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
@@ -778,33 +778,33 @@
     :linenos:
 
     /**
-     * @brief 末端传感器激活
-     * @param [in] actFlag 0-复位；1-激活
-     * @return 错误码
+     * @brief Activación del sensor del extremo
+     * @param [in] actFlag 0-restablecer; 1-activar
+     * @return Código de error
      */
     errno_t AxleSensorActivate(int actFlag);
 
-末端传感器寄存器写入
-+++++++++++++++++++++++++++++++++++++++
+Escritura de registros del sensor del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 末端传感器寄存器写入
-     * @param [in] devAddr 设备地址编号 0-255
-     * @param [in] regHAddr 寄存器地址高8位
-     * @param [in] regLAddr 寄存器地址低8位
-     * @param [in] regNum 寄存器个数 0-255
-     * @param [in] data1 写入寄存器数值1
-     * @param [in] data2 写入寄存器数值2
-     * @param [in] isNoBlock 0-阻塞；1-非阻塞
-     * @return 错误码
+     * @brief Escritura de registros del sensor del extremo
+     * @param [in] devAddr Número de dirección del dispositivo 0-255
+     * @param [in] regHAddr Dirección de registro, 8 bits altos
+     * @param [in] regLAddr Dirección de registro, 8 bits bajos
+     * @param [in] regNum Número de registros 0-255
+     * @param [in] data1 Valor 1 a escribir en el registro
+     * @param [in] data2 Valor 2 a escribir en el registro
+     * @param [in] isNoBlock 0-bloqueante; 1-no bloqueante
+     * @return Código de error
      */
     errno_t AxleSensorRegWrite(int devAddr, int regHAddr, int regLAddr, int regNum, int data1, int data2, int isNoBlock);
 
-末端传感器代码示例
+Ejemplo de código del sensor del extremo
 +++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
@@ -836,36 +836,36 @@
       return 0;
     }
         
-获取机器人外设协议
-++++++++++++++++++++++++++++++++++
+Obtener el protocolo de periféricos del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.3.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取机器人外设协议
-    * @param [out] protocol 机器人外设协议号 4096-扩展轴控制卡；4097-ModbusSlave；4098-ModbusMaster
-    * @return 错误码
+    * @brief Obtener el protocolo de periféricos del robot
+    * @param [out] protocol Número de protocolo de periféricos del robot 4096-tarjeta de control del eje extendido; 4097-ModbusSlave; 4098-ModbusMaster
+    * @return Código de error
     */
     errno_t GetExDevProtocol(int *protocol);
 
-设置机器人外设协议
-++++++++++++++++++++++++++++++++++
+Establecer el protocolo de periféricos del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.3.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置机器人外设协议
-    * @param [in] protocol 机器人外设协议号 4096-扩展轴控制卡；4097-ModbusSlave；4098-ModbusMaster
-    * @return 错误码
+    * @brief Establecer el protocolo de periféricos del robot
+    * @param [in] protocol Número de protocolo de periféricos del robot 4096-tarjeta de control del eje extendido; 4097-ModbusSlave; 4098-ModbusMaster
+    * @return Código de error
     */
     errno_t SetExDevProtocol(int protocol);
 
-设置机器人外设协议示例程序
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de programa de configuración del protocolo de periféricos del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.3.0
 
 .. code-block:: c++
@@ -892,224 +892,224 @@
       return 0;
     }
 
-获取末端通讯参数
-++++++++++++++++++++++++++++++++++
+Obtener los parámetros de comunicación del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取末端通讯参数
-    * @param param 末端通讯参数
-    * @return  错误码
+    * @brief Obtener los parámetros de comunicación del extremo
+    * @param param Parámetros de comunicación del extremo
+    * @return  Código de error
     */
     errno_t GetAxleCommunicationParam(AxleComParam* param);
 
-设置末端通讯参数
-++++++++++++++++++++++++++++++++++
+Establecer los parámetros de comunicación del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置末端通讯参数
-    * @param param  末端通讯参数
-    * @return  错误码
+    * @brief Establecer los parámetros de comunicación del extremo
+    * @param param  Parámetros de comunicación del extremo
+    * @return  Código de error
     */
     errno_t SetAxleCommunicationParam(AxleComParam param);
 
-设置末端文件传输类型
-++++++++++++++++++++++++++++++++++
+Establecer el tipo de transferencia de archivos del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置末端文件传输类型
-    * @param type 1-MCU升级文件；2-LUA文件
-    * @return  错误码
+    * @brief Establecer el tipo de transferencia de archivos del extremo
+    * @param type 1-archivo de actualización de MCU; 2-archivo LUA
+    * @return  Código de error
     */
     errno_t SetAxleFileType(int type);
 
-设置启用末端LUA执行
-++++++++++++++++++++++++++++++++++
+Establecer la habilitación de ejecución de LUA en el extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置启用末端LUA执行
-    * @param enable 0-不启用；1-启用
-    * @return  错误码
+    * @brief Establecer la habilitación de ejecución de LUA en el extremo
+    * @param enable 0-no habilitar; 1-habilitar
+    * @return  Código de error
     */
     errno_t SetAxleLuaEnable(int enable);
 
-末端LUA文件异常错误恢复
-++++++++++++++++++++++++++++++++++
+Recuperación de errores anómalos del archivo LUA del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 末端LUA文件异常错误恢复
-    * @param status 0-不恢复；1-恢复
-    * @return  错误码
+    * @brief Recuperación de errores anómalos del archivo LUA del extremo
+    * @param status 0-no recuperar; 1-recuperar
+    * @return  Código de error
     */
     errno_t SetRecoverAxleLuaErr(int status);
 
-末端LUA文件异常错误恢复
-++++++++++++++++++++++++++++++++++
+Recuperación de errores anómalos del archivo LUA del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取末端LUA执行使能状态
-    * @param status status[0]: 0-未使能；1-已使能
-    * @return  错误码
+    * @brief Obtener el estado de habilitación de ejecución de LUA en el extremo
+    * @param status status[0]: 0-no habilitado; 1-habilitado
+    * @return  Código de error
     */
     errno_t GetAxleLuaEnableStatus(int status[]);
 
-设置末端LUA末端设备启用类型
-++++++++++++++++++++++++++++++++++
+Establecer el tipo de dispositivo del extremo habilitado para LUA en el extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置末端LUA末端设备启用类型
-    * @param forceSensorEnable 力传感器启用状态，0-不启用；1-启用
-    * @param gripperEnable 夹爪启用状态，0-不启用；1-启用
-    * @param IOEnable IO设备启用状态，0-不启用；1-启用
-    * @param dexhandEnable 灵巧手启用状态，0-不启用；1-启用
-    * @return  错误码
+    * @brief Establecer el tipo de dispositivo del extremo habilitado para LUA en el extremo
+    * @param forceSensorEnable Estado de habilitación del sensor de fuerza, 0-no habilitar; 1-habilitar
+    * @param gripperEnable Estado de habilitación de la pinza, 0-no habilitar; 1-habilitar
+    * @param IOEnable Estado de habilitación del dispositivo IO, 0-no habilitar; 1-habilitar
+    * @param dexhandEnable Estado de habilitación de la mano diestra, 0-no habilitar; 1-habilitar
+    * @return  Código de error
     */
     errno_t SetAxleLuaEnableDeviceType(int forceSensorEnable, int gripperEnable, int IOEnable, int dexhandEnable);
 
-设置末端LUA末端设备启用类型
-++++++++++++++++++++++++++++++++++
+Establecer el tipo de dispositivo del extremo habilitado para LUA en el extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
         
     /**
-    * @brief 获取末端LUA末端设备启用类型
-    * @param enable enable[0]:forceSensorEnable 力传感器启用状态，0-不启用；1-启用
-    * @param enable enable[1]:gripperEnable 夹爪启用状态，0-不启用；1-启用
-    * @param enable enable[2]:IOEnable IO设备启用状态，0-不启用；1-启用
-    * @param enable enable[3]:dexhandEnable 灵巧手启用状态，0-不启用；1-启用
-    * @return 错误码
+    * @brief Obtener el tipo de dispositivo del extremo habilitado para LUA en el extremo
+    * @param enable enable[0]:forceSensorEnable Estado de habilitación del sensor de fuerza, 0-no habilitar; 1-habilitar
+    * @param enable enable[1]:gripperEnable Estado de habilitación de la pinza, 0-no habilitar; 1-habilitar
+    * @param enable enable[2]:IOEnable Estado de habilitación del dispositivo IO, 0-no habilitar; 1-habilitar
+    * @param enable enable[3]:dexhandEnable Estado de habilitación de la mano diestra, 0-no habilitar; 1-habilitar
+    * @return Código de error
     */
     errno_t GetAxleLuaEnableDeviceType(int* forceSensorEnable, int* gripperEnable, int* IOEnable, int* dexhandEnable);
 
-获取当前配置的末端设备
-++++++++++++++++++++++++++++++++++
+Obtener el dispositivo del extremo configurado actualmente
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取当前配置的末端设备
-    * @param [out] forceSensorEnable 力传感器启用设备编号 0-未启用；1-启用
-    * @param [out] gripperEnable 夹爪启用设备编号，0-不启用；1-启用
-    * @param [out] IODeviceEnable IO设备启用设备编号，0-不启用；1-启用
-    * @param [out] decHandEnable 灵巧手启用设备编号，0-不启用；1-启用
-    * @return 错误码
+    * @brief Obtener el dispositivo del extremo configurado actualmente
+    * @param [out] forceSensorEnable Número de dispositivo habilitado del sensor de fuerza 0-no habilitado; 1-habilitado
+    * @param [out] gripperEnable Número de dispositivo habilitado de la pinza, 0-no habilitar; 1-habilitar
+    * @param [out] IODeviceEnable Número de dispositivo habilitado del dispositivo IO, 0-no habilitar; 1-habilitar
+    * @param [out] decHandEnable Número de dispositivo habilitado de la mano diestra, 0-no habilitar; 1-habilitar
+    * @return Código de error
     */
     errno_t GetAxleLuaEnableDevice(int forceSensorEnable[], int gripperEnable[], int IODeviceEnable[], int decHandEnable[]);
 
-设置启用夹爪动作控制功能
-++++++++++++++++++++++++++++++++++
+Establecer la habilitación de la función de control de movimiento de la pinza
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置启用夹爪动作控制功能
-    * @param id 夹爪设备编号
-    * @param func func[0]-夹爪使能；func[1]-夹爪初始化；func[2]-位置设置；func[3]-速度设置；func[4]-力矩设置；func[6]-读夹爪状态；
-        func[7]-读初始化状态；func[8]-读故障码；func[9]-读位置；func[10]-读速度；func[11]-读力矩; func[12]-旋转夹爪旋转圈数设置； 
-        func[13]-旋转夹爪旋转速度设置； func[14]-旋转夹爪旋转力矩设置； func[15]-读旋转夹爪状态；func[16]-读旋转夹爪初始化状态；
-        func[17]-读旋转夹爪圈数；func[18]-读旋转夹爪速度；func[19]-读旋转夹爪力矩；func[20]-多轴同步运动设置；func[21]-故障清除指令；
-        func[22]-单轴运行状态；func[23]-所有轴运行状态；
-    * @return  错误码
+    * @brief Establecer la habilitación de la función de control de movimiento de la pinza
+    * @param id Número de dispositivo de la pinza
+    * @param func func[0]-habilitación de la pinza; func[1]-inicialización de la pinza; func[2]-establecimiento de posición; func[3]-establecimiento de velocidad; func[4]-establecimiento de par; func[6]-lectura del estado de la pinza;
+        func[7]-lectura del estado de inicialización; func[8]-lectura del código de fallo; func[9]-lectura de posición; func[10]-lectura de velocidad; func[11]-lectura de par; func[12]-establecimiento del número de vueltas de la pinza rotativa; 
+        func[13]-establecimiento de la velocidad de rotación de la pinza rotativa; func[14]-establecimiento del par de rotación de la pinza rotativa; func[15]-lectura del estado de la pinza rotativa; func[16]-lectura del estado de inicialización de la pinza rotativa;
+        func[17]-lectura del número de vueltas de la pinza rotativa; func[18]-lectura de la velocidad de la pinza rotativa; func[19]-lectura del par de la pinza rotativa; func[20]-establecimiento del movimiento sincronizado multieje; func[21]-instrucción de borrado de fallos;
+        func[22]-estado de funcionamiento de un solo eje; func[23]-estado de funcionamiento de todos los ejes;
+    * @return  Código de error
     */
     errno_t SetAxleLuaGripperFunc(int id, int func[32]);
 
-获取启用夹爪动作控制功能
-++++++++++++++++++++++++++++++++++
+Obtener la habilitación de la función de control de movimiento de la pinza
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取启用夹爪动作控制功能
-    * @param id 夹爪设备编号
-    * @param func func[0]-夹爪使能；func[1]-夹爪初始化；func[2]-位置设置；func[3]-速度设置；func[4]-力矩设置；func[6]-读夹爪状态；
-        func[7]-读初始化状态；func[8]-读故障码；func[9]-读位置；func[10]-读速度；func[11]-读力矩; func[12]-旋转夹爪旋转圈数设置； 
-        func[13]-旋转夹爪旋转速度设置； func[14]-旋转夹爪旋转力矩设置； func[15]-读旋转夹爪状态；func[16]-读旋转夹爪初始化状态；
-        func[17]-读旋转夹爪圈数；func[18]-读旋转夹爪速度；func[19]-读旋转夹爪力矩；func[20]-多轴同步运动设置；func[21]-故障清除指令；
-        func[22]-单轴运行状态；func[23]-所有轴运行状态；
-    * @return  错误码
+    * @brief Obtener la habilitación de la función de control de movimiento de la pinza
+    * @param id Número de dispositivo de la pinza
+    * @param func func[0]-habilitación de la pinza; func[1]-inicialización de la pinza; func[2]-establecimiento de posición; func[3]-establecimiento de velocidad; func[4]-establecimiento de par; func[6]-lectura del estado de la pinza;
+        func[7]-lectura del estado de inicialización; func[8]-lectura del código de fallo; func[9]-lectura de posición; func[10]-lectura de velocidad; func[11]-lectura de par; func[12]-establecimiento del número de vueltas de la pinza rotativa; 
+        func[13]-establecimiento de la velocidad de rotación de la pinza rotativa; func[14]-establecimiento del par de rotación de la pinza rotativa; func[15]-lectura del estado de la pinza rotativa; func[16]-lectura del estado de inicialización de la pinza rotativa;
+        func[17]-lectura del número de vueltas de la pinza rotativa; func[18]-lectura de la velocidad de la pinza rotativa; func[19]-lectura del par de la pinza rotativa; func[20]-establecimiento del movimiento sincronizado multieje; func[21]-instrucción de borrado de fallos;
+        func[22]-estado de funcionamiento de un solo eje; func[23]-estado de funcionamiento de todos los ejes;
+    * @return  Código de error
     */
     errno_t GetAxleLuaGripperFunc(int id, int func[32]);
 
-机器人Ethercat从站文件写入
-++++++++++++++++++++++++++++++++++
+Escritura del archivo de esclavo Ethercat del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 机器人Ethercat从站文件写入
-    * @param type 从站文件类型，1-升级从站文件；2-升级从站配置文件
-    * @param slaveID 从站号
-    * @param fileName 上传文件名
-    * @return  错误码
+    * @brief Escritura del archivo de esclavo Ethercat del robot
+    * @param type Tipo de archivo de esclavo, 1-actualizar archivo de esclavo; 2-actualizar archivo de configuración de esclavo
+    * @param slaveID Número de esclavo
+    * @param fileName Nombre del archivo a cargar
+    * @return  Código de error
     */
     errno_t SlaveFileWrite(int type, int slaveID, std::string fileName);
 
-上传末端Lua开放协议文件
-++++++++++++++++++++++++++++++++++
+Cargar el archivo de protocolo abierto LUA del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 上传末端Lua开放协议文件
-    * @param filePath 本地lua文件路径名 ".../AXLE_LUA_End_DaHuan.lua"
-    * @return 错误码
+    * @brief Cargar el archivo de protocolo abierto LUA del extremo
+    * @param filePath Ruta y nombre del archivo lua local ".../AXLE_LUA_End_DaHuan.lua"
+    * @return Código de error
     */
     errno_t AxleLuaUpload(std::string filePath);
 
-机器人Ethercat从站进入boot模式
-++++++++++++++++++++++++++++++++++
+Entrada del esclavo Ethercat del robot en modo boot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 机器人Ethercat从站进入boot模式
-    * @return  错误码
+    * @brief Entrada del esclavo Ethercat del robot en modo boot
+    * @return  Código de error
     */
     errno_t SetSysServoBootMode();
 
-机器人末端LUA文件操作代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de operación del archivo LUA del extremo del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
@@ -1185,21 +1185,21 @@
         return 0;
     }
 
-获取SmartTool按钮状态
-++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado de los botones de SmartTool
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取SmartTool按钮状态
-    * @param [out] state SmartTool手柄按钮状态;(bit0:0-通信正常；1-通信掉线；bit1-撤销操作；bit2-清空程序；
-    bit3-A键；bit4-B键；bit5-C键；bit6-D键；bit7-E键；bit8-IO键；bit9-手自动；bit10开始)
-    * @return 错误码
+    * @brief Obtener el estado de los botones de SmartTool
+    * @param [out] state Estado de los botones del mango SmartTool;(bit0:0-comunicación normal; 1-comunicación interrumpida; bit1-deshacer operación; bit2-vaciar programa;
+    bit3-tecla A; bit4-tecla B; bit5-tecla C; bit6-tecla D; bit7-tecla E; bit8-tecla IO; bit9-manual/automático; bit10-iniciar)
+    * @return Código de error
     */
     errno_t GetSmarttoolBtnState(int& state);
     
-SmartTool按钮代码示例
+Ejemplo de código de botones de SmartTool
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
@@ -1225,54 +1225,54 @@ SmartTool按钮代码示例
       }
     }
 
-控制阵列式吸盘
+Control de la ventosa en matriz
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 控制阵列式吸盘
-    * @param [in] slaveID 从站号
-    * @param [in] len 长度
-    * @param [in] ctrlValue 控制值
-    * @return 错误码
+    * @brief Control de la ventosa en matriz
+    * @param [in] slaveID Número de esclavo
+    * @param [in] len Longitud
+    * @param [in] ctrlValue Valor de control
+    * @return Código de error
     */
     errno_t FRRobot::SetSuckerCtrl(uint8_t slaveID, uint8_t len, uint8_t ctrlValue[20]);
 
-获取阵列式吸盘状态
+Obtener el estado de la ventosa en matriz
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取阵列式吸盘状态
-    * @param [in] slaveID 从站号
-    * @param [out] state 吸附状态 0-释放物体 1-检测到工件吸附成功 2-没有吸附到物体 3-物体脱离
-    * @param [out] pressValue 当前真空度 单位kpa 
-    * @param [out] error 吸盘当前的错误码
-    * @return 错误码
+    * @brief Obtener el estado de la ventosa en matriz
+    * @param [in] slaveID Número de esclavo
+    * @param [out] state Estado de aspiración 0-liberar objeto 1-detección de aspiración de pieza correcta 2-no se ha aspirado ningún objeto 3-objeto desprendido
+    * @param [out] pressValue Vacío actual, unidad kpa 
+    * @param [out] error Código de error actual de la ventosa
+    * @return Código de error
     */
 	errno_t FRRobot::GetSuckerState(uint8_t slaveID, uint8_t* state, int* pressValue, int* error);
 
-等待吸盘状态
+Esperar el estado de la ventosa
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 等待吸盘状态
-    * @param [in] slaveID 从站号
-    * @param [in] state 吸附状态 0-释放物体 1-检测到工件吸附成功 2-没有吸附到物体 3-物体脱离
-    * @param [in] ms 等待最大时间
-    * @return 错误码
+    * @brief Esperar el estado de la ventosa
+    * @param [in] slaveID Número de esclavo
+    * @param [in] state Estado de aspiración 0-liberar objeto 1-detección de aspiración de pieza correcta 2-no se ha aspirado ningún objeto 3-objeto desprendido
+    * @param [in] ms Tiempo máximo de espera
+    * @return Código de error
     */
     errno_t FRRobot::WaitSuckerState(uint8_t slaveID, uint8_t state, int ms);
 
-阵列式吸盘控制指令代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de instrucciones de control de la ventosa en matriz
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
@@ -1294,7 +1294,7 @@ SmartTool按钮代码示例
             return;
         }
         robot.SetReConnectParam(true, 30000, 500);
-        //上传并加载开放协议文件
+        //Cargar y aplicar el archivo de protocolo abierto
         robot.OpenLuaUpload("E://项目/外设SDK/CtrlDev_sucker.lua");
         robot.Sleep(2000);
         robot.SetCtrlOpenLUAName(1, "CtrlDev_sucker.lua");
@@ -1302,11 +1302,11 @@ SmartTool按钮代码示例
         robot.LoadCtrlOpenLUA(1);
         robot.Sleep(1000);
 
-        //控制吸盘广播模式下，按照最大能力吸附
+        //Controlar la ventosa en modo difusión, aspirando según la capacidad máxima
         ctrl[0] = 1;
         robot.SetSuckerCtrl(0, 1, ctrl);
 
-        //循环监控1号吸盘和12号吸盘的状态
+        //Supervisar en bucle el estado de la ventosa 1 y la ventosa 12
         for (int i = 0; i < 100; i++)
         {
             robot.GetSuckerState(1, &state, &pressVlaue, &error);
@@ -1316,11 +1316,11 @@ SmartTool按钮代码示例
             robot.Sleep(100);
         }
 
-        //等待1号吸盘是否为吸附到物体的状态，等待时间100ms
+        //Esperar a que la ventosa 1 esté en estado de aspiración de objeto, tiempo de espera 100 ms
         int ret = robot.WaitSuckerState(1, 1, 100);
         printf("WaitSuckerState result is  %d\n", ret);
 
-        //单播模式关闭1号和12号吸盘
+        //Modo unidifusión para apagar las ventosas 1 y 12
         ctrl[0] = 3;
         robot.SetSuckerCtrl(1, 1, ctrl);
         robot.SetSuckerCtrl(12, 1, ctrl);
@@ -1328,127 +1328,127 @@ SmartTool按钮代码示例
         robot.CloseRPC();
     }
 
-上传外设开放协议LUA文件
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Cargar el archivo LUA de protocolo abierto de periféricos
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
 
 	/**
-	 * @brief 上传Lua文件
-	 * @param [in] filePath 本地lua文件路径名
-	 * @return 错误码
+	 * @brief Cargar archivo Lua
+	 * @param [in] filePath Ruta y nombre del archivo lua local
+	 * @return Código de error
 	 */
     errno_t OpenLuaUpload(std::string filePath);
 
-获取从站板卡参数
+Obtener los parámetros de la placa de esclavo
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  获取从站板卡参数
-    * @param  [out] type  0-Ethercat，1-CClink, 3-Ethercat, 4-EIP
-    * @param  [out] version  协议版本
-    * @param  [out] connState  0-未连接 1-已连接
-    * @return  错误码
+    * @brief  Obtener los parámetros de la placa de esclavo
+    * @param  [out] type  0-Ethercat, 1-CClink, 3-Ethercat, 4-EIP
+    * @param  [out] version  Versión del protocolo
+    * @param  [out] connState  0-no conectado 1-conectado
+    * @return  Código de error
     */
     errno_t GetFieldBusConfig(uint8_t* type, uint8_t* version, uint8_t* connState);
 
-写入从站DO
+Escribir DO del esclavo
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  写入从站DO
-    * @param  [in] DOIndex  DO编号
-    * @param  [in] wirteNum  写入的数量
-    * @param  [in] status[8] 写入的数值，最多写8个
-    * @return  错误码
+    * @brief  Escribir DO del esclavo
+    * @param  [in] DOIndex  Número de DO
+    * @param  [in] wirteNum  Cantidad a escribir
+    * @param  [in] status[8] Valores a escribir, máximo 8
+    * @return  Código de error
     */
     errno_t FieldBusSlaveWriteDO(uint8_t DOIndex, uint8_t wirteNum, uint8_t status[8]);
 
-写入从站AO
+Escribir AO del esclavo
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  写入从站AO
-    * @param  [in] AOIndex  AO编号
-    * @param  [in] wirteNum  写入的数量
-    * @param  [in] status[8] 写入的数值，最多写8个
-    * @return  错误码
+    * @brief  Escribir AO del esclavo
+    * @param  [in] AOIndex  Número de AO
+    * @param  [in] wirteNum  Cantidad a escribir
+    * @param  [in] status[8] Valores a escribir, máximo 8
+    * @return  Código de error
     */
     errno_t FieldBusSlaveWriteAO(uint8_t AOIndex, uint8_t wirteNum, double status[8]);
 
-读取从站DI
+Leer DI del esclavo
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  读取从站DI
-    * @param  [in] DOIndex  DI编号
-    * @param  [in] readeNum  读取的数量
-    * @param  [out] status[8] 读取到的数值，最多读8个
-    * @return  错误码
+    * @brief  Leer DI del esclavo
+    * @param  [in] DOIndex  Número de DI
+    * @param  [in] readeNum  Cantidad a leer
+    * @param  [out] status[8] Valores leídos, máximo 8
+    * @return  Código de error
     */
     errno_t FieldBusSlaveReadDI(uint8_t DOIndex, uint8_t readNum, uint8_t status[8]);
 
-读取从站AI
+Leer AI del esclavo
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  读取从站AI
-    * @param  [in] AOIndex  AI编号
-    * @param  [in] readeNum  读取的数量
-    * @param  [out] status[8] 读取到的数值，最多读8个
-    * @return  错误码
+    * @brief  Leer AI del esclavo
+    * @param  [in] AOIndex  Número de AI
+    * @param  [in] readeNum  Cantidad a leer
+    * @param  [out] status[8] Valores leídos, máximo 8
+    * @return  Código de error
     */
     errno_t FieldBusSlaveReadAI(uint8_t AIIndex, uint8_t readNum, double status[8]);
 
-等待扩展DI输入
+Esperar entrada DI extendida
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 等待扩展DI输入
-    * @param [in] DIIndex DI编号
-    * @param [in] status 0-低电平；1-高电平
-    * @param [in] waitMs 最大等待时间(ms)
-    * @return 错误码
+    * @brief Esperar entrada DI extendida
+    * @param [in] DIIndex Número de DI
+    * @param [in] status 0-nivel bajo; 1-nivel alto
+    * @param [in] waitMs Tiempo máximo de espera (ms)
+    * @return Código de error
     */
     errno_t FRRobot::FieldBusSlaveWaitDI(uint8_t DIIndex, bool status, int waitMs);
 
-等待扩展AI输入
+Esperar entrada AI extendida
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 等待扩展AI输入
-    * @param [in] AIIndex AI编号
-    * @param [in] waitType 0-大于；1-小于
-    * @param [in] value AI值
-    * @param [in] waitMs 最大等待时间(ms)
-    * @return 错误码
+    * @brief Esperar entrada AI extendida
+    * @param [in] AIIndex Número de AI
+    * @param [in] waitType 0-mayor que; 1-menor que
+    * @param [in] value Valor de AI
+    * @param [in] waitMs Tiempo máximo de espera (ms)
+    * @return Código de error
     */
     errno_t FRRobot::FieldBusSlaveWaitAI(uint8_t AIIndex, uint8_t waitType, double value, int waitMs);
 
-从站模式相关接口指令代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de instrucciones de interfaz relacionadas con el modo esclavo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
@@ -1470,7 +1470,7 @@ SmartTool按钮代码示例
             return;
         }
         robot.SetReConnectParam(true, 30000, 500);
-        //上传并加载开放协议文件
+        //Subir y cargar el archivo de protocolo abierto
         robot.OpenLuaUpload("E://项目/外设SDK/CtrlDev_field.lua");
         robot.Sleep(2000);
         robot.SetCtrlOpenLUAName(3, "CtrlDev_field.lua");
@@ -1478,21 +1478,21 @@ SmartTool按钮代码示例
         robot.LoadCtrlOpenLUA(3);
         robot.Sleep(8000);
 
-        //获取从站板卡的协议类型、软件版本、与PLC的连接状态
+        //Obtener el tipo de protocolo, la versión de software y el estado de conexión con el PLC de la placa esclava
         robot.GetFieldBusConfig(&type, &version, &connState);
         printf("type is %d, version is %d,connState is %d\n", type, version, connState);
 
-        //写入DO0 = 1、DO1 = 0、DO2 = 1
+        //Escribir DO0 = 1, DO1 = 0, DO2 = 1
         ctrl[0] = 0;
         ctrl[1] = 1;
         ctrl[2] = 1;
         robot.FieldBusSlaveWriteDO(0, 3, ctrl);
 
-        //写入AO2 = 0x1000
+        //Escribir AO2 = 0x1000
         ctrlAO[0] = 0x1005;
         robot.FieldBusSlaveWriteAO(2, 1, ctrlAO);
 
-        //循环监控DI0~DI3 AI0~AI2
+        //Monitorear cíclicamente DI0~DI3 AI0~AI2
         for (int i = 0; i < 100; i++)
         {
             robot.FieldBusSlaveReadDI(0, 4, DI);
@@ -1502,18 +1502,18 @@ SmartTool按钮代码示例
             robot.Sleep(10);
         }
 
-        //等待DI0是否为1，等待时间100ms，并打印结果
+        //Esperar si DI0 es 1, tiempo de espera 100ms, e imprimir el resultado
         int ret = robot.FieldBusSlaveWaitDI(0, 1, 100);
         printf("FieldBusSlaveWaitDI result is  %d\n", ret);
 
-        //等待AI0是否大于400，等待时间100ms，并打印结果
+        //Esperar si AI0 es mayor que 400, tiempo de espera 100ms, e imprimir el resultado
         ret = robot.FieldBusSlaveWaitAI(0,0,400.00,100);
         printf("FieldBusSlaveWaitAI result is  %d\n", ret);
 
         robot.CloseRPC();
     }
 
-激光外设打开关闭
+Encendido y apagado del periférico láser
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
@@ -1521,14 +1521,14 @@ SmartTool按钮代码示例
     :linenos:
 
     /**
-	 * @brief 激光外设打开关闭函数
-	 * @param [in] OnOff 0-关闭 1-打开
-	 * @param [in] weldId 焊缝ID 默认为0
-	 * @return 错误码
+	 * @brief Función de encendido y apagado del periférico láser
+	 * @param [in] OnOff 0-apagar 1-encender
+	 * @param [in] weldId ID de la soldadura, por defecto 0
+	 * @return Código de error
 	 */
 	errno_t LaserTrackingLaserOnOff(int OnOff,int weldId);
         
-激光跟踪开始结束
+Inicio y fin del seguimiento láser
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
@@ -1536,14 +1536,14 @@ SmartTool按钮代码示例
     :linenos:
 
     /**
-	 * @brief 激光跟踪开始结束函数
-	 * @param [in] OnOff 0-结束 1-开始
-	 * @param [in] coordId 激光外设工具坐标系编号
-	 * @return 错误码
+	 * @brief Función de inicio y fin del seguimiento láser
+	 * @param [in] OnOff 0-finalizar 1-iniciar
+	 * @param [in] coordId Número del sistema de coordenadas de la herramienta del periférico láser
+	 * @return Código de error
 	 */
  	errno_t LaserTrackingTrackOnOff(int OnOff, int coordId); 
             
-激光寻位开始-固定方向
+Inicio de búsqueda de posición láser - dirección fija
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
@@ -1551,35 +1551,35 @@ SmartTool按钮代码示例
     :linenos:
 
     /**
-    * @brief 激光寻位-固定方向
+    * @brief Búsqueda de posición láser - dirección fija
     * @param [in] direction 0-x+ 1-x- 2-y+ 3-y- 4-z+ 5-z-
-    * @param [in] vel 速度 单位%
-    * @param [in] distance 最大寻位距离 单位mm
-    * @param [in] distance 寻位超时时间 单位ms
-    * @param [in] posSensorNum 激光标定的工具坐标编号
-    * @return 错误码
+    * @param [in] vel Velocidad, unidad %
+    * @param [in] distance Distancia máxima de búsqueda de posición, unidad mm
+    * @param [in] distance Tiempo de espera máximo de búsqueda de posición, unidad ms
+    * @param [in] posSensorNum Número de coordenada de herramienta de calibración láser
+    * @return Código de error
     */
     errno_t LaserTrackingSearchStart_xyz(int direction, int vel, int distance, int timeout, int posSensorNum);
                 
-激光寻位开始-任意点方向
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Inicio de búsqueda de posición láser - dirección de punto arbitrario
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++
     :linenos:
 
     /**
-	 * @brief 激光寻位-任意方向
-	 * @param [in] directionPoint 寻位输入的点的xyz左边
-	 * @param [in] vel 速度 单位%
-	 * @param [in] distance 最大寻位距离 单位mm
-	 * @param [in] distance 寻位超时时间 单位ms
-	 * @param [in] posSensorNum 激光标定的工具坐标编号
-	 * @return 错误码
+	 * @brief Búsqueda de posición láser - dirección arbitraria
+	 * @param [in] directionPoint Coordenadas xyz del punto introducido para la búsqueda de posición
+	 * @param [in] vel Velocidad, unidad %
+	 * @param [in] distance Distancia máxima de búsqueda de posición, unidad mm
+	 * @param [in] distance Tiempo de espera máximo de búsqueda de posición, unidad ms
+	 * @param [in] posSensorNum Número de coordenada de herramienta de calibración láser
+	 * @return Código de error
 	 */
     errno_t LaserTrackingSearchStart_point(DescTran directionPoint, int vel, int distance, int timeout, int posSensorNum);
                     
-激光寻位结束
+Fin de búsqueda de posición láser
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
@@ -1587,12 +1587,12 @@ SmartTool按钮代码示例
     :linenos:
 
     /**
-	 * @brief 激光寻位结束
-	 * @return 错误码
+	 * @brief Fin de búsqueda de posición láser
+	 * @return Código de error
 	 */
     errno_t LaserTrackingSearchStop();
 
-激光网络参数配置
+Configuración de parámetros de red del láser
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
@@ -1600,28 +1600,28 @@ SmartTool按钮代码示例
     :linenos:
 
     /**
-	 * @brief 激光网络参数配置
-	 * @param [in] ip 激光外设的ip地址
-	 * @param [in] port 激光外设的端口号
-	 * @return 错误码
+	 * @brief Configuración de parámetros de red del láser
+	 * @param [in] ip Dirección IP del periférico láser
+	 * @param [in] port Número de puerto del periférico láser
+	 * @return Código de error
 	 */
     errno_t LaserTrackingSensorConfig(std::string ip, int port);
     
-激光外设采样周期配置
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configuración del período de muestreo del periférico láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 激光外设采样周期配置
-    * @param [in] period 激光外设采样周期 单位ms
-    * @return 错误码
+    * @brief Configuración del período de muestreo del periférico láser
+    * @param [in] period Período de muestreo del periférico láser, unidad ms
+    * @return Código de error
     */
     errno_t LaserTrackingSensorSamplePeriod(int period);
         
-激光外设驱动加载
+Carga del controlador del periférico láser
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
@@ -1629,13 +1629,13 @@ SmartTool按钮代码示例
     :linenos:
 
     /**
-	 * @brief 激光外设驱动加载
-	 * @param [in] type 激光外设驱动的协议类型 101-睿牛 102-创想 103-全视 104-同舟 105-奥太
-	 * @return 错误码
+	 * @brief Carga del controlador del periférico láser
+	 * @param [in] type Tipo de protocolo del controlador del periférico láser 101-Ruiniu 102-Chuangxiang 103-Quanshi 104-Tongzhou 105-Aotai
+	 * @return Código de error
 	 */
     errno_t LoadPosSensorDriver(int type);
             
-激光外设驱动卸载
+Descarga del controlador del periférico láser
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
@@ -1643,12 +1643,12 @@ SmartTool按钮代码示例
     :linenos:
 
     /**
-	 * @brief 激光外设驱动卸载
-	 * @return 错误码
+	 * @brief Descarga del controlador del periférico láser
+	 * @return Código de error
 	 */
     errno_t UnLoadPosSensorDriver();
                 
-激光焊缝轨迹记录
+Registro de trayectoria de soldadura láser
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
@@ -1656,14 +1656,14 @@ SmartTool按钮代码示例
     :linenos:
 
     /**
-    * @brief 激光焊缝轨迹记录
-    * @param [in] status 0-停止记录 1-实时跟踪  2-开始记录
-    * @param [in] delayTime 延时时间 单位ms
-    * @return 错误码
+    * @brief Registro de trayectoria de soldadura láser
+    * @param [in] status 0-detener registro 1-seguimiento en tiempo real  2-iniciar registro
+    * @param [in] delayTime Tiempo de retardo, unidad ms
+    * @return Código de error
     */
     errno_t LaserSensorRecord1(int status, int delayTime); 
                     
-激光焊缝轨迹复现
+Reproducción de trayectoria de soldadura láser
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
@@ -1671,14 +1671,14 @@ SmartTool按钮代码示例
     :linenos:
 
     /**
-	 * @brief 激光焊缝轨迹复现
-	 * @param [in] delayTime 延时时间 单位ms
-	 * @param [in] speed 速度 单位%
-	 * @return 错误码
+	 * @brief Reproducción de trayectoria de soldadura láser
+	 * @param [in] delayTime Tiempo de retardo, unidad ms
+	 * @param [in] speed Velocidad, unidad %
+	 * @return Código de error
 	 */
     errno_t LaserSensorReplay(int delayTime, double speed);
                         
-激光跟踪复现
+Reproducción de seguimiento láser
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
@@ -1686,12 +1686,12 @@ SmartTool按钮代码示例
     :linenos:
 
     /**
-	 * @brief 激光跟踪复现
-	 * @return 错误码
+	 * @brief Reproducción de seguimiento láser
+	 * @return Código de error
 	 */
     errno_t MoveLTR();
                             
-激光焊缝轨迹记录及复现
+Registro y reproducción de trayectoria de soldadura láser
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
@@ -1699,21 +1699,21 @@ SmartTool按钮代码示例
     :linenos:
 
     /**
-    * @brief 激光焊缝轨迹记录及复现
-    * @param [in] delayMode 模式 0-延时时间 1-延时距离
-    * @param [in] delayTime 延时时间 单位ms
-    * @param [in] delayDisExAxisNum 扩展轴编号
-    * @param [in] delayDis 延时距离 单位mm
-    * @param [in] sensitivePara 补偿灵敏系数
-    * @param [in] trackMode 定点跟踪类型。0-扩展轴异步运动；1-机器人
-    * @param [in] triggerMode 定点跟踪触发方式。0-跟踪时长；1-IO
-    * @param [in] runTime 机器人定点跟踪时长(s)
-    * @param [in] speed 速度 单位%
-    * @return 错误码
+    * @brief Registro y reproducción de trayectoria de soldadura láser
+    * @param [in] delayMode Modo 0-tiempo de retardo 1-distancia de retardo
+    * @param [in] delayTime Tiempo de retardo, unidad ms
+    * @param [in] delayDisExAxisNum Número de eje extendido
+    * @param [in] delayDis Distancia de retardo, unidad mm
+    * @param [in] sensitivePara Coeficiente de sensibilidad de compensación
+    * @param [in] trackMode Tipo de seguimiento de punto fijo. 0-movimiento asíncrono del eje extendido; 1-robot
+    * @param [in] triggerMode Modo de disparo del seguimiento de punto fijo. 0-duración del seguimiento; 1-IO
+    * @param [in] runTime Duración del seguimiento de punto fijo del robot (s)
+    * @param [in] speed Velocidad, unidad %
+    * @return Código de error
     */
     errno_t LaserSensorRecordandReplay(int delayMode, int delayTime, int delayDisExAxisNum, double delayDis, double sensitivePara, int trackMode, int triggerMode, double runTime, double speed);
                                 
-运动到焊缝记录的起点
+Moverse al punto de inicio del registro de soldadura
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
@@ -1721,14 +1721,14 @@ SmartTool按钮代码示例
     :linenos:
 
     /**
-    * @brief 运动到焊缝记录的起点
+    * @brief Moverse al punto de inicio del registro de soldadura
     * @param [in] moveType 0-moveJ 1-moveL
-    * @param [in] ovl 速度 单位%
-    * @return 错误码
+    * @param [in] ovl Velocidad, unidad %
+    * @return Código de error
     */
     errno_t MoveToLaserRecordStart(int moveType, double ovl);
                                     
-运动到焊缝记录的终点
+Moverse al punto final del registro de soldadura
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
@@ -1736,14 +1736,14 @@ SmartTool按钮代码示例
     :linenos:
 
     /**
-    * @brief 运动到焊缝记录的终点
+    * @brief Moverse al punto final del registro de soldadura
     * @param [in] moveType 0-moveJ 1-moveL
-    * @param [in] ovl 速度 单位%
-    * @return 错误码
+    * @param [in] ovl Velocidad, unidad %
+    * @return Código de error
     */
     errno_t MoveToLaserRecordEnd(int moveType, double ovl);
                                         
-运动到激光传感器寻位点
+Moverse al punto de búsqueda de posición del sensor láser
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
@@ -1751,39 +1751,39 @@ SmartTool按钮代码示例
     :linenos:
 
     /**
-    * @brief 运动到激光传感器寻位点
-    * @param [in] moveFlag 运动类型：0-PTP；1-LIN
-    * @param [in] ovl 速度缩放因子，0-100
-    * @param [in] dataFlag 焊缝缓存数据选择：0-执行规划数据；1-执行记录数据
-    * @param [in] plateType 板材类型：0-波纹板；1-瓦楞板；2-围栏板；3-油桶；4-波纹甲壳钢
-    * @param [in] trackOffectType 激光传感器偏移类型：0-不偏移；1-基坐标系偏移；2-工具坐标系偏移；3-激光传感器原始数据偏移
-    * @param [in] offset 偏移量
-    * @return 错误码
+    * @brief Moverse al punto de búsqueda de posición del sensor láser
+    * @param [in] moveFlag Tipo de movimiento: 0-PTP; 1-LIN
+    * @param [in] ovl Factor de escala de velocidad, 0-100
+    * @param [in] dataFlag Selección de datos de caché de soldadura: 0-ejecutar datos de planificación; 1-ejecutar datos de registro
+    * @param [in] plateType Tipo de placa: 0-placa ondulada; 1-placa corrugada; 2-placa de cerca; 3-barril de aceite; 4-acero ondulado
+    * @param [in] trackOffectType Tipo de desplazamiento del sensor láser: 0-sin desplazamiento; 1-desplazamiento del sistema de coordenadas base; 2-desplazamiento del sistema de coordenadas de herramienta; 3-desplazamiento de datos originales del sensor láser
+    * @param [in] offset Cantidad de desplazamiento
+    * @return Código de error
     */
     errno_t MoveToLaserSeamPos(int moveFlag, double ovl, int dataFlag, int plateType, int trackOffectType, DescPose offset);
                                             
-获取激光传感器寻位点坐标
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener las coordenadas del punto de búsqueda de posición del sensor láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取激光传感器寻位点坐标信息
-    * @param [in] trackOffectType 激光传感器偏移类型：0-不偏移；1-基坐标系偏移；2-工具坐标系偏移；3-激光传感器原始数据偏移
-    * @param [in] offset 偏移量
-    * @param [out] jPos 关节位置[°]
-    * @param [out] descPos 笛卡尔位置[mm]
-    * @param [out] tool 工具坐标系
-    * @param [out] user 工件坐标系
-    * @param [out] exaxis 扩展轴位置[mm]
-    * @return 错误码
+    * @brief Obtener la información de coordenadas del punto de búsqueda de posición del sensor láser
+    * @param [in] trackOffectType Tipo de desplazamiento del sensor láser: 0-sin desplazamiento; 1-desplazamiento del sistema de coordenadas base; 2-desplazamiento del sistema de coordenadas de herramienta; 3-desplazamiento de datos originales del sensor láser
+    * @param [in] offset Cantidad de desplazamiento
+    * @param [out] jPos Posición de articulaciones [°]
+    * @param [out] descPos Posición cartesiana [mm]
+    * @param [out] tool Sistema de coordenadas de herramienta
+    * @param [out] user Sistema de coordenadas de la pieza
+    * @param [out] exaxis Posición del eje extendido [mm]
+    * @return Código de error
     */
     errno_t GetLaserSeamPos(int trackOffectType, DescPose offset, JointPos& jPos, DescPose& descPos, int& tool, int& user, ExaxisPos& exaxis); 
                                                 
-激光外设传感器参数配置及调试代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración y depuración de parámetros del sensor periférico láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++
@@ -1806,22 +1806,22 @@ SmartTool按钮代码示例
             return;
         }
         robot.SetReConnectParam(true, 30000, 500);
-        //设置IP地址和端口号
+        //Establecer la dirección IP y el número de puerto
         robot.LaserTrackingSensorConfig("192.168.58.20", 5020);
-        //设置采样周期
+        //Establecer el período de muestreo
         robot.LaserTrackingSensorSamplePeriod(20);
-        //加载驱动
+        //Cargar el controlador
         robot.LoadPosSensorDriver(101);
-        //关闭激光外设
+        //Apagar el periférico láser
         robot.LaserTrackingLaserOnOff(0,0);
         robot.Sleep(3000);
-        //打开激光外设
+        //Encender el periférico láser
         robot.LaserTrackingLaserOnOff(1, 0);
         robot.CloseRPC();
     }
                                                     
-激光轨迹扫描及轨迹复现的代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de escaneo de trayectoria láser y reproducción de trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++
@@ -1845,7 +1845,7 @@ SmartTool按钮代码示例
         }
         robot.SetReConnectParam(true, 30000, 500);
 
-        //上传并加载开放协议文件
+        //Subir y cargar el archivo de protocolo abierto
         robot.OpenLuaUpload("E://openlua/CtrlDev_laser_ruiniu-0117.lua");
         robot.Sleep(2000);
         robot.SetCtrlOpenLUAName(0, "CtrlDev_laser_ruiniu-0117.lua");
@@ -1855,35 +1855,35 @@ SmartTool按钮代码示例
         int cnt = 1;
         while(cnt<31)
         { 
-            //运动到扫描的起点
+            //Moverse al punto de inicio del escaneo
             JointPos startjointPos(56.205, -117.951, 141.872, -118.149, -94.217, -122.176);
             DescPose startdescPose(-97.552, -282.855, 26.675, 174.182, -1.338, -91.707);
             ExaxisPos exaxisPos(0, 0, 0, 0);
             DescPose offdese(0, 0, 0, 0, 0, 0);
             robot.MoveL(&startjointPos, &startdescPose, 1, 0, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese, 1, 1);
-            //开始轨迹记录
+            //Iniciar el registro de trayectoria
             robot.LaserSensorRecord1(2, 10);
-            //运动到需要记录的终点
+            //Moverse al punto final que se necesita registrar
             JointPos endjointPos(68.809, -87.100, 121.120, -127.233, -95.038, -109.555);
             DescPose enddescPose(-103.555, -464.234, 13.076, 174.179, -1.344, -91.709);
             robot.MoveL(&endjointPos, &enddescPose, 1, 0, 30, 100, 100, -1, &exaxisPos, 0, 0, &offdese, 1, 1);
-            //停止记录
+            //Detener el registro
             robot.LaserSensorRecord1(0, 10);
-            //运动到记录的焊缝起点
+            //Moverse al punto de inicio de la soldadura registrada
             robot.MoveToLaserRecordStart(1, 30);
-            //开始轨迹复现
+            //Iniciar la reproducción de trayectoria
             robot.LaserSensorReplay(10, 100);
             robot.MoveLTR();
-            //停止轨迹复现
+            //Detener la reproducción de trayectoria
             robot.LaserSensorRecord1(0, 10);
-            printf("激光扫描+轨迹复现稳定性测试第%d次\n", cnt);
+            printf("Prueba de estabilidad de escaneo láser + reproducción de trayectoria, iteración n.º %d\n", cnt);
             cnt++;
         }
         robot.CloseRPC();
     }
                                                         
-激光寻位及实时跟踪的代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de búsqueda de posición láser y seguimiento en tiempo real
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++
@@ -1908,7 +1908,7 @@ SmartTool按钮代码示例
         }
         robot.SetReConnectParam(true, 30000, 500);
 
-        //上传并加载开放协议文件
+        //Subir y cargar el archivo de protocolo abierto
         robot.OpenLuaUpload("E://openlua/CtrlDev_laser_ruiniu-0117.lua");
         robot.Sleep(2000);
         robot.SetCtrlOpenLUAName(0, "CtrlDev_laser_ruiniu-0117.lua");
@@ -1918,7 +1918,7 @@ SmartTool按钮代码示例
         int cnt = 1;
         while (cnt < 2)
         {
-            //运动到需要寻位的起始点
+            //Moverse al punto de inicio que necesita búsqueda de posición
             JointPos startjointPos(58.337, -119.628, 146.037, -116.358, -92.224, -117.654);
             DescPose startdescPose(-53.375, -255.363, 0.919, 178.054, 1.077, -94.026);
             ExaxisPos exaxisPos(0, 0, 0, 0);
@@ -1926,20 +1926,20 @@ SmartTool按钮代码示例
             DescTran directionPoint;
             robot.MoveL(&startjointPos, &startdescPose, 1, 0, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese, 1, 1);
 
-            //沿着-y方向开始寻位
+            //Iniciar la búsqueda de posición a lo largo de la dirección -y
             int ret = robot.LaserTrackingSearchStart_xyz(3, 100, 300, 1000, 2);
             robot.LaserTrackingSearchStop();
-            //如果寻位成功
+            //Si la búsqueda de posición es exitosa
             if (ret == 0)
             {
-                //运动到寻位点
+                //Moverse al punto de búsqueda de posición
                 robot.MoveToLaserSeamPos(1, 30, 0, 0, 0, offdese);
-                //开始沿着寻位点进行激光跟踪
+                //Iniciar el seguimiento láser a lo largo del punto de búsqueda de posición
                 robot.LaserTrackingTrackOnOff(1, 2);
                 JointPos endjointPos(70.580, -90.918, 126.593, -125.154, -92.162, -105.403);
                 DescPose enddescPose(-53.375, -419.020, 0.920, 178.054, 1.076, -94.026);
                 robot.MoveL(&endjointPos, &enddescPose, 1, 0, 20, 100, 100, -1, &exaxisPos, 0, 0, &offdese, 1, 1);
-                //停止跟踪
+                //Detener el seguimiento
                 robot.LaserTrackingTrackOnOff(0, 2);
 
             }
@@ -1948,8 +1948,8 @@ SmartTool按钮代码示例
         robot.CloseRPC();
     }
                                                             
-扩展轴与机器人同步进行激光跟踪的代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de seguimiento láser sincronizado entre el eje extendido y el robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++
@@ -1984,12 +1984,12 @@ SmartTool按钮代码示例
         int cnt = 1;
         while (cnt < 31)
         {
-            //运动到需要寻位的起始点
+            //Moverse al punto de inicio que necesita búsqueda de posición
             JointPos startjointPos(58.337, -119.628, 146.037, -116.358, -92.224, -117.654);
             DescPose startdescPose(-53.375, -255.363, 0.919, 178.054, 1.077, -94.026);
             robot.ExtAxisSyncMoveJ(startjointPos, startdescPose, 1, 0, 100, 100, 100, startexaxisPos, -1, 0, offdese);
 
-            //沿着-y方向开始寻位
+            //Iniciar la búsqueda de posición a lo largo de la dirección -y
             int ret = robot.LaserTrackingSearchStart_xyz(3, 100, 300, 1000, 2);
             robot.LaserTrackingSearchStop();
             int tool = 0;
@@ -1997,27 +1997,27 @@ SmartTool按钮代码示例
             robot.GetLaserSeamPos(0, offdese, seamjointPos, seamdescPose, tool, user, startexaxisPos);
             printf("%f, %f, %f,%f, %f, %f,%f, %f, %f,%f, %f, %f\n", seamjointPos.jPos[0], seamjointPos.jPos[1], seamjointPos.jPos[2], seamjointPos.jPos[3], seamjointPos.jPos[4], seamjointPos.jPos[5], seamdescPose.tran.x, seamdescPose.tran.y, seamdescPose.tran.z, seamdescPose.rpy.rx, seamdescPose.rpy.ry, seamdescPose.rpy.rz);
 
-            //如果寻位成功
+            //Si la búsqueda de posición es exitosa
             if (ret == 0)
             {
-                //机器人和扩展轴同步运动到寻位点
+                //El robot y el eje extendido se mueven sincronizadamente al punto de búsqueda de posición
                 robot.ExtAxisSyncMoveJ(seamjointPos, seamdescPose, 1, 0, 100, 100, 100, seamexaxisPos, -1, 0, offdese);
 
-                //开始沿着寻位点进行激光跟踪并与扩展轴同步运动
+                //Iniciar el seguimiento láser a lo largo del punto de búsqueda de posición y el movimiento sincronizado con el eje extendido
                 robot.LaserTrackingTrackOnOff(1, 2);
                 JointPos endjointPos(70.580, -90.918, 126.593, -125.154, -92.162, -105.403);
                 DescPose enddescPose(-53.375, -419.020, 0.920, 178.054, 1.076, -94.026);
                 robot.ExtAxisSyncMoveL(endjointPos, enddescPose, 1, 0, 20, 100, 100, -1, endexaxisPos, 0, offdese);;
-                //停止跟踪
+                //Detener el seguimiento
                 robot.LaserTrackingTrackOnOff(0, 2);
             }
             cnt++;
-            printf("扩展轴与机器人同步进行激光跟踪  第%d次\n", cnt);
+            printf("Seguimiento láser sincronizado entre el eje extendido y el robot, iteración n.º %d\n", cnt);
         }
         robot.CloseRPC();
     } 
                                                             
-激光记录复现 + 扩展轴异步运动 + 定点摆动代码示例
+Ejemplo de código de registro y reproducción láser + movimiento asíncrono del eje extendido + oscilación de punto fijo
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
@@ -2091,7 +2091,7 @@ SmartTool按钮代码示例
     robot.Sleep(1000);
     }
                                                             
-激光记录复现 + 普通摆动代码示例
+Ejemplo de código de registro y reproducción láser + oscilación normal
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
@@ -2170,37 +2170,37 @@ SmartTool按钮代码示例
     robot.Sleep(1000);
     }
                                                             
-末端透传功能打开关闭
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Apertura y cierre de la función de transmisión transparente del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 末端透传功能打开关闭
-    * @param [in] 使能，0-关闭，1-开启
-    * @return 错误码
+    * @brief Apertura y cierre de la función de transmisión transparente del extremo
+    * @param [in]  Habilitación, 0-cerrar, 1-abrir
+    * @return Código de error
     */
     errno_t SetAxleGenComEnable(int mode);
                                                             
-末端透传功能非周期数据收发
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Envío y recepción de datos no periódicos de la función de transmisión transparente del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
     
     /**
-    * @brief 末端透传功能非周期数据收发
-    * @param [in] len_snd 发送的长度
-    * @param [in] sndBuff 发送数据
-    * @param [in] len_rcv 选择接受的长度
-    * @param [out] rcvBuff 应答的数据
-    * @return 错误码
+    * @brief Envío y recepción de datos no periódicos de la función de transmisión transparente del extremo
+    * @param [in] len_snd Longitud de envío
+    * @param [in] sndBuff Datos de envío
+    * @param [in] len_rcv Longitud de recepción seleccionada
+    * @param [out] rcvBuff Datos de respuesta
+    * @return Código de error
     */
     errno_t SndRcvAxleGenComCmdData(int lenSnd, int sndBuff[130], int lenRcv, int rcvData[130]);
                                                                 
-基于末端透传功能倍益康艾灸头非周期数据通信代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de comunicación de datos no periódicos del cabezal de moxibustión Beiyikang basado en la función de transmisión transparente del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
@@ -2231,12 +2231,12 @@ SmartTool按钮代码示例
       DescPose p2Desc(368.003, -377.848, 260.211, 178.715, 2.823, -131.465);
       ExaxisPos exaxisPos(0, 0, 0, 0);
       DescPose offdese(0, 0, 0, 0, 0, 0);
-      //开启末端透传功能
+      //Activar la función de transmisión transparente del extremo
       robot.SetAxleGenComEnable(1);
       robot.SetAxleLuaEnable(1);
       while (cnt <= 10000)
       {
-        //读取版本号
+        //Leer el número de versión
         ret = robot.SndRcvAxleGenComCmdData(5, version, 10, rcvdata);
         printf(" hard version : %d,hard code:%d, soft version:%d %d, soft code:%d \n", rcvdata[4], rcvdata[5], rcvdata[6] ,rcvdata[7], rcvdata[8]);
         if (ret != 0)
@@ -2244,16 +2244,16 @@ SmartTool按钮代码示例
           break;
         }
         robot.Sleep(1000);
-        //读取艾灸头在位状态
+        //Leer el estado de presencia del cabezal de moxibustión
         ret = robot.SndRcvAxleGenComCmdData(6, state, 6, rcvdata);
         printf(" state : %d \n", rcvdata[4]);
         robot.Sleep(1000);
-        //开启艾灸头激光
+        //Encender el láser del cabezal de moxibustión
         ret = robot.SndRcvAxleGenComCmdData(6, led_on, 6, rcvdata);
         printf("led on rcv data is: %d, %d, %d, %d, %d, %d  \n", rcvdata[0], rcvdata[1], rcvdata[2], rcvdata[3], rcvdata[4], rcvdata[5]);
         robot.MoveJ(&p1Joint, &p1Desc, 0, 0, 100, 100, 100, &exaxisPos, -1, 0, &offdese);
         robot.Sleep(4000);
-        //关闭艾灸头激光
+        //Apagar el láser del cabezal de moxibustión
         ret = robot.SndRcvAxleGenComCmdData(6, led_off, 6, rcvdata);
         printf("led off rcv data is: %d, %d, %d, %d, %d, %d \n", rcvdata[0], rcvdata[1], rcvdata[2], rcvdata[3], rcvdata[4], rcvdata[5]);
         robot.MoveJ(&p2Joint, &p2Desc, 0, 0, 100, 100, 100, &exaxisPos, -1, 0, &offdese);
@@ -2264,47 +2264,47 @@ SmartTool按钮代码示例
       robot.CloseRPC();
     }
 
-下载开放协议Lua文件
+Descargar archivo Lua de protocolo abierto
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 下载开放协议Lua文件
-    * @param [in] fileName 开放协议文件名称“CtrlDev_XXX.lua”
-    * @param [in] savePath 开放协议保存文件路径
-    * @return 错误码
+    * @brief Descargar archivo Lua de protocolo abierto
+    * @param [in] fileName Nombre del archivo de protocolo abierto "CtrlDev_XXX.lua"
+    * @param [in] savePath Ruta de guardado del protocolo abierto
+    * @return Código de error
     */
     errno_t OpenLuaDownload(std::string fileName, std::string savePath);
     
-删除开放协议Lua文件
+Eliminar archivo Lua de protocolo abierto
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 删除开放协议Lua文件
-    * @param [in] fileName 要删除的开放协议lua文件名“CtrlDev_XXX.lua”
-    * @return 错误码
+    * @brief Eliminar archivo Lua de protocolo abierto
+    * @param [in] fileName Nombre del archivo lua de protocolo abierto a eliminar "CtrlDev_XXX.lua"
+    * @return Código de error
     */
     errno_t OpenLuaDelete(std::string fileName);
         
-删除所有开放协议Lua文件
+Eliminar todos los archivos Lua de protocolo abierto
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 删除所有开放协议Lua文件
-    * @return 错误码
+    * @brief Eliminar todos los archivos Lua de protocolo abierto
+    * @return Código de error
     */
     errno_t AllOpenLuaDelete();
 
-控制器外设开放协议上传下载删除代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de carga, descarga y eliminación del protocolo abierto de periféricos del controlador
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
@@ -2350,79 +2350,79 @@ SmartTool按钮代码示例
         return 0;
     }
     
-控制灵巧手运动
+Controlar el movimiento de la mano diestra
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 控制灵巧手运动
-    * @param [in] idstart 起始从站号
-    * @param [in] slaveNum 数量
-    * @param [in] pos 位置数组，长度16，范围(-360~360)
-    * @param [in] speed 速度百分比数组，长度16，范围[0~100]
-    * @param [in] force 力矩百分比数组，长度16，范围[0~100]
-    * @param [in] max_time 最大等待时间，范围[0~30000]，单位ms
-    * @return 错误码，成功返回0
+    * @brief Controlar el movimiento de la mano diestra
+    * @param [in] idstart Número de esclavo inicial
+    * @param [in] slaveNum Cantidad
+    * @param [in] pos Matriz de posiciones, longitud 16, rango (-360~360)
+    * @param [in] speed Matriz de porcentaje de velocidad, longitud 16, rango [0~100]
+    * @param [in] force Matriz de porcentaje de par, longitud 16, rango [0~100]
+    * @param [in] max_time Tiempo máximo de espera, rango [0~30000], unidad ms
+    * @return Código de error, devuelve 0 en caso de éxito
     */
     errno_t SetDexterousHandsMove(int idstart, int slaveNum, double pos[16], int speed[16], int force[16], int max_time);
         
-控制灵巧手复位激活
+Controlar la activación de reinicio de la mano diestra
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 控制灵巧手复位激活
-    * @param [in] id 从站号
-    * @param [in] act 0-复位 1-激活
-    * @return 错误码，成功返回0
+    * @brief Controlar la activación de reinicio de la mano diestra
+    * @param [in] id Número de esclavo
+    * @param [in] act 0-reiniciar 1-activar
+    * @return Código de error, devuelve 0 en caso de éxito
     */
     errno_t SetDexterousHandsAct(int id, int act);
             
-清除灵巧手错误
+Borrar errores de la mano diestra
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 清除灵巧手错误
-    * @return 错误码，成功返回0
+    * @brief Borrar errores de la mano diestra
+    * @return Código de error, devuelve 0 en caso de éxito
     */
     errno_t ClearDexterousHandsError();
                 
-设置启用灵巧手动作控制功能
+Establecer la habilitación de la función de control de acciones de la mano diestra
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置启用灵巧手动作控制功能
-    * @param [in] id 灵巧手设备编号
-    * @param [in] func 0-夹持触发、1-夹爪初始化、2-位置设置、3-速度设置、4-力矩设置、6-读夹爪状态、7-读初始化状态、8-读故障码、9-读位置、10-读速度、11-读力矩、12-旋转圈数设置、13-旋转速度设置、14-旋转力矩设置、15-读旋转夹爪状态、16-读旋转初始化状态、17-读旋转圈数、18-读旋转速度、19-读旋转力矩、20-多轴同步运动设置、21-故障清除指令、22-单轴运行状态、23-所有轴运行状态
-    * @return 错误码
+    * @brief Establecer la habilitación de la función de control de acciones de la mano diestra
+    * @param [in] id Número del dispositivo de mano diestra
+    * @param [in] func 0-disparo de agarre, 1-inicialización de pinza, 2-configuración de posición, 3-configuración de velocidad, 4-configuración de par, 6-leer estado de pinza, 7-leer estado de inicialización, 8-leer código de fallo, 9-leer posición, 10-leer velocidad, 11-leer par, 12-configuración de vueltas de rotación, 13-configuración de velocidad de rotación, 14-configuración de par de rotación, 15-leer estado de pinza de rotación, 16-leer estado de inicialización de rotación, 17-leer vueltas de rotación, 18-leer velocidad de rotación, 19-leer par de rotación, 20-configuración de movimiento síncrono multieje, 21-instrucción de borrado de fallos, 22-estado de funcionamiento de eje único, 23-estado de funcionamiento de todos los ejes
+    * @return Código de error
     */
     errno_t SetDexterousHandsFunc(int id, int func[32]);
                     
-获取启用灵巧手动作控制功能
+Obtener la habilitación de la función de control de acciones de la mano diestra
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取启用灵巧手动作控制功能
-    * @param [in] id 灵巧手设备编号
-    * @param [out] func 0-夹持触发、1-夹爪初始化、2-位置设置、3-速度设置、4-力矩设置、6-读夹爪状态、7-读初始化状态、8-读故障码、9-读位置、10-读速度、11-读力矩、12-旋转圈数设置、13-旋转速度设置、14-旋转力矩设置、15-读旋转夹爪状态、16-读旋转初始化状态、17-读旋转圈数、18-读旋转速度、19-读旋转力矩、20-多轴同步运动设置、21-故障清除指令、22-单轴运行状态、23-所有轴运行状态
-    * @return 错误码
+    * @brief Obtener la habilitación de la función de control de acciones de la mano diestra
+    * @param [in] id Número del dispositivo de mano diestra
+    * @param [out] func 0-disparo de agarre, 1-inicialización de pinza, 2-configuración de posición, 3-configuración de velocidad, 4-configuración de par, 6-leer estado de pinza, 7-leer estado de inicialización, 8-leer código de fallo, 9-leer posición, 10-leer velocidad, 11-leer par, 12-configuración de vueltas de rotación, 13-configuración de velocidad de rotación, 14-configuración de par de rotación, 15-leer estado de pinza de rotación, 16-leer estado de inicialización de rotación, 17-leer vueltas de rotación, 18-leer velocidad de rotación, 19-leer par de rotación, 20-configuración de movimiento síncrono multieje, 21-instrucción de borrado de fallos, 22-estado de funcionamiento de eje único, 23-estado de funcionamiento de todos los ejes
+    * @return Código de error
     */
     errno_t GetDexterousHandsFunc(int id, int func[32]);
                         
-末端灵巧手配置及运动代码示例
+Ejemplo de código de configuración y movimiento de la mano diestra del extremo
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
@@ -2440,44 +2440,44 @@ SmartTool按钮代码示例
         return -1;
     }
     robot.SetReConnectParam(true, 30000, 500);
-    int id = 1;        // 从站号
-    int slaveNum = 4;     // 控制4个手指
-    int max_time = 8000;   // 最大等待时间 8秒
-    int speed[16] = {0};   // 速度数组，全0表示使用默认速度
-    int force[16] = {0};   // 力矩数组
-    // 初始化力矩数组：前4个手指设为50%，其余为0（通过Move指令下发数值）
+    int id = 1;        // Número de esclavo
+    int slaveNum = 4;     // Controlar 4 dedos
+    int max_time = 8000;   // Tiempo máximo de espera 8 segundos
+    int speed[16] = {0};   // Matriz de velocidad, todo 0 significa usar la velocidad predeterminada
+    int force[16] = {0};   // Matriz de par
+    // Inicializar la matriz de par: los primeros 4 dedos se establecen al 50%, el resto a 0 (enviar valores mediante la instrucción Move)
     for (int i = 0; i < 16; i++)
     {
         force[i] = (i < 4) ? 50 : 0;
     }
-    // 辅助函数：设置位置数组（前4个手指有效）
+    // Función auxiliar: establecer la matriz de posiciones (los primeros 4 dedos son válidos)
     double pos[16] = {0.0};
     JointPos j1(-91.876, -85.920, 109.279, -86.239, -96.664, -28.563);
     JointPos j2(-40.954, -85.920, 109.279, -86.239, -96.664, -28.563);
     ExaxisPos epos(0, 0, 0, 0);
     DescPose offset_pos(0, 0, 0, 0, 0, 0);
-    printf("===== 灵巧手完整功能测试开始 =====\n");
-    // 1. 清除错误
+    printf("===== Inicio de la prueba completa de funciones de la mano diestra =====\n");
+    // 1. Borrar errores
     int ret = robot.ClearDexterousHandsError();
     printf("ClearDexterousHandsError rtn %d\n", ret);
-    // ========== 2. 设置功能开关 ==========
+    // ========== 2. Establecer interruptores de funciones ==========
     int setFunc[32] = {0};
-    setFunc[2] = 1;  // 启用位置设置功能
-    setFunc[4] = 1;  // 启用力矩设置功能
-    setFunc[9] = 1;  // 读位置
-    setFunc[10] = 1;  // 读力矩
-    setFunc[11] = 1;  // 读状态
-    setFunc[22] = 1;  // 单轴运动状态
+    setFunc[2] = 1;  // Habilitar la función de configuración de posición
+    setFunc[4] = 1;  // Habilitar la función de configuración de par
+    setFunc[9] = 1;  // Leer posición
+    setFunc[10] = 1;  // Leer par
+    setFunc[11] = 1;  // Leer estado
+    setFunc[22] = 1;  // Estado de movimiento de eje único
     ret = robot.SetDexterousHandsFunc(id, setFunc);
-    printf("SetDexterousHandsFunc(使能+初始化+位置/速度/力矩功能启用) rtn %d\n", ret);
-    // ========== 3. 读取功能状态（验证设置是否生效） ==========
-    int getFunc[32] = {0}; // GetDexterousHandsFunc 返回32个整数
+    printf("SetDexterousHandsFunc(habilitación+inicialización+funciones de posición/velocidad/par habilitadas) rtn %d\n", ret);
+    // ========== 3. Leer el estado de las funciones (verificar si la configuración ha surtido efecto) ==========
+    int getFunc[32] = {0}; // GetDexterousHandsFunc devuelve 32 enteros
     ret = robot.GetDexterousHandsFunc(id, getFunc);
     printf("GetDexterousHandsFunc rtn %d\n", ret);
     if (ret == 0)
     {
-        // 打印全部32个数值
-        printf("GetDexterousHandsFunc 返回的全部32个数值:");
+        // Imprimir los 32 valores completos
+        printf("GetDexterousHandsFunc devuelve los 32 valores completos:");
         for (int i = 0; i < 32; i++)
         {
         printf(" [%d]={%d}", i, getFunc[i]);
@@ -2491,25 +2491,25 @@ SmartTool按钮代码示例
         }
         }
     }
-    // ========== 4. 激活灵巧手 ==========
+    // ========== 4. Activar la mano diestra ==========
     ret = robot.SetDexterousHandsAct(id, 1);
-    printf("SetDexterousHandsAct(激活) rtn %d\n", ret);
+    printf("SetDexterousHandsAct(activación) rtn %d\n", ret);
     if (ret != 0)
     {
-        printf("激活失败，测试中止");
+        printf("La activación falló, prueba abortada");
         return -1;
     }
-    // ========== 5. 初始移动到 20°（通过Move指令下发位置和力矩数值） ==========
+    // ========== 5. Movimiento inicial a 20° (enviar valores de posición y par mediante la instrucción Move) ==========
     memset(pos, 0, sizeof(pos));
     pos[0] = 20;
     pos[1] = 20;
     pos[2] = 20;
     pos[3] = 20;
     ret = robot.SetDexterousHandsMove(id, slaveNum, pos, speed, force, max_time);
-    printf("初始移动 20° -> %d\n", ret);
+    printf("Movimiento inicial 20° -> %d\n", ret);
     robot.Sleep(5000);
-    // ========== 6. 往复运动10次（10° ↔ 50°） ==========
-    printf("开始往复运动10次...");
+    // ========== 6. Movimiento alternativo 10 veces (10° ↔ 50°) ==========
+    printf("Iniciando movimiento alternativo 10 veces...");
     for (int iteration = 1; iteration <= 10; iteration++)
     {
         robot.MoveJ(&j1, 0, 0, 100, 100, 100, &epos, -1, 0, &offset_pos);
@@ -2519,7 +2519,7 @@ SmartTool按钮代码示例
         pos[2] = 10;
         pos[3] = 10;
         ret = robot.SetDexterousHandsMove(id, slaveNum, pos, speed, force, max_time);
-        printf("移动到 10° -> %d\n", ret);
+        printf("Moverse a 10° -> %d\n", ret);
         robot.Sleep(1000);
         robot.MoveJ(&j2, 0, 0, 100, 100, 100, &epos, -1, 0, &offset_pos);
         memset(pos, 0, sizeof(pos));
@@ -2528,9 +2528,9 @@ SmartTool按钮代码示例
         pos[2] = 50;
         pos[3] = 50;
         ret = robot.SetDexterousHandsMove(id, slaveNum, pos, speed, force, max_time);
-        printf("移动到 50° -> %d\n", ret);
+        printf("Moverse a 50° -> %d\n", ret);
         robot.Sleep(1000);
     }
-    printf("测试完成（功能开关设置/读取 + 激活 + 10次往复运动）。");
+    printf("Prueba completada (configuración/lectura de interruptores de funciones + activación + 10 movimientos alternativos).");
     return 0;
     }

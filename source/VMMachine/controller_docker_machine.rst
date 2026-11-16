@@ -1,30 +1,30 @@
-虚拟机-Docker
+Máquina virtual-Docker
 =================================
 
-Linux部署docker镜像
----------------------------
+Despliegue de imagen Docker en Linux
+------------------------------------------------
 
-操作环境
-~~~~~~~~~~~~~~
+Entorno de operación
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-虚拟机运行环境系统：Ubuntu 18.04.6；
+Sistema del entorno de ejecución de la máquina virtual：Ubuntu 18.04.6；
 
-虚拟机运行环境系统：RAM 4G，ROM 50G，6核CPU ；
+Sistema del entorno de ejecución de la máquina virtual：RAM 4G，ROM 50G，CPU de 6 núcleos ；
 
-操作权限：使用超级管理员root权限，设置方法见附录3；
+Permisos de operación：utilizar permisos de superadministrador root，el método de configuración se muestra en el apéndice 3；
 
-docker安装文件：fr_docker.tar.gz；
+Archivo de instalación de docker：fr_docker.tar.gz；
 
-FAIRINO SimMachine镜像：FAIRINOSimMachine.tar；
+Imagen FAIRINO SimMachine：FAIRINOSimMachine.tar；
 
-安装docker
-~~~~~~~~~~~~~~
+Instalar docker
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-若用户已安装部署docker，则跳过此节，进行1.3镜像部署。
+Si el usuario ya ha instalado y desplegado docker，omita esta sección y continúe con el despliegue de la imagen en 1.3.
 
-1.下载fr_docker.tar.gz，放至Ubuntu文件路径/opt/。
+1.Descargar fr_docker.tar.gz，colocarlo en la ruta de archivo de Ubuntu /opt/.
 
-2.解压fr_docker.tar.gz.，以/opt/目录下为例：
+2.Descomprimir fr_docker.tar.gz.，tomando como ejemplo el directorio /opt/：
 
 .. code-block:: console
    :linenos:
@@ -35,28 +35,28 @@ FAIRINO SimMachine镜像：FAIRINOSimMachine.tar；
    :width: 6in
    :align: center
 
-3.执行安装docker脚本：
+3.Ejecutar el script de instalación de docker：
 
 .. code-block:: console
    :linenos:
 
    sh install.sh docker-27.0.3.tgz
 
-待脚本执行完毕后，出现版本号，则表示安装成功。
+Cuando el script termine de ejecutarse y aparezca el número de versión，significa que la instalación fue exitosa.
 
 .. image:: controller_virtual_machine/037.png
    :width: 6in
    :align: center
 
-镜像配置
-~~~~~~~~~~~~~~
+Configuración de la imagen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-导入docker镜像
-++++++++++++++++++++
+Importar la imagen docker
+++++++++++++++++++++++++++++++++++++++++
 
-1. 下载虚拟机镜像FAIRINOSimMachine.tar并解压。
+1. Descargar la imagen de la máquina virtual FAIRINOSimMachine.tar y descomprimirla.
 
-2. 查看docker版本确认已安装。
+2. Verificar la versión de docker para confirmar que está instalado.
 
 .. code-block:: console
    :linenos:
@@ -67,50 +67,50 @@ FAIRINO SimMachine镜像：FAIRINOSimMachine.tar；
    :width: 6in
    :align: center   
 
-3. 导入镜像   
+3. Importar la imagen   
 
 .. code-block:: console
    :linenos:
 
    docker load -i ./FAIRINOSimMachine.tar
 
-出现fairno_simmachine:latest则表示导入完成。
+Cuando aparezca fairno_simmachine:latest significa que la importación se completó.
 
 .. image:: controller_virtual_machine/039.png
    :width: 6in
    :align: center  
 
-4. 执行docker images查看是否导入成功。
+4. Ejecutar docker images para verificar si la importación fue exitosa.
 
-创建自定义桥接网络
-++++++++++++++++++++
+Crear una red puente personalizada
+++++++++++++++++++++++++++++++++++++++++
 
-1. 执行以下命令，创建名为fairino-net，网段为192.168.58.0/24的桥接网络。
+1. Ejecutar el siguiente comando para crear una red puente llamada fairino-net con segmento de red 192.168.58.0/24.
 
 .. code-block:: console
    :linenos:
 
    docker network create --driver bridge --subnet 192.168.58.0/24 --gateway 192.168.58.1 fairino-net
 
-2. 查看网络
+2. Ver la red
 
 .. code-block:: console
    :linenos:
 
    docker network ls
 
-存在fairino-net网络表示创建成功。
+La existencia de la red fairino-net indica que la creación fue exitosa.
 
 .. image:: controller_virtual_machine/040.png
    :width: 6in
    :align: center 
 
-首次启动docker容器
-++++++++++++++++++++
+Primer inicio del contenedor docker
+++++++++++++++++++++++++++++++++++++++++
 
-1. 创建容器并启动
+1. Crear el contenedor e iniciarlo
 
-使用fairino-net网络，fairino_simmachine镜像启动容器。
+Utilizar la red fairino-net y la imagen fairino_simmachine para iniciar el contenedor.
 
 .. code-block:: console
    :linenos:
@@ -126,99 +126,99 @@ FAIRINO SimMachine镜像：FAIRINOSimMachine.tar；
 
    docker ps 
 
-查看容器是否成功启动，出现fairino-container则表示启动成功。
+Verificar si el contenedor se inició correctamente，la aparición de fairino-container indica que el inicio fue exitoso.
 
 .. image:: controller_virtual_machine/042.png
    :width: 6in
    :align: center 
 
-web操作虚拟机器人
-----------------------------
+Operar el robot virtual vía web
+---------------------------------------
 
-容器正常启动
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+El contenedor se inicia correctamente
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-此小节针对非首次启动容器，由于重启电脑或docker关闭等原因容器未在后台运行情况。
+Esta subsección está dirigida a los casos en que el contenedor no es de primer inicio，y debido a razones como el reinicio del ordenador o el cierre de docker el contenedor no se está ejecutando en segundo plano.
 
-1. 启动docker： 
+1. Iniciar docker： 
 
 .. code-block:: console
    :linenos:
 
    systemctl start docker
 
-2. 查看docker状态：
+2. Ver el estado de docker：
 
 .. code-block:: console
    :linenos:
 
    systemctl status docker
    
-绿色active(running)表示启动成功。
+El color verde active(running) indica que el inicio fue exitoso.
 
 .. image:: controller_virtual_machine/043.png
    :width: 6in
    :align: center 
 
-3. 执行docker ps -a查看容器ID。
+3. Ejecutar docker ps -a para ver el ID del contenedor.
 
 .. image:: controller_virtual_machine/044.png
    :width: 6in
    :align: center 
 
-4. 执行 docker start [容器ID]。
+4. Ejecutar docker start [ID del contenedor].
 
 .. image:: controller_virtual_machine/045.png
    :width: 6in
    :align: center 
 
-5. 执行成功，再次docker ps 查看容器正在运行。
+5. Ejecución exitosa，ejecutar de nuevo docker ps para ver que el contenedor está en ejecución.
 
 .. image:: controller_virtual_machine/046.png
    :width: 6in
    :align: center 
 
-操作虚拟机器人
+Operar el robot virtual
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. 确认docker容器正在运行。
+1. Confirmar que el contenedor docker está en ejecución.
 
 .. code-block:: console
    :linenos:
 
    docker ps 
 
-出现fairino-container则表示正在运行。
+La aparición de fairino-container indica que está en ejecución.
 
 .. image:: controller_virtual_machine/047.png
    :width: 6in
    :align: center 
 
-2. 打开浏览器，输入默认IP：192.168.58.2，即可访问web界面，操作虚拟机器人。
+2. Abrir el navegador，introducir la IP predeterminada：192.168.58.2，para acceder a la interfaz web y operar el robot virtual.
 
 .. image:: controller_virtual_machine/048.png
    :width: 6in
    :align: center 
 
-3. 使用admin账号登录，密码：123。
+3. Iniciar sesión con la cuenta admin，contraseña：123。
 
 .. image:: controller_virtual_machine/049.png
    :width: 6in
    :align: center 
 
-用户修改IP地址
-~~~~~~~~~~~~~~~~~~~~~~
+El usuario modifica la dirección IP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: controller_virtual_machine/050.png
    :width: 6in
    :align: center 
 
-1. 打开浏览器，输入默认 IP： 192.168.58.2，打开 web 页面；
-2. 使用 admin 账号登录，密码： 123；
-3. 进入“系统设置” → “通用设置” → “网络设置”， 修改 IP 为目标 IP 地址、掩码、网关。点击“设置网络”；
-4. 打开终端，关闭容器；
+1. Abrir el navegador，introducir la IP predeterminada： 192.168.58.2，abrir la página web；
+2. Iniciar sesión con la cuenta admin，contraseña： 123；
+3. Entrar en “Configuración del sistema” → “Configuración general” → “Configuración de red”，modificar la IP a la dirección IP objetivo，máscara y puerta de enlace. Hacer clic en “Configurar red”；
+4. Abrir la terminal，detener el contenedor；
  	
-查看容器ID：
+Ver el ID del contenedor：
 
 .. code-block:: console
    :linenos:
@@ -229,114 +229,113 @@ web操作虚拟机器人
    :width: 6in
    :align: center 
 
-关闭容器：
+Detener el contenedor：
 
 .. code-block:: console
    :linenos:
    
-   docker stop [容器ID]
+   docker stop [ID del contenedor]
 
 .. image:: controller_virtual_machine/053.png
    :width: 6in
    :align: center 
 
-5. 重新配置容器网络；
+5. Reconfigurar la red del contenedor；
    
-删除原先网络：
+Eliminar la red original：
 
 .. code-block:: console
    :linenos:
    
    docker network rm fairino-net
 
-创建新网络：
+Crear una nueva red：
 
 .. code-block:: console
    :linenos:
    
-   docker network create --driver bridge --subnet [目标IP/子网掩码] --gateway [网关IP] fairino-net
+   docker network create --driver bridge --subnet [IP objetivo/máscara de subred] --gateway [IP de puerta de enlace] fairino-net
 
-以192.168.56.0/24为例：docker network create --driver bridge --subnet 192.168.56.0/24 --gateway 192.168.56.1 fairino-net
+Tomando como ejemplo 192.168.56.0/24：docker network create --driver bridge --subnet 192.168.56.0/24 --gateway 192.168.56.1 fairino-net
 
 .. image:: controller_virtual_machine/054.png
    :width: 6in
    :align: center 
 
-6. 将容器重新连接到新创建的网络；
+6. Reconectar el contenedor a la red recién creada；
 
 .. code-block:: console
    :linenos:
 
-   docker network connect fairino-net [容器ID]
+   docker network connect fairino-net [ID del contenedor]
 
 .. image:: controller_virtual_machine/055.png
    :width: 6in
    :align: center 
 
-7. 重新启动容器；
+7. Reiniciar el contenedor；
 
 .. code-block:: console
    :linenos:
    
-   docker start [容器ID]
+   docker start [ID del contenedor]
 
-8. 此时打开浏览器， 输入修改后 IP 地址，即可访问 web 界面，操作虚拟机器人。
+8. En este momento，abrir el navegador，introducir la dirección IP modificada，para acceder a la interfaz web y operar el robot virtual.
 
 .. image:: controller_virtual_machine/056.png
    :width: 6in
    :align: center 
 
-虚拟机版本升降级
-----------------------------
+Actualización y degradación de versión de la máquina virtual
+------------------------------------------------------------------------------------
 
-概述
+Descripción general
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-本手册详细阐述了在使用FAIRINO SimMachine Docker虚拟机时，进行软件升级与降级操作的标准流程，并系统梳理了版本变更过程中需要重点关注的注意事项。
+Este manual describe en detalle el proceso estándar para realizar operaciones de actualización y degradación de software al utilizar la máquina virtual Docker FAIRINO SimMachine，y organiza sistemáticamente los puntos de atención clave durante el proceso de cambio de versión.
 
-升降级准备及注意事项
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Preparación y puntos de atención para la actualización/degradación
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-操作准备
-++++++++++++++++++++++
+Preparación de la operación
+++++++++++++++++++++++++++++++++++++++++++++
 
-1. 已部署及正常使用的FAIRINO SimMachine Docker虚拟机。部署教程见《用户手册-Linux部署docker镜像》；
-2. Docker虚拟机版本的软件升级包，下载地址见《资料下载-FAIRINO SimMachine Docker》，解压后，内容包含最新版本的docker镜像FAIRINOSimMachine.tar及软件升级包software.tar.gz。
+1. Máquina virtual Docker FAIRINO SimMachine desplegada y en uso normal. El tutorial de despliegue se encuentra en《Manual de usuario-Despliegue de imagen Docker en Linux》；
+2. Paquete de actualización de software de la versión de la máquina virtual Docker，la dirección de descarga se encuentra en《Descarga de materiales-FAIRINO SimMachine Docker》，tras descomprimirlo，el contenido incluye la imagen docker de la última versión FAIRINOSimMachine.tar y el paquete de actualización de software software.tar.gz.
 
-注意事项
-++++++++++++++
+Puntos de atención
+++++++++++++++++++++++++++++++++++++
 
-1. 数据备份：建议在升级前执行备份，方法见“数据备份”章节，以避免因升级异常导致数据丢失。
-2. 版本限制：
+1. Copia de seguridad de datos：se recomienda realizar una copia de seguridad antes de la actualización，el método se muestra en el capítulo “Copia de seguridad de datos”，para evitar la pérdida de datos debido a anomalías durante la actualización.
+2. Limitaciones de versión：
 
-.. centered:: 图表 2.3-1 升降级版本限制
+.. centered:: Gráfico 2.3-1 Limitaciones de versión para actualización/degradación
 
 .. list-table::
    :widths: 50 50 50
    :header-rows: 0
    :align: center
 
-   * - **操作类型** 
-     - **条件/限制**
-     - **步骤说明**
+   * - **Tipo de operación** 
+     - **Condición/Limitación**
+     - **Descripción de los pasos**
 
-   * - **版本升级** 
-     - 当前版本>= 3.7.8
-     - 可直接升级
+   * - **Actualización de versión** 
+     - Versión actual>= 3.7.8
+     - Se puede actualizar directamente
 
-   * - **版本升级** 
-     - 当前版本< 3.7.8
-     - 需先升级至3.7.5版本或使用兼容方案
+   * - **Actualización de versión** 
+     - Versión actual< 3.7.8
+     - Es necesario actualizar primero a la versión 3.7.5 o utilizar la solución compatible
 
-   * - **版本降级**
-     - 当前且目标版本>= 3.7.8
-     - 可直接降级
+   * - **Degradación de versión**
+     - Versión actual y objetivo>= 3.7.8
+     - Se puede degradar directamente
 
-   * - **版本降级**
-     - 当前或目标版本<3.7.8
-     - 使用兼容方案
+   * - **Degradación de versión**
+     - Versión actual u objetivo<3.7.8
+     - Utilizar la solución compatible
 
-   * - **兼容方案**
-     - 同时适用于升级/降级异常情况
-     - 见“兼容方案”章节详细步骤
-
+   * - **Solución compatible**
+     - Aplicable tanto a situaciones de actualización/degradación anómalas
+     - Ver los pasos detallados en el capítulo “Solución compatible”

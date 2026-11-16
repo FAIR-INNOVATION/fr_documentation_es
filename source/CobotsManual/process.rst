@@ -1,511 +1,511 @@
-工艺包
-=============
+Paquete de proceso
+==================
 
 .. toctree:: 
   :maxdepth: 5
 
-焊接专家库
-----------------
+Biblioteca de expertos en soldadura
+-----------------------------------
 
-点击“辅助应用”->“工艺包”中的“焊接专家库”的菜单栏，进入焊接专家库功能界面，包含直焊、圆弧焊、多层多道焊和姿态调整。
+Hacer clic en el menú "Biblioteca de expertos en soldadura" de "Aplicaciones auxiliares"->"Paquete de proceso" para entrar en la interfaz de la función de biblioteca de expertos en soldadura, que incluye soldadura en línea recta, soldadura en arco, soldadura multicapa y multipasada y ajuste de actitud.
 
 .. image:: process/001.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1‑1 扩展轴配置
+.. centered:: Figura 15.1‑1 Configuración del eje extendido
 
-直焊
-~~~~~~~~~~~~
+Soldadura en línea recta
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-点击“直焊”，进入直焊指导界面。在各项机器人基础设置配置完成的基础上，我们可以通过几个简单的步骤快速生成焊接示教程序。主要包含以下五个步骤，由于功能间存在互斥，所以实际生成一个焊接示教程序的步骤少于五步。
+Hacer clic en "Soldadura en línea recta" para entrar en la interfaz de guía de soldadura en línea recta. Una vez completada la configuración de los ajustes básicos del robot, podemos generar rápidamente un programa de enseñanza de soldadura mediante unos sencillos pasos. Incluye principalmente los cinco pasos siguientes; dado que las funciones son mutuamente excluyentes, los pasos reales para generar un programa de enseñanza de soldadura son menos de cinco.
 
-步骤一，是否使用扩展轴，如果使用扩展轴需要配置好扩展轴相关坐标系以及使能扩展轴。使用扩展轴时，无法使用摆焊功能。
+Paso uno: si se utiliza el eje extendido; si se utiliza el eje extendido es necesario configurar los sistemas de coordenadas relacionados con el eje extendido y habilitar el eje extendido. Al utilizar el eje extendido no se puede utilizar la función de soldadura oscilante.
 
 .. image:: process/002.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1‑2 扩展轴配置
+.. centered:: Figura 15.1‑2 Configuración del eje extendido
 
-步骤二，选择是否需要传感器跟踪，如果是的话，需要编辑激光寻位指令的参数。使用传感器跟踪时，无法使用摆焊功能。
+Paso dos: seleccionar si se necesita seguimiento por sensor; en caso afirmativo, es necesario editar los parámetros de la instrucción de búsqueda de posición láser. Al utilizar el seguimiento por sensor no se puede utilizar la función de soldadura oscilante.
 
 .. image:: process/003.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1‑3 激光寻位配置
+.. centered:: Figura 15.1‑3 Configuración de la búsqueda de posición láser
 
-步骤三，选择是否需要摆焊，如果需要摆焊，需要编辑摆焊相关参数。
+Paso tres: seleccionar si se necesita soldadura oscilante; si se necesita soldadura oscilante, es necesario editar los parámetros relacionados con la soldadura oscilante.
 
 .. image:: process/004.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1‑4 摆焊配置
+.. centered:: Figura 15.1‑4 Configuración de la soldadura oscilante
 
-步骤四，标定起点，起点安全点，终点，终点安全点。若第一步选择了扩展轴，会加载扩展轴移动功能，配合相关点的标定。
+Paso cuatro: calibrar el punto inicial, el punto de seguridad inicial, el punto final y el punto de seguridad final. Si en el primer paso se seleccionó el eje extendido, se cargará la función de movimiento del eje extendido, en combinación con la calibración de los puntos correspondientes.
 
 .. image:: process/005.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1‑5 标定相关点
+.. centered:: Figura 15.1‑5 Calibración de los puntos correspondientes
 
-步骤五，给程序命名，并在程序示教界面中自动打开该程序。
+Paso cinco: dar nombre al programa y abrir automáticamente dicho programa en la interfaz de enseñanza de programas.
 
 .. image:: process/006.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1‑6 保存程序
+.. centered:: Figura 15.1‑6 Guardado del programa
 
-程序保存成功后，可以在工艺参数中修改焊接速度。
+Tras guardar correctamente el programa, se puede modificar la velocidad de soldadura en los parámetros del proceso.
 
 .. image:: process/007.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1‑7 工艺参数
+.. centered:: Figura 15.1‑7 Parámetros del proceso
 
-圆弧焊
-~~~~~~~~~~~~
+Soldadura en arco
+~~~~~~~~~~~~~~~~~
 
-点击“焊件形状”下的“圆弧焊”，进入圆弧焊指导界面。在各项机器人基础设置配置完成的基础上，我们可以通过两个简单的步骤快速生成焊接示教程序。主要包含以下两个步骤。
+Hacer clic en "Soldadura en arco" de "Forma de la pieza de soldadura" para entrar en la interfaz de guía de soldadura en arco. Una vez completada la configuración de los ajustes básicos del robot, podemos generar rápidamente un programa de enseñanza de soldadura mediante dos sencillos pasos. Incluye principalmente los dos pasos siguientes.
 
-步骤一，标定起点，起点安全点，圆弧过渡点，终点和终点安全点。
+Paso uno: calibrar el punto inicial, el punto de seguridad inicial, el punto de transición del arco, el punto final y el punto de seguridad final.
 
 .. image:: process/008.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1‑8 标定点
+.. centered:: Figura 15.1‑8 Calibración de puntos
 
-步骤二，给程序命名，并在程序示教界面中自动打开该程序。
+Paso dos: dar nombre al programa y abrir automáticamente dicho programa en la interfaz de enseñanza de programas.
 
 .. image:: process/009.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1‑9 保存程序
+.. centered:: Figura 15.1‑9 Guardado del programa
 
-程序保存成功后，可以在工艺参数中修改焊接速度。
+Tras guardar correctamente el programa, se puede modificar la velocidad de soldadura en los parámetros del proceso.
 
 .. image:: process/010.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1‑10 工艺参数
+.. centered:: Figura 15.1‑10 Parámetros del proceso
 
-多层多道焊
-~~~~~~~~~~~~
+Soldadura multicapa y multipasada
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-当焊脚尺寸大于10mm的焊缝时，通常会采用多层多道焊接功能。本功能能够模板化配置焊接程序，在多层多道焊接的第一道焊接过程种加入电弧跟踪功能，并在后续的多道直线焊接过程中修正焊缝偏差，从而提高焊缝质量。
+Cuando se trata de soldaduras con un tamaño de cateto superior a 10 mm, normalmente se utiliza la función de soldadura multicapa y multipasada. Esta función permite configurar el programa de soldadura mediante plantillas, añadiendo la función de seguimiento de arco durante el primer pase de la soldadura multicapa y multipasada, y corrigiendo la desviación de la soldadura en los pases lineales posteriores, mejorando así la calidad de la soldadura.
 
-电弧跟踪多层多道焊接功能操作流程如下：
+El flujo de operación de la función de soldadura multicapa y multipasada con seguimiento de arco es el siguiente:
 
-1) 设置工具坐标系，填入焊枪的工具尺寸与姿态。
+1) Configurar el sistema de coordenadas de herramienta e introducir las dimensiones y la actitud de la antorcha de soldadura.
 
 .. note::
-   界面数值仅为示例，以实际工具状态为准。
+   Los valores de la interfaz son solo ejemplos; prevalecerá el estado real de la herramienta.
 
 .. image:: process/011.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1-11 设置工具坐标系
+.. centered:: Figura 15.1-11 Configuración del sistema de coordenadas de herramienta
 
-2) 点击“多层多道焊”进入界面。
+2) Hacer clic en "Soldadura multicapa y multipasada" para entrar en la interfaz.
 
 .. image:: process/012.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1-12 打开多层多道焊接界面
+.. centered:: Figura 15.1-12 Abrir la interfaz de soldadura multicapa y multipasada
 
-3) 若要使用电弧跟踪功能，务必打开“首层焊接摆动功能”开关，并配置对应的摆动参数。
+3) Si se desea utilizar la función de seguimiento de arco, es imprescindible activar el interruptor "Función de oscilación de la primera capa" y configurar los parámetros de oscilación correspondientes.
 
 .. image:: process/013.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1-13 打开首层焊接摆动功能
+.. centered:: Figura 15.1-13 Activar la función de oscilación de la primera capa
 
-4) 点击“配置”按钮， 编辑摆动参数，之后点击“配置”。
+4) Hacer clic en el botón "Configurar", editar los parámetros de oscilación y, a continuación, hacer clic en "Configurar".
 
 .. note::
-   若需要电弧跟踪进行左右补偿的情况，仅可选择“三角波摆动”和“正弦波摆动”类型，摆动频率不得低于0.5Hz，摆动幅度不得小于3mm，摆动左右等待时间需一致，摆动方位角需为0。
+   Si se necesita que el seguimiento de arco realice la compensación izquierda y derecha, solo se pueden seleccionar los tipos "Oscilación triangular" y "Oscilación sinusoidal"; la frecuencia de oscilación no debe ser inferior a 0,5 Hz, la amplitud de oscilación no debe ser inferior a 3 mm, los tiempos de permanencia izquierdo y derecho de la oscilación deben ser iguales y el ángulo de azimut de la oscilación debe ser 0.
 
 .. image:: process/014.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1-14 配置摆动参数
+.. centered:: Figura 15.1-14 Configuración de los parámetros de oscilación
 
-5) 打开“电弧跟踪功能”开关，编辑对应的上下与左右补偿参数。
+5) Activar el interruptor "Función de seguimiento de arco" y editar los parámetros de compensación superior-inferior e izquierda-derecha correspondientes.
 
 .. note::
-   电弧跟踪参数根据实际焊接情况参考《电弧跟踪功能操作手册》或联系相关技术人员进行配置。
+   Los parámetros de seguimiento de arco deben configurarse según la situación real de soldadura, consultando el «Manual de operación de la función de seguimiento de arco» o contactando con el personal técnico correspondiente.
 
 .. image:: process/015.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1-15 配置电弧跟踪参数
+.. centered:: Figura 15.1-15 Configuración de los parámetros de seguimiento de arco
 
-6) 根据控制类型点击对应类型进入界面，首先在第一组点中设置“焊接点”为焊接开始位置；“X+点”为自定义偏置坐标系相对焊接点X+方向上的一点；“Z+点”为自定义偏置坐标系相对焊接点Z+方向上的一点；“安全点”为上一次焊接完成到下一次焊接开始的过渡位置。示教并设置完成后自动进入第二组点设置。
+6) Según el tipo de control, hacer clic en el tipo correspondiente para entrar en la interfaz; en primer lugar, en el primer grupo de puntos, establecer el "Punto de soldadura" como la posición de inicio de la soldadura; el "Punto X+" como un punto en la dirección X+ del sistema de coordenadas de desplazamiento personalizado respecto al punto de soldadura; el "Punto Z+" como un punto en la dirección Z+ del sistema de coordenadas de desplazamiento personalizado respecto al punto de soldadura; el "Punto de seguridad" como la posición de transición desde la finalización de la soldadura anterior hasta el inicio de la siguiente. Tras completar la enseñanza y la configuración, se entra automáticamente en la configuración del segundo grupo de puntos.
 
 .. image:: process/016.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1-16 多层多道焊接直线开始点位置设置
+.. centered:: Figura 15.1-16 Configuración de la posición del punto inicial de la línea recta en la soldadura multicapa y multipasada
 
-7) 选择“直线点”，此处“焊接点”为焊接结束位置；“X+点”为自定义偏置坐标系相对“焊接点”X+方向上的一点；“Z+点”为自定义偏置坐标系相对“焊接点”Z+方向上的一点。示教并设置完成后点击“完成”按钮设置多层多道焊接参数。
+7) Seleccionar "Punto de línea recta"; aquí el "Punto de soldadura" es la posición de finalización de la soldadura; el "Punto X+" es un punto en la dirección X+ del sistema de coordenadas de desplazamiento personalizado respecto al "Punto de soldadura"; el "Punto Z+" es un punto en la dirección Z+ del sistema de coordenadas de desplazamiento personalizado respecto al "Punto de soldadura". Tras completar la enseñanza y la configuración, hacer clic en el botón "Completar" para configurar los parámetros de soldadura multicapa y multipasada.
 
 .. image:: process/017.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1-17 多层多道焊接直线结束点位置设置
+.. centered:: Figura 15.1-17 Configuración de la posición del punto final de la línea recta en la soldadura multicapa y multipasada
 
-8) 在此页面能够设置多层多道焊接的数量，以及分布位置。点击参数表“On/Off”框选择激活的多层多道焊接位置对应值，在“X”“Z”“B”列填入期望的在自定义坐标系中的对应偏移位置与角度。
+8) En esta página se pueden configurar el número de pasadas de soldadura multicapa y multipasada, así como la posición de distribución. Hacer clic en la casilla "On/Off" de la tabla de parámetros para seleccionar el valor correspondiente a la posición de soldadura multicapa y multipasada que se desea activar, e introducir en las columnas "X", "Z" y "B" la posición de desplazamiento y el ángulo correspondientes esperados en el sistema de coordenadas personalizado.
 
 .. image:: process/018.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1-18 多层多道焊接参数设置
+.. centered:: Figura 15.1-18 Configuración de los parámetros de soldadura multicapa y multipasada
 
-9) 至此已完成全部参数配置，输入希望保存的程序名，点击“保存”按钮可自动生产对应的多层多道焊接程序。
+9) Con esto se ha completado toda la configuración de parámetros; introducir el nombre del programa que se desea guardar y hacer clic en el botón "Guardar" para generar automáticamente el programa de soldadura multicapa y multipasada correspondiente.
 
 .. image:: process/019.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 15.1-19 多层多道焊接程序生成
+.. centered:: Figura 15.1-19 Generación del programa de soldadura multicapa y multipasada
 
-10) 点击“打开程序”按钮，读取上一步骤保存的lua程序，程序内容如下图所示。
+10) Hacer clic en el botón "Abrir programa" para leer el programa lua guardado en el paso anterior; el contenido del programa se muestra en la figura siguiente.
 
 .. image:: process/020.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1-20 电弧跟踪多层多道焊接程序示例
+.. centered:: Figura 15.1-20 Ejemplo de programa de soldadura multicapa y multipasada con seguimiento de arco
 
-姿态调整
-~~~~~~~~~~~~~~~~~~
+Ajuste de actitud
+~~~~~~~~~~~~~~~~~
 
-姿态自适应配置步骤
-+++++++++++++++++++++++++++++++++++
+Pasos de configuración del ajuste de actitud
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-**Step1**：进入姿态调整配置界面，选择板材类型和机器人实际工作运动方向，调整机器人姿态，分别设置姿态点A，姿态点B和姿态点C，通常A为平面姿态点，B为上升沿姿态点，C为下降沿姿态点。
+**Step1**: Entrar en la interfaz de configuración del ajuste de actitud, seleccionar el tipo de placa y la dirección de movimiento real de trabajo del robot, ajustar la actitud del robot y configurar respectivamente el punto de actitud A, el punto de actitud B y el punto de actitud C; normalmente A es el punto de actitud del plano, B es el punto de actitud del flanco ascendente y C es el punto de actitud del flanco descendente.
 
 .. figure:: process/021.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 15.1‑21 姿态调整配置
+.. centered:: Figura 15.1‑21 Configuración del ajuste de actitud
 
 .. important:: 
-	A姿态和B姿态，A姿态和C姿态之间的姿态变化在满足应用需求下姿态变化越小越好。姿态自适应功能为辅助应用功能，通常配合焊缝跟踪使用。
+	La variación de actitud entre la actitud A y la actitud B, y entre la actitud A y la actitud C, debe ser lo más pequeña posible siempre que se satisfagan los requisitos de la aplicación. La función de ajuste adaptativo de actitud es una función de aplicación auxiliar y se utiliza normalmente junto con el seguimiento de soldadura.
 
-**Step2**：在程序示教命令界面选择“Adjust”命令。根据具体的程序示教需求，在相应的地方添加指令。
+**Step2**: En la interfaz de comandos del programa de enseñanza, seleccionar el comando "Adjust". Según los requisitos concretos de enseñanza del programa, añadir la instrucción en el lugar correspondiente.
 
 .. figure:: process/022.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.1‑22 姿态调整指令编辑
+.. centered:: Figura 15.1‑22 Edición de la instrucción de ajuste de actitud
 
-姿态自适应配合扩展轴和激光跟踪焊接示教程序
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Programa de enseñanza de soldadura con ajuste adaptativo de actitud combinado con eje extendido y seguimiento láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. list-table::
    :widths: 50 80 80
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **指令格式**
-     - **注释**
+   * - **Número**
+     - **Formato de la instrucción**
+     - **Comentario**
 
    * - 1
      - EXT_AXIS_PTP(1,1laserstart)
-     - #外部轴运动激光传感器起始点
+     - #Punto inicial del sensor láser de movimiento del eje externo
 
    * - 2
      - PTP(laserstart,10,-1,0)
-     - #机器人运动激光传感器起始点
+     - #Punto inicial del sensor láser de movimiento del robot
 
    * - 3
      - LTSearchStart(3,20,10,10000)
-     - #开始寻位
+     - #Iniciar búsqueda de posición
 
    * - 4
      - LTSearchStop()
-     - #停止寻位
+     - #Detener búsqueda de posición
 
    * - 5
      - EXT_AXIS_PTP(1,1,seamPos)
-     - #外部轴运动焊缝起点
+     - #Punto inicial de la soldadura de movimiento del eje externo
 
    * - 6
      - Lin(seamPos,20,-1,00,0)
-     - #机器人运动焊缝起点
+     - #Punto inicial de la soldadura de movimiento del robot
 
    * - 7
      - LTTrackOn()
-     - #激光跟踪
+     - #Seguimiento láser
 
    * - 8
      - ARCStart(0,10000)
-     - #焊机起弧
+     - #Encendido del arco de la máquina de soldar
 
    * - 9
      - PostureAdjustOn(0,PosA,PosC,PosB,1000)
-     - #姿态自适应调整开启
+     - #Activación del ajuste adaptativo de actitud
 
    * - 10
      - EXT_AXIS_PTP(1,1,laserend)
-     - #外部轴运动焊缝终点
+     - #Punto final de la soldadura de movimiento del eje externo
 
    * - 11
      - Lin( laserend,10,-1,0,0)
-     - #机器人运动焊缝终点
+     - #Punto final de la soldadura de movimiento del robot
 
    * - 12
      - ARCEnd(0,10000)
-     - #焊机收弧
+     - #Apagado del arco de la máquina de soldar
 
    * - 13
      - PostureAdjustOff(0)
-     - #姿态自适应调整关闭
+     - #Desactivación del ajuste adaptativo de actitud
 
    * - 14
      - LTTrackOff
-     - #激光跟踪关闭
+     - #Desactivación del seguimiento láser
 
-新样条直线圆弧过渡摆动功能
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Función de oscilación con transición de línea recta y arco en la nueva spline
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
+Descripción general
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-新样条直线圆弧过渡叠加摆动功能是机器人新样条直线圆弧过渡功能和摆动功能的结合，可以实现机器人在新样条直线圆弧过渡过程中完成“三角波摆动”、“垂直L型三角波摆动”、“立焊三角摆动”、“正弦波摆动”和“垂直L型正弦波摆动”类型的摆动运动。
+La función de oscilación superpuesta a la transición de línea recta y arco en la nueva spline es la combinación de la función de transición de línea recta y arco en la nueva spline y la función de oscilación del robot, y permite que el robot realice movimientos de oscilación de los tipos "Oscilación triangular", "Oscilación triangular tipo L vertical", "Oscilación triangular para soldadura vertical", "Oscilación sinusoidal" y "Oscilación sinusoidal tipo L vertical" durante el proceso de transición de línea recta y arco en la nueva spline.
 
-操作流程
+Flujo de operación
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-**Step1**：通过WebApp标定机器人工具坐标系。该功能的具体操作步骤可参考相应章节的用户手册。
+**Step1**: Calibrar el sistema de coordenadas de herramienta del robot mediante WebApp. Para los pasos concretos de esta función, consulte el manual de usuario del capítulo correspondiente.
 
-**Step2**：通过WebApp示教不少于4个点位。注意，各点位的间距最佳均匀进行示教。
+**Step2**: Enseñar mediante WebApp no menos de 4 puntos. Tenga en cuenta que es mejor enseñar los puntos con un espaciado uniforme.
 
-**Step3**：摆动参数设置。在WebApp主界面，点击“示教程序”->“程序编程”，进入“运动指令”指令区。
+**Step3**: Configuración de los parámetros de oscilación. En la interfaz principal de WebApp, hacer clic en "Programa de enseñanza"->"Programación de programas" para entrar en el área de instrucciones "Instrucciones de movimiento".
 
 .. figure:: process/073.png
    :align: center
    :width: 4in
    
-.. centered:: 图表 15.1‑23 “运动指令”区
+.. centered:: Figura 15.1‑23 Área "Instrucciones de movimiento"
   
-在“运动指令”指令区中点击“摆动”按钮，进入“Weave”配置界面，在“指令编辑”指令区的“选择编号”下拉框中选择工艺编号，点击“编辑”，进入摆动工艺参数配置，配置完毕后点击“配置”，完成工艺编号保存。
+En el área de instrucciones "Instrucciones de movimiento", hacer clic en el botón "Oscilación" para entrar en la interfaz de configuración "Weave"; en el cuadro desplegable "Seleccionar número" del área de instrucciones "Edición de instrucción", seleccionar el número de proceso y hacer clic en "Editar" para entrar en la configuración de los parámetros del proceso de oscilación; tras completar la configuración, hacer clic en "Configurar" para guardar el número de proceso.
 
 .. figure:: process/074.png
    :align: center
    :width: 6in
    
-.. centered:: 图表 15.1‑24 设置摆动工艺参数
+.. centered:: Figura 15.1‑24 Configuración de los parámetros del proceso de oscilación
  
-.. note:: 新样条直线圆弧过渡叠加摆动功能暂对“三角波摆动”、“垂直L型三角波摆动”、“立焊三角摆动”、“正弦波摆动”和“垂直L型正弦波摆动”类型生效；“摆动等待时间”下拉框选择“包括”选项、“摆动位置等待”下拉框选择“等待时间内继续移动”选项。
+.. note:: La función de oscilación superpuesta a la transición de línea recta y arco en la nueva spline solo es efectiva actualmente para los tipos "Oscilación triangular", "Oscilación triangular tipo L vertical", "Oscilación triangular para soldadura vertical", "Oscilación sinusoidal" y "Oscilación sinusoidal tipo L vertical"; en el cuadro desplegable "Tiempo de espera de oscilación" seleccionar la opción "Incluido", y en el cuadro desplegable "Espera de posición de oscilación" seleccionar la opción "Continuar moviéndose dentro del tiempo de espera".
 
-**Step4**：添加摆动运动指令。在“Weave”配置界面的“指令类型”指令区内点击“开始摆动”-“添加”-“停止摆动”-“添加”-“应用”按钮，完成摆动运动设置。
+**Step4**: Añadir la instrucción de movimiento de oscilación. En el área de instrucciones "Tipo de instrucción" de la interfaz de configuración "Weave", hacer clic en los botones "Iniciar oscilación"-"Añadir"-"Detener oscilación"-"Añadir"-"Aplicar" para completar la configuración del movimiento de oscilación.
 
 .. figure:: process/075.png
    :align: center
    :width: 6in
    
-.. centered:: 图表 15.1‑25 摆动运动设置
+.. centered:: Figura 15.1‑25 Configuración del movimiento de oscilación
   
-**Step5**：添加新样条直线圆弧过渡指令。在“运动指令”指令区中，点击“新样条”按钮，进入“N-Spline”配置界面，并在“指令类型”指令区内点击“多点轨迹起始”按钮，选择“控制模式”下拉框为“圆弧过渡点”选项，输入“全局平均衔接时间”框参数，点击“添加”，完成新样条运动模式配置。
+**Step5**: Añadir la instrucción de transición de línea recta y arco en la nueva spline. En el área de instrucciones "Instrucciones de movimiento", hacer clic en el botón "Nueva spline" para entrar en la interfaz de configuración "N-Spline"; en el área de instrucciones "Tipo de instrucción", hacer clic en el botón "Inicio de trayectoria multipunto", seleccionar la opción "Punto de transición de arco" en el cuadro desplegable "Modo de control", introducir el parámetro en el cuadro "Tiempo medio de enlace global" y hacer clic en "Añadir" para completar la configuración del modo de movimiento de la nueva spline.
 
 .. figure:: process/076.png
    :align: center
    :width: 6in
    
-.. centered:: 图表 15.1‑26 配置新样条运动模式
+.. centered:: Figura 15.1‑26 Configuración del modo de movimiento de la nueva spline
 
-.. note:: “全局平均衔接时间”适用于“圆弧过渡点”控制模式，其他模式可保持默认，并建议尽量向上取值调节。
+.. note:: El "Tiempo medio de enlace global" es aplicable al modo de control "Punto de transición de arco"; en los demás modos se puede mantener el valor predeterminado, y se recomienda ajustarlo tomando valores lo más altos posible.
 
-调节方式可分为：
+Los métodos de ajuste pueden ser:
 
-1. 按完整运动时间÷（点位数-1），得到全局平均衔接时间参数，其中时间单位均为毫秒。
-2. 按完整运动过程中相隔距离最远的两个点位的运行时间设置。若不便观察或无姿态平滑过渡要求，可默认设置10000毫秒或向上取值调节。
+1. Dividir el tiempo completo de movimiento ÷ (número de puntos - 1) para obtener el parámetro de tiempo medio de enlace global, donde las unidades de tiempo son milisegundos.
+2. Configurarlo según el tiempo de ejecución de los dos puntos más alejados entre sí durante el movimiento completo. Si no es cómodo observarlo o no hay requisitos de transición suave de actitud, se puede configurar por defecto en 10000 milisegundos o ajustarlo tomando valores más altos.
 
-**Step6**：添加运动点位。在“N-Spline”配置界面的“指令类型”指令区内点击“设置点”-“SPL”按钮，在“点名称”下拉框中选择运动点位、在“调试速度”框输入指令运动速度比例、在“平滑过渡半径”框输入平滑半径参数、在“是否最后一个点”下拉框选择点位的运动状态，点击“添加”，完成单个运动点位配置。
+**Step6**: Añadir puntos de movimiento. En el área de instrucciones "Tipo de instrucción" de la interfaz de configuración "N-Spline", hacer clic en los botones "Establecer punto"-"SPL"; en el cuadro desplegable "Nombre del punto" seleccionar el punto de movimiento, en el cuadro "Velocidad de depuración" introducir la proporción de velocidad de movimiento de la instrucción, en el cuadro "Radio de transición suave" introducir el parámetro del radio de suavizado, en el cuadro desplegable "¿Es el último punto?" seleccionar el estado de movimiento del punto y hacer clic en "Añadir" para completar la configuración de un único punto de movimiento.
 
 .. figure:: process/077.png
    :align: center
    :width: 6in
    
-.. centered:: 图表 15.1‑27 配置运动点位
+.. centered:: Figura 15.1‑27 Configuración de los puntos de movimiento
  
-.. note:: 重复步骤6，完成全部运动点位配置，并在最后点位配置中的“是否最后一个点”下拉框中选择“是”选项。
+.. note:: Repetir el paso 6 para completar la configuración de todos los puntos de movimiento, y en la configuración del último punto seleccionar la opción "Sí" en el cuadro desplegable "¿Es el último punto?".
 
-**Step7**：完成新样条直线圆弧过渡指令。在“N-Spline”配置界面的“指令类型”指令区内点击“多点轨迹结束”按钮，并点击“添加”-“应用”按钮，完成整体新样条直线圆弧过渡指令配置。
+**Step7**: Completar la instrucción de transición de línea recta y arco en la nueva spline. En el área de instrucciones "Tipo de instrucción" de la interfaz de configuración "N-Spline", hacer clic en el botón "Fin de trayectoria multipunto" y hacer clic en los botones "Añadir"-"Aplicar" para completar la configuración completa de la instrucción de transición de línea recta y arco en la nueva spline.
 
 .. figure:: process/078.png
    :align: center
    :width: 6in
    
-.. centered:: 图表 15.1‑28 配置新样条运动结束
+.. centered:: Figura 15.1‑28 Configuración del fin de movimiento de la nueva spline
   
-**Step8**：编写新样条直线圆弧过渡+摆动功能的LUA程序。调整步骤4至步骤7生成的指令顺序。运行该LUA程序即可实现新样条直线圆弧过渡+摆动功能。
+**Step8**: Escribir el programa LUA de la función de transición de línea recta y arco en la nueva spline + oscilación. Ajustar el orden de las instrucciones generadas en los pasos 4 a 7. Ejecutar dicho programa LUA permite realizar la función de transición de línea recta y arco en la nueva spline + oscilación.
 
 .. figure:: process/079.png
    :align: center
    :width: 4in
    
-.. centered:: 图表 15.1‑29 新样条直线圆弧过渡+摆动功能LUA程序
+.. centered:: Figura 15.1‑29 Programa LUA de la función de transición de línea recta y arco en la nueva spline + oscilación
  
-.. note:: 在新样条直线圆弧过渡的起始运动点位前，可以添加PTP运动使机器人确保到达起始运动点位。
+.. note:: Antes del punto de movimiento inicial de la transición de línea recta y arco en la nueva spline se puede añadir un movimiento PTP para asegurar que el robot llegue al punto de movimiento inicial.
 
-新样条直线圆弧过渡+摆动的回中策略设置
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configuración de la estrategia de retorno al centro de la transición de línea recta y arco en la nueva spline + oscilación
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-在WebApp主界面，点击“辅助应用”->“工艺包”->“焊接专家库”，进入“焊接专家库”指令区。
+En la interfaz principal de WebApp, hacer clic en "Aplicaciones auxiliares"->"Paquete de proceso"->"Biblioteca de expertos en soldadura" para entrar en el área de instrucciones "Biblioteca de expertos en soldadura".
 
 .. figure:: process/080.png
    :align: center
    :width: 6in
    
-.. centered:: 图表 15.1‑30 新样条摆动焊指令
+.. centered:: Figura 15.1‑30 Instrucción de soldadura oscilante con nueva spline
 
-在“焊接专家库”指令区内点击“新样条摆动焊”按钮，进入“新样条摆动焊”配置界面，在“摆动焊参数”指令区的“摆动回中类型”下拉框中，可以选择“不回中”或“延伸轨迹回中”选项，如图3-2所示，选择完毕后点击“配置”按钮，完成摆动的回中策略设置。
+En el área de instrucciones "Biblioteca de expertos en soldadura", hacer clic en el botón "Soldadura oscilante con nueva spline" para entrar en la interfaz de configuración "Soldadura oscilante con nueva spline"; en el cuadro desplegable "Tipo de retorno al centro de oscilación" del área de instrucciones "Parámetros de soldadura oscilante" se pueden seleccionar las opciones "Sin retorno al centro" o "Retorno al centro con trayectoria extendida", como se muestra en la Figura 3-2; tras completar la selección, hacer clic en el botón "Configurar" para completar la configuración de la estrategia de retorno al centro de la oscilación.
 
 .. figure:: process/081.png
    :align: center
    :width: 4in
    
-.. centered:: 图表 15.1‑31 新样条直线圆弧过渡的摆动回中类型
+.. centered:: Figura 15.1‑31 Tipo de retorno al centro de oscilación de la transición de línea recta y arco en la nueva spline
 
-.. note:: 在“摆动回中类型”下拉框中，当选择“不回中”选项时，新样条圆弧过渡摆动运动至最后点位后即停；当选择“延伸轨迹回中”选项时，新样条圆弧过渡摆动运动至最后点位后继续运动确保以一个完整的摆动周期停止运动。   
+.. note:: En el cuadro desplegable "Tipo de retorno al centro de oscilación", cuando se selecciona la opción "Sin retorno al centro", el movimiento de oscilación de transición de arco de la nueva spline se detiene tras llegar al último punto; cuando se selecciona la opción "Retorno al centro con trayectoria extendida", el movimiento de oscilación de transición de arco de la nueva spline continúa moviéndose tras llegar al último punto para asegurar que se detiene con un ciclo de oscilación completo.
 
-码垛系统配置
----------------
+Configuración del sistema de paletizado
+---------------------------------------
 
-码垛系统配置步骤
-~~~~~~~~~~~~~~~~~~~~~~
+Pasos de configuración del sistema de paletizado
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Step1**：在“辅助应用”->“工艺包”中点击“码垛”菜单项，进入码垛系统配置界面。
+**Step1**: En "Aplicaciones auxiliares"->"Paquete de proceso", hacer clic en el elemento de menú "Paletizado" para entrar en la interfaz de configuración del sistema de paletizado.
 
-第一次使用，需要首先进行配方创建，点击“配方创建”，输入配方名称，点击“创建”，创建成功后点击“开始配置”进入码垛配置页面。
+La primera vez que se utiliza, es necesario crear primero una receta; hacer clic en "Crear receta", introducir el nombre de la receta y hacer clic en "Crear"; tras una creación correcta, hacer clic en "Iniciar configuración" para entrar en la página de configuración del paletizado.
 
 .. figure:: process/023.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 15.2‑1 码垛配方配置
+.. centered:: Figura 15.2‑1 Configuración de la receta de paletizado
 
-**Step2**：在工件配置栏中点击“配置”进入工件配置弹窗，设置工件的“长度”，“宽度”，“高度”以及工件的抓取点，点击“确认配置”完成工件信息设置。
+**Step2**: En la columna de configuración de la pieza, hacer clic en "Configurar" para entrar en la ventana emergente de configuración de la pieza; configurar la "Longitud", la "Anchura", la "Altura" de la pieza y el punto de agarre de la pieza, y hacer clic en "Confirmar configuración" para completar la configuración de la información de la pieza.
 
 .. figure:: process/024.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 15.2‑2 码垛工件配置
+.. centered:: Figura 15.2‑2 Configuración de la pieza de paletizado
 
-**Step3**：在托盘配置栏中点击“配置”进入托盘配置弹窗，设置托盘“前边”，“侧边”和“高度”，接着设置工位和工位过渡点，点击“确认配置”完成托盘信息设置。
+**Step3**: En la columna de configuración del palé, hacer clic en "Configurar" para entrar en la ventana emergente de configuración del palé; configurar el "Borde frontal", el "Borde lateral" y la "Altura" del palé, a continuación configurar la estación de trabajo y el punto de transición de la estación de trabajo, y hacer clic en "Confirmar configuración" para completar la configuración de la información del palé.
 
 .. figure:: process/025.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 15.2‑3 码垛托盘配置
+.. centered:: Figura 15.2‑3 Configuración del palé de paletizado
 
-**Step4**：在码垛设备尺寸配置栏中点击“配置”进入码垛设备尺寸配置配置弹窗，设置设备“X”、“Y”、“Z”和“Angle”，点击“确认配置”完成码垛设备尺寸配置信息设置。
+**Step4**: En la columna de configuración de dimensiones del equipo de paletizado, hacer clic en "Configurar" para entrar en la ventana emergente de configuración de dimensiones del equipo de paletizado; configurar "X", "Y", "Z" y "Angle" del equipo, y hacer clic en "Confirmar configuración" para completar la configuración de la información de dimensiones del equipo de paletizado.
 
 .. important:: 
-   X、Y、Z为左托盘右上角或者右托盘左上角点相对于机器人基坐标系坐标值的绝对值，Angle为机器人安装时的旋转角度，推荐安装时为0。
+   X, Y, Z son los valores absolutos de las coordenadas del punto de la esquina superior derecha del palé izquierdo o de la esquina superior izquierda del palé derecho respecto al sistema de coordenadas base del robot; Angle es el ángulo de rotación en el momento de la instalación del robot, y se recomienda que sea 0 en la instalación.
 
 .. figure:: process/026.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 15.2‑4 码垛设备尺寸配置
+.. centered:: Figura 15.2‑4 Configuración de dimensiones del equipo de paletizado
 
-**Step5**：在模式配置栏中点击“配置”进入模式配置弹窗。
+**Step5**: En la columna de configuración de modos, hacer clic en "Configurar" para entrar en la ventana emergente de configuración de modos.
 
-   **模式B开启/关闭**：开启：可以切换模式A/B，配置码垛每层模式的B模式；关闭：不可切换模式B，不可配置码垛每层模式的B模式；
+   **Activación/desactivación del modo B**: Activado: se puede conmutar entre el modo A y el modo B, y configurar el modo B de cada capa de paletizado; Desactivado: no se puede conmutar al modo B ni configurar el modo B de cada capa de paletizado;
 
-   **模式A/B切换**：选择模式A：添加工件为模式A，工件序号为A1，A2...，不可调整工件透明度；选择模式B：添加工件为模式B，工件序号为B1，B2...，此时可以开启/关闭“显示模式A配置”显示模式A工件；
+   **Conmutación de modo A/B**: Seleccionar el modo A: la pieza añadida es del modo A, con números de pieza A1, A2..., y no se puede ajustar la transparencia de la pieza; Seleccionar el modo B: la pieza añadida es del modo B, con números de pieza B1, B2..., y en este momento se puede activar/desactivar "Mostrar configuración del modo A" para mostrar las piezas del modo A;
 
-   **显示模式A开启/关闭**：开启：调整模式B工件透明度来查看A/B模式配置效果是否合理，此时只能对模式B工件进行选中、添加、批量添加、删除和删除全部的操作；关闭：无法设置模式B工件透明度；
-
-.. important:: 
-   配置工件时，工件之间有碰撞时工件背景颜色变红，此时以上操作无法进行。如需操作，请配置工件为无碰撞。
-
-配置工件时，先设置工件间隔，右侧框框为模拟工件在右托盘的放置方式，可以单个添加也可以批量添加。接着设置码垛层数和各层的模式，点击“确认配置”完成模式信息设置。
+   **Activación/desactivación de la visualización del modo A**: Activado: ajustar la transparencia de las piezas del modo B para comprobar si el efecto de configuración de los modos A/B es razonable; en este momento solo se pueden realizar operaciones de selección, adición, adición por lotes, eliminación y eliminación total sobre las piezas del modo B; Desactivado: no se puede configurar la transparencia de las piezas del modo B;
 
 .. important:: 
-   码垛方向：以右托盘为例，右下角为最远处，从右下角竖向或者横向摆放一排工件，再向上一排横向或竖向摆放工件，以此类推（Web页面已标注码垛方向，请注意查看）。
+   Al configurar las piezas, si hay colisión entre piezas, el color de fondo de las piezas se vuelve rojo y en ese momento no se pueden realizar las operaciones anteriores. Si se necesita operar, configure las piezas sin colisión.
+
+Al configurar las piezas, establecer primero el espaciado entre piezas; el marco de la derecha es la simulación del modo de colocación de las piezas en el palé derecho, y se pueden añadir individualmente o por lotes. A continuación, configurar el número de capas de paletizado y el modo de cada capa, y hacer clic en "Confirmar configuración" para completar la configuración de la información de modos.
+
+.. important:: 
+   Dirección de paletizado: tomando como ejemplo el palé derecho, la esquina inferior derecha es el punto más lejano; se coloca una fila de piezas en vertical u horizontal desde la esquina inferior derecha, y luego se coloca otra fila de piezas en horizontal o vertical hacia arriba, y así sucesivamente (la página Web ya indica la dirección de paletizado; por favor, téngalo en cuenta).
    
-   左托盘依据右托盘模式镜像放置工件。
+   El palé izquierdo coloca las piezas de forma especular según el modo del palé derecho.
 
 .. figure:: process/027.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 15.2‑5 码垛模式A配置
+.. centered:: Figura 15.2‑5 Configuración del modo A de paletizado
 
 .. figure:: process/028.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 15.2‑6 码垛模式B配置
+.. centered:: Figura 15.2‑6 Configuración del modo B de paletizado
 
-**Step6**：在示教程序生成栏点击“高级配置”进入高级配置弹窗，此时配置“取料抬升高度”、“第一次偏移距离”、“第二次偏移距离”和“吸料等待时间”。
+**Step6**: En la columna de generación del programa de enseñanza, hacer clic en "Configuración avanzada" para entrar en la ventana emergente de configuración avanzada; en este momento configurar la "Altura de elevación en la recogida de material", la "Distancia del primer desplazamiento", la "Distancia del segundo desplazamiento" y el "Tiempo de espera de aspiración del material".
 
-   **取料抬升高度**：用户自定义取料成功后，从抓取点取料成功后抬升的高度；
+   **Altura de elevación en la recogida de material**: altura de elevación definida por el usuario tras la recogida correcta del material desde el punto de agarre;
 
-   **第一/二次偏移距离**：用户自定义配置机器人倾斜堆放至目标点的偏移距离；
+   **Distancia del primer/segundo desplazamiento**: distancia de desplazamiento definida por el usuario para la colocación inclinada del robot hasta el punto objetivo;
    
-   **吸料等待时间**：用户自定义配置吸料等待时间，监控吸料后负压到位信号，未到位时重复吸取动作；
+   **Tiempo de espera de aspiración del material**: tiempo de espera de aspiración del material definido por el usuario, que monitoriza la señal de vacío en posición tras la aspiración y repite la acción de aspiración si no está en posición;
 
-   **平滑过渡**：开启平滑过渡按钮，可进行码垛/拆垛PTP平滑时间和LIN平滑半径相关参数配置。
+   **Transición suave**: al activar el botón de transición suave, se pueden configurar los parámetros relacionados con el tiempo de suavizado PTP y el radio de suavizado LIN del paletizado/despaletizado.
    
-   - PTP平滑时间：无平滑过渡时间/等级1(200ms)/等级2(400ms)/等级3(600ms)/等级4(800ms)/等级5(1000ms)
-   - LIN平滑半径：无平滑过渡半径/等级1(200mm)/等级2(400mm)/等级3(600mm)/等级4(800mm)/等级5(1000mm)
+   - Tiempo de suavizado PTP: sin tiempo de transición suave/nivel 1 (200ms)/nivel 2 (400ms)/nivel 3 (600ms)/nivel 4 (800ms)/nivel 5 (1000ms)
+   - Radio de suavizado LIN: sin radio de transición suave/nivel 1 (200mm)/nivel 2 (400mm)/nivel 3 (600mm)/nivel 4 (800mm)/nivel 5 (1000mm)
 
 .. figure:: process/029.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 15.2‑7 码垛高级配置
+.. centered:: Figura 15.2‑7 Configuración avanzada de paletizado
 
-**Step7**：在示教程序生成栏选择“方式选择”，点击“生成程序”，打开“码垛监控页”，在此页面可以对“生成信息”，“报警信息”和“码垛程序”显示和查看。
+**Step7**: En la columna de generación del programa de enseñanza, seleccionar "Selección de método" y hacer clic en "Generar programa" para abrir la "Página de monitorización del paletizado", donde se pueden mostrar y consultar la "Información de generación", la "Información de alarma" y el "Programa de paletizado".
 
 .. figure:: process/030.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.2‑8 码垛系统监控
+.. centered:: Figura 15.2‑8 Monitorización del sistema de paletizado
 
-**Step8**：码垛运行程序中途报错后，程序停止，用户首先清除报错后，再次选择码垛程序运行，此时会弹出“上次程序中断”弹出框，点击“接续”按钮接续运行，点击“重新开始”按钮重新开始运行程序。
+**Step8**: Si se produce un error durante la ejecución del programa de paletizado, el programa se detiene; el usuario debe borrar primero el error y, a continuación, volver a seleccionar el programa de paletizado para ejecutarlo; en ese momento aparecerá la ventana emergente "Interrupción del programa anterior"; hacer clic en el botón "Continuar" para reanudar la ejecución, o hacer clic en el botón "Reiniciar" para volver a empezar la ejecución del programa.
 
 .. figure:: process/031.png
    :align: center
    :width: 3in
 
-.. centered:: 图表 15.2‑9 码垛程序接续
+.. centered:: Figura 15.2‑9 Continuación del programa de paletizado
 
-传送带跟踪
------------------
+Seguimiento de cinta transportadora
+-----------------------------------
 
-传送带跟踪配置步骤
-~~~~~~~~~~~~~~~~~~~~~
+Pasos de configuración del seguimiento de cinta transportadora
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Step1**：在“辅助应用”->“工艺包”中选择“传送带”菜单项，进入传送带跟踪配置界面，点击“配置传送带IO”按键快速配置传送带功能所需IO，之后根据实际使用功能情况配置对应的参数，此处以无视觉跟踪抓取功能为例，需要配置传送带编码器通道，分辨率，导程，视觉搭配选择否，点击配置。
+**Step1**: En "Aplicaciones auxiliares"->"Paquete de proceso", seleccionar el elemento de menú "Cinta transportadora" para entrar en la interfaz de configuración del seguimiento de cinta transportadora; hacer clic en el botón "Configurar IO de la cinta transportadora" para configurar rápidamente las IO necesarias para la función de cinta transportadora y, a continuación, configurar los parámetros correspondientes según la situación real de uso de la función; aquí se toma como ejemplo la función de agarre sin seguimiento visual, para la que es necesario configurar el canal del codificador de la cinta transportadora, la resolución, el paso y la selección de combinación visual como No; hacer clic en configurar.
 
 .. figure:: process/032.png
    :align: center
@@ -515,300 +515,300 @@
    :align: center
    :width: 4in
 
-.. centered:: 图表 15.3‑1 传送带配置
+.. centered:: Figura 15.3‑1 Configuración de la cinta transportadora
 
-**Step2**：接下来设置抓取点补偿值，为X,Y,Z三个方向上的补偿距离，可在调试过程中根据实际情况设置。
+**Step2**: A continuación, configurar el valor de compensación del punto de agarre, que es la distancia de compensación en las tres direcciones X, Y, Z, y que se puede configurar según la situación real durante la depuración.
 
 .. figure:: process/034.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 15.3‑2 传送带抓取点补偿配置
+.. centered:: Figura 15.3‑2 Configuración de la compensación del punto de agarre de la cinta transportadora
 
-**Step3**：开启传送带，将标定的物体移动到定义的A点位置，停止传送带。移动机器人，将机器人末端的标定杆尖点与所标定的物体尖点对齐，点击起始点A按键，跳出对话框，显示当前编码器值和机器人位姿，点击标定完成起始点A标定。
+**Step3**: Poner en marcha la cinta transportadora, desplazar el objeto calibrado hasta la posición del punto A definido y detener la cinta transportadora. Mover el robot para alinear la punta de la varilla de calibración del extremo del robot con la punta del objeto calibrado, hacer clic en el botón del punto inicial A; aparecerá un cuadro de diálogo que muestra el valor actual del codificador y la pose del robot; hacer clic en calibrar para completar la calibración del punto inicial A.
 
 .. figure:: process/035.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 15.3‑3 起始点A配置
+.. centered:: Figura 15.3‑3 Configuración del punto inicial A
 
-**Step4**：点击参考点按键，进入参考点标定，记录参考点时记录机器人抓取时的高度和姿态，每次跟踪时都会以记录参考点的高度和姿态区跟踪抓取，可以和AB点不在一个高度，点击标定完成参考点标定。
+**Step4**: Hacer clic en el botón del punto de referencia para entrar en la calibración del punto de referencia; al registrar el punto de referencia se registran la altura y la actitud del robot en el momento del agarre; en cada seguimiento se realizará el seguimiento y agarre según la altura y la actitud del punto de referencia registrado, pudiendo no estar a la misma altura que los puntos A y B; hacer clic en calibrar para completar la calibración del punto de referencia.
 
 .. figure:: process/036.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 15.3‑4 参考点配置
+.. centered:: Figura 15.3‑4 Configuración del punto de referencia
 
-**Step5**：开启传送带，将标定的物体移动到定义的B点位置，停止传送带。移动机器人，将机器人末端的标定杆尖点与所标定的物体尖点对齐，点击终点B按键，弹出对话框，显示当前编码器值和机器人位姿，点击标定完成终点B标定。
+**Step5**: Poner en marcha la cinta transportadora, desplazar el objeto calibrado hasta la posición del punto B definido y detener la cinta transportadora. Mover el robot para alinear la punta de la varilla de calibración del extremo del robot con la punta del objeto calibrado, hacer clic en el botón del punto final B; aparecerá un cuadro de diálogo que muestra el valor actual del codificador y la pose del robot; hacer clic en calibrar para completar la calibración del punto final B.
 
 .. figure:: process/037.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 15.3‑5 终点B配置
+.. centered:: Figura 15.3‑5 Configuración del punto final B
 
-传送带跟踪示教程序
-~~~~~~~~~~~~~~~~~~~~~~~
+Programa de enseñanza del seguimiento de cinta transportadora
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. list-table::
    :widths: 50 80 80
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **指令格式**
-     - **注释**
+   * - **Número**
+     - **Formato de la instrucción**
+     - **Comentario**
 
    * - 1
      - PTP(conveyorstart,30,-1,0)
-     - #机器人抓取起点
+     - #Punto inicial de agarre del robot
 
    * - 2
      - While(1) do
-     - #循环抓取
+     - #Agarre en bucle
 
    * - 3
      - ConveyorlODetect(10000)
-     - #Io实时检测物体
+     - #Detección en tiempo real del objeto por IO
 
    * - 4
      - ConveyorGetTrackData(1)
-     - #物体位置获取
+     - #Obtención de la posición del objeto
 
    * - 5
      - ConveyorTrackStart(1)
-     - #传送带跟踪开始
+     - #Inicio del seguimiento de la cinta transportadora
 
    * - 6
      - Lin(cvrCatchPoint,10,-1,0,0)
-     - #机器人到达抓取点
+     - #El robot llega al punto de agarre
 
    * - 7
      - MoveGripper(1,255,255,0,10000)
-     - #夹爪抓取物体
+     - #La pinza agarra el objeto
 
    * - 8
      - Lin(cvrRaisePoint,10,-1,0,0)
-     - #机器人提起
+     - #El robot eleva
 
    * - 9
      - ConveyorTrackEnd()
-     - #传送带跟踪结束
+     - #Fin del seguimiento de la cinta transportadora
 
    * - 10
      - PTP(conveyorraise,30,-1,0)
-     - #机器人到达等待点
+     - #El robot llega al punto de espera
 
    * - 11
      - PTP(conveyorend,30,-1,0)
-     - #机器人到达放置点
+     - #El robot llega al punto de colocación
 
    * - 12
      - MoveGripper(1,0,255,0,10000)
-     - #夹爪松开
+     - #La pinza suelta
 
    * - 13
      - PTP(conveyorstart,50,-1,0)
-     - #机器人再次回到抓取起点,等待下次抓取
+     - #El robot vuelve al punto inicial de agarre, esperando el siguiente agarre
 
    * - 14
      - end
-     - #结束
+     - #Fin
 
-机器人传送带跟踪系统构成
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Composición del sistema de seguimiento de cinta transportadora del robot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-传送带编码器数据通信连接方式
-+++++++++++++++++++++++++++++++++++
+Modo de conexión de comunicación de datos del codificador de la cinta transportadora
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-为了在机床加工中，实现自动化上下料流程，开发了基于FOCAS通信的CNC功能包，可实现协作机器人与CNC机床的通信交互与协同运动。
+Para lograr el flujo automatizado de carga y descarga en el mecanizado por CNC, se ha desarrollado el paquete de funciones CNC basado en la comunicación FOCAS, que permite la interacción de comunicación y el movimiento colaborativo entre el robot colaborativo y la máquina CNC.
 
-如图所示，FOCAS通信是基于以太网的，通过网线连接机器人控制箱网口与机床内嵌网口，即可建立机器人与机床的FOCAS通信，实现在机器人端的CNC控制和机床状态监控。
+Como se muestra en la figura, la comunicación FOCAS se basa en Ethernet; conectando mediante cable de red el puerto de red de la caja de control del robot con el puerto de red integrado de la máquina herramienta se puede establecer la comunicación FOCAS entre el robot y la máquina herramienta, realizando el control CNC y la monitorización del estado de la máquina herramienta en el lado del robot.
 
 .. figure:: process/038.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.3‑6 机器人传送带跟踪系统构成拓扑图
+.. centered:: Figura 15.3‑6 Topología de la composición del sistema de seguimiento de cinta transportadora del robot
 
-系统中，（a）为计算机，（b）为机器人及其控制箱，（c）为传送带、光电传感器及编码器组成的传送带系统。机器人控制箱通过数字IO通信与光电传感器、传送带相连，通过RS485与传送带编码器相连。
+En el sistema, (a) es el ordenador, (b) es el robot y su caja de control, y (c) es el sistema de cinta transportadora compuesto por la cinta transportadora, el sensor fotoeléctrico y el codificador. La caja de control del robot se conecta mediante comunicación de IO digital con el sensor fotoeléctrico y la cinta transportadora, y mediante RS485 con el codificador de la cinta transportadora.
 
-传送带配置
-+++++++++++++++++++++++++++++++++++
+Configuración de la cinta transportadora
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-进入机器人Web页面“基础设置”、“外设”、“跟踪”下属的“传送带”功能配置界面进行传送带跟踪功能属性配置。
+Entrar en la página Web del robot en "Configuración básica", "Periféricos", "Seguimiento", en la interfaz de configuración de la función "Cinta transportadora" para configurar las propiedades de la función de seguimiento de cinta transportadora.
 
 .. figure:: process/039.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 15.3‑7 传送带跟踪配置页面
+.. centered:: Figura 15.3‑7 Página de configuración del seguimiento de cinta transportadora
 
-在传送带跟踪配置页面，点击“传送带I/O一键配置”按钮一键配置传送带物理连接。
-之后在“参数配置”下的“功能选择”下拉框中选择“跟踪运动”，再后配置编码器属性、跟踪工件坐标系工件轴、视觉搭配，并在“跟踪类型”下拉框中选中“追检运动”，此时可输入跟踪起始距离以及跟踪终止距离。
-跟踪起始距离：触发跟踪信号后传送带运行到设置距离后机器人开始动作，当设置为-1时为自动触发。
-跟踪终止距离：机器人开始动作后，跟随传送带同步运动的最远距离。
+En la página de configuración del seguimiento de cinta transportadora, hacer clic en el botón "Configuración rápida de I/O de la cinta transportadora" para configurar con un solo clic la conexión física de la cinta transportadora.
+A continuación, en el cuadro desplegable "Selección de función" de "Configuración de parámetros", seleccionar "Seguimiento de movimiento"; después configurar las propiedades del codificador, el eje de pieza del sistema de coordenadas de pieza de seguimiento y la combinación visual, y en el cuadro desplegable "Tipo de seguimiento" seleccionar "Movimiento de seguimiento e inspección"; en este momento se pueden introducir la distancia inicial de seguimiento y la distancia final de seguimiento.
+Distancia inicial de seguimiento: tras activarse la señal de seguimiento, el robot comienza a moverse cuando la cinta transportadora ha recorrido la distancia establecida; cuando se configura en -1, la activación es automática.
+Distancia final de seguimiento: la distancia máxima que el robot sigue en movimiento sincronizado con la cinta transportadora tras comenzar a moverse.
 
-跟踪坐标系配置
-+++++++++++++++++++++++++++++++++++
+Configuración del sistema de coordenadas de seguimiento
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-跟踪运动使用工件坐标系作为传送带坐标系，因此需要设置工件坐标系。
+El movimiento de seguimiento utiliza el sistema de coordenadas de pieza como sistema de coordenadas de la cinta transportadora, por lo que es necesario configurar el sistema de coordenadas de pieza.
 
-点击“初始设置”、“基础”，在“坐标系”下选择“工件坐标系”，点击选择“wobjcoord0”以外的工件坐标系进行标定，标定方式此处不赘述。
+Hacer clic en "Configuración inicial", "Básico" y, en "Sistema de coordenadas", seleccionar "Sistema de coordenadas de pieza"; hacer clic para seleccionar un sistema de coordenadas de pieza distinto de "wobjcoord0" para calibrarlo; el método de calibración no se detalla aquí.
 
 .. figure:: process/040.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 15.3‑8 跟踪坐标系设置
+.. centered:: Figura 15.3‑8 Configuración del sistema de coordenadas de seguimiento
 
-传送带跟踪追检运动功能
-+++++++++++++++++++++++++++++++++++
+Función de movimiento de seguimiento e inspección del seguimiento de cinta transportadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-追检运动属于传送带跟踪运动的一种，与跟踪运动相比追检运动的运动点示教无需在工件坐标系上方进行示教运动，可以在工件坐标系任意位置进行示教，再通过“跟踪起始距离”的参数进行末端与传送带同步运动，是一种比较灵活的跟踪方式。
+El movimiento de seguimiento e inspección es un tipo de movimiento de seguimiento de cinta transportadora; en comparación con el movimiento de seguimiento, la enseñanza de los puntos de movimiento del movimiento de seguimiento e inspección no requiere realizar el movimiento de enseñanza por encima del sistema de coordenadas de pieza, sino que se puede enseñar en cualquier posición del sistema de coordenadas de pieza y, a continuación, mediante el parámetro "Distancia inicial de seguimiento", realizar el movimiento sincronizado del extremo con la cinta transportadora; es un modo de seguimiento bastante flexible.
 
-传送带跟踪追检运动功能简介
-+++++++++++++++++++++++++++++++++++
+Introducción a la función de movimiento de seguimiento e inspección del seguimiento de cinta transportadora
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-以下给出追检运动示例以介绍运动特性。
+A continuación se ofrece un ejemplo de movimiento de seguimiento e inspección para presentar sus características de movimiento.
 
 .. figure:: process/041.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.3‑9 传送带跟踪追检运动示教示例
+.. centered:: Figura 15.3‑9 Ejemplo de enseñanza del movimiento de seguimiento e inspección del seguimiento de cinta transportadora
 
-其中，以x为工件坐标中传送带运动的方向，a为传送带平面，b为抓取目标工件，c为光电传感器，d为跟踪起始距离，e为跟踪终止距离。P1到P4为示教路点及其依次顺序，P2到P3为相同路点，包含夹爪运动。
+Donde x es la dirección de movimiento de la cinta transportadora en el sistema de coordenadas de pieza, a es el plano de la cinta transportadora, b es la pieza objetivo de agarre, c es el sensor fotoeléctrico, d es la distancia inicial de seguimiento y e es la distancia final de seguimiento. P1 a P4 son los puntos de ruta enseñados y su orden sucesivo; P2 a P3 son el mismo punto de ruta e incluyen el movimiento de la pinza.
 
 .. figure:: process/042.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.3‑10 传送带跟踪追检运动示教后执行示例
+.. centered:: Figura 15.3‑10 Ejemplo de ejecución tras la enseñanza del movimiento de seguimiento e inspección del seguimiento de cinta transportadora
 
-当上述示教程序开始运行，工件触发光电开关信号后，机器人会等待目标运动到P1下方后开始跟踪运动，机器人夹爪将如上图所示轨迹运动。
+Cuando el programa de enseñanza anterior comienza a ejecutarse y la pieza activa la señal del interruptor fotoeléctrico, el robot espera a que el objetivo se desplace hasta debajo de P1 y comienza el movimiento de seguimiento; la pinza del robot se moverá según la trayectoria mostrada en la figura anterior.
 
-追检运动程序示教
-+++++++++++++++++++++++++++++++++++
+Enseñanza del programa de movimiento de seguimiento e inspección
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-追检运动程序逻辑与跟踪运动逻辑基本一致，包含获取触发信号、获取传送带数据以及开始跟踪运动部分。
+La lógica del programa de movimiento de seguimiento e inspección es básicamente idéntica a la del movimiento de seguimiento e incluye las partes de obtención de la señal de activación, obtención de los datos de la cinta transportadora e inicio del movimiento de seguimiento.
 
-**Step 1**：点击“示教程序”，“程序编程”，选择并点击“外设指令”下属的“传送带”按钮进入传送带指令配置页面。
+**Step 1**: Hacer clic en "Programa de enseñanza", "Programación de programas", seleccionar y hacer clic en el botón "Cinta transportadora" de las "Instrucciones de periféricos" para entrar en la página de configuración de la instrucción de cinta transportadora.
 
 .. figure:: process/043.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.3‑11 I/O实时监测指令
+.. centered:: Figura 15.3‑11 Instrucción de monitorización de I/O en tiempo real
 
-**Step 2**：点击“I/O实时监测”并设置“最大等待示教(ms)”，实时检测跟踪触发信号。点击“添加”与“应用”按钮将指令添加到程序中。
+**Step 2**: Hacer clic en "Monitorización de I/O en tiempo real", configurar el "Tiempo máximo de espera de enseñanza (ms)" y detectar en tiempo real la señal de activación del seguimiento. Hacer clic en los botones "Añadir" y "Aplicar" para añadir la instrucción al programa.
 
 .. figure:: process/044.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.3‑12 位置实时检测指令
+.. centered:: Figura 15.3‑12 Instrucción de detección de posición en tiempo real
 
-**Step 3**：点击“位置实时检测”并将工作模式选定“跟踪运动”。点击“添加”与“应用”按钮将指令添加到程序中。
+**Step 3**: Hacer clic en "Detección de posición en tiempo real" y seleccionar "Seguimiento de movimiento" como modo de trabajo. Hacer clic en los botones "Añadir" y "Aplicar" para añadir la instrucción al programa.
 
 .. figure:: process/045.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.3‑13 跟踪开启指令
+.. centered:: Figura 15.3‑13 Instrucción de inicio de seguimiento
 
-**Step 4**：点击“跟踪开启”并工作模式选定“跟踪运动”。点击“添加”与“应用”按钮将指令添加到程序中。
+**Step 4**: Hacer clic en "Inicio de seguimiento" y seleccionar "Seguimiento de movimiento" como modo de trabajo. Hacer clic en los botones "Añadir" y "Aplicar" para añadir la instrucción al programa.
 
-**Step 5**：示教在跟踪开启后的笛卡尔空间运动以及夹爪外设运动，运动过程中将保持与传送带的跟踪同步运动。
+**Step 5**: Enseñar el movimiento en el espacio cartesiano tras el inicio del seguimiento y el movimiento de los periféricos de la pinza; durante el movimiento se mantendrá el movimiento sincronizado de seguimiento con la cinta transportadora.
 
 .. figure:: process/046.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.3‑14 跟踪关闭指令
+.. centered:: Figura 15.3‑14 Instrucción de fin de seguimiento
 
-**Step 6**：点击“跟踪关闭”并点击“添加”与“应用”按钮将指令添加到程序中。
+**Step 6**: Hacer clic en "Fin de seguimiento" y hacer clic en los botones "Añadir" y "Aplicar" para añadir la instrucción al programa.
 
 .. figure:: process/047.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.3‑15 一段典型的传送带程序跟踪运动程序
+.. centered:: Figura 15.3‑15 Programa típico de movimiento de seguimiento de cinta transportadora
 
-当连续示教两个相同的跟踪运动目标（可包含偏置距离），机器人运动将阻塞在该目标位置，实现持续同步跟踪直到跟踪距离达到终止跟踪距离为止。
+Cuando se enseñan continuamente dos objetivos de movimiento de seguimiento idénticos (que pueden incluir una distancia de desplazamiento), el movimiento del robot se bloquea en dicha posición objetivo, realizando un seguimiento sincronizado continuo hasta que la distancia de seguimiento alcanza la distancia final de seguimiento.
 
 .. figure:: process/048.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.3‑16 一段典型的传送带阻塞跟踪抓取运动程序
+.. centered:: Figura 15.3‑16 Programa típico de movimiento de agarre con seguimiento bloqueante de cinta transportadora
 
-当连续示教两个相同的跟踪运动目标（可包含偏置距离），同时中间插入夹爪运动时，机器人将在该目标位置位置持续跟踪传送带直至夹爪运动完成，实现阻塞跟踪抓取。
+Cuando se enseñan continuamente dos objetivos de movimiento de seguimiento idénticos (que pueden incluir una distancia de desplazamiento) y se inserta entre ellos el movimiento de la pinza, el robot sigue continuamente la cinta transportadora en dicha posición objetivo hasta que finaliza el movimiento de la pinza, realizando el agarre con seguimiento bloqueante.
 
-矩阵移动指令优化功能
+Función de optimización de la instrucción de movimiento matricial
 ------------------------------------------------------------------
 
-概述
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Descripción general
+~~~~~~~~~~~~~~~~~~~~
 
-在CNC设备的自动化加工以及码垛作业的过程中，矩阵移动指令广泛应用于多个关键工序环节，包括毛坯上料、成品下料、工件翻转、二次装夹。通过在矩阵移动配方中示教矩阵三点确定矩阵位置，配置矩阵的行、列、层和运动路径后，在指令界面可快速切换矩阵配方进行部署运行。
+En el proceso de mecanizado automatizado de equipos CNC y en las operaciones de paletizado, la instrucción de movimiento matricial se utiliza ampliamente en múltiples fases clave del proceso, incluidas la carga de piezas en bruto, la descarga de productos terminados, el volteo de piezas y la segunda sujeción. Mediante la enseñanza de tres puntos de la matriz en la receta de movimiento matricial para determinar la posición de la matriz, y tras configurar las filas, columnas, capas y la ruta de movimiento de la matriz, se puede conmutar rápidamente la receta de la matriz en la interfaz de instrucciones para su despliegue y funcionamiento.
 
-矩阵移动配方配置
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configuración de la receta de movimiento matricial
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Step1**：进入“辅助应用—>工艺包—>矩阵移动”界面，进行配方新增、编辑、重命名和删除操作；
+**Step1**: Entrar en la interfaz "Aplicaciones auxiliares—>Paquete de proceso—>Movimiento matricial" para realizar operaciones de creación, edición, cambio de nombre y eliminación de recetas;
 
 .. figure:: process/049.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.4‑1 矩阵配方界面
+.. centered:: Figura 15.4‑1 Interfaz de la receta de matriz
 
 .. note:: 
    .. image:: process/050.png
       :height: 0.75in
       :align: left
 
-   名称：**新增按钮**
+   Nombre: **Botón Añadir**
    
-   作用：新增矩阵配方
+   Función: añadir una receta de matriz
 
 .. note:: 
    .. image:: process/051.png
       :height: 0.75in
       :align: left
 
-   名称：**编辑按钮**
+   Nombre: **Botón Editar**
    
-   作用：编辑矩阵配方参数
+   Función: editar los parámetros de la receta de matriz
 
 .. note:: 
    .. image:: process/052.png
       :height: 0.75in
       :align: left
 
-   名称：**重命名按钮**
+   Nombre: **Botón Cambiar nombre**
    
-   作用：矩阵配方重命名
+   Función: cambiar el nombre de la receta de matriz
 
 .. note:: 
    .. image:: process/053.png
       :height: 0.75in
       :align: left
 
-   名称：**删除按钮**
+   Nombre: **Botón Eliminar**
    
-   作用：删除矩阵配方
+   Función: eliminar la receta de matriz
 
-**Step2**：新增矩阵配方。点击“新增”按钮，弹出“新增矩阵”模态窗，输入矩阵名称（禁止输入特殊字符,只允许输入数字常用汉字和下划线“_”）后进入配方详情界面输入行数、层数、列数、层高、运动配置和过渡点偏移量X、Y、Z，示教矩阵三个路径点。点击“配置”按钮确认配置。
+**Step2**: Añadir una receta de matriz. Hacer clic en el botón "Añadir" para que aparezca la ventana modal "Añadir matriz"; introducir el nombre de la matriz (está prohibido introducir caracteres especiales; solo se permite introducir números, caracteres chinos de uso común y el guion bajo "_") y entrar en la interfaz de detalle de la receta para introducir el número de filas, el número de capas, el número de columnas, la altura de capa, la configuración de movimiento y el desplazamiento de los puntos de transición X, Y, Z, y enseñar los tres puntos de ruta de la matriz. Hacer clic en el botón "Configurar" para confirmar la configuración.
 
 .. figure:: process/054.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.4‑2 新增矩阵弹出模态窗
+.. centered:: Figura 15.4‑2 Ventana modal de añadir matriz
 
 .. figure:: process/055.png
    :align: center
@@ -818,7 +818,7 @@
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.4‑3 第一路径点示教
+.. centered:: Figura 15.4‑3 Enseñanza del primer punto de ruta
 
 .. figure:: process/057.png
    :align: center
@@ -828,7 +828,7 @@
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.4‑4 第二路径点示教
+.. centered:: Figura 15.4‑4 Enseñanza del segundo punto de ruta
 
 .. figure:: process/059.png
    :align: center
@@ -838,110 +838,110 @@
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.4‑5 第三路径点示教
+.. centered:: Figura 15.4‑5 Enseñanza del tercer punto de ruta
 
-运动路径分为头到尾走法和弓字行走法。说明如下：
+La ruta de movimiento se divide en recorrido de principio a fin y recorrido en zigzag. Se describen a continuación:
 
-**头到尾走法**：从左向右走完第一行回到左侧起点，再从左向右走完第二行再回到左侧起点，从左向右走完第三行，直到覆盖完成。
+**Recorrido de principio a fin**: recorrer la primera fila de izquierda a derecha y volver al punto inicial izquierdo, recorrer la segunda fila de izquierda a derecha y volver al punto inicial izquierdo, recorrer la tercera fila de izquierda a derecha, hasta completar la cobertura.
 
 .. figure:: process/061.png
    :align: center
    :width: 1in
 
-.. centered:: 图表 15.4‑6 头到尾走法
+.. centered:: Figura 15.4‑6 Recorrido de principio a fin
 
-**弓字形走法**：从左向右走完第一行，垂直向下移动，再从右向左走完第二行。再垂直向下移动，再从左向右走完第三行，直到区域覆盖完成。
+**Recorrido en zigzag**: recorrer la primera fila de izquierda a derecha, desplazarse verticalmente hacia abajo y recorrer la segunda fila de derecha a izquierda. Desplazarse de nuevo verticalmente hacia abajo y recorrer la tercera fila de izquierda a derecha, hasta completar la cobertura de la zona.
 
 .. figure:: process/062.png
    :align: center
    :width: 1in
 
-.. centered:: 图表 15.4‑7 弓字形走法
+.. centered:: Figura 15.4‑7 Recorrido en zigzag
 
-**Step3**：配方编辑、重命名和删除。点击“编辑”按钮，获取当前选择矩阵配方的数据，根据需求修改参数或重新示教路径点即可。当需要重命名时，点击“重命名”按钮，输入名称后再次点击“重命名”按钮完成重命名。点击“删除”按钮，需要二次确认是否删除矩阵配方，再次点击“删除”按钮后确认删除。如下图：
+**Step3**: Edición, cambio de nombre y eliminación de recetas. Hacer clic en el botón "Editar" para obtener los datos de la receta de matriz seleccionada actualmente y modificar los parámetros o volver a enseñar los puntos de ruta según sea necesario. Cuando se necesite cambiar el nombre, hacer clic en el botón "Cambiar nombre", introducir el nombre y volver a hacer clic en el botón "Cambiar nombre" para completar el cambio. Hacer clic en el botón "Eliminar"; es necesario confirmar por segunda vez si se desea eliminar la receta de matriz, y volver a hacer clic en el botón "Eliminar" para confirmar la eliminación. Como se muestra en la figura siguiente:
 
 .. figure:: process/063.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.4‑8 矩阵配方重命名
+.. centered:: Figura 15.4‑8 Cambio de nombre de la receta de matriz
 
 .. figure:: process/064.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.4‑9 矩阵配方删除提示
+.. centered:: Figura 15.4‑9 Aviso de eliminación de la receta de matriz
 
-矩阵移动指令添加
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adición de la instrucción de movimiento matricial
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Step1**：进入“示教程序->程序编程->码垛指令->矩阵移动”界面后，查看界面是否存在配方。当未创建配方时，显示提示内容，在提示语下方可点击“配置”按钮快速进入“辅助应用->工艺包->矩阵移动”界面。如下图所示：
+**Step1**: Entrar en la interfaz "Programa de enseñanza->Programación de programas->Instrucciones de paletizado->Movimiento matricial" y comprobar si existe una receta en la interfaz. Cuando no se ha creado ninguna receta, se muestra el contenido de aviso; debajo del texto de aviso se puede hacer clic en el botón "Configurar" para entrar rápidamente en la interfaz "Aplicaciones auxiliares->Paquete de proceso->Movimiento matricial". Como se muestra en la figura siguiente:
 
 .. figure:: process/065.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.4‑10 矩阵移动指令无配方界面
+.. centered:: Figura 15.4‑10 Interfaz de la instrucción de movimiento matricial sin receta
 
-存在配方时，显示矩阵移动指令界面。当前指令类型为：
+Cuando existe una receta, se muestra la interfaz de la instrucción de movimiento matricial. Los tipos de instrucción actuales son:
 
-- **矩阵移动**：设置机器人移动到上下料抓取作业的过渡点；
-- **矩阵运行计数**：机器人上下料抓取完成后进行第几行第几列第几层计数；
-- **配置起始计数**：设置机器人上下料抓取时从第几行第几列第几层开始；
-- **获取矩阵计数**：获取机器人上下料抓取完成到第几行第几列第几层。
+- **Movimiento matricial**: configurar el movimiento del robot hasta el punto de transición de la operación de agarre de carga y descarga;
+- **Contador de ejecución de la matriz**: contar la fila, columna y capa tras completar el agarre de carga y descarga del robot;
+- **Configurar conteo inicial**: configurar desde qué fila, columna y capa comienza el agarre de carga y descarga del robot;
+- **Obtener conteo de la matriz**: obtener hasta qué fila, columna y capa ha completado el agarre de carga y descarga el robot.
 
 .. figure:: process/066.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.4‑11 矩阵移动指令存在配方界面
+.. centered:: Figura 15.4‑11 Interfaz de la instrucción de movimiento matricial con receta
 
-**Step2**：添加“矩阵移动”指令。新建程序名称为“matrix”，选择配方“matrix1”，移动方向“下移”，速度输入100。机器人从安全点移动到过渡点后再运行到抓取点。点击“添加”按钮后应用到程序中。如下图所示：
+**Step2**: Añadir la instrucción "Movimiento matricial". Crear el programa con el nombre "matrix", seleccionar la receta "matrix1", la dirección de movimiento "Descenso" y la velocidad 100. El robot se desplaza desde el punto de seguridad hasta el punto de transición y luego hasta el punto de agarre. Hacer clic en el botón "Añadir" para aplicarlo al programa. Como se muestra en la figura siguiente:
 
 .. figure:: process/067.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.4‑12 矩阵移动指令下移
+.. centered:: Figura 15.4‑12 Movimiento descendente de la instrucción de movimiento matricial
 
-**Step3**：添加“矩阵运行计数”指令。选择配方“matrix1”，点击“添加”按钮后应用到程序中。如下图所示：
+**Step3**: Añadir la instrucción "Contador de ejecución de la matriz". Seleccionar la receta "matrix1" y hacer clic en el botón "Añadir" para aplicarlo al programa. Como se muestra en la figura siguiente:
 
 .. figure:: process/068.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.4‑13 矩阵运行计数指令
+.. centered:: Figura 15.4‑13 Instrucción de contador de ejecución de la matriz
 
-**Step4**：添加“矩阵移动”指令。选择配方“matrix1”，移动方向“上移”，速度输入100。机器人从抓取点移动到过渡点后回到安全点。点击“添加”按钮后应用到程序中。如下图所示：
+**Step4**: Añadir la instrucción "Movimiento matricial". Seleccionar la receta "matrix1", la dirección de movimiento "Ascenso" y la velocidad 100. El robot se desplaza desde el punto de agarre hasta el punto de transición y luego vuelve al punto de seguridad. Hacer clic en el botón "Añadir" para aplicarlo al programa. Como se muestra en la figura siguiente:
 
 .. figure:: process/069.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.4‑14 矩阵移动指令上移
+.. centered:: Figura 15.4‑14 Movimiento ascendente de la instrucción de movimiento matricial
 
-**Step5**：添加while指令进行始终循环。点击“保存”按钮，保存程序，切换自动模式运行程序。机器人一直进行矩阵移动的上下料抓取作业。如下图所示：
+**Step5**: Añadir la instrucción while para el bucle siempre. Hacer clic en el botón "Guardar" para guardar el programa y cambiar al modo automático para ejecutarlo. El robot realiza continuamente la operación de agarre de carga y descarga del movimiento matricial. Como se muestra en la figura siguiente:
 
 .. figure:: process/070.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.4‑15 矩阵移动指令运行
+.. centered:: Figura 15.4‑15 Ejecución de la instrucción de movimiento matricial
 
-**Step6**：添加“配置起始计数”指令。选择配方“matrix1”，输入行数1、列数1、层数1。点击“添加”按钮后应用到程序中。如下图所示：
+**Step6**: Añadir la instrucción "Configurar conteo inicial". Seleccionar la receta "matrix1" e introducir fila 1, columna 1 y capa 1. Hacer clic en el botón "Añadir" para aplicarlo al programa. Como se muestra en la figura siguiente:
 
-.. note:: 输入的行数、列数、层数，在此基础上加1代表实际的行数、列数和层数。即输入行数1、列数1、层数1，实际机器人从指定位置第2行第2列第2层开始运行。
+.. note:: A las filas, columnas y capas introducidas se les suma 1 para representar las filas, columnas y capas reales. Es decir, si se introducen fila 1, columna 1 y capa 1, el robot comienza a funcionar realmente desde la fila 2, columna 2 y capa 2 de la posición especificada.
 
 .. figure:: process/071.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.4‑16 配置起始计数指令
+.. centered:: Figura 15.4‑16 Instrucción de configuración del conteo inicial
 
-**Step7**：当矩阵发送改变时，进入“辅助应用->工艺包->矩阵移动”界面，选择矩阵配方“matrix1”，点击编辑按钮修改参数后，点击配置按钮即可完成矩阵修改。此时回到程序编程界面，打开程序“matrix”后，直接运行即可进行新的矩阵场景作业。
+**Step7**: Cuando cambie el envío de la matriz, entrar en la interfaz "Aplicaciones auxiliares->Paquete de proceso->Movimiento matricial", seleccionar la receta de matriz "matrix1", hacer clic en el botón editar para modificar los parámetros y hacer clic en el botón configurar para completar la modificación de la matriz. En este momento, volver a la interfaz de programación de programas, abrir el programa "matrix" y ejecutarlo directamente para realizar la operación del nuevo escenario de matriz.
 
 .. figure:: process/072.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 15.4‑17 修改矩阵配方
+.. centered:: Figura 15.4‑17 Modificación de la receta de matriz

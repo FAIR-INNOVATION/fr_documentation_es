@@ -1,72 +1,72 @@
-机器人安全设置
-=================
+Configuración de seguridad del robot
+====================================
 
 .. toctree:: 
     :maxdepth: 5
 
-设置碰撞等级
-++++++++++++++++++++++++++++++++
+Establecer el nivel de colisión
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置碰撞等级
-    * @param  [in]  mode  0-等级，1-百分比
-    * @param  [in]  level 碰撞阈值，等级对应范围[],百分比对应范围[0~1]
-    * @param  [in]  config 0-不更新配置文件，1-更新配置文件
-    * @return  错误码
+    * @brief  Establecer el nivel de colisión
+    * @param  [in]  mode  0-nivel, 1-porcentaje
+    * @param  [in]  level Umbral de colisión, rango correspondiente al nivel [], rango correspondiente al porcentaje [0~1]
+    * @param  [in]  config 0-no actualizar el archivo de configuración, 1-actualizar el archivo de configuración
+    * @return  Código de error
     */
     errno_t  SetAnticollision(int mode, float level[6], int config);
 
-设置碰撞后策略
-++++++++++++++++++++++++++++++++
+Establecer la estrategia posterior a la colisión
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-	 * @brief  设置碰撞后策略
-	 * @param  [in] strategy  0-报错暂停；1-继续运行;2-报错停止；3-重力矩模式；4-震荡相应模式；5-碰撞回弹模式 
-	 * @param  [in] safeTime  安全停止时间[1000 - 2000]ms
-	 * @param  [in] safeDistance  安全停止距离[1-150]mm
-	 * @param  [in] safetyMargin  j1-j6安全系数[1-10]
-	 * @return  错误码
+	 * @brief  Establecer la estrategia posterior a la colisión
+	 * @param  [in] strategy  0-pausar con error; 1-continuar ejecutando; 2-detener con error; 3-modo de par de gravedad; 4-modo de respuesta oscilante; 5-modo de rebote por colisión 
+	 * @param  [in] safeTime  Tiempo de parada segura [1000 - 2000]ms
+	 * @param  [in] safeDistance  Distancia de parada segura [1-150]mm
+	 * @param  [in] safetyMargin  Coeficiente de seguridad j1-j6 [1-10]
+	 * @return  Código de error
 	 */
 	errno_t SetCollisionStrategy(int strategy, int safeTime, int safeDistance, int safetyMargin[]);
 
-自定义碰撞检测阈值功能开始
-++++++++++++++++++++++++++++++++++++++++++++++++
+Inicio de la función de umbral de detección de colisión personalizado
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.2.0-3.8.0
 
 .. code-block:: c++
     :linenos:
 
 	 /**
-	 * @brief  自定义碰撞检测阈值功能开始，设置关节端和TCP端的碰撞检测阈值
-	 * @param  [in] flag 1-仅关节检测开启；2-仅TCP检测开启；3-关节和TCP检测同时开启
-	 * @param  [in] jointDetectionThreshould 关节碰撞检测阈值 j1-j6
-	 * @param  [in] tcpDetectionThreshould TCP碰撞检测阈值，xyzabc
-	 * @param  [in] block 0-非阻塞；1-阻塞
-	 * @return  错误码
+	 * @brief  Inicio de la función de umbral de detección de colisión personalizado, establecer los umbrales de detección de colisión del lado de las articulaciones y del lado del TCP
+	 * @param  [in] flag 1-solo detección de articulaciones activada; 2-solo detección de TCP activada; 3-detección de articulaciones y TCP activadas simultáneamente
+	 * @param  [in] jointDetectionThreshould Umbral de detección de colisión de articulaciones j1-j6
+	 * @param  [in] tcpDetectionThreshould Umbral de detección de colisión de TCP, xyzabc
+	 * @param  [in] block 0-no bloqueante; 1-bloqueante
+	 * @return  Código de error
 	 */
 	errno_t CustomCollisionDetectionStart(int flag, double jointDetectionThreshould[6], double tcpDetectionThreshould[6], int block);
 
-自定义碰撞检测阈值功能结束
-++++++++++++++++++++++++++++++++++++++++++++++++
+Fin de la función de umbral de detección de colisión personalizado
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.2.0-3.8.0
 
 .. code-block:: c++
     :linenos:
 
 	/**
-	 * @brief  自定义碰撞检测阈值功能关闭
-	 * @return  错误码
+	 * @brief  Cierre de la función de umbral de detección de colisión personalizado
+	 * @return  Código de error
 	 */
 	errno_t CustomCollisionDetectionEnd();
 
-机器人碰撞等级设置代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración del nivel de colisión del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
@@ -115,46 +115,46 @@
          return 0;
      }
 
-设置正限位
-++++++++++++++++++++++++++++++++
+Establecer límite positivo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  设置正限位
-    * @param  [in] limit 六个关节位置，单位deg
-    * @return  错误码
+    * @brief  Establecer límite positivo
+    * @param  [in] limit Posición de las seis articulaciones, unidad deg
+    * @return  Código de error
     */
     errno_t  SetLimitPositive(float limit[6]);
 
-设置负限位
-++++++++++++++++++++++++++++++++
+Establecer límite negativo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  设置负限位
-    * @param  [in] limit 六个关节位置，单位deg
-    * @return  错误码
+    * @brief  Establecer límite negativo
+    * @param  [in] limit Posición de las seis articulaciones, unidad deg
+    * @return  Código de error
     */
     errno_t  SetLimitNegative(float limit[6]);   
 
-获取关节软限位角度
-++++++++++++++++++++++++++++++++++++
+Obtener el ángulo del límite suave de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  获取关节软限位角度
-    * @param  [in] flag 0-阻塞，1-非阻塞    
-    * @param  [out] negative  负限位角度，单位deg
-    * @param  [out] positive  正限位角度，单位deg
-    * @return  错误码
+    * @brief  Obtener el ángulo del límite suave de las articulaciones
+    * @param  [in] flag 0-bloqueante, 1-no bloqueante    
+    * @param  [out] negative  Ángulo del límite negativo, unidad deg
+    * @param  [out] positive  Ángulo del límite positivo, unidad deg
+    * @return  Código de error
     */
     errno_t  GetJointSoftLimitDeg(uint8_t flag, float negative[6], float positive[6]);
     
-机器人限位设置代码示例
-++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración de límites del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
@@ -182,36 +182,36 @@
       return 0;
     }
 
-设置机器人碰撞检测方法
-++++++++++++++++++++++++++++++++++++++++++
+Establecer el método de detección de colisión del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置机器人碰撞检测方法
-    * @param [in] method 碰撞检测方法：0-电流模式；1-双编码器；2-电流和双编码器同时开启
-    * @param [in] thresholdMode 碰撞等级阈值方式；0-碰撞等级固定阈值方式；1-自定义碰撞检测阈值
-    * @return  错误码
+    * @brief Establecer el método de detección de colisión del robot
+    * @param [in] method Método de detección de colisión: 0-modo de corriente; 1-doble codificador; 2-corriente y doble codificador activados simultáneamente
+    * @param [in] thresholdMode Modo de umbral del nivel de colisión; 0-modo de umbral fijo por nivel de colisión; 1-umbral de detección de colisión personalizado
+    * @return  Código de error
     */
     errno_t SetCollisionDetectionMethod(int method, int thresholdMode = 0);
 
-设置静态下碰撞检测开始关闭
-++++++++++++++++++++++++++++++++++++++++++
+Establecer el inicio y cierre de la detección de colisión en estado estático
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 设置静态下碰撞检测开始关闭
-     * @param [in] status 0-关闭；1-开启
-     * @return 错误码
+     * @brief Establecer el inicio y cierre de la detección de colisión en estado estático
+     * @param [in] status 0-cerrar; 1-abrir
+     * @return Código de error
      */
     errno_t SetStaticCollisionOnOff(int status);
 
-设置机器人碰撞检测方法代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración del método de detección de colisión del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
@@ -240,23 +240,23 @@
       return 0;
     }
 
-关节扭矩功率检测
-++++++++++++++++++++++++++++++++++++++++++
+Detección de potencia de par de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 关节扭矩功率检测
-     * @param [in] status 0-关闭；1-开启
-     * @param [in] power 设定最大功率(W);
-     * @return 错误码
+     * @brief Detección de potencia de par de las articulaciones
+     * @param [in] status 0-cerrar; 1-abrir
+     * @param [in] power Potencia máxima configurada (W);
+     * @return Código de error
      */
     errno_t SetPowerLimit(int status, double power);
 
-关节扭矩功率检测代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de detección de potencia de par de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
@@ -292,24 +292,24 @@
        return 0;
     }
     
-设置安全速度参数
-++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer los parámetros de velocidad de seguridad
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置安全速度参数
-    * @param [in] enable 0-关；1-手动模式启用；2-所有模式启用
-    * @param [in] maxTCPVel 限制最大TCP速度;[0-1000]mm/s
-    * @param [in] strategy 超速后策略；0-停止报警；1-自动限速；2-停止报警并去使能
-    * @param [in] maxJointVel 6个关节最大速度(°/s) 默认为45°/s
-    * @return 错误码
+    * @brief Establecer los parámetros de velocidad de seguridad
+    * @param [in] enable 0-desactivado; 1-activado en modo manual; 2-activado en todos los modos
+    * @param [in] maxTCPVel Limitar la velocidad máxima del TCP; [0-1000]mm/s
+    * @param [in] strategy Estrategia tras exceso de velocidad; 0-detener y alarmar; 1-limitación automática de velocidad; 2-detener, alarmar y deshabilitar
+    * @param [in] maxJointVel Velocidad máxima de las 6 articulaciones (°/s), por defecto 45°/s
+    * @return Código de error
     */
     errno_t SetVelReducePara(int enable, double maxTCPVel, int strategy, std::vector<double> maxJointVel = {45.0, 45.0, 45.0, 45.0, 45.0, 45.0});
         
-设置安全速度参数的SDK代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código SDK para establecer los parámetros de velocidad de seguridad
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
@@ -358,8 +358,8 @@
         return 0;
     }
 
-设置机器人关节安全速度代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración de la velocidad de seguridad de las articulaciones del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:    
@@ -397,36 +397,36 @@
         return 0;
     }
     
-获取安全配置参数校验和
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener la suma de verificación de los parámetros de configuración de seguridad
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:   
 
     /**
-    * @brief 获取安全配置参数校验和
-    * @param [out] status 校验状态，0-有效，1-校验中，2-校验失败
-    * @param [out] checksum 校验和 8位16进制
-    * @return  错误码 
+    * @brief Obtener la suma de verificación de los parámetros de configuración de seguridad
+    * @param [out] status Estado de verificación, 0-válido, 1-en verificación, 2-verificación fallida
+    * @param [out] checksum Suma de verificación, 8 dígitos hexadecimales
+    * @return  Código de error 
     */
     errno_t GetSafetyParamsCheckSum(int& status, uint32_t& checksum);
     
-安全操作密码校验
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Verificación de la contraseña de operación de seguridad
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:   
 
     /**
-    * @brief 安全操作密码校验
-    * @param [in] status 校验，0-开启，1-关闭
-    * @param [in] password 密码
-    * @return 错误码
+    * @brief Verificación de la contraseña de operación de seguridad
+    * @param [in] status Verificación, 0-abrir, 1-cerrar
+    * @param [in] password Contraseña
+    * @return Código de error
     */
     errno_t SafetyOPPasswordCheck(int status, std::string password);
         
-安全配置参数密码校验代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de verificación de la contraseña de los parámetros de configuración de seguridad
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:   
@@ -464,21 +464,21 @@
         return 0;
     }
             
-设置TLS加密证书路径
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer la ruta del certificado de cifrado TLS
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:   
 
     /**
-    * @brief 设置TLS加密证书路径
-    * @param [in] certPath  证书路径；为空时默认为可执行文件所在目录下的证书；证书名称：ca.crt;client.crt;client.key
-    * @return 错误码
+    * @brief Establecer la ruta del certificado de cifrado TLS
+    * @param [in] certPath  Ruta del certificado; si está vacío, por defecto es el certificado ubicado en el directorio del archivo ejecutable; nombres de certificado: ca.crt;client.crt;client.key
+    * @return Código de error
     */
     errno_t MtlsLink(std::string certPath = "");
             
-设置TLS加密证书路径代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código para establecer la ruta del certificado de cifrado TLS
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:   

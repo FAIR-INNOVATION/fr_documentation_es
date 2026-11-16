@@ -1,415 +1,416 @@
-机器人安装上电
-===================
+Instalación y encendido del robot
+=================================
 
 .. toctree:: 
    :maxdepth: 6
 
-安装机器人手臂
-----------------
+Instalación del brazo del robot
+-------------------------------
 
-协作机器人安装在安装座上时，使用合规数量螺栓（强度不低于8.8级）将机器人拧紧固定在安装座上；建议安装座上使用两个合规销孔配合销钉进行机器人定位，以提高机器人安装精度，防止因为碰撞等使机器人发生移动。当机器人有较高运行精度要求时，请务必增加销钉对机器人进行定位。
+Cuando el robot colaborativo se instala en la base de montaje, se debe fijar el robot a la base de montaje apretándolo con el número correcto de tornillos (de una resistencia no inferior a la clase 8.8); se recomienda utilizar en la base de montaje dos orificios de pasador correctos con pasadores para el posicionamiento del robot, con el fin de mejorar la precisión de instalación del robot y evitar que este se desplace debido a colisiones, etc. Cuando se exija una alta precisión de funcionamiento del robot, es imprescindible añadir pasadores para el posicionamiento del robot.
 
-.. centered:: 表格 1.1-1 机器人安装零件标准
+.. centered:: Tabla 1.1-1 Normas de las piezas de instalación del robot
 
 .. list-table::
    :widths: 80 50 50 50
    :header-rows: 0
    :align: center
 
-   * - **协作机器人型号**
-     - **螺栓**
-     - **螺栓扭矩**
-     - **销孔规格**
+   * - **Modelo del robot colaborativo**
+     - **Tornillos**
+     - **Par de apriete de los tornillos**
+     - **Especificación del orificio de pasador**
 
    * - FR3
-     - 4颗M6
+     - 4 tornillos M6
      - ≥10Nm
      - φ5mm
 
    * - FR3-WMS
-     - 4颗M6
+     - 4 tornillos M6
      - ≥10Nm
      - φ5mm
 
    * - FR3-WML
-     - 4颗M6
+     - 4 tornillos M6
      - ≥10Nm
      - φ5mm
 
    * - FR3-C
-     - 4颗M6
+     - 4 tornillos M6
      - ≥10Nm
      - φ5mm
 
    * - FR5-C
-     - 4颗M6
+     - 4 tornillos M6
      - ≥10Nm
      - φ5mm
    
    * - FR5
-     - 4颗M8
+     - 4 tornillos M8
      - ≥20Nm
      - φ8mm
 
    * - FR10
-     - 4颗M8
+     - 4 tornillos M8
      - ≥25Nm
      - φ8mm
 
    * - FR16
-     - 4颗M8
+     - 4 tornillos M8
      - ≥25Nm
      - φ8mm
 
    * - FR20
-     - 6颗M10
+     - 6 tornillos M10
      - ≥45Nm
      - φ8mm
 
    * - FR30
-     - 6颗M10
+     - 6 tornillos M10
      - ≥45Nm
      - φ8mm
 
 .. important:: 
-   推荐机器人安装座满足以下几个要求，以保证机器人安装牢固、稳定：
+   Se recomienda que la base de montaje del robot cumpla los siguientes requisitos para garantizar una instalación firme y estable del robot:
    
-   （1）机器人安装座需要足够牢固且有足够的承载能力，应该至少能承载5倍的机器人重量，至少能承受10倍的1轴扭矩。
+   （1）La base de montaje del robot debe ser suficientemente firme y tener suficiente capacidad de carga; debe poder soportar al menos 5 veces el peso del robot y al menos 10 veces el par del eje 1.
 
-   （2）机器人安装座应表面平整，以保证与机器人接触面紧密接触；
+   （2）La base de montaje del robot debe tener una superficie plana para garantizar un contacto estrecho con la superficie de contacto del robot;
 
-   （3）机器人安装座应刚度足够强壮，固定牢固，不会和机器人发生共振；
+   （3）La base de montaje del robot debe tener suficiente rigidez, estar firmemente fijada y no entrar en resonancia con el robot;
 
-   （4）机器人和其他部件同时运动时，安装座与其他运动部件应隔离开，不要固定在一起避免运动过程中的振动干扰；
+   （4）Cuando el robot y otros componentes se muevan simultáneamente, la base de montaje debe estar aislada de los demás componentes móviles; no deben fijarse juntos para evitar interferencias por vibración durante el movimiento;
 
-   （5）如果机器人安装在移动平台或者外部轴上，移动平台或者外部轴的加速度应尽量低；
+   （5）Si el robot se instala en una plataforma móvil o en un eje externo, la aceleración de la plataforma móvil o del eje externo debe ser lo más baja posible;
 
-连接控制箱
-----------------
+Conexión de la caja de control
+------------------------------
 
-本系列机器人可以配置三种不同电源输入的控制箱，控制箱电源输入信息详见控制箱铭牌信息。机器人需要电气接地。机械手控制系统的外部连线均使用可插拔可快速安装的插头进行连接。
+Esta serie de robots puede configurarse con tres cajas de control de distintas entradas de alimentación; para la información de entrada de alimentación de la caja de control, consulte la información de la placa de características de la caja de control. El robot requiere conexión eléctrica a tierra. Todos los cables externos del sistema de control del manipulador se conectan mediante conectores enchufables de instalación rápida.
 
 A. 30-60VDC
 B. 176-264VAC~50-60Hz
 C. 100-240VAC~50-60HZ
 
-.. note:: 交流输入的控制箱区分窄电压和宽电压两个版本，控制箱接线端子和外形一致，单独通过外形不能区分，请通过控制箱铭牌进行确认，确认无误后再上电运行。
+.. note:: Las cajas de control de entrada de corriente alterna se dividen en dos versiones, de tensión estrecha y de tensión amplia; los terminales de conexión y el aspecto exterior de la caja de control son idénticos y no se pueden distinguir solo por el aspecto exterior; confírmelo mediante la placa de características de la caja de control y, tras confirmarlo, enciéndalo y póngalo en funcionamiento.
 
-协作机器人接线面板如下图表：
+El panel de conexiones del robot colaborativo se muestra en la tabla siguiente:
 
 .. image:: installation/037.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 1.2-1 控制箱接线面板
+.. centered:: Figura 1.2-1 Panel de conexiones de la caja de control
 
-按钮盒接口默认为示教器控制端口，IP地址为192.168.58.2，使用网线连接按钮盒接口与电脑，电脑IP地址设为192.168.58.10或与之同一网段，打开谷歌浏览器输入192.168.58.2即可访问示教器页面。
+El puerto de la caja de botones es por defecto el puerto de control del teach pendant, con dirección IP 192.168.58.2; utilice un cable de red para conectar el puerto de la caja de botones con el ordenador, configure la dirección IP del ordenador como 192.168.58.10 o en el mismo segmento de red, abra el navegador Chrome e introduzca 192.168.58.2 para acceder a la página del teach pendant.
 
-控制箱安装螺丝孔位信息
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Información de los orificios roscados de instalación de la caja de control
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: installation/149.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 1.2-2 控制箱外形尺寸-安装孔尺寸1
+.. centered:: Figura 1.2-2 Dimensiones exteriores de la caja de control - dimensiones de los orificios de instalación 1
 
 .. image:: installation/150.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 1.2-3 控制箱外形尺寸-安装孔尺寸2
+.. centered:: Figura 1.2-3 Dimensiones exteriores de la caja de control - dimensiones de los orificios de instalación 2
 
 .. note:: 
-  1. 标注尺寸孔为可用安装孔；
-  2. 安装孔共16颗，分布在控制箱左右两侧，每侧8颗；
-  3. 安装孔所用螺钉规格为M3，螺距0.5mm;
-  4. 螺钉旋入控制箱钣金外壳的深度≤5mm;
-  5. 建议安装扭矩0.6Nm，最大安装扭矩0.84Nm。
+  1. Los orificios con cotas indicadas son orificios de instalación utilizables;
+  2. Hay un total de 16 orificios de instalación, distribuidos en los lados izquierdo y derecho de la caja de control, 8 en cada lado;
+  3. La especificación de los tornillos utilizados en los orificios de instalación es M3, con paso de rosca de 0.5mm;
+  4. La profundidad de roscado del tornillo en la carcasa de chapa metálica de la caja de control es ≤5mm;
+  5. Se recomienda un par de apriete de 0.6Nm y un par de apriete máximo de 0.84Nm.
 
-:download:`控制箱外形尺寸-安装孔尺寸 <../_static/_doc/Control box outer dimensions - mounting hole dimensions.zip>`
+:download:`Dimensiones exteriores de la caja de control - dimensiones de los orificios de instalación <../_static/_doc/Control box outer dimensions - mounting hole dimensions.zip>`
 
-认识按钮盒及末端LED
----------------------
+Conocimiento de la caja de botones y del LED del extremo
+---------------------------------------------------------
 
-按钮盒
-~~~~~~~~~
+Caja de botones
+~~~~~~~~~~~~~~~
 
-60按钮盒(POE)(BX01)
-++++++++++++++++++++++++++++++
+60 caja de botones (POE) (BX01)
+++++++++++++++++++++++++++++++++++++++++++
 
 .. figure:: installation/058.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 1.3-1 60按钮盒（POE）
+.. centered:: Figura 1.3-1 60 caja de botones (POE)
 
-60按钮盒(POE)(BX02)-V1.0
-++++++++++++++++++++++++++++++
+60 caja de botones (POE) (BX02)-V1.0
+++++++++++++++++++++++++++++++++++++++++++
 
 .. image:: installation/059.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 1.3-2 控制箱接线面板
+.. centered:: Figura 1.3-2 Panel de conexiones de la caja de control
 
-.. centered:: 表格 1.3-1 控制箱接线面板按键说明
+.. centered:: Tabla 1.3-1 Descripción de los botones del panel de conexiones de la caja de control
 
 .. list-table::
    :widths: 50 200
    :header-rows: 0
    :align: center
 
-   * - **按键名**
-     - **功能**
+   * - **Nombre del botón**
+     - **Función**
 
-   * - 急停开关
-     - 当按下急停开关，机器人进入紧急停止状态
+   * - Interruptor de parada de emergencia
+     - Al pulsar el interruptor de parada de emergencia, el robot entra en estado de parada de emergencia
 
-   * - 开始停止
-     - 开始/停止运行程序
+   * - Inicio/Detención
+     - Iniciar/detener la ejecución del programa
 
-   * - 网口
-     - 连接web示教器
+   * - Puerto de red
+     - Conectar el teach pendant web
 
-   * - 关机
-     - 暂未启用
+   * - Apagado
+     - Aún no disponible
 
-   * - 记录点
-     - 记录示教点
+   * - Registro de puntos
+     - Registrar puntos de enseñanza
 
-   * - 示教模式
-     - 进入/退出搭配示教器状态
+   * - Modo de enseñanza
+     - Entrar/salir del estado con teach pendant
 
-   * - 运行模式
-     - 自动/手动模式切换
+   * - Modo de funcionamiento
+     - Conmutación entre modo automático y manual
 
-   * - 拖动模式
-     - 进入/退出拖动模式
+   * - Modo de arrastre
+     - Entrar/salir del modo de arrastre
 
-60按钮盒(POE)(BX02)-V2.0
-+++++++++++++++++++++++++++++++++++
+60 caja de botones (POE) (BX02)-V2.0
+++++++++++++++++++++++++++++++++++++
 
 .. image:: installation/079.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 1.3-3 控制箱接线面板
+.. centered:: Figura 1.3-3 Panel de conexiones de la caja de control
 
-.. centered:: 表格 1.3-2 控制箱接线面板按键说明
+.. centered:: Tabla 1.3-2 Descripción de los botones del panel de conexiones de la caja de control
 
 .. list-table::
    :widths: 50 200
    :header-rows: 0
    :align: center
 
-   * - **按键名**
-     - **功能**
+   * - **Nombre del botón**
+     - **Función**
 
-   * - 急停开关
-     - 当按下急停开关，机器人进入紧急停止状态
+   * - Interruptor de parada de emergencia
+     - Al pulsar el interruptor de parada de emergencia, el robot entra en estado de parada de emergencia
 
-   * - 开始停止
-     - 开始/停止运行程序
+   * - Inicio/Detención
+     - Iniciar/detener la ejecución del programa
 
-   * - 网口
-     - 连接web示教器
+   * - Puerto de red
+     - Conectar el teach pendant web
 
-   * - IP复位
-     - 重置网口IP
+   * - Restablecimiento de IP
+     - Restablecer la IP del puerto de red
 
-   * - 记录点
-     - 记录示教点
+   * - Registro de puntos
+     - Registrar puntos de enseñanza
 
-   * - 一键清除
-     - 清除所有可恢复的报错
+   * - Borrado con un clic
+     - Borrar todos los errores recuperables
 
-   * - 运行模式
-     - 自动/手动模式切换
+   * - Modo de funcionamiento
+     - Conmutación entre modo automático y manual
 
-   * - 拖动模式
-     - 进入/退出拖动模式
+   * - Modo de arrastre
+     - Entrar/salir del modo de arrastre
 
-末端LED
-~~~~~~~~~
+LED del extremo
+~~~~~~~~~~~~~~~
 
-.. centered:: 表格 1.3-3 末端LED定义
+.. centered:: Tabla 1.3-3 Definición del LED del extremo
 
 .. list-table::
    :widths: 120 100
    :header-rows: 0
    :align: center
 
-   * - **功能**
-     - **LED颜色**
+   * - **Función**
+     - **Color del LED**
 
-   * - 通信未建立时
-     - “灭”“红”“绿”“蓝”交替
+   * - Cuando no se ha establecido la comunicación
+     - Alternancia de "apagado", "rojo", "verde" y "azul"
 
-   * - 自动模式
-     - 蓝色长亮
+   * - Modo automático
+     - Azul fijo
 
-   * - 手动模式
-     - 绿色长亮
+   * - Modo manual
+     - Verde fijo
 
-   * - 拖动模式
-     - 白青色长亮
+   * - Modo de arrastre
+     - Cian claro fijo
 
-   * - 按钮盒记录点（仅在使用按钮盒时）
-     - 紫色闪烁两下
+   * - Registro de puntos de la caja de botones (solo al usar la caja de botones)
+     - Morado parpadeando dos veces
 
-   * - 进入未搭配按钮盒状态（仅在使用按钮盒时）
-     - 青蓝色闪烁两下
+   * - Entrada en estado sin teach pendant (solo al usar la caja de botones)
+     - Azul cian parpadeando dos veces
 
-   * - 开始运行（仅在使用按钮盒时）
-     - 蓝色闪烁两下
+   * - Inicio de ejecución (solo al usar la caja de botones)
+     - Azul parpadeando dos veces
 
-   * - 停止运行（仅在使用按钮盒时）
-     - 红色闪烁两下
+   * - Detención de ejecución (solo al usar la caja de botones)
+     - Rojo parpadeando dos veces
 
-   * - 报错（仅在使用按钮盒时）
-     - 红色长亮
+   * - Error (solo al usar la caja de botones)
+     - Rojo fijo
 
-   * - 校零完成
-     - 白青色闪烁三下
+   * - Puesta a cero completada
+     - Cian claro parpadeando tres veces
 
-   * - 去使能
-     - 黄色闪烁两下
+   * - Deshabilitado
+     - Amarillo parpadeando dos veces
 
-上电使能
-----------------
+Encendido y habilitación
+------------------------
 
-上电前，请确认按钮盒急停按钮处理松开状态，按下控制箱红色开关按钮上电，使能成功后末端LED灯处于绿色常亮状态。
+Antes del encendido, confirme que el botón de parada de emergencia de la caja de botones está suelto; pulse el botón rojo de la caja de control para encender; tras una habilitación correcta, el LED del extremo permanece en verde fijo.
 
-电源关闭
-----------------
+Apagado
+-------
 
 .. important:: 
-  在使用本设备时，请务必确保在关闭电源之前，停止所有运行中的程序，停用状态查询功能，确认运行状态处于“Stopped”。这一操作旨在保护设备及存储数据的安全，避免因突然断电而导致的数据丢失或系统损坏。
+  Al utilizar este equipo, asegúrese de detener todos los programas en ejecución, desactivar la función de consulta de estado y confirmar que el estado de funcionamiento es "Stopped" antes de apagar la alimentación. Esta operación tiene como objetivo proteger la seguridad del equipo y de los datos almacenados, evitando la pérdida de datos o el daño del sistema provocados por un corte de energía repentino.
 
 .. image:: installation/078.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 1.5-1 关闭电源按钮
+.. centered:: Figura 1.5-1 Botón de apagado
 
-控制箱纽扣电池
-----------------------------------------------------------------
+Batería de botón de la caja de control
+--------------------------------------
 
-时间丢失的常见原因
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Causas habituales de la pérdida de hora
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-本设备使用外部纽扣电池作为实时时钟（RTC）的后备电源，用于在主电源断电时维持时间计数。
+Este equipo utiliza una batería de botón externa como alimentación de respaldo del reloj en tiempo real (RTC), para mantener el conteo del tiempo cuando se corta la alimentación principal.
 
-若出现时间丢失（即重新上电后显示错误日期），通常由以下一种或多种原因引起：
+Si se produce pérdida de hora (es decir, tras volver a encender se muestra una fecha errónea), normalmente se debe a una o varias de las siguientes causas:
 
 .. list-table::
    :widths: 40 40 60
    :header-rows: 0
    :align: center
 
-   * - **原因分类**
-     - **具体描述**
-     - **排查建议**
+   * - **Categoría de la causa**
+     - **Descripción concreta**
+     - **Sugerencia de comprobación**
 
-   * - 纽扣电池电量耗尽
-     - 设备3个月以上未上电使用，导致电池能量自然消耗完毕。
-     - 使用万用表测量电池电压（需拆下测量），若电压低于2.5V则需充电。
+   * - Batería de botón agotada
+     - El equipo no se ha encendido durante más de 3 meses, lo que provoca el agotamiento natural de la energía de la batería.
+     - Medir la tensión de la batería con un multímetro (es necesario extraerla para medirla); si la tensión es inferior a 2.5V, es necesario cargarla.
 
-   * - 电池损坏
-     - 电池使用寿命已到。
-     - 查看电池是否出现漏液鼓包情况，需要更换电池。电池型号：MS621FE-FL11E，3V/5.5mAH，可充电使用。
+   * - Batería dañada
+     - Se ha alcanzado la vida útil de la batería.
+     - Comprobar si la batería presenta fugas o hinchazón; es necesario sustituir la batería. Modelo de batería: MS621FE-FL11E, 3V/5.5mAH, recargable.
 
-   * - 电池端子接触不良
-     - 电池端子氧化、变形，或设备受到震动导致电池瞬间脱离触点。
-     - 检查电池与端子插接是否牢固，清洁触点，重新安装电池并确保卡紧。
+   * - Contacto deficiente de los terminales de la batería
+     - Los terminales de la batería están oxidados o deformados, o el equipo ha sufrido vibraciones que han provocado que la batería se separe momentáneamente del contacto.
+     - Comprobar si la batería está bien insertada en los terminales, limpiar los contactos, volver a instalar la batería y asegurarse de que queda bien sujeta.
 
-   * - 未安装电池或电池装反
-     - 用户未安装备用电池，或安装时正负极方向错误。
-     - | 确认电池已安装且极性正确（正极朝上）。
+   * - Batería no instalada o instalada al revés
+     - El usuario no ha instalado la batería de respaldo, o la ha instalado con la polaridad invertida.
+     - | Confirmar que la batería está instalada y con la polaridad correcta (polo positivo hacia arriba).
       
        .. image:: installation/131.png
           :width: 2in
           :align: center
 
-   * - 电池充电电路故障
-     - 可充电纽扣电池无法正常蓄电。
-     - 需由专业维修人员检测充电回路。
+   * - Fallo del circuito de carga de la batería
+     - La batería de botón recargable no puede almacenar energía correctamente.
+     - Es necesario que personal de mantenimiento profesional revise el circuito de carga.
 
-.. warning:: 本设备使用的纽扣电池型号为[MS621FE-FL11E，3V/5.5mAH，可充电使用]，请务必根据型号选择正确的处理方式，严禁安装不可充电电池。
+.. warning:: El modelo de batería de botón utilizada en este equipo es [MS621FE-FL11E, 3V/5.5mAH, recargable]; asegúrese de elegir el modo de tratamiento correcto según el modelo y está estrictamente prohibido instalar baterías no recargables.
 
-时间异常识别和手动校准
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Identificación de anomalías de hora y calibración manual
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1)异常识别方法
+1) Método de identificación de anomalías
    
-机器人重新上电后，首先查看设备页面当前显示的时间。将其与电脑的系统时间进行比对：
+Tras volver a encender el robot, compruebe primero la hora que muestra actualmente la página del equipo y compárela con la hora del sistema del ordenador:
 
-- 若两者一致，表示时间正常，无需后续操作。
+- Si ambas coinciden, la hora es normal y no se requiere ninguna operación posterior.
 
 .. image:: installation/132.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 1.6-1 系统时间异常情况
+.. centered:: Figura 1.6-1 Situación de anomalía de la hora del sistema
 
-- 若两者不一致（例如日期错误、时分秒偏差较大），则判定为时间异常，请继续执行下面的校准步骤。
+- Si ambas no coinciden (por ejemplo, fecha errónea o desviación considerable de horas, minutos y segundos), se determina que la hora es anómala; continúe con los pasos de calibración siguientes.
   
-2)校准步骤
+2) Pasos de calibración
 
-如已确认时间异常，请按以下操作同步系统时间：
+Si se ha confirmado que la hora es anómala, realice las siguientes operaciones para sincronizar la hora del sistema:
 
-- 打开浏览器进入 WebApp，依次导航至：“系统设置 -> 通用设置 -> 时间”界面。
+- Abra el navegador y entre en WebApp; navegue sucesivamente hasta: "Configuración del sistema -> Configuración general -> Hora".
 
 .. image:: installation/133.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 1.6-2 系统时间更新界面
+.. centered:: Figura 1.6-2 Interfaz de actualización de la hora del sistema
 
-- 点击界面中的“更新”按钮，系统将自动完成时间同步。同步后返回机器人页面，时间即可恢复正常。
+- Haga clic en el botón "Actualizar" de la interfaz y el sistema completará automáticamente la sincronización de la hora. Tras la sincronización, vuelva a la página del robot y la hora se restablecerá con normalidad.
 
-纽扣电池充电与维护注意事项
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Precauciones de carga y mantenimiento de la batería de botón
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1)充电条件
+1) Condiciones de carga
 
-- 设备主电源接通（220V AC）后，充电电路自动激活。
-- 环境温度应在 0℃ ~ 45℃ 范围内，高温会降低充电效率并缩短电池寿命。
+- Tras conectar la alimentación principal del equipo (220V AC), el circuito de carga se activa automáticamente.
+- La temperatura ambiente debe estar en el rango de 0℃ ~ 45℃; las temperaturas elevadas reducen la eficiencia de carga y acortan la vida útil de la batería.
 
-2)充电时间
+2) Tiempo de carga
 
-- 完全放电的电池大约需要 [5小时] 才能充满。期间时间保持功能正常。
+- Una batería completamente descargada tarda aproximadamente [5 horas] en cargarse por completo. Durante este tiempo, la función de mantenimiento de la hora funciona con normalidad.
 
-3)禁止事项
+3) Prohibiciones
 
-- 请勿使用外部充电器直接对设备内的纽扣电池充电。
-- 请勿将不可充电电池装入带设备中，否则可能引起危险。
+- No utilice un cargador externo para cargar directamente la batería de botón del equipo.
+- No instale baterías no recargables en el equipo, ya que podría provocar peligro.
 
-电池更换与废弃
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-1)更换周期
+Sustitución y eliminación de la batería
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- 通常可使用 [5 年] 以上，若出现时间频繁丢失请更换。
+1) Ciclo de sustitución
 
-2)更换步骤
+- Normalmente puede utilizarse durante más de [5 años]; si se producen pérdidas frecuentes de hora, sustitúyala.
 
-- 断开设备主电源。
-- 打开上盖。
-- 取出旧电池，注意极性方向。
-- 焊接同型号合格新电池（正极朝上）。
-- 合上盖，重新上电并校对当前时间。
+2) Pasos de sustitución
 
-3)废弃处置
+- Desconecte la alimentación principal del equipo.
+- Abra la tapa superior.
+- Extraiga la batería antigua, prestando atención a la polaridad.
+- Suelde una batería nueva del mismo modelo y en buen estado (polo positivo hacia arriba).
+- Cierre la tapa, vuelva a encender y ajuste la hora actual.
 
-- 请勿将电池投入火中或与水接触。
-- 按照当地法规分类回收废旧电池（纽扣电池通常含有锂或重金属）。
+3) Eliminación
 
-技术支持
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- No arroje la batería al fuego ni la ponga en contacto con agua.
+- Recicle las baterías usadas según la normativa local (las baterías de botón suelen contener litio o metales pesados).
 
-若按照以上步骤操作后问题仍未解决，请联系我们的技术支持团队，并提供以下信息：
+Soporte técnico
+~~~~~~~~~~~~~~~
 
-- 设备型号与序列号。
-- 使用的电池型号（请查看电池表面刻字）。
-- 故障现象（例如：断电后立即丢失 / 放置一晚后丢失）。
+Si tras realizar los pasos anteriores el problema persiste, póngase en contacto con nuestro equipo de soporte técnico y proporcione la siguiente información:
+
+- Modelo y número de serie del equipo.
+- Modelo de batería utilizado (consulte la inscripción de la superficie de la batería).
+- Fenómeno del fallo (por ejemplo: pérdida inmediata tras el corte de energía / pérdida tras dejarlo una noche).

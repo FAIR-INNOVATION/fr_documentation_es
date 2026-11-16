@@ -1,205 +1,205 @@
-机器人状态查询
-===============
+Consulta del estado del robot
+==============================
 
 .. toctree:: 
     :maxdepth: 5
 
-获取当前关节位置(角度)
-++++++++++++++++++++++++
+Obtener la posición articular actual (ángulo)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetActualJointPosDegree(flag=1)``"
-    "描述", "获取关节当前位置(角度)"
-    "必选参数", "无"
-    "默认参数", "- ``flag``：0-阻塞，1-非阻塞，默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``joint_pos=[j1,j2,j3,j4,j5,j6]``：当前关节位置(角度)"
+    "Prototipo", "``GetActualJointPosDegree(flag=1)``"
+    "Descripción", "Obtener la posición articular actual (ángulo)"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "- ``flag``：0-bloqueante，1-no bloqueante，predeterminado1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``joint_pos=[j1,j2,j3,j4,j5,j6]``：posición articular actual (ángulo)"
 
-获取当前关节位置(弧度)
-+++++++++++++++++++++++++
+Obtener la posición articular actual (radianes)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetActualJointPosRadian(flag=1)``"
-    "描述", "获取关节当前位置(弧度)"
-    "必选参数", "无"
-    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``joint_pos=[j1,j2,j3,j4,j5,j6]``：当前关节位置(弧度)"
+    "Prototipo", "``GetActualJointPosRadian(flag=1)``"
+    "Descripción", "Obtener la posición articular actual (radianes)"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "- ``flag``：0-bloqueante，1-no bloqueante predeterminado1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``joint_pos=[j1,j2,j3,j4,j5,j6]``：posición articular actual (radianes)"
 
-获取关节反馈速度-deg/s
-+++++++++++++++++++++++++
+Obtener la velocidad de retroalimentación articular-deg/s
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetActualJointSpeedsDegree(flag=1)``"
-    "描述", "获取关节反馈速度-deg/s"
-    "必选参数", "无"
-    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``speed=[j1,j2,j3,j4,j5,j6]``：关节反馈速度-deg/s"
+    "Prototipo", "``GetActualJointSpeedsDegree(flag=1)``"
+    "Descripción", "Obtener la velocidad de retroalimentación articular-deg/s"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "- ``flag``：0-bloqueante，1-no bloqueante predeterminado1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``speed=[j1,j2,j3,j4,j5,j6]``：velocidad de retroalimentación articular-deg/s"
 
-获取关节反馈加速度-deg/s^2
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener la aceleración de retroalimentación articular-deg/s^2
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetActualJointAccDegree(flag=1)``"
-    "描述", "获取关节反馈加速度-deg/s^2"
-    "必选参数", "无"
-    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``acc=[j1,j2,j3,j4,j5,j6]``：关节反馈加速度-deg/s^2"
+    "Prototipo", "``GetActualJointAccDegree(flag=1)``"
+    "Descripción", "Obtener la aceleración de retroalimentación articular-deg/s^2"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "- ``flag``：0-bloqueante，1-no bloqueante predeterminado1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``acc=[j1,j2,j3,j4,j5,j6]``：aceleración de retroalimentación articular-deg/s^2"
 
-获取TCP指令合速度
-+++++++++++++++++++++++++
+Obtener la velocidad compuesta de comando TCP
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetTargetTCPCompositeSpeed(flag=1)``"
-    "描述", "获取TCP指令合速度"
-    "必选参数", "无"
-    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``[tcp_speed,ori_speed]``：tcp_speed-线性合速度 ori_speed-姿态合速度"
+    "Prototipo", "``GetTargetTCPCompositeSpeed(flag=1)``"
+    "Descripción", "Obtener la velocidad compuesta de comando TCP"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "- ``flag``：0-bloqueante，1-no bloqueante predeterminado1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``[tcp_speed,ori_speed]``：tcp_speed-velocidad lineal compuesta ori_speed-velocidad de orientación compuesta"
 
-获取TCP反馈合速度
-+++++++++++++++++++++++++
+Obtener la velocidad compuesta de retroalimentación TCP
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetActualTCPCompositeSpeed(flag=1)``"
-    "描述", "获取TCP反馈合速度"
-    "必选参数", "无"
-    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``[tcp_speed,ori_speed]``：tcp_speed-线性合速度 ori_speed-姿态合速度"
+    "Prototipo", "``GetActualTCPCompositeSpeed(flag=1)``"
+    "Descripción", "Obtener la velocidad compuesta de retroalimentación TCP"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "- ``flag``：0-bloqueante，1-no bloqueante predeterminado1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``[tcp_speed,ori_speed]``：tcp_speed-velocidad lineal compuesta ori_speed-velocidad de orientación compuesta"
 
-获取TCP指令速度
-+++++++++++++++++++++++++
+Obtener la velocidad de comando TCP
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetTargetTCPSpeed(flag=1)``"
-    "描述", "获取TCP指令速度"
-    "必选参数", "无"
-    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``speed=[x,y,z,rx,ry,rz]``：TCP指令速度，mm/s"
+    "Prototipo", "``GetTargetTCPSpeed(flag=1)``"
+    "Descripción", "Obtener la velocidad de comando TCP"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "- ``flag``：0-bloqueante，1-no bloqueante predeterminado1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``speed=[x,y,z,rx,ry,rz]``：velocidad de comando TCP，mm/s"
 
-获取TCP反馈速度
-+++++++++++++++++++++++++
+Obtener la velocidad de retroalimentación TCP
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetActualTCPSpeed(flag=1)``"
-    "描述", "获取TCP反馈速度"
-    "必选参数", "无"
-    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``speed=[x,y,z,rx,ry,rz]``：TCP反馈速度"
+    "Prototipo", "``GetActualTCPSpeed(flag=1)``"
+    "Descripción", "Obtener la velocidad de retroalimentación TCP"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "- ``flag``：0-bloqueante，1-no bloqueante predeterminado1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``speed=[x,y,z,rx,ry,rz]``：velocidad de retroalimentación TCP"
 
-获取当前工具位姿
-++++++++++++++++++
+Obtener la pose actual de la herramienta
++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetActualTCPPose(flag=1)``"
-    "描述", "获取当前工具位姿"
-    "必选参数", "无"
-    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``tcp_pose=[x,y,z,rx,ry,rz]``：当前工具位姿"
+    "Prototipo", "``GetActualTCPPose(flag=1)``"
+    "Descripción", "Obtener la pose actual de la herramienta"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "- ``flag``：0-bloqueante，1-no bloqueante predeterminado1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``tcp_pose=[x,y,z,rx,ry,rz]``：pose actual de la herramienta"
 
-获取当前工具坐标系编号
-+++++++++++++++++++++++++
+Obtener el número del sistema de coordenadas de herramienta actual
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetActualTCPNum(flag=1)``"
-    "描述", "获取当前工具坐标系编号"
-    "必选参数", "无"
-    "默认参数", "- ``flag``：0-阻塞，1-非阻塞 默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``tool_id``:工具坐标系编号"
+    "Prototipo", "``GetActualTCPNum(flag=1)``"
+    "Descripción", "Obtener el número del sistema de coordenadas de herramienta actual"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "- ``flag``：0-bloqueante，1-no bloqueante predeterminado1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``tool_id``:número del sistema de coordenadas de herramienta"
 
-获取当前工件坐标系编号
-+++++++++++++++++++++++++
+Obtener el número del sistema de coordenadas de pieza actual
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetActualWObjNum(flag=1)``"
-    "描述", "获取当前工件坐标系编号"
-    "必选参数", "无"
-    "默认参数", "- ``flag``：0-阻塞，1-非阻塞  默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``wobj_id``:工件坐标系编号"
+    "Prototipo", "``GetActualWObjNum(flag=1)``"
+    "Descripción", "Obtener el número del sistema de coordenadas de pieza actual"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "- ``flag``：0-bloqueante，1-no bloqueante  predeterminado1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``wobj_id``:número del sistema de coordenadas de pieza"
 
-获取当前末端法兰位姿
-++++++++++++++++++++++
+Obtener la pose actual de la brida del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetActualToolFlangePose(flag=1)``"
-    "描述", "获取当前末端法兰位姿"
-    "必选参数", "无"
-    "默认参数", "- ``flag``：0-阻塞，1-非阻塞  默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``flange_pose=[x,y,z,rx,ry,rz]``：当前末端法兰位姿"
+    "Prototipo", "``GetActualToolFlangePose(flag=1)``"
+    "Descripción", "Obtener la pose actual de la brida del extremo"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "- ``flag``：0-bloqueante，1-no bloqueante  predeterminado1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``flange_pose=[x,y,z,rx,ry,rz]``：pose actual de la brida del extremo"
 
-获取当前关节转矩
-+++++++++++++++++++
+Obtener el par articular actual
++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetJointTorques(flag=1)``"
-    "描述", "获取当前关节转矩"
-    "必选参数", "无"
-    "默认参数", "``flag``：0-阻塞，1-非阻塞  默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``torques=[j1,j2,j3,j4,j5,j6]``：关节扭矩"
+    "Prototipo", "``GetJointTorques(flag=1)``"
+    "Descripción", "Obtener el par articular actual"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "``flag``：0-bloqueante，1-no bloqueante  predeterminado1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``torques=[j1,j2,j3,j4,j5,j6]``：par articular"
 
-获取系统时间
-++++++++++++++++
+Obtener la hora del sistema
+++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetSystemClock()``"
-    "描述", "获取系统时间"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``t_ms``: 系统时间，单位 [ms]"
+    "Prototipo", "``GetSystemClock()``"
+    "Descripción", "Obtener la hora del sistema"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``t_ms``: hora del sistema, unidad [ms]"
 
-同步系统时间至机器人
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sincronizar la hora del sistema con el robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetRobottime(self)``"
-    "描述", "获取当前上位机系统时间并发送给机器人，同步系统时间（由于QNX系统限制，同步精度为分钟级）"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetRobottime(self)``"
+    "Descripción", "Obtener la hora actual del sistema del PC anfitrión y enviarla al robot, sincronizar la hora del sistema (debido a las limitaciones del sistema QNX, la precisión de sincronización es de nivel de minuto)"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-同步系统时间至机器人代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código para sincronizar la hora del sistema con el robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
@@ -209,41 +209,41 @@
 
 
     def main():
-        # Establish connection with the robot controller
+        # Establecer conexión con el controlador del robot
         robot = Robot.RPC('192.168.58.2')
         time.sleep(0.5)
 
-        print("========== Set and Get Robot Time Test ==========")
+        print("========== Prueba de establecimiento y obtención de la hora del robot ==========")
 
-        # Get system clock before setting
+        # Obtener el reloj del sistema antes de configurar
         ret, t_ms = robot.GetSystemClock()
         if ret == 0 and t_ms is not None:
             print(f"system clock : {t_ms}")
-            # Robot stores UTC+8, convert back to PC time (subtract 8 hours)
+            # El robot almacena UTC+8, convertir de vuelta a la hora del PC (restar 8 horas)
             robot_time = datetime.fromtimestamp(t_ms / 1000.0) - timedelta(hours=8)
             print(f"BEFORE Robot Time: {robot_time.strftime('%Y-%m-%d %H:%M:%S')}")
         else:
             print(f"GetSystemClock failed, ret:{ret}")
 
-        # Set robot time to PC time
+        # Establecer la hora del robot a la hora del PC
         ret = robot.SetRobottime()
         print(f"SetRobottime ret: {ret}")
 
-        # Get the robot time after setting
+        # Obtener la hora del robot después de configurar
         ret, t_ms_after = robot.GetSystemClock()
         if ret == 0 and t_ms_after is not None:
             print(f"system clock : {t_ms_after}")
-            # Robot stores UTC+8, convert back to PC time (subtract 8 hours)
+            # El robot almacena UTC+8, convertir de vuelta a la hora del PC (restar 8 horas)
             robot_time = datetime.fromtimestamp(t_ms_after / 1000.0) - timedelta(hours=8)
 
-            # PC time - display system local time
+            # Hora del PC - mostrar hora local del sistema
             pc_time = datetime.now()
 
-            # Truncate both times to minutes
+            # Truncar ambas horas a minutos
             pc_minute = pc_time.replace(second=0, microsecond=0)
             robot_minute = robot_time.replace(second=0, microsecond=0)
 
-            # Compare consistency
+            # Comparar consistencia
             is_consistent = (pc_minute == robot_minute)
             if is_consistent:
                 print(f"Consistent     | PC time: {pc_minute.strftime('%Y-%m-%d %H:%M')}  | Robot time: {robot_minute.strftime('%Y-%m-%d %H:%M')}")
@@ -252,124 +252,124 @@
         else:
             print(f"GetSystemClock failed, ret:{ret}")
 
-        # Close connection
+        # Cerrar conexión
         robot.CloseRPC()
 
 
     if __name__ == "__main__":
         main()
 
-查询机器人运动是否完成
-++++++++++++++++++++++++
+Consultar si el movimiento del robot ha finalizado
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetRobotMotionDone()``"
-    "描述", "查询机器人运动是否完成"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``state``: 机器人运动状态，0-未完成，1-完成"
+    "Prototipo", "``GetRobotMotionDone()``"
+    "Descripción", "Consultar si el movimiento del robot ha finalizado"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``state``: estado de movimiento del robot，0-no completado，1-completado"
 
-查询机器人运动队列缓存长度
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Consultar la longitud de la caché de la cola de movimiento del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetMotionQueueLength()``"
-    "描述", "查询机器人运动队列缓存长度"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``len``：缓存长度"
+    "Prototipo", "``GetMotionQueueLength()``"
+    "Descripción", "Consultar la longitud de la caché de la cola de movimiento del robot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``len``：longitud de la caché"
 
-获取机器人急停状态
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado de parada de emergencia del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetRobotEmergencyStopState()``"
-    "描述", "获取机器人急停状态"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``state``：急停状态，0-非急停，1-急停"
+    "Prototipo", "``GetRobotEmergencyStopState()``"
+    "Descripción", "Obtener el estado de parada de emergencia del robot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``state``：estado de parada de emergencia，0-no parada de emergencia，1-parada de emergencia"
 
-获取SDK与机器人的通讯状态
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado de comunicación entre el SDK y el robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetSDKComState()``"
-    "描述", "获取SDK与机器人的通讯状态"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``state``：通讯状态，0-通讯正常，1-通讯异常"
+    "Prototipo", "``GetSDKComState()``"
+    "Descripción", "Obtener el estado de comunicación entre el SDK y el robot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``state``：estado de comunicación，0-comunicación normal，1-comunicación anormal"
 
-获取安全停止信号
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener la señal de parada de seguridad
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetSafetyStopState()``"
-    "描述", "获取安全停止信号"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``[si0_state,si1_state]``：si0_state 安全停止信号SI0，0-无效，1-有效 si1_state 安全停止信号SI1，0-无效，1-有效"
+    "Prototipo", "``GetSafetyStopState()``"
+    "Descripción", "Obtener la señal de parada de seguridad"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``[si0_state,si1_state]``：si0_state señal de parada de seguridad SI0，0-inválida，1-válida si1_state señal de parada de seguridad SI1，0-inválida，1-válida"
 
-获取关节驱动器当前温度(℃)
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener la temperatura actual del accionamiento articular(℃)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetJointDriverTemperature()``"
-    "描述", "获取关节驱动器当前温度(℃)"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``data=[t1,t2,t3,t4,t5,t6]``：各关节当前温度"
+    "Prototipo", "``GetJointDriverTemperature()``"
+    "Descripción", "Obtener la temperatura actual del accionamiento articular(℃)"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``data=[t1,t2,t3,t4,t5,t6]``：temperatura actual de cada articulación"
 
-获取关节驱动器当前扭矩(Nm)
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el par actual del accionamiento articular(Nm)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetJointDriverTorque()``"
-    "描述", "获取关节驱动器当前扭矩(Nm)"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``data=[j1,j2,j3,j4,j5,j6]``：关节扭矩 [fx,fy,fz,tx,ty,tz]"
+    "Prototipo", "``GetJointDriverTorque()``"
+    "Descripción", "Obtener el par actual del accionamiento articular(Nm)"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``data=[j1,j2,j3,j4,j5,j6]``：par articular [fx,fy,fz,tx,ty,tz]"
 
-获取机器人状态
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetRobotRealTimeState()``"
-    "描述", "获取机器人状态"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``robot_state_pkg``：机器人状态结构体"
+    "Prototipo", "``GetRobotRealTimeState()``"
+    "Descripción", "Obtener el estado del robot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``robot_state_pkg``：estructura del estado del robot"
 
-机器人状态查询代码示例
-++++++++++++++++++++++++
+Ejemplo de código de consulta del estado del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     error,[yangle, zangle] = robot.GetRobotInstallAngle()
     print(f"yangle:{yangle},zangle:{zangle}")
@@ -418,55 +418,55 @@
     error,pkg = robot.GetRobotRealTimeState()
     robot.CloseRPC()
 
-逆运动学求解
-++++++++++++++++
+Solución de cinemática inversa
+++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetInverseKin(type,desc_pos,config=-1)``"
-    "描述", "逆运动学，笛卡尔位姿求解关节位置 "
-    "必选参数", "- ``type``:0-绝对位姿(基坐标系)，1-相对位姿（基坐标系），2-相对位姿（工具坐标系）
-    - ``desc_pose``:[x,y,z,rx,ry,rz],工具位姿，单位[mm][°]"
-    "默认参数", "- ``config``:关节配置，[-1]-参考当前关节位置求解，[0~7]-依据关节配置求解 默认-1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``joint_pos=[j1,j2,j3,j4,j5,j6]``：逆运动学解，笛卡尔位姿求解关节位置"
+    "Prototipo", "``GetInverseKin(type,desc_pos,config=-1)``"
+    "Descripción", "Cinemática inversa，pose cartesiana para resolver la posición articular "
+    "Parámetros obligatorios", "- ``type``:0-pose absoluta(sistema de coordenadas base)，1-pose relativa(sistema de coordenadas base)，2-pose relativa(sistema de coordenadas de herramienta)
+    - ``desc_pose``:[x,y,z,rx,ry,rz],pose de herramienta，unidad[mm][°]"
+    "Parámetros predeterminados", "- ``config``:configuración articular，[-1]-resolver con referencia a la posición articular actual，[0~7]-resolver según la configuración articular predeterminado-1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``joint_pos=[j1,j2,j3,j4,j5,j6]``：solución de cinemática inversa，pose cartesiana para resolver la posición articular"
 
-逆运动学求解-指定参考位置
-++++++++++++++++++++++++++++
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``GetInverseKinRef(type,desc_pos,joint_pos_ref)``"
-    "描述", "逆运动学，工具位姿求解关节位置，参考指定关节位置求解"
-    "必选参数", "- ``type``:0-绝对位姿(基坐标系)，1-相对位姿（基坐标系），2-相对位姿（工具坐标系）
-    - ``desc_pos``：[x,y,z,rx,ry,rz]工具位姿，单位[mm][°]
-    - ``joint_pos_ref``：[j1,j2,j3,j4,j5,j6]，关节参考位置，单位[°]"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``joint_pos=[j1,j2,j3,j4,j5,j6]``：逆运动学解，工具位姿求解关节位置"
-
-逆运动学求解，笛卡尔空间包含扩展轴位置
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``GetInverseKinExaxis(type, desc_pos, exaxis, tool, workPiece, config = -1)``"
-    "描述", "逆运动学求解，笛卡尔空间包含扩展轴位置"
-    "必选参数", "- ``type``: 0-绝对位姿(基坐标系)，1-增量位姿(基坐标系)，2-增量位姿(工具坐标系)
-    - ``desc_pos``: 笛卡尔位姿
-    - ``exaxis``: 扩展轴位置
-    - ``tool``: 工具号
-    - ``workPiece``: 工件号
-    - ``config -1``: 自动求解，0-7对应八组解"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``joint_pos``：关节位置"
-
-逆运动学求解包含扩展轴位置代码示例
+Solución de cinemática inversa-posición de referencia especificada
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``GetInverseKinRef(type,desc_pos,joint_pos_ref)``"
+    "Descripción", "Cinemática inversa，pose de herramienta para resolver la posición articular，resolver con referencia a la posición articular especificada"
+    "Parámetros obligatorios", "- ``type``:0-pose absoluta(sistema de coordenadas base)，1-pose relativa(sistema de coordenadas base)，2-pose relativa(sistema de coordenadas de herramienta)
+    - ``desc_pos``：[x,y,z,rx,ry,rz]pose de herramienta，unidad[mm][°]
+    - ``joint_pos_ref``：[j1,j2,j3,j4,j5,j6]，posición articular de referencia，unidad[°]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``joint_pos=[j1,j2,j3,j4,j5,j6]``：solución de cinemática inversa，pose de herramienta para resolver la posición articular"
+
+Solución de cinemática inversa, espacio cartesiano que incluye la posición del eje extendido
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``GetInverseKinExaxis(type, desc_pos, exaxis, tool, workPiece, config = -1)``"
+    "Descripción", "Solución de cinemática inversa, espacio cartesiano que incluye la posición del eje extendido"
+    "Parámetros obligatorios", "- ``type``: 0-pose absoluta(sistema de coordenadas base)，1-pose incremental(sistema de coordenadas base)，2-pose incremental(sistema de coordenadas de herramienta)
+    - ``desc_pos``: pose cartesiana
+    - ``exaxis``: posición del eje extendido
+    - ``tool``: número de herramienta
+    - ``workPiece``: número de pieza
+    - ``config -1``: solución automática，0-7 corresponden a ocho grupos de soluciones"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``joint_pos``：posición articular"
+
+Ejemplo de código de solución de cinemática inversa que incluye la posición del eje extendido
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
@@ -487,41 +487,41 @@
     robot.CloseRPC()
     return 0
 
-逆运动学求解-是否有解
-++++++++++++++++++++++
+Solución de cinemática inversa-si tiene solución
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetInverseKinHasSolution(type,desc_pos,joint_pos_ref)``"
-    "描述", "逆运动学，工具位姿求解关节位置 是否有解"
-    "必选参数", "- ``type``:0-绝对位姿(基坐标系)，1-相对位姿（基坐标系），2-相对位姿（工具坐标系）
-    - ``desc_pos``：[x,y,z,rx,ry,rz]工具位姿，单位[mm][°]
-    - ``joint_pos_ref``：[j1,j2,j3,j4,j5,j6]，关节参考位置，单位[°]"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``result``:“True”-有解，“False”-无解"
+    "Prototipo", "``GetInverseKinHasSolution(type,desc_pos,joint_pos_ref)``"
+    "Descripción", "Cinemática inversa，pose de herramienta para resolver la posición articular si tiene solución"
+    "Parámetros obligatorios", "- ``type``:0-pose absoluta(sistema de coordenadas base)，1-pose relativa(sistema de coordenadas base)，2-pose relativa(sistema de coordenadas de herramienta)
+    - ``desc_pos``：[x,y,z,rx,ry,rz]pose de herramienta，unidad[mm][°]
+    - ``joint_pos_ref``：[j1,j2,j3,j4,j5,j6]，posición articular de referencia，unidad[°]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``result``:“True”-tiene solución，“False”-sin solución"
 
-获取机器人8组逆解
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener las 8 soluciones inversas del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``TCFToAllJoint(self, tcp_pose, tool, workpiece, exPos)``"
-    "描述", "获取8组逆解"
-    "必选参数", "
-    - ``tcp_pose``: 笛卡尔位姿，6个元素[x,y,z,rx,ry,rz]
-    - ``tool``: 工具坐标系
-    - ``workpiece``: 工件坐标系
-    - ``exPos``: 扩展轴位置，4个元素
+    "Prototipo", "``TCFToAllJoint(self, tcp_pose, tool, workpiece, exPos)``"
+    "Descripción", "Obtener las 8 soluciones inversas"
+    "Parámetros obligatorios", "
+    - ``tcp_pose``: pose cartesiana，6 elementos[x,y,z,rx,ry,rz]
+    - ``tool``: sistema de coordenadas de herramienta
+    - ``workpiece``: sistema de coordenadas de pieza
+    - ``exPos``: posición del eje extendido，4 elementos
     "
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``jPos``：输出8组关节角度，二维列表，每组6个关节值，共48个值"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``jPos``：salida de 8 grupos de ángulos articulares，lista bidimensional，cada grupo con 6 valores articulares，48 valores en total"
 
-获取机器人8组逆解代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código para obtener las 8 soluciones inversas del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
@@ -529,11 +529,11 @@
     import time
 
     def main():
-        # Establish connection with the robot controller
+        # Establecer conexión con el controlador del robot
         robot = Robot.RPC('192.168.58.2')
-        time.sleep(0.5)  # Wait for connection and data reception
+        time.sleep(0.5)  # Esperar la conexión y la recepción de datos
 
-        # Get current TCP pose
+        # Obtener la pose TCP actual
         ret, curTcp = robot.GetActualTCPPose(1)
         if ret != 0:
             print(f"GetActualTCPPose failed, ret:{ret}")
@@ -543,58 +543,58 @@
         print(f"Current TCP pose: x={curTcp[0]:.3f}, y={curTcp[1]:.3f}, z={curTcp[2]:.3f}, "
             f"a={curTcp[3]:.3f}, b={curTcp[4]:.3f}, c={curTcp[5]:.3f}")
 
-        # Exaxis position, all zeros here
+        # Posición del eje extendido, todos ceros aquí
         exPos = [0.0, 0.0, 0.0, 0.0]
 
-        # Call TCFToAllJoint to get 8 inverse solutions, tool=0, workpiece=0
+        # Llamar a TCFToAllJoint para obtener 8 soluciones inversas, tool=0, workpiece=0
         rtn, allJoints = robot.TCFToAllJoint(curTcp, 0, 0, exPos)
         if rtn != 0:
             print(f"TCFToAllJoint failed, rtn:{rtn}")
             robot.CloseRPC()
             return
 
-        # Verify each solution with forward kinematics
+        # Verificar cada solución con cinemática directa
         for i in range(8):
             joint = allJoints[i]
 
             print(f"JOINT{i + 1}: j1={joint[0]:.3f}, j2={joint[1]:.3f}, j3={joint[2]:.3f}, "
                 f"j4={joint[3]:.3f}, j5={joint[4]:.3f}, j6={joint[5]:.3f}")
 
-            # Forward kinematics to get cartesian pose of the i-th solution
+            # Cinemática directa para obtener la pose cartesiana de la i-ésima solución
             rtn, pos = robot.GetForwardKin(joint)
             if rtn != 0:
-                # Skip this solution if forward kinematics fails
+                # Omitir esta solución si la cinemática directa falla
                 continue
 
             print(f"POS{i + 1}: x={pos[0]:.3f}, y={pos[1]:.3f}, z={pos[2]:.3f}, "
                 f"a={pos[3]:.3f}, b={pos[4]:.3f}, c={pos[5]:.3f}")
 
-        # Close connection
+        # Cerrar conexión
         robot.CloseRPC()
 
     if __name__ == "__main__":
         main()
         
-正运动学求解
-+++++++++++++++
+Solución de cinemática directa
++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetForwardKin(joint_pos)``"
-    "描述", "正运动学，关节位置求解工具位姿"
-    "必选参数", "- ``joint_pos``:[j1,j2,j3,j4,j5,j6]:关节位置，单位[°]"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``desc_pos=[x,y,z,rx,ry,rz]``：正运动学解，关节位置求解工具位姿"
+    "Prototipo", "``GetForwardKin(joint_pos)``"
+    "Descripción", "Cinemática directa，posición articular para resolver la pose de herramienta"
+    "Parámetros obligatorios", "- ``joint_pos``:[j1,j2,j3,j4,j5,j6]:posición articular，unidad[°]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``desc_pos=[x,y,z,rx,ry,rz]``：solución de cinemática directa，posición articular para resolver la pose de herramienta"
 
-机器人正逆运动学计算代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de cálculo de cinemática directa e inversa del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     j1 = [-11.904, -99.669, 117.473, -108.616, -91.726, 74.256]
     desc_pos1 = [-419.524, -13.000, 351.569, -178.118, 0.314, 3.833]
@@ -611,56 +611,56 @@
           f"{forwordResult[3]}, {forwordResult[4]}, {forwordResult[5]}")
     robot.CloseRPC()
 
-查询机器人示教管理点位数据
-++++++++++++++++++++++++++
+Consultar los datos de los puntos de enseñanza del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetRobotTeachingPoint(name)``"
-    "描述", "查询机器人示教管理点位数据"
-    "必选参数", "``name``：点位名"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``[x,y,z,rx,ry,rz,j1,j2,j3,j4,j5,j6,tool,wobj,speed,acc,e1,e2,e3,e4]``：点位数据"
+    "Prototipo", "``GetRobotTeachingPoint(name)``"
+    "Descripción", "Consultar los datos de los puntos de enseñanza del robot"
+    "Parámetros obligatorios", "``name``：nombre del punto"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``[x,y,z,rx,ry,rz,j1,j2,j3,j4,j5,j6,tool,wobj,speed,acc,e1,e2,e3,e4]``：datos del punto"
 
-获取DH补偿参数
-++++++++++++++++++++++++++
+Obtener los parámetros de compensación DH
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.1
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetDHCompensation()``"
-    "描述", "获取DH补偿参数"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``dhCompensation=[cmpstD1,cmpstA2,cmpstA3,cmpstD4,cmpstD5,cmpstD6]``：机器人DH参数补偿值(mm)"
+    "Prototipo", "``GetDHCompensation()``"
+    "Descripción", "Obtener los parámetros de compensación DH"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``dhCompensation=[cmpstD1,cmpstA2,cmpstA3,cmpstD4,cmpstD5,cmpstD6]``：valores de compensación de los parámetros DH del robot(mm)"
 
-获取控制箱SN码
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el código SN de la caja de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.1
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetRobotSN()``"
-    "描述", "获取控制箱SN码"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``SNCode``：控制箱SN码"
+    "Prototipo", "``GetRobotSN()``"
+    "Descripción", "Obtener el código SN de la caja de control"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``SNCode``：código SN de la caja de control"
 
-查询机器人示教管理点位数据代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de consulta de los datos de los puntos de enseñanza del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     name = "P1"
     rtn, data = robot.GetRobotTeachingPoint(name)
@@ -676,160 +676,160 @@
     print(f"robot SN is {sn[0]}")
     robot.CloseRPC()
 
-根据编号获取工具坐标系
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas de herramienta según el número
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: python SDK-V3.9.8
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetToolCoordWithID(id)``"
-    "描述", "根据编号获取工具坐标系"
-    "必选参数", "- ``id``：工具坐标系编号"
-    "默认参数", "无"
-    "返回值", "
-    - 错误码 成功-0  失败- errcode
-    - ``coord``：坐标系数值
-    - ``type``：工具类型 (可选) 0-工具；1-传感器
-    - ``install``：安装位置 (可选) 0-机器人末端；1-机器人外部
-    - ``toolID``：工具ID
-    - ``loadNo``：负载编号
+    "Prototipo", "``GetToolCoordWithID(id)``"
+    "Descripción", "Obtener el sistema de coordenadas de herramienta según el número"
+    "Parámetros obligatorios", "- ``id``：número del sistema de coordenadas de herramienta"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "
+    - Código de error éxito-0  fallo- errcode
+    - ``coord``：valor del sistema de coordenadas
+    - ``type``：tipo de herramienta (opcional) 0-herramienta；1-sensor
+    - ``install``：posición de instalación (opcional) 0-extremo del robot；1-externo del robot
+    - ``toolID``：ID de la herramienta
+    - ``loadNo``：número de carga
     "
 
-根据编号获取工件坐标系
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas de pieza según el número
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: python SDK-V3.9.8
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetWObjCoordWithID(id)``"
-    "描述", "根据编号获取工件坐标系"
-    "必选参数", "- ``id``：工件坐标系编号"
-    "默认参数", "无"
-    "返回值", "
-    - 错误码 成功-0  失败- errcode
-    - ``coord``：坐标系数值
-    - ``refFrame``：参考坐标系
+    "Prototipo", "``GetWObjCoordWithID(id)``"
+    "Descripción", "Obtener el sistema de coordenadas de pieza según el número"
+    "Parámetros obligatorios", "- ``id``：número del sistema de coordenadas de pieza"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "
+    - Código de error éxito-0  fallo- errcode
+    - ``coord``：valor del sistema de coordenadas
+    - ``refFrame``：sistema de coordenadas de referencia
     "
 
-根据编号获取外部工具坐标系
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas de herramienta externa según el número
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: python SDK-V3.9.8
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetExToolCoordWithID(id)``"
-    "描述", "根据编号获取外部工具坐标系"
-    "必选参数", "- ``id``：外部工具坐标系编号"
-    "默认参数", "无"
-    "返回值", "
-    - 错误码 成功-0  失败- errcode
-    - ``coord``：坐标系数值
-    - ``tcoord``：机器人末端安装工件坐标系位姿 (6个值: [x, y, z, rx, ry, rz])
+    "Prototipo", "``GetExToolCoordWithID(id)``"
+    "Descripción", "Obtener el sistema de coordenadas de herramienta externa según el número"
+    "Parámetros obligatorios", "- ``id``：número del sistema de coordenadas de herramienta externa"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "
+    - Código de error éxito-0  fallo- errcode
+    - ``coord``：valor del sistema de coordenadas
+    - ``tcoord``：pose del sistema de coordenadas de pieza instalado en el extremo del robot (6 valores: [x, y, z, rx, ry, rz])
     "
 
-根据编号获取扩展轴坐标系
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas del eje extendido según el número
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetExAxisCoordWithID(id)``"
-    "描述", "根据编号获取扩展轴坐标系"
-    "必选参数", "- ``id``：扩展轴坐标系编号"
-    "默认参数", "无"
-    "返回值", "
-    - 错误码 成功-0  失败- errcode
-    - ``coord``：坐标系数值
-    - ``axisCoordNum``：扩展轴号 (可选) bit0-bit3对应扩展轴1-扩展轴4；如值为3,对应应用扩展轴[1,2]
-    - ``calibFlag``：标定标志 (可选) 0-未标定；1-已标定
+    "Prototipo", "``GetExAxisCoordWithID(id)``"
+    "Descripción", "Obtener el sistema de coordenadas del eje extendido según el número"
+    "Parámetros obligatorios", "- ``id``：número del sistema de coordenadas del eje extendido"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "
+    - Código de error éxito-0  fallo- errcode
+    - ``coord``：valor del sistema de coordenadas
+    - ``axisCoordNum``：número del eje extendido (opcional) bit0-bit3 corresponden al eje extendido 1-eje extendido 4；si el valor es 3, corresponde a los ejes extendidos aplicados [1,2]
+    - ``calibFlag``：indicador de calibración (opcional) 0-no calibrado；1-calibrado
     "
 
-根据编号获取负载质量及质心
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener la masa y el centro de gravedad de la carga según el número
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetTargetPayloadWithID(id)``"
-    "描述", "根据编号获取负载质量及质心"
-    "必选参数", "- ``id``：扩展轴坐标系编号"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``weight``：负载质量
-    - ``cog``：负载质心"
+    "Prototipo", "``GetTargetPayloadWithID(id)``"
+    "Descripción", "Obtener la masa y el centro de gravedad de la carga según el número"
+    "Parámetros obligatorios", "- ``id``：número del sistema de coordenadas del eje extendido"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``weight``：masa de la carga
+    - ``cog``：centro de gravedad de la carga"
 
-获取当前工具坐标系
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas de herramienta actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetCurToolCoord()``"
-    "描述", "获取当前工具坐标系"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``coord``：坐标系数值"
+    "Prototipo", "``GetCurToolCoord()``"
+    "Descripción", "Obtener el sistema de coordenadas de herramienta actual"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``coord``：valor del sistema de coordenadas"
 
-获取当前工件坐标系
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas de pieza actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetCurWObjCoord()``"
-    "描述", "获取当前工件坐标系"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``coord``：坐标系数值"
+    "Prototipo", "``GetCurWObjCoord()``"
+    "Descripción", "Obtener el sistema de coordenadas de pieza actual"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``coord``：valor del sistema de coordenadas"
 
-获取当前外部工具坐标系
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas de herramienta externa actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetCurExToolCoord()``"
-    "描述", "获取当前外部工具坐标系"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``coord``：坐标系数值"
+    "Prototipo", "``GetCurExToolCoord()``"
+    "Descripción", "Obtener el sistema de coordenadas de herramienta externa actual"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``coord``：valor del sistema de coordenadas"
 
-获取当前扩展轴坐标系
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas del eje extendido actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetCurExAxisCoord()``"
-    "描述", "获取当前扩展轴坐标系"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``coord``：坐标系数值"
+    "Prototipo", "``GetCurExAxisCoord()``"
+    "Descripción", "Obtener el sistema de coordenadas del eje extendido actual"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``coord``：valor del sistema de coordenadas"
 
-获取机器人坐标系及负载代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de sistemas de coordenadas y carga del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 

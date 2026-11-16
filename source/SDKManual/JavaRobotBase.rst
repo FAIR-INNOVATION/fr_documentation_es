@@ -1,170 +1,170 @@
-机器人基础
-=============
+Fundamentos del robot
+=============================
 
 .. toctree:: 
     :maxdepth: 5
 
-实例化机器人
-++++++++++++++++++++++++++++++++++
+Instanciar el robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  机器人接口类构造函数
+    * @brief  Constructor de la clase de interfaz del robot
     */
     Robot robot = new Robot(); 
 
-与控制器建立通信
-++++++++++++++++++++++++++++++++++
+Establecer comunicación con el controlador
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  与机器人控制器建立通信
-    * @param  [in] ip  控制器IP地址，出场默认为192.168.58.2
-    * @return 错误码
+    * @brief  Establecer comunicación con el controlador del robot
+    * @param  [in] ip  Dirección IP del controlador, valor predeterminado de fábrica 192.168.58.2
+    * @return Código de error
     */
     int RPC(String ip);
 
-与机器人关闭通信
-++++++++++++++++++++++++++++++++++
+Cerrar la comunicación con el robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 与机器人关闭通信
-    * @return 错误码 
+    * @brief Cerrar la comunicación con el robot
+    * @return Código de error 
     */ 
     int CloseRPC(); 
 
-查询SDK版本号
-++++++++++++++++++++++++++++++++++
+Consultar el número de versión del SDK
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 查询 SDK 版本号 
-    * @return 版本号 
+    * @brief Consultar el número de versión del SDK 
+    * @return Número de versión 
     */  
     String GetSDKVersion();
 
-获取控制器IP
-++++++++++++++++++++++++++++++++++
+Obtener la IP del controlador
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  获取控制器IP
-    * @param  [out] ip  控制器IP
-    * @return  错误码
+    * @brief  Obtener la IP del controlador
+    * @param  [out] ip  IP del controlador
+    * @return  Código de error
     */
     int GetControllerIP(String[] ip);
 
-控制机器人进入或退出拖动示教模式
-++++++++++++++++++++++++++++++++++
+Controlar la entrada o salida del modo de enseñanza por arrastre del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  控制机器人进入或退出拖动示教模式
-    * @param  [in] state 0-退出拖动示教模式，1-进入拖动示教模式
-    * @return  错误码
+    * @brief  Controlar la entrada o salida del modo de enseñanza por arrastre del robot
+    * @param  [in] state 0-salir del modo de enseñanza por arrastre, 1-entrar en el modo de enseñanza por arrastre
+    * @return  Código de error
     */
     int DragTeachSwitch(int state);
 
-查询机器人是否处于拖动示教模式
-++++++++++++++++++++++++++++++++++
+Consultar si el robot está en modo de enseñanza por arrastre
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  查询机器人是否处于拖动示教模式
-    * @param  [in] state 0-非拖动示教模式，1-拖动示教模式
-    * @return  错误码
+    * @brief  Consultar si el robot está en modo de enseñanza por arrastre
+    * @param  [in] state 0-modo no de enseñanza por arrastre, 1-modo de enseñanza por arrastre
+    * @return  Código de error
     */
     int IsInDragTeach(List<Number> state);
 
-控制机器人上使能或下使能
-++++++++++++++++++++++++++++++++++
+Controlar la habilitación o deshabilitación del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  控制机器人上使能或下使能，机器人上电后默认自动上使能
-    * @param  [in] state  0-下使能，1-上使能
-    * @return  错误码
+    * @brief  Controlar la habilitación o deshabilitación del robot; tras el encendido, el robot se habilita automáticamente de forma predeterminada
+    * @param  [in] state  0-deshabilitar, 1-habilitar
+    * @return  Código de error
     */
     int RobotEnable(int state); 
 
-控制机器人手自动模式切换
-++++++++++++++++++++++++++++++++++
+Controlar el cambio de modo manual/automático del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 控制机器人手自动模式切换
-    * @param [in] mode 0-自动模式，1-手动模式
-    * @return 错误码
+    * @brief Controlar el cambio de modo manual/automático del robot
+    * @param [in] mode 0-modo automático, 1-modo manual
+    * @return Código de error
     */
     int Mode(int mode);
 
-关闭机器人操作系统
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Apagar el sistema operativo del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.4-3.8.1
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 关闭机器人操作系统
-    * @return 错误码
+    * @brief Apagar el sistema operativo del robot
+    * @return Código de error
     */
     int ShutDownRobotOS();
 
-设置与机器人通讯重连参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer los parámetros de reconexión de comunicación con el robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置与机器人通讯重连参数
-    * @param [in] enable 是否使能，true:使能，false:不使能
-    * @param [in] times 重连次数
-    * @param [in] period 重连时间间隔
-    * @return 错误码
+    * @brief Establecer los parámetros de reconexión de comunicación con el robot
+    * @param [in] enable Si se habilita, true:habilitar, false:no habilitar
+    * @param [in] times Número de reconexiones
+    * @param [in] period Intervalo de tiempo de reconexión
+    * @return Código de error
     */
     int SetReconnectParam(boolean enable, int times, int period);
 
-初始化日志参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Inicializar los parámetros del registro
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 初始化日志参数
-    * @param [in] logType 输出模式，DIRECT-直接输出；BUFFER-缓冲输出；ASYNC-异步输出
-    * @param [in] logLevel 日志过滤等级，ERROR-错误；WARNING-警告;INFO-信息；DEBUG-调试
-    * @param [in] filePath 文件保存路径，如“D://Log/”
-    * @param [in] saveFileNum 保存文件个数，同时超出保存文件个数和保存文件天数的文件将被删除
-    * @param [in] saveDays 保存文件天数，同时超出保存文件个数和保存文件天数的文件将被删除
-    * @return 错误码
+    * @brief Inicializar los parámetros del registro
+    * @param [in] logType Modo de salida, DIRECT-salida directa; BUFFER-salida con búfer; ASYNC-salida asíncrona
+    * @param [in] logLevel Nivel de filtrado del registro, ERROR-error; WARNING-advertencia; INFO-información; DEBUG-depuración
+    * @param [in] filePath Ruta de guardado del archivo, como "D://Log/"
+    * @param [in] saveFileNum Número de archivos a guardar; los archivos que superen simultáneamente el número de archivos a guardar y los días de guardado serán eliminados
+    * @param [in] saveDays Días de guardado de archivos; los archivos que superen simultáneamente el número de archivos a guardar y los días de guardado serán eliminados
+    * @return Código de error
     */
     int LoggerInit(FrLogType logType, FrLogLevel logLevel, String filePath, int saveFileNum, int saveDays)
 
-设置日志过滤等级
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el nivel de filtrado del registro
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置日志过滤等级
-    * @param [in] logLevel 日志过滤等级，ERROR-错误；WARNING-警告;INFO-信息；DEBUG-调试
-    * @return 错误码
+    * @brief Establecer el nivel de filtrado del registro
+    * @param [in] logLevel Nivel de filtrado del registro, ERROR-error; WARNING-advertencia; INFO-información; DEBUG-depuración
+    * @return Código de error
     */
     int SetLoggerLevel(FrLogLevel logLevel)
 
-机器人基础控制代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de control básico del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -208,62 +208,62 @@
         }
     }
 
-获取机器人软件版本
-+++++++++++++++++++++++++++++++++++++++++
+Obtener la versión de software del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 获取机器人软件版本
-    * @param [out] robotModel 机器人型号
-    * @param [out] webVersion web版本
-    * @param [out] controllerVersion 控制器版本
-    * @return 错误码 
+    * @brief Obtener la versión de software del robot
+    * @param [out] robotModel Modelo del robot
+    * @param [out] webVersion Versión web
+    * @param [out] controllerVersion Versión del controlador
+    * @return Código de error 
     */
     int GetSoftwareVersion(String robotModel, String webVersion, String controllerVersion);
 
-获取机器人硬件版本
-+++++++++++++++++++++++++++++++++++++++++
+Obtener la versión de hardware del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 获取机器人硬件版本
-    * @param [out] ctrlBoxBoardVersion 控制箱载板硬件版本
-    * @param [out] driver1Version 驱动器1硬件版本
-    * @param [out] driver1Version 驱动器2硬件版本
-    * @param [out] driver1Version 驱动器3硬件版本
-    * @param [out] driver1Version 驱动器4硬件版本
-    * @param [out] driver1Version 驱动器5硬件版本
-    * @param [out] driver1Version 驱动器6硬件版本
-    * @param [out] endBoardVersion 末端板硬件版本
-    * @return 错误码 
+    * @brief Obtener la versión de hardware del robot
+    * @param [out] ctrlBoxBoardVersion Versión de hardware de la placa base de la caja de control
+    * @param [out] driver1Version Versión de hardware del accionamiento 1
+    * @param [out] driver1Version Versión de hardware del accionamiento 2
+    * @param [out] driver1Version Versión de hardware del accionamiento 3
+    * @param [out] driver1Version Versión de hardware del accionamiento 4
+    * @param [out] driver1Version Versión de hardware del accionamiento 5
+    * @param [out] driver1Version Versión de hardware del accionamiento 6
+    * @param [out] endBoardVersion Versión de hardware de la placa del extremo
+    * @return Código de error 
     */
     int GetHardwareVersion(String ctrlBoxBoardVersion, String driver1Version, String driver2Version, String driver3Version,
                                           String driver4Version, String driver5Version, String driver6Version, String endBoardVersion);
 
-获取机器人固件版本
-+++++++++++++++++++++++++++++++++++++++++
+Obtener la versión de firmware del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 获取机器人固件版本
-    * @param [out] ctrlBoxBoardVersion 控制箱载板固件版本
-    * @param [out] driver1Version 驱动器1固件版本
-    * @param [out] driver1Version 驱动器2固件版本
-    * @param [out] driver1Version 驱动器3固件版本
-    * @param [out] driver1Version 驱动器4固件版本
-    * @param [out] driver1Version 驱动器5固件版本
-    * @param [out] driver1Version 驱动器6固件版本
-    * @param [out] endBoardVersion 末端板固件版本
-    * @return 错误码 
+    * @brief Obtener la versión de firmware del robot
+    * @param [out] ctrlBoxBoardVersion Versión de firmware de la placa base de la caja de control
+    * @param [out] driver1Version Versión de firmware del accionamiento 1
+    * @param [out] driver1Version Versión de firmware del accionamiento 2
+    * @param [out] driver1Version Versión de firmware del accionamiento 3
+    * @param [out] driver1Version Versión de firmware del accionamiento 4
+    * @param [out] driver1Version Versión de firmware del accionamiento 5
+    * @param [out] driver1Version Versión de firmware del accionamiento 6
+    * @param [out] endBoardVersion Versión de firmware de la placa del extremo
+    * @return Código de error 
     */
     int GetFirmwareVersion(String ctrlBoxBoardVersion, String driver1Version, String driver2Version, String driver3Version,
                                           String driver4Version, String driver5Version, String driver6Version, String endBoardVersion);
 
-获取机器人软固件版本代码示例
-+++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código para obtener las versiones de software y firmware del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -297,8 +297,8 @@
                 driver4Version, driver5Version, driver6Version, endBoardVersion);
     }
 
-机器人基础控制代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de control básico del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -345,14 +345,14 @@
         return 0;
     }
 
-切换手动高速模式
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Cambiar al modo manual de alta velocidad
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 切换手动高速模式
-    * @param [in] state 0-退出手动高速；1-进入手动高速
-    * @return 错误码
+    * @brief Cambiar al modo manual de alta velocidad
+    * @param [in] state 0-salir de la alta velocidad manual; 1-entrar en la alta velocidad manual
+    * @return Código de error
     */
     public int HiSpeedManualSwitch(int state)

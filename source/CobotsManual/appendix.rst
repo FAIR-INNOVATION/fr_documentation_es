@@ -1,203 +1,203 @@
-附录
+Apéndice
 ========
 
 .. toctree:: 
   :maxdepth: 5
 
-附录1：运动控制器错误及处理方式
---------------------------------
+Apéndice 1: Errores del controlador de movimiento y formas de tratamiento
+--------------------------------------------------------------------------
 
 .. csv-table:: 
-   :header: "主故障码", "子故障码", "描述"
+   :header: "Código de fallo principal", "Código de subfallo", "Descripción"
    :widths: 20, 10, 70
 
-   "0-无故障", "0", "无故障"
-   "1-指令点错误", "1", "关节指令点错误，可复位"
-   "1-指令点错误", "2", "直线目标点错误（包括工具不符），可复位"
-   "1-指令点错误", "3", "圆弧中间点错误（包括工具不符），可复位"
-   "1-指令点错误", "4", "圆弧目标点错误（包括工具不符），可复位"
-   "1-指令点错误", "5", "圆弧指令点间距过小，可复位"
-   "1-指令点错误", "6", "整圆/螺旋线中间点1错误（包括工具不符），可复位"
-   "1-指令点错误", "7", "整圆/螺旋线中间点2错误（包括工具不符），可复位"
-   "1-指令点错误", "8", "整圆/螺旋线中间点3错误（包括工具不符），可复位"
-   "1-指令点错误", "9", "整圆/螺旋线指令点间距过小，可复位"
-   "1-指令点错误", "10", "TPD指令点错误，可复位"
-   "1-指令点错误", "11", "TPD指令工具与当前工具不符，可复位"
-   "1-指令点错误", "12", "TPD当前指令与下一指令起始点偏差过大，可复位"
-   "1-指令点错误", "13", "内外部工具切换错误，可复位"
-   "1-指令点错误", "14", "新螺旋线起点错误，可复位"
-   "1-指令点错误", "15", "新样条曲线指令点错误，可复位"
-   "1-指令点错误", "17", "PTP关节指令超限，可复位"
-   "1-指令点错误", "18", "TPD关节指令超限，可复位"
-   "1-指令点错误", "19", "LIN/ARC下发关节指令超限，可复位"
-   "1-指令点错误", "20", "笛卡尔空间内指令超速，不可复位"
-   "1-指令点错误", "21", "关节空间内扭矩指令超限，可复位"
-   "1-指令点错误", "22", "JOG关节指令超限，可复位"
-   "1-指令点错误", "23", "轴1关节空间内指令速度超限，可复位"
-   "1-指令点错误", "24", "轴2关节空间内指令速度超限，可复位"
-   "1-指令点错误", "25", "轴3关节空间内指令速度超限，可复位"
-   "1-指令点错误", "26", "轴4关节空间内指令速度超限，可复位"
-   "1-指令点错误", "27", "轴5关节空间内指令速度超限，可复位"
-   "1-指令点错误", "28", "轴6关节空间内指令速度超限，可复位"
-   "1-指令点错误", "29", "关节反馈速度超限，不可复位"
-   "1-指令点错误", "30", "关节指令与反馈偏差过大，不可复位，需要重启"
-   "1-指令点错误", "31", "DMP目标点错误（包括工具不符），可复位"
-   "1-指令点错误", "33", "下一指令关节配置发生变化（下一指令存在奇异位姿，请使用PTP指令或更改下一指令点），可复位"
-   "1-指令点错误", "34", "当前指令关节配置发生变化（下一指令存在奇异位姿，请使用PTP指令或更改下一指令点），可复位"
-   "1-指令点错误", "35", "LIN指令中关节速度超限，可复位"
-   "1-指令点错误", "36", "LIN指令自适应速度超出阈值，可复位"
-   "1-指令点错误", "37", "轨迹中存在不可到达点，可复位"
-   "1-指令点错误", "38", "轨迹中存在不可到达点-奇异位姿，可复位"
-   "1-指令点错误", "49", "指令错误，ARCSTART和ARCEND之间只允许LIN和ARC指令，可复位"
-   "1-指令点错误", "50", "指令错误，WEAVESTART和WEAVEEND之间只允许LIN和ARC指令，可复位"
-   "1-指令点错误", "51", "摆焊参数错误，可复位"
-   "1-指令点错误", "52", "摆焊指令点间距过小，可复位"
-   "1-指令点错误", "53", "摆动轨迹中存在不可达到点位-奇异位姿，可复位"
-   "1-指令点错误", "54", "摆动轨迹中存在不可达到点位-关节指令超限，可复位"
-   "1-指令点错误", "55", "摆动轨迹中存在不可达到点位-规划异常（工具z与前进方向x夹角重合），可复位"
-   "1-指令点错误", "56", "摆动轨迹中存在不可达到点位-规划异常（圆弧路点错误），可复位"
-   "1-指令点错误", "65", "激光传感器指令偏差过大，可复位"
-   "1-指令点错误", "66", "激光传感器指令中断，焊缝跟踪提前结束，可复位"
-   "1-指令点错误", "81", "外部轴指令速度超限，可复位"
-   "1-指令点错误", "82", "外部轴指令与反馈偏差过大，不可复位，需要回零或重启"
-   "1-指令点错误", "83", "扩展外设（外部轴/IO）通信异常，可复位"
-   "1-指令点错误", "84", "扩展外设（焊机）通信异常，可复位"
-   "1-指令点错误", "85", "扩展1关节空间指令速度超限，可复位"
-   "1-指令点错误", "86", "扩展2关节空间指令速度超限，可复位"
-   "1-指令点错误", "87", "扩展3关节空间指令速度超限，可复位"
-   "1-指令点错误", "88", "扩展4关节空间指令速度超限，可复位"
-   "1-指令点错误", "89", "扩展外设（UDP）通信异常，可复位"
-   "1-指令点错误", "90", "扩展外设（UDP）通信丢包异常，可复位"
-   "1-指令点错误", "97", "传送带跟踪-起始点与参考点姿态变化过大，可复位"
-   "1-指令点错误", "113", "恒力控制-X方向超过最大调整距离，可复位"
-   "1-指令点错误", "114", "恒力控制-Y方向超过最大调整距离，可复位"
-   "1-指令点错误", "115", "恒力控制-Z方向超过最大调整距离，可复位"
-   "1-指令点错误", "116", "恒力控制-RX方向超过最大调整角度，可复位"
-   "1-指令点错误", "117", "恒力控制-RY方向超过最大调整角度，可复位"
-   "1-指令点错误", "118", "恒力控制-RZ方向超过最大调整角度，可复位"
-   "1-指令点错误", "119", "外部传感器数据错误，可复位"
-   "1-指令点错误", "120", "螺旋线探索运动失败，可复位"
-   "1-指令点错误", "121", "旋转插入运动失败，可复位"
-   "1-指令点错误", "122", "直线插入运动失败，可复位"
-   "1-指令点错误", "123", "表面定位运动失败，可复位"
-   "1-指令点错误", "129", "超过最大扭矩记录点数，可复位"
-   "1-指令点错误", "130", "速度切换错误，可复位"
-   "1-指令点错误", "131", "工具方向超限，可复位"
-   "1-指令点错误", "132", "动量超限，可复位"
-   "1-指令点错误", "133", "功率超限，可复位"
-   "1-指令点错误", "134", "STL-Flash诊断异常，可复位"
-   "1-指令点错误", "135", "STL-RAM诊断异常，可复位"
-   "1-指令点错误", "136", "STL-CPU诊断异常，可复位"
-   "1-指令点错误", "137", "安全板II-ECAT安全数据异常，可复位"
-   "1-指令点错误", "138", "1轴-ECAT安全数据异常，可复位"
-   "1-指令点错误", "139", "2轴-ECAT安全数据异常，可复位"
-   "1-指令点错误", "140", "3轴-ECAT安全数据异常，可复位"
-   "1-指令点错误", "141", "4轴-ECAT安全数据异常，可复位"
-   "1-指令点错误", "142", "5轴-ECAT安全数据异常，可复位"
-   "1-指令点错误", "143", "6轴-ECAT安全数据异常，可复位"
-   "1-指令点错误", "145", "安全板与控制箱通信异常，可复位"
-   "1-指令点错误", "146", "焦点跟随错误，可复位"
-   "1-指令点错误", "147", "姿态速度超限，可复位"
-   "1-指令点错误", "148", "关节状态字异常，可复位"
-   "1-指令点错误", "149", "功能或设置存在冲突，可复位"
-   "2-驱动器故障", "1", "1轴驱动器故障，不可复位"
-   "2-驱动器故障", "2", "2轴驱动器故障，不可复位"
-   "2-驱动器故障", "3", "3轴驱动器故障，不可复位"
-   "2-驱动器故障", "4", "4轴驱动器故障，不可复位"
-   "2-驱动器故障", "5", "5轴驱动器故障，不可复位"
-   "2-驱动器故障", "6", "6轴驱动器故障，不可复位"
-   "3-超出软限位故障", "1", "1轴超出软限位故障，可复位"
-   "3-超出软限位故障", "2", "2轴超出软限位故障，可复位"
-   "3-超出软限位故障", "3", "3轴超出软限位故障，可复位"
-   "3-超出软限位故障", "4", "4轴超出软限位故障，可复位"
-   "3-超出软限位故障", "5", "5轴超出软限位故障，可复位"
-   "3-超出软限位故障", "6", "6轴超出软限位故障，可复位"
-   "4-碰撞故障", "1", "1轴碰撞故障，可复位"
-   "4-碰撞故障", "2", "2轴碰撞故障，可复位"
-   "4-碰撞故障", "3", "3轴碰撞故障，可复位"
-   "4-碰撞故障", "4", "4轴碰撞故障，可复位"
-   "4-碰撞故障", "5", "5轴碰撞故障，可复位"
-   "4-碰撞故障", "6", "6轴碰撞故障，可复位"
-   "4-碰撞故障", "7", "末端碰撞故障，可复位"
-   "4-碰撞故障", "8", "外部轴碰撞故障，可复位"
-   "5-活动从站数量错误", "1", "活动从站数量错误，不可复位"
-   "6-从站错误", "1", "从站掉线，不可复位"
-   "6-从站错误", "2", "从站状态与设置值不一致，不可复位"
-   "6-从站错误", "3", "从站未配置，不可复位"
-   "6-从站错误", "4", "从站配置错误，不可复位"
-   "6-从站错误", "5", "从站初始化错误，不可复位"
-   "6-从站错误", "6", "从站邮箱通信初始化错误，不可复位"
-   "7-IO错误", "1", "通道错误，可复位"
-   "7-IO错误", "2", "数值错误，可复位"
-   "7-IO错误", "3", "WaitDI等待超时，可复位"
-   "7-IO错误", "4", "WaitAI等待超时，可复位"
-   "7-IO错误", "5", "WaitAxleDI等待超时，可复位"
-   "7-IO错误", "6", "WaitAxleAI等待超时，可复位"
-   "7-IO错误", "7", "通道已配置功能错误，可复位"
-   "7-IO错误", "8", "起弧超时，可复位"
-   "7-IO错误", "9", "收弧超时，可复位"
-   "7-IO错误", "10", "寻位超时，可复位"
-   "7-IO错误", "11", "传送带IO检测超时，可复位"
-   "7-IO错误", "12", "WaitAuxDI等待超时，可复位"
-   "7-IO错误", "13", "WaitAuxAI等待超时，可复位"
-   "7-IO错误", "14", "焊丝寻位超时，可复位"
-   "7-IO错误", "15", "安全停止已触发，可复位"
-   "7-IO错误", "16", "DO模块24V短路保护，不可复位"
-   "7-IO错误", "17", "位置保持（刹车失效）保护，不可复位"
-   "7-IO错误", "18", "板卡DI等待超时，可复位"
-   "7-IO错误", "19", "板卡AI等待超时，可复位"
-   "8-夹爪错误", "1", "夹爪运动超时错误，可复位"
-   "9-文件错误", "1", "zbt配置文件版本错误，初始化错误-不可复位"
-   "9-文件错误", "2", "zbt配置文件加载失败，初始化错误-不可复位"
-   "9-文件错误", "3", "user配置文件版本错误，初始化错误-不可复位"
-   "9-文件错误", "4", "user配置文件加载失败，初始化错误-不可复位"
-   "9-文件错误", "5", "exaxis配置文件版本错误，初始化错误-不可复位"
-   "9-文件错误", "6", "exaxis配置文件加载失败，初始化错误-不可复位"
-   "9-文件错误", "7", "机器人型号不一致，需要重新设置-不可复位"
-   "9-文件错误", "8", "dhpara配置文件版本错误，初始化错误-不可复位"
-   "9-文件错误", "9", "dhpara配置文件加载失败，初始化错误-不可复位"
-   "9-文件错误", "10", "机器人型号未设置-不可复位"
-   "9-文件错误", "11", "load配置文件版本错误，初始化错误-不可复位"
-   "9-文件错误", "12", "load配置文件加载失败，初始化错误-不可复位"
-   "9-文件错误", "13", "speed配置文件版本错误，初始化错误-不可复位"
-   "9-文件错误", "14", "speed配置文件加载失败，初始化错误-不可复位"
-   "9-文件错误", "15", "weavepara配置文件版本错误，初始化错误-不可复位"
-   "9-文件错误", "16", "weavepara配置文件加载失败，初始化错误-不可复位"
-   "9-文件错误", "17", "interfere配置文件版本错误，初始化错误-不可复位"
-   "9-文件错误", "18", "interfere配置文件加载失败，初始化错误-不可复位"
-   "9-文件错误", "19", "dynamic配置文件版本错误，初始化错误-不可复位"
-   "9-文件错误", "20", "dynamic配置文件加载失败，初始化错误-不可复位"
-   "10-奇异位姿", "1", "奇异位姿"
-   "11-驱动器通信错误", "1", "1轴驱动器通信错误，不可复位"
-   "11-驱动器通信错误", "2", "2轴驱动器通信错误，不可复位"
-   "11-驱动器通信错误", "3", "3轴驱动器通信错误，不可复位"
-   "11-驱动器通信错误", "4", "4轴驱动器通信错误，不可复位"
-   "11-驱动器通信错误", "5", "5轴驱动器通信错误，不可复位"
-   "11-驱动器通信错误", "6", "6轴驱动器通信错误，不可复位"
-   "12-外部轴软限位", "1", "1轴超出软限位，可复位"
-   "12-外部轴软限位", "2", "2轴超出软限位，可复位"
-   "12-外部轴软限位", "3", "3轴超出软限位，可复位"
-   "12-外部轴软限位", "4", "4轴超出软限位，可复位"
-   "13-设置参数错误", "1", "工具号超限，可复位"
-   "13-设置参数错误", "2", "定位完成阈值错误，可复位"
-   "13-设置参数错误", "3", "碰撞等级错误，可复位"
-   "13-设置参数错误", "4", "负载重量错误，可复位"
-   "13-设置参数错误", "5", "负载质心X错误，可复位"
-   "13-设置参数错误", "6", "负载质心Y错误，可复位"
-   "13-设置参数错误", "7", "负载质心Z错误，可复位"
-   "13-设置参数错误", "8", "DI滤波时间错误，可复位"
-   "13-设置参数错误", "9", "AxleDI滤波时间错误，可复位"
-   "13-设置参数错误", "10", "AI滤波时间错误，可复位"
-   "13-设置参数错误", "11", "AxleAI滤波时间错误，可复位"
-   "13-设置参数错误", "12", "DI高低电平范围错误，可复位"
-   "13-设置参数错误", "13", "DO高低电平范围错误，可复位"
-   "13-设置参数错误", "14", "工件号超限，可复位"
-   "13-设置参数错误", "15", "外部轴号超限，可复位"
-   "13-设置参数错误", "16", "传送带编码器通道错误，可复位"
-   "13-设置参数错误", "17", "传送带工件轴号错误，可复位"
-   "13-设置参数错误", "18", "FR30L安装方式错误-非正装，可复位"
+   "0-Sin fallo", "0", "Sin fallo"
+   "1-Error de punto de instrucción", "1", "Error de punto de instrucción articular, reajustable"
+   "1-Error de punto de instrucción", "2", "Error de punto objetivo de línea recta (incluida la inconsistencia de herramienta), reajustable"
+   "1-Error de punto de instrucción", "3", "Error de punto intermedio de arco (incluida la inconsistencia de herramienta), reajustable"
+   "1-Error de punto de instrucción", "4", "Error de punto objetivo de arco (incluida la inconsistencia de herramienta), reajustable"
+   "1-Error de punto de instrucción", "5", "Distancia entre puntos de instrucción de arco demasiado pequeña, reajustable"
+   "1-Error de punto de instrucción", "6", "Error del punto intermedio 1 de círculo completo/hélice (incluida la inconsistencia de herramienta), reajustable"
+   "1-Error de punto de instrucción", "7", "Error del punto intermedio 2 de círculo completo/hélice (incluida la inconsistencia de herramienta), reajustable"
+   "1-Error de punto de instrucción", "8", "Error del punto intermedio 3 de círculo completo/hélice (incluida la inconsistencia de herramienta), reajustable"
+   "1-Error de punto de instrucción", "9", "Distancia entre puntos de instrucción de círculo completo/hélice demasiado pequeña, reajustable"
+   "1-Error de punto de instrucción", "10", "Error de punto de instrucción TPD, reajustable"
+   "1-Error de punto de instrucción", "11", "Herramienta de instrucción TPD inconsistente con la herramienta actual, reajustable"
+   "1-Error de punto de instrucción", "12", "Desviación demasiado grande entre la instrucción actual TPD y el punto inicial de la siguiente instrucción, reajustable"
+   "1-Error de punto de instrucción", "13", "Error de conmutación de herramienta interna/externa, reajustable"
+   "1-Error de punto de instrucción", "14", "Error de punto de inicio de nueva hélice, reajustable"
+   "1-Error de punto de instrucción", "15", "Error de punto de instrucción de nueva curva spline, reajustable"
+   "1-Error de punto de instrucción", "17", "Instrucción articular PTP fuera de límite, reajustable"
+   "1-Error de punto de instrucción", "18", "Instrucción articular TPD fuera de límite, reajustable"
+   "1-Error de punto de instrucción", "19", "Instrucción articular emitida LIN/ARC fuera de límite, reajustable"
+   "1-Error de punto de instrucción", "20", "Velocidad de instrucción excesiva en el espacio cartesiano, no reajustable"
+   "1-Error de punto de instrucción", "21", "Instrucción de par fuera de límite en el espacio articular, reajustable"
+   "1-Error de punto de instrucción", "22", "Instrucción articular JOG fuera de límite, reajustable"
+   "1-Error de punto de instrucción", "23", "Velocidad de instrucción fuera de límite en el espacio articular del eje 1, reajustable"
+   "1-Error de punto de instrucción", "24", "Velocidad de instrucción fuera de límite en el espacio articular del eje 2, reajustable"
+   "1-Error de punto de instrucción", "25", "Velocidad de instrucción fuera de límite en el espacio articular del eje 3, reajustable"
+   "1-Error de punto de instrucción", "26", "Velocidad de instrucción fuera de límite en el espacio articular del eje 4, reajustable"
+   "1-Error de punto de instrucción", "27", "Velocidad de instrucción fuera de límite en el espacio articular del eje 5, reajustable"
+   "1-Error de punto de instrucción", "28", "Velocidad de instrucción fuera de límite en el espacio articular del eje 6, reajustable"
+   "1-Error de punto de instrucción", "29", "Velocidad de realimentación articular fuera de límite, no reajustable"
+   "1-Error de punto de instrucción", "30", "Desviación demasiado grande entre instrucción y realimentación articular, no reajustable, requiere reinicio"
+   "1-Error de punto de instrucción", "31", "Error de punto objetivo DMP (incluida la inconsistencia de herramienta), reajustable"
+   "1-Error de punto de instrucción", "33", "Cambio de configuración articular de la siguiente instrucción (la siguiente instrucción tiene una pose singular, utilice la instrucción PTP o modifique el siguiente punto de instrucción), reajustable"
+   "1-Error de punto de instrucción", "34", "Cambio de configuración articular de la instrucción actual (la siguiente instrucción tiene una pose singular, utilice la instrucción PTP o modifique el siguiente punto de instrucción), reajustable"
+   "1-Error de punto de instrucción", "35", "Velocidad articular fuera de límite en la instrucción LIN, reajustable"
+   "1-Error de punto de instrucción", "36", "Velocidad adaptativa de la instrucción LIN fuera del umbral, reajustable"
+   "1-Error de punto de instrucción", "37", "Existe un punto inalcanzable en la trayectoria, reajustable"
+   "1-Error de punto de instrucción", "38", "Existe un punto inalcanzable en la trayectoria- pose singular, reajustable"
+   "1-Error de punto de instrucción", "49", "Error de instrucción, entre ARCSTART y ARCEND solo se permiten instrucciones LIN y ARC, reajustable"
+   "1-Error de punto de instrucción", "50", "Error de instrucción, entre WEAVESTART y WEAVEEND solo se permiten instrucciones LIN y ARC, reajustable"
+   "1-Error de punto de instrucción", "51", "Error de parámetros de soldadura oscilante, reajustable"
+   "1-Error de punto de instrucción", "52", "Distancia entre puntos de instrucción de soldadura oscilante demasiado pequeña, reajustable"
+   "1-Error de punto de instrucción", "53", "Existe un punto inalcanzable en la trayectoria oscilante- pose singular, reajustable"
+   "1-Error de punto de instrucción", "54", "Existe un punto inalcanzable en la trayectoria oscilante- instrucción articular fuera de límite, reajustable"
+   "1-Error de punto de instrucción", "55", "Existe un punto inalcanzable en la trayectoria oscilante- anomalía de planificación (coincidencia del ángulo entre la herramienta z y la dirección de avance x), reajustable"
+   "1-Error de punto de instrucción", "56", "Existe un punto inalcanzable en la trayectoria oscilante- anomalía de planificación (error de punto de ruta de arco), reajustable"
+   "1-Error de punto de instrucción", "65", "Desviación demasiado grande de la instrucción del sensor láser, reajustable"
+   "1-Error de punto de instrucción", "66", "Interrupción de la instrucción del sensor láser, finalización anticipada del seguimiento de soldadura, reajustable"
+   "1-Error de punto de instrucción", "81", "Velocidad de instrucción de eje externo fuera de límite, reajustable"
+   "1-Error de punto de instrucción", "82", "Desviación demasiado grande entre instrucción y realimentación del eje externo, no reajustable, requiere retorno a cero o reinicio"
+   "1-Error de punto de instrucción", "83", "Anomalía de comunicación de periféricos extendidos (eje externo/IO), reajustable"
+   "1-Error de punto de instrucción", "84", "Anomalía de comunicación de periféricos extendidos (máquina de soldar), reajustable"
+   "1-Error de punto de instrucción", "85", "Velocidad de instrucción fuera de límite en el espacio articular de la extensión 1, reajustable"
+   "1-Error de punto de instrucción", "86", "Velocidad de instrucción fuera de límite en el espacio articular de la extensión 2, reajustable"
+   "1-Error de punto de instrucción", "87", "Velocidad de instrucción fuera de límite en el espacio articular de la extensión 3, reajustable"
+   "1-Error de punto de instrucción", "88", "Velocidad de instrucción fuera de límite en el espacio articular de la extensión 4, reajustable"
+   "1-Error de punto de instrucción", "89", "Anomalía de comunicación de periféricos extendidos (UDP), reajustable"
+   "1-Error de punto de instrucción", "90", "Anomalía de pérdida de paquetes de comunicación de periféricos extendidos (UDP), reajustable"
+   "1-Error de punto de instrucción", "97", "Seguimiento de cinta transportadora- cambio de actitud demasiado grande entre el punto inicial y el punto de referencia, reajustable"
+   "1-Error de punto de instrucción", "113", "Control de fuerza constante- dirección X supera la distancia máxima de ajuste, reajustable"
+   "1-Error de punto de instrucción", "114", "Control de fuerza constante- dirección Y supera la distancia máxima de ajuste, reajustable"
+   "1-Error de punto de instrucción", "115", "Control de fuerza constante- dirección Z supera la distancia máxima de ajuste, reajustable"
+   "1-Error de punto de instrucción", "116", "Control de fuerza constante- dirección RX supera el ángulo máximo de ajuste, reajustable"
+   "1-Error de punto de instrucción", "117", "Control de fuerza constante- dirección RY supera el ángulo máximo de ajuste, reajustable"
+   "1-Error de punto de instrucción", "118", "Control de fuerza constante- dirección RZ supera el ángulo máximo de ajuste, reajustable"
+   "1-Error de punto de instrucción", "119", "Error de datos del sensor externo, reajustable"
+   "1-Error de punto de instrucción", "120", "Fallo del movimiento de exploración en hélice, reajustable"
+   "1-Error de punto de instrucción", "121", "Fallo del movimiento de inserción rotativa, reajustable"
+   "1-Error de punto de instrucción", "122", "Fallo del movimiento de inserción en línea recta, reajustable"
+   "1-Error de punto de instrucción", "123", "Fallo del movimiento de localización de superficie, reajustable"
+   "1-Error de punto de instrucción", "129", "Se supera el número máximo de puntos de registro de par, reajustable"
+   "1-Error de punto de instrucción", "130", "Error de conmutación de velocidad, reajustable"
+   "1-Error de punto de instrucción", "131", "Dirección de herramienta fuera de límite, reajustable"
+   "1-Error de punto de instrucción", "132", "Momento fuera de límite, reajustable"
+   "1-Error de punto de instrucción", "133", "Potencia fuera de límite, reajustable"
+   "1-Error de punto de instrucción", "134", "Anomalía de diagnóstico STL-Flash, reajustable"
+   "1-Error de punto de instrucción", "135", "Anomalía de diagnóstico STL-RAM, reajustable"
+   "1-Error de punto de instrucción", "136", "Anomalía de diagnóstico STL-CPU, reajustable"
+   "1-Error de punto de instrucción", "137", "Anomalía de datos de seguridad ECAT de la placa de seguridad II, reajustable"
+   "1-Error de punto de instrucción", "138", "Anomalía de datos de seguridad ECAT del eje 1, reajustable"
+   "1-Error de punto de instrucción", "139", "Anomalía de datos de seguridad ECAT del eje 2, reajustable"
+   "1-Error de punto de instrucción", "140", "Anomalía de datos de seguridad ECAT del eje 3, reajustable"
+   "1-Error de punto de instrucción", "141", "Anomalía de datos de seguridad ECAT del eje 4, reajustable"
+   "1-Error de punto de instrucción", "142", "Anomalía de datos de seguridad ECAT del eje 5, reajustable"
+   "1-Error de punto de instrucción", "143", "Anomalía de datos de seguridad ECAT del eje 6, reajustable"
+   "1-Error de punto de instrucción", "145", "Anomalía de comunicación entre la placa de seguridad y la caja de control, reajustable"
+   "1-Error de punto de instrucción", "146", "Error de seguimiento de foco, reajustable"
+   "1-Error de punto de instrucción", "147", "Velocidad de actitud fuera de límite, reajustable"
+   "1-Error de punto de instrucción", "148", "Anomalía de la palabra de estado articular, reajustable"
+   "1-Error de punto de instrucción", "149", "Conflicto de función o configuración, reajustable"
+   "2-Fallo del accionamiento", "1", "Fallo del accionamiento del eje 1, no reajustable"
+   "2-Fallo del accionamiento", "2", "Fallo del accionamiento del eje 2, no reajustable"
+   "2-Fallo del accionamiento", "3", "Fallo del accionamiento del eje 3, no reajustable"
+   "2-Fallo del accionamiento", "4", "Fallo del accionamiento del eje 4, no reajustable"
+   "2-Fallo del accionamiento", "5", "Fallo del accionamiento del eje 5, no reajustable"
+   "2-Fallo del accionamiento", "6", "Fallo del accionamiento del eje 6, no reajustable"
+   "3-Fallo de superación de límite suave", "1", "Fallo de superación de límite suave del eje 1, reajustable"
+   "3-Fallo de superación de límite suave", "2", "Fallo de superación de límite suave del eje 2, reajustable"
+   "3-Fallo de superación de límite suave", "3", "Fallo de superación de límite suave del eje 3, reajustable"
+   "3-Fallo de superación de límite suave", "4", "Fallo de superación de límite suave del eje 4, reajustable"
+   "3-Fallo de superación de límite suave", "5", "Fallo de superación de límite suave del eje 5, reajustable"
+   "3-Fallo de superación de límite suave", "6", "Fallo de superación de límite suave del eje 6, reajustable"
+   "4-Fallo de colisión", "1", "Fallo de colisión del eje 1, reajustable"
+   "4-Fallo de colisión", "2", "Fallo de colisión del eje 2, reajustable"
+   "4-Fallo de colisión", "3", "Fallo de colisión del eje 3, reajustable"
+   "4-Fallo de colisión", "4", "Fallo de colisión del eje 4, reajustable"
+   "4-Fallo de colisión", "5", "Fallo de colisión del eje 5, reajustable"
+   "4-Fallo de colisión", "6", "Fallo de colisión del eje 6, reajustable"
+   "4-Fallo de colisión", "7", "Fallo de colisión del extremo, reajustable"
+   "4-Fallo de colisión", "8", "Fallo de colisión del eje externo, reajustable"
+   "5-Error del número de esclavos activos", "1", "Error del número de esclavos activos, no reajustable"
+   "6-Error de esclavo", "1", "Desconexión del esclavo, no reajustable"
+   "6-Error de esclavo", "2", "Estado del esclavo inconsistente con el valor configurado, no reajustable"
+   "6-Error de esclavo", "3", "Esclavo no configurado, no reajustable"
+   "6-Error de esclavo", "4", "Error de configuración del esclavo, no reajustable"
+   "6-Error de esclavo", "5", "Error de inicialización del esclavo, no reajustable"
+   "6-Error de esclavo", "6", "Error de inicialización de la comunicación de buzón del esclavo, no reajustable"
+   "7-Error de IO", "1", "Error de canal, reajustable"
+   "7-Error de IO", "2", "Error de valor, reajustable"
+   "7-Error de IO", "3", "Tiempo de espera agotado en WaitDI, reajustable"
+   "7-Error de IO", "4", "Tiempo de espera agotado en WaitAI, reajustable"
+   "7-Error de IO", "5", "Tiempo de espera agotado en WaitAxleDI, reajustable"
+   "7-Error de IO", "6", "Tiempo de espera agotado en WaitAxleAI, reajustable"
+   "7-Error de IO", "7", "Error de función ya configurada en el canal, reajustable"
+   "7-Error de IO", "8", "Tiempo de espera agotado en el encendido del arco, reajustable"
+   "7-Error de IO", "9", "Tiempo de espera agotado en el apagado del arco, reajustable"
+   "7-Error de IO", "10", "Tiempo de espera agotado en la búsqueda de posición, reajustable"
+   "7-Error de IO", "11", "Tiempo de espera agotado en la detección de IO de la cinta transportadora, reajustable"
+   "7-Error de IO", "12", "Tiempo de espera agotado en WaitAuxDI, reajustable"
+   "7-Error de IO", "13", "Tiempo de espera agotado en WaitAuxAI, reajustable"
+   "7-Error de IO", "14", "Tiempo de espera agotado en la búsqueda de posición del alambre de soldadura, reajustable"
+   "7-Error de IO", "15", "Parada de seguridad activada, reajustable"
+   "7-Error de IO", "16", "Protección contra cortocircuito de 24V del módulo DO, no reajustable"
+   "7-Error de IO", "17", "Protección de mantenimiento de posición (fallo del freno), no reajustable"
+   "7-Error de IO", "18", "Tiempo de espera agotado en DI de la placa, reajustable"
+   "7-Error de IO", "19", "Tiempo de espera agotado en AI de la placa, reajustable"
+   "8-Error de pinza", "1", "Error de tiempo de espera agotado en el movimiento de la pinza, reajustable"
+   "9-Error de archivo", "1", "Error de versión del archivo de configuración zbt, error de inicialización- no reajustable"
+   "9-Error de archivo", "2", "Fallo de carga del archivo de configuración zbt, error de inicialización- no reajustable"
+   "9-Error de archivo", "3", "Error de versión del archivo de configuración user, error de inicialización- no reajustable"
+   "9-Error de archivo", "4", "Fallo de carga del archivo de configuración user, error de inicialización- no reajustable"
+   "9-Error de archivo", "5", "Error de versión del archivo de configuración exaxis, error de inicialización- no reajustable"
+   "9-Error de archivo", "6", "Fallo de carga del archivo de configuración exaxis, error de inicialización- no reajustable"
+   "9-Error de archivo", "7", "Modelo de robot inconsistente, requiere reconfiguración- no reajustable"
+   "9-Error de archivo", "8", "Error de versión del archivo de configuración dhpara, error de inicialización- no reajustable"
+   "9-Error de archivo", "9", "Fallo de carga del archivo de configuración dhpara, error de inicialización- no reajustable"
+   "9-Error de archivo", "10", "Modelo de robot no configurado- no reajustable"
+   "9-Error de archivo", "11", "Error de versión del archivo de configuración load, error de inicialización- no reajustable"
+   "9-Error de archivo", "12", "Fallo de carga del archivo de configuración load, error de inicialización- no reajustable"
+   "9-Error de archivo", "13", "Error de versión del archivo de configuración speed, error de inicialización- no reajustable"
+   "9-Error de archivo", "14", "Fallo de carga del archivo de configuración speed, error de inicialización- no reajustable"
+   "9-Error de archivo", "15", "Error de versión del archivo de configuración weavepara, error de inicialización- no reajustable"
+   "9-Error de archivo", "16", "Fallo de carga del archivo de configuración weavepara, error de inicialización- no reajustable"
+   "9-Error de archivo", "17", "Error de versión del archivo de configuración interfere, error de inicialización- no reajustable"
+   "9-Error de archivo", "18", "Fallo de carga del archivo de configuración interfere, error de inicialización- no reajustable"
+   "9-Error de archivo", "19", "Error de versión del archivo de configuración dynamic, error de inicialización- no reajustable"
+   "9-Error de archivo", "20", "Fallo de carga del archivo de configuración dynamic, error de inicialización- no reajustable"
+   "10-Pose singular", "1", "Pose singular"
+   "11-Error de comunicación del accionamiento", "1", "Error de comunicación del accionamiento del eje 1, no reajustable"
+   "11-Error de comunicación del accionamiento", "2", "Error de comunicación del accionamiento del eje 2, no reajustable"
+   "11-Error de comunicación del accionamiento", "3", "Error de comunicación del accionamiento del eje 3, no reajustable"
+   "11-Error de comunicación del accionamiento", "4", "Error de comunicación del accionamiento del eje 4, no reajustable"
+   "11-Error de comunicación del accionamiento", "5", "Error de comunicación del accionamiento del eje 5, no reajustable"
+   "11-Error de comunicación del accionamiento", "6", "Error de comunicación del accionamiento del eje 6, no reajustable"
+   "12-Límite suave del eje externo", "1", "Superación del límite suave del eje 1, reajustable"
+   "12-Límite suave del eje externo", "2", "Superación del límite suave del eje 2, reajustable"
+   "12-Límite suave del eje externo", "3", "Superación del límite suave del eje 3, reajustable"
+   "12-Límite suave del eje externo", "4", "Superación del límite suave del eje 4, reajustable"
+   "13-Error de configuración de parámetros", "1", "Número de herramienta fuera de límite, reajustable"
+   "13-Error de configuración de parámetros", "2", "Error del umbral de finalización de posicionamiento, reajustable"
+   "13-Error de configuración de parámetros", "3", "Error de nivel de colisión, reajustable"
+   "13-Error de configuración de parámetros", "4", "Error de peso de carga, reajustable"
+   "13-Error de configuración de parámetros", "5", "Error de centro de masa X de carga, reajustable"
+   "13-Error de configuración de parámetros", "6", "Error de centro de masa Y de carga, reajustable"
+   "13-Error de configuración de parámetros", "7", "Error de centro de masa Z de carga, reajustable"
+   "13-Error de configuración de parámetros", "8", "Error de tiempo de filtrado DI, reajustable"
+   "13-Error de configuración de parámetros", "9", "Error de tiempo de filtrado AxleDI, reajustable"
+   "13-Error de configuración de parámetros", "10", "Error de tiempo de filtrado AI, reajustable"
+   "13-Error de configuración de parámetros", "11", "Error de tiempo de filtrado AxleAI, reajustable"
+   "13-Error de configuración de parámetros", "12", "Error de rango de nivel alto/bajo DI, reajustable"
+   "13-Error de configuración de parámetros", "13", "Error de rango de nivel alto/bajo DO, reajustable"
+   "13-Error de configuración de parámetros", "14", "Número de pieza fuera de límite, reajustable"
+   "13-Error de configuración de parámetros", "15", "Número de eje externo fuera de límite, reajustable"
+   "13-Error de configuración de parámetros", "16", "Error de canal del codificador de la cinta transportadora, reajustable"
+   "13-Error de configuración de parámetros", "17", "Error del número de eje de pieza de la cinta transportadora, reajustable"
+   "13-Error de configuración de parámetros", "18", "Error de modo de instalación FR30L- no montaje normal, reajustable"
 
-附录2：宽电压控制箱故障表
+Apéndice 2: Tabla de fallos de la caja de control de amplio voltaje
 ---------------------------------------------------------------------------------
 
 .. list-table::
@@ -205,414 +205,414 @@
    :header-rows: 0
    :align: center
 
-   * - **故障码**
-     - **故障名称**
-     - **处理方法**
+   * - **Código de fallo**
+     - **Nombre del fallo**
+     - **Método de tratamiento**
 
    * - 3
-     - 辅MCU掉线
-     - | 1、重新烧录辅MCU固件
-       | 2、维修辅MCU或更换控制箱  
+     - Desconexión de la MCU auxiliar
+     - | 1. Volver a grabar el firmware de la MCU auxiliar
+       | 2. Reparar la MCU auxiliar o sustituir la caja de control  
 
    * - 4
-     - 主辅MCU急停输入不一致
-     - | 1、检查按钮盒急停线束或更换按钮盒组件
-       | 2、检查控制箱端子两路急停短接线束  
-       | 3、若故障仍未排查，维修或更换控制箱 
+     - Entrada de parada de emergencia inconsistente entre la MCU principal y la auxiliar
+     - | 1. Comprobar el arnés de parada de emergencia de la caja de botones o sustituir el componente de la caja de botones
+       | 2. Comprobar los arneses de puente de parada de emergencia de los dos circuitos de los terminales de la caja de control  
+       | 3. Si el fallo no se ha resuelto, reparar o sustituir la caja de control 
 
    * - 5
-     - 主辅MCU安全输入不一致
-     - | 1、检查控制箱端子两路安全短接线束
-       | 2、故障仍未排查，维修或更换控制箱
+     - Entrada de seguridad inconsistente entre la MCU principal y la auxiliar
+     - | 1. Comprobar los arneses de puente de seguridad de los dos circuitos de los terminales de la caja de control
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir la caja de control
 
    * - 6
-     - 主辅MCU三位使能急停输入不一致
-     - | 1、检查示教器三位使能开关及示教器线束
-       | 2、更换示教器组件
-       | 3、检查WEB是否为示教器模式，且是否连接示教器组件
-       | 4、若故障仍未排查，维修或更换控制箱
+     - Entrada de parada de emergencia de habilitación de tres posiciones inconsistente entre la MCU principal y la auxiliar
+     - | 1. Comprobar el interruptor de habilitación de tres posiciones del teach pendant y el arnés del teach pendant
+       | 2. Sustituir el componente del teach pendant
+       | 3. Comprobar si WEB está en modo teach pendant y si está conectado el componente del teach pendant
+       | 4. Si el fallo no se ha resuelto, reparar o sustituir la caja de control
 
    * - 7
-     - 主STO输入输出不一致
-     - | 1、检查控制箱重载线插头及STO线束是否插接牢固
-       | 2、检查驱动器是否支持STO功能
-       | 3、宽电压认证控制箱+非认证本体配置，是否启用功能安全模式
-       | 4、宽电压认证控制箱在认证模式，启动STO故障检测功能；非认证本体不支持功能安全模式
-       | 5、若故障仍未排查，维修或更换控制箱
+     - Entrada y salida STO principal inconsistentes
+     - | 1. Comprobar si el conector del cable de carga pesada de la caja de control y el arnés STO están bien conectados
+       | 2. Comprobar si el accionamiento admite la función STO
+       | 3. Configuración de caja de control con certificación de amplio voltaje + cuerpo no certificado, comprobar si se ha habilitado el modo de seguridad funcional
+       | 4. La caja de control con certificación de amplio voltaje en modo certificado activa la función de detección de fallos STO; el cuerpo no certificado no admite el modo de seguridad funcional
+       | 5. Si el fallo no se ha resuelto, reparar o sustituir la caja de control
 
    * - 8
-     - 辅STO输入输出不一致
-     - | 1、检查控制箱重载线插头及STO线束是否插接牢固
-       | 2、检查驱动器是否支持STO功能
-       | 3、宽电压认证控制箱+非认证本体配置，是否启用功能安全模式
-       | 4、宽电压认证控制箱在认证模式，启动STO故障检测功能；非认证本体不支持功能安全模式
-       | 5、若故障仍未排查，维修或更换控制箱
+     - Entrada y salida STO auxiliar inconsistentes
+     - | 1. Comprobar si el conector del cable de carga pesada de la caja de control y el arnés STO están bien conectados
+       | 2. Comprobar si el accionamiento admite la función STO
+       | 3. Configuración de caja de control con certificación de amplio voltaje + cuerpo no certificado, comprobar si se ha habilitado el modo de seguridad funcional
+       | 4. La caja de control con certificación de amplio voltaje en modo certificado activa la función de detección de fallos STO; el cuerpo no certificado no admite el modo de seguridad funcional
+       | 5. Si el fallo no se ha resuelto, reparar o sustituir la caja de control
 
    * - 9
-     - 主MCU检测48V继电器输入输出不一致
-     - | 1、检查控制箱强制导向继电器输入与反馈
-       | 2、检测控制箱48V继电器是否出现黏连
-       | 3、检测控制箱48V继电器反馈电路是否正常
-       | 4、若故障仍未排查，维修或更换控制箱
+     - Entrada y salida inconsistentes del relé de 48V detectadas por la MCU principal
+     - | 1. Comprobar la entrada y la realimentación del relé de guiado forzado de la caja de control
+       | 2. Detectar si el relé de 48V de la caja de control presenta adherencia
+       | 3. Detectar si el circuito de realimentación del relé de 48V de la caja de control es normal
+       | 4. Si el fallo no se ha resuelto, reparar o sustituir la caja de control
 
    * - 10
-     - 辅MCU检测48V继电器输入输出不一致
-     - | 1、检查控制箱强制导向继电器输入与反馈
-       | 2、检测控制箱48V继电器是否出现黏连
-       | 3、检测控制箱48V继电器反馈电路是否正常
-       | 4、若故障仍未排查，维修或更换控制箱
+     - Entrada y salida inconsistentes del relé de 48V detectadas por la MCU auxiliar
+     - | 1. Comprobar la entrada y la realimentación del relé de guiado forzado de la caja de control
+       | 2. Detectar si el relé de 48V de la caja de control presenta adherencia
+       | 3. Detectar si el circuito de realimentación del relé de 48V de la caja de control es normal
+       | 4. Si el fallo no se ha resuelto, reparar o sustituir la caja de control
 
    * - \
-     - 控制箱断电、无48V输出
-     - | 1、检查24V短路保护芯片相关电路，检查24V是否有短路现象
-       | 2、检查急停输入&安全输入端子短接线束
-       | 3、检查控制箱24电源小板是否输出24V
-       | 4、若故障仍未排查，维修或更换控制箱
+     - Caja de control sin alimentación, sin salida de 48V
+     - | 1. Comprobar el circuito relacionado con el chip de protección contra cortocircuito de 24V, comprobar si hay cortocircuito en 24V
+       | 2. Comprobar los arneses de puente de los terminales de entrada de parada de emergencia y entrada de seguridad
+       | 3. Comprobar si la placa de alimentación de 24V de la caja de control emite 24V
+       | 4. Si el fallo no se ha resuelto, reparar o sustituir la caja de control
 
    * - 46
-     - 机器人类型设置异常故障
-     - | 1、不断电情况下，检查报故障驱动器固件版本号
-       | 2、重新设置机器人类型
-       | 3、若故障仍未排除，则更换或维修驱动板
+     - Fallo de configuración anómala del tipo de robot
+     - | 1. Sin cortar la alimentación, comprobar el número de versión del firmware del accionamiento que reporta el fallo
+       | 2. Volver a configurar el tipo de robot
+       | 3. Si el fallo no se ha resuelto, sustituir o reparar la placa de accionamiento
 
    * - 47
-     - 刹车电压检测故障
-     - | 1、检查刹车接线是否异常
-       | 2、检查刹车回路是否异常
+     - Fallo de detección de tensión del freno
+     - | 1. Comprobar si el cableado del freno es anómalo
+       | 2. Comprobar si el circuito del freno es anómalo
 
    * - 50
-     - 位置指令异常故障
-     - | 1、检查上位机(控制器)下发的位置指令是否异常(or 位置指令突变)
+     - Fallo de instrucción de posición anómala
+     - | 1. Comprobar si la instrucción de posición emitida por el host (controlador) es anómala (o cambio brusco de la instrucción de posición)
 
    * - 51
-     - 扭矩传感器通信故障
-     - | 1、检查扭矩传感器接线是否异常
-       | 2、若故障仍未排除，维修或更换扭矩传感器
+     - Fallo de comunicación del sensor de par
+     - | 1. Comprobar si el cableado del sensor de par es anómalo
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir el sensor de par
        
-附录3：伺服驱动器故障代码表
----------------------------
+Apéndice 3: Tabla de códigos de fallo del servomotor
+------------------------------------------------------
 
 .. list-table::
    :widths: 20 40 80
    :header-rows: 0
    :align: center
 
-   * - **故障码**
-     - **故障名称**
-     - **处理方法**
+   * - **Código de fallo**
+     - **Nombre del fallo**
+     - **Método de tratamiento**
 
    * - 1
-     - 软件过流故障
-     - | 1、检查关节负载或阻力是否变大或异常
-       | 2、若故障仍未排除，维修或更换驱动板
+     - Fallo de sobrecorriente de software
+     - | 1. Comprobar si la carga o la resistencia de la articulación aumenta o es anómala
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir la placa de accionamiento
 
    * - 2
-     - 过压故障
-     - 降低机器人运行速度或加速度
+     - Fallo de sobretensión
+     - Reducir la velocidad o la aceleración de funcionamiento del robot
 
    * - 3
-     - 欠压故障
-     - | 1、检查控制箱48V 电源电压输出是否异常
-       | 2、检查驱动板和关节外壳是否短路
-       | 3、若故障仍未排除，维修或更换驱动板
+     - Fallo de subtensión
+     - | 1. Comprobar si la salida de tensión de alimentación de 48V de la caja de control es anómala
+       | 2. Comprobar si la placa de accionamiento y la carcasa de la articulación están en cortocircuito
+       | 3. Si el fallo no se ha resuelto, reparar o sustituir la placa de accionamiento
 
    * - 4
-     - 过热故障
-     - 减小机器人负载或降低机器人运行速度
+     - Fallo de sobretemperatura
+     - Reducir la carga del robot o disminuir la velocidad de funcionamiento del robot
 
    * - 5
-     - 过载故障
-     - 减小机器人负载或降低机器人运行速度
+     - Fallo de sobrecarga
+     - Reducir la carga del robot o disminuir la velocidad de funcionamiento del robot
 
    * - 6
-     - 超速故障
-     - | 1、检查磁编组件和电机轴固定顶丝是否松动
-       | 2、重新进行编码器校零
-       | 3、若故障仍未排除，维修或更换磁编组件
+     - Fallo de sobrevelocidad
+     - | 1. Comprobar si el componente de codificación magnética y el tornillo de fijación del eje del motor están flojos
+       | 2. Volver a realizar la puesta a cero del codificador
+       | 3. Si el fallo no se ha resuelto, reparar o sustituir el componente de codificación magnética
 
    * - 7
-     - 参数异常故障
-     - 维修或更换驱动板
+     - Fallo de parámetros anómalos
+     - Reparar o sustituir la placa de accionamiento
 
    * - 8
-     - 飞车故障
-     - | 1、检查磁编组件和电机轴固定顶丝是否松动
-       | 2、重新进行编码器校零
-       | 3、若故障仍未排除，维修或更换磁编组件
+     - Fallo de descontrol
+     - | 1. Comprobar si el componente de codificación magnética y el tornillo de fijación del eje del motor están flojos
+       | 2. Volver a realizar la puesta a cero del codificador
+       | 3. Si el fallo no se ha resuelto, reparar o sustituir el componente de codificación magnética
 
    * - 9
-     - 位置误差故障
-     - | 1、检查关节负载或阻力是否变大或异常
-       | 2、若故障仍未排除，维修或更换驱动板
+     - Fallo de error de posición
+     - | 1. Comprobar si la carga o la resistencia de la articulación aumenta o es anómala
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir la placa de accionamiento
 
    * - 10
-     - 位置溢出故障
-     - | 1、检查硬限位是否松动
-       | 2、重新进行机器人校零
+     - Fallo de desbordamiento de posición
+     - | 1. Comprobar si el límite duro está flojo
+       | 2. Volver a realizar la puesta a cero del robot
 
    * - 11
-     - 硬件过流故障
-     - 维修或更换驱动板
+     - Fallo de sobrecorriente de hardware
+     - Reparar o sustituir la placa de accionamiento
 
    * - 12
-     - 驱动禁止故障
-     - 未启用
+     - Fallo de prohibición de accionamiento
+     - No habilitado
 
    * - 13
-     - 电机堵转故障
-     - | 1、检查刹车电磁铁是否吸合
-       | 2、检查是否撞到硬限位
-       | 3、若故障仍未排除，维修或更换驱动板
+     - Fallo de bloqueo del motor
+     - | 1. Comprobar si el electroimán del freno está atraído
+       | 2. Comprobar si se ha chocado con el límite duro
+       | 3. Si el fallo no se ha resuelto, reparar o sustituir la placa de accionamiento
 
    * - 14
-     - 功率电源故障
-     - 未启用
+     - Fallo de alimentación de potencia
+     - No habilitado
 
    * - 15
-     - STO 故障
-     - 未启用
+     - Fallo STO
+     - No habilitado
 
    * - 16
-     - 相电流 AD 调零故障
-     - 维修或更换驱动板
+     - Fallo de puesta a cero AD de corriente de fase
+     - Reparar o sustituir la placa de accionamiento
 
    * - 17
-     - EEPROM 故障
-     - 维修或更换驱动板
+     - Fallo de EEPROM
+     - Reparar o sustituir la placa de accionamiento
 
    * - 18
-     - 霍尔故障
-     - | 1、检查霍尔线束是否插接牢固，有无短路、断路
-       | 2、若故障仍未排除，维修或更换关节
+     - Fallo de Hall
+     - | 1. Comprobar si el arnés de Hall está bien conectado, si hay cortocircuito o circuito abierto
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir la articulación
 
    * - 19
-     - 编码器故障
-     - 维修或更换磁编组件
+     - Fallo del codificador
+     - Reparar o sustituir el componente de codificación magnética
 
    * - 20
-     - 编码器调零故障
-     - | 1、重新进行编码器校零
-       | 2、若故障仍未排除，维修或更换磁编组件
+     - Fallo de puesta a cero del codificador
+     - | 1. Volver a realizar la puesta a cero del codificador
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir el componente de codificación magnética
    
    * - 21
-     - 编码器Z相信号丢失故障
-     - 未启用
+     - Fallo de pérdida de señal de fase Z del codificador
+     - No habilitado
 
    * - 22
-     - 编码器计数故障
-     - 未启用
+     - Fallo de conteo del codificador
+     - No habilitado
 
    * - 23
-     - 编码器多圈数据溢出故障
-     - 未启用
+     - Fallo de desbordamiento de datos multivuelta del codificador
+     - No habilitado
 
    * - 24
-     - 外部时钟故障
-     - 维修或更换驱动板
+     - Fallo de reloj externo
+     - Reparar o sustituir la placa de accionamiento
 
    * - 25
-     - UVW 相序故障
-     - 未启用
+     - Fallo de secuencia de fases UVW
+     - No habilitado
 
    * - 26
-     - FPGA故障
-     - 未启用
+     - Fallo de FPGA
+     - No habilitado
 
    * - 27
-     - 回零故障
-     - 未启用
+     - Fallo de retorno a cero
+     - No habilitado
 
    * - 28
-     - 磁编码器故障
-     - | 1、检查磁编组件和电机轴固定顶丝是否松动
-       | 2、若故障仍未排除，维修或更换磁编组件
+     - Fallo del codificador magnético
+     - | 1. Comprobar si el componente de codificación magnética y el tornillo de fijación del eje del motor están flojos
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir el componente de codificación magnética
 
    * - 29
-     - 电机动力线断线故障
-     - | 1、检查电机动力线是否插接牢固，有无短路、断路
-       | 2、若故障仍未排除，维修或更换驱动板
+     - Fallo de rotura de la línea de potencia del motor
+     - | 1. Comprobar si la línea de potencia del motor está bien conectada, si hay cortocircuito o circuito abierto
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir la placa de accionamiento
 
    * - 30
-     - EtherCAT故障
-     - | 1、检查网线是否插接牢固，有无短路、断路
-       | 2、若故障仍未排除，维修或更换驱动板
+     - Fallo de EtherCAT
+     - | 1. Comprobar si el cable de red está bien conectado, si hay cortocircuito o circuito abierto
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir la placa de accionamiento
 
    * - 31
-     - EtherCAT_SM_DOG故障
-     - | 1、检查网线是否插接牢固，有无短路、断路
-       | 2、若故障仍未排除，维修或更换驱动板
+     - Fallo de EtherCAT_SM_DOG
+     - | 1. Comprobar si el cable de red está bien conectado, si hay cortocircuito o circuito abierto
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir la placa de accionamiento
 
    * - 32
-     - EtherCAT_FATALSYNC故障
-     - | 1、检查网线是否插接牢固，有无短路、断路
-       | 2、若故障仍未排除，维修或更换驱动板
+     - Fallo de EtherCAT_FATALSYNC
+     - | 1. Comprobar si el cable de red está bien conectado, si hay cortocircuito o circuito abierto
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir la placa de accionamiento
 
    * - 33
-     - EtherCAT_SYNC故障
-     - | 1、检查网线是否插接牢固，有无短路、断路
-       | 2、若故障仍未排除，维修或更换驱动板
+     - Fallo de EtherCAT_SYNC
+     - | 1. Comprobar si el cable de red está bien conectado, si hay cortocircuito o circuito abierto
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir la placa de accionamiento
 
    * - 34
-     - EtherCAT_RFT故障
-     - | 1、检查网线是否插接牢固，有无短路、断路
-       | 2、若故障仍未排除，维修或更换驱动板
+     - Fallo de EtherCAT_RFT
+     - | 1. Comprobar si el cable de red está bien conectado, si hay cortocircuito o circuito abierto
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir la placa de accionamiento
 
    * - 35
-     - 驱动器轴地址故障
-     - | 1、重新进行驱动器轴地址配置
-       | 2、若故障仍未排除，维修或更换驱动板
+     - Fallo de dirección de eje del accionamiento
+     - | 1. Volver a configurar la dirección de eje del accionamiento
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir la placa de accionamiento
 
    * - 36
-     - 机器人校零故障
-     - | 1、重新进行机器人校零
-       | 2、先使用JLINK 擦除 FLASH，再重新下载程序并校零
-       | 3、若故障仍未排除，维修或更换驱动板
+     - Fallo de puesta a cero del robot
+     - | 1. Volver a realizar la puesta a cero del robot
+       | 2. Utilizar primero JLINK para borrar FLASH, luego volver a descargar el programa y realizar la puesta a cero
+       | 3. Si el fallo no se ha resuelto, reparar o sustituir la placa de accionamiento
 
    * - 37
-     - 编码器通讯故障
-     - | 1、检查编码器线束是否插接牢固，有无短路、断路 
-       | 2、若故障仍未排除，维修或更换磁编组件
+     - Fallo de comunicación del codificador
+     - | 1. Comprobar si el arnés del codificador está bien conectado, si hay cortocircuito o circuito abierto 
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir el componente de codificación magnética
 
    * - 40
-     - 磁编模块故障-校零故障
-     - | 1、重新进行磁编组件校零
-       | 2、若故障仍未排除，维修或更换磁编组件
+     - Fallo del módulo de codificación magnética- fallo de puesta a cero
+     - | 1. Volver a realizar la puesta a cero del componente de codificación magnética
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir el componente de codificación magnética
 
    * - 41
-     - 磁编模块故障-多圈故障
-     - | 1、检查磁编组件和电机轴固定顶丝是否松动
-       | 2、若故障仍未排除，维修或更换磁编组件
+     - Fallo del módulo de codificación magnética- fallo multivuelta
+     - | 1. Comprobar si el componente de codificación magnética y el tornillo de fijación del eje del motor están flojos
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir el componente de codificación magnética
 
    * - 42
-     - 磁编模块故障-多圈小磁编故障
-     - | 1、检查多圈小磁编芯片是否异常
-       | 2、若故障仍未排除，维修或更换磁编组件
+     - Fallo del módulo de codificación magnética- fallo del codificador magnético pequeño multivuelta
+     - | 1. Comprobar si el chip del codificador magnético pequeño multivuelta es anómalo
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir el componente de codificación magnética
 
    * - 43
-     - 磁编模块故障-多圈大磁编故障
-     - | 1、检查多圈大磁编芯片是否异常
-       | 2、若故障仍未排除，维修或更换磁编组件
+     - Fallo del módulo de codificación magnética- fallo del codificador magnético grande multivuelta
+     - | 1. Comprobar si el chip del codificador magnético grande multivuelta es anómalo
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir el componente de codificación magnética
 
    * - 44
-     - 磁编模块故障-单圈磁编故障
-     - | 1、检查单圈磁编芯片是否异常
-       | 2、若故障仍未排除，维修或更换磁编组件
+     - Fallo del módulo de codificación magnética- fallo del codificador magnético de una vuelta
+     - | 1. Comprobar si el chip del codificador magnético de una vuelta es anómalo
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir el componente de codificación magnética
 
    * - 45
-     - 磁编模块故障-光编故障
-     - | 1、检查光编码盘是否被污染或未粘牢
-       | 2、若故障仍未排除，维修或更换磁编组件
+     - Fallo del módulo de codificación magnética- fallo del codificador óptico
+     - | 1. Comprobar si el disco de codificación óptica está contaminado o no está bien adherido
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir el componente de codificación magnética
 
    * - 46
-     - 机器人类型设置异常故障
-     - | 1、不断电情况下，检查报故障驱动器固件版本号
-       | 2、重新设置机器人类型
-       | 3、若故障仍未排除，则更换或维修驱动板
+     - Fallo de configuración anómala del tipo de robot
+     - | 1. Sin cortar la alimentación, comprobar el número de versión del firmware del accionamiento que reporta el fallo
+       | 2. Volver a configurar el tipo de robot
+       | 3. Si el fallo no se ha resuelto, sustituir o reparar la placa de accionamiento
 
    * - 47
-     - 刹车电压检测故障
-     - | 1、检查刹车接线是否异常
-       | 2、检查刹车回路是否异常
+     - Fallo de detección de tensión del freno
+     - | 1. Comprobar si el cableado del freno es anómalo
+       | 2. Comprobar si el circuito del freno es anómalo
 
    * - 50
-     - 位置指令异常故障
-     - | 1、检查上位机(控制器)下发的位置指令是否异常(or 位置指令突变)
+     - Fallo de instrucción de posición anómala
+     - | 1. Comprobar si la instrucción de posición emitida por el host (controlador) es anómala (o cambio brusco de la instrucción de posición)
 
    * - 51
-     - 扭矩传感器通信故障
-     - | 1、检查扭矩传感器接线是否异常
-       | 2、若故障仍未排除，维修或更换扭矩传感器
+     - Fallo de comunicación del sensor de par
+     - | 1. Comprobar si el cableado del sensor de par es anómalo
+       | 2. Si el fallo no se ha resuelto, reparar o sustituir el sensor de par
 
-附录4：末端板485升级
----------------------------
+Apéndice 4: Actualización 485 de la placa terminal
+---------------------------------------------------
 
-现场使用时，有可能更新固件，满足新的要求，会提供新的升级文件（XX_XX_MAIN.bin），通过485接口对末端板进行升级（需要借助USB转485模块）。升级步骤如下：
+Durante el uso en campo, es posible que se actualice el firmware para satisfacer nuevos requisitos, y se proporcionará un nuevo archivo de actualización (XX_XX_MAIN.bin), actualizando la placa terminal a través de la interfaz 485 (es necesario utilizar un módulo USB a 485). Los pasos de actualización son los siguientes:
 
-**Step1：485接线**，在机器人末端处有5Pin通信航空接头，航空接头Pin脚分布及其pin脚说明如图表1所示。将机器人末端的485-A、485-B与USB转485工具的A、B使用双绞线连接。
+**Step1: Cableado 485**, en el extremo del robot hay un conector de aviación de comunicación de 5 Pin, la distribución de los pines del conector de aviación y la descripción de los pines se muestran en la Figura 1. Conectar 485-A y 485-B del extremo del robot con A y B de la herramienta USB a 485 mediante cable de par trenzado.
 
 .. figure:: appendix/001.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 18.3-1 航空接头Pin脚分布
+.. centered:: Figura 18.3-1 Distribución de pines del conector de aviación
 
-**Step2，硬件连接**，将USB转485工具的USB端与PC连接，在PC设备管理器中，如果识别到USB&485工具，会出现如下界面。
+**Step2, Conexión de hardware**, conectar el extremo USB de la herramienta USB a 485 con el PC; en el administrador de dispositivos del PC, si se reconoce la herramienta USB&485, aparecerá la siguiente interfaz.
 
 .. figure:: appendix/002.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 18.3-2 USB&485端口识别说明
+.. centered:: Figura 18.3-2 Descripción del reconocimiento del puerto USB&485
 
-**Step3：升级工具**，在完成接线后，打开“法奥串口调试助手”，点击“末端板”按钮，在“串口参数设置”功能中选择上述识别的串口，波特率115200，数据位8位，校验位无，停止位1，然后打开串口，成功之后会出现“串口打开成功”的提示。
+**Step3: Herramienta de actualización**, tras completar el cableado, abrir "Asistente de depuración de puerto serie FAIRINO", hacer clic en el botón "Placa terminal", en la función "Configuración de parámetros del puerto serie" seleccionar el puerto serie reconocido anteriormente, velocidad en baudios 115200, bits de datos 8, bit de paridad ninguno, bit de parada 1, y luego abrir el puerto serie; tras el éxito aparecerá el aviso "Puerto serie abierto correctamente".
 
 .. figure:: appendix/003.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 18.3-3 串口参数设置
+.. centered:: Figura 18.3-3 Configuración de parámetros del puerto serie
 
-**Step4：固件升级**，选择“末端板”，点击“固件升级”，如图表所示：
+**Step4: Actualización de firmware**, seleccionar "Placa terminal", hacer clic en "Actualización de firmware", como se muestra en la figura:
 
 .. figure:: appendix/004.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 18.3-4 末端板固件升级
+.. centered:: Figura 18.3-4 Actualización de firmware de la placa terminal
 
--  首先点击“Flash擦除”，擦除成功之后，会在接收数据区提示擦除成功。
+-  En primer lugar, hacer clic en "Flash擦除"(borrado de Flash); tras el borrado correcto, se mostrará en el área de recepción de datos el aviso de borrado correcto.
 
--  打开文件（待升级文件），选择存放的路径，如下所示，选择完成后，待升级文件名会出现在文件名显示框中。
+-  Abrir archivo (archivo a actualizar), seleccionar la ruta de almacenamiento, como se muestra a continuación; tras la selección, el nombre del archivo a actualizar aparecerá en el cuadro de visualización del nombre de archivo.
 
 .. figure:: appendix/005.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 18.3-5 选择升级文件
+.. centered:: Figura 18.3-5 Selección del archivo de actualización
 
--  点击“发送文件”，当进度条显示100%时，表示已经完成发送升级文件。
+-  Hacer clic en "Enviar archivo"; cuando la barra de progreso muestre 100%, significa que se ha completado el envío del archivo de actualización.
 
-**Step5：升级验证**，系统重启上电，在“维护信息”栏，选择“查询末端板固件版本信息”，在“接收数据区”会显示固件版本信息，如果和升级的文件版本信息一致，说明升级成功，否则升级失败.
+**Step5: Verificación de la actualización**, reiniciar y encender el sistema, en la columna "Información de mantenimiento", seleccionar "Consultar información de versión del firmware de la placa terminal", en el "Área de recepción de datos" se mostrará la información de versión del firmware; si coincide con la información de versión del archivo actualizado, significa que la actualización se ha realizado correctamente; de lo contrario, la actualización ha fallado.
 
 .. figure:: appendix/006.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 18.3-6 查询固件版本信息
+.. centered:: Figura 18.3-6 Consulta de información de versión del firmware
 
-附录5：控制箱485升级
-------------------------
+Apéndice 5: Actualización 485 de la caja de control
+-----------------------------------------------------
 
-在机器人控制箱板有“电源通信”接口，将USB&485工具A、B分别接入其接口的“485-A”、“485-B”。
+En la placa de la caja de control del robot hay una interfaz "comunicación de alimentación"; conectar A y B de la herramienta USB&485 respectivamente a "485-A" y "485-B" de dicha interfaz.
 
-其升级过程操作同末端板，软件对应选择即可，此处不在赘述。
+Su proceso de actualización es el mismo que el de la placa terminal, seleccionando el software correspondiente; no se detalla aquí.
 
 .. figure:: appendix/007.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 18.4-1 电源通信接口
+.. centered:: Figura 18.4-1 Interfaz de comunicación de alimentación
 
-附录6：备件、易损件清单
------------------------------
+Apéndice 6: Lista de piezas de repuesto y piezas de desgaste
+--------------------------------------------------------------
 
 .. list-table::
    :widths: 40 40 20
    :header-rows: 0
    :align: center
 
-   * - **零件**
-     - **编号**
-     - **数量**
+   * - **Pieza**
+     - **Número**
+     - **Cantidad**
 
-   * - M8*30 螺钉
+   * - Tornillo M8*30
      - 4.0.08.2006185
      - 4
 
-   * - 圆柱销A型8*20
+   * - Pasador cilíndrico tipo A 8*20
      - 4.5.00.2013076
      - 2
 
-   * - 保险丝5x206A
+   * - Fusible 5x206A
      - 
      - 1

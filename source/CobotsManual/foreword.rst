@@ -1,40 +1,40 @@
-前言
-=======
+Prefacio
+=========
 
 .. toctree:: 
 	:maxdepth: 5
 
-首先，非常感谢您选购我们公司的FR系列协作机器人产品。我们的产品是经过多次精心设计和测试，以确保能够满足您各方面的需求。
+En primer lugar, muchas gracias por elegir el producto de robot colaborativo de la serie FR de nuestra empresa. Nuestro producto ha sido diseñado y probado cuidadosamente en múltiples ocasiones para garantizar que pueda satisfacer sus necesidades en todos los aspectos.
 
-请您仔细阅读本产品用户手册，以确保您能够正确地使用我们的产品并获得最佳的使用体验。如果您在使用过程中遇到任何问题，请参阅使用手册中的故障排除部分，或与我们的售后人员联系。我们非常感谢您的支持和信任，期待为您提供更好的服务和产品。
+Le rogamos que lea atentamente el manual de usuario de este producto para garantizar que pueda utilizar correctamente nuestro producto y obtener la mejor experiencia de uso. Si durante el uso encuentra cualquier problema, consulte la sección de resolución de problemas del manual de usuario o póngase en contacto con nuestro personal de posventa. Agradecemos enormemente su apoyo y confianza, y esperamos poder ofrecerle mejores servicios y productos.
 
-箱子里面装的什么
-------------------
+Qué contiene la caja
+--------------------------
 
-当您订购一个FR系列协作机器人后，您会收到一个箱子。里面包含：
+Cuando realice el pedido de un robot colaborativo de la serie FR, recibirá una caja. Su contenido es:
 
-- **协作机器人一台**
-- **按钮盒一个**
-- **控制箱一个（含控制箱线缆一根）**
+- **Un robot colaborativo**
+- **Una caja de botones**
+- **Una caja de control (con un cable de caja de control)**
 
-.. important:: FARINO配套的电源线仅供FARINO机器人使用。无法用于除机器人以外的电气设备上。
+.. important:: El cable de alimentación suministrado con FARINO es solo para uso del robot FARINO. No puede utilizarse en equipos eléctricos distintos del robot.
 
-重要安全说明
------------------
+Instrucciones de seguridad importantes
+--------------------------------------------------------------
 
-机器人是一种涉及人身安全的设备，因此每次安装机器人后都必须执行安全评估。您必须遵守第1章中的所有安全说明。
+El robot es un equipo que implica la seguridad de las personas, por lo que es obligatorio realizar una evaluación de seguridad tras cada instalación del robot. Debe cumplir todas las instrucciones de seguridad del Capítulo 1.
 
-如何使用本手册
-------------------
+Cómo utilizar este manual
+------------------------------------------------
 
-本手册包含机器人安装编程的指导信息。手册包括：
+Este manual contiene información de orientación para la instalación y programación del robot. El manual incluye:
 
--  **硬件安装部分**：机器人的机械安装和电气安装
--  **示教器软件解析部分**：机器人示教及编程
+-  **Parte de instalación de hardware**: instalación mecánica e instalación eléctrica del robot
+-  **Parte de análisis del software del teach pendant**: enseñanza y programación del robot
 
-本手册面向的机器人集成商，集成商应接受过基本的机械电气培训，并熟悉初级编程概念。
+Este manual está dirigido a los integradores de robots; el integrador debe haber recibido formación básica en mecánica y electricidad y estar familiarizado con conceptos básicos de programación.
 
-遵循的相关标准
+Normas aplicadas
 -----------------
 
 .. list-table::
@@ -42,8 +42,8 @@
    :header-rows: 0
    :align: center
 
-   * - **标准**
-     - **定义**
+   * - **Norma**
+     - **Definición**
 
    * - 2006/42/EC:2006
      - Machinery Directive:  Directive 2006/42/EC of the European Parliament and of the Council of 17 May 2006 on machinery, and amending Directive
@@ -70,4 +70,3 @@
 
    * - ISO/TS 15066: 2016
      - Safety requirements for collaborative industrial robot  Robots and robotic devices —Collaborative robots
-

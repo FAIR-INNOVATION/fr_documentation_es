@@ -16,8 +16,8 @@ frcobot_ros2
 
     ros2guide
 
-moveIt2插件应用
-================
+Aplicación del plugin moveIt2
+======================================
 
 .. toctree:: 
     :maxdepth: 5

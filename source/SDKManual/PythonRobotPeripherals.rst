@@ -1,84 +1,84 @@
-机器人外设
-============
+Periféricos del robot
+=====================
 
 .. toctree:: 
     :maxdepth: 5
 
-配置夹爪
+Configurar pinza
 ++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetGripperConfig(company,device,softversion=0,bus=0)``"
-    "描述", "配置夹爪"
-    "必选参数", "- ``company``：夹爪厂商，1-Robotiq，2-慧灵，3-天机，4-大寰，5-知行；
-    - ``device``：设备号，Robotiq(0-2F-85系列)，慧灵(0-NK系列,1-Z-EFG-100)，天机(0-TEG-110)，大寰(0-PGI-140)，知行(0-CTPM2F20)"
-    "默认参数", "- ``softversion``：软件版本号，暂不使用，默认为0；
-    - ``bus``：设备挂载末端总线位置，暂不使用，默认为0；"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetGripperConfig(company,device,softversion=0,bus=0)``"
+    "Descripción", "Configurar pinza"
+    "Parámetros obligatorios", "- ``company``：fabricante de la pinza，1-Robotiq，2-Huiling，3-Tianji，4-DaHuan，5-Zhixing；
+    - ``device``：número de dispositivo，Robotiq(serie 0-2F-85)，Huiling(serie 0-NK,1-Z-EFG-100)，Tianji(0-TEG-110)，DaHuan(0-PGI-140)，Zhixing(0-CTPM2F20)"
+    "Parámetros predeterminados", "- ``softversion``：número de versión de software，no se utiliza por ahora，valor predeterminado 0；
+    - ``bus``：posición del bus del extremo donde está montado el dispositivo，no se utiliza por ahora，valor predeterminado 0；"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-获取夹爪配置
+Obtener configuración de la pinza
+++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``GetGripperConfig()``"
+    "Descripción", "Obtener configuración de la pinza"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``[number,company,device,softversion]``： number，número de pinza;company，fabricante de la pinza，1-Robotiq，2-Huiling，3-Tianji，4-DaHuan，5-Zhixing ;device，número de dispositivo，Robotiq(serie 0-2F-85)，Huiling(serie 0-NK,1-Z-EFG-100)，Tianji(0-TEG-110)，DaHuan(0-PGI-140)，Zhixing(0-CTPM2F20);softvesion，número de versión de software，no se utiliza por ahora，valor predeterminado 0。"
+
+Activar pinza
 ++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetGripperConfig()``"
-    "描述", "获取夹爪配置"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``[number,company,device,softversion]``： number，夹爪编号;company，夹爪厂商，1-Robotiq，2-慧灵，3-天机，4-大寰，5-知行 ;device，设备号，Robotiq(0-2F-85系列)，慧灵(0-NK系列,1-Z-EFG-100)，天机(0-TEG-110)，大寰(0-PGI-140)，知行(0-CTPM2F20);softvesion，软件版本号，暂不使用，默认为0。"
+    "Prototipo", "``ActGripper(index,action)``"
+    "Descripción", "Activar pinza"
+    "Parámetros obligatorios", "- ``index``:número de pinza；
+    - ``action``:0-restablecer，1-activar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-激活夹爪
+Controlar pinza
 ++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ActGripper(index,action)``"
-    "描述", "激活夹爪"
-    "必选参数", "- ``index``:夹爪编号；
-    - ``action``:0-复位，1-激活"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``MoveGripper(index,pos,vel,force,maxtime,block,type,rotNum,rotVel,rotTorque)``"
+    "Descripción", "Controlar pinza"
+    "Parámetros obligatorios", "- ``index``:número de pinza；
+    - ``pos``:porcentaje de posición，rango[0~100]；
+    - ``vel``:porcentaje de velocidad，rango[0~100];
+    - ``force``:porcentaje de torque，rango[0~100]；
+    - ``maxtime``:tiempo máximo de espera，rango[0~30000]，unidad[ms]；
+    - ``block``:0-bloqueante，1-no bloqueante；
+    - ``type``:tipo de pinza，0-pinza paralela；1-pinza rotativa；
+    - ``rotNum``:rotNum número de revoluciones；
+    - ``rotVel``:porcentaje de velocidad de rotación[0-100]；
+    - ``rotTorque``:porcentaje de torque de rotación[0-100]。"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-控制夹爪
-++++++++++++++++++++
+Obtener estado de movimiento de la pinza
+++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``MoveGripper(index,pos,vel,force,maxtime,block,type,rotNum,rotVel,rotTorque)``"
-    "描述", "控制夹爪"
-    "必选参数", "- ``index``:夹爪编号；
-    - ``pos``:位置百分比，范围[0~100]；
-    - ``vel``:速度百分比，范围[0~100];
-    - ``force``:力矩百分比，范围[0~100]；
-    - ``maxtime``:最大等待时间，范围[0~30000]，单位[ms]；
-    - ``block``:0-阻塞，1-非阻塞；
-    - ``type``:夹爪类型，0-平行夹爪；1-旋转夹爪；
-    - ``rotNum``:rotNum 旋转圈数；
-    - ``rotVel``:旋转速度百分比[0-100]；
-    - ``rotTorque``:旋转力矩百分比[0-100]。"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``GetGripperMotionDone()``"
+    "Descripción", "Obtener estado de movimiento de la pinza(a partir de la versión 401，la definición de retroalimentación del estado de movimiento de la pinza del protocolo del extremo y los dispositivos adaptados está unificada)"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``[fault,status]``：estado de movimiento de la pinza，fault:0-sin error，otros-con error；status:0-movimiento no completado，1-movimiento completado sin detección de objeto 2-movimiento completado con detección de objeto 3-movimiento completado con detección de caída del objeto"
 
-获取夹爪运动状态
-++++++++++++++++++++
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``GetGripperMotionDone()``"
-    "描述", "获取夹爪运动状态(401版本起，末端协议与已适配设备夹爪运动状态反馈定义统一)"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``[fault,status]``：夹爪运动状态，fault:0-无错误，其他-有错误；status:0-运动未完成，1-运动完成未检测到物体 2-运动完成检测到物体 3-运动完成检测到物体掉落"
-
-获取夹爪激活状态
+Obtener estado de activación de la pinza
 +++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
@@ -86,15 +86,15 @@
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetGripperActivateStatus()``"
-    "描述", "获取夹爪激活状态"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``fault``：0-无错误，1-有错误
-    - ``gripper_active``：bit0~bit15对应夹爪编号0~15，bit=0为未激活，bit=1为激活"
+    "Prototipo", "``GetGripperActivateStatus()``"
+    "Descripción", "Obtener estado de activación de la pinza"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``fault``：0-sin error，1-con error
+    - ``gripper_active``：bit0~bit15 corresponden a los números de pinza 0~15，bit=0 no activada，bit=1 activada"
 
-获取夹爪位置
+Obtener posición de la pinza
 +++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
@@ -102,15 +102,15 @@
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetGripperCurPosition()``"
-    "描述", "获取夹爪位置"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``fault``：0-无错误，1-有错误
-    - ``position``：位置百分比，范围0~100%"
+    "Prototipo", "``GetGripperCurPosition()``"
+    "Descripción", "Obtener posición de la pinza"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``fault``：0-sin error，1-con error
+    - ``position``：porcentaje de posición，rango0~100%"
 
-获取夹爪速度
+Obtener velocidad de la pinza
 +++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
@@ -118,15 +118,15 @@
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetGripperCurSpeed()``"
-    "描述", "获取夹爪速度"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``fault``：0-无错误，1-有错误
-    - ``speed``：速度百分比，范围0~100%"
+    "Prototipo", "``GetGripperCurSpeed()``"
+    "Descripción", "Obtener velocidad de la pinza"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``fault``：0-sin error，1-con error
+    - ``speed``：porcentaje de velocidad，rango0~100%"
 
-获取夹爪电流
+Obtener corriente de la pinza
 +++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
@@ -134,15 +134,15 @@
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetGripperCurCurrent()``"
-    "描述", "获取夹爪电流"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``fault``：0-无错误，1-有错误
-    - ``current``：电流百分比，范围0~100%"
+    "Prototipo", "``GetGripperCurCurrent()``"
+    "Descripción", "Obtener corriente de la pinza"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``fault``：0-sin error，1-con error
+    - ``current``：porcentaje de corriente，rango0~100%"
 
-获取夹爪电压
+Obtener voltaje de la pinza
 +++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
@@ -150,15 +150,15 @@
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetGripperVoltage()``"
-    "描述", "获取夹爪电压"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``fault``：0-无错误，1-有错误
-    - ``voltage``：电压,单位0.1V"
+    "Prototipo", "``GetGripperVoltage()``"
+    "Descripción", "Obtener voltaje de la pinza"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``fault``：0-sin error，1-con error
+    - ``voltage``：voltaje,unidad0.1V"
 
-获取夹爪温度
+Obtener temperatura de la pinza
 +++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
@@ -166,51 +166,51 @@
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetGripperTemp()``"
-    "描述", "获取夹爪温度"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``fault``：0-无错误，1-有错误
-    - ``temp``：温度，单位℃"
+    "Prototipo", "``GetGripperTemp()``"
+    "Descripción", "Obtener temperatura de la pinza"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``fault``：0-sin error，1-con error
+    - ``temp``：temperatura，unidad℃"
 
-计算预抓取点-视觉
-++++++++++++++++++++
+Calcular punto de preagarre-visión
+++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ComputePrePick(desc_pos, zlength, zangle)``"
-    "描述", "计算预抓取点-视觉"
-    "必选参数", "- ``desc_pos``：夹抓取点笛卡尔位姿;
-    - ``zlength``：z轴偏移量;
-    - ``zangle``：绕z轴旋转偏移量"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``pre_pos``：预抓取点笛卡尔位姿"
+    "Prototipo", "``ComputePrePick(desc_pos, zlength, zangle)``"
+    "Descripción", "Calcular punto de preagarre-visión"
+    "Parámetros obligatorios", "- ``desc_pos``：pose cartesiana del punto de agarre;
+    - ``zlength``：desplazamiento del eje z;
+    - ``zangle``：desplazamiento de rotación alrededor del eje z"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``pre_pos``：pose cartesiana del punto de preagarre"
 
-计算撤退点-视觉
-++++++++++++++++++++
+Calcular punto de retirada-visión
+++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ComputePostPick(desc_pos, zlength, zangle)``"
-    "描述", "计算撤退点-视觉"
-    "必选参数", "- ``desc_pos``：抓取点笛卡尔位姿;
-    - ``zlength``：z轴偏移量;
-    - ``zangle``：绕z轴旋转偏移量"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``post_pos``：撤退点笛卡尔位姿"
+    "Prototipo", "``ComputePostPick(desc_pos, zlength, zangle)``"
+    "Descripción", "Calcular punto de retirada-visión"
+    "Parámetros obligatorios", "- ``desc_pos``：pose cartesiana del punto de agarre;
+    - ``zlength``：desplazamiento del eje z;
+    - ``zangle``：desplazamiento de rotación alrededor del eje z"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``post_pos``：pose cartesiana del punto de retirada"
 
-机器人夹爪操作代码示例
-+++++++++++++++++++++++++++++++++
+Ejemplo de código de operación de la pinza del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     company = 4
     device = 0
@@ -269,61 +269,61 @@
     print(f"xyz is:{postpick_pose[0]},{postpick_pose[1]},{postpick_pose[2]};rpy is:{postpick_pose[3]},{postpick_pose[4]},{postpick_pose[5]}")
     robot.CloseRPC()
 
-获取旋转夹爪的旋转圈数
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el número de revoluciones de la pinza rotativa
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetGripperRotNum()``"
-    "描述", "获取旋转夹爪的旋转圈数"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``fault``：0-无错误，1-有错误
-    - ``num``：旋转圈数"
+    "Prototipo", "``GetGripperRotNum()``"
+    "Descripción", "Obtener el número de revoluciones de la pinza rotativa"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``fault``：0-sin error，1-con error
+    - ``num``：número de revoluciones"
 
-获取旋转夹爪的旋转速度百分比
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el porcentaje de velocidad de rotación de la pinza rotativa
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetGripperRotSpeed()``"
-    "描述", "获取旋转夹爪的旋转速度百分比"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``fault``：0-无错误，1-有错误
-    - ``speed``：旋转速度百分比"
+    "Prototipo", "``GetGripperRotSpeed()``"
+    "Descripción", "Obtener el porcentaje de velocidad de rotación de la pinza rotativa"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``fault``：0-sin error，1-con error
+    - ``speed``：porcentaje de velocidad de rotación"
 
-获取旋转夹爪的旋转力矩百分比
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el porcentaje de torque de rotación de la pinza rotativa
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetGripperRotTorque()``"
-    "描述", "获取旋转夹爪的旋转力矩百分比"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``fault``：0-无错误，1-有错误
-    - ``torque``：旋转力矩百分比"
+    "Prototipo", "``GetGripperRotTorque()``"
+    "Descripción", "Obtener el porcentaje de torque de rotación de la pinza rotativa"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``fault``：0-sin error，1-con error
+    - ``torque``：porcentaje de torque de rotación"
 
-获取旋转夹爪状态代码示例
-+++++++++++++++++++++++++++++++++
+Ejemplo de código para obtener el estado de la pinza rotativa
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     fault = 0
     rotNum = 0.0
@@ -335,161 +335,161 @@
     print(f"gripper rot num:{rotNum},gripper rotSpeed:{rotSpeed},gripper rotTorque:{rotTorque}")
     robot.CloseRPC()
 
-传动带启动、停止
+Inicio y parada de la cinta transportadora
++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``ConveyorStartEnd(status)``"
+    "Descripción", "Inicio y parada de la cinta transportadora"
+    "Parámetros obligatorios", "- ``status``： estado de la cinta transportadora，1-iniciar，0-detener"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
+
+Registrar punto de detección IO
 ++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ConveyorStartEnd(status)``"
-    "描述", "传动带启动、停止"
-    "必选参数", "- ``status``： 传动带状态，1-启动，0-停止"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ConveyorPointIORecord()``"
+    "Descripción", "Registrar punto de detección IO"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-记录IO检测点
+Registrar punto A
 ++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ConveyorPointIORecord()``"
-    "描述", "记录IO检测点"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ConveyorPointARecord()``"
+    "Descripción", "Registrar punto A"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-记录A点
+Registrar punto de referencia
 ++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ConveyorPointARecord()``"
-    "描述", "记录A点"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ConveyorRefPointRecord()``"
+    "Descripción", "Registrar punto de referencia"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-记录参考点
+Registrar punto B
 ++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ConveyorRefPointRecord()``"
-    "描述", "记录参考点"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ConveyorPointBRecord()``"
+    "Descripción", "Registrar punto B"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-记录B点
+Detección IO de pieza en cinta transportadora
++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``ConveyorIODetect(max_t)``"
+    "Descripción", "Detección IO de pieza en cinta transportadora"
+    "Parámetros obligatorios", "- ``max_t``： tiempo máximo de detección，unidad ms"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
+
+Obtener posición actual del objeto
 ++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ConveyorPointBRecord()``"
-    "描述", "记录B点"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ConveyorGetTrackData(mode)``"
+    "Descripción", "Obtener posición actual del objeto"
+    "Parámetros obligatorios", "- ``mode``： 1-seguimiento y agarre 2-seguimiento en movimiento 3-seguimiento TPD"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-传送带工件IO检测
+Inicio del seguimiento de la cinta transportadora
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``ConveyorTrackStart(status)``"
+    "Descripción", "Inicio del seguimiento de la cinta transportadora"
+    "Parámetros obligatorios", "- ``status``： estado，1-iniciar，0-detener"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
+
+Parada del seguimiento de la cinta transportadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``ConveyorTrackEnd()``"
+    "Descripción", "Parada del seguimiento de la cinta transportadora"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
+
+Configuración de parámetros de la cinta transportadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``ConveyorSetParam(param, followType, startDis, endDis)``"
+    "Descripción", "Configuración de parámetros de la cinta transportadora"
+    "Parámetros obligatorios", "- ``param``： = [encChannel,resolution,lead,wpAxis,vision,speedRadio] 
+                    - ``encChannel``: canal del codificador 1-2
+                    - ``resolution``: resolución del codificador número de pulsos por revolución del codificador
+                    - ``lead``: relación de transmisión mecánica distancia recorrida por la cinta por cada revolución del codificador
+                    - ``wpAxis``: número del sistema de coordenadas de la pieza para la función de seguimiento en movimiento，seguimiento y agarre、seguimiento TPD se establece en 0
+                    - ``vision``: si tiene visión  0-sin 1-con,
+                    - ``speedRadio``: relación de velocidad  para el seguimiento y agarre de la cinta el rango de velocidad es (1-100)  seguimiento en movimiento、seguimiento TPD se establece en 1"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
+
+Compensación del punto de agarre de la cinta transportadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``ConveyorCatchPointComp(cmp)``"
+    "Descripción", "Compensación del punto de agarre de la cinta transportadora"
+    "Parámetros obligatorios", "- ``cmp``： posición de compensación [x,y,z]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
+
+Movimiento lineal
 ++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ConveyorIODetect(max_t)``"
-    "描述", "传送带工件IO检测"
-    "必选参数", "- ``max_t``： 最大检测时间，单位ms"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ConveyorTrackMoveL(name,tool,wobj,vel=20,acc=100,ovl=100,blendR=-1.0)``"
+    "Descripción", "Movimiento lineal"
+    "Parámetros obligatorios", "- ``name``：cvrCatchPoint o cvrRaisePoint
+    - ``tool``: número de herramienta
+    - ``wobj``:  número de pieza"
+    "Parámetros predeterminados", "- ``vel``: velocidad predeterminada20
+    - ``acc``: aceleración predeterminada100
+    - ``ovl``: factor de escala de velocidad predeterminado100
+    - ``blendR``: [-1.0]-movimiento preciso (bloqueante)，[0~1000]-radio de suavizado (no bloqueante)，unidad [mm] predeterminado-1.0"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取物体当前位置
-++++++++++++++++++++++++++++++++++
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``ConveyorGetTrackData(mode)``"
-    "描述", "获取物体当前位置"
-    "必选参数", "- ``mode``： 1-跟踪抓取 2-跟踪运动 3-TPD跟踪"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
-
-传动带跟踪开始
-++++++++++++++++++++++++++++++++++
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``ConveyorTrackStart(status)``"
-    "描述", "传动带跟踪开始"
-    "必选参数", "- ``status``： 状态，1-启动，0-停止"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
-
-传动带跟踪停止
-++++++++++++++++++++++++++++++++++
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``ConveyorTrackEnd()``"
-    "描述", "传动带跟踪停止"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
-
-传动带参数配置
-++++++++++++++++++++++++++++++++++
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``ConveyorSetParam(param, followType, startDis, endDis)``"
-    "描述", "传动带参数配置"
-    "必选参数", "- ``param``： = [encChannel,resolution,lead,wpAxis,vision,speedRadio] 
-                    - ``encChannel``: 编码器通道 1-2
-                    - ``resolution``: 编码器分辨率 编码器旋转一圈脉冲个数
-                    - ``lead``: 机械传动比 编码器旋转一圈传送带移动距离
-                    - ``wpAxis``: 工件坐标系编号 针对跟踪运动功能选择工件坐标系编号，跟踪抓取、TPD跟踪设为0
-                    - ``vision``: 是否配视觉  0-不配 1-配,
-                    - ``speedRadio``: 速度比  针对传送带跟踪抓取速度范围为（1-100）  跟踪运动、TPD跟踪设置为1"
-    "返回值", "错误码 成功-0  失败- errcode"
-
-传动带抓取点补偿
-++++++++++++++++++++++++++++++++++
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``ConveyorCatchPointComp(cmp)``"
-    "描述", "传动带抓取点补偿"
-    "必选参数", "- ``cmp``： 补偿位置 [x,y,z]"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
-
-直线运动
-++++++++++++++++++++++++++++++++++
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``ConveyorTrackMoveL(name,tool,wobj,vel=20,acc=100,ovl=100,blendR=-1.0)``"
-    "描述", "直线运动"
-    "必选参数", "- ``name``：cvrCatchPoint 或cvrRaisePoint
-    - ``tool``: 工具号
-    - ``wobj``:  工件号"
-    "默认参数", "- ``vel``: 速度 默认20
-    - ``acc``: 加速度 默认100
-    - ``ovl``: 速度缩放因子 默认100
-    - ``blendR``: [-1.0]-运动到位 (阻塞)，[0~1000]-平滑半径 (非阻塞)，单位 [mm] 默认-1.0"
-    "返回值", "错误码 成功-0  失败- errcode"
-
-传送带通讯输入检测
+Detección de entrada de comunicación de la cinta transportadora
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.1
 
@@ -497,27 +497,27 @@
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ConveyorComDetect(timeout)``"
-    "描述", "传送带通讯输入检测"
-    "必选参数", "- ``timeout``：等待超时时间ms"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ConveyorComDetect(timeout)``"
+    "Descripción", "Detección de entrada de comunicación de la cinta transportadora"
+    "Parámetros obligatorios", "- ``timeout``：tiempo de espera máximo ms"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-传送带通讯输入检测触发
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Disparo de detección de entrada de comunicación de la cinta transportadora
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.1
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ConveyorComDetectTrigger()``"
-    "描述", "传送带通讯输入检测触发"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ConveyorComDetectTrigger()``"
+    "Descripción", "Disparo de detección de entrada de comunicación de la cinta transportadora"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-机器人传送带操作代码示例
+Ejemplo de código de operación de la cinta transportadora del robot
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
@@ -525,7 +525,7 @@
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     retval = robot.ConveyorStartEnd(1)
     print(f"ConveyorStartEnd retval is:{retval}")
@@ -574,7 +574,7 @@
     print(f"MoveGripper retval is:{retval}")
     robot.CloseRPC()
 
-传送带原地跟踪参数配置
+Configuración de parámetros de seguimiento en el lugar de la cinta transportadora
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-V3.9.8
 
@@ -582,17 +582,17 @@
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetStationaryTrackPara(self, trackMode, trackTime, trackDis)``"
-    "描述", "传送带原地跟踪参数配置"
-    "必选参数", "
-    - ``trackMode``: 0-时间；1-距离；2-时间和距离任意满足一个
-    - ``trackTime``: 跟踪时间，单位s
-    - ``trackDis``: 跟踪距离
+    "Prototipo", "``SetStationaryTrackPara(self, trackMode, trackTime, trackDis)``"
+    "Descripción", "Configuración de parámetros de seguimiento en el lugar de la cinta transportadora"
+    "Parámetros obligatorios", "
+    - ``trackMode``: 0-tiempo；1-distancia；2-tiempo y distancia cualquiera que se cumpla
+    - ``trackTime``: tiempo de seguimiento，unidad s
+    - ``trackDis``: distancia de seguimiento
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-等待原地空运动完成
+Esperar a que finalice el movimiento en vacío en el lugar
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-V3.9.8
 
@@ -600,13 +600,13 @@
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WaitStationaryMotionDone(self)``"
-    "描述", "等待原地空运动完成"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WaitStationaryMotionDone(self)``"
+    "Descripción", "Esperar a que finalice el movimiento en vacío en el lugar"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-传送带原地跟踪运动代码示例
+Ejemplo de código de movimiento de seguimiento en el lugar de la cinta transportadora
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-V3.9.8
 
@@ -638,38 +638,38 @@
                     vel=100, acc=100, ovl=100, exaxis_pos=ex,
                     blendT=-1, offset_flag=0, offset_pos=zeroOff)
 
-        print("--- Step 1: SetDO(6,1) ---")
+        print("--- Paso 1: SetDO(6,1) ---")
         rtn = robot.SetDO(6, 1, 0, 0)
         print(f"  SetDO(6,1) rtn={rtn}")
 
-        print("--- Step 2: ConveyorTrackStart(2) ---")
+        print("--- Paso 2: ConveyorTrackStart(2) ---")
         rtn = robot.ConveyorTrackStart(2)
         print(f"  ConveyorTrackStart(2) rtn={rtn}")
 
-        print("--- Step 3: ConveyorIODetect(10000) ---")
+        print("--- Paso 3: ConveyorIODetect(10000) ---")
         rtn = robot.ConveyorIODetect(10000)
         print(f"  ConveyorIODetect(10000) rtn={rtn}")
 
-        print("--- Step 4: ConveyorGetTrackData(2) ---")
+        print("--- Paso 4: ConveyorGetTrackData(2) ---")
         rtn = robot.ConveyorGetTrackData(2)
         print(f"  ConveyorGetTrackData(2) rtn={rtn}")
 
-        print("--- Step 5: SetStationaryTrackPara(0,5,5) ---")
+        print("--- Paso 5: SetStationaryTrackPara(0,5,5) ---")
         rtn = robot.SetStationaryTrackPara(0, 5, 5)
         print(f"  SetStationaryTrackPara(0,5,5) rtn={rtn}")
 
-        print("--- Step 6: MoveStationary() ---")
+        print("--- Paso 6: MoveStationary() ---")
         rtn = robot.MoveStationary()
         print(f"  MoveStationary() rtn={rtn}")
 
         rtn = robot.WaitStationaryMotionDone()
         print(f"  WaitStationaryMotionDone() rtn={rtn}")
 
-        print("--- Step 7: ConveyorTrackEnd() ---")
+        print("--- Paso 7: ConveyorTrackEnd() ---")
         rtn = robot.ConveyorTrackEnd()
         print(f"  ConveyorTrackEnd() rtn={rtn}")
 
-        print("--- Step 8: SetDO(6,0) ---")
+        print("--- Paso 8: SetDO(6,0) ---")
         rtn = robot.SetDO(6, 0, 0, 0)
         print(f"  SetDO(6,0) rtn={rtn}")
 
@@ -679,42 +679,42 @@
     if __name__ == "__main__":
         main()    
 
-末端传感器配置
-+++++++++++++++++++++++++++++++++
+Configuración de sensor del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AxleSensorConfig(idCompany, idDevice, idSoftware, idBus)``"
-    "描述", "末端传感器配置"
-    "必选参数", "
-    - ``idCompany``: 厂商，18-JUNKONG；25-HUIDE
-    - ``idDevice``: 类型，0-JUNKONG/RYR6T.V1.0
-    - ``idSoftware``: 软件版本，0-J1.0/HuiDe1.0(暂未开放)
-    - ``idBus``: 挂载位置，1-末端1号口；2-末端2号口...8-末端8号口(暂未开放)
+    "Prototipo", "``AxleSensorConfig(idCompany, idDevice, idSoftware, idBus)``"
+    "Descripción", "Configuración de sensor del extremo"
+    "Parámetros obligatorios", "
+    - ``idCompany``: fabricante，18-JUNKONG；25-HUIDE
+    - ``idDevice``: tipo，0-JUNKONG/RYR6T.V1.0
+    - ``idSoftware``: versión de software，0-J1.0/HuiDe1.0(aún no disponible)
+    - ``idBus``: posición de montaje，1-puerto 1 del extremo；2-puerto 2 del extremo...8-puerto 8 del extremo(aún no disponible)
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取末端传感器配置
-+++++++++++++++++++++++++++++++++
+Obtener configuración del sensor del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AxleSensorConfigGet()``"
-    "描述", "获取末端传感器配置"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``idCompany``: 厂商，18-JUNKONG；25-HUIDE
-    - ``idDevice``: 类型，0-JUNKONG/RYR6T.V1.0"
+    "Prototipo", "``AxleSensorConfigGet()``"
+    "Descripción", "Obtener configuración del sensor del extremo"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``idCompany``: fabricante，18-JUNKONG；25-HUIDE
+    - ``idDevice``: tipo，0-JUNKONG/RYR6T.V1.0"
         
-末端传感器激活
+Activación del sensor del extremo
 +++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
@@ -722,34 +722,34 @@
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AxleSensorActivate(actFlag)``"
-    "描述", "末端传感器激活"
-    "必选参数", "``actFlag``： 0-复位；1-激活"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``coord``: 坐标系值[x,y,z,rx,ry,rz]"
+    "Prototipo", "``AxleSensorActivate(actFlag)``"
+    "Descripción", "Activación del sensor del extremo"
+    "Parámetros obligatorios", "``actFlag``： 0-restablecer；1-activar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``coord``: valor del sistema de coordenadas[x,y,z,rx,ry,rz]"
 
-末端传感器寄存器写入
-+++++++++++++++++++++++++++++++
+Escritura de registro del sensor del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AxleSensorRegWrite(devAddr, regHAddr, regLAddr, regNum, data1, data2, isNoBlock)``"
-    "描述", "末端传感器寄存器写入"
-    "必选参数", "- ``devAddr``：设备地址编号 0-255
-    - ``regHAddr``：寄存器地址高8位
-    - ``regLAddr``：寄存器地址低8位
-    - ``regNum``：寄存器个数 0-255
-    - ``data1``：写入寄存器数值1
-    - ``data2``：写入寄存器数值2
-    - ``isNoBlock``：是否阻塞 0-阻塞；1-非阻塞"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``AxleSensorRegWrite(devAddr, regHAddr, regLAddr, regNum, data1, data2, isNoBlock)``"
+    "Descripción", "Escritura de registro del sensor del extremo"
+    "Parámetros obligatorios", "- ``devAddr``：número de dirección del dispositivo 0-255
+    - ``regHAddr``：dirección de registro bits altos 8
+    - ``regLAddr``：dirección de registro bits bajos 8
+    - ``regNum``：número de registros 0-255
+    - ``data1``：valor 1 a escribir en el registro
+    - ``data2``：valor 2 a escribir en el registro
+    - ``isNoBlock``：si es bloqueante 0-bloqueante；1-no bloqueante"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-末端传感器代码示例
+Ejemplo de código del sensor del extremo
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
@@ -757,7 +757,7 @@
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.AxleSensorConfig(18, 0, 0, 1)
     error, company, type = robot.AxleSensorConfigGet()
@@ -769,42 +769,42 @@
     print(f"AxleSensorRegWrite rtn is:{rtn}")
     robot.CloseRPC()
 
-获取机器人外设协议
-+++++++++++++++++++++++++++++++++
+Obtener protocolo de periféricos del robot
+++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetExDevProtocol()``"
-    "描述", "获取机器人外设协议"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode; 
-    - ``protocol``: 机器人外设协议号 4096-扩展轴控制卡；4097-ModbusSlave；4098-ModbusMaster"
+    "Prototipo", "``GetExDevProtocol()``"
+    "Descripción", "Obtener protocolo de periféricos del robot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode; 
+    - ``protocol``: número de protocolo de periféricos del robot 4096-tarjeta de control de eje extendido；4097-ModbusSlave；4098-ModbusMaster"
 
-设置机器人外设协议
-+++++++++++++++++++++++++++++++++
+Establecer protocolo de periféricos del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetExDevProtocol(protocol)``"
-    "描述", "设置机器人外设协议"
-    "必选参数", "- ``protocol``：机器人外设协议号 4096-扩展轴控制卡；4097-ModbusSlave；4098-ModbusMaster"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetExDevProtocol(protocol)``"
+    "Descripción", "Establecer protocolo de periféricos del robot"
+    "Parámetros obligatorios", "- ``protocol``：número de protocolo de periféricos del robot 4096-tarjeta de control de eje extendido；4097-ModbusSlave；4098-ModbusMaster"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置机器人外设协议代码示例
-+++++++++++++++++++++++++++++++++
+Ejemplo de código para establecer el protocolo de periféricos del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     protocol = 4096
     rtn = robot.SetExDevProtocol(protocol)
@@ -814,243 +814,243 @@
     robot.CloseRPC()
 
 
-获取末端通讯参数
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener parámetros de comunicación del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetAxleCommunicationParam()``"
-    "描述", "获取末端通讯参数"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``baudRate``：波特率:支持1-9600，2-14400，3-19200，4-38400，5-56000，6-67600，7-115200，8-128000
-    - ``dataBit``：数据位:数据位支持（8,9），目前常用为 8
-    - ``stopBit``：停止位:1-1，2-0.5，3-2，4-1.5，目前常用为 1
-    - ``verify``：校验位:0-None，1-Odd，2-Even,目前常用为 0
-    - ``timeout``：超时时间:1~1000ms，此值需要结合外设搭配设置合理的时间参数
-    - ``timeoutTimes``：超时次数:1~10，主要进行超时重发，减少偶发异常提高用户体验
-    - ``period``：周期性指令时间间隔:1~1000ms，主要用于周期性指令每次下发的时间间隔"
+    "Prototipo", "``GetAxleCommunicationParam()``"
+    "Descripción", "Obtener parámetros de comunicación del extremo"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``baudRate``：velocidad en baudios:soporta1-9600，2-14400，3-19200，4-38400，5-56000，6-67600，7-115200，8-128000
+    - ``dataBit``：bits de datos:soporta（8,9），actualmente comúnmente utilizado 8
+    - ``stopBit``：bit de parada:1-1，2-0.5，3-2，4-1.5，actualmente comúnmente utilizado 1
+    - ``verify``：bit de verificación:0-None，1-Odd，2-Even,actualmente comúnmente utilizado 0
+    - ``timeout``：tiempo de espera:1~1000ms，este valor debe combinarse con la configuración del periférico para establecer un parámetro de tiempo razonable
+    - ``timeoutTimes``：número de tiempos de espera:1~10，principalmente para reenvío por tiempo de espera，reducir excepciones ocasionales y mejorar la experiencia del usuario
+    - ``period``：intervalo de tiempo de comando periódico:1~1000ms，principalmente utilizado para el intervalo de tiempo de cada envío de comandos periódicos"
 
-设置末端通讯参数
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer parámetros de comunicación del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetAxleCommunicationParam(baudRate, dataBit, stopBit, verify, timeout, timeoutTimes, period)``"
-    "描述", "设置末端通讯参数"
-    "必选参数", "- ``baudRate``：波特率:支持1-9600，2-14400，3-19200，4-38400，5-56000，6-67600，7-115200，8-128000
-    - ``dataBit``：数据位:数据位支持（8,9），目前常用为 8
-    - ``stopBit``：停止位:1-1，2-0.5，3-2，4-1.5，目前常用为 1
-    - ``verify``：校验位:0-None，1-Odd，2-Even,目前常用为 0
-    - ``timeout``：超时时间:1~1000ms，此值需要结合外设搭配设置合理的时间参数
-    - ``timeoutTimes``：超时次数:1~10，主要进行超时重发，减少偶发异常提高用户体验
-    - ``period``：周期性指令时间间隔:1~1000ms，主要用于周期性指令每次下发的时间间隔"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetAxleCommunicationParam(baudRate, dataBit, stopBit, verify, timeout, timeoutTimes, period)``"
+    "Descripción", "Establecer parámetros de comunicación del extremo"
+    "Parámetros obligatorios", "- ``baudRate``：velocidad en baudios:soporta1-9600，2-14400，3-19200，4-38400，5-56000，6-67600，7-115200，8-128000
+    - ``dataBit``：bits de datos:soporta（8,9），actualmente comúnmente utilizado 8
+    - ``stopBit``：bit de parada:1-1，2-0.5，3-2，4-1.5，actualmente comúnmente utilizado 1
+    - ``verify``：bit de verificación:0-None，1-Odd，2-Even,actualmente comúnmente utilizado 0
+    - ``timeout``：tiempo de espera:1~1000ms，este valor debe combinarse con la configuración del periférico para establecer un parámetro de tiempo razonable
+    - ``timeoutTimes``：número de tiempos de espera:1~10，principalmente para reenvío por tiempo de espera，reducir excepciones ocasionales y mejorar la experiencia del usuario
+    - ``period``：intervalo de tiempo de comando periódico:1~1000ms，principalmente utilizado para el intervalo de tiempo de cada envío de comandos periódicos"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-设置末端文件传输类型
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer tipo de transferencia de archivo del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetAxleFileType(type)``"
-    "描述", "设置末端文件传输类型"
-    "必选参数", "- ``type``：1-MCU升级文件,2-LUA文件"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetAxleFileType(type)``"
+    "Descripción", "Establecer tipo de transferencia de archivo del extremo"
+    "Parámetros obligatorios", "- ``type``：1-archivo de actualización MCU,2-archivo LUA"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-设置启用末端LUA执行
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer habilitación de ejecución LUA del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetAxleLuaEnable(enable)``"
-    "描述", "设置启用末端LUA执行"
-    "必选参数", "- ``enable``：0-不启用；1-启用"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetAxleLuaEnable(enable)``"
+    "Descripción", "Establecer habilitación de ejecución LUA del extremo"
+    "Parámetros obligatorios", "- ``enable``：0-no habilitar；1-habilitar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-末端LUA文件异常错误恢复
-+++++++++++++++++++++++++++++++++++++++++++++
+Recuperación de errores de archivo LUA del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetRecoverAxleLuaErr(enable)``"
-    "描述", "末端LUA文件异常错误恢复"
-    "必选参数", "- ``status``：0-不恢复；1-恢复"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetRecoverAxleLuaErr(enable)``"
+    "Descripción", "Recuperación de errores de archivo LUA del extremo"
+    "Parámetros obligatorios", "- ``status``：0-no recuperar；1-recuperar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-获取末端LUA执行使能状态
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener estado de habilitación de ejecución LUA del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetAxleLuaEnableStatus()``"
-    "描述", "获取末端LUA执行使能状态"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``enable``：0-不启用；1-启用"
+    "Prototipo", "``GetAxleLuaEnableStatus()``"
+    "Descripción", "Obtener estado de habilitación de ejecución LUA del extremo"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``enable``：0-no habilitar；1-habilitar"
 
-设置末端LUA末端设备启用类型
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer tipo de habilitación de dispositivo del extremo LUA del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetAxleLuaEnableDeviceType(self, forceSensorEnable, gripperEnable, IOEnable, dexhandEnable)``"
-    "描述", "设置末端LUA末端设备启用类型"
-    "必选参数", "
-    - ``forceSensorEnable``：力传感器启用状态，0-不启用；1-启用
-    - ``gripperEnable``：夹爪启用状态，0-不启用；1-启用
-    - ``IOEnable``：IO设备启用状态，0-不启用；1-启用
-    - ``dexhandEnable``：灵巧手启用状态，0-不启用；1-启用"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetAxleLuaEnableDeviceType(self, forceSensorEnable, gripperEnable, IOEnable, dexhandEnable)``"
+    "Descripción", "Establecer tipo de habilitación de dispositivo del extremo LUA del extremo"
+    "Parámetros obligatorios", "
+    - ``forceSensorEnable``：estado de habilitación del sensor de fuerza，0-no habilitar；1-habilitar
+    - ``gripperEnable``：estado de habilitación de la pinza，0-no habilitar；1-habilitar
+    - ``IOEnable``：estado de habilitación del dispositivo IO，0-no habilitar；1-habilitar
+    - ``dexhandEnable``：estado de habilitación de la mano diestra，0-no habilitar；1-habilitar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-获取末端LUA末端设备启用类型
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener tipo de habilitación de dispositivo del extremo LUA del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetAxleLuaEnableDeviceType()``"
-    "描述", "获取末端LUA末端设备启用类型"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``forceSensorEnable``：力传感器启用状态，0-不启用；1-启用
-    - ``gripperEnable``：夹爪启用状态，0-不启用；1-启用
-    - ``IOEnable``：IO设备启用状态，0-不启用；1-启用
-    - ``dexhandEnable``：灵巧手启用状态，0-不启用；1-启用"
+    "Prototipo", "``GetAxleLuaEnableDeviceType()``"
+    "Descripción", "Obtener tipo de habilitación de dispositivo del extremo LUA del extremo"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``forceSensorEnable``：estado de habilitación del sensor de fuerza，0-no habilitar；1-habilitar
+    - ``gripperEnable``：estado de habilitación de la pinza，0-no habilitar；1-habilitar
+    - ``IOEnable``：estado de habilitación del dispositivo IO，0-no habilitar；1-habilitar
+    - ``dexhandEnable``：estado de habilitación de la mano diestra，0-no habilitar；1-habilitar"
 
-获取当前配置的末端设备
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener dispositivo del extremo configurado actualmente
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetAxleLuaEnableDevice()``"
-    "描述", "获取当前配置的末端设备"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``forceSensorEnable[8]``：力传感器启用状态，0-不启用；1-启用
-    - ``gripperEnable[8]``：夹爪启用状态，0-不启用；1-启用
-    - ``IOEnable[8]``：IO设备启用状态，0-不启用；1-启用
-    - ``dexhandEnable``：灵巧手启用状态，0-不启用；1-启用"
+    "Prototipo", "``GetAxleLuaEnableDevice()``"
+    "Descripción", "Obtener dispositivo del extremo configurado actualmente"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``forceSensorEnable[8]``：estado de habilitación del sensor de fuerza，0-no habilitar；1-habilitar
+    - ``gripperEnable[8]``：estado de habilitación de la pinza，0-no habilitar；1-habilitar
+    - ``IOEnable[8]``：estado de habilitación del dispositivo IO，0-no habilitar；1-habilitar
+    - ``dexhandEnable``：estado de habilitación de la mano diestra，0-no habilitar；1-habilitar"
 
-设置启用夹爪动作控制功能
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer habilitación de la función de control de movimiento de la pinza
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetAxleLuaGripperFunc(id, func)``"
-    "描述", "设置启用夹爪动作控制功能"
-    "必选参数", "
-    - ``id``：夹爪设备编号
-    - ``func``：0-夹爪使能；1-夹爪初始化；2-位置设置；3-速度设置；4-力矩设置；6-读夹爪状态；7-读初始化状态；8-读故障码；9-读位置；10-读速度；11-读力矩,12-旋转夹爪旋转圈数设置； 13-旋转夹爪旋转速度设置； 14-旋转夹爪旋转力矩设置； 15-读旋转夹爪状态；16-读旋转夹爪初始化状态；17-读旋转夹爪圈数；18-读旋转夹爪速度；19-读旋转夹爪力矩；20-多轴同步运动设置；21-故障清除指令；22-单轴运行状态；23-所有轴运行状态；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetAxleLuaGripperFunc(id, func)``"
+    "Descripción", "Establecer habilitación de la función de control de movimiento de la pinza"
+    "Parámetros obligatorios", "
+    - ``id``：número de dispositivo de la pinza
+    - ``func``：0-habilitación de la pinza；1-inicialización de la pinza；2-configuración de posición；3-configuración de velocidad；4-configuración de torque；6-leer estado de la pinza；7-leer estado de inicialización；8-leer código de fallo；9-leer posición；10-leer velocidad；11-leer torque,12-configuración del número de revoluciones de la pinza rotativa； 13-configuración de la velocidad de rotación de la pinza rotativa； 14-configuración del torque de rotación de la pinza rotativa； 15-leer estado de la pinza rotativa；16-leer estado de inicialización de la pinza rotativa；17-leer número de revoluciones de la pinza rotativa；18-leer velocidad de la pinza rotativa；19-leer torque de la pinza rotativa；20-configuración de movimiento sincronizado multieje；21-comando de borrado de fallos；22-estado de funcionamiento de un solo eje；23-estado de funcionamiento de todos los ejes；"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-获取启用夹爪动作控制功能
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener habilitación de la función de control de movimiento de la pinza
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetAxleLuaGripperFunc(id)``"
-    "描述", "获取启用夹爪动作控制功能"
-    "必选参数", "- ``id``：夹爪设备编号"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``func``：0-夹爪使能；1-夹爪初始化；2-位置设置；3-速度设置；4-力矩设置；6-读夹爪状态；7-读初始化状态；8-读故障码；9-读位置；10-读速度；11-读力矩,12-旋转夹爪旋转圈数设置； 13-旋转夹爪旋转速度设置； 14-旋转夹爪旋转力矩设置； 15-读旋转夹爪状态；16-读旋转夹爪初始化状态；17-读旋转夹爪圈数；18-读旋转夹爪速度；19-读旋转夹爪力矩；20-多轴同步运动设置；21-故障清除指令；22-单轴运行状态；23-所有轴运行状态；"
+    "Prototipo", "``GetAxleLuaGripperFunc(id)``"
+    "Descripción", "Obtener habilitación de la función de control de movimiento de la pinza"
+    "Parámetros obligatorios", "- ``id``：número de dispositivo de la pinza"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``func``：0-habilitación de la pinza；1-inicialización de la pinza；2-configuración de posición；3-configuración de velocidad；4-configuración de torque；6-leer estado de la pinza；7-leer estado de inicialización；8-leer código de fallo；9-leer posición；10-leer velocidad；11-leer torque,12-configuración del número de revoluciones de la pinza rotativa； 13-configuración de la velocidad de rotación de la pinza rotativa； 14-configuración del torque de rotación de la pinza rotativa； 15-leer estado de la pinza rotativa；16-leer estado de inicialización de la pinza rotativa；17-leer número de revoluciones de la pinza rotativa；18-leer velocidad de la pinza rotativa；19-leer torque de la pinza rotativa；20-configuración de movimiento sincronizado multieje；21-comando de borrado de fallos；22-estado de funcionamiento de un solo eje；23-estado de funcionamiento de todos los ejes；"
 
-机器人Ethercat从站文件写入
-+++++++++++++++++++++++++++++++++++++++++++++
+Escritura de archivo de esclavo Ethercat del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SlaveFileWrite(type,slaveID,fileName)``"
-    "描述", "机器人Ethercat从站文件写入"
-    "必选参数", "- ``type``：从站文件类型，1-升级从站文件；2-升级从站配置文件
-    - ``slaveID``：从站号
-    - ``fileName``：上传文件名"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SlaveFileWrite(type,slaveID,fileName)``"
+    "Descripción", "Escritura de archivo de esclavo Ethercat del robot"
+    "Parámetros obligatorios", "- ``type``：tipo de archivo de esclavo，1-actualizar archivo de esclavo；2-actualizar archivo de configuración de esclavo
+    - ``slaveID``：número de esclavo
+    - ``fileName``：nombre del archivo a subir"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-上传末端Lua开放协议文件
-+++++++++++++++++++++++++++++++++++++++++++++
+Subir archivo de protocolo abierto LUA del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AxleLuaUpload(filePath)``"
-    "描述", "上传末端Lua开放协议文件"
-    "必选参数", "- ``filePath``：本地lua文件路径名 .../AXLE_LUA_End_DaHuan.lua"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AxleLuaUpload(filePath)``"
+    "Descripción", "Subir archivo de protocolo abierto LUA del extremo"
+    "Parámetros obligatorios", "- ``filePath``：ruta local del archivo lua .../AXLE_LUA_End_DaHuan.lua"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-机器人Ethercat从站进入boot模式
-+++++++++++++++++++++++++++++++++++++++++++++
+Entrada del esclavo Ethercat del robot en modo boot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetSysServoBootMode(filePath)``"
-    "描述", "机器人Ethercat从站进入boot模式"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetSysServoBootMode(filePath)``"
+    "Descripción", "Entrada del esclavo Ethercat del robot en modo boot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-机器人末端LUA文件操作代码示例
-+++++++++++++++++++++++++++++++++
+Ejemplo de código de operación de archivo LUA del extremo del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.AxleLuaUpload("D://zUP/AXLE_LUA_End_DaHuan.lua")
-    param = [7, 8, 1, 0, 5, 3, 1]  # 对应AxleComParam参数
+    param = [7, 8, 1, 0, 5, 3, 1]  # Parámetros correspondientes a AxleComParam
     robot.SetAxleCommunicationParam(7, 8, 1, 0, 5, 3, 1)
     error,getParam0,getParam1,getParam2,getParam3,getParam4,getParam5,getParam6 = robot.GetAxleCommunicationParam()
     print(f"GetAxleCommunicationParam param is:{getParam0} {getParam1} {getParam2} {getParam3} {getParam4} {getParam5} {getParam6}")
@@ -1085,7 +1085,7 @@
     robot.CloseRPC()
 
     
-获取SmartTool按钮状态
+Obtener estado del botón SmartTool
 +++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
@@ -1093,14 +1093,14 @@
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetSmarttoolBtnState()``"
-    "描述", "获取SmartTool按钮状态"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``state``：SmartTool手柄按钮状态;(bit0:0-通信正常；1-通信掉线；bit1-撤销操作；bit2-清空程序；bit3-A键；bit4-B键；bit5-C键；bit6-D键；bit7-E键；bit8-IO键；bit9-手自动；bit10开始)"
+    "Prototipo", "``GetSmarttoolBtnState()``"
+    "Descripción", "Obtener estado del botón SmartTool"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``state``：estado de los botones del mango SmartTool;(bit0:0-comunicación normal；1-comunicación desconectada；bit1-deshacer operación；bit2-borrar programa；bit3-tecla A；bit4-tecla B；bit5-tecla C；bit6-tecla D；bit7-tecla E；bit8-tecla IO；bit9-manual/automático；bit10-inicio)"
 
-SmartTool按钮代码示例
+Ejemplo de código del botón SmartTool
 +++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
@@ -1108,14 +1108,42 @@ SmartTool按钮代码示例
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     while True:
         error,state = robot.GetSmarttoolBtnState()
         print(f"{state:016b}")
         time.sleep(0.1)
 
-设置拖动开启前负载力检测
+Establecer detección de fuerza de carga antes de habilitar el arrastre
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: python SDK-v2.1.6
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``SetTorqueDetectionSwitch(flag)``"
+    "Descripción", "Establecer detección de fuerza de carga antes de habilitar el arrastre"
+    "Parámetros obligatorios", "- ``flag``：0-desactivar；1-activar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
+
+Función de encendido y apagado del periférico láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: python SDK-v2.1.6
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``LaserTrackingLaserOnOff(OnOff, weldId)``"
+    "Descripción", "Función de encendido y apagado del periférico láser"
+    "Parámetros obligatorios", "- ``OnOff``：0-apagar；1-encender"
+    "Parámetros predeterminados", "- ``weldId``：ID de soldadura predeterminado0"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
+
+Función de inicio y fin del seguimiento láser
 +++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
@@ -1123,13 +1151,14 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetTorqueDetectionSwitch(flag)``"
-    "描述", "设置拖动开启前负载力检测"
-    "必选参数", "- ``flag``：0-关闭；1-开启"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``LaserTrackingTrackOnOff(OnOff, coordId)``"
+    "Descripción", "Función de inicio y fin del seguimiento láser"
+    "Parámetros obligatorios", "- ``OnOff``：0-apagar；1-encender
+    - ``coordId``：número del sistema de coordenadas de la herramienta del periférico láser"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-激光外设打开关闭函数
+Búsqueda láser-dirección fija
 +++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
@@ -1137,13 +1166,17 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``LaserTrackingLaserOnOff(OnOff, weldId)``"
-    "描述", "激光外设打开关闭函数"
-    "必选参数", "- ``OnOff``：0-关闭；1-开启"
-    "默认参数", "- ``weldId``：焊缝ID 默认为0"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``LaserTrackingSearchStart_xyz(direction, vel, distance, timeout, posSensorNum)``"
+    "Descripción", "Búsqueda láser-dirección fija"
+    "Parámetros obligatorios", "- ``direction``：0-x+ 1-x- 2-y+ 3-y- 4-z+ 5-z-
+    - ``vel``：velocidad unidad%
+    - ``distance``：distancia máxima de búsqueda unidadmm
+    - ``timeout``：tiempo de espera de búsqueda unidadms
+    - ``posSensorNum``：número del sistema de coordenadas de la herramienta calibrada por láser"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-激光跟踪开始结束函数
+Búsqueda láser-dirección arbitraria
 +++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
@@ -1151,14 +1184,17 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``LaserTrackingTrackOnOff(OnOff, coordId)``"
-    "描述", "激光跟踪开始结束函数"
-    "必选参数", "- ``OnOff``：0-关闭；1-开启
-    - ``coordId``：激光外设工具坐标系编号"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``LaserTrackingSearchStart_point(directionPoint, vel, distance, timeout, posSensorNum)``"
+    "Descripción", "Búsqueda láser-dirección arbitraria"
+    "Parámetros obligatorios", "- ``directionPoint``：coordenadas xyz del punto de entrada de búsqueda,[x,y,z]
+    - ``vel``：velocidad unidad%
+    - ``distance``：distancia máxima de búsqueda unidadmm
+    - ``timeout``：tiempo de espera de búsqueda unidadms
+    - ``posSensorNum``：número del sistema de coordenadas de la herramienta calibrada por láser"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-激光寻位-固定方向
+Configuración IP del láser
 +++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
@@ -1166,17 +1202,28 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``LaserTrackingSearchStart_xyz(direction, vel, distance, timeout, posSensorNum)``"
-    "描述", "激光寻位-固定方向"
-    "必选参数", "- ``direction``：0-x+ 1-x- 2-y+ 3-y- 4-z+ 5-z-
-    - ``vel``：速度 单位%
-    - ``distance``：最大寻位距离 单位mm
-    - ``timeout``：寻位超时时间 单位ms
-    - ``posSensorNum``：激光标定的工具坐标编号"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``LaserTrackingSensorConfig(ip, port)``"
+    "Descripción", "Configuración IP del láser"
+    "Parámetros obligatorios", "- ``ip``：dirección ip del periférico láser
+    - ``port``：número de puerto del periférico láser"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-激光寻位-任意方向
+Configuración del período de muestreo del periférico láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: python SDK-v2.1.6
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``LaserTrackingSensorSamplePeriod(period)``"
+    "Descripción", "Configuración del período de muestreo del periférico láser"
+    "Parámetros obligatorios", "- ``period``：período de muestreo del periférico láser unidadms"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
+
+Carga del controlador del periférico láser
 +++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
@@ -1184,17 +1231,13 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``LaserTrackingSearchStart_point(directionPoint, vel, distance, timeout, posSensorNum)``"
-    "描述", "激光寻位-任意方向"
-    "必选参数", "- ``directionPoint``：寻位输入的点的xyz左边,[x,y,z]
-    - ``vel``：速度 单位%
-    - ``distance``：最大寻位距离 单位mm
-    - ``timeout``：寻位超时时间 单位ms
-    - ``posSensorNum``：激光标定的工具坐标编号"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``LoadPosSensorDriver(type)``"
+    "Descripción", "Carga del controlador del periférico láser"
+    "Parámetros obligatorios", "- ``type``：tipo de protocolo del controlador del periférico láser 101-Ruiniu 102-Chuangxiang 103-Quanshi 104-Tongzhou 105-Aotai"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-激光IP配置
+Descarga del controlador del periférico láser
 +++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
@@ -1202,86 +1245,43 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``LaserTrackingSensorConfig(ip, port)``"
-    "描述", "激光IP配置"
-    "必选参数", "- ``ip``：激光外设的ip地址
-    - ``port``：激光外设的端口号"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``UnLoadPosSensorDriver()``"
+    "Descripción", "Descarga del controlador del periférico láser"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-激光外设采样周期配置
-+++++++++++++++++++++++++++++++++++++++++++++
+Registro de trayectoria de soldadura por láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``LaserTrackingSensorSamplePeriod(period)``"
-    "描述", "激光外设采样周期配置"
-    "必选参数", "- ``period``：激光外设采样周期 单位ms"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``LaserSensorRecord1(status, delayTime)``"
+    "Descripción", "Registro de trayectoria de soldadura por láser"
+    "Parámetros obligatorios", "- ``status``：0-detener registro 1-seguimiento en tiempo real  2-iniciar registro
+    - ``delayTime``：tiempo de retardo unidadms"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-激光外设驱动加载
-+++++++++++++++++++++++++++++++++++++++++++++
+Reproducción de trayectoria de soldadura por láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``LoadPosSensorDriver(type)``"
-    "描述", "激光外设驱动加载"
-    "必选参数", "- ``type``：激光外设驱动的协议类型 101-睿牛 102-创想 103-全视 104-同舟 105-奥太"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
-
-激光外设驱动卸载
-+++++++++++++++++++++++++++++++++++++++++++++
-.. versionadded:: python SDK-v2.1.6
-
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``UnLoadPosSensorDriver()``"
-    "描述", "激光外设驱动卸载"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
-
-激光焊缝轨迹记录
-+++++++++++++++++++++++++++++++++++++++++++++
-.. versionadded:: python SDK-v2.1.6
-
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``LaserSensorRecord1(status, delayTime)``"
-    "描述", "激光焊缝轨迹记录"
-    "必选参数", "- ``status``：0-停止记录 1-实时跟踪  2-开始记录
-    - ``delayTime``：延时时间 单位ms"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
-
-激光焊缝轨迹复现
-+++++++++++++++++++++++++++++++++++++++++++++
-.. versionadded:: python SDK-v2.1.6
-
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``LaserSensorReplay(delayTime, speed)``"
-    "描述", "激光焊缝轨迹复现"
-    "必选参数", "- ``delayTime``：延时时间 单位ms
-    - ``speed``：速度 单位%"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``LaserSensorReplay(delayTime, speed)``"
+    "Descripción", "Reproducción de trayectoria de soldadura por láser"
+    "Parámetros obligatorios", "- ``delayTime``：tiempo de retardo unidadms
+    - ``speed``：velocidad unidad%"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
     
-激光跟踪复现
+Reproducción de seguimiento láser
 +++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
@@ -1289,110 +1289,110 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``MoveLTR()``"
-    "描述", "激光跟踪复现"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``MoveLTR()``"
+    "Descripción", "Reproducción de seguimiento láser"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-激光焊缝轨迹复现
-+++++++++++++++++++++++++++++++++++++++++++++
+Reproducción de trayectoria de soldadura por láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``LaserSensorRecordandReplay(delayMode, delayTime, delayDisExAxisNum, delayDis, sensitivePara, int trackMode, int triggerMode, double runTime, speed)``"
-    "描述", "激光焊缝轨迹复现"
-    "必选参数", "- ``delayMode``：模式 0-延时时间 1-延时距离
-    - ``delayTime``：延时时间 单位ms
-    - ``delayDisExAxisNum``：扩展轴编号
-    - ``delayDis``：延时距离 单位mm
-    - ``sensitivePara``：补偿灵敏系数
-    - ``trackMode``：定点跟踪类型。0-扩展轴异步运动；1-机器人
-    - ``triggerMode``：定点跟踪触发方式。0-跟踪时长；1-IO
-    - ``runTime``：机器人定点跟踪时长(s)
-    - ``speed``：速度 单位%"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``LaserSensorRecordandReplay(delayMode, delayTime, delayDisExAxisNum, delayDis, sensitivePara, int trackMode, int triggerMode, double runTime, speed)``"
+    "Descripción", "Reproducción de trayectoria de soldadura por láser"
+    "Parámetros obligatorios", "- ``delayMode``：modo 0-tiempo de retardo 1-distancia de retardo
+    - ``delayTime``：tiempo de retardo unidadms
+    - ``delayDisExAxisNum``：número del eje extendido
+    - ``delayDis``：distancia de retardo unidadmm
+    - ``sensitivePara``：coeficiente de sensibilidad de compensación
+    - ``trackMode``：tipo de seguimiento en punto fijo。0-movimiento asíncrono del eje extendido；1-robot
+    - ``triggerMode``：modo de disparo del seguimiento en punto fijo。0-duración del seguimiento；1-IO
+    - ``runTime``：duración del seguimiento en punto fijo del robot(s)
+    - ``speed``：velocidad unidad%"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-运动到焊缝记录的起点
-+++++++++++++++++++++++++++++++++++++++++++++
+Movimiento al punto de inicio del registro de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``MoveToLaserRecordStart(moveType, ovl)``"
-    "描述", "运动到焊缝记录的起点"
-    "必选参数", "- ``moveType``：0-PTP 1-LIN
-    - ``ovl``：速度 单位%"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``MoveToLaserRecordStart(moveType, ovl)``"
+    "Descripción", "Movimiento al punto de inicio del registro de soldadura"
+    "Parámetros obligatorios", "- ``moveType``：0-PTP 1-LIN
+    - ``ovl``：velocidad unidad%"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-运动到焊缝记录的终点
-+++++++++++++++++++++++++++++++++++++++++++++
+Movimiento al punto final del registro de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``MoveToLaserRecordEnd(moveType, ovl)``"
-    "描述", "运动到焊缝记录的终点"
-    "必选参数", "- ``moveType``：0-PTP 1-LIN
-    - ``ovl``：速度 单位%"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``MoveToLaserRecordEnd(moveType, ovl)``"
+    "Descripción", "Movimiento al punto final del registro de soldadura"
+    "Parámetros obligatorios", "- ``moveType``：0-PTP 1-LIN
+    - ``ovl``：velocidad unidad%"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-运动到激光传感器寻位点
-+++++++++++++++++++++++++++++++++++++++++++++
+Movimiento al punto de búsqueda del sensor láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``MoveToLaserSeamPos(moveFlag, ovl, dataFlag, plateType, trackOffectType, offset)``"
-    "描述", "运动到激光传感器寻位点"
-    "必选参数", "- ``moveFlag``：运动类型：0-PTP；1-LIN
-    - ``ovl``：速度缩放因子，0-100
-    - ``dataFlag``：焊缝缓存数据选择：0-执行规划数据；1-执行记录数据
-    - ``plateType``：板材类型：0-波纹板；1-瓦楞板；2-围栏板；3-油桶；4-波纹甲壳钢
-    - ``trackOffectType``：激光传感器偏移类型：0-不偏移；1-基坐标系偏移；2-工具坐标系偏移；3-激光传感器原始数据偏移
-    - ``offset``：偏移量"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``MoveToLaserSeamPos(moveFlag, ovl, dataFlag, plateType, trackOffectType, offset)``"
+    "Descripción", "Movimiento al punto de búsqueda del sensor láser"
+    "Parámetros obligatorios", "- ``moveFlag``：tipo de movimiento：0-PTP；1-LIN
+    - ``ovl``：factor de escala de velocidad，0-100
+    - ``dataFlag``：selección de datos de caché de soldadura：0-ejecutar datos de planificación；1-ejecutar datos de registro
+    - ``plateType``：tipo de placa：0-placa corrugada；1-placa ondulada；2-placa de valla；3-barril de aceite；4-acero corrugado con concha
+    - ``trackOffectType``：tipo de desplazamiento del sensor láser：0-sin desplazamiento；1-desplazamiento del sistema de coordenadas base；2-desplazamiento del sistema de coordenadas de la herramienta；3-desplazamiento de datos originales del sensor láser
+    - ``offset``：cantidad de desplazamiento"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取激光传感器寻位点坐标信息
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener información de coordenadas del punto de búsqueda del sensor láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetLaserSeamPos(trackOffectType, offset)``"
-    "描述", "获取激光传感器寻位点坐标信息"
-    "必选参数", "- ``trackOffectType``：激光传感器偏移类型：0-不偏移；1-基坐标系偏移；2-工具坐标系偏移；3-激光传感器原始数据偏移
-    - ``offset``：偏移量"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``jPos``：关节位置[°]
-    - ``descPos``：笛卡尔位置[mm]
-    - ``tool``：工具坐标系
-    - ``user``：工件坐标系
-    - ``exaxis``：扩展轴位置[mm]"
+    "Prototipo", "``GetLaserSeamPos(trackOffectType, offset)``"
+    "Descripción", "Obtener información de coordenadas del punto de búsqueda del sensor láser"
+    "Parámetros obligatorios", "- ``trackOffectType``：tipo de desplazamiento del sensor láser：0-sin desplazamiento；1-desplazamiento del sistema de coordenadas base；2-desplazamiento del sistema de coordenadas de la herramienta；3-desplazamiento de datos originales del sensor láser
+    - ``offset``：cantidad de desplazamiento"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``jPos``：posición articular[°]
+    - ``descPos``：posición cartesiana[mm]
+    - ``tool``：sistema de coordenadas de la herramienta
+    - ``user``：sistema de coordenadas de la pieza
+    - ``exaxis``：posición del eje extendido[mm]"
 
-激光外设传感器参数配置及调试代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración y depuración de parámetros del sensor del periférico láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.LaserTrackingSensorConfig("192.168.58.20", 5020)
     robot.LaserTrackingSensorSamplePeriod(20)
@@ -1402,13 +1402,13 @@ SmartTool按钮代码示例
     robot.LaserTrackingLaserOnOff(1, 0)
     robot.CloseRPC()
 
-激光轨迹扫描及轨迹复现的代码示例
-+++++++++++++++++++++++++++++++++
+Ejemplo de código de escaneo de trayectoria láser y reproducción de trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.OpenLuaUpload("D://zUP/CtrlDev_laser_ruiniu-0117.lua")
     time.sleep(2)
@@ -1435,13 +1435,13 @@ SmartTool按钮代码示例
         i = i+1
     robot.CloseRPC()
 
-激光寻位及实时跟踪的代码示例
-+++++++++++++++++++++++++++++++++
+Ejemplo de código de búsqueda láser y seguimiento en tiempo real
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.OpenLuaUpload("D://zUP/CtrlDev_laser_ruiniu-0117.lua")
     time.sleep(2)
@@ -1470,13 +1470,13 @@ SmartTool按钮代码示例
         print(i)
     robot.CloseRPC()
 
-扩展轴与机器人同步进行激光跟踪的代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de seguimiento láser sincronizado entre eje extendido y robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     startexaxisPos = [0.0, 0.0, 0.0, 0.0]
     seamexaxisPos = [-10.0, 0.0, 0.0, 0.0]
@@ -1506,7 +1506,7 @@ SmartTool按钮代码示例
         print(i)
     robot.CloseRPC()
 
-控制阵列式吸盘
+Controlar ventosa en matriz
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
@@ -1514,15 +1514,15 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetSuckerCtrl(slaveID, len, ctrlValue)``"
-    "描述", "控制阵列式吸盘"
-    "必选参数", "- ``slaveID``：从站号
-    - ``len``：长度
-    - ``ctrlValue``：控制值 1-按最大真空度吸取 2-按设定真空度吸取 3-停止吸取"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetSuckerCtrl(slaveID, len, ctrlValue)``"
+    "Descripción", "Controlar ventosa en matriz"
+    "Parámetros obligatorios", "- ``slaveID``：número de esclavo
+    - ``len``：longitud
+    - ``ctrlValue``：valor de control 1-aspirar según el vacío máximo 2-aspirar según el vacío establecido 3-detener la aspiración"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取阵列式吸盘状态
+Obtener estado de la ventosa en matriz
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
@@ -1530,16 +1530,16 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetSuckerState(slaveID)``"
-    "描述", "获取阵列式吸盘状态"
-    "必选参数", "- ``slaveID``：从站号"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``state``：吸附状态 0-释放物体 1-检测到工件吸附成功 2-没有吸附到物体 3-物体脱离
-    - ``pressValue``：当前真空度 单位kpa
-    - ``error``：吸盘当前的错误码"
+    "Prototipo", "``GetSuckerState(slaveID)``"
+    "Descripción", "Obtener estado de la ventosa en matriz"
+    "Parámetros obligatorios", "- ``slaveID``：número de esclavo"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``state``：estado de aspiración 0-liberar objeto 1-detección de pieza aspirada con éxito 2-no se ha aspirado ningún objeto 3-objeto desprendido
+    - ``pressValue``：vacío actual unidadkpa
+    - ``error``：código de error actual de la ventosa"
 
-等待吸盘状态
+Esperar estado de la ventosa
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
@@ -1547,15 +1547,15 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WaitSuckerState(slaveID, state, ms)``"
-    "描述", "等待吸盘状态"
-    "必选参数", "- ``slaveID``：从站号
-    - ``state``：吸附状态 0-释放物体 1-检测到工件吸附成功 2-没有吸附到物体 3-物体脱离
-    - ``ms``：等待最大时间"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WaitSuckerState(slaveID, state, ms)``"
+    "Descripción", "Esperar estado de la ventosa"
+    "Parámetros obligatorios", "- ``slaveID``：número de esclavo
+    - ``state``：estado de aspiración 0-liberar objeto 1-detección de pieza aspirada con éxito 2-no se ha aspirado ningún objeto 3-objeto desprendido
+    - ``ms``：tiempo máximo de espera"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-阵列式吸盘控制指令代码示例
+Ejemplo de código de comando de control de ventosa en matriz
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
@@ -1563,7 +1563,7 @@ SmartTool按钮代码示例
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.OpenLuaUpload("C://项目/外设SDK/CtrlDev_sucker.lua")
     time.sleep(2)
@@ -1586,7 +1586,7 @@ SmartTool按钮代码示例
     robot.SetSuckerCtrl(12, 1, ctrl)
     robot.CloseRPC()
 
-上传开放协议的Lua文件
+Subir archivo Lua de protocolo abierto
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
@@ -1594,13 +1594,13 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``OpenLuaUpload(filePath)``"
-    "描述", "上传开放协议的Lua文件"
-    "必选参数", "- ``filePath``：本地开放协议lua文件路径名"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``OpenLuaUpload(filePath)``"
+    "Descripción", "Subir archivo Lua de protocolo abierto"
+    "Parámetros obligatorios", "- ``filePath``：ruta local del archivo lua de protocolo abierto"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取从站板卡参数
+Obtener parámetros de la placa esclava
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
@@ -1608,16 +1608,16 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetFieldBusConfig()``"
-    "描述", "获取从站板卡参数"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
+    "Prototipo", "``GetFieldBusConfig()``"
+    "Descripción", "Obtener parámetros de la placa esclava"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
     - ``type``：0-Ethercat，1-CClink, 3-Ethercat, 4-EIP
-    - ``version``：协议版本
-    - ``connState``：0-未连接 1-已连接"
+    - ``version``：versión del protocolo
+    - ``connState``：0-no conectado 1-conectado"
 
-写入从站DO
+Escribir DO del esclavo
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
@@ -1625,15 +1625,15 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FieldBusSlaveWriteDO(DOIndex, wirteNum, status)``"
-    "描述", "写入从站DO"
-    "必选参数", "- ``DOIndex``：DO编号
-    - ``wirteNum``：写入的数量
-    - ``status``：写入的数值，最多写8个"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``FieldBusSlaveWriteDO(DOIndex, wirteNum, status)``"
+    "Descripción", "Escribir DO del esclavo"
+    "Parámetros obligatorios", "- ``DOIndex``：número DO
+    - ``wirteNum``：cantidad a escribir
+    - ``status``：valor a escribir，máximo 8"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-写入从站AO
+Escribir AO del esclavo
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
@@ -1641,15 +1641,15 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FieldBusSlaveWriteAO(AOIndex, wirteNum, status)``"
-    "描述", "写入从站AO"
-    "必选参数", "- ``AOIndex``：AO编号
-    - ``wirteNum``：写入的数量
-    - ``status``：写入的数值，最多写8个"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``FieldBusSlaveWriteAO(AOIndex, wirteNum, status)``"
+    "Descripción", "Escribir AO del esclavo"
+    "Parámetros obligatorios", "- ``AOIndex``：número AO
+    - ``wirteNum``：cantidad a escribir
+    - ``status``：valor a escribir，máximo 8"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-读取从站DI
+Leer DI del esclavo
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
@@ -1657,15 +1657,15 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FieldBusSlaveReadDI(DOIndex, readeNum)``"
-    "描述", "读取从站DI"
-    "必选参数", "- ``DOIndex``：DI编号
-    - ``readeNum``：读取的数量"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``status[8]``：读取到的数值，最多读8个"
+    "Prototipo", "``FieldBusSlaveReadDI(DOIndex, readeNum)``"
+    "Descripción", "Leer DI del esclavo"
+    "Parámetros obligatorios", "- ``DOIndex``：número DI
+    - ``readeNum``：cantidad a leer"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``status[8]``：valores leídos，máximo 8"
 
-读取从站AI
+Leer AI del esclavo
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
@@ -1673,15 +1673,15 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FieldBusSlaveReadAI(AOIndex, readeNum)``"
-    "描述", "读取从站AI"
-    "必选参数", "- ``AOIndex``：AI编号
-    - ``readeNum``：读取的数量"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``status[8]``：读取到的数值，最多读8个"
+    "Prototipo", "``FieldBusSlaveReadAI(AOIndex, readeNum)``"
+    "Descripción", "Leer AI del esclavo"
+    "Parámetros obligatorios", "- ``AOIndex``：número AI
+    - ``readeNum``：cantidad a leer"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``status[8]``：valores leídos，máximo 8"
 
-等待扩展DI输入
+Esperar entrada DI extendida
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
@@ -1689,15 +1689,15 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FieldBusSlaveWaitDI(DIIndex, status, waitMs)``"
-    "描述", "等待扩展DI输入"
-    "必选参数", "- ``DIIndex``：DI编号
-    - ``status``：0-低电平；1-高电平
-    - ``waitMs``：最大等待时间(ms)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``FieldBusSlaveWaitDI(DIIndex, status, waitMs)``"
+    "Descripción", "Esperar entrada DI extendida"
+    "Parámetros obligatorios", "- ``DIIndex``：número DI
+    - ``status``：0-nivel bajo；1-nivel alto
+    - ``waitMs``：tiempo máximo de espera(ms)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-等待扩展AI输入
+Esperar entrada AI extendida
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
@@ -1705,24 +1705,24 @@ SmartTool按钮代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FieldBusSlaveWaitAI(AIIndex, waitType, value, waitMs)``"
-    "描述", "等待扩展AI输入"
-    "必选参数", "- ``AIIndex``：AI编号
-    - ``waitType``：0-大于；1-小于
-    - ``value``：AI值
-    - ``waitMs``：最大等待时间(ms)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``FieldBusSlaveWaitAI(AIIndex, waitType, value, waitMs)``"
+    "Descripción", "Esperar entrada AI extendida"
+    "Parámetros obligatorios", "- ``AIIndex``：número AI
+    - ``waitType``：0-mayor que；1-menor que
+    - ``value``：valor AI
+    - ``waitMs``：tiempo máximo de espera(ms)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-从站模式相关接口指令代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de instrucciones relacionadas con la interfaz del modo esclavo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.OpenLuaUpload("D://zUP/外设/CtrlDev_field.lua")
     time.sleep(2)
@@ -1750,38 +1750,38 @@ SmartTool按钮代码示例
     print(f"FieldBusSlaveWaitAI result is {ret}")
     robot.CloseRPC()
 
-末端透传功能打开关闭SDK接口
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Interfaz SDK de apertura y cierre de la función de transmisión transparente del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetAxleGenComEnable(mode)``"
-    "描述", "开启末端通用透传功能"
-    "必选参数", "- ``mode``：使能，0-关闭，1-开启"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetAxleGenComEnable(mode)``"
+    "Descripción", "Activar la función de transmisión transparente general del extremo"
+    "Parámetros obligatorios", "- ``mode``：habilitación，0-desactivar，1-activar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-末端透传功能非周期数据收发SDK接口
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Interfaz SDK de envío y recepción de datos no periódicos de la función de transmisión transparente del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SndRcvAxleGenComCmdData( len_snd, sndBuff, len_rcv)``"
-    "描述", "末端发送非周期数据并等待应答"
-    "必选参数", "
-    - ``len_snd``：发送的长度;
-    - ``sndBuff[]``：发送数据;
-    - ``len_rcv``：选择接受的长度;
-    - ``rcvBuff[]``：应答的数据;"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SndRcvAxleGenComCmdData( len_snd, sndBuff, len_rcv)``"
+    "Descripción", "Enviar datos no periódicos desde el extremo y esperar respuesta"
+    "Parámetros obligatorios", "
+    - ``len_snd``：longitud de envío;
+    - ``sndBuff[]``：datos de envío;
+    - ``len_rcv``：longitud de recepción seleccionada;
+    - ``rcvBuff[]``：datos de respuesta;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-基于末端透传功能倍益康艾灸头非周期数据通信代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de comunicación de datos no periódicos del cabezal de moxibustión Beiyikang basado en la función de transmisión transparente del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
@@ -1789,7 +1789,7 @@ SmartTool按钮代码示例
     from fairino import Robot
     from ctypes import sizeof
     # A connection is established with the robot controller. A successful connection returns a robot object
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
 
     import time
@@ -1848,52 +1848,52 @@ SmartTool按钮代码示例
 
     testAxleGenCom(robot)
     
-下载开放协议Lua文件
+Descargar archivo Lua de protocolo abierto
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``OpenLuaDownload(fileName, savePath)``"
-    "描述", "下载开放协议Lua文件"
-    "必选参数", "
-    - ``fileName``：开放协议文件名称CtrlDev_XXX.lua;
-    - ``savePath``: 开放协议保存文件路径;
+    "Prototipo", "``OpenLuaDownload(fileName, savePath)``"
+    "Descripción", "Descargar archivo Lua de protocolo abierto"
+    "Parámetros obligatorios", "
+    - ``fileName``：nombre del archivo de protocolo abierto CtrlDev_XXX.lua;
+    - ``savePath``: ruta de guardado del protocolo abierto;
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
     
-删除指定开放协议Lua文件
+Eliminar archivo Lua de protocolo abierto especificado
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``OpenLuaDelete(fileName)``"
-    "描述", "删除指定开放协议Lua文件"
-    "必选参数", "
-    - ``fileName``：要删除的开放协议lua文件名CtrlDev_XXX.lua
+    "Prototipo", "``OpenLuaDelete(fileName)``"
+    "Descripción", "Eliminar archivo Lua de protocolo abierto especificado"
+    "Parámetros obligatorios", "
+    - ``fileName``：nombre del archivo lua de protocolo abierto a eliminar CtrlDev_XXX.lua
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
     
-删除所有开放协议Lua文件
+Eliminar todos los archivos Lua de protocolo abierto
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AllOpenLuaDelete()``"
-    "描述", "删除所有开放协议Lua文件"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AllOpenLuaDelete()``"
+    "Descripción", "Eliminar todos los archivos Lua de protocolo abierto"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-开放协议lua文件操作SDK代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código SDK de operación de archivo lua de protocolo abierto
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
@@ -1901,152 +1901,152 @@ SmartTool按钮代码示例
     import time
     from fairino import Robot
 
-    # 与机器人控制器建立连接
+    # Establecer conexión con el controlador del robot
     robot = Robot.RPC('192.168.58.2')
 
 
     def TestCtrlOpenLuaOperate(self):
-        # 上传Lua文件到机器人
+        # Subir archivo Lua al robot
         rtn = robot.OpenLuaUpload("D://zUP/openlua/CtrlDev_WELDING_A.lua")
         print(f"OpenLuaUpload rtn is {rtn}")
         
         rtn = robot.OpenLuaUpload("D://zUP/openlua/CtrlDev_SWDPOLISH.lua")
         print(f"OpenLuaUpload rtn is {rtn}")
         
-        # 从机器人下载Lua文件
+        # Descargar archivo Lua desde el robot
         rtn = robot.OpenLuaDownload("CtrlDev_WELDING_A.lua", "D://zDOWN/")
         print(f"OpenLuaDownload rtn is {rtn}")
         
         rtn = robot.OpenLuaDownload("CtrlDev_SWDPOLISH.lua", "D://zDOWN/")
         print(f"OpenLuaDownload rtn is {rtn}")
         
-        # 设置控制开放的Lua文件名
+        # Establecer el nombre del archivo Lua de control abierto
         rtn = robot.SetCtrlOpenLUAName(0, "CtrlDev_WELDING_A.lua")
         print(f"SetCtrlOpenLUAName rtn is {rtn}")
         
         rtn = robot.SetCtrlOpenLUAName(1, "CtrlDev_SWDPOLISH.lua")
         print(f"SetCtrlOpenLUAName rtn is {rtn}")
         
-        # 获取控制开放的Lua文件名
+        # Obtener el nombre del archivo Lua de control abierto
         rtn, name = robot.GetCtrlOpenLUAName()
         print(f"ctrl open lua names : {name[0]}, {name[1]}, {name[2]}, {name[3]}")
         
-        # 加载控制开放的Lua
+        # Cargar el Lua de control abierto
         rtn = robot.LoadCtrlOpenLUA(1)
         print(f"LoadCtrlOpenLUA rtn is {rtn}")
         time.sleep(2)
         
-        # 卸载控制开放的Lua
+        # Descargar el Lua de control abierto
         rtn = robot.UnloadCtrlOpenLUA(1)
         print(f"UnloadCtrlOpenLUA rtn is {rtn}")
         
-        # 删除指定的Lua文件
+        # Eliminar el archivo Lua especificado
         rtn = robot.OpenLuaDelete("CtrlDev_WELDING_A.lua")
         print(f"OpenLuaDelete rtn is {rtn}")
         
-        # 删除所有Lua文件
+        # Eliminar todos los archivos Lua
         rtn = robot.AllOpenLuaDelete()
         print(f"AllOpenLuaDelete rtn is {rtn}")
         
-        # 关闭连接
+        # Cerrar la conexión
         robot.CloseRPC()
         time.sleep(1)
 
 
-    # 调用测试函数
+    # Llamar a la función de prueba
     TestCtrlOpenLuaOperate(robot)
         
-控制灵巧手运动
+Controlar el movimiento de la mano diestra
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetDexterousHandsMove(self, idstart, slaveNum, pos, speed, force, max_time)``"
-    "描述", "控制灵巧手运动"
-    "必选参数", "
-    - ``idstart``：起始从站号;
-    - ``slaveNum``：数量;
-    - ``pos[16]``：位置(-360~360);
-    - ``speed[16]``：速度百分比，范围[0~100];
-    - ``force[16]``：力矩百分比，范围[0~100];
-    - ``max_time``：最大等待时间，范围[0~30000]，单位ms;"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetDexterousHandsMove(self, idstart, slaveNum, pos, speed, force, max_time)``"
+    "Descripción", "Controlar el movimiento de la mano diestra"
+    "Parámetros obligatorios", "
+    - ``idstart``：número de esclavo inicial;
+    - ``slaveNum``：cantidad;
+    - ``pos[16]``：posición(-360~360);
+    - ``speed[16]``：porcentaje de velocidad，rango[0~100];
+    - ``force[16]``：porcentaje de torque，rango[0~100];
+    - ``max_time``：tiempo máximo de espera，rango[0~30000]，unidadms;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
         
-控制灵巧手复位激活
+Controlar restablecimiento y activación de la mano diestra
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetDexterousHandsAct(self, id, act)``"
-    "描述", "控制灵巧手复位激活"
-    "必选参数", "
-    - ``id``：从站号;
-    - ``act``：0-复位 1-激活"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetDexterousHandsAct(self, id, act)``"
+    "Descripción", "Controlar restablecimiento y activación de la mano diestra"
+    "Parámetros obligatorios", "
+    - ``id``：número de esclavo;
+    - ``act``：0-restablecer 1-activar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
         
-清除灵巧手错误
+Borrar error de la mano diestra
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ClearDexterousHandsError(self)``"
-    "描述", "清除灵巧手错误"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ClearDexterousHandsError(self)``"
+    "Descripción", "Borrar error de la mano diestra"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
     
-设置启用灵巧手动作控制功能
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer habilitación de la función de control de movimiento de la mano diestra
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetDexterousHandsFunc(self, id, func)``"
-    "描述", "设置启用灵巧手动作控制功能"
-    "必选参数", "
-    - ``id``：灵巧手从站编号;
-    - ``func``：功能数组，32个元素
-        0-夹持触发、1-夹爪初始化、2-位置设置、3-速度设置、4-力矩设置、
-        6-读夹爪状态、7-读初始化状态、8-读故障码、9-读位置、10-读速度、
-        11-读力矩、12-旋转圈数设置、13-旋转速度设置、14-旋转力矩设置、
-        15-读旋转夹爪状态、16-读旋转初始化状态、17-读旋转圈数、18-读旋转速度、
-        19-读旋转力矩、20-多轴同步运动设置、21-故障清除指令、22-单轴运行状态、
-        23-所有轴运行状态"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetDexterousHandsFunc(self, id, func)``"
+    "Descripción", "Establecer habilitación de la función de control de movimiento de la mano diestra"
+    "Parámetros obligatorios", "
+    - ``id``：número de esclavo de la mano diestra;
+    - ``func``：matriz de funciones，32 elementos
+        0-disparo de agarre、1-inicialización de la pinza、2-configuración de posición、3-configuración de velocidad、4-configuración de torque、
+        6-leer estado de la pinza、7-leer estado de inicialización、8-leer código de fallo、9-leer posición、10-leer velocidad、
+        11-leer torque、12-configuración del número de revoluciones、13-configuración de la velocidad de rotación、14-configuración del torque de rotación、
+        15-leer estado de la pinza rotativa、16-leer estado de inicialización de la pinza rotativa、17-leer número de revoluciones de la pinza rotativa、18-leer velocidad de la pinza rotativa、
+        19-leer torque de la pinza rotativa、20-configuración de movimiento sincronizado multieje、21-comando de borrado de fallos、22-estado de funcionamiento de un solo eje、
+        23-estado de funcionamiento de todos los ejes"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
     
-获取启用灵巧手动作控制功能
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener habilitación de la función de control de movimiento de la mano diestra
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetDexterousHandsFunc(self, id)``"
-    "描述", "获取启用灵巧手动作控制功能"
-    "必选参数", "
-    - ``id``：灵巧手从站编号;
-    - ``func``：功能数组，32个元素
-        0-夹持触发、1-夹爪初始化、2-位置设置、3-速度设置、4-力矩设置、
-        6-读夹爪状态、7-读初始化状态、8-读故障码、9-读位置、10-读速度、
-        11-读力矩、12-旋转圈数设置、13-旋转速度设置、14-旋转力矩设置、
-        15-读旋转夹爪状态、16-读旋转初始化状态、17-读旋转圈数、18-读旋转速度、
-        19-读旋转力矩、20-多轴同步运动设置、21-故障清除指令、22-单轴运行状态、
-        23-所有轴运行状态"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``GetDexterousHandsFunc(self, id)``"
+    "Descripción", "Obtener habilitación de la función de control de movimiento de la mano diestra"
+    "Parámetros obligatorios", "
+    - ``id``：número de esclavo de la mano diestra;
+    - ``func``：matriz de funciones，32 elementos
+        0-disparo de agarre、1-inicialización de la pinza、2-configuración de posición、3-configuración de velocidad、4-configuración de torque、
+        6-leer estado de la pinza、7-leer estado de inicialización、8-leer código de fallo、9-leer posición、10-leer velocidad、
+        11-leer torque、12-configuración del número de revoluciones、13-configuración de la velocidad de rotación、14-configuración del torque de rotación、
+        15-leer estado de la pinza rotativa、16-leer estado de inicialización de la pinza rotativa、17-leer número de revoluciones de la pinza rotativa、18-leer velocidad de la pinza rotativa、
+        19-leer torque de la pinza rotativa、20-configuración de movimiento sincronizado multieje、21-comando de borrado de fallos、22-estado de funcionamiento de un solo eje、
+        23-estado de funcionamiento de todos los ejes"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-末端灵巧手配置及运动代码示例  
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración y movimiento de la mano diestra del extremo  
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:  
      
@@ -2090,7 +2090,7 @@ SmartTool按钮代码示例
         setFunc[22] = 1  
 
         ret = robot.SetDexterousHandsFunc(id, setFunc)
-        print(f"SetDexterousHandsFunc(使能+初始化+位置/速度/力矩功能启用) -> {ret}")
+        print(f"SetDexterousHandsFunc(habilitación+inicialización+posición/velocidad/torque habilitados) -> {ret}")
 
         ret, getFunc = robot.GetDexterousHandsFunc(id)
         print(f"GetDexterousHandsFunc -> {ret}")
@@ -2130,25 +2130,25 @@ SmartTool按钮代码示例
 
     main(robot)
 
-等待夹爪运动状态
+Esperar estado de movimiento de la pinza
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GripperWaitMotionDone(self, status, timeout, strategy, type)``"
-    "描述", "等待夹爪运动状态"
-    "必选参数", "
-    - ``status``：0-运动未完成，1-运动完成未检测到物体，2-运动完成检测到物体，3-运动完成检测到物体掉落
-    - ``timeout``：超时时间（ms），-1永久等待
-    - ``strategy``：0-停止报错，1-继续运行
-    - ``type``：0-平行夹爪，1-旋转夹爪
+    "Prototipo", "``GripperWaitMotionDone(self, status, timeout, strategy, type)``"
+    "Descripción", "Esperar estado de movimiento de la pinza"
+    "Parámetros obligatorios", "
+    - ``status``：0-movimiento no completado，1-movimiento completado sin detección de objeto，2-movimiento completado con detección de objeto，3-movimiento completado con detección de caída del objeto
+    - ``timeout``：tiempo de espera（ms），-1 espera permanente
+    - ``strategy``：0-detener con error，1-continuar ejecutando
+    - ``type``：0-pinza paralela，1-pinza rotativa
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"    
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"    
 
-等待夹爪运动状态代码示例    
+Ejemplo de código de espera del estado de movimiento de la pinza    
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:  
@@ -2157,31 +2157,31 @@ SmartTool按钮代码示例
     import time
 
     def main():
-        # Establish connection with the robot controller
+        # Establecer conexión con el controlador del robot
         robot = Robot.RPC('192.168.58.2')
-        time.sleep(0.5)  # Wait for connection and data reception
+        time.sleep(0.5)  # Esperar la conexión y la recepción de datos
 
-        print("========== Gripper Motion Done Test ==========")
+        print("========== Prueba de movimiento completado de la pinza ==========")
 
-        # Open the gripper
+        # Abrir la pinza
         rtn = robot.MoveGripper(2, 50, 50, 100, 30000, 0, 0, 0, 0, 0)
         print(f"MoveGripper(open) ret={rtn}")
         time.sleep(2)
         rtn, pkg = robot.GetRobotRealTimeState()
         print(f"gripper_motiondone {pkg.gripper_motiondone}")
 
-        # Close the gripper
+        # Cerrar la pinza
         rtn = robot.MoveGripper(2, 90, 100, 100, 30000, 0, 0, 0, 0, 0)
         print(f"MoveGripper(close) ret={rtn}")
         time.sleep(2)
         rtn, pkg = robot.GetRobotRealTimeState()
         print(f"gripper_motiondone {pkg.gripper_motiondone}")
 
-        # Wait for motion done, no object detected, timeout 5s, stop with error
+        # Esperar movimiento completado, sin objeto detectado, tiempo de espera 5s, detener con error
         rtn = robot.GripperWaitMotionDone(2, 5000, 0, 0)
         print(f"GripperWaitMotionDone(no object detected) ret={rtn}")
 
-        # Loop and query gripper motion status
+        # Bucle y consulta del estado de movimiento de la pinza
         while True:
             rtn, status = robot.GetGripperMotionDone()
             print(f"motion status:{status[0]},{status[1]}\n")
@@ -2191,19 +2191,19 @@ SmartTool按钮代码示例
 
             time.sleep(0.5)
 
-        # Close connection (never reached due to infinite loop)
+        # Cerrar conexión (nunca alcanzado debido al bucle infinito)
         robot.CloseRPC()
 
     if __name__ == "__main__":
         main()
 
-激光记录复现 + 扩展轴异步运动 + 定点摆动代码示例    
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de registro y reproducción láser + movimiento asíncrono del eje extendido + oscilación en punto fijo    
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:         
 
     def test_laser_record_replay_exaxis_with_wave():
-    print("\n========== 激光记录复现 + 扩展轴异步运动 + 定点摆动 ==========")
+    print("\n========== Registro y reproducción láser + movimiento asíncrono del eje extendido + oscilación en punto fijo ==========")
 
     startjointPos = [105.600,-65.393,-93.638,-79.687,79.175,134.046]
     startdescPose = [42.376,533.597,362.564,-34.957,-0.564,169.063]
@@ -2211,80 +2211,80 @@ SmartTool按钮代码示例
     enddescPose = [42.376,533.597,362.564,-34.957,-0.564,169.063]
     offdese = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
-    # MoveJ 到安全点(扩展轴 0,134.296,0,0)
+    # MoveJ al punto seguro(eje extendido 0,134.296,0,0)
     rtn = robot.MoveJ(joint_pos=startjointPos, desc_pos=startdescPose, tool=5, user=0,
                         vel=100, acc=100, ovl=50, exaxis_pos=[0, 134.296, 0, 0],
                         blendT=-1, offset_flag=0, offset_pos=offdese)
     print(f"MoveJ start: {rtn}")
 
-    # 扩展轴异步运动到 74.335 起始点
+    # Movimiento asíncrono del eje extendido a 74.335 punto de inicio
     rtn = robot.ExtAxisMove([0, 74.335, 0, 0], 50, -1)
     print(f"ExtAxisMove 74.335: {rtn}")
     time.sleep(3)
 
-    # MoveL 到起始点
+    # MoveL al punto de inicio
     rtn = robot.MoveL(joint_pos=endjointPos, desc_pos=enddescPose, tool=5, user=0,
                         vel=100, acc=100, ovl=50, blendR=-1, offset_flag=0,
                         exaxis_pos=[0, 74.335, 0, 0], search=0,
                         offset_pos=offdese)
     print(f"MoveL end: {rtn}")
 
-    # 开始激光记录
+    # Iniciar registro láser
     rtn = robot.LaserSensorRecord1(2, 10)
     print(f"LaserSensorRecord start: {rtn}")
 
-    # 记录过程中扩展轴运动到 134.296
+    # Durante el registro, el eje extendido se mueve a 134.296
     rtn = robot.ExtAxisMove([0, 134.296, 0, 0], 50, -1)
     print(f"ExtAxisMove 134.296: {rtn}")
     time.sleep(3)
 
-    # 停止激光记录
+    # Detener registro láser
     rtn = robot.LaserSensorRecord1(0, 10)
     print(f"LaserSensorRecord stop: {rtn}")
 
-    # 扩展轴回到 74.335，MoveL 回起始点
+    # El eje extendido vuelve a 74.335, MoveL de vuelta al punto de inicio
     rtn = robot.ExtAxisMove([0, 74.335, 0, 0], 50, -1)
     print(f"ExtAxisMove back: {rtn}")
 
-    # MoveL 到起始点
+    # MoveL al punto de inicio
     rtn = robot.MoveL(joint_pos=endjointPos, desc_pos=enddescPose, tool=5, user=0,
                         vel=100, acc=100, ovl=50, blendR=-1, offset_flag=0,
                         exaxis_pos=[0, 74.335, 0, 0], search=0,
                         offset_pos=offdese)
     print(f"MoveL back: {rtn}")
 
-    # PTP 运动到焊缝记录起点
+    # Movimiento PTP al punto de inicio del registro de soldadura
     rtn = robot.MoveToLaserRecordStart(0, 30)
     print(f"MoveToLaserRecordStart: {rtn}")
 
-    # 开始复现
+    # Iniciar reproducción
     rtn = robot.LaserSensorRecord1(3, 10)
     print(f"LaserSensorRecord replay: {rtn}")
 
-    # 定点摆动开始
+    # Inicio de oscilación en punto fijo
     refPoint = [49.381,533.608,362.556,-34.961,-0.564,169.062]
     rtn = robot.OriginPointWeaveStart(0, 1, refPoint, 5)
     print(f"OriginPointWeaveStart: {rtn}")
 
-    # 摆动过程中扩展轴运动到 134.296
+    # Durante la oscilación, el eje extendido se mueve a 134.296
     rtn = robot.ExtAxisMove([0, 134.296, 0, 0], 50, -1)
     print(f"ExtAxisMove replay: {rtn}")
 
-    # 摆动结束
+    # Fin de la oscilación
     rtn = robot.OriginPointWeaveEnd()
     print(f"OriginPointWeaveEnd: {rtn}")
 
-    # 停止复现
+    # Detener reproducción
     rtn = robot.LaserSensorRecord1(0, 10)
     print(f"LaserSensorRecord stop: {rtn}") 
 
-激光记录复现 + 普通摆动代码示例   
+Ejemplo de código de registro y reproducción láser + oscilación normal   
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:   
 
     def test_laser_reproduce_normal_weave():
-    print("\n========== 激光记录复现 + 普通摆动 ==========")
+    print("\n========== Registro y reproducción láser + oscilación normal ==========")
 
     startjointPos = [68.930,-70.217,-121.821,-75.522,91.216,137.289]
     startdescPose = [216.097,304.517,34.164,-3.871,0.792,132.864]
@@ -2294,56 +2294,56 @@ SmartTool按钮代码示例
 
     time.sleep(1)
 
-    # MoveL 到起始位(扩展轴 0,174.957,0,0)
+    # MoveL a la posición inicial(eje extendido 0,174.957,0,0)
     rtn = robot.MoveL(joint_pos=startjointPos, desc_pos=startdescPose, tool=5, user=0,
                         vel=100, acc=100, ovl=100, blendR=-1, offset_flag=0,
                         exaxis_pos=[0, 174.957, 0, 0], search=0,
                         offset_pos=offdese)
     print(f"MoveL start: {rtn}")
 
-    # 开始激光记录
+    # Iniciar registro láser
     rtn = robot.LaserSensorRecord1(2, 10)
     print(f"LaserSensorRecord start: {rtn}")
 
-    # MoveL 到结束位
+    # MoveL a la posición final
     rtn = robot.MoveL(joint_pos=endjointPos, desc_pos=enddescPose, tool=5, user=0,
                         vel=100, acc=100, ovl=100, blendR=-1, offset_flag=0,
                         exaxis_pos=[0, 174.957, 0, 0], search=0,
                         offset_pos=offdese)
     print(f"MoveL end: {rtn}")
 
-    # 停止激光记录
+    # Detener registro láser
     rtn = robot.LaserSensorRecord1(0, 10)
     print(f"LaserSensorRecord stop: {rtn}")
 
-    # MoveL 回起始位
+    # MoveL de vuelta a la posición inicial
     rtn = robot.MoveL(joint_pos=startjointPos, desc_pos=startdescPose, tool=5, user=0,
                         vel=100, acc=100, ovl=100, blendR=-1, offset_flag=0,
                         exaxis_pos=[0, 174.957, 0, 0], search=0,
                         offset_pos=offdese)
     print(f"MoveL back: {rtn}")
 
-    # LIN 运动到焊缝记录起点
+    # Movimiento LIN al punto de inicio del registro de soldadura
     rtn = robot.MoveToLaserRecordStart(1, 30)
     print(f"MoveToLaserRecordStart: {rtn}")
 
-    # 普通摆动开始
+    # Inicio de oscilación normal
     rtn = robot.WeaveStart(0)
     print(f"WeaveStart: {rtn}")
 
-    # 开始复现记录
+    # Iniciar reproducción del registro
     rtn = robot.LaserSensorRecord1(3, 10)
     print(f"LaserSensorRecord replay: {rtn}")
 
-    # 激光跟踪复现运动
+    # Movimiento de reproducción del seguimiento láser
     rtn = robot.MoveLTR()
     print(f"MoveLTR: {rtn}")
     time.sleep(3)
 
-    # 停止复现记录
+    # Detener reproducción del registro
     rtn = robot.LaserSensorRecord1(0, 10)
     print(f"LaserSensorRecord stop: {rtn}")
 
-    # 普通摆动结束
+    # Fin de la oscilación normal
     rtn = robot.WeaveEnd(0)
     print(f"WeaveEnd: {rtn}")

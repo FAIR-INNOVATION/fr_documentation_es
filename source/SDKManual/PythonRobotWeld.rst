@@ -1,200 +1,200 @@
-焊接
+Soldadura
 ======================
 
 .. toctree:: 
     :maxdepth: 5
     
-设置焊接工艺曲线参数
-++++++++++++++++++++++++++++++++++
+Establecer los parámetros de la curva de proceso de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingSetProcessParam(id, startCurrent, startVoltage, startTime, weldCurrent, weldVoltage, endCurrent, endVoltage, endTime)``"
-    "描述", "设置焊接工艺曲线参数"
-    "必选参数", "
-    - ``id``： 焊接工艺编号(1-99)
-    - ``startCurrent``： 起弧电流(A)
-    - ``startVoltage``：startVoltage 起弧电压(V)
-    - ``startTime``：startTime 起弧时间(ms)
-    - ``weldCurrent``：weldCurrent 焊接电流(A)
-    - ``weldVoltage``：weldVoltage 焊接电压(V)
-    - ``endCurrent``：endCurrent 收弧电流(A)
-    - ``endVoltage``：endVoltage 收弧电压(V)
-    - ``endTime``：endTime 收弧时间(ms)
+    "Prototipo", "``WeldingSetProcessParam(id, startCurrent, startVoltage, startTime, weldCurrent, weldVoltage, endCurrent, endVoltage, endTime)``"
+    "Descripción", "Establecer los parámetros de la curva de proceso de soldadura"
+    "Parámetros obligatorios", "
+    - ``id``： número del proceso de soldadura(1-99)
+    - ``startCurrent``： corriente de cebado del arco(A)
+    - ``startVoltage``：startVoltage voltaje de cebado del arco(V)
+    - ``startTime``：startTime tiempo de cebado del arco(ms)
+    - ``weldCurrent``：weldCurrent corriente de soldadura(A)
+    - ``weldVoltage``：weldVoltage voltaje de soldadura(V)
+    - ``endCurrent``：endCurrent corriente de extinción del arco(A)
+    - ``endVoltage``：endVoltage voltaje de extinción del arco(V)
+    - ``endTime``：endTime tiempo de extinción del arco(ms)
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-获取焊接工艺曲线参数
-++++++++++++++++++++++++++++++++++
+Obtener los parámetros de la curva de proceso de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingGetProcessParam(id)``"
-    "描述", "获取焊接工艺曲线参数"
-    "必选参数", "
-    - ``id``： 焊接工艺编号(1-99)
+    "Prototipo", "``WeldingGetProcessParam(id)``"
+    "Descripción", "Obtener los parámetros de la curva de proceso de soldadura"
+    "Parámetros obligatorios", "
+    - ``id``： número del proceso de soldadura(1-99)
     "
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``startCurrent``：起弧电流(A)
-    - ``startVoltage``： 起弧电压(V)
-    - ``startTime``：起弧时间(ms)
-    - ``weldCurrent``：焊接电流(A)
-    - ``weldVoltage``：焊接电压(V)
-    - ``endCurrent``：收弧电流(A)
-    - ``endVoltage``：收弧电压(V)
-    - ``endTime``：收弧时间(ms)
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``startCurrent``：corriente de cebado del arco(A)
+    - ``startVoltage``： voltaje de cebado del arco(V)
+    - ``startTime``：tiempo de cebado del arco(ms)
+    - ``weldCurrent``：corriente de soldadura(A)
+    - ``weldVoltage``：voltaje de soldadura(V)
+    - ``endCurrent``：corriente de extinción del arco(A)
+    - ``endVoltage``：voltaje de extinción del arco(V)
+    - ``endTime``：tiempo de extinción del arco(ms)
     " 
 
-设置焊接电流与输出模拟量对应关系
-++++++++++++++++++++++++++++++++++
+Establecer la relación entre la corriente de soldadura y la salida analógica
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: python SDK-v2.0.5
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingSetCurrentRelation(currentMin, currentMax, outputVoltageMin, outputVoltageMax)``"
-    "描述", "设置焊接电流与输出模拟量对应关系"
-    "必选参数", "- ``currentMin``： 焊接电流-模拟量输出线性关系左侧点电流值(A)
-    - ``currentMax``：  焊接电流-模拟量输出线性关系右侧点电流值(A)
-    - ``outputVoltageMin``： 焊接电流-模拟量输出线性关系左侧点模拟量输出电压值(V)
-    - ``outputVoltageMax``：焊接电流-模拟量输出线性关系右侧点模拟量输出电压值(V)
-    - ``AOIndex``：焊接电流模拟量输出端口"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WeldingSetCurrentRelation(currentMin, currentMax, outputVoltageMin, outputVoltageMax)``"
+    "Descripción", "Establecer la relación entre la corriente de soldadura y la salida analógica"
+    "Parámetros obligatorios", "- ``currentMin``： valor de corriente del punto izquierdo de la relación lineal corriente de soldadura-salida analógica(A)
+    - ``currentMax``：  valor de corriente del punto derecho de la relación lineal corriente de soldadura-salida analógica(A)
+    - ``outputVoltageMin``： valor de voltaje de salida analógica del punto izquierdo de la relación lineal corriente de soldadura-salida analógica(V)
+    - ``outputVoltageMax``：valor de voltaje de salida analógica del punto derecho de la relación lineal corriente de soldadura-salida analógica(V)
+    - ``AOIndex``：puerto de salida analógica de corriente de soldadura"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置焊接电压与输出模拟量对应关系
-++++++++++++++++++++++++++++++++++
+Establecer la relación entre el voltaje de soldadura y la salida analógica
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: python SDK-v2.0.5
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingSetVoltageRelation(weldVoltageMin, weldVoltageMax, outputVoltageMin, outputVoltageMax)``"
-    "描述", "设置焊接电压与输出模拟量对应关系"
-    "必选参数", "- ``weldVoltageMin``： 焊接电压-模拟量输出线性关系左侧点焊接电压值(A)
-    - ``weldVoltageMax``：  焊接电压-模拟量输出线性关系右侧点焊接电压值(A)
-    - ``outputVoltageMin``： 焊接电压-模拟量输出线性关系左侧点模拟量输出电压值(V)
-    - ``outputVoltageMax``：焊接电压-模拟量输出线性关系右侧点模拟量输出电压值(V)
-    - ``AOIndex``：焊接电压模拟量输出端口"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WeldingSetVoltageRelation(weldVoltageMin, weldVoltageMax, outputVoltageMin, outputVoltageMax)``"
+    "Descripción", "Establecer la relación entre el voltaje de soldadura y la salida analógica"
+    "Parámetros obligatorios", "- ``weldVoltageMin``： valor de voltaje de soldadura del punto izquierdo de la relación lineal voltaje de soldadura-salida analógica(A)
+    - ``weldVoltageMax``：  valor de voltaje de soldadura del punto derecho de la relación lineal voltaje de soldadura-salida analógica(A)
+    - ``outputVoltageMin``： valor de voltaje de salida analógica del punto izquierdo de la relación lineal voltaje de soldadura-salida analógica(V)
+    - ``outputVoltageMax``：valor de voltaje de salida analógica del punto derecho de la relación lineal voltaje de soldadura-salida analógica(V)
+    - ``AOIndex``：puerto de salida analógica de voltaje de soldadura"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取焊接电流与输出模拟量对应关系
-++++++++++++++++++++++++++++++++++
+Obtener la relación entre la corriente de soldadura y la salida analógica
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: python SDK-v2.0.5
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingGetCurrentRelation()``"
-    "描述", "获取焊接电流与输出模拟量对应关系"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``currentMin``：焊接电流-模拟量输出线性关系左侧点电流值(A)
-    - ``currentMax``：焊接电流-模拟量输出线性关系右侧点电流值(A)
-    - ``outputVoltageMin``：焊接电流-模拟量输出线性关系左侧点模拟量输出电压值(V)
-    - ``outputVoltageMax``：焊接电流-模拟量输出线性关系右侧点模拟量输出电压值(V)
-    - ``AOIndex``：焊接电压模拟量输出端口"
+    "Prototipo", "``WeldingGetCurrentRelation()``"
+    "Descripción", "Obtener la relación entre la corriente de soldadura y la salida analógica"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``currentMin``：valor de corriente del punto izquierdo de la relación lineal corriente de soldadura-salida analógica(A)
+    - ``currentMax``：valor de corriente del punto derecho de la relación lineal corriente de soldadura-salida analógica(A)
+    - ``outputVoltageMin``：valor de voltaje de salida analógica del punto izquierdo de la relación lineal corriente de soldadura-salida analógica(V)
+    - ``outputVoltageMax``：valor de voltaje de salida analógica del punto derecho de la relación lineal corriente de soldadura-salida analógica(V)
+    - ``AOIndex``：puerto de salida analógica de voltaje de soldadura"
 
-获取焊接电压与输出模拟量对应关系
-++++++++++++++++++++++++++++++++++
+Obtener la relación entre el voltaje de soldadura y la salida analógica
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: python SDK-v2.0.5
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingGetVoltageRelation()``"
-    "描述", "获取焊接电压与输出模拟量对应关系"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``weldVoltageMin``: 焊接电压-模拟量输出线性关系左侧点焊接电压值(V)
-    - ``weldVoltageMax``: 焊接电压-模拟量输出线性关系右侧点焊接电压值(V)
-    - ``outputVoltageMin``: 焊接电压-模拟量输出线性关系左侧点模拟量输出电压值(V)
-    - ``outputVoltageMax``: 焊接电流-模拟量输出线性关系右侧点模拟量输出电压值(V)
-    - ``AOIndex``：焊接电压模拟量输出端口"
+    "Prototipo", "``WeldingGetVoltageRelation()``"
+    "Descripción", "Obtener la relación entre el voltaje de soldadura y la salida analógica"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``weldVoltageMin``: valor de voltaje de soldadura del punto izquierdo de la relación lineal voltaje de soldadura-salida analógica(V)
+    - ``weldVoltageMax``: valor de voltaje de soldadura del punto derecho de la relación lineal voltaje de soldadura-salida analógica(V)
+    - ``outputVoltageMin``: valor de voltaje de salida analógica del punto izquierdo de la relación lineal voltaje de soldadura-salida analógica(V)
+    - ``outputVoltageMax``: valor de voltaje de salida analógica del punto derecho de la relación lineal corriente de soldadura-salida analógica(V)
+    - ``AOIndex``：puerto de salida analógica de voltaje de soldadura"
 
-设置焊接电流
-++++++++++++++++++++++++++++++++++
+Establecer la corriente de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: python SDK-v2.0.5
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingSetCurrent(ioType, current, AOIndex, blend)``"
-    "描述", "设置焊接电流"
-    "必选参数", "- ``ioType``： 类型 0-控制器IO； 1-扩展IO
-    - ``current``： 焊接电流值(A)
-    - ``AOIndex``： 焊接电流控制箱模拟量输出端口(0-1)
-    - ``blend``：是否平滑 0-不平滑，1-平滑"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WeldingSetCurrent(ioType, current, AOIndex, blend)``"
+    "Descripción", "Establecer la corriente de soldadura"
+    "Parámetros obligatorios", "- ``ioType``： tipo 0-IO del controlador； 1-IO extendido
+    - ``current``： valor de corriente de soldadura(A)
+    - ``AOIndex``： puerto de salida analógica de la caja de control de corriente de soldadura(0-1)
+    - ``blend``：si suavizar 0-no suavizar，1-suavizar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置焊接电压
-++++++++++++++++++++++++++++++++++
+Establecer el voltaje de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: python SDK-v2.0.5
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingSetVoltage(ioType, voltage, AOIndex, blend)``"
-    "描述", "设置焊接电压"
-    "必选参数", "- ``ioType``： 类型 0-控制器IO； 1-扩展IO
-    - ``voltage``： 焊接电压值(V)
-    - ``AOIndex``： 焊接电流控制箱模拟量输出端口(0-1)
-    - ``blend``：是否平滑 0-不平滑，1-平滑"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WeldingSetVoltage(ioType, voltage, AOIndex, blend)``"
+    "Descripción", "Establecer el voltaje de soldadura"
+    "Parámetros obligatorios", "- ``ioType``： tipo 0-IO del controlador； 1-IO extendido
+    - ``voltage``： valor de voltaje de soldadura(V)
+    - ``AOIndex``： puerto de salida analógica de la caja de control de corriente de soldadura(0-1)
+    - ``blend``：si suavizar 0-no suavizar，1-suavizar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置摆动参数
-++++++++++++++++++++++++++++++++++
+Establecer los parámetros de oscilación
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: python SDK-v2.1.2
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeaveSetPara(weaveNum, weaveType, weaveFrequency, weaveIncStayTime, weaveRange, weaveLeftRange, weaveRightRange, additionalStayTime, weaveLeftStayTime, weaveRightStayTime, weaveCircleRadio, weaveStationary, weaveYawAngle, weaveRotAngle)``"
-    "描述", "设置摆动参数"
-    "必选参数", "- ``weaveNum``： 摆焊参数配置编号
-    - ``weaveType``： 摆动类型 0-平面三角波摆动；1-垂直L型三角波摆动；2-顺时针圆形摆动；3-逆时针圆形摆动；4-平面正弦波摆动；5-垂直L型正弦波摆动；6-垂直三角波摆动；7-垂直正弦波摆动
-    - ``weaveFrequency``： 摆动频率(Hz)
-    - ``weaveIncStayTime``： 等待模式 0-周期不包含等待时间；1-周期包含等待时间必选参数
-    - ``weaveRange``： 摆动幅度(mm)
-    - ``weaveLeftRange``： 垂直三角摆动左弦长度(mm)
-    - ``weaveRightRange``： 垂直三角摆动右弦长度(mm)
-    - ``additionalStayTime``： 垂直三角摆动垂三角点停留时间(mm)
-    - ``weaveLeftStayTime``： 摆动左停留时间(ms)
-    - ``weaveRightStayTime``：  摆动右停留时间(ms)
-    - ``weaveCircleRadio``： 圆形摆动-回调比率(0-100%)
-    - ``weaveStationary``： 摆动位置等待，0-等待时间内位置继续移动；1-等待时间内位置静止"
-    "默认参数", "- ``weaveYawAngle``： 摆动方向方位角（绕摆动Z轴旋转），单位°,默认0
-    - ``weaveRotAngle``： 摆动方向方位角（绕摆动X轴旋转），单位°,默认0"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WeaveSetPara(weaveNum, weaveType, weaveFrequency, weaveIncStayTime, weaveRange, weaveLeftRange, weaveRightRange, additionalStayTime, weaveLeftStayTime, weaveRightStayTime, weaveCircleRadio, weaveStationary, weaveYawAngle, weaveRotAngle)``"
+    "Descripción", "Establecer los parámetros de oscilación"
+    "Parámetros obligatorios", "- ``weaveNum``： número de configuración de parámetros de soldadura oscilante
+    - ``weaveType``： tipo de oscilación 0-oscilación triangular plana；1-oscilación triangular en L vertical；2-oscilación circular en sentido horario；3-oscilación circular en sentido antihorario；4-oscilación sinusoidal plana；5-oscilación sinusoidal en L vertical；6-oscilación triangular vertical；7-oscilación sinusoidal vertical
+    - ``weaveFrequency``： frecuencia de oscilación(Hz)
+    - ``weaveIncStayTime``： modo de espera 0-el ciclo no incluye tiempo de espera；1-el ciclo incluye tiempo de espera parámetro obligatorio
+    - ``weaveRange``： amplitud de oscilación(mm)
+    - ``weaveLeftRange``： longitud de la cuerda izquierda de la oscilación triangular vertical(mm)
+    - ``weaveRightRange``： longitud de la cuerda derecha de la oscilación triangular vertical(mm)
+    - ``additionalStayTime``： tiempo de permanencia en el punto del triángulo vertical de la oscilación triangular vertical(mm)
+    - ``weaveLeftStayTime``： tiempo de permanencia izquierdo de la oscilación(ms)
+    - ``weaveRightStayTime``：  tiempo de permanencia derecho de la oscilación(ms)
+    - ``weaveCircleRadio``： oscilación circular-proporción de retorno(0-100%)
+    - ``weaveStationary``： espera en la posición de oscilación，0-la posición continúa moviéndose durante el tiempo de espera；1-la posición permanece estática durante el tiempo de espera"
+    "Parámetros predeterminados", "- ``weaveYawAngle``： ángulo de orientación de la dirección de oscilación (rotación alrededor del eje Z de oscilación)，unidad°,predeterminado0
+    - ``weaveRotAngle``： ángulo de orientación de la dirección de oscilación (rotación alrededor del eje X de oscilación)，unidad°,predeterminado0"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置焊接参数代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código para establecer los parámetros de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.WeldingSetProcessParam(1, 177, 27, 1000, 178, 28, 176, 26, 1000)
     robot.WeldingSetProcessParam(2, 188, 28, 555, 199, 29, 133, 23, 333)
@@ -258,142 +258,142 @@
         time.sleep(1)
     robot.CloseRPC()
 
-即时设置摆动参数
-++++++++++++++++++++++++++++++++++
+Establecer los parámetros de oscilación en tiempo real
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.1
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeaveOnlineSetPara (weaveNum, weaveType, weaveFrequency, weaveIncStayTime, weaveRange, weaveLeftStayTime, weaveRightStayTime, weaveCircleRadio, weaveStationary)``"
-    "描述", "即时设置摆动参数"
-    "必选参数", "- ``weaveNum``： 摆焊参数配置编号
-    - ``weaveType``： 摆动类型 0-平面三角波摆动；1-垂直L型三角波摆动；2-顺时针圆形摆动；3-逆时针圆形摆动；4-平面正弦波摆动；5-垂直L型正弦波摆动；6-垂直三角波摆动；7-垂直正弦波摆动
-    - ``weaveFrequency``： 摆动频率(Hz)
-    - ``weaveIncStayTime``： 等待模式 0-周期不包含等待时间；1-周期包含等待时间必选参数
-    - ``weaveRange``： 摆动幅度(mm)
-    - ``weaveLeftStayTime``： 摆动左停留时间(ms)
-    - ``weaveRightStayTime``：  摆动右停留时间(ms)
-    - ``weaveCircleRadio``： 圆形摆动-回调比率(0-100%)
-    - ``weaveStationary``： 摆动位置等待，0-等待时间内位置继续移动；1-等待时间内位置静止"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WeaveOnlineSetPara (weaveNum, weaveType, weaveFrequency, weaveIncStayTime, weaveRange, weaveLeftStayTime, weaveRightStayTime, weaveCircleRadio, weaveStationary)``"
+    "Descripción", "Establecer los parámetros de oscilación en tiempo real"
+    "Parámetros obligatorios", "- ``weaveNum``： número de configuración de parámetros de soldadura oscilante
+    - ``weaveType``： tipo de oscilación 0-oscilación triangular plana；1-oscilación triangular en L vertical；2-oscilación circular en sentido horario；3-oscilación circular en sentido antihorario；4-oscilación sinusoidal plana；5-oscilación sinusoidal en L vertical；6-oscilación triangular vertical；7-oscilación sinusoidal vertical
+    - ``weaveFrequency``： frecuencia de oscilación(Hz)
+    - ``weaveIncStayTime``： modo de espera 0-el ciclo no incluye tiempo de espera；1-el ciclo incluye tiempo de espera parámetro obligatorio
+    - ``weaveRange``： amplitud de oscilación(mm)
+    - ``weaveLeftStayTime``： tiempo de permanencia izquierdo de la oscilación(ms)
+    - ``weaveRightStayTime``：  tiempo de permanencia derecho de la oscilación(ms)
+    - ``weaveCircleRadio``： oscilación circular-proporción de retorno(0-100%)
+    - ``weaveStationary``： espera en la posición de oscilación，0-la posición continúa moviéndose durante el tiempo de espera；1-la posición permanece estática durante el tiempo de espera"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取机器人焊接电弧意外中断检测参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener los parámetros de detección de interrupción accidental del arco de soldadura del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.8
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingGetCheckArcInterruptionParam()``"
-    "描述", "获取机器人焊接电弧意外中断检测参数"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``checkEnable``：是否使能检测；0-不使能；1-使能
-    - ``arcInterruptTimeLength``：电弧中断确认时长(ms)"
+    "Prototipo", "``WeldingGetCheckArcInterruptionParam()``"
+    "Descripción", "Obtener los parámetros de detección de interrupción accidental del arco de soldadura del robot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``checkEnable``：si habilitar la detección；0-no habilitar；1-habilitar
+    - ``arcInterruptTimeLength``：duración de confirmación de interrupción del arco(ms)"
 
-设置机器人焊接电弧意外中断检测参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer los parámetros de detección de interrupción accidental del arco de soldadura del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.8
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingSetCheckArcInterruptionParam(checkEnable, arcInterruptTimeLength)``"
-    "描述", "设置机器人焊接电弧意外中断检测参数"
-    "必选参数", "- ``checkEnable``：是否使能检测；0-不使能；1-使能
-    - ``arcInterruptTimeLength``：电弧中断确认时长(ms)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``WeldingSetCheckArcInterruptionParam(checkEnable, arcInterruptTimeLength)``"
+    "Descripción", "Establecer los parámetros de detección de interrupción accidental del arco de soldadura del robot"
+    "Parámetros obligatorios", "- ``checkEnable``：si habilitar la detección；0-no habilitar；1-habilitar
+    - ``arcInterruptTimeLength``：duración de confirmación de interrupción del arco(ms)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-获取机器人焊接中断恢复参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener los parámetros de recuperación de interrupción de soldadura del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.8
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingGetReWeldAfterBreakOffParam()``"
-    "描述", "获取机器人焊接中断恢复参数"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``enable``：是否使能焊接中断恢复
-    - ``length``：焊缝重叠距离(mm)
-    - ``velocity``：机器人回到再起弧点速度百分比(0-100)
-    - ``moveType``：机器人运动到再起弧点方式；0-LIN；1-PTP"
+    "Prototipo", "``WeldingGetReWeldAfterBreakOffParam()``"
+    "Descripción", "Obtener los parámetros de recuperación de interrupción de soldadura del robot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``enable``：si habilitar la recuperación de interrupción de soldadura
+    - ``length``：distancia de solapamiento del cordón de soldadura(mm)
+    - ``velocity``：porcentaje de velocidad del robot para volver al punto de reencendido del arco(0-100)
+    - ``moveType``：modo de movimiento del robot al punto de reencendido del arco；0-LIN；1-PTP"
 
-设置机器人焊接中断恢复参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer los parámetros de recuperación de interrupción de soldadura del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.8
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingSetReWeldAfterBreakOffParam(enable, length, velocity, moveType)``"
-    "描述", "设置机器人焊接中断恢复参数"
-    "必选参数", "- ``enable``：是否使能焊接中断恢复
-    - ``length``：焊缝重叠距离(mm)
-    - ``velocity``：机器人回到再起弧点速度百分比(0-100)
-    - ``moveType``：机器人运动到再起弧点方式；0-LIN；1-PTP"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``WeldingSetReWeldAfterBreakOffParam(enable, length, velocity, moveType)``"
+    "Descripción", "Establecer los parámetros de recuperación de interrupción de soldadura del robot"
+    "Parámetros obligatorios", "- ``enable``：si habilitar la recuperación de interrupción de soldadura
+    - ``length``：distancia de solapamiento del cordón de soldadura(mm)
+    - ``velocity``：porcentaje de velocidad del robot para volver al punto de reencendido del arco(0-100)
+    - ``moveType``：modo de movimiento del robot al punto de reencendido del arco；0-LIN；1-PTP"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-设置焊机控制模式扩展DO端口
-++++++++++++++++++++++++++++++++++
+Establecer el puerto DO extendido del modo de control de la soldadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetWeldMachineCtrlModeExtDoNum(DONum)``"
-    "描述", "设置焊机控制模式扩展DO端口"
-    "必选参数", "- ``DONum``：焊机控制模式DO端口(0-127)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Prototipo", "``SetWeldMachineCtrlModeExtDoNum(DONum)``"
+    "Descripción", "Establecer el puerto DO extendido del modo de control de la soldadora"
+    "Parámetros obligatorios", "- ``DONum``：puerto DO del modo de control de la soldadora(0-127)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-设置焊机控制模式
-++++++++++++++++++++++++++++++++++
+Establecer el modo de control de la soldadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetWeldMachineCtrlMode(mode, ioType)``"
-    "描述", "设置焊机控制模式"
-    "必选参数", "
-    - ``ioType``：控制类型；0-控制箱IO；1-数字通信协议(UDP);2-数字通信协议(ModbusTCP)
-    - ``mode``：焊机控制模式;焊机控制模式;0-直流一元模式；1-脉冲一元模式；2-JOB模式；3-近控模式；4-分别模式；5-CC/CV模式；6-TIG；7-CMT,8-松下-有脉冲模式，9-松下-无脉冲模式"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Prototipo", "``SetWeldMachineCtrlMode(mode, ioType)``"
+    "Descripción", "Establecer el modo de control de la soldadora"
+    "Parámetros obligatorios", "
+    - ``ioType``：tipo de control；0-IO de la caja de control；1-protocolo de comunicación digital(UDP);2-protocolo de comunicación digital(ModbusTCP)
+    - ``mode``：modo de control de la soldadora;modo de control de la soldadora;0-modo unificado de corriente continua；1-modo unificado de pulso；2-modo JOB；3-modo de control cercano；4-modo separado；5-modo CC/CV；6-TIG；7-CMT,8-Panasonic-con modo de pulso，9-Panasonic-sin modo de pulso"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-获取焊机控制模式
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el modo de control de la soldadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v3.9.8
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetWeldMachineCtrlMode(self)``"
-    "描述", "获取焊机控制模式"
-    "必选参数", "
-    - ``mode``：mode 焊机控制模式;0-直流一元模式；1-脉冲一元模式；2-JOB模式；3-近控模式；4-分别模式；5-CC/CV模式；6-TIG；7-CMT
+    "Prototipo", "``GetWeldMachineCtrlMode(self)``"
+    "Descripción", "Obtener el modo de control de la soldadora"
+    "Parámetros obligatorios", "
+    - ``mode``：mode modo de control de la soldadora;0-modo unificado de corriente continua；1-modo unificado de pulso；2-modo JOB；3-modo de control cercano；4-modo separado；5-modo CC/CV；6-TIG；7-CMT
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-获取焊机控制模式代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código para obtener el modo de control de la soldadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v3.9.8
 
 .. code-block:: python
@@ -495,146 +495,146 @@
 
         robot.CloseRPC()
 
-焊接开始
-++++++++++++++++++++++++++++++++++
+Inicio de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.1
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ARCStart(ioType, arcNum, timeout)``"
-    "描述", "焊接开始"
-    "必选参数", "- ``ioType``：io类型 0-控制器IO； 1-扩展IO
-    - ``arcNum``： 焊机配置文件编号
-    - ``timeout``： 起弧超时时间"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ARCStart(ioType, arcNum, timeout)``"
+    "Descripción", "Inicio de soldadura"
+    "Parámetros obligatorios", "- ``ioType``：tipo de io 0-IO del controlador； 1-IO extendido
+    - ``arcNum``： número de archivo de configuración de la soldadora
+    - ``timeout``： tiempo de espera de cebado del arco"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-焊接结束
-++++++++++++++++++++++++++++++++++
-.. versionadded:: python SDK-v2.0.1
-    
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``ARCEnd(ioType, arcNum, timeout)``"
-    "描述", "焊接结束"
-    "必选参数", "- ``ioType``： 类型 0-控制器IO； 1-扩展IO
-    - ``arcNum``： 焊机配置文件编号
-    - ``timeout``： 起弧超时时间"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
-
-摆动开始
-++++++++++++++++++++++++++++++++++
+Fin de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.1
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeaveStart(weaveNum)``"
-    "描述", "摆动开始"
-    "必选参数", "- ``weaveNum``： 类型 0-控制器IO； 1-扩展IO"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ARCEnd(ioType, arcNum, timeout)``"
+    "Descripción", "Fin de soldadura"
+    "Parámetros obligatorios", "- ``ioType``： tipo 0-IO del controlador； 1-IO extendido
+    - ``arcNum``： número de archivo de configuración de la soldadora
+    - ``timeout``： tiempo de espera de cebado del arco"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-摆动结束
-++++++++++++++++++++++++++++++++++
+Inicio de oscilación
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.1
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeaveEnd(weaveNum)``"
-    "描述", "摆动结束"
-    "必选参数", "- ``weaveNum``： 摆焊参数配置编号"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WeaveStart(weaveNum)``"
+    "Descripción", "Inicio de oscilación"
+    "Parámetros obligatorios", "- ``weaveNum``： tipo 0-IO del controlador； 1-IO extendido"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-正向送丝
-++++++++++++++++++++++++++++++++++
+Fin de oscilación
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.1
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetForwardWireFeed(ioType, wireFeed)``"
-    "描述", "正向送丝"
-    "必选参数", "- ``ioType``： 0-控制器IO；1-扩展IO
-    - ``wireFeed``： 送丝控制  0-停止送丝；1-送丝"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WeaveEnd(weaveNum)``"
+    "Descripción", "Fin de oscilación"
+    "Parámetros obligatorios", "- ``weaveNum``： número de configuración de parámetros de soldadura oscilante"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-反向送丝
-++++++++++++++++++++++++++++++++++
+Alimentación de alambre hacia adelante
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.1
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetReverseWireFeed(ioType, wireFeed)``"
-    "描述", "反向送丝"
-    "必选参数", "- ``ioType``： 0-控制器IO；1-扩展IO
-    - ``wireFeed``： 送丝控制  0-停止送丝；1-送丝"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetForwardWireFeed(ioType, wireFeed)``"
+    "Descripción", "Alimentación de alambre hacia adelante"
+    "Parámetros obligatorios", "- ``ioType``： 0-IO del controlador；1-IO extendido
+    - ``wireFeed``： control de alimentación de alambre  0-detener alimentación；1-alimentar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-送气
-++++++++++++++++++++++++++++++++++
+Alimentación de alambre inversa
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.1
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetAspirated(ioType, airControl)``"
-    "描述", "送气"
-    "必选参数", "- ``ioType``： 0-控制器IO；1-扩展IO
-    - ``airControl``： 送气控制  0-停止送气；1-送气"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetReverseWireFeed(ioType, wireFeed)``"
+    "Descripción", "Alimentación de alambre inversa"
+    "Parámetros obligatorios", "- ``ioType``： 0-IO del controlador；1-IO extendido
+    - ``wireFeed``： control de alimentación de alambre  0-detener alimentación；1-alimentar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置机器人焊接中断后恢复焊接
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Suministro de gas
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.. versionadded:: python SDK-v2.0.1
+    
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``SetAspirated(ioType, airControl)``"
+    "Descripción", "Suministro de gas"
+    "Parámetros obligatorios", "- ``ioType``： 0-IO del controlador；1-IO extendido
+    - ``airControl``： control de suministro de gas  0-detener suministro；1-suministrar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
+
+Establecer la recuperación de soldadura tras interrupción de la soldadura del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.8
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingStartReWeldAfterBreakOff()``"
-    "描述", "设置机器人焊接中断后恢复焊接"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``WeldingStartReWeldAfterBreakOff()``"
+    "Descripción", "Establecer la recuperación de soldadura tras interrupción de la soldadura del robot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-设置机器人焊接中断后退出焊接
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer la salida de soldadura tras interrupción de la soldadura del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.8
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingAbortWeldAfterBreakOff()``"
-    "描述", "设置机器人焊接中断后退出焊接"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``WeldingAbortWeldAfterBreakOff()``"
+    "Descripción", "Establecer la salida de soldadura tras interrupción de la soldadura del robot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-机器人焊接控制代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de control de soldadura del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.SetForwardWireFeed(0, 1)
     time.sleep(1)
@@ -663,46 +663,46 @@
     robot.WeldingAbortWeldAfterBreakOff()
     robot.CloseRPC()
 
-分段焊接启动
-++++++++++++++++++++++++++++++++++
+Inicio de soldadura por segmentos
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.1
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SegmentWeldStart(startDesePos,  endDesePos, startJPos, endJPos, weldLength, noWeldLength, weldIOType, arcNum, weldTimeout, isWeave,weaveNum,tool,user,vel=20.0, acc=0.0, ovl=100.0, blendR=-1.0,exaxis_pos=[0.0, 0.0, 0.0, 0.0],  search=0, offset_flag=0, offset_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0])``"
-    "描述", "分段焊接启动"
-    "必选参数", "- ``startDesePos``： 初始笛卡尔位姿，单位 [mm][°]
-    - ``endDesePos``： 目标笛卡尔位姿，单位 [mm][°]
-    - ``startJPos``：初始关节位置，单位 [°] 
-    - ``endJPos``：目标关节位置，单位 [°]  
-    - ``weldLength``：焊接长度，单位 [mm] 
-    - ``noWeldLength``：非焊接长度，单位 [mm] 
-    - ``weldIOType``：焊接IO类型(0-控制箱IO；1-扩展IO) arcNum 焊机配置文件编号 
-    - ``timeout``：熄弧超时时间 
-    - ``isWeave``：焊接 False-不焊接 
-    - ``weaveNum``：摆焊参数配置编号 
-    - ``tool``：工具号，[0~14]
-    - ``user``：工件号，[0~14]"
-    "默认参数", "- ``vel``：速度百分比，[0~100] 默认20.0
-    - ``acc``：加速度[0~100] 暂不开放 默认0.0
-    - ``ovl``：速度缩放因子，[0~100] 默认100.0
-    - ``blendR``：[-1.0]-运动到位 (阻塞)，[0~1000]-平滑半径 (非阻塞)，单位 [mm] 默认-1.0
-    - ``exaxis_pos``：外部轴 1 位置 ~ 外部轴 4 位置 默认[0.0,0.0,0.0,0.0]
-    - ``search``：[0]-不焊丝寻位，[1]-焊丝寻位
-    - ``offset_flag``：[0]-不偏移，[1]-工件/基坐标系下偏移，[2]-工具坐标系下偏移 默认 0
-    - ``offset_pos``：位姿偏移量，单位 [mm][°] 默认[0.0,0.0,0.0,0.0,0.0,0.0]"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Prototipo", "``SegmentWeldStart(startDesePos,  endDesePos, startJPos, endJPos, weldLength, noWeldLength, weldIOType, arcNum, weldTimeout, isWeave,weaveNum,tool,user,vel=20.0, acc=0.0, ovl=100.0, blendR=-1.0,exaxis_pos=[0.0, 0.0, 0.0, 0.0],  search=0, offset_flag=0, offset_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0])``"
+    "Descripción", "Inicio de soldadura por segmentos"
+    "Parámetros obligatorios", "- ``startDesePos``： pose cartesiana inicial，unidad [mm][°]
+    - ``endDesePos``： pose cartesiana objetivo，unidad [mm][°]
+    - ``startJPos``：posición articular inicial，unidad [°] 
+    - ``endJPos``：posición articular objetivo，unidad [°]  
+    - ``weldLength``：longitud de soldadura，unidad [mm] 
+    - ``noWeldLength``：longitud sin soldadura，unidad [mm] 
+    - ``weldIOType``：tipo de IO de soldadura(0-IO de la caja de control；1-IO extendido) arcNum número de archivo de configuración de la soldadora 
+    - ``timeout``：tiempo de espera de extinción del arco 
+    - ``isWeave``：soldadura False-no soldar 
+    - ``weaveNum``：número de configuración de parámetros de soldadura oscilante 
+    - ``tool``：número de herramienta，[0~14]
+    - ``user``：número de pieza，[0~14]"
+    "Parámetros predeterminados", "- ``vel``：porcentaje de velocidad，[0~100] predeterminado20.0
+    - ``acc``：aceleración[0~100] no disponible por ahora predeterminado0.0
+    - ``ovl``：factor de escala de velocidad，[0~100] predeterminado100.0
+    - ``blendR``：[-1.0]-movimiento preciso (bloqueante)，[0~1000]-radio de suavizado (no bloqueante)，unidad [mm] predeterminado-1.0
+    - ``exaxis_pos``：posición del eje externo 1 ~ posición del eje externo 4 predeterminado[0.0,0.0,0.0,0.0]
+    - ``search``：[0]-sin búsqueda de alambre，[1]-búsqueda de alambre
+    - ``offset_flag``：[0]-sin desplazamiento，[1]-desplazamiento en el sistema de coordenadas de pieza/base，[2]-desplazamiento en el sistema de coordenadas de herramienta predeterminado 0
+    - ``offset_pos``：cantidad de desplazamiento de pose，unidad [mm][°] predeterminado[0.0,0.0,0.0,0.0,0.0,0.0]"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-机器人段焊代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de soldadura por segmentos del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.WeldingSetCurrent(1, 230, 0, 0)
     robot.WeldingSetVoltage(1, 24, 0, 1)
@@ -716,86 +716,86 @@
     print(f"SegmentWeldStart rtn is {rtn}")
     robot.CloseRPC()
 
-仿真摆动开始
-++++++++++++++++++++++++++++++++++
+Inicio de oscilación simulada
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeaveStartSim(weaveNum)``"
-    "描述", "仿真摆动开始"
-    "必选参数", "- ``weaveNum``：摆动参数编号"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Prototipo", "``WeaveStartSim(weaveNum)``"
+    "Descripción", "Inicio de oscilación simulada"
+    "Parámetros obligatorios", "- ``weaveNum``：número de parámetros de oscilación"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-仿真摆动结束
-++++++++++++++++++++++++++++++++++
+Fin de oscilación simulada
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeaveEndSim(weaveNum)``"
-    "描述", "仿真摆动结束"
-    "必选参数", "- ``weaveNum``：摆动参数编号"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Prototipo", "``WeaveEndSim(weaveNum)``"
+    "Descripción", "Fin de oscilación simulada"
+    "Parámetros obligatorios", "- ``weaveNum``：número de parámetros de oscilación"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-开始轨迹检测预警(不运动)
-++++++++++++++++++++++++++++++++++
+Iniciar alerta de detección de trayectoria (sin movimiento)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeaveInspectStart(weaveNum)``"
-    "描述", "开始轨迹检测预警(不运动)"
-    "必选参数", "- ``weaveNum``：摆动参数编号"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Prototipo", "``WeaveInspectStart(weaveNum)``"
+    "Descripción", "Iniciar alerta de detección de trayectoria (sin movimiento)"
+    "Parámetros obligatorios", "- ``weaveNum``：número de parámetros de oscilación"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-结束轨迹检测预警(不运动)
-++++++++++++++++++++++++++++++++++
+Finalizar alerta de detección de trayectoria (sin movimiento)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeaveInspectEnd(weaveNum)``"
-    "描述", "结束轨迹检测预警(不运动)"
-    "必选参数", "- ``weaveNum``：摆动参数编号"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Prototipo", "``WeaveInspectEnd(weaveNum)``"
+    "Descripción", "Finalizar alerta de detección de trayectoria (sin movimiento)"
+    "Parámetros obligatorios", "- ``weaveNum``：número de parámetros de oscilación"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-摆动渐变开始
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Inicio de cambio gradual de oscilación
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeaveChangeStart(weaveChangeFlag, weaveNum, velStart, velEnd)``"
-    "描述", "摆动渐变开始"
-    "必选参数", "- ``weaveChangeFlag``：摆动编号 1-变摆动参数；2-变摆动参数+焊接速度
-    - ``weaveNum``：摆动编号
-    - ``velStart``：焊接开始速度，(cm/min)
-    - ``velEnd``：焊接结束速度，(cm/min)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``WeaveChangeStart(weaveChangeFlag, weaveNum, velStart, velEnd)``"
+    "Descripción", "Inicio de cambio gradual de oscilación"
+    "Parámetros obligatorios", "- ``weaveChangeFlag``：número de oscilación 1-cambiar parámetros de oscilación；2-cambiar parámetros de oscilación + velocidad de soldadura
+    - ``weaveNum``：número de oscilación
+    - ``velStart``：velocidad de inicio de soldadura，(cm/min)
+    - ``velEnd``：velocidad de fin de soldadura，(cm/min)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-机器人摆动渐变焊接代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de soldadura con cambio gradual de oscilación del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     p1Desc = [228.879, -503.594, 453.984, -175.580, 8.293, 171.267]
     p1Joint = [102.700, -85.333, 90.518, -102.365, -83.932, 22.134]
@@ -825,142 +825,142 @@
     robot.ARCEnd(1, 0, 10000)
     robot.CloseRPC()
 
-摆动渐变结束
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Fin de cambio gradual de oscilación
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.9-3.7.9
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeaveChangeEnd()``"
-    "描述", "摆动渐变结束"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``WeaveChangeEnd()``"
+    "Descripción", "Fin de cambio gradual de oscilación"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-扩展IO-配置焊机气体检测信号
-++++++++++++++++++++++++++++++++++
+IO extendido-configurar señal de detección de gas de la soldadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetAirControlExtDoNum(DONum)``"
-    "描述", "扩展IO-配置焊机气体检测信号"
-    "必选参数", "
-    - ``DONum``：气体检测信号扩展DO编号
+    "Prototipo", "``SetAirControlExtDoNum(DONum)``"
+    "Descripción", "IO extendido-configurar señal de detección de gas de la soldadora"
+    "Parámetros obligatorios", "
+    - ``DONum``：número DO extendido de la señal de detección de gas
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-扩展IO-配置焊机起弧信号
-++++++++++++++++++++++++++++++++++
+IO extendido-configurar señal de cebado del arco de la soldadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetArcStartExtDoNum(DONum)``"
-    "描述", "扩展IO-配置焊机起弧信号"
-    "必选参数", "
-    - ``DONum``：气体检测信号扩展DO编号
+    "Prototipo", "``SetArcStartExtDoNum(DONum)``"
+    "Descripción", "IO extendido-configurar señal de cebado del arco de la soldadora"
+    "Parámetros obligatorios", "
+    - ``DONum``：número DO extendido de la señal de detección de gas
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
         
-扩展IO-配置焊机反向送丝信号
-++++++++++++++++++++++++++++++++++
+IO extendido-configurar señal de alimentación de alambre inversa de la soldadora
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetWireReverseFeedExtDoNum(DONum)``"
-    "描述", "扩展IO-配置焊机反向送丝信号"
-    "必选参数", "
-    - ``DONum``：气体检测信号扩展DO编号
+    "Prototipo", "``SetWireReverseFeedExtDoNum(DONum)``"
+    "Descripción", "IO extendido-configurar señal de alimentación de alambre inversa de la soldadora"
+    "Parámetros obligatorios", "
+    - ``DONum``：número DO extendido de la señal de detección de gas
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
         
-扩展IO-配置焊机正向送丝信号
-++++++++++++++++++++++++++++++++++
+IO extendido-configurar señal de alimentación de alambre hacia adelante de la soldadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetWireForwardFeedExtDoNum(DONum)``"
-    "描述", "扩展IO-配置焊机正向送丝信号"
-    "必选参数", "
-    - ``DONum``：气体检测信号扩展DO编号
+    "Prototipo", "``SetWireForwardFeedExtDoNum(DONum)``"
+    "Descripción", "IO extendido-configurar señal de alimentación de alambre hacia adelante de la soldadora"
+    "Parámetros obligatorios", "
+    - ``DONum``：número DO extendido de la señal de detección de gas
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
         
-扩展IO-配置焊机起弧成功信号
-++++++++++++++++++++++++++++++++++
+IO extendido-configurar señal de éxito de cebado del arco de la soldadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetArcDoneExtDiNum(DINum)``"
-    "描述", "扩展IO-配置焊机起弧成功信号"
-    "必选参数", "
-    - ``DINum``：焊机准备信号扩展DI编号
+    "Prototipo", "``SetArcDoneExtDiNum(DINum)``"
+    "Descripción", "IO extendido-configurar señal de éxito de cebado del arco de la soldadora"
+    "Parámetros obligatorios", "
+    - ``DINum``：número DI extendido de la señal de preparación de la soldadora
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
         
-扩展IO-配置焊机准备信号
-++++++++++++++++++++++++++++++++++
+IO extendido-configurar señal de preparación de la soldadora
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetArcDoneExtDiNum(DINum)``"
-    "描述", "扩展IO-配置焊机准备信号"
-    "必选参数", "
-    - ``DINum``：焊机准备信号扩展DI编号
+    "Prototipo", "``SetArcDoneExtDiNum(DINum)``"
+    "Descripción", "IO extendido-configurar señal de preparación de la soldadora"
+    "Parámetros obligatorios", "
+    - ``DINum``：número DI extendido de la señal de preparación de la soldadora
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
         
-扩展IO-配置焊接中断恢复信号
-++++++++++++++++++++++++++++++++++
+IO extendido-configurar señal de recuperación de interrupción de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetExtDIWeldBreakOffRecover(reWeldDINum, abortWeldDINum)``"
-    "描述", "扩展IO-配置焊接中断恢复信号"
-    "必选参数", "
-    - ``reWeldDINum``：焊接中断后恢复焊接信号扩展DI编号
-    - ``abortWeldDINum``：焊接中断后退出焊接信号扩展DI编号
+    "Prototipo", "``SetExtDIWeldBreakOffRecover(reWeldDINum, abortWeldDINum)``"
+    "Descripción", "IO extendido-configurar señal de recuperación de interrupción de soldadura"
+    "Parámetros obligatorios", "
+    - ``reWeldDINum``：número DI extendido de la señal de recuperación de soldadura tras interrupción de soldadura
+    - ``abortWeldDINum``：número DI extendido de la señal de salida de soldadura tras interrupción de soldadura
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-设置扩展IO焊接信号代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código para establecer señales de soldadura de IO extendido
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     rtn = robot.SetArcStartExtDoNum(10)
     print(f"SetArcStartExtDoNum rtn is {rtn}")
@@ -979,56 +979,56 @@
     print(f"SetWireSearchExtDIONum rtn is {rtn}")
     robot.CloseRPC()
 
-获取扩展DI功能配置
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener la configuración de funciones de DI extendido
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-V3.9.8
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetExtDIConfig(self)``"
-    "描述", "获取扩展DI功能配置"
-    "必选参数", "
-    - ``DIConfig``：扩展DI输入配置；DIConfig[0]-焊机准备扩展DI端口
-    - ``DIConfig[1]``：起弧成功扩展DI端口
-    - ``DIConfig[2]``：焊接中断恢复扩展DI端口
-    - ``DIConfig[3]``：焊接中断退出扩展DI端口
-    - ``DIConfig[4]``：焊丝寻位成功扩展DI端口
-    - ``DIConfig[5]``：激光焊机运行状态扩展DI端口
-    - ``DIConfig[6]``：激光焊机故障状态扩展DI端口
-    - ``DIConfig[7-15]``：预留
+    "Prototipo", "``GetExtDIConfig(self)``"
+    "Descripción", "Obtener la configuración de funciones de DI extendido"
+    "Parámetros obligatorios", "
+    - ``DIConfig``：configuración de entrada DI extendida；DIConfig[0]-puerto DI extendido de preparación de la soldadora
+    - ``DIConfig[1]``：puerto DI extendido de éxito de cebado del arco
+    - ``DIConfig[2]``：puerto DI extendido de recuperación de interrupción de soldadura
+    - ``DIConfig[3]``：puerto DI extendido de salida de interrupción de soldadura
+    - ``DIConfig[4]``：puerto DI extendido de éxito de búsqueda de alambre
+    - ``DIConfig[5]``：puerto DI extendido de estado de funcionamiento de la soldadora láser
+    - ``DIConfig[6]``：puerto DI extendido de estado de fallo de la soldadora láser
+    - ``DIConfig[7-15]``：reservado
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-获取扩展DO功能配置
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener la configuración de funciones de DO extendido
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-V3.9.8
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetExtDOConfig(self)``"
-    "描述", "获取扩展DO功能配置"
-    "必选参数", "
-    - ``DOConfig``：扩展DO输入配置；DOConfig[0]-焊机起弧扩展DO端口
-    - ``DOConfig[1]``：气体检测扩展DO端口
-    - ``DOConfig[2]``：正向送丝扩展DO端口
-    - ``DOConfig[3]``：反向送丝扩展DO端口
-    - ``DOConfig[4]``：焊丝寻位扩展DO端口
-    - ``DOConfig[5]``：焊机控制模式扩展DO端口
-    - ``DOConfig[6]``：激光焊机使能扩展DO端口
-    - ``DOConfig[7]``：激光焊机启动(出光)扩展DO端口
-    - ``DOConfig[8]``：激光焊机复位扩展DO端口
-    - ``DOConfig[9-15]``：预留
+    "Prototipo", "``GetExtDOConfig(self)``"
+    "Descripción", "Obtener la configuración de funciones de DO extendido"
+    "Parámetros obligatorios", "
+    - ``DOConfig``：configuración de salida DO extendida；DOConfig[0]-puerto DO extendido de cebado del arco de la soldadora
+    - ``DOConfig[1]``：puerto DO extendido de detección de gas
+    - ``DOConfig[2]``：puerto DO extendido de alimentación de alambre hacia adelante
+    - ``DOConfig[3]``：puerto DO extendido de alimentación de alambre inversa
+    - ``DOConfig[4]``：puerto DO extendido de búsqueda de alambre
+    - ``DOConfig[5]``：puerto DO extendido del modo de control de la soldadora
+    - ``DOConfig[6]``：puerto DO extendido de habilitación de la soldadora láser
+    - ``DOConfig[7]``：puerto DO extendido de inicio (emisión de luz) de la soldadora láser
+    - ``DOConfig[8]``：puerto DO extendido de restablecimiento de la soldadora láser
+    - ``DOConfig[9-15]``：reservado
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-获取扩展DI/DO代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código para obtener DI/DO extendidos
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-V3.9.8
 
 .. code-block:: python
@@ -1089,109 +1089,109 @@
 
         robot.CloseRPC()
     
-电弧跟踪控制
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Control de seguimiento de arco
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.9-3.7.9
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ArcWeldTraceControl(flag,delaytime, isLeftRight, klr, tStartLr, stepMaxLr, sumMaxLr, isUpLow, kud, tStartUd, stepMaxUd, sumMaxUd, axisSelect, referenceType, referSampleStartUd, referSampleCountUd, referenceCurrent, offsetType, offsetParameter)``"
-    "描述", "电弧跟踪控制"
-    "必选参数", "- ``flag``： 开关，0-关；1-开
-    - ``delayTime``：滞后时间，单位ms
-    - ``isLeftRight``：左右偏差补偿 0-关闭，1-开启
-    - ``klr``：左右调节系数(灵敏度)
-    - ``tStartLr``：左右开始补偿时间cyc
-    - ``stepMaxLr``：左右每次最大补偿量 mm
-    - ``sumMaxLr``：左右总计最大补偿量 mm
-    - ``isUpLow``：上下偏差补偿 0-关闭，1-开启
-    - ``kud``：上下调节系数(灵敏度)
-    - ``tStartUd``：上下开始补偿时间cyc
-    - ``stepMaxUd``：上下每次最大补偿量 mm
-    - ``sumMaxUd``：上下总计最大补偿量
-    - ``axisSelect``：上下坐标系选择，0-摆动；1-工具；2-基座
-    - ``referenceType``：上下基准电流设定方式，0-反馈；1-常数
-    - ``referSampleStartUd``：上下基准电流采样开始计数(反馈)，cyc
-    - ``referSampleCountUd``：上下基准电流采样循环计数(反馈)，cyc
-    - ``referenceCurrent``：上下基准电流mA
-    - ``offsetType``：偏置跟踪类型，0-不偏置；1-采样；2-百分比
-    - ``offsetParameter``：偏置参数；采样(偏置采样开始时间，默认采一周期)；百分比(偏置百分比(-100 ~ 100))"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Prototipo", "``ArcWeldTraceControl(flag,delaytime, isLeftRight, klr, tStartLr, stepMaxLr, sumMaxLr, isUpLow, kud, tStartUd, stepMaxUd, sumMaxUd, axisSelect, referenceType, referSampleStartUd, referSampleCountUd, referenceCurrent, offsetType, offsetParameter)``"
+    "Descripción", "Control de seguimiento de arco"
+    "Parámetros obligatorios", "- ``flag``： interruptor，0-desactivado；1-activado
+    - ``delayTime``： tiempo de retardo，unidadms
+    - ``isLeftRight``： compensación de desviación izquierda-derecha 0-desactivado，1-activado
+    - ``klr``： coeficiente de ajuste izquierda-derecha (sensibilidad)
+    - ``tStartLr``： tiempo de inicio de compensación izquierda-derecha cyc
+    - ``stepMaxLr``： cantidad máxima de compensación izquierda-derecha por vez mm
+    - ``sumMaxLr``： cantidad máxima total de compensación izquierda-derecha mm
+    - ``isUpLow``： compensación de desviación arriba-abajo 0-desactivado，1-activado
+    - ``kud``： coeficiente de ajuste arriba-abajo (sensibilidad)
+    - ``tStartUd``： tiempo de inicio de compensación arriba-abajo cyc
+    - ``stepMaxUd``： cantidad máxima de compensación arriba-abajo por vez mm
+    - ``sumMaxUd``： cantidad máxima total de compensación arriba-abajo
+    - ``axisSelect``： selección del sistema de coordenadas arriba-abajo，0-oscilación；1-herramienta；2-base
+    - ``referenceType``： modo de configuración de la corriente de referencia arriba-abajo，0-retroalimentación；1-constante
+    - ``referSampleStartUd``： inicio de conteo de muestreo de la corriente de referencia arriba-abajo (retroalimentación)，cyc
+    - ``referSampleCountUd``： conteo de ciclos de muestreo de la corriente de referencia arriba-abajo (retroalimentación)，cyc
+    - ``referenceCurrent``： corriente de referencia arriba-abajo mA
+    - ``offsetType``： tipo de seguimiento con desplazamiento，0-sin desplazamiento；1-muestreo；2-porcentaje
+    - ``offsetParameter``： parámetro de desplazamiento；muestreo (tiempo de inicio de muestreo de desplazamiento, por defecto se muestrea un ciclo)；porcentaje (porcentaje de desplazamiento (-100 ~ 100))"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-电弧跟踪AI通带选择
-++++++++++++++++++++++++++++++++++
+Selección de canal AI de seguimiento de arco
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ArcWeldTraceExtAIChannelConfig(channel)``"
-    "描述", "电弧跟踪AI通带选择"
-    "必选参数", "- ``channel``：电弧跟踪AI通带选择,[0-3]"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Prototipo", "``ArcWeldTraceExtAIChannelConfig(channel)``"
+    "Descripción", "Selección de canal AI de seguimiento de arco"
+    "Parámetros obligatorios", "- ``channel``：selección de canal AI de seguimiento de arco,[0-3]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-电弧追踪 + 多层多道补偿开启
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Seguimiento de arco + activación de compensación multicapa y multipasada
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ArcWeldTraceReplayStart()``"
-    "描述", "电弧追踪 + 多层多道补偿开启"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ArcWeldTraceReplayStart()``"
+    "Descripción", "Seguimiento de arco + activación de compensación multicapa y multipasada"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-电弧追踪 + 多层多道补偿关闭
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Seguimiento de arco + desactivación de compensación multicapa y multipasada
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ArcWeldTraceReplayEnd()``"
-    "描述", "电弧追踪 + 多层多道补偿关闭"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ArcWeldTraceReplayEnd()``"
+    "Descripción", "Seguimiento de arco + desactivación de compensación multicapa y multipasada"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-偏移量坐标变化-多层多道焊
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Transformación de coordenadas de desplazamiento-soldadura multicapa y multipasada
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``MultilayerOffsetTrsfToBase(pointo, pointX, pointZ, dx, dy, db)``"
-    "描述", "偏移量坐标变化-多层多道焊"
-    "必选参数", "- ``pointo``：基准点笛卡尔位姿
-    - ``pointX``：基准点X向偏移方向点笛卡尔位姿
-    - ``pointZ``：基准点Z向偏移方向点笛卡尔位姿
-    - ``dx``：x方向偏移量(mm)
-    - ``dz``：z方向偏移量(mm)
-    - ``dry``：绕y轴偏移量(°)"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``offset``：计算结果偏移量"
+    "Prototipo", "``MultilayerOffsetTrsfToBase(pointo, pointX, pointZ, dx, dy, db)``"
+    "Descripción", "Transformación de coordenadas de desplazamiento-soldadura multicapa y multipasada"
+    "Parámetros obligatorios", "- ``pointo``：pose cartesiana del punto de referencia
+    - ``pointX``：pose cartesiana del punto de dirección de desplazamiento X del punto de referencia
+    - ``pointZ``：pose cartesiana del punto de dirección de desplazamiento Z del punto de referencia
+    - ``dx``：cantidad de desplazamiento en dirección x(mm)
+    - ``dz``：cantidad de desplazamiento en dirección z(mm)
+    - ``dry``：cantidad de desplazamiento alrededor del eje y(°)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``offset``：cantidad de desplazamiento calculada"
 
-多层多道焊电弧跟踪代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de seguimiento de arco de soldadura multicapa y multipasada
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     mulitilineorigin1_joint = [-24.090, -63.501, 84.288, -111.940, -93.426, 57.669]
     mulitilineorigin1_desc = [-677.559, 190.951, -1.205, 1.144, -41.482, -82.577]
@@ -1271,75 +1271,75 @@
     print(f"MoveJ return: {error}")
     robot.CloseRPC()
 
-电弧跟踪焊机电流反馈AI通道选择
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Selección de canal AI de retroalimentación de corriente de la soldadora de seguimiento de arco
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ArcWeldTraceAIChannelCurrent(channel)``"
-    "描述", "电弧跟踪焊机电流反馈AI通道选择"
-    "必选参数", "- ``channel``：通道；0-扩展AI0；1-扩展AI1；2-扩展AI2；3-扩展AI3；4-控制箱AI0；5-控制箱AI1"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ArcWeldTraceAIChannelCurrent(channel)``"
+    "Descripción", "Selección de canal AI de retroalimentación de corriente de la soldadora de seguimiento de arco"
+    "Parámetros obligatorios", "- ``channel``：canal；0-AI0 extendido；1-AI1 extendido；2-AI2 extendido；3-AI3 extendido；4-AI0 de la caja de control；5-AI1 de la caja de control"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-电弧跟踪焊机电压反馈AI通道选择
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Selección de canal AI de retroalimentación de voltaje de la soldadora de seguimiento de arco
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ArcWeldTraceAIChannelVoltage(channel)``"
-    "描述", "电弧跟踪焊机电压反馈AI通道选择"
-    "必选参数", "- ``channel``：通道；0-扩展AI0；1-扩展AI1；2-扩展AI2；3-扩展AI3；4-控制箱AI0；5-控制箱AI1"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ArcWeldTraceAIChannelVoltage(channel)``"
+    "Descripción", "Selección de canal AI de retroalimentación de voltaje de la soldadora de seguimiento de arco"
+    "Parámetros obligatorios", "- ``channel``：canal；0-AI0 extendido；1-AI1 extendido；2-AI2 extendido；3-AI3 extendido；4-AI0 de la caja de control；5-AI1 de la caja de control"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-电弧跟踪焊机电流反馈转换参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parámetros de conversión de retroalimentación de corriente de la soldadora de seguimiento de arco
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ArcWeldTraceCurrentPara(AILow, AIHigh, currentLow, currentHigh)``"
-    "描述", "电弧跟踪焊机电流反馈转换参数"
-    "必选参数", "无"
-    "默认参数", "- ``AILow``：AI通道下限，默认值0V，范围[0-10V]
-    - ``AIHigh``：AI通道上限，默认值10V，范围[0-10V]
-    - ``currentLow``：AI通道下限对应焊机电流值，默认值0V，范围[0-200V]
-    - ``currentHigh``：AI通道上限对应焊机电流值，默认值100V，范围[0-200V]"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ArcWeldTraceCurrentPara(AILow, AIHigh, currentLow, currentHigh)``"
+    "Descripción", "Parámetros de conversión de retroalimentación de corriente de la soldadora de seguimiento de arco"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "- ``AILow``：límite inferior del canal AI，valor predeterminado0V，rango[0-10V]
+    - ``AIHigh``：límite superior del canal AI，valor predeterminado10V，rango[0-10V]
+    - ``currentLow``：valor de corriente de la soldadora correspondiente al límite inferior del canal AI，valor predeterminado0V，rango[0-200V]
+    - ``currentHigh``：valor de corriente de la soldadora correspondiente al límite superior del canal AI，valor predeterminado100V，rango[0-200V]"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-电弧跟踪焊机电压反馈转换参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parámetros de conversión de retroalimentación de voltaje de la soldadora de seguimiento de arco
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ArcWeldTraceVoltagePara(AILow, AIHigh, voltageLow, voltageHigh)``"
-    "描述", "电弧跟踪焊机电压反馈转换参数"
-    "必选参数", "无"
-    "默认参数", "- ``AILow``：AI通道下限，默认值0V，范围[0-10V]
-    - ``AIHigh``：AI通道上限，默认值10V，范围[0-10V]
-    - ``voltageLow``：AI通道下限对应焊机电压值，默认值0V，范围[0-200V]
-    - ``voltageHigh``：AI通道上限对应焊机电压值，默认值100V，范围[0-200V]"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ArcWeldTraceVoltagePara(AILow, AIHigh, voltageLow, voltageHigh)``"
+    "Descripción", "Parámetros de conversión de retroalimentación de voltaje de la soldadora de seguimiento de arco"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "- ``AILow``：límite inferior del canal AI，valor predeterminado0V，rango[0-10V]
+    - ``AIHigh``：límite superior del canal AI，valor predeterminado10V，rango[0-10V]
+    - ``voltageLow``：valor de voltaje de la soldadora correspondiente al límite inferior del canal AI，valor predeterminado0V，rango[0-200V]
+    - ``voltageHigh``：valor de voltaje de la soldadora correspondiente al límite superior del canal AI，valor predeterminado100V，rango[0-200V]"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-电弧跟踪代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de seguimiento de arco
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
 
     safetydescPose = [-504.043,275.181,40.908,-28.002,-42.025,-14.044]
@@ -1353,8 +1353,8 @@
     robot.MoveJ(joint_pos=safetyjointPos, tool=1, user=0, vel=20, acc=100)
     robot.WeldingSetCurrentRelation(0, 495, 1, 10, 0)
     robot.WeldingSetVoltageRelation(10, 45, 1, 10, 1)
-    robot.WeldingSetVoltage(0, 25, 1, 0)  # ----设置电压
-    robot.WeldingSetCurrent(0, 260, 0, 0)  # ----设置电流
+    robot.WeldingSetVoltage(0, 25, 1, 0)  # ----establecer voltaje
+    robot.WeldingSetCurrent(0, 260, 0, 0)  # ----establecer corriente
     rtn = robot.ArcWeldTraceAIChannelCurrent(4)
     print("ArcWeldTraceAIChannelCurrent rtn is", rtn)
     rtn = robot.ArcWeldTraceAIChannelVoltage(5)
@@ -1373,29 +1373,29 @@
     robot.ArcWeldTraceControl(0, 0, 1, 0.08, 5, 5, 300, 1, 0.06, 4, 4, 300, 1, 0, 4, 1, 10, 0, 0)
     robot.MoveJ(joint_pos=safetyjointPos, tool=1, user=0, vel=20, acc=100)
 
-设置焊丝寻位扩展IO端口
-++++++++++++++++++++++++++++++++++
+Establecer el puerto IO extendido de búsqueda de alambre
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetWireSearchExtDIONum(searchDoneDINum, searchStartDONum)``"
-    "描述", "设置焊丝寻位扩展IO端口"
-    "必选参数", "- ``searchDoneDINum``：焊丝寻位成功DO端口(0-127)
-    - ``searchStartDONum``：焊丝寻位启停控制DO端口(0-127)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Prototipo", "``SetWireSearchExtDIONum(searchDoneDINum, searchStartDONum)``"
+    "Descripción", "Establecer el puerto IO extendido de búsqueda de alambre"
+    "Parámetros obligatorios", "- ``searchDoneDINum``：puerto DO de éxito de búsqueda de alambre(0-127)
+    - ``searchStartDONum``：puerto DO de control de inicio/parada de búsqueda de alambre(0-127)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-代码示例
-++++++++++++++++++++++++++++++++++++++
+Ejemplo de código
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     toolCoord = [0, 0, 200, 0, 0, 0]
     robot.SetToolCoord(1, toolCoord, 0, 0, 1, 0)
@@ -1476,102 +1476,102 @@
     error = robot.PointsOffsetDisable()
     robot.CloseRPC()
 
-焊丝寻位开始
-++++++++++++++++++++++++++++++++++
+Inicio de búsqueda de alambre
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WireSearchStart(refPos,searchVel,searchDis,autoBackFlag,autoBackVel,autoBackDis,offectFlag)``"
-    "描述", "焊丝寻位开始"
-    "必选参数", "- ``refPos``： 1-基准点 0-接触点
-    - ``searchVel``： 寻位速度 %
-    - ``searchDis``： 寻位距离 mm
-    - ``autoBackFlag``： 自动返回标志，0-不自动；-自动
-    - ``autoBackVel``： 自动返回速度 %
-    - ``autoBackDis``： 自动返回距离 mm
-    - ``offectFlag``： 1-带偏移量寻位；0-示教点寻位"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WireSearchStart(refPos,searchVel,searchDis,autoBackFlag,autoBackVel,autoBackDis,offectFlag)``"
+    "Descripción", "Inicio de búsqueda de alambre"
+    "Parámetros obligatorios", "- ``refPos``： 1-punto de referencia 0-punto de contacto
+    - ``searchVel``： velocidad de búsqueda %
+    - ``searchDis``： distancia de búsqueda mm
+    - ``autoBackFlag``： indicador de retorno automático，0-no automático；-automático
+    - ``autoBackVel``： velocidad de retorno automático %
+    - ``autoBackDis``： distancia de retorno automático mm
+    - ``offectFlag``： 1-búsqueda con desplazamiento；0-búsqueda de punto de enseñanza"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-焊丝寻位结束
-++++++++++++++++++++++++++++++++++
+Fin de búsqueda de alambre
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WireSearchEnd(refPos,searchVel,searchDis,autoBackFlag,autoBackVel,autoBackDis,offectFlag)``"
-    "描述", "焊丝寻位结束"
-    "必选参数", "- ``refPos``： 1-基准点 2-接触点
-    - ``searchVel``： 寻位速度 %
-    - ``searchDis``： 寻位距离 mm
-    - ``autoBackFlag``： 自动返回标志，0-不自动；-自动
-    - ``autoBackVel``： 自动返回速度 %
-    - ``autoBackDis``： 自动返回距离 mm
-    - ``offectFlag``： 1-带偏移量寻位；2-示教点寻位"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WireSearchEnd(refPos,searchVel,searchDis,autoBackFlag,autoBackVel,autoBackDis,offectFlag)``"
+    "Descripción", "Fin de búsqueda de alambre"
+    "Parámetros obligatorios", "- ``refPos``： 1-punto de referencia 2-punto de contacto
+    - ``searchVel``： velocidad de búsqueda %
+    - ``searchDis``： distancia de búsqueda mm
+    - ``autoBackFlag``： indicador de retorno automático，0-no automático；-automático
+    - ``autoBackVel``： velocidad de retorno automático %
+    - ``autoBackDis``： distancia de retorno automático mm
+    - ``offectFlag``： 1-búsqueda con desplazamiento；2-búsqueda de punto de enseñanza"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-计算焊丝寻位偏移量
-++++++++++++++++++++++++++++++++++
+Calcular el desplazamiento de búsqueda de alambre
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetWireSearchOffset(seamType, method,varNameRef,varNameRes)``"
-    "描述", "计算焊丝寻位偏移量"
-    "必选参数", "- ``seamType``： 焊缝类型
-    - ``method``： 计算方法
-    - ``varNameRef``： 基准点1-6，“#”表示无点变量
-    - ``varNameRes``： 接触点1-6，“#”表示无点变量"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``offsetFlag``： 0-偏移量直接叠加到指令点；1-偏移量需要对指令点进行坐标变换
-    - ``offset``： 偏移位姿[x, y, z, a, b, c]"
+    "Prototipo", "``GetWireSearchOffset(seamType, method,varNameRef,varNameRes)``"
+    "Descripción", "Calcular el desplazamiento de búsqueda de alambre"
+    "Parámetros obligatorios", "- ``seamType``： tipo de cordón de soldadura
+    - ``method``： método de cálculo
+    - ``varNameRef``： punto de referencia1-6，“#”indica variable sin punto
+    - ``varNameRes``： punto de contacto1-6，“#”indica variable sin punto"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``offsetFlag``： 0-el desplazamiento se superpone directamente al punto de instrucción；1-el desplazamiento requiere transformación de coordenadas del punto de instrucción
+    - ``offset``： pose de desplazamiento[x, y, z, a, b, c]"
 
-等待焊丝寻位完成
-++++++++++++++++++++++++++++++++++
+Esperar a que finalice la búsqueda de alambre
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WireSearchWait(varname)``"
-    "描述", "等待焊丝寻位完成"
-    "必选参数", "- ``varName``： 接触点名称 “RES0” ~ “RES99”"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Prototipo", "``WireSearchWait(varname)``"
+    "Descripción", "Esperar a que finalice la búsqueda de alambre"
+    "Parámetros obligatorios", "- ``varName``： nombre del punto de contacto “RES0” ~ “RES99”"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-焊丝寻位接触点写入数据库
-++++++++++++++++++++++++++++++++++
+Escritura del punto de contacto de búsqueda de alambre en la base de datos
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetPointToDatabase(varName,pos)``"
-    "描述", "焊丝寻位接触点写入数据库"
-    "必选参数", "- ``varName``： 接触点名称 “RES0” ~ “RES99”
-    - ``pos``：接触点数据[x, y, x, a, b, c]"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode" 
+    "Prototipo", "``SetPointToDatabase(varName,pos)``"
+    "Descripción", "Escritura del punto de contacto de búsqueda de alambre en la base de datos"
+    "Parámetros obligatorios", "- ``varName``： nombre del punto de contacto “RES0” ~ “RES99”
+    - ``pos``：datos del punto de contacto[x, y, x, a, b, c]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode" 
 
-机器人焊丝寻位代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de búsqueda de alambre del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     toolCoord = [0, 0, 200, 0, 0, 0]
     robot.SetToolCoord(1, toolCoord, 0, 0, 1, 0)
@@ -1649,77 +1649,77 @@
     error = robot.PointsOffsetDisable()
     robot.CloseRPC()
 
-设置焊接电压渐变开始
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el inicio del cambio gradual del voltaje de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingSetVoltageGradualChangeStart(IOType, voltageStart, voltageEnd, AOIndex, blend)``"
-    "描述", "设置焊接电压渐变开始"
-    "必选参数", "- ``IOType``：控制类型；0-控制箱IO；1-数字通信协议(UDP);2-数字通信协议(ModbusTCP)
-    - ``voltageStart``：起始焊接电压(V)
-    - ``voltageEnd``：终止焊接电压(V)
-    - ``AOIndex``：控制箱AO端口号(0-1)
-    - ``blend``：是否平滑 0-不平滑；1-平滑"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WeldingSetVoltageGradualChangeStart(IOType, voltageStart, voltageEnd, AOIndex, blend)``"
+    "Descripción", "Establecer el inicio del cambio gradual del voltaje de soldadura"
+    "Parámetros obligatorios", "- ``IOType``：tipo de control；0-IO de la caja de control；1-protocolo de comunicación digital(UDP);2-protocolo de comunicación digital(ModbusTCP)
+    - ``voltageStart``：voltaje de soldadura inicial(V)
+    - ``voltageEnd``：voltaje de soldadura final(V)
+    - ``AOIndex``：número de puerto AO de la caja de control(0-1)
+    - ``blend``：si suavizar 0-no suavizar；1-suavizar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置焊接电压渐变结束
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el fin del cambio gradual del voltaje de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingSetVoltageGradualChangeEnd()``"
-    "描述", "设置焊接电压渐变结束"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WeldingSetVoltageGradualChangeEnd()``"
+    "Descripción", "Establecer el fin del cambio gradual del voltaje de soldadura"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置焊接电流渐变开始
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el inicio del cambio gradual de la corriente de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingSetCurrentGradualChangeStart(IOType, currentStart, currentEnd, AOIndex, blend)``"
-    "描述", "设置焊接电流渐变开始"
-    "必选参数", "- ``IOType``：控制类型；0-控制箱IO；1-数字通信协议(UDP);2-数字通信协议(ModbusTCP)
-    - ``currentStart``：起始焊接电流(A)
-    - ``currentEnd``：终止焊接电流(A)
-    - ``AOIndex``：控制箱AO端口号(0-1)
-    - ``blend``：是否平滑 0-不平滑；1-平滑"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WeldingSetCurrentGradualChangeStart(IOType, currentStart, currentEnd, AOIndex, blend)``"
+    "Descripción", "Establecer el inicio del cambio gradual de la corriente de soldadura"
+    "Parámetros obligatorios", "- ``IOType``：tipo de control；0-IO de la caja de control；1-protocolo de comunicación digital(UDP);2-protocolo de comunicación digital(ModbusTCP)
+    - ``currentStart``：corriente de soldadura inicial(A)
+    - ``currentEnd``：corriente de soldadura final(A)
+    - ``AOIndex``：número de puerto AO de la caja de control(0-1)
+    - ``blend``：si suavizar 0-no suavizar；1-suavizar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置焊接电流渐变结束
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el fin del cambio gradual de la corriente de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WeldingSetCurrentGradualChangeEnd()``"
-    "描述", "设置焊接电流渐变结束"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WeldingSetCurrentGradualChangeEnd()``"
+    "Descripción", "Establecer el fin del cambio gradual de la corriente de soldadura"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-机器人焊接电流电压渐变代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de cambio gradual de corriente y voltaje de soldadura del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     startdescPose = [-484.707, 276.996, -14.013, -37.657, -40.508, -1.548]
     startjointPos = [-45.421, -75.673, 93.627, -104.302, -87.938, 6.005]
@@ -1731,8 +1731,8 @@
     offdese = [0, 0, 0, 0, 0, 0]
     robot.WeldingSetCurrentRelation(0, 495, 1, 10, 0)
     robot.WeldingSetVoltageRelation(10, 45, 1, 10, 1)
-    robot.WeldingSetVoltage(0, 25, 1, 0)  # ----设置电压
-    robot.WeldingSetCurrent(0, 260, 0, 0)  # ----设置电流
+    robot.WeldingSetVoltage(0, 25, 1, 0)  # ----establecer voltaje
+    robot.WeldingSetCurrent(0, 260, 0, 0)  # ----establecer corriente
     robot.MoveJ(joint_pos=safejointPos, tool=1, user=0, vel=5, acc=100)
     rtn = robot.WeldingSetCurrentGradualChangeStart(0, 260, 220, 0, 0)
     print("WeldingSetCurrentGradualChangeStart rtn is", rtn)
@@ -1752,53 +1752,53 @@
     robot.WeldingSetCurrentGradualChangeEnd()
     robot.WeldingSetVoltageGradualChangeEnd()
 
-设置自定义摆动参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer parámetros de oscilación personalizados
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``CustomWeaveSetPara(id, pointNum, point, stayTime, frequency, incStayType, stationary)``"
-    "描述", "设置自定义摆动参数"
-    "必选参数", "- ``id``：自定义摆动编号：0-2
-    - ``pointNum``：摆动点位个数 0-10
-    - ``point``：移动端点数据x,y,z
-    - ``stayTime``：摆动停留时间ms
-    - ``frequency``：摆动频率 Hz
-    - ``incStayType``：等待模式：0-周期不包含等待时间；1-周期包含等待时间
-    - ``stationary``：摆动位置等待：0-等待时间内继续运动；1-等待时间内位置静止"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``CustomWeaveSetPara(id, pointNum, point, stayTime, frequency, incStayType, stationary)``"
+    "Descripción", "Establecer parámetros de oscilación personalizados"
+    "Parámetros obligatorios", "- ``id``：número de oscilación personalizada：0-2
+    - ``pointNum``：número de puntos de oscilación 0-10
+    - ``point``：datos de puntos finales de movimiento x,y,z
+    - ``stayTime``：tiempo de permanencia de oscilación ms
+    - ``frequency``：frecuencia de oscilación Hz
+    - ``incStayType``：modo de espera：0-el ciclo no incluye tiempo de espera；1-el ciclo incluye tiempo de espera
+    - ``stationary``：espera en la posición de oscilación：0-continuar moviéndose durante el tiempo de espera；1-permanecer estático durante el tiempo de espera"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取自定义摆动参数
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener parámetros de oscilación personalizados
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``CustomWeaveGetPara(id)``"
-    "描述", "获取自定义摆动参数"
-    "必选参数", "- ``id``：自定义摆动编号：0-2"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``pointNum``：摆动点位个数 0-10
-    - ``point``：移动端点数据x,y,z
-    - ``stayTime``：摆动停留时间ms
-    - ``frequency``：摆动频率 Hz
-    - ``incStayType``：等待模式：0-周期不包含等待时间；1-周期包含等待时间
-    - ``stationary``：摆动位置等待：0-等待时间内继续运动；1-等待时间内位置静止"
+    "Prototipo", "``CustomWeaveGetPara(id)``"
+    "Descripción", "Obtener parámetros de oscilación personalizados"
+    "Parámetros obligatorios", "- ``id``：número de oscilación personalizada：0-2"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``pointNum``：número de puntos de oscilación 0-10
+    - ``point``：datos de puntos finales de movimiento x,y,z
+    - ``stayTime``：tiempo de permanencia de oscilación ms
+    - ``frequency``：frecuencia de oscilación Hz
+    - ``incStayType``：modo de espera：0-el ciclo no incluye tiempo de espera；1-el ciclo incluye tiempo de espera
+    - ``stationary``：espera en la posición de oscilación：0-continuar moviéndose durante el tiempo de espera；1-permanecer estático durante el tiempo de espera"
 
-自定义摆动参数代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de parámetros de oscilación personalizados
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     point = [0.0] * 30
     point[0] = -3.0
@@ -1849,226 +1849,212 @@
     robot.WeaveEnd(0)
     robot.CloseRPC()
 
-激光焊机参数配置
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Configuración de parámetros de la soldadora láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetLaserWeldingParam(self, num, scanSpeed, scanWidth, peakPower, dutyCycle, Freq, io_type=1)``"
-    "描述", "写入激光焊机10个工艺组中某一个的配置参数并配置给焊机"
-    "必选参数", "
-    - ``io_type``:通信类型 0-IO 1-UDP
-    - ``Num``:需要设置的组号（1~10）
-    - ``scanSpeed``:扫描速度
-    - ``scanWidth``:扫描宽度
-    - ``peakPower``:峰值功率
-    - ``dutyCycle``:占空比
-    - ``Freq``:频率
+    "Prototipo", "``SetLaserWeldingParam(self, num, scanSpeed, scanWidth, peakPower, dutyCycle, Freq, io_type=1)``"
+    "Descripción", "Escribir los parámetros de configuración de uno de los 10 grupos de procesos de la soldadora láser y configurarlos en la soldadora"
+    "Parámetros obligatorios", "
+    - ``io_type``:tipo de comunicación 0-IO 1-UDP
+    - ``Num``:número de grupo a configurar(1~10)
+    - ``scanSpeed``:velocidad de escaneo
+    - ``scanWidth``:ancho de escaneo
+    - ``peakPower``:potencia pico
+    - ``dutyCycle``:ciclo de trabajo
+    - ``Freq``:frecuencia
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置激光焊接开始停止
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Establecer inicio y parada de soldadura láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetLaserWeldingStartEnd(self, status, io_type=1, max_waittime=10000)``"
-    "描述", "设置激光焊机开启关闭"
-    "必选参数", "
-    - ``io_type``:通信类型 0-IO 1-UDP
-    - ``status``:控制字 0-收光 1-出光
-    - ``max_waittime``:最大等待时间
+    "Prototipo", "``SetLaserWeldingStartEnd(self, status, io_type=1, max_waittime=10000)``"
+    "Descripción", "Establecer encendido y apagado de la soldadora láser"
+    "Parámetros obligatorios", "
+    - ``io_type``:tipo de comunicación 0-IO 1-UDP
+    - ``status``:palabra de control 0-recepción de luz 1-emisión de luz
+    - ``max_waittime``:tiempo máximo de espera
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-激光焊机使能去使能
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Habilitación y deshabilitación de la soldadora láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetLaserWeldingEnable(self, status, io_type=1)``"
-    "描述", "激光焊机使能去使能"
-    "必选参数", "
-    - ``io_type``:通信类型 0-IO 1-UDP
-    - ``status``:0-去使能 1-使能
+    "Prototipo", "``SetLaserWeldingEnable(self, status, io_type=1)``"
+    "Descripción", "Habilitación y deshabilitación de la soldadora láser"
+    "Parámetros obligatorios", "
+    - ``io_type``:tipo de comunicación 0-IO 1-UDP
+    - ``status``:0-deshabilitar 1-habilitar
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-激光焊机故障复位
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Restablecimiento de fallos de la soldadora láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ResetLaserWeldingErr(self,status, io_type=1)``"
-    "描述", "激光焊机故障复位"
-    "必选参数", "
-    - ``io_type``:通信类型 0-IO 1-UDP
-    - ``status``:控制字 0-无效 1-故障复位
+    "Prototipo", "``ResetLaserWeldingErr(self,status, io_type=1)``"
+    "Descripción", "Restablecimiento de fallos de la soldadora láser"
+    "Parámetros obligatorios", "
+    - ``io_type``:tipo de comunicación 0-IO 1-UDP
+    - ``status``:palabra de control 0-inválido 1-restablecimiento de fallos
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取激光焊机运行状态
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Obtener el estado de funcionamiento de la soldadora láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetLaserWeldingRunningState(self, io_type=1)``"
-    "描述", "获取激光焊机运行状态"
-    "必选参数", "
-    - ``io_type``:通信类型 0-IO 1-UDP
-    - ``status``:控制字 0-停机 1-运行
+    "Prototipo", "``GetLaserWeldingRunningState(self, io_type=1)``"
+    "Descripción", "Obtener el estado de funcionamiento de la soldadora láser"
+    "Parámetros obligatorios", "
+    - ``io_type``:tipo de comunicación 0-IO 1-UDP
+    - ``status``:palabra de control 0-parada 1-funcionamiento
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取激光焊机故障状态
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Obtener el estado de fallo de la soldadora láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetLaserWeldingErrState(self, io_type=1)``"
-    "描述", "获取激光焊机故障状态"
-    "必选参数", "
-    - ``io_type``:通信类型 0-IO 1-UDP
-    - ``status``:0-无故障 1-存在故障
+    "Prototipo", "``GetLaserWeldingErrState(self, io_type=1)``"
+    "Descripción", "Obtener el estado de fallo de la soldadora láser"
+    "Parámetros obligatorios", "
+    - ``io_type``:tipo de comunicación 0-IO 1-UDP
+    - ``status``:0-sin fallo 1-con fallo
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取激光焊机配置参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Obtener los parámetros de configuración de la soldadora láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetLaserWeldingParamTarget(self, num)``"
-    "描述", "获取激光焊机10个工艺组中某一个的配置参数"
-    "必选参数", "
-    - ``Num``:需要设置的组号（1~10）
-    - ``scanSpeed``:扫描速度
-    - ``scanWidth``:扫描宽度
-    - ``peakPower``:峰值功率
-    - ``dutyCycle``:占空比
-    - ``Freq``:频率
+    "Prototipo", "``GetLaserWeldingParamTarget(self, num)``"
+    "Descripción", "Obtener los parámetros de configuración de uno de los 10 grupos de procesos de la soldadora láser"
+    "Parámetros obligatorios", "
+    - ``Num``:número de grupo a configurar(1~10)
+    - ``scanSpeed``:velocidad de escaneo
+    - ``scanWidth``:ancho de escaneo
+    - ``peakPower``:potencia pico
+    - ``dutyCycle``:ciclo de trabajo
+    - ``Freq``:frecuencia
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取当前激光焊机生效的配置参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Obtener los parámetros de configuración vigentes actualmente de la soldadora láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetLaserWeldingParamActual(self, io_type=1)``"
-    "描述", "获取当前激光焊机生效的配置参数"
-    "必选参数", "
-    - ``io_type``:通信类型 0-IO 1-UDP
-    - ``scanSpeed``:扫描速度
-    - ``scanWidth``:扫描宽度
-    - ``peakPower``:峰值功率
-    - ``dutyCycle``:占空比
-    - ``Freq``:频率
+    "Prototipo", "``GetLaserWeldingParamActual(self, io_type=1)``"
+    "Descripción", "Obtener los parámetros de configuración vigentes actualmente de la soldadora láser"
+    "Parámetros obligatorios", "
+    - ``io_type``:tipo de comunicación 0-IO 1-UDP
+    - ``scanSpeed``:velocidad de escaneo
+    - ``scanWidth``:ancho de escaneo
+    - ``peakPower``:potencia pico
+    - ``dutyCycle``:ciclo de trabajo
+    - ``Freq``:frecuencia
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-配置激光焊机扩展IO使能DO端口
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Configurar el puerto DO extendido de habilitación de la soldadora láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetLaserWeldingEnableExtDoNum(self, ctrlModeDONum)``"
-    "描述", "配置激光焊机扩展IO使能DO端口"
-    "必选参数", "
-    - ``ctrlModeDONum``:激光焊机使能的扩展DO端口号
+    "Prototipo", "``SetLaserWeldingEnableExtDoNum(self, ctrlModeDONum)``"
+    "Descripción", "Configurar el puerto DO extendido de habilitación de la soldadora láser"
+    "Parámetros obligatorios", "
+    - ``ctrlModeDONum``:número de puerto DO extendido de habilitación de la soldadora láser
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-配置激光焊机扩展IO启动DO端口
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Configurar el puerto DO extendido de inicio de la soldadora láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetLaserWeldingStartExtDoNum(self, ctrlModeDONum)``"
-    "描述", "激光焊机设置扩展IO，启动的DO端口"
-    "必选参数", "
-    - ``ctrlModeDONum``:激光焊机启动（出光收光）的扩展DO端口号
+    "Prototipo", "``SetLaserWeldingStartExtDoNum(self, ctrlModeDONum)``"
+    "Descripción", "Configurar el IO extendido de la soldadora láser, puerto DO de inicio"
+    "Parámetros obligatorios", "
+    - ``ctrlModeDONum``:número de puerto DO extendido de inicio (emisión/recepción de luz) de la soldadora láser
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-配置激光焊机扩展IO故障复位DO端口
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Configurar el puerto DO extendido de restablecimiento de fallos de la soldadora láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetLaserWeldingErrResetExtDoNum(self, ctrlModeDONum)``"
-    "描述", "激光焊机设置扩展IO，故障复位的DO端口"
-    "必选参数", "
-    - ``ctrlModeDONum``:激光焊机故障复位的扩展DO端口号
+    "Prototipo", "``SetLaserWeldingErrResetExtDoNum(self, ctrlModeDONum)``"
+    "Descripción", "Configurar el IO extendido de la soldadora láser, puerto DO de restablecimiento de fallos"
+    "Parámetros obligatorios", "
+    - ``ctrlModeDONum``:número de puerto DO extendido de restablecimiento de fallos de la soldadora láser
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-配置激光焊机扩展IO运行状态（出光状态）DI端口
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Configurar el puerto DI extendido del estado de funcionamiento (estado de emisión de luz) de la soldadora láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetLaserWeldingRunningStateExtDiNum(self, diNum)``"
-    "描述", "配置激光焊机扩展IO运行状态（出光状态）DI端口"
-    "必选参数", "
-    - ``diNum``:配置激光焊机运行状态（出光状态）扩展DI端口
+    "Prototipo", "``SetLaserWeldingRunningStateExtDiNum(self, diNum)``"
+    "Descripción", "Configurar el puerto DI extendido del estado de funcionamiento (estado de emisión de luz) de la soldadora láser"
+    "Parámetros obligatorios", "
+    - ``diNum``:configurar el puerto DI extendido del estado de funcionamiento (estado de emisión de luz) de la soldadora láser
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-配置激光焊机扩展IO故障状态DI端口
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Configurar el puerto DI extendido del estado de fallo de la soldadora láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetLaserWeldingErrStateExtDiNum(self, diNum)``"
-    "描述", "配置激光焊机扩展IO故障状态DI端口"
-    "必选参数", "
-    - ``diNum``:配置激光焊机故障状态 扩展DI端口
+    "Prototipo", "``SetLaserWeldingErrStateExtDiNum(self, diNum)``"
+    "Descripción", "Configurar el puerto DI extendido del estado de fallo de la soldadora láser"
+    "Parámetros obligatorios", "
+    - ``diNum``:configurar el puerto DI extendido del estado de fallo de la soldadora láser
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-激光焊接代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Ejemplo de código de soldadura láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
@@ -2076,7 +2062,7 @@
     from fairino import Robot
     import time
 
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
 
     def testLsaerWeld():
@@ -2110,46 +2096,43 @@
         robot.Mode(1)
         time.sleep(1)
 
-        # 关闭连接
+        # Cerrar conexión
         robot.CloseRPC()
         time.sleep(1)
 
-    # 调用测试函数
+    # Llamar a la función de prueba
     testLsaerWeld()
 
-设置摆动结束回周期零点
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Establecer el retorno al punto cero del ciclo al final de la oscilación
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetWeaveBackCenterConfig(self, flag)``"
-    "描述", "设置摆动结束回周期零点"
-    "必选参数", "
-    - ``flag``: 摆动结束是否回周期零点；0-不回周期零点；1-回周期零点
+    "Prototipo", "``SetWeaveBackCenterConfig(self, flag)``"
+    "Descripción", "Establecer el retorno al punto cero del ciclo al final de la oscilación"
+    "Parámetros obligatorios", "
+    - ``flag``: si volver al punto cero del ciclo al final de la oscilación；0-no volver al punto cero del ciclo；1-volver al punto cero del ciclo
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"    
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"    
 
-获取摆动结束回周期零点参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Obtener los parámetros de retorno al punto cero del ciclo al final de la oscilación
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetWeaveBackCenterConfig(self)``"
-    "描述", "获取摆动结束回周期零点参数"
-    "必选参数", "
-    - ``flag``: 摆动结束是否回周期零点；0-不回周期零点；1-回周期零点
+    "Prototipo", "``GetWeaveBackCenterConfig(self)``"
+    "Descripción", "Obtener los parámetros de retorno al punto cero del ciclo al final de la oscilación"
+    "Parámetros obligatorios", "
+    - ``flag``: si volver al punto cero del ciclo al final de la oscilación；0-no volver al punto cero del ciclo；1-volver al punto cero del ciclo
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"   
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"   
 
-摆动结束回周期零点代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Ejemplo de código de retorno al punto cero del ciclo al final de la oscilación
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 

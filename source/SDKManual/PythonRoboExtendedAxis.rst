@@ -1,258 +1,258 @@
-扩展轴
-=============
+Eje extendido
+================
 
 .. toctree:: 
     :maxdepth: 5
 
-设置485扩展轴参数
-+++++++++++++++++++++
+Establecer los parámetros del eje extendido 485
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AuxServoSetParam(servoId,servoCompany,servoModel,servoSoftVersion, servoResolution,axisMechTransRatio)``"
-    "描述", "设置485扩展轴参数"
-    "必选参数", "- ``servoId``：伺服驱动器ID，范围[1-15],对应从站ID；
-    - ``servoCompany``：伺服驱动器厂商，1-戴纳泰克；
-    - ``servoModel``：伺服驱动器型号，1-FD100-750C；
-    - ``servoSoftVersion``：伺服驱动器软件版本，1-V1.0；
-    - ``servoResolution``：编码器分辨率；
-    - ``axisMechTransRatio``：机械传动比；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AuxServoSetParam(servoId,servoCompany,servoModel,servoSoftVersion, servoResolution,axisMechTransRatio)``"
+    "Descripción", "Establecer los parámetros del eje extendido 485"
+    "Parámetros obligatorios", "- ``servoId``：ID del servoaccionamiento, rango [1-15], corresponde al ID de esclavo;
+    - ``servoCompany``：Fabricante del servoaccionamiento, 1-Dynatec;
+    - ``servoModel``：Modelo del servoaccionamiento, 1-FD100-750C;
+    - ``servoSoftVersion``：Versión de software del servoaccionamiento, 1-V1.0;
+    - ``servoResolution``：Resolución del codificador;
+    - ``axisMechTransRatio``：Relación de transmisión mecánica;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取485扩展轴配置参数
-+++++++++++++++++++++
+Obtener los parámetros de configuración del eje extendido 485
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AuxServoGetParam(servoId)``"
-    "描述", "获取485扩展轴配置参数"
-    "必选参数", "- ``servoId``：伺服驱动器ID，范围[1-15],对应从站ID；"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode;
-    - ``servoCompany``：伺服驱动器厂商，1-戴纳泰克；
-    - ``servoModel``：伺服驱动器型号，1-FD100-750C；
-    - ``servoSoftVersion``：伺服驱动器软件版本，1-V1.0；
-    - ``servoResolution``：编码器分辨率；
-    - ``axisMechTransRatio``：机械传动比；"
+    "Prototipo", "``AuxServoGetParam(servoId)``"
+    "Descripción", "Obtener los parámetros de configuración del eje extendido 485"
+    "Parámetros obligatorios", "- ``servoId``：ID del servoaccionamiento, rango [1-15], corresponde al ID de esclavo;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode;
+    - ``servoCompany``：Fabricante del servoaccionamiento, 1-Dynatec;
+    - ``servoModel``：Modelo del servoaccionamiento, 1-FD100-750C;
+    - ``servoSoftVersion``：Versión de software del servoaccionamiento, 1-V1.0;
+    - ``servoResolution``：Resolución del codificador;
+    - ``axisMechTransRatio``：Relación de transmisión mecánica;"
 
-设置485扩展轴使能/去使能
-++++++++++++++++++++++++++
+Establecer la habilitación/deshabilitación del eje extendido 485
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AuxServoEnable(servoId,status)``"
-    "描述", "设置485扩展轴使能/去使能"
-    "必选参数", "- ``servoId``：伺服驱动器ID，范围[1-15],对应从站ID；
-    - ``status``：使能状态，0-去使能， 1-使能;"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AuxServoEnable(servoId,status)``"
+    "Descripción", "Establecer la habilitación/deshabilitación del eje extendido 485"
+    "Parámetros obligatorios", "- ``servoId``：ID del servoaccionamiento, rango [1-15], corresponde al ID de esclavo;
+    - ``status``：Estado de habilitación, 0-deshabilitar, 1-habilitar;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置485扩展轴控制模式
-+++++++++++++++++++++++
+Establecer el modo de control del eje extendido 485
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AuxServoSetControlMode(servoId,mode)``"
-    "描述", "设置485扩展轴控制模式"
-    "必选参数", "- ``servoId``：伺服驱动器ID，范围[1-15],对应从站ID；
-    - ``mode``：控制模式，0-位置模式，1-速度模式;"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AuxServoSetControlMode(servoId,mode)``"
+    "Descripción", "Establecer el modo de control del eje extendido 485"
+    "Parámetros obligatorios", "- ``servoId``：ID del servoaccionamiento, rango [1-15], corresponde al ID de esclavo;
+    - ``mode``：Modo de control, 0-modo de posición, 1-modo de velocidad;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置485扩展轴目标位置(位置模式)
-++++++++++++++++++++++++++++++++
+Establecer la posición objetivo del eje extendido 485 (modo de posición)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AuxServoSetTargetPos(servoId,pos,speed)``"
-    "描述", "设置485扩展轴目标位置(位置模式)"
-    "必选参数", "- ``servoId``：伺服驱动器ID，范围[1-15],对应从站ID；
-    - ``pos``：目标位置，mm或°；
-    - ``speed``：目标速度，mm/s或°/s;"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AuxServoSetTargetPos(servoId,pos,speed)``"
+    "Descripción", "Establecer la posición objetivo del eje extendido 485 (modo de posición)"
+    "Parámetros obligatorios", "- ``servoId``：ID del servoaccionamiento, rango [1-15], corresponde al ID de esclavo;
+    - ``pos``：Posición objetivo, mm o °;
+    - ``speed``：Velocidad objetivo, mm/s o °/s;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置485扩展轴目标转矩(力矩模式)-暂未开放
-++++++++++++++++++++++++++++++++++++++++
+Establecer el par objetivo del eje extendido 485 (modo de par) - aún no disponible
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AuxServoSetTargetTorque(servoId,torque)``"
-    "描述", "设置485扩展轴目标转矩(力矩模式)"
-    "必选参数", "- ``servoId``：伺服驱动器ID，范围[1-15],对应从站ID；
-    - ``torque``：目标力矩，Nm;"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AuxServoSetTargetTorque(servoId,torque)``"
+    "Descripción", "Establecer el par objetivo del eje extendido 485 (modo de par)"
+    "Parámetros obligatorios", "- ``servoId``：ID del servoaccionamiento, rango [1-15], corresponde al ID de esclavo;
+    - ``torque``：Par objetivo, Nm;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置485扩展轴回零
-++++++++++++++++++++++++++++++++++++++++
+Establecer el retorno a cero del eje extendido 485
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AuxServoHoming(servoId,mode,searchVel,latchVel)``"
-    "描述", "设置485扩展轴回零"
-    "必选参数", "- ``servoId``：伺服驱动器ID，范围[1-15],对应从站ID；
-    - ``mode``：回零模式，1-当前位置回零；2-负限位回零；3-正限位回零;
-    - ``searchVel``： 回零速度，mm/s或°/s;
-    - ``latchVel``：箍位速度，mm/s或°/s;"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AuxServoHoming(servoId,mode,searchVel,latchVel)``"
+    "Descripción", "Establecer el retorno a cero del eje extendido 485"
+    "Parámetros obligatorios", "- ``servoId``：ID del servoaccionamiento, rango [1-15], corresponde al ID de esclavo;
+    - ``mode``：Modo de retorno a cero, 1-retorno a cero en la posición actual; 2-retorno a cero en el límite negativo; 3-retorno a cero en el límite positivo;
+    - ``searchVel``： Velocidad de retorno a cero, mm/s o °/s;
+    - ``latchVel``：Velocidad de enganche, mm/s o °/s;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-清除485扩展轴错误信息
-++++++++++++++++++++++++++++++++++++++++
+Borrar la información de error del eje extendido 485
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AuxServoClearError(servoId)``"
-    "描述", "清除485扩展轴错误信息"
-    "必选参数", "- ``servoId``：伺服驱动器ID，范围[1-15],对应从站ID；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AuxServoClearError(servoId)``"
+    "Descripción", "Borrar la información de error del eje extendido 485"
+    "Parámetros obligatorios", "- ``servoId``：ID del servoaccionamiento, rango [1-15], corresponde al ID de esclavo;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取485扩展轴伺服状态
-++++++++++++++++++++++++++++++++++++++++
+Obtener el estado del servo del eje extendido 485
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AuxServoGetStatus(servoId)``"
-    "描述", "获取485扩展轴伺服状态"
-    "必选参数", "- ``servoId``：伺服驱动器ID，范围[1-15],对应从站ID；"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode;
-    - ``servoErrCode``：伺服驱动器故障码
-    - ``servoState``：伺服驱动器状态 bit0:0-未使能；1-使能;  bit1:0-未运动；1-正在运动;  bit2 0-正限位未触发；1-正限位触发；bit3 0-负限位未触发；1-负限位触发；bit4 0-未定位完成；1-定位完成；  bit5：0-未回零；1-回零完成；
-    - ``servoPos``：伺服当前位置 mm或°；
-    - ``servoSpeed``：伺服当前速度 mm/s或°/s；
-    - ``servoTorque``：伺服当前转矩Nm；"
+    "Prototipo", "``AuxServoGetStatus(servoId)``"
+    "Descripción", "Obtener el estado del servo del eje extendido 485"
+    "Parámetros obligatorios", "- ``servoId``：ID del servoaccionamiento, rango [1-15], corresponde al ID de esclavo;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode;
+    - ``servoErrCode``：Código de fallo del servoaccionamiento
+    - ``servoState``：Estado del servoaccionamiento bit0:0-no habilitado；1-habilitado;  bit1:0-sin movimiento；1-en movimiento;  bit2 0-límite positivo no activado；1-límite positivo activado；bit3 0-límite negativo no activado；1-límite negativo activado；bit4 0-posicionamiento no completado；1-posicionamiento completado；  bit5：0-sin retorno a cero；1-retorno a cero completado；
+    - ``servoPos``：Posición actual del servo mm o °;
+    - ``servoSpeed``：Velocidad actual del servo mm/s o °/s;
+    - ``servoTorque``：Par actual del servo Nm;"
 
-设置485扩展轴目标速度(速度模式)
-+++++++++++++++++++++++++++++++
+Establecer la velocidad objetivo del eje extendido 485 (modo de velocidad)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AuxServoSetTargetSpeed(servoId,speed)``"
-    "描述", "设置485扩展轴目标速度(速度模式)"
-    "必选参数", "- ``servoId``：伺服驱动器ID，范围[1-15],对应从站ID；
-    - ``speed``：目标速度，mm/s或°/s;"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AuxServoSetTargetSpeed(servoId,speed)``"
+    "Descripción", "Establecer la velocidad objetivo del eje extendido 485 (modo de velocidad)"
+    "Parámetros obligatorios", "- ``servoId``：ID del servoaccionamiento, rango [1-15], corresponde al ID de esclavo;
+    - ``speed``：Velocidad objetivo, mm/s o °/s;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置状态反馈中485扩展轴数据轴号
-++++++++++++++++++++++++++++++++++++++++
+Establecer el número de eje de los datos del eje extendido 485 en la retroalimentación de estado
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AuxServosetStatusID(servoId)``"
-    "描述", "设置状态反馈中485扩展轴数据轴号"
-    "必选参数", "- ``servoId``：伺服驱动器ID，范围[1-15],对应从站ID；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AuxServosetStatusID(servoId)``"
+    "Descripción", "Establecer el número de eje de los datos del eje extendido 485 en la retroalimentación de estado"
+    "Parámetros obligatorios", "- ``servoId``：ID del servoaccionamiento, rango [1-15], corresponde al ID de esclavo;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置485扩展轴运动加减速度
-++++++++++++++++++++++++++++++++++++++++
+Establecer la aceleración y desaceleración de movimiento del eje extendido 485
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AuxServoSetAcc(acc, dec)``"
-    "描述", "设置485扩展轴运动加减速度"
-    "必选参数", "- ``acc``：485扩展轴运动加速度
-    - ``dec``：485扩展轴运动减速度"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AuxServoSetAcc(acc, dec)``"
+    "Descripción", "Establecer la aceleración y desaceleración de movimiento del eje extendido 485"
+    "Parámetros obligatorios", "- ``acc``：Aceleración de movimiento del eje extendido 485
+    - ``dec``：Desaceleración de movimiento del eje extendido 485"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置485扩展轴急停加减速度
-++++++++++++++++++++++++++++++++++++++++
+Establecer la aceleración y desaceleración de parada de emergencia del eje extendido 485
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AuxServoSetEmergencyStopAcc(acc, dec)``"
-    "描述", "设置485扩展轴急停加减速度"
-    "必选参数", "- ``acc``：485扩展轴急停加速度
-    - ``dec``：485扩展轴急停减速度"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AuxServoSetEmergencyStopAcc(acc, dec)``"
+    "Descripción", "Establecer la aceleración y desaceleración de parada de emergencia del eje extendido 485"
+    "Parámetros obligatorios", "- ``acc``：Aceleración de parada de emergencia del eje extendido 485
+    - ``dec``：Desaceleración de parada de emergencia del eje extendido 485"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取485扩展轴运动加减速度
-++++++++++++++++++++++++++++++++++++++++
+Obtener la aceleración y desaceleración de movimiento del eje extendido 485
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AuxServoGetAcc()``"
-    "描述", "获取485扩展轴运动加减速度"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``acc``：485扩展轴运动加速度
-    - ``dec``：485扩展轴运动减速度"
+    "Prototipo", "``AuxServoGetAcc()``"
+    "Descripción", "Obtener la aceleración y desaceleración de movimiento del eje extendido 485"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``acc``：Aceleración de movimiento del eje extendido 485
+    - ``dec``：Desaceleración de movimiento del eje extendido 485"
 
-获取485扩展轴急停加减速度
-++++++++++++++++++++++++++++++++++++++++
+Obtener la aceleración y desaceleración de parada de emergencia del eje extendido 485
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AuxServoGetEmergencyStopAcc()``"
-    "描述", "获取485扩展轴急停加减速度"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``acc``：485扩展轴急停加速度
-    - ``dec``：485扩展轴急停减速度"
+    "Prototipo", "``AuxServoGetEmergencyStopAcc()``"
+    "Descripción", "Obtener la aceleración y desaceleración de parada de emergencia del eje extendido 485"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``acc``：Aceleración de parada de emergencia del eje extendido 485
+    - ``dec``：Desaceleración de parada de emergencia del eje extendido 485"
 
-扩展轴控制代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de control del eje extendido
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     retval = robot.AuxServoSetParam(1, 1, 1, 1, 131072, 15.45)
     print(f"AuxServoSetParam is: {retval}")
@@ -328,270 +328,270 @@
     robot.AuxServoSetTargetSpeed(1, 0, 80)
     robot.CloseRPC()
 
-UDP扩展轴通讯参数配置
-++++++++++++++++++++++++++++++++++++++++
+Configuración de los parámetros de comunicación del eje extendido UDP
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtDevSetUDPComParam(ip, port, period, lossPkgTime, lossPkgNum, disconnectTime, reconnectEnable, reconnectPeriod, reconnectNum, selfConnect)``"
-    "描述", "UDP扩展轴通讯参数配置"
-    "必选参数", "
-    - ``ip``：PLC IP地址；
-    - ``port``：端口号；
-    - ``period``：通讯周期(ms，暂不开放)；
-    - ``lossPkgTime``：丢包检测时间(ms)；
-    - ``lossPkgNum``：丢包次数；
-    - ``disconnectTime``：通讯断开确认时长；
-    - ``reconnectEnable``：通讯断开自动重连使能 0-不使能 1-使能；
-    - ``reconnectPeriod``：重连周期间隔(ms)；
-    - ``reconnectNum``：重连次数
-    - ``selfConnect``：断电重启是否自动建立连接；0-不建立连接；1-建立连接"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ExtDevSetUDPComParam(ip, port, period, lossPkgTime, lossPkgNum, disconnectTime, reconnectEnable, reconnectPeriod, reconnectNum, selfConnect)``"
+    "Descripción", "Configuración de los parámetros de comunicación del eje extendido UDP"
+    "Parámetros obligatorios", "
+    - ``ip``：Dirección IP del PLC;
+    - ``port``：Número de puerto;
+    - ``period``：Período de comunicación (ms, aún no disponible);
+    - ``lossPkgTime``：Tiempo de detección de pérdida de paquetes (ms);
+    - ``lossPkgNum``：Número de pérdidas de paquetes;
+    - ``disconnectTime``：Duración de confirmación de desconexión de comunicación;
+    - ``reconnectEnable``：Habilitación de reconexión automática tras desconexión de comunicación 0-no habilitar 1-habilitar;
+    - ``reconnectPeriod``：Intervalo del período de reconexión (ms);
+    - ``reconnectNum``：Número de reconexiones
+    - ``selfConnect``：Si se establece automáticamente la conexión tras reinicio por corte de energía; 0-no establecer conexión; 1-establecer conexión"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取UDP扩展轴通讯参数
-++++++++++++++++++++++++++++++++++++++++
+Obtener los parámetros de comunicación del eje extendido UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtDevGetUDPComParam()``"
-    "描述", "获取UDP扩展轴通讯参数"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "
-    - 错误码 成功-0  失败- errcode；
-    - ``ip``：PLC IP地址；
-    - ``port``：端口号；
-    - ``period``：通讯周期(ms，暂不开放)；
-    - ``lossPkgTime``：丢包检测时间(ms)；
-    - ``lossPkgNum``：丢包次数；
-    - ``disconnectTime``：通讯断开确认时长；
-    - ``reconnectEnable``：通讯断开自动重连使能 0-不使能 1-使能；
-    - ``reconnectPeriod``：重连周期间隔(ms)；
-    - ``reconnectNum``：重连次数
-    - ``selfConnect``：重启控制箱后是否自动重连；0-不重连；1-重连"
+    "Prototipo", "``ExtDevGetUDPComParam()``"
+    "Descripción", "Obtener los parámetros de comunicación del eje extendido UDP"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "
+    - Código de error éxito-0  fallo- errcode;
+    - ``ip``：Dirección IP del PLC;
+    - ``port``：Número de puerto;
+    - ``period``：Período de comunicación (ms, aún no disponible);
+    - ``lossPkgTime``：Tiempo de detección de pérdida de paquetes (ms);
+    - ``lossPkgNum``：Número de pérdidas de paquetes;
+    - ``disconnectTime``：Duración de confirmación de desconexión de comunicación;
+    - ``reconnectEnable``：Habilitación de reconexión automática tras desconexión de comunicación 0-no habilitar 1-habilitar;
+    - ``reconnectPeriod``：Intervalo del período de reconexión (ms);
+    - ``reconnectNum``：Número de reconexiones
+    - ``selfConnect``：Si se reconecta automáticamente tras reiniciar la caja de control; 0-no reconectar; 1-reconectar"
  
-加载UDP通信
-++++++++++++++++++++++++++++++++++++++++
+Cargar la comunicación UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtDevLoadUDPDriver()``"
-    "描述", "加载UDP通信"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ExtDevLoadUDPDriver()``"
+    "Descripción", "Cargar la comunicación UDP"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
     
-卸载UDP通信
-++++++++++++++++++++++++++++++++++++++++
+Descargar la comunicación UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtDevUnloadUDPDriver()``"
-    "描述", "卸载UDP通信"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ExtDevUnloadUDPDriver()``"
+    "Descripción", "Descargar la comunicación UDP"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-UDP扩展轴通信异常断开后恢复连接
-++++++++++++++++++++++++++++++++++++++++
+Restablecer la conexión tras una desconexión anómala de la comunicación del eje extendido UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtDevUDPClientComReset()``"
-    "描述", "UDP扩展轴通信异常断开后恢复连接"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ExtDevUDPClientComReset()``"
+    "Descripción", "Restablecer la conexión tras una desconexión anómala de la comunicación del eje extendido UDP"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-UDP扩展轴通信异常断开后关闭通讯
-++++++++++++++++++++++++++++++++++++++++
+Cerrar la comunicación tras una desconexión anómala de la comunicación del eje extendido UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtDevUDPClientComClose()``"
-    "描述", "UDP扩展轴通信异常断开后关闭通讯"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ExtDevUDPClientComClose()``"
+    "Descripción", "Cerrar la comunicación tras una desconexión anómala de la comunicación del eje extendido UDP"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-UDP扩展轴参数配置
-++++++++++++++++++++++++++++++++++++++++
+Configuración de los parámetros del eje extendido UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtAxisParamConfig(axisId, axisType, axisDirection, axisMax, axisMin, axisVel, axisAcc,axisLead, encResolution, axisOffect, axisCompany, axisModel, axisEncType)``"
-    "描述", "UDP扩展轴参数配置"
-    "必选参数", "
-    - ``axisId``：轴号[1-4]；
-    - ``axisType``：扩展轴类型 0-平移；1-旋转；
-    - ``axisDirection``：扩展轴方向 0-正向；1-反向；
-    - ``axisMax``：扩展轴最大位置 mm；
-    - ``axisMin``：扩展轴最小位置 mm；
-    - ``axisVel``：速度mm/s；
-    - ``axisAcc``：加速度mm/s2；
-    - ``axisLead``：导程mm；
-    - ``encResolution``：编码器分辨率；
-    - ``axisOffect``：焊缝起始点扩展轴偏移量；
-    - ``axisCompany``：驱动器厂家 1-禾川；2-汇川；3-松下；
-    - ``axisModel``：驱动器型号 1-禾川-SV-XD3EA040L-E，2-禾川-SV-X2EA150A-A，1-汇川-SV620PT5R4I，1-松下-MADLN15SG，2-松下-MSDLN25SG，3-松下-MCDLN35SG；
-    - ``axisEncType``：编码器类型  0-增量；1-绝对值；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ExtAxisParamConfig(axisId, axisType, axisDirection, axisMax, axisMin, axisVel, axisAcc,axisLead, encResolution, axisOffect, axisCompany, axisModel, axisEncType)``"
+    "Descripción", "Configuración de los parámetros del eje extendido UDP"
+    "Parámetros obligatorios", "
+    - ``axisId``：Número de eje [1-4];
+    - ``axisType``：Tipo de eje extendido 0-traslación; 1-rotación;
+    - ``axisDirection``：Dirección del eje extendido 0-positiva; 1-negativa;
+    - ``axisMax``：Posición máxima del eje extendido mm;
+    - ``axisMin``：Posición mínima del eje extendido mm;
+    - ``axisVel``：Velocidad mm/s;
+    - ``axisAcc``：Aceleración mm/s2;
+    - ``axisLead``：Paso mm;
+    - ``encResolution``：Resolución del codificador;
+    - ``axisOffect``：Desplazamiento del eje extendido en el punto inicial de la soldadura;
+    - ``axisCompany``：Fabricante del accionamiento 1-Huichuan; 2-Inovance; 3-Panasonic;
+    - ``axisModel``：Modelo del accionamiento 1-Huichuan-SV-XD3EA040L-E, 2-Huichuan-SV-X2EA150A-A, 1-Inovance-SV620PT5R4I, 1-Panasonic-MADLN15SG, 2-Panasonic-MSDLN25SG, 3-Panasonic-MCDLN35SG;
+    - ``axisEncType``：Tipo de codificador 0-incremental; 1-absoluto;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-UDP扩展轴参数获取
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtención de los parámetros del eje extendido UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtAxisGetParamConfig(self, axisID)``"
-    "描述", "UDP扩展轴参数获取"
-    "必选参数", "
-    - ``axisID``：扩展轴号[1-4]
-    - ``axisType``：扩展轴类型 0-平移；1-旋转
-    - ``axisDirection``：扩展轴方向 0-正向；1-反向
-    - ``axisMax``：扩展轴最大位置 mm
-    - ``axisMin``：扩展轴最小位置 mm
-    - ``axisVel``：速度mm/s
-    - ``axisAcc``：加速度mm/s2
-    - ``axisLead``：导程mm
-    - ``encResolution``：编码器分辨率
-    - ``axisOffect``：焊缝起始点扩展轴偏移量
-    - ``axisCompany``：驱动器厂家 1-禾川；2-汇川；3-松下
-    - ``axisModel``：驱动器型号 1-禾川-SV-XD3EA040L-E，2-禾川-SV-X2EA150A-A，1-汇川-SV620PT5R4I，1-松下-MADLN15SG，2-松下-MSDLN25SG，3-松下-MCDLN35SG
-    - ``axisEncType``：编码器类型 0-增量；1-绝对值
+    "Prototipo", "``ExtAxisGetParamConfig(self, axisID)``"
+    "Descripción", "Obtención de los parámetros del eje extendido UDP"
+    "Parámetros obligatorios", "
+    - ``axisID``：Número de eje extendido [1-4]
+    - ``axisType``：Tipo de eje extendido 0-traslación; 1-rotación
+    - ``axisDirection``：Dirección del eje extendido 0-positiva; 1-negativa
+    - ``axisMax``：Posición máxima del eje extendido mm
+    - ``axisMin``：Posición mínima del eje extendido mm
+    - ``axisVel``：Velocidad mm/s
+    - ``axisAcc``：Aceleración mm/s2
+    - ``axisLead``：Paso mm
+    - ``encResolution``：Resolución del codificador
+    - ``axisOffect``：Desplazamiento del eje extendido en el punto inicial de la soldadura
+    - ``axisCompany``：Fabricante del accionamiento 1-Huichuan; 2-Inovance; 3-Panasonic
+    - ``axisModel``：Modelo del accionamiento 1-Huichuan-SV-XD3EA040L-E, 2-Huichuan-SV-X2EA150A-A, 1-Inovance-SV620PT5R4I, 1-Panasonic-MADLN15SG, 2-Panasonic-MSDLN25SG, 3-Panasonic-MCDLN35SG
+    - ``axisEncType``：Tipo de codificador 0-incremental; 1-absoluto
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置扩展机器人相对扩展轴位置
-++++++++++++++++++++++++++++++++++++++++
+Establecer la posición relativa del robot extendido respecto al eje extendido
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetRobotPosToAxis(installType)``"
-    "描述", "设置扩展机器人相对扩展轴位置"
-    "必选参数", "- ``installType``：0-机器人安装在外部轴上，1-机器人安装在外部轴外；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetRobotPosToAxis(installType)``"
+    "Descripción", "Establecer la posición relativa del robot extendido respecto al eje extendido"
+    "Parámetros obligatorios", "- ``installType``：0-robot instalado sobre el eje externo, 1-robot instalado fuera del eje externo;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置扩展轴系统DH参数配置
-++++++++++++++++++++++++++++++++++++++++
+Establecer la configuración de los parámetros DH del sistema del eje extendido
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetAxisDHParaConfig(axisConfig,axisDHd1,axisDHd2,axisDHd3,axisDHd4,axisDHa1, axisDHa2,axisDHa3,axisDHa4)``"
-    "描述", "设置扩展轴系统DH参数配置"
-    "必选参数", "
-    - ``axisConfig``：外部轴构型，0-单自由度直线滑轨，1-两自由度L型变位机，2-三自由度，3-四自由度，4-单自由度变位机；
-    - ``axisDHd1``：外部轴DH参数d1 mm；
-    - ``axisDHd2``：外部轴DH参数d2 mm；
-    - ``axisDHd3``：外部轴DH参数d3 mm；
-    - ``axisDHd4``：外部轴DH参数d4 mm；
-    - ``axisDHa1``：外部轴DH参数a1 mm；
-    - ``axisDHa2``：外部轴DH参数a2 mm；
-    - ``axisDHa3``：外部轴DH参数a3 mm；
-    - ``axisDHa4``：外部轴DH参数a4 mm；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetAxisDHParaConfig(axisConfig,axisDHd1,axisDHd2,axisDHd3,axisDHd4,axisDHa1, axisDHa2,axisDHa3,axisDHa4)``"
+    "Descripción", "Establecer la configuración de los parámetros DH del sistema del eje extendido"
+    "Parámetros obligatorios", "
+    - ``axisConfig``：Configuración del eje externo, 0-guía lineal de un solo grado de libertad, 1-posicionador tipo L de dos grados de libertad, 2-tres grados de libertad, 3-cuatro grados de libertad, 4-posicionador de un solo grado de libertad;
+    - ``axisDHd1``：Parámetro DH d1 del eje externo mm;
+    - ``axisDHd2``：Parámetro DH d2 del eje externo mm;
+    - ``axisDHd3``：Parámetro DH d3 del eje externo mm;
+    - ``axisDHd4``：Parámetro DH d4 del eje externo mm;
+    - ``axisDHa1``：Parámetro DH a1 del eje externo mm;
+    - ``axisDHa2``：Parámetro DH a2 del eje externo mm;
+    - ``axisDHa3``：Parámetro DH a3 del eje externo mm;
+    - ``axisDHa4``：Parámetro DH a4 del eje externo mm;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
                           
-UDP扩展轴使能
-++++++++++++++++++++++++++++++++++++++++
+Habilitación del eje extendido UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtAxisServoOn(axisID, status)``"
-    "描述", "UDP扩展轴使能"
-    "必选参数", "- ``axisID``：轴号[1-4]；
-    - ``status``：0-去使能；1-使能；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ExtAxisServoOn(axisID, status)``"
+    "Descripción", "Habilitación del eje extendido UDP"
+    "Parámetros obligatorios", "- ``axisID``：Número de eje [1-4];
+    - ``status``：0-deshabilitar; 1-habilitar;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-UDP扩展轴回零
-++++++++++++++++++++++++++++++++++++++++
+Retorno a cero del eje extendido UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtAxisSetHoming(axisID, mode, searchVel, latchVel)``"
-    "描述", "UDP扩展轴回零"
-    "必选参数", "
-    - ``axisID``：轴号[1-4]；
-    - ``mode``：回零方式 0当前位置回零，1负限位回零，2-正限位回零；
-    - ``searchVel``：寻零速度(mm/s)；
-    - ``latchVel``：寻零箍位速度(mm/s)；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ExtAxisSetHoming(axisID, mode, searchVel, latchVel)``"
+    "Descripción", "Retorno a cero del eje extendido UDP"
+    "Parámetros obligatorios", "
+    - ``axisID``：Número de eje [1-4];
+    - ``mode``：Modo de retorno a cero 0 retorno a cero en la posición actual, 1 retorno a cero en el límite negativo, 2-retorno a cero en el límite positivo;
+    - ``searchVel``：Velocidad de búsqueda de cero (mm/s);
+    - ``latchVel``：Velocidad de enganche de búsqueda de cero (mm/s);"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-UDP扩展轴点动开始
-++++++++++++++++++++++++++++++++++++++++
+Inicio del jog del eje extendido UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtAxisStartJog( axisID, direction, vel, acc, maxDistance)``"
-    "描述", "UDP扩展轴点动开始"
-    "必选参数", "
-    - ``axisID``：轴号[1-4]；
-    - ``direction``：转动方向 0-反向；1-正向；
-    - ``vel``：速度(mm/s)；
-    - ``acc``：加速度(mm/s)；
-    - ``maxDistance``：最大点动距离；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ExtAxisStartJog( axisID, direction, vel, acc, maxDistance)``"
+    "Descripción", "Inicio del jog del eje extendido UDP"
+    "Parámetros obligatorios", "
+    - ``axisID``：Número de eje [1-4];
+    - ``direction``：Dirección de giro 0-inversa; 1-positiva;
+    - ``vel``：Velocidad (mm/s);
+    - ``acc``：Aceleración (mm/s);
+    - ``maxDistance``：Distancia máxima de jog;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-UDP扩展轴点动停止
-++++++++++++++++++++++++++++++++++++++++
+Parada del jog del eje extendido UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtAxisStopJog(axisID)``"
-    "描述", "UDP扩展轴点动停止"
-    "必选参数", "- ``axisID``：轴号[1-4]；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ExtAxisStopJog(axisID)``"
+    "Descripción", "Parada del jog del eje extendido UDP"
+    "Parámetros obligatorios", "- ``axisID``：Número de eje [1-4];"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-UDP扩展轴配置与点动代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración y jog del eje extendido UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
@@ -600,41 +600,41 @@ UDP扩展轴配置与点动代码示例
     import time
 
     def main():
-        # 添加需要获取的实时状态数据（如果需要的话）
+        # Añadir los datos de estado en tiempo real que se desean obtener (si es necesario)
         # rtn = AddRobotRealtimeState([RobotState.ExaxisCoordID])
         # if rtn != 0:
-        #     print(f"✗ 添加字段失败，错误码: {rtn}")
+        #     print(f"✗ Error al añadir el campo, código de error: {rtn}")
         #     return None
-        # print("✓ 字段添加成功")
+        # print("✓ Campo añadido correctamente")
 
-        # 与机器人控制器建立连接
+        # Establecer comunicación con el controlador del robot
         robot = Robot.RPC('192.168.58.2')
-        time.sleep(0.5)  # 等待连接和数据接收
+        time.sleep(0.5)  # Esperar la conexión y la recepción de datos
 
-        # 配置UDP通讯参数
+        # Configurar los parámetros de comunicación UDP
         rtn = robot.ExtDevSetUDPComParam("192.168.58.88", 2021, 2, 100, 3, 200, 1, 100, 5, 1)
         print(f"ExtDevSetUDPComParam rtn is {rtn}")
 
-        # 获取UDP通讯参数
+        # Obtener los parámetros de comunicación UDP
         error, param = robot.ExtDevGetUDPComParam()
         print("ExtDevGetUDPComParam return ", error)
-        print("UDP扩展轴通讯参数: ", param)
+        print("Parámetros de comunicación del eje extendido UDP: ", param)
 
-        # 加载UDP驱动
+        # Cargar el controlador UDP
         robot.ExtDevLoadUDPDriver()
 
-        # 设置扩展轴命令完成时间
+        # Establecer el tiempo de finalización del comando del eje extendido
         rtn = robot.SetExAxisCmdDoneTime(5000.0)
         print(f"SetExAxisCmdDoneTime rtn is {rtn}")
 
-        # 扩展轴伺服使能
+        # Habilitar el servo del eje extendido
         rtn = robot.ExtAxisServoOn(1, 1)
         print(f"ExtAxisServoOn axis id 1 rtn is {rtn}")
         rtn = robot.ExtAxisServoOn(2, 1)
         print(f"ExtAxisServoOn axis id 2 rtn is {rtn}")
         time.sleep(2)
 
-        # 扩展轴回零
+        # Retorno a cero del eje extendido
         robot.ExtAxisSetHoming(1, 0, 10, 2)
         time.sleep(2)
         rtn = robot.ExtAxisSetHoming(2, 0, 10, 2)
@@ -642,33 +642,33 @@ UDP扩展轴配置与点动代码示例
 
         time.sleep(4)
 
-        # 设置机器人相对扩展轴位置
+        # Establecer la posición relativa del robot respecto al eje extendido
         rtn = robot.SetRobotPosToAxis(1)
         print(f"SetRobotPosToAxis rtn is {rtn}")
 
-        # 设置扩展轴DH参数配置
+        # Establecer la configuración de los parámetros DH del eje extendido
         rtn = robot.SetAxisDHParaConfig(10, 20, 0, 0, 0, 0, 0, 0, 0)
         print(f"SetAxisDHParaConfig rtn is {rtn}")
 
-        # 配置扩展轴1参数
+        # Configurar los parámetros del eje extendido 1
         rtn = robot.ExtAxisParamConfig(1, 1, 1, 1000, -1000, 1000, 1000, 1.905, 262144, 200, 1, 0, 0)
         print(f"ExtAxisParamConfig axis 1 rtn is {rtn}")
 
-        # 获取扩展轴1参数配置
+        # Obtener la configuración de los parámetros del eje extendido 1
         rtn, axisType, axisDirection, axisMax, axisMin, axisVel, axisAcc, axisLead, encResolution, axisOffect, axisCompany, axisModel, axisEncType = robot.ExtAxisGetParamConfig(1)
         print(f"axis id 1 ExtAxisGetParamConfig : axisType {axisType}, axisDirection {axisDirection}, axisMax {axisMax}, axisMin {axisMin}, axisVel {axisVel}, axisAcc {axisAcc}, axisLead {axisLead}, encResolution {encResolution}, axisOffect {axisOffect}, axisCompany {axisCompany}, axisModel {axisModel}, axisEncType {axisEncType}")
 
-        # 配置扩展轴2参数
+        # Configurar los parámetros del eje extendido 2
         rtn = robot.ExtAxisParamConfig(2, 1, 1, 1000, -1000, 1000, 1000, 4.444, 262144, 200, 1, 0, 0)
         print(f"ExtAxisParamConfig axis 2 rtn is {rtn}")
 
-        # 获取扩展轴2参数配置
+        # Obtener la configuración de los parámetros del eje extendido 2
         rtn, axisType, axisDirection, axisMax, axisMin, axisVel, axisAcc, axisLead, encResolution, axisOffect, axisCompany, axisModel, axisEncType = robot.ExtAxisGetParamConfig(2)
         print(f"axis id 2 ExtAxisGetParamConfig : axisType {axisType}, axisDirection {axisDirection}, axisMax {axisMax}, axisMin {axisMin}, axisVel {axisVel}, axisAcc {axisAcc}, axisLead {axisLead}, encResolution {encResolution}, axisOffect {axisOffect}, axisCompany {axisCompany}, axisModel {axisModel}, axisEncType {axisEncType}")
 
         time.sleep(3)
 
-        # 扩展轴1点动测试
+        # Prueba de jog del eje extendido 1
         robot.ExtAxisStartJog(1, 0, 10, 10, 30)
         time.sleep(1)
         robot.ExtAxisStopJog(1)
@@ -677,137 +677,137 @@ UDP扩展轴配置与点动代码示例
 
         time.sleep(3)
 
-        # 扩展轴2点动测试
+        # Prueba de jog del eje extendido 2
         robot.ExtAxisStartJog(2, 0, 10, 10, 30)
         time.sleep(1)
         robot.ExtAxisStopJog(2)
         time.sleep(3)
         robot.ExtAxisServoOn(2, 0)
 
-        # 卸载UDP驱动
+        # Descargar el controlador UDP
         robot.ExtDevUnloadUDPDriver()
 
-        # 关闭连接
+        # Cerrar la conexión
         robot.CloseRPC()
 
 
-    # 调用测试函数
+    # Llamar a la función de prueba
     main()
 
-设置扩展轴坐标系参考点-四点法
-++++++++++++++++++++++++++++++++++++++++
+Establecer el punto de referencia del sistema de coordenadas del eje extendido - método de cuatro puntos
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtAxisSetRefPoint(pointNum)``"
-    "描述", "设置扩展轴坐标系参考点-四点法"
-    "必选参数", "- ``pointNum``：点编号[1-4]；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ExtAxisSetRefPoint(pointNum)``"
+    "Descripción", "Establecer el punto de referencia del sistema de coordenadas del eje extendido - método de cuatro puntos"
+    "Parámetros obligatorios", "- ``pointNum``：Número de punto [1-4];"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
         
-计算扩展轴坐标系-四点法
-++++++++++++++++++++++++++++++++++++++++
+Calcular el sistema de coordenadas del eje extendido - método de cuatro puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtAxisComputeECoordSys()``"
-    "描述", "计算扩展轴坐标系-四点法"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode;
-    - ``coord``：扩展轴坐标系值[x,y,z,rx,ry,rz]；"
+    "Prototipo", "``ExtAxisComputeECoordSys()``"
+    "Descripción", "Calcular el sistema de coordenadas del eje extendido - método de cuatro puntos"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode;
+    - ``coord``：Valor del sistema de coordenadas del eje extendido [x,y,z,rx,ry,rz];"
                  
-变位机坐标系参考点设置-四点法
-++++++++++++++++++++++++++++++++++++++++
+Configuración del punto de referencia del sistema de coordenadas del posicionador - método de cuatro puntos
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``PositionorSetRefPoint(pointNum)``"
-    "描述", "变位机坐标系参考点设置-四点法"
-    "必选参数", "- ``pointNum``：点编号[1-4]；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``PositionorSetRefPoint(pointNum)``"
+    "Descripción", "Configuración del punto de referencia del sistema de coordenadas del posicionador - método de cuatro puntos"
+    "Parámetros obligatorios", "- ``pointNum``：Número de punto [1-4];"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-变位机坐标系计算-四点法
-++++++++++++++++++++++++++++++++++++++++
+Cálculo del sistema de coordenadas del posicionador - método de cuatro puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``PositionorComputeECoordSys()``"
-    "描述", "变位机坐标系计算-四点法"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode;
-    - ``coord``：变位机坐标系值[x,y,z,rx,ry,rz]；"
+    "Prototipo", "``PositionorComputeECoordSys()``"
+    "Descripción", "Cálculo del sistema de coordenadas del posicionador - método de cuatro puntos"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode;
+    - ``coord``：Valor del sistema de coordenadas del posicionador [x,y,z,rx,ry,rz];"
              
-设置标定参考点在变位机末端坐标系下位姿
-++++++++++++++++++++++++++++++++++++++++
+Establecer la pose del punto de referencia de calibración en el sistema de coordenadas del extremo del posicionador
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetRefPointInExAxisEnd(pos)``"
-    "描述", "设置标定参考点在变位机末端坐标系下位姿"
-    "必选参数", "- ``pos``：位姿值[x,y,z,rx,ry,rz]；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetRefPointInExAxisEnd(pos)``"
+    "Descripción", "Establecer la pose del punto de referencia de calibración en el sistema de coordenadas del extremo del posicionador"
+    "Parámetros obligatorios", "- ``pos``：Valor de la pose [x,y,z,rx,ry,rz];"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-应用扩展轴坐标系
-++++++++++++++++++++++++++++++++++++++++
+Aplicar el sistema de coordenadas del eje extendido
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtAxisActiveECoordSys(applyAxisId,axisCoordNum,coord,calibFlag)``"
-    "描述", "应用扩展轴坐标系"
-    "必选参数", "
-    - ``applyAxisId``:扩展轴编号 bit0-bit3对应扩展轴编号1-4，如应用扩展轴1和3，则是 0b 0000 0101,也就是5；
-    - ``axisCoordNum``：扩展轴坐标系编号；
-    - ``coord``：坐标系值[x,y,z,rx,ry,rz]；
-    - ``calibFlag``：标定标志 0-否，1-是；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ExtAxisActiveECoordSys(applyAxisId,axisCoordNum,coord,calibFlag)``"
+    "Descripción", "Aplicar el sistema de coordenadas del eje extendido"
+    "Parámetros obligatorios", "
+    - ``applyAxisId``:Número de eje extendido bit0-bit3 corresponden a los números de eje extendido 1-4, por ejemplo, para aplicar los ejes extendidos 1 y 3, sería 0b 0000 0101, es decir, 5;
+    - ``axisCoordNum``：Número del sistema de coordenadas del eje extendido;
+    - ``coord``：Valor del sistema de coordenadas [x,y,z,rx,ry,rz];
+    - ``calibFlag``：Indicador de calibración 0-no, 1-sí;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取扩展轴坐标系
-+++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas del eje extendido
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtAxisGetCoord()``"
-    "描述", "获取扩展轴坐标系"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``coord``：扩展轴坐标系"
+    "Prototipo", "``ExtAxisGetCoord()``"
+    "Descripción", "Obtener el sistema de coordenadas del eje extendido"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``coord``：Sistema de coordenadas del eje extendido"
 
-扩展轴坐标系标定代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de calibración del sistema de coordenadas del eje extendido
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     rtn = robot.ExtDevSetUDPComParam("192.168.58.88", 2021, 2, 100, 3, 200, 1, 100, 5, 1)
     print(f"ExtDevSetUDPComParam rtn is {rtn}")
@@ -902,244 +902,244 @@ UDP扩展轴配置与点动代码示例
     print(f"ExtAxisActiveECoordSys rtn is {rtn}")
     robot.CloseRPC()
           
-UDP扩展轴运动
-++++++++++++++++++++++++++++++++++++++++
+Movimiento del eje extendido UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtAxisMove(pos,ovl,blend=-1)``"
-    "描述", "UDP扩展轴运动"
-    "必选参数", "- ``pos=[exaxis[0],exaxis[1],exaxis[2],exaxis[3]]``：目标位置 轴1位置~轴4位置;
-    - ``ovl``：速度百分比"
-    "默认参数", "- ``blend``：平滑参数(mm或ms)，-1,等待运动完成，默认-1"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ExtAxisMove(pos,ovl,blend=-1)``"
+    "Descripción", "Movimiento del eje extendido UDP"
+    "Parámetros obligatorios", "- ``pos=[exaxis[0],exaxis[1],exaxis[2],exaxis[3]]``：Posición objetivo, posición del eje 1~posición del eje 4;
+    - ``ovl``：Porcentaje de velocidad"
+    "Parámetros predeterminados", "- ``blend``：Parámetro de suavizado (mm o ms), -1, esperar a que finalice el movimiento, valor predeterminado -1"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
                                         
-UDP扩展轴运动代码示例
-++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de movimiento del eje extendido UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     axisPos = [20,0,0,0]
     robot.ExtAxisMove(axisPos, 50, -1)
     robot.CloseRPC()
     return 0
 
-UDP扩展轴与机器人关节运动同步运动
-++++++++++++++++++++++++++++++++++++++++
+Movimiento sincronizado del eje extendido UDP con el movimiento de las articulaciones del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtAxisSyncMoveJ(joint_pos,tool,user,exaxis_pos, desc_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], vel=20.0, acc=0.0, ovl= 100.0,  blendT=-1.0, offset_flag=0, offset_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0])``"
-    "描述", "UDP扩展轴与机器人关节运动同步运动"
-    "必选参数", "
-    - ``joint_pos``： 目标关节位置，单位 [°]；
-    - ``desc_pos``：目标笛卡尔位姿，单位 [mm][°]
-    - ``tool``：工具号，[0~14]
-    - ``user``：工件号，[0~14]
-    - ``exaxis_pos``：外部轴 1 位置 ~ 外部轴 4 位"
-    "默认参数", "
-    - ``desc_pos``:目标笛卡尔位姿，单位 [mm][°] 默认初值为[0.0,0.0,0.0,0.0,0.0,0.0]，默认值调用正运动学求解返回值;
-    - ``vel``： 速度百分比，[0~100] 默认20.0；
-    - ``acc``：加速度百分比，[0~100] 暂不开放,默认0.0 ；
-    - ``ovl``：速度缩放因子，[0~100] 默认100.0  ；
-    - ``blendT``：[-1.0]-运动到位 (阻塞)，[0~500.0]-平滑时间 (非阻塞)，单位 [ms] 默认-1.0；
-    - ``offset_flag``：[0]-不偏移，[1]-工件/基坐标系下偏移，[2]-工具坐标系下偏移 默认 0；
-    - ``offset_pos``：位姿偏移量，单位 [mm][°] 默认[0.0,0.0,0.0,0.0,0.0,0.0] ；"
-    "返回值", "错误码 成功-0  失败- errcode；"
+    "Prototipo", "``ExtAxisSyncMoveJ(joint_pos,tool,user,exaxis_pos, desc_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], vel=20.0, acc=0.0, ovl= 100.0,  blendT=-1.0, offset_flag=0, offset_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0])``"
+    "Descripción", "Movimiento sincronizado del eje extendido UDP con el movimiento de las articulaciones del robot"
+    "Parámetros obligatorios", "
+    - ``joint_pos``：Posición objetivo de las articulaciones, unidad [°];
+    - ``desc_pos``：Pose cartesiana objetivo, unidad [mm][°]
+    - ``tool``：Número de herramienta, [0~14]
+    - ``user``：Número de pieza, [0~14]
+    - ``exaxis_pos``：Posición del eje externo 1 ~ posición del eje externo 4"
+    "Parámetros predeterminados", "
+    - ``desc_pos``:Pose cartesiana objetivo, unidad [mm][°]; valor inicial predeterminado [0.0,0.0,0.0,0.0,0.0,0.0], el valor predeterminado utiliza el valor de retorno de la solución de cinemática directa;
+    - ``vel``： Porcentaje de velocidad, [0~100]; valor predeterminado 20.0;
+    - ``acc``：Porcentaje de aceleración, [0~100]; aún no disponible, valor predeterminado 0.0;
+    - ``ovl``：Factor de escala de velocidad, [0~100]; valor predeterminado 100.0;
+    - ``blendT``：[-1.0]-movimiento en posición (bloqueante), [0~500.0]-tiempo de suavizado (no bloqueante), unidad [ms]; valor predeterminado -1.0;
+    - ``offset_flag``：[0]-sin desplazamiento, [1]-desplazamiento en el sistema de coordenadas de pieza/base, [2]-desplazamiento en el sistema de coordenadas de herramienta; valor predeterminado 0;
+    - ``offset_pos``：Cantidad de desplazamiento de la pose, unidad [mm][°]; valor predeterminado [0.0,0.0,0.0,0.0,0.0,0.0];"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode;"
                                         
-UDP扩展轴与机器人关节运动同步运动代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de movimiento sincronizado del eje extendido UDP con el movimiento de las articulaciones del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
-    # 设置UDP通信参数并加载
+    # Establecer los parámetros de comunicación UDP y cargar
     robot.ExtDevSetUDPComParam("192.168.58.88", 2021, 2, 100, 3, 100, 1, 100, 10)
     robot.ExtDevLoadUDPDriver()
-    # 设置扩展轴参数
+    # Establecer los parámetros del eje extendido
     robot.SetAxisDHParaConfig(4, 200, 200, 0, 0, 0, 0, 0, 0)
     robot.SetRobotPosToAxis(1)
     robot.ExtAxisParamConfig(1, 0, 1, 100, -100, 10, 10, 12, 131072, 0, 1, 0, 0)
-    # 扩展轴使能、回零
+    # Habilitar y poner a cero el eje extendido
     robot.ExtAxisServoOn(1, 0)
     robot.ExtAxisSetHoming(1, 0, 20, 3)
-    # 扩展轴坐标系标定
-    pos = []  # 请在此填写标定点坐标
+    # Calibración del sistema de coordenadas del eje extendido
+    pos = []  # Introduzca aquí las coordenadas del punto de calibración
     robot.SetRefPointInExAxisEnd(pos)
-    robot.PositionorSetRefPoint(1)  # 此操作应重复4次（用4个点）
+    robot.PositionorSetRefPoint(1)  # Esta operación debe repetirse 4 veces (con 4 puntos)
     error,coord = robot.PositionorComputeECoordSys()
     robot.ExtAxisActiveECoordSys(1, 1, coord, 1)
-    # 同步运动起点与终点
-    startdescPose = []  # 请填写具体坐标
-    startjointPos = []  # 请填写具体坐标
-    startexaxisPos = []  # 请填写具体坐标
-    enddescPose = []  # 请填写具体坐标
-    endjointPos = []  # 请填写具体坐标
-    endexaxisPos = []  # 请填写具体坐标
-    # 运动到起始点
+    # Punto inicial y final del movimiento sincronizado
+    startdescPose = []  # Introduzca las coordenadas específicas
+    startjointPos = []  # Introduzca las coordenadas específicas
+    startexaxisPos = []  # Introduzca las coordenadas específicas
+    enddescPose = []  # Introduzca las coordenadas específicas
+    endjointPos = []  # Introduzca las coordenadas específicas
+    endexaxisPos = []  # Introduzca las coordenadas específicas
+    # Moverse al punto inicial
     robot.ExtAxisMove(startexaxisPos, 20, -1)
     offdese = [0, 0, 0, 0, 0, 0]
     robot.MoveJ(joint_pos=startjointPos,tool= 1,user= 1,vel= 100,acc= 100,ovl= 100,exaxis_pos= startexaxisPos,blendT= 0,offset_flag= 0,offset_pos= offdese)
     robot.ExtAxisSyncMoveJ(endjointPos, enddescPose, 1, 1, endexaxisPos, 100, 100, 100, -1, 0, offdese)
     robot.CloseRPC()
                   
-UDP扩展轴与机器人直线运动同步运动
-++++++++++++++++++++++++++++++++++++++++
+Movimiento sincronizado del eje extendido UDP con el movimiento lineal del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtAxisSyncMoveL(desc_pos, tool, user, exaxis_pos, joint_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], vel=20.0, acc=0.0, ovl=100.0, blendR=-1.0, search=0, offset_flag=0, offset_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],config=-1)``"
-    "描述", "UDP扩展轴与机器人直线运动同步运动"
-    "必选参数", "
-    - ``desc_pos``：目标笛卡尔位姿，单位 [mm][°]；
-    - ``tool``：工具号，[0~14]；
-    - ``user``：工件号，[0~14]；
-    - ``exaxis_pos``：外部轴 1 位置 ~ 外部轴 4 位；"
-    "默认参数", "
-    - ``joint_pos``:目标关节位置，单位 [°] 默认初值为[0.0,0.0,0.0,0.0,0.0,0.0]，默认值调用逆运动学求解返回值;
-    - ``vel``： 速度百分比，[0~100] 默认20.0；
-    - ``acc``：加速度百分比，[0~100] 暂不开放,默认0.0；
-    - ``ovl``：速度缩放因子，[0~100] 默认100.0；
-    - ``blendR``：[-1.0]-运动到位 (阻塞)，[0~500.0]-平滑时间 (非阻塞)，单位 [ms] 默认-1.0；
-    - ``search``：[0]-不焊丝寻位，[1]-焊丝寻位；
-    - ``offset_flag``：[0]-不偏移，[1]-工件/基坐标系下偏移，[2]-工具坐标系下偏移 默认 0；
-    - ``offset_pos``：位姿偏移量，单位 [mm][°] 默认[0.0,0.0,0.0,0.0,0.0,0.0] ；
-    - ``config``:逆解关节空间配置，[-1]-参考当前关节位置解算，[0~7]-依据特定关节空间配置求解，默认-1"
-    "返回值", "错误码 成功-0  失败- errcode；"
+    "Prototipo", "``ExtAxisSyncMoveL(desc_pos, tool, user, exaxis_pos, joint_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], vel=20.0, acc=0.0, ovl=100.0, blendR=-1.0, search=0, offset_flag=0, offset_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],config=-1)``"
+    "Descripción", "Movimiento sincronizado del eje extendido UDP con el movimiento lineal del robot"
+    "Parámetros obligatorios", "
+    - ``desc_pos``：Pose cartesiana objetivo, unidad [mm][°];
+    - ``tool``：Número de herramienta, [0~14];
+    - ``user``：Número de pieza, [0~14];
+    - ``exaxis_pos``：Posición del eje externo 1 ~ posición del eje externo 4;"
+    "Parámetros predeterminados", "
+    - ``joint_pos``:Posición objetivo de las articulaciones, unidad [°]; valor inicial predeterminado [0.0,0.0,0.0,0.0,0.0,0.0], el valor predeterminado utiliza el valor de retorno de la solución de cinemática inversa;
+    - ``vel``： Porcentaje de velocidad, [0~100]; valor predeterminado 20.0;
+    - ``acc``：Porcentaje de aceleración, [0~100]; aún no disponible, valor predeterminado 0.0;
+    - ``ovl``：Factor de escala de velocidad, [0~100]; valor predeterminado 100.0;
+    - ``blendR``：[-1.0]-movimiento en posición (bloqueante), [0~500.0]-tiempo de suavizado (no bloqueante), unidad [ms]; valor predeterminado -1.0;
+    - ``search``：[0]-sin búsqueda de posición de alambre de soldadura, [1]-búsqueda de posición de alambre de soldadura;
+    - ``offset_flag``：[0]-sin desplazamiento, [1]-desplazamiento en el sistema de coordenadas de pieza/base, [2]-desplazamiento en el sistema de coordenadas de herramienta; valor predeterminado 0;
+    - ``offset_pos``：Cantidad de desplazamiento de la pose, unidad [mm][°]; valor predeterminado [0.0,0.0,0.0,0.0,0.0,0.0];
+    - ``config``:Configuración del espacio de articulaciones de la solución inversa, [-1]-resolver con referencia a la posición actual de las articulaciones, [0~7]-resolver según una configuración específica del espacio de articulaciones, valor predeterminado -1"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode;"
                                             
-UDP扩展轴与机器人直线运动同步运动代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de movimiento sincronizado del eje extendido UDP con el movimiento lineal del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
-    # 设置UDP通信参数并加载
+    # Establecer los parámetros de comunicación UDP y cargar
     robot.ExtDevSetUDPComParam("192.168.58.88", 2021, 2, 100, 3, 100, 1, 100, 10)
     robot.ExtDevLoadUDPDriver()
-    # 设置扩展轴参数
+    # Establecer los parámetros del eje extendido
     robot.SetAxisDHParaConfig(4, 200, 200, 0, 0, 0, 0, 0, 0)
     robot.SetRobotPosToAxis(1)
     robot.ExtAxisParamConfig(1, 0, 1, 100, -100, 10, 10, 12, 131072, 0, 1, 0, 0)
-    # 扩展轴使能、回零
+    # Habilitar y poner a cero el eje extendido
     robot.ExtAxisServoOn(1, 0)
     robot.ExtAxisSetHoming(1, 0, 20, 3)
-    # 扩展轴坐标系标定
-    pos = []  # 请填写标定点坐标
+    # Calibración del sistema de coordenadas del eje extendido
+    pos = []  # Introduzca las coordenadas del punto de calibración
     robot.SetRefPointInExAxisEnd(pos)
-    robot.PositionorSetRefPoint(1)  # 需调用4次用于标定
+    robot.PositionorSetRefPoint(1)  # Debe llamarse 4 veces para la calibración
     error,coord = robot.PositionorComputeECoordSys()
     robot.ExtAxisActiveECoordSys(1, 1, coord, 1)
-    # 同步运动起点与终点
-    startdescPose = []  # 填写坐标
-    startjointPos = []  # 填写坐标
-    startexaxisPos = []  # 填写坐标
-    enddescPose = []  # 填写坐标
-    endjointPos = []  # 填写坐标
-    endexaxisPos = []  # 填写坐标
-    # 运动到起始点
+    # Punto inicial y final del movimiento sincronizado
+    startdescPose = []  # Introduzca las coordenadas
+    startjointPos = []  # Introduzca las coordenadas
+    startexaxisPos = []  # Introduzca las coordenadas
+    enddescPose = []  # Introduzca las coordenadas
+    endjointPos = []  # Introduzca las coordenadas
+    endexaxisPos = []  # Introduzca las coordenadas
+    # Moverse al punto inicial
     robot.ExtAxisMove(startexaxisPos, 20, -1)
     offdese = [0, 0, 0, 0, 0, 0]
     robot.MoveJ(joint_pos=startjointPos, tool= 1,user= 1,vel= 100,acc= 100,ovl= 100,exaxis_pos= startexaxisPos,blendT= 0)
-    # 执行同步直线运动
+    # Ejecutar el movimiento lineal sincronizado
     robot.ExtAxisSyncMoveL(endjointPos, enddescPose, 1, 1, endexaxisPos, 100, 100, 100, 0, 0, offdese)
     robot.CloseRPC()
                       
-UDP扩展轴与机器人圆弧运动同步运动
-++++++++++++++++++++++++++++++++++++++++
+Movimiento sincronizado del eje extendido UDP con el movimiento circular del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ExtAxisSyncMoveC(desc_pos_p, tool_p, user_p,exaxis_pos_p, desc_pos_t, tool_t, user_t,exaxis_pos_t,joint_pos_p=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], joint_pos_t=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],vel_p=20.0, acc_p=100.0, offset_flag_p=0, offset_pos_p =[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], vel_t=20.0, acc_t=100.0, offset_flag_t=0, offset_pos_t=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], ovl=100.0, blendR=-1.0, config=-1)``"
-    "描述", " UDP扩展轴与机器人圆弧运动同步运动"
-    "必选参数", "
-    - ``desc_pos_p``：路径点笛卡尔位姿，单位 [mm][°]；
-    - ``tool_p``：路径点工具号，[0~14]；
-    - ``user_p``：路径点工件号，[0~14]；
-    - ``exaxis_pos_p``：路径点外部轴 1 位置 ~ 外部轴 4 位置 默认[0.0,0.0,0.0,0.0]；
-    - ``desc_pos_t``：目标点笛卡尔位姿，单位 [mm][°]；
-    - ``tool_t``：工具号，[0~14]；
-    - ``user_t``：工件号，[0~14]；
-    - ``exaxis_pos_t``：目标点外部轴 1 位置 ~ 外部轴 4 位置 默认[0.0,0.0,0.0,0.0]；"
-    "默认参数", "
-    - ``joint_pos_p``:目标关节位置，单位 [°] 默认初值为[0.0,0.0,0.0,0.0,0.0,0.0]，默认值调用逆运动学求解返回值;
-    - ``joint_pos_t``:目标关节位置，单位 [°] 默认初值为[0.0,0.0,0.0,0.0,0.0,0.0]，默认值调用逆运动学求解返回值;
-    - ``vel_p``: 路径点速度百分比，[0~100] 默认20.0；
-    - ``acc_p``: 路径点加速度百分比，[0~100] 暂不开放,默认0.0 ；   
-    - ``offset_flag_p``: 路径点是否偏移[0]-不偏移，[1]-工件/基坐标系下偏移，[2]-工具坐标系下偏移 默认 0；
-    - ``offset_pos_p``: 路径点位姿偏移量，单位 [mm][°] 默认[0.0,0.0,0.0,0.0,0.0,0.0]；
-    - ``vel_t``: 目标点速度百分比，[0~100] 默认20.0；
-    - ``acc_t``: 目标点加速度百分比，[0~100] 暂不开放 默认0.0；
-    - ``offset_flag_t``: 目标点是否偏移[0]-不偏移，[1]-工件/基坐标系下偏移，[2]-工具坐标系下偏移 默认 0；
-    - ``offset_pos_t``: 目标点位姿偏移量，单位 [mm][°] 默认[0.0,0.0,0.0,0.0,0.0,0.0]；
-    - ``ovl``: 速度缩放因子，[0~100] 默认100.0；
-    - ``blendR``：[-1.0]-运动到位 (阻塞)，[0~1000]-平滑半径 (非阻塞)，单位 [mm] 默认-1.0；
-    - ``config``:逆解关节空间配置，[-1]-参考当前关节位置解算，[0~7]-依据特定关节空间配置求解，默认-1"
-    "返回值", "错误码 成功-0  失败- errcode；"
+    "Prototipo", "``ExtAxisSyncMoveC(desc_pos_p, tool_p, user_p,exaxis_pos_p, desc_pos_t, tool_t, user_t,exaxis_pos_t,joint_pos_p=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], joint_pos_t=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],vel_p=20.0, acc_p=100.0, offset_flag_p=0, offset_pos_p =[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], vel_t=20.0, acc_t=100.0, offset_flag_t=0, offset_pos_t=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], ovl=100.0, blendR=-1.0, config=-1)``"
+    "Descripción", " Movimiento sincronizado del eje extendido UDP con el movimiento circular del robot"
+    "Parámetros obligatorios", "
+    - ``desc_pos_p``：Pose cartesiana del punto de trayectoria, unidad [mm][°];
+    - ``tool_p``：Número de herramienta del punto de trayectoria, [0~14];
+    - ``user_p``：Número de pieza del punto de trayectoria, [0~14];
+    - ``exaxis_pos_p``：Posición del eje externo 1 ~ posición del eje externo 4 del punto de trayectoria; valor predeterminado [0.0,0.0,0.0,0.0];
+    - ``desc_pos_t``：Pose cartesiana del punto objetivo, unidad [mm][°];
+    - ``tool_t``：Número de herramienta, [0~14];
+    - ``user_t``：Número de pieza, [0~14];
+    - ``exaxis_pos_t``：Posición del eje externo 1 ~ posición del eje externo 4 del punto objetivo; valor predeterminado [0.0,0.0,0.0,0.0];"
+    "Parámetros predeterminados", "
+    - ``joint_pos_p``:Posición objetivo de las articulaciones, unidad [°]; valor inicial predeterminado [0.0,0.0,0.0,0.0,0.0,0.0], el valor predeterminado utiliza el valor de retorno de la solución de cinemática inversa;
+    - ``joint_pos_t``:Posición objetivo de las articulaciones, unidad [°]; valor inicial predeterminado [0.0,0.0,0.0,0.0,0.0,0.0], el valor predeterminado utiliza el valor de retorno de la solución de cinemática inversa;
+    - ``vel_p``: Porcentaje de velocidad del punto de trayectoria, [0~100]; valor predeterminado 20.0;
+    - ``acc_p``: Porcentaje de aceleración del punto de trayectoria, [0~100]; aún no disponible, valor predeterminado 0.0;
+    - ``offset_flag_p``: Si el punto de trayectoria está desplazado[0]-sin desplazamiento, [1]-desplazamiento en el sistema de coordenadas de pieza/base, [2]-desplazamiento en el sistema de coordenadas de herramienta; valor predeterminado 0;
+    - ``offset_pos_p``: Cantidad de desplazamiento de la pose del punto de trayectoria, unidad [mm][°]; valor predeterminado [0.0,0.0,0.0,0.0,0.0,0.0];
+    - ``vel_t``: Porcentaje de velocidad del punto objetivo, [0~100]; valor predeterminado 20.0;
+    - ``acc_t``: Porcentaje de aceleración del punto objetivo, [0~100]; aún no disponible; valor predeterminado 0.0;
+    - ``offset_flag_t``: Si el punto objetivo está desplazado[0]-sin desplazamiento, [1]-desplazamiento en el sistema de coordenadas de pieza/base, [2]-desplazamiento en el sistema de coordenadas de herramienta; valor predeterminado 0;
+    - ``offset_pos_t``: Cantidad de desplazamiento de la pose del punto objetivo, unidad [mm][°]; valor predeterminado [0.0,0.0,0.0,0.0,0.0,0.0];
+    - ``ovl``: Factor de escala de velocidad, [0~100]; valor predeterminado 100.0;
+    - ``blendR``：[-1.0]-movimiento en posición (bloqueante), [0~1000]-radio de suavizado (no bloqueante), unidad [mm]; valor predeterminado -1.0;
+    - ``config``:Configuración del espacio de articulaciones de la solución inversa, [-1]-resolver con referencia a la posición actual de las articulaciones, [0~7]-resolver según una configuración específica del espacio de articulaciones, valor predeterminado -1"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode;"
                                                 
-UDP扩展轴与机器人圆弧运动同步运动代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de movimiento sincronizado del eje extendido UDP con el movimiento circular del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
-    # 设置UDP通信参数并加载
+    # Establecer los parámetros de comunicación UDP y cargar
     robot.ExtDevSetUDPComParam("192.168.58.88", 2021, 2, 100, 3, 100, 1, 100, 10)
     robot.ExtDevLoadUDPDriver()
-    # 设置扩展轴参数
+    # Establecer los parámetros del eje extendido
     robot.SetAxisDHParaConfig(4, 200, 200, 0, 0, 0, 0, 0, 0)
     robot.SetRobotPosToAxis(1)
     robot.ExtAxisParamConfig(1, 0, 1, 100, -100, 10, 10, 12, 131072, 0, 1, 0, 0)
-    # 扩展轴使能、回零
+    # Habilitar y poner a cero el eje extendido
     robot.ExtAxisServoOn(1, 0)
     robot.ExtAxisSetHoming(1, 0, 20, 3)
-    # 扩展轴坐标系标定
-    pos = []  # 输入标定点坐标
+    # Calibración del sistema de coordenadas del eje extendido
+    pos = []  # Introduzca las coordenadas del punto de calibración
     robot.SetRefPointInExAxisEnd(pos)
-    robot.PositionorSetRefPoint(1)  # 调用4次以完成标定
+    robot.PositionorSetRefPoint(1)  # Llamar 4 veces para completar la calibración
     coord = []
     error,coord = robot.PositionorComputeECoordSys()
     robot.ExtAxisActiveECoordSys(1, 1, coord, 1)
-    # 同步圆弧起始点、中间点、终点
-    startdescPose = []# 输入坐标
-    startjointPos = []# 输入坐标
-    startexaxisPos =[]  # 输入扩展轴坐标
-    middescPose = []# 输入中间点
+    # Punto inicial, intermedio y final del arco sincronizado
+    startdescPose = []# Introduzca las coordenadas
+    startjointPos = []# Introduzca las coordenadas
+    startexaxisPos =[]  # Introduzca las coordenadas del eje extendido
+    middescPose = []# Introduzca el punto intermedio
     midjointPos = []
     midexaxisPos =[]
     enddescPose = []
     endjointPos = []
     endexaxisPos =[]
-    # 运动到起始点
+    # Moverse al punto inicial
     robot.ExtAxisMove(startexaxisPos, 20, -1)
     offdese = [0, 0, 0, 0, 0, 0]
     robot.MoveJ(joint_pos=startjointPos,tool= 1,user= 1,vel= 100,acc= 100,ovl= 100,exaxis_pos= startexaxisPos,blendT= 0,offset_flag= 0,offset_pos= offdese)
-    # 开始同步圆弧运动
+    # Iniciar el movimiento circular sincronizado
     robot.ExtAxisSyncMoveC(midjointPos,middescPose,1,1,midexaxisPos,
                            endjointPos,enddescPose,1,1,endexaxisPos,
                            100,100,0,offdese,
@@ -1147,151 +1147,151 @@ UDP扩展轴与机器人圆弧运动同步运动代码示例
                            100,0)
     robot.CloseRPC()
 
-设置扩展DO
-++++++++++++++++++++++++++++++++++++++++
+Establecer DO extendida
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetAuxDO(DONum,bOpen,smooth,block)``"
-    "描述", "设置扩展DO"
-    "必选参数", "
-    - ``DONum``： DO编号；
-    - ``bOpen``：开关 True-开,False-关；
-    - ``smooth``：是否平滑 True -是, False -否；
-    - ``block``：是否阻塞 True -是, False -否；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetAuxDO(DONum,bOpen,smooth,block)``"
+    "Descripción", "Establecer DO extendida"
+    "Parámetros obligatorios", "
+    - ``DONum``： Número de DO;
+    - ``bOpen``：Interruptor True-abrir,False-cerrar;
+    - ``smooth``：Si se suaviza True -sí, False -no;
+    - ``block``：Si es bloqueante True -sí, False -no;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置扩展AO
-++++++++++++++++++++++++++++++++++++++++
+Establecer AO extendida
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetAuxAO(AONum,value,block)``"
-    "描述", "设置扩展AO"
-    "必选参数", "
-    - ``AONum``： AO编号；
-    - ``value``：模拟量值[0-4095]；
-    - ``block``：是否阻塞 True -是, False -否；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetAuxAO(AONum,value,block)``"
+    "Descripción", "Establecer AO extendida"
+    "Parámetros obligatorios", "
+    - ``AONum``： Número de AO;
+    - ``value``：Valor analógico [0-4095];
+    - ``block``：Si es bloqueante True -sí, False -no;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
         
-设置扩展DI输入滤波时间
-++++++++++++++++++++++++++++++++++++++++
+Establecer el tiempo de filtrado de entrada DI extendida
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetAuxDIFilterTime(filterTime)``"
-    "描述", "设置扩展DI输入滤波时间"
-    "必选参数", "- ``filterTime``： 滤波时间(ms)；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetAuxDIFilterTime(filterTime)``"
+    "Descripción", "Establecer el tiempo de filtrado de entrada DI extendida"
+    "Parámetros obligatorios", "- ``filterTime``： Tiempo de filtrado (ms);"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
         
-设置扩展AI输入滤波时间
-++++++++++++++++++++++++++++++++++++++++
+Establecer el tiempo de filtrado de entrada AI extendida
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetAuxAIFilterTime(AINum,filterTime)``"
-    "描述", "设置扩展AI输入滤波时间"
-    "必选参数", "
-    - ``AINum``： AI编号；
-    - ``filterTime``： 滤波时间(ms)；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetAuxAIFilterTime(AINum,filterTime)``"
+    "Descripción", "Establecer el tiempo de filtrado de entrada AI extendida"
+    "Parámetros obligatorios", "
+    - ``AINum``： Número de AI;
+    - ``filterTime``： Tiempo de filtrado (ms);"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
         
-等待扩展DI输入
-++++++++++++++++++++++++++++++++++++++++
+Esperar la entrada DI extendida
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WaitAuxDI(DINum,bOpen,time,errorAlarm)``"
-    "描述", "等待扩展DI输入"
-    "必选参数", "
-    - ``DINum``： DI编号；
-    - ``bOpen``：开关 True-开,False-关；
-    - ``time``：最大等待时间(ms)；
-    - ``errorAlarm``：是否继续运动 True-是,False-否"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WaitAuxDI(DINum,bOpen,time,errorAlarm)``"
+    "Descripción", "Esperar la entrada DI extendida"
+    "Parámetros obligatorios", "
+    - ``DINum``： Número de DI;
+    - ``bOpen``：Interruptor True-abrir,False-cerrar;
+    - ``time``：Tiempo máximo de espera (ms);
+    - ``errorAlarm``：Si se continúa el movimiento True-sí,False-no"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
         
-等待扩展AI输入
-++++++++++++++++++++++++++++++++++++++++
+Esperar la entrada AI extendida
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WaitAuxAI(,AINum,sign,value,time,errorAlarm)``"
-    "描述", "等待扩展AI输入"
-    "必选参数", "
-    - ``AINum``： AI编号；
-    - ``sign``：0-大于；1-小于；
-    - ``value``：AI值；
-    - ``time``：最大等待时间(ms)；
-    - ``errorAlarm``：是否继续运动 True-是,False-否"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``WaitAuxAI(,AINum,sign,value,time,errorAlarm)``"
+    "Descripción", "Esperar la entrada AI extendida"
+    "Parámetros obligatorios", "
+    - ``AINum``： Número de AI;
+    - ``sign``：0-mayor que; 1-menor que;
+    - ``value``：Valor de AI;
+    - ``time``：Tiempo máximo de espera (ms);
+    - ``errorAlarm``：Si se continúa el movimiento True-sí,False-no"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
         
-获取扩展DI值
-++++++++++++++++++++++++++++++++++++++++
+Obtener el valor de DI extendida
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetAuxDI(DINum,isNoBlock)``"
-    "描述", "获取扩展DI值"
-    "必选参数", "
-    - ``DINum``： DI编号；
-    - ``isNoBlock``：是否阻塞 True-阻塞 false-非阻塞；"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode；
-    - ``isOpen``： 0-关；1-开；"
+    "Prototipo", "``GetAuxDI(DINum,isNoBlock)``"
+    "Descripción", "Obtener el valor de DI extendida"
+    "Parámetros obligatorios", "
+    - ``DINum``： Número de DI;
+    - ``isNoBlock``：Si es bloqueante True-bloqueante false-no bloqueante;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode;
+    - ``isOpen``： 0-cerrado; 1-abierto;"
           
-获取扩展AI值
-++++++++++++++++++++++++++++++++++++++++
+Obtener el valor de AI extendida
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetAuxAI(AINum,isNoBlock)``"
-    "描述", "获取扩展AI值"
-    "必选参数", "
-    - ``AINum``： AI编号；
-    - ``isNoBlock``：是否阻塞 True-阻塞 False-非阻塞"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode；
-    - ``value``：输入值；"
+    "Prototipo", "``GetAuxAI(AINum,isNoBlock)``"
+    "Descripción", "Obtener el valor de AI extendida"
+    "Parámetros obligatorios", "
+    - ``AINum``： Número de AI;
+    - ``isNoBlock``：Si es bloqueante True-bloqueante False-no bloqueante"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode;
+    - ``value``：Valor de entrada;"
 
-扩展IO代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de IO extendida
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     for i in range(128):
         robot.SetAuxDO(i, True, False, True)
@@ -1311,97 +1311,96 @@ UDP扩展轴与机器人圆弧运动同步运动代码示例
     robot.SetAuxAIFilterTime(0, 10)
     for i in range(20):
         curValue = False
-        error, curValue = robot.GetAuxDI(i, False)  # 注意：如库内部需引用方式，这里需修改
+        error, curValue = robot.GetAuxDI(i, False)  # Nota: si la biblioteca requiere paso por referencia internamente, modificar aquí
         print(f"DI{i}   {curValue}")
     curValue = -1
     for i in range(4):
-        error, curValue = robot.GetAuxAI(i, True)  # 同样注意引用传参问题
+        error, curValue = robot.GetAuxAI(i, True)  # Igualmente, tener en cuenta el paso por referencia
         print(f"AI{i}   {curValue}")
     robot.WaitAuxDI(1, False, 1000, False)
     robot.WaitAuxAI(1, 1, 132, 1000, False)
     robot.CloseRPC()
 
-可移动装置使能
-++++++++++++++++++++++++++++++++++
+Habilitación del dispositivo móvil
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``TractorEnable(enable)``"
-    "描述", "可移动装置使能"
-    "必选参数", "- ``enable``：使能状态，0-去使能，1-使能"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``TractorEnable(enable)``"
+    "Descripción", "Habilitación del dispositivo móvil"
+    "Parámetros obligatorios", "- ``enable``：Estado de habilitación, 0-deshabilitar, 1-habilitar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-可移动装置回零
-++++++++++++++++++++++++++++++++++
+Retorno a cero del dispositivo móvil
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``TractorHoming()``"
-    "描述", "可移动装置回零"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``TractorHoming()``"
+    "Descripción", "Retorno a cero del dispositivo móvil"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-可移动装置直线运动
-++++++++++++++++++++++++++++++++++
+Movimiento lineal del dispositivo móvil
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``TractorMoveL(distance, vel)``"
-    "描述", "可移动装置直线运动"
-    "必选参数", "- ``distance``：直线运动距离（mm）
-    - ``vel``：直线运动速度百分比（0-100）"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``TractorMoveL(distance, vel)``"
+    "Descripción", "Movimiento lineal del dispositivo móvil"
+    "Parámetros obligatorios", "- ``distance``：Distancia del movimiento lineal (mm)
+    - ``vel``：Porcentaje de velocidad del movimiento lineal (0-100)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-可移动装置圆弧运动
-++++++++++++++++++++++++++++++++++
+Movimiento circular del dispositivo móvil
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``TractorMoveC(radio, angle, vel)``"
-    "描述", "可移动装置圆弧运动"
-    "必选参数", "- ``radio``：圆弧运动半径（mm）
-    - ``angle``：圆弧运动角度（°）
-    - ``vel``：圆弧运动速度百分比（0-100）"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``TractorMoveC(radio, angle, vel)``"
+    "Descripción", "Movimiento circular del dispositivo móvil"
+    "Parámetros obligatorios", "- ``radio``：Radio del movimiento circular (mm)
+    - ``angle``：Ángulo del movimiento circular (°)
+    - ``vel``：Porcentaje de velocidad del movimiento circular (0-100)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-可移动装置停止运动
-++++++++++++++++++++++++++++++++++
+Detención del movimiento del dispositivo móvil
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ProgramStop()``"
-    "描述", "可移动装置停止运动"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ProgramStop()``"
+    "Descripción", "Detención del movimiento del dispositivo móvil"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-可移动装置代码示例
-++++++++++++++++++++++++++++++++++
-
+Ejemplo de código del dispositivo móvil
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.ExtDevSetUDPComParam("192.168.58.2", 2021, 2, 50, 5, 50, 1, 50, 10, 1)
     robot.ExtDevLoadUDPDriver()
@@ -1432,32 +1431,32 @@ UDP扩展轴与机器人圆弧运动同步运动代码示例
     time.sleep(1)
     robot.CloseRPC()
 
-激光传感器记录点
-++++++++++++++++++++++++++++++++++
+Registro de puntos del sensor láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``LaserRecordPoint(coordID)``"
-    "描述", "激光传感器记录点"
-    "必选参数", "- ``coordID``：激光传感器坐标系"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``joint``：激光传感器识别点关节位置
-    - ``desc``：激光传感器识别点笛卡尔位置
-    - ``exaxis``：激光传感器识别点扩展轴位置"
+    "Prototipo", "``LaserRecordPoint(coordID)``"
+    "Descripción", "Registro de puntos del sensor láser"
+    "Parámetros obligatorios", "- ``coordID``：Sistema de coordenadas del sensor láser"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``joint``：Posición de articulaciones del punto identificado por el sensor láser
+    - ``desc``：Posición cartesiana del punto identificado por el sensor láser
+    - ``exaxis``：Posición del eje extendido del punto identificado por el sensor láser"
 
-激光传感器记录点代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de registro de puntos del sensor láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.4
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     direction_point = [0, 0, 0]
     rtn = robot.LaserTrackingSearchStart(2, direction_point, 10, 100, 10000, 2)
@@ -1474,29 +1473,29 @@ UDP扩展轴与机器人圆弧运动同步运动代码示例
     robot.MoveJ(joint,tool=1,user=0,vel=100,acc=100,ovl=50,exaxis_pos=exaxis,blendT=-1,offset_flag=0,offset_pos=off)
     robot.CloseRPC()
 
-设置扩展轴与机器人同步运动策略
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer la estrategia de movimiento sincronizado del eje extendido y el robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetExAxisRobotPlan(strategy)``"
-    "描述", "设置扩展轴与机器人同步运动策略"
-    "必选参数", "- ``strategy``：策略；0-以机器人为主；1-扩展轴与机器人同步"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetExAxisRobotPlan(strategy)``"
+    "Descripción", "Establecer la estrategia de movimiento sincronizado del eje extendido y el robot"
+    "Parámetros obligatorios", "- ``strategy``：Estrategia; 0-con el robot como referencia; 1-sincronizado entre eje extendido y robot"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置扩展轴与机器人同步运动策略代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de establecimiento de la estrategia de movimiento sincronizado del eje extendido y el robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     joint_pos1 = [-22.016, -49.217, 124.714, -161.100, -85.108, -0.333]
     joint_pos2 = [-21.083, -46.613, 110.079, -147.796, -80.757, -0.330]
@@ -1520,16 +1519,16 @@ UDP扩展轴与机器人圆弧运动同步运动代码示例
     time.sleep(8)
     robot.CloseRPC()
 
-UDP扩展轴定位完成时间设置
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configuración del tiempo de finalización del posicionamiento del eje extendido UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetExAxisCmdDoneTime(time)``"
-    "描述", "UDP扩展轴定位完成时间设置"
-    "必选参数", "- ``time``：定位完成时间[ms]"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetExAxisCmdDoneTime(time)``"
+    "Descripción", "Configuración del tiempo de finalización del posicionamiento del eje extendido UDP"
+    "Parámetros obligatorios", "- ``time``：Tiempo de finalización del posicionamiento [ms]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"

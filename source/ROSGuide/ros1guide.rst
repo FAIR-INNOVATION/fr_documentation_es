@@ -1,36 +1,36 @@
-概述
-++++++++++
-frcobot_ros简要架构如下图所示，协作机器人端提供了XMLRPC服务器和TCP服务器。
+Descripción general
+++++++++++++++++++++++
+La arquitectura resumida de frcobot_ros se muestra en la siguiente figura. El lado del robot colaborativo proporciona un servidor XMLRPC y un servidor TCP.
 
-- XMLRPC服务器主要提供机器人指令API完成机器人运动和状态值获取功能
-- 状态反馈的TCP服务器提供了机器人状态的实时反馈，反馈周期8ms。
+- El servidor XMLRPC proporciona principalmente la API de instrucciones del robot para realizar el movimiento del robot y la obtención de valores de estado.
+- El servidor TCP de retroalimentación de estado proporciona la retroalimentación en tiempo real del estado del robot, con un período de retroalimentación de 8 ms.
 
-用户PC端中已安装了ROS和Moveit!，编译完成frcobot_ros。在frcobot_ros中每个功能包都包含了机器人API的lib库，以及在frcobot_hw建立与机器人状态反馈服务器通讯的TCP客户端，获取机器人状态反馈数据。
+En el PC del usuario se han instalado ROS y Moveit!, y se ha compilado frcobot_ros. En frcobot_ros, cada paquete de funciones incluye la librería lib de la API del robot, así como, en frcobot_hw, un cliente TCP que establece comunicación con el servidor de retroalimentación de estado del robot para obtener los datos de retroalimentación de estado del robot.
 
 .. figure:: img/frcobot_ros.png
     :width: 6in
     :align: center
 
-安装
-++++++++++
-本章介绍如何构建frcobot_ros以及所需的安装环境。
+Instalación
+++++++++++++++++++++++
+Este capítulo describe cómo construir frcobot_ros y el entorno de instalación necesario.
 
-环境要求
------------
+Requisitos del entorno
+---------------------------------
 
-frcobot_ros推荐环境如下：
+El entorno recomendado para frcobot_ros es el siguiente:
 
 .. note:: 
-    -	Ubuntu 18.04 LTS Bionic Beaver和ROS Melodic Morenia
-    -	Ubuntu 20.04 LTS Focal Fossa和ROS Noetic Ninjemys
+    -	Ubuntu 18.04 LTS Bionic Beaver y ROS Melodic Morenia
+    -	Ubuntu 20.04 LTS Focal Fossa y ROS Noetic Ninjemys
 
-以下说明适用于 Ubuntu 20.04 LTS 系统和 ROS Noetic Ninjemys。如果使用的是Melodic，则将下发命令行中的 ``noetic`` 替换成 ``melodic``.
+Las siguientes instrucciones son aplicables al sistema Ubuntu 20.04 LTS y ROS Noetic Ninjemys. Si se utiliza Melodic, sustituya ``noetic`` por ``melodic`` en las líneas de comando indicadas a continuación.
 
-ROS安装要求
---------------
-在安装好Ubuntu系统后，`安装和配置好ROS Noetic环境 <https://wiki.ros.org/noetic/Installation/Ubuntu>`__。
+Requisitos de instalación de ROS
+----------------------------------------
+Tras instalar el sistema Ubuntu, `instale y configure el entorno ROS Noetic <https://wiki.ros.org/noetic/Installation/Ubuntu>`__.
 
-在配置好ROS Noetic后，安装如下所需环境：
+Una vez configurado ROS Noetic, instale el siguiente entorno necesario:
 
 .. code-block:: shell
     :linenos:
@@ -44,9 +44,9 @@ ROS安装要求
         ros-noetic-moveit \
         libxmlrpcpp-dev
 
-编译ROS包
--------------
-在正确安装和配置好ROS Noetic后，在您选择的目录中创建一个Catkin工作区。
+Compilación del paquete ROS
+---------------------------------------
+Tras instalar y configurar correctamente ROS Noetic, cree un espacio de trabajo Catkin en el directorio que elija.
 
 .. code-block:: shell
     :linenos:
@@ -55,7 +55,7 @@ ROS安装要求
     cd ~/catkin_ws
     catkin_init_workspace src
 
-然后从Gitee克隆frcobot_ros库。
+A continuación, clone el repositorio frcobot_ros desde Gitee.
 
 .. code-block:: shell
     :linenos:
@@ -63,7 +63,7 @@ ROS安装要求
     cd ~/catkin_ws/src
     git clone https://gitee.com/fair-innovation/frcobot_ros.git
 
-构建frcobot_ros包
+Construya el paquete frcobot_ros
 
 .. code-block::  shell
     :linenos:
@@ -73,28 +73,28 @@ ROS安装要求
     echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
     source ~/.bashrc
 
-如果出现报错请检查ROS安装要求中的包是否都已安装成功，编译完成后，将lib库拷贝到ROS的lib环境下(路径为：/opt/ros/noetic/lib)，以便程序可以正常运行。
+Si aparece un error, compruebe si todos los paquetes de los requisitos de instalación de ROS se han instalado correctamente. Una vez completada la compilación, copie la librería lib en el entorno lib de ROS (ruta: /opt/ros/noetic/lib) para que el programa pueda ejecutarse correctamente.
 
 .. code-block:: shell
     :linenos:
 
-    # 此处catkin_ws默认路径为“~”，如有不同，将“~”改为实际路径即可
+    # Aquí la ruta predeterminada de catkin_ws es "~"; si es diferente, sustituya "~" por la ruta real
     sudo cp ~/catkin_ws/src/frcobot_ros/frcobot_hw/lib/* /opt/ros/noetic/lib
 
-快速开始
-++++++++++
+Inicio rápido
+++++++++++++++++++
 
 frcobot_hw
 -----------------
-frcobot_hw主要提供了和协作机器人通讯的基本功能。
+frcobot_hw proporciona principalmente las funciones básicas de comunicación con el robot colaborativo.
 
 .. note:: 
-    - 包含协作机器人状态反馈msg
-    - 提供控制协作机器人的指令demo
-    - 提供协作机器人状态反馈节点和Topic
-    - 可通过launch文件快速启动状态节点和指令demo
+    - Incluye el msg de retroalimentación de estado del robot colaborativo
+    - Proporciona un demo de instrucciones para controlar el robot colaborativo
+    - Proporciona el nodo y el Topic de retroalimentación de estado del robot colaborativo
+    - Permite iniciar rápidamente el nodo de estado y el demo de instrucciones mediante un archivo launch
 
-frcobot_hw.launch内容如下：
+El contenido de frcobot_hw.launch es el siguiente:
 
 .. code-block:: xml
     :linenos:
@@ -115,17 +115,17 @@ frcobot_hw.launch内容如下：
 
 .. important:: 
 
-    - ``robot_ip`` 和 ``robot_port`` 需要注意与被控制的协作机器人IP和端口一致
-    - 出厂机器人默认IP为192.168.58.2，用户状态反馈端口为8083
+    - ``robot_ip`` y ``robot_port`` deben coincidir con la IP y el puerto del robot colaborativo que se va a controlar
+    - La IP predeterminada del robot de fábrica es 192.168.58.2, y el puerto de retroalimentación de estado del usuario es 8083
 
-通过以下指令可快速启动机器人状态反馈节点和指令demo功能。
+Mediante la siguiente instrucción se pueden iniciar rápidamente el nodo de retroalimentación de estado del robot y la función de demo de instrucciones.
 
 .. code-block:: shell
     :linenos:
 
     roslaunch frcobot_hw frcobot_hw.launch
 
-新开一个terminal，通过以下指令可打印并查看实时的状态反馈数据。
+Abra un nuevo terminal y, mediante la siguiente instrucción, podrá imprimir y consultar los datos de retroalimentación de estado en tiempo real.
 
 .. code-block:: shell
     :linenos:
@@ -134,7 +134,7 @@ frcobot_hw.launch内容如下：
 
 .. frcobot_camera
 .. -----------------
-.. frcobot_camera提供与图漾RVS和相机的手眼标定功能和无序抓取（Bin-Picking）功能。
+.. frcobot_camera proporciona la función de calibración mano-ojo con la cámara RVS de Figureys y la función de Bin-Picking (agarre desordenado).
 
 
 
@@ -148,5 +148,3 @@ frcobot_hw.launch内容如下：
 
 .. frcobot moveit!
 .. -----------------------
-
-    

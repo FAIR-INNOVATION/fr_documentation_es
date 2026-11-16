@@ -1,188 +1,188 @@
-机器人力控
-============
+Control de fuerza del robot
+===========================
 
 .. toctree:: 
     :maxdepth: 5
 
-力传感器配置
-+++++++++++++++++++++++++
+Configuración del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_SetConfig(company,device,softversion=0,bus=0)``"
-    "描述", "力传感器配置"
-    "必选参数", "- ``company``：传感器厂商，17-坤维科技，19-航天十一院，20-ATI传感器，21-中科米点，22-伟航敏芯，23-NBIT，24-鑫精诚(XJC)，26-NSR；
-    - ``device``：设备号，坤维(0-KWR75B)，航天十一院(0-MCS6A-200-4)，ATI(0-AXIA80-M8)，中科米点(0-MST2010)，伟航敏芯(0-WHC6L-YB-10A)，NBIT(0-XLH93003ACS)，鑫精诚XJC(0-XJC-6F-D82)，NSR(0-NSR-FTSensorA)；"
-    "默认参数", "- ``softversion``：软件版本号，暂不使用，默认为0；
-    - ``bus``：设备挂载末端总线位置，暂不使用，默认为 0；"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``FT_SetConfig(company,device,softversion=0,bus=0)``"
+    "Descripción", "Configuración del sensor de fuerza"
+    "Parámetros obligatorios", "- ``company``：Fabricante del sensor, 17-Kunwei Technology, 19-11º Instituto de Aeroespacial, 20-Sensor ATI, 21-Zhongke Midian, 22-Weihang Minxin, 23-NBIT, 24-Xinjingcheng (XJC), 26-NSR;
+    - ``device``：Número de dispositivo, Kunwei(0-KWR75B), 11º Instituto de Aeroespacial(0-MCS6A-200-4), ATI(0-AXIA80-M8), Zhongke Midian(0-MST2010), Weihang Minxin(0-WHC6L-YB-10A), NBIT(0-XLH93003ACS), Xinjingcheng XJC(0-XJC-6F-D82), NSR(0-NSR-FTSensorA);"
+    "Parámetros predeterminados", "- ``softversion``：Número de versión de software, aún no utilizado, valor predeterminado 0;
+    - ``bus``：Posición del bus del extremo donde está montado el dispositivo, aún no utilizado, valor predeterminado 0;"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取力传感器配置
-+++++++++++++++++++++++++
+Obtener la configuración del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_GetConfig()``"
-    "描述", "获取力传感器配置"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``[number,company,device,softversion,bus]``：number 传感器编号;company  力传感器厂商，17-坤维科技，19-航天十一院，20-ATI 传感器，21-中科米点，22-伟航敏芯;device  设备号，坤维 (0-KWR75B)，航天十一院 (0-MCS6A-200-4)，ATI(0-AXIA80-M8)，中科米点 (0-MST2010)，伟航敏芯 (0-WHC6L-YB10A);softvesion  软件版本号，暂不使用，默认为0" 
+    "Prototipo", "``FT_GetConfig()``"
+    "Descripción", "Obtener la configuración del sensor de fuerza"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``[number,company,device,softversion,bus]``：number número del sensor; company fabricante del sensor de fuerza, 17-Kunwei Technology, 19-11º Instituto de Aeroespacial, 20-Sensor ATI, 21-Zhongke Midian, 22-Weihang Minxin; device número de dispositivo, Kunwei (0-KWR75B), 11º Instituto de Aeroespacial (0-MCS6A-200-4), ATI(0-AXIA80-M8), Zhongke Midian (0-MST2010), Weihang Minxin (0-WHC6L-YB10A); softvesion número de versión de software, aún no utilizado, valor predeterminado 0" 
 
-力传感器激活
-+++++++++++++++++++++++++
+Activación del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_Activate(state)``"
-    "描述", "力传感器激活"
-    "必选参数", "- ``state``：0-复位，1-激活"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``FT_Activate(state)``"
+    "Descripción", "Activación del sensor de fuerza"
+    "Parámetros obligatorios", "- ``state``：0-reiniciar, 1-activar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-力传感器校零
-+++++++++++++++++++++++++
+Puesta a cero del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_SetZero(state)``"
-    "描述", "力传感器校零"
-    "必选参数", "- ``state``：0-去除零点，1-零点矫正"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``FT_SetZero(state)``"
+    "Descripción", "Puesta a cero del sensor de fuerza"
+    "Parámetros obligatorios", "- ``state``：0-eliminar el punto cero, 1-corrección del punto cero"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置力传感器参考坐标系
-+++++++++++++++++++++++++
+Establecer el sistema de coordenadas de referencia del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_SetRCS(ref,coord=[0,0,0,0,0,0])``"
-    "描述", "设置力传感器参考坐标系"
-    "必选参数", "- ``ref``：0-工具坐标系，1-基坐标系"
-    "默认参数", "- ``coord``：[x,y,z,rx,ry,rz]自定义坐标系值,默认[0,0,0,0,0,0]"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``FT_SetRCS(ref,coord=[0,0,0,0,0,0])``"
+    "Descripción", "Establecer el sistema de coordenadas de referencia del sensor de fuerza"
+    "Parámetros obligatorios", "- ``ref``：0-sistema de coordenadas de herramienta, 1-sistema de coordenadas base"
+    "Parámetros predeterminados", "- ``coord``：[x,y,z,rx,ry,rz] valor del sistema de coordenadas personalizado, valor predeterminado [0,0,0,0,0,0]"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
         
-设置力传感器下负载重量
-++++++++++++++++++++++++++++++++++++++
+Establecer el peso de la carga bajo el sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetForceSensorPayload(weight)``"
-    "描述", "设置力传感器下负载重量"
-    "必选参数", " - ``weight``：负载重量 kg"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetForceSensorPayload(weight)``"
+    "Descripción", "Establecer el peso de la carga bajo el sensor de fuerza"
+    "Parámetros obligatorios", " - ``weight``：Peso de la carga kg"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
   
-设置力传感器下负载质心
-++++++++++++++++++++++++++++++++++++++
+Establecer el centro de masa de la carga bajo el sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetForceSensorPayloadCog(x,y,z)``"
-    "描述", "设置力传感器下负载质心"
-    "必选参数", "
-    - ``x``：负载质心x mm
-    - ``y``：负载质心y mm
-    - ``z``：负载质心z mm
+    "Prototipo", "``SetForceSensorPayloadCog(x,y,z)``"
+    "Descripción", "Establecer el centro de masa de la carga bajo el sensor de fuerza"
+    "Parámetros obligatorios", "
+    - ``x``：centro de masa de la carga x mm
+    - ``y``：centro de masa de la carga y mm
+    - ``z``：centro de masa de la carga z mm
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
             
-获取力传感器下负载重量
-++++++++++++++++++++++++++++++++++++++
+Obtener el peso de la carga bajo el sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetForceSensorPayload()``"
-    "描述", "获取力传感器下负载重量"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``weight``：负载重量 kg"
+    "Prototipo", "``GetForceSensorPayload()``"
+    "Descripción", "Obtener el peso de la carga bajo el sensor de fuerza"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``weight``：Peso de la carga kg"
             
-获取力传感器下负载质心
-++++++++++++++++++++++++++++++++++++++
+Obtener el centro de masa de la carga bajo el sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetForceSensorPayloadCog()``"
-    "描述", "获取力传感器下负载质心"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``x``：负载质心x mm 
-    - ``y``：负载质心y mm 
-    - ``z``：负载质心z mm"
+    "Prototipo", "``GetForceSensorPayloadCog()``"
+    "Descripción", "Obtener el centro de masa de la carga bajo el sensor de fuerza"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``x``：centro de masa de la carga x mm 
+    - ``y``：centro de masa de la carga y mm 
+    - ``z``：centro de masa de la carga z mm"
 
-力传感器自动校零
-++++++++++++++++++++++++++++++++++++++
+Puesta a cero automática del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ForceSensorAutoComputeLoad()``"
-    "描述", "力传感器自动校零"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``weight``：传感器质量 kg
-    - ``pos=[x,y,z]``：传感器质心 mm"
+    "Prototipo", "``ForceSensorAutoComputeLoad()``"
+    "Descripción", "Puesta a cero automática del sensor de fuerza"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``weight``：Masa del sensor kg
+    - ``pos=[x,y,z]``：Centro de masa del sensor mm"
 
-获取参考坐标系下力/扭矩数据
-++++++++++++++++++++++++++++++++++
+Obtener los datos de fuerza/par en el sistema de coordenadas de referencia
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_GetForceTorqueRCS()``"
-    "描述", "获取参考坐标系下力/扭矩数据"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``data=[fx,fy,fz,tx,ty,tz]``：参考坐标系下力/扭矩数据"
+    "Prototipo", "``FT_GetForceTorqueRCS()``"
+    "Descripción", "Obtener los datos de fuerza/par en el sistema de coordenadas de referencia"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``data=[fx,fy,fz,tx,ty,tz]``：Datos de fuerza/par en el sistema de coordenadas de referencia"
 
-获取力传感器原始力/扭矩数据
-++++++++++++++++++++++++++++++++++
+Obtener los datos brutos de fuerza/par del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_GetForceTorqueOrigin()``"
-    "描述", "获取力传感器原始力/扭矩数据"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode  
-    - ``data=[fx,fy,fz,tx,ty,tz]``：力传感器原始力/扭矩数据 "
+    "Prototipo", "``FT_GetForceTorqueOrigin()``"
+    "Descripción", "Obtener los datos brutos de fuerza/par del sensor de fuerza"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode  
+    - ``data=[fx,fy,fz,tx,ty,tz]``：Datos brutos de fuerza/par del sensor de fuerza "
 
-力传感器配置及自动校零代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración del sensor de fuerza y puesta a cero automática
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot 
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     company = 24
     device = 0
@@ -218,64 +218,64 @@
     print(f"the result is weight {computeWeight} pos is {tran[0]} {tran[1]} {tran[2]}")
     robot.CloseRPC()
 
-负载重量辨识记录
-+++++++++++++++++++++++++
+Registro de identificación del peso de la carga
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_PdIdenRecord(tool_id)``"
-    "描述", "负载重量辨识记录"
-    "必选参数", "- ``tool_id``：传感器坐标系编号，范围[0~14]"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode  "
+    "Prototipo", "``FT_PdIdenRecord(tool_id)``"
+    "Descripción", "Registro de identificación del peso de la carga"
+    "Parámetros obligatorios", "- ``tool_id``：Número del sistema de coordenadas del sensor, rango [0~14]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode  "
 
-负载重量辨识计算
-+++++++++++++++++++++++++
+Cálculo de identificación del peso de la carga
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_PdIdenCompute()``"
-    "描述", "负载重量辨识计算"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode   
-    - ``weight``：负载重量，单位 kg  "
+    "Prototipo", "``FT_PdIdenCompute()``"
+    "Descripción", "Cálculo de identificación del peso de la carga"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode   
+    - ``weight``：Peso de la carga, unidad kg  "
 
-负载质心辨识记录
-+++++++++++++++++++++++++
+Registro de identificación del centro de masa de la carga
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_PdCogIdenRecord(tool_id,index)``"
-    "描述", "负载质心辨识记录"
-    "必选参数", "- ``tool_id``：传感器坐标系编号，范围[0~14];
-    - ``index``：点编号[1~3]"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``FT_PdCogIdenRecord(tool_id,index)``"
+    "Descripción", "Registro de identificación del centro de masa de la carga"
+    "Parámetros obligatorios", "- ``tool_id``：Número del sistema de coordenadas del sensor, rango [0~14];
+    - ``index``：Número de punto [1~3]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-负载质心辨识计算
-+++++++++++++++++++++++++
+Cálculo de identificación del centro de masa de la carga
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_PdCogIdenCompute()``"
-    "描述", "负载质心辨识计算"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode  
-    - ``cog=[cogx,cogy,cogz]``：负载质心，单位 mm  "
+    "Prototipo", "``FT_PdCogIdenCompute()``"
+    "Descripción", "Cálculo de identificación del centro de masa de la carga"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode  
+    - ``cog=[cogx,cogy,cogz]``：Centro de masa de la carga, unidad mm  "
 
-力传感器负载辨识代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de identificación de carga del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot 
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     company = 24
     device = 0
@@ -321,31 +321,31 @@
     print(f"cog:{cog[0]},{cog[1]},{cog[2]}")
     robot.CloseRPC()
 
-碰撞守护
-++++++++++++++++++++++++++++++++++
+Protección de colisión
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_Guard(flag,sensor_num,select,force_torque,max_threshold,min_threshold)``"
-    "描述", "碰撞守护"
-    "必选参数", "- ``flag``：0-关闭碰撞守护，1-开启碰撞守护；
-    - ``sensor_num``：力传感器编号；
-    - ``select``：六个自由度是否检测碰撞[fx,fy,fz,mx,my,mz]，0-不生效，1-生效；
-    - ``force_torque``：碰撞检测力/力矩，单位N或Nm；
-    - ``max_threshold``：最大阈值；
-    - ``min_threshold``：最小阈值；
-    - 力/力矩检测范围:(force_torque-min_threshold,force_torque+max_threshold)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``FT_Guard(flag,sensor_num,select,force_torque,max_threshold,min_threshold)``"
+    "Descripción", "Protección de colisión"
+    "Parámetros obligatorios", "- ``flag``：0-desactivar la protección de colisión, 1-activar la protección de colisión;
+    - ``sensor_num``：Número del sensor de fuerza;
+    - ``select``：Si se detecta colisión en los seis grados de libertad [fx,fy,fz,mx,my,mz], 0-no efectivo, 1-efectivo;
+    - ``force_torque``：Fuerza/par de detección de colisión, unidad N o Nm;
+    - ``max_threshold``：Umbral máximo;
+    - ``min_threshold``：Umbral mínimo;
+    - Rango de detección de fuerza/par: (force_torque-min_threshold, force_torque+max_threshold)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-碰撞守护代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de protección de colisión
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     company = 24
     device = 0
@@ -378,35 +378,35 @@
     robot.FT_Guard(0, sensor_id, select,[0.0,0.0,0.0,0.0,0.0,0.0], max_threshold, min_threshold)
     robot.CloseRPC()
 
-恒力控制
-++++++++++++++++++++++++++++++++++
+Control de fuerza constante
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_Control(flag, sensor_id, select, ft, ft_pid, adj_sign, ILC_sign, max_dis, max_ang, M=None, B=None, threshold=[0.2,0.2], adjustCoeff=[1.0,1.0], polishRadio=0, filter_Sign=0, posAdapt_sign=0, isNoBlock=0)``"
-    "描述", "恒力控制"
-    "必选参数", "- ``flag``：恒力控制开启标志，0-关，1-开；
-    - ``sensor_id``：力传感器编号；
-    - ``select``：六个自由度是否检测 [fx,fy,fz,mx,my,mz]，0-不生效，1-生效；
-    - ``ft``：检测力/力矩，单位N或Nm；
-    - ``ft_pid``：[f_p,f_i,f_d,m_p,m_i,m_d],力PID参数，力矩PID参数；
-    - ``adj_sign``：自适应启停状态，0-关闭，1-开启；
-    - ``ILC_sign``: ILC控制启停状态，0-停止，1-训练，2-实操；
-    - ``max_dis``：最大调整距离；
-    - ``max_ang``：最大调整角度；"
-    "默认参数", "- ``M``：质量参数；
-    - ``B``：阻尼参数；
-    - ``threshold``：rx、ry启动阈值[0-10],默认0.2；
-    - ``adjustCoeff``：rx、ry力矩调节系数[0-1],默认1；
-    - ``polishRadio``：打磨盘半径，单位mm；
-    - ``filter_Sign``：滤波开启标志 0-关；1-开，默认 0-关闭；
-    - ``posAdapt_sign``：姿态顺应开启标志 0-关；1-开，默认 0-关闭；
-    - ``isNoBlock``：阻塞标志，0-阻塞；1-非阻塞 默认0-阻塞；"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``FT_Control(flag, sensor_id, select, ft, ft_pid, adj_sign, ILC_sign, max_dis, max_ang, M=None, B=None, threshold=[0.2,0.2], adjustCoeff=[1.0,1.0], polishRadio=0, filter_Sign=0, posAdapt_sign=0, isNoBlock=0)``"
+    "Descripción", "Control de fuerza constante"
+    "Parámetros obligatorios", "- ``flag``：Indicador de activación del control de fuerza constante, 0-desactivado, 1-activado;
+    - ``sensor_id``：Número del sensor de fuerza;
+    - ``select``：Si se detecta en los seis grados de libertad [fx,fy,fz,mx,my,mz], 0-no efectivo, 1-efectivo;
+    - ``ft``：Fuerza/par de detección, unidad N o Nm;
+    - ``ft_pid``：[f_p,f_i,f_d,m_p,m_i,m_d], parámetros PID de fuerza, parámetros PID de par;
+    - ``adj_sign``：Estado de inicio/parada adaptativo, 0-desactivado, 1-activado;
+    - ``ILC_sign``: Estado de inicio/parada del control ILC, 0-detener, 1-entrenamiento, 2-operación práctica;
+    - ``max_dis``：Distancia máxima de ajuste;
+    - ``max_ang``：Ángulo máximo de ajuste;"
+    "Parámetros predeterminados", "- ``M``：Parámetros de masa;
+    - ``B``：Parámetros de amortiguación;
+    - ``threshold``：Umbral de activación rx, ry [0-10], valor predeterminado 0.2;
+    - ``adjustCoeff``：Coeficiente de ajuste del par rx, ry [0-1], valor predeterminado 1;
+    - ``polishRadio``：Radio del disco de pulido, unidad mm;
+    - ``filter_Sign``：Indicador de activación del filtrado 0-desactivado; 1-activado, valor predeterminado 0-desactivado;
+    - ``posAdapt_sign``：Indicador de activación de adaptación de orientación 0-desactivado; 1-activado, valor predeterminado 0-desactivado;
+    - ``isNoBlock``：Indicador de bloqueo, 0-bloqueante; 1-no bloqueante, valor predeterminado 0-bloqueante;"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-具有阻尼的恒力控制代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de control de fuerza constante con amortiguación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
@@ -446,42 +446,42 @@
     robot.CloseRPC()
     return 0
 
-螺旋线探索
-++++++++++++++++++++++++++++++++++
+Exploración en hélice
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_SpiralSearch(rcs, ft, dr=0.7, max_t_ms=60000, max_vel=5, strategy=0)``"
-    "描述", "螺旋线探索"
-    "必选参数", "- ``rcs``：参考坐标系，0-工具坐标系，1-基坐标系
-    - ``ft``：力或力矩阈值 (0~100)，单位 N 或 Nm;"
-    "默认参数", "- ``dr``：每圈半径进给量，单位 mm 默认0.7;
-    - ``max_t_ms``：最大探索时间，单位 ms 默认 60000;
-    - ``max_vel``：线速度最大值，单位 mm/s 默认 5;
-    - ``strategy``：未检测到力/力矩的处理策略，0-报错；1-警告，继续运动;"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``FT_SpiralSearch(rcs, ft, dr=0.7, max_t_ms=60000, max_vel=5, strategy=0)``"
+    "Descripción", "Exploración en hélice"
+    "Parámetros obligatorios", "- ``rcs``：Sistema de coordenadas de referencia, 0-sistema de coordenadas de herramienta, 1-sistema de coordenadas base
+    - ``ft``：Umbral de fuerza o par (0~100), unidad N o Nm;"
+    "Parámetros predeterminados", "- ``dr``：Avance de radio por vuelta, unidad mm, valor predeterminado 0.7;
+    - ``max_t_ms``：Tiempo máximo de exploración, unidad ms, valor predeterminado 60000;
+    - ``max_vel``：Velocidad lineal máxima, unidad mm/s, valor predeterminado 5;
+    - ``strategy``：Estrategia de tratamiento cuando no se detecta fuerza/par, 0-error; 1-advertencia, continuar el movimiento;"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-旋转插入
-++++++++++++++++++++++++++++++++++
+Inserción giratoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_RotInsertion(rcs, ft, orn, angVelRot=3, angleMax=45, angAccmax=0, rotorn=1, strategy=0)``"
-    "描述", "旋转插入"
-    "必选参数", "- ``rcs``：参考坐标系，0-工具坐标系，1-基坐标系；
-    - ``ft``：力或力矩阈值 (0~100)，单位 N 或 Nm;
-    - ``orn``：力/扭矩方向，1-沿z轴方向，2-绕z轴方向;"
-    "默认参数", "- ``angVelRot``：旋转角速度，单位°/s,默认 3;
-    - ``angleMax``：最大旋转角度，单位 ° 默认 45;
-    - ``angAccmax``：最大旋转加速度，单位 °/s^2，暂不使用 默认0;
-    - ``rotorn``：旋转方向，1-顺时针，2-逆时针 默认1;
-    - ``strategy``：未检测到力/力矩的处理策略，0-报错；1-警告，继续运动"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``FT_RotInsertion(rcs, ft, orn, angVelRot=3, angleMax=45, angAccmax=0, rotorn=1, strategy=0)``"
+    "Descripción", "Inserción giratoria"
+    "Parámetros obligatorios", "- ``rcs``：Sistema de coordenadas de referencia, 0-sistema de coordenadas de herramienta, 1-sistema de coordenadas base;
+    - ``ft``：Umbral de fuerza o par (0~100), unidad N o Nm;
+    - ``orn``：Dirección de fuerza/par, 1-a lo largo del eje z, 2-alrededor del eje z;"
+    "Parámetros predeterminados", "- ``angVelRot``：Velocidad angular de rotación, unidad °/s, valor predeterminado 3;
+    - ``angleMax``：Ángulo máximo de rotación, unidad °, valor predeterminado 45;
+    - ``angAccmax``：Aceleración angular máxima de rotación, unidad °/s^2, aún no utilizada, valor predeterminado 0;
+    - ``rotorn``：Dirección de rotación, 1-sentido horario, 2-sentido antihorario, valor predeterminado 1;
+    - ``strategy``：Estrategia de tratamiento cuando no se detecta fuerza/par, 0-error; 1-advertencia, continuar el movimiento"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-螺旋探索、直线插入等指令代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de instrucciones como exploración en hélice, inserción recta, etc.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
@@ -536,31 +536,31 @@
     robot.CloseRPC()
     return0
 
-直线插入
-++++++++++++++++++++++++++++++++++
+Inserción recta
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_LinInsertion(rcs, ft, disMax, linorn, lin_v=1.0, lin_a=1.0, strategy=0)``"
-    "描述", "直线插入"
-    "必选参数", "- ``rcs``：参考坐标系，0-工具坐标系，1-基坐标系；
-    - ``ft``：力或力矩阈值 (0~100)，单位 N 或 Nm;
-    - ``disMax``：最大插入距离，单位 mm;
-    - ``linorn``：插入方向:0-负方向，1-正方向"
-    "默认参数", "
-    - ``lin_v``：直线速度，单位 mm/s 默认1;
-    - ``lin_a``：直线加速度，单位 mm/s^2，暂不使用 默认1;
-    - ``strategy``：未检测到力/力矩的处理策略，0-报错；1-警告，继续运动;"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``FT_LinInsertion(rcs, ft, disMax, linorn, lin_v=1.0, lin_a=1.0, strategy=0)``"
+    "Descripción", "Inserción recta"
+    "Parámetros obligatorios", "- ``rcs``：Sistema de coordenadas de referencia, 0-sistema de coordenadas de herramienta, 1-sistema de coordenadas base;
+    - ``ft``：Umbral de fuerza o par (0~100), unidad N o Nm;
+    - ``disMax``：Distancia máxima de inserción, unidad mm;
+    - ``linorn``：Dirección de inserción: 0-dirección negativa, 1-dirección positiva"
+    "Parámetros predeterminados", "
+    - ``lin_v``：Velocidad lineal, unidad mm/s, valor predeterminado 1;
+    - ``lin_a``：Aceleración lineal, unidad mm/s^2, aún no utilizada, valor predeterminado 1;
+    - ``strategy``：Estrategia de tratamiento cuando no se detecta fuerza/par, 0-error; 1-advertencia, continuar el movimiento;"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-螺旋探索、直线插入等指令代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de instrucciones como exploración en hélice, inserción recta, etc.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
     
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     company = 24
     device = 0
@@ -629,57 +629,57 @@
     robot.FT_Control(0, sensor_num, select4, ft, gain, adj_sign, ILC_sign, max_dis, max_ang, 0, 0, 0)
     robot.CloseRPC()
 
-表面定位
-++++++++++++++++++++++++++++++++++
+Localización de superficie
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_FindSurface (rcs, dir, axis, disMax, ft, lin_v=3.0, lin_a=0.0, stragety = 0)``"
-    "描述", "表面定位"
-    "必选参数", "- ``rcs``： 参考坐标系，0-工具坐标系，1-基坐标系；
-    - ``dir``：移动方向，1-正方向，2-负方向；
-    - ``axis``：移动轴，1-x，2-y，3-z；
-    - ``disMax``：大探索距离，单位 mm;
-    - ``ft``：动作终止力阈值，单位N；"
-    "默认参数", "- ``lin_v``：探索直线速度，单位mm/s 默认3;
-    - ``lin_a``：探索直线加速度，单位mm/s^2 默认0;
-    - ``strategy``：未检测到力/力矩的处理策略，0-报错；1-警告，继续运动;"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``FT_FindSurface (rcs, dir, axis, disMax, ft, lin_v=3.0, lin_a=0.0, stragety = 0)``"
+    "Descripción", "Localización de superficie"
+    "Parámetros obligatorios", "- ``rcs``： Sistema de coordenadas de referencia, 0-sistema de coordenadas de herramienta, 1-sistema de coordenadas base;
+    - ``dir``：Dirección de movimiento, 1-dirección positiva, 2-dirección negativa;
+    - ``axis``：Eje de movimiento, 1-x, 2-y, 3-z;
+    - ``disMax``：Distancia máxima de exploración, unidad mm;
+    - ``ft``：Umbral de fuerza de terminación de la acción, unidad N;"
+    "Parámetros predeterminados", "- ``lin_v``：Velocidad lineal de exploración, unidad mm/s, valor predeterminado 3;
+    - ``lin_a``：Aceleración lineal de exploración, unidad mm/s^2, valor predeterminado 0;
+    - ``strategy``：Estrategia de tratamiento cuando no se detecta fuerza/par, 0-error; 1-advertencia, continuar el movimiento;"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-计算中间平面位置开始
-++++++++++++++++++++++++++++++++++
+Inicio del cálculo de la posición del plano intermedio
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_CalCenterStart()``"
-    "描述", "计算中间平面位置开始"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``FT_CalCenterStart()``"
+    "Descripción", "Inicio del cálculo de la posición del plano intermedio"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-计算中间平面位置结束
-++++++++++++++++++++++++++++++++++
+Fin del cálculo de la posición del plano intermedio
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_CalCenterEnd()``"
-    "描述", "计算中间平面位置结束"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode
-    - ``pos=[x,y,z,rx,ry,rz]``：中间平面位置"
+    "Prototipo", "``FT_CalCenterEnd()``"
+    "Descripción", "Fin del cálculo de la posición del plano intermedio"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode
+    - ``pos=[x,y,z,rx,ry,rz]``：Posición del plano intermedio"
 
-表面定位代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de localización de superficie
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     company = 24
     device = 0
@@ -733,8 +733,8 @@
     robot.MoveCart(ycenter, 9, 0, 60.0)
     robot.CloseRPC()
 
-力控探索失败策略代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de estrategia de fallo de exploración de control de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
@@ -742,11 +742,11 @@
     import time
 
     def main():
-        # 与机器人控制器建立连接
+        # Establecer comunicación con el controlador del robot
         robot = Robot.RPC('192.168.58.2')
-        time.sleep(0.5)  # 等待连接和数据接收
+        time.sleep(0.5)  # Esperar la conexión y la recepción de datos
 
-        print("========== FT力控策略测试开始 ==========")
+        print("========== Inicio de la prueba de estrategia de control de fuerza FT ==========")
 
         # ========== FT_SpiralSearch: strategy 0 / 1 ==========
         print("=== FT_SpiralSearch strategy=0 ===")
@@ -794,45 +794,45 @@
 
         print("finish")
 
-        # 关闭连接
+        # Cerrar la conexión
         robot.CloseRPC()
 
     if __name__ == "__main__":
         main()
 
-柔顺控制开启
-++++++++++++++++++++++++++++++++++
+Activación del control de cumplimiento
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_ComplianceStart(p, force)``"
-    "描述", "柔顺控制开启"
-    "必选参数", "- ``p``: 位置调节系数或柔顺系数
-    - ``force``：柔顺开启力阈值，单位N"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode  "
+    "Prototipo", "``FT_ComplianceStart(p, force)``"
+    "Descripción", "Activación del control de cumplimiento"
+    "Parámetros obligatorios", "- ``p``: Coeficiente de ajuste de posición o coeficiente de cumplimiento
+    - ``force``：Umbral de fuerza de activación del cumplimiento, unidad N"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode  "
 
-柔顺控制关闭
-++++++++++++++++++++++++++++++++++
+Desactivación del control de cumplimiento
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FT_ComplianceStop()``"
-    "描述", "柔顺控制关闭"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``FT_ComplianceStop()``"
+    "Descripción", "Desactivación del control de cumplimiento"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-柔顺控制代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de control de cumplimiento
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     company = 24
     device = 0
@@ -859,8 +859,8 @@
     max_dis = 100.0
     max_ang = 0.0
     ft = [-10.0, -10.0, -10.0, 0.0, 0.0, 0.0]
-    offset_pos = [0.0,0.0,0.0,0.0,0.0,0.0]  # 替代 DescPose(0, 0, 0, 0, 0, 0)
-    epos = [0.0,0.0,0.0,0.0]  # 替代 ExaxisPos(0, 0, 0, 0)
+    offset_pos = [0.0,0.0,0.0,0.0,0.0,0.0]  # Sustituye a DescPose(0, 0, 0, 0, 0, 0)
+    epos = [0.0,0.0,0.0,0.0]  # Sustituye a ExaxisPos(0, 0, 0, 0)
     j1 = [-11.904, -99.669, 117.473, -108.616, -91.726, 74.256]  # JointPos
     j2 = [-45.615, -106.172, 124.296, -107.151, -91.282, 74.255]
     desc_p1 = [-419.524, -13.000, 351.569, -178.118, 0.314, 3.833]  # DescPose
@@ -881,83 +881,83 @@
     robot.FT_Control(flag, sensor_id, select, ft, ft_pid, adj_sign, ILC_sign, max_dis, max_ang, 0, 0, 0)
     robot.CloseRPC()
 
-负载辨识滤波初始化
-++++++++++++++++++++++++++++++++++
+Inicialización del filtro de identificación de carga
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.1
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``LoadIdentifyDynFilterInit()``"
-    "描述", "负载辨识滤波初始化"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode  "
+    "Prototipo", "``LoadIdentifyDynFilterInit()``"
+    "Descripción", "Inicialización del filtro de identificación de carga"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode  "
 
-负载辨识变量初始化
-++++++++++++++++++++++++++++++++++
+Inicialización de variables de identificación de carga
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.1
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``LoadIdentifyDynVarInit()``"
-    "描述", "负载辨识变量初始化"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode  "
+    "Prototipo", "``LoadIdentifyDynVarInit()``"
+    "Descripción", "Inicialización de variables de identificación de carga"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode  "
 
-负载辨识主程序
-++++++++++++++++++++++++++++++++++
+Programa principal de identificación de carga
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.1
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``LoadIdentifyMain(joint_torque, joint_pos, t)``"
-    "描述", "负载辨识主程序"
-    "必选参数", "- ``joint_torque``： 关节扭矩 j1-j6；
-    - ``joint_pos``：关节位置 j1-j6
-    - ``t``：采样周期"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``LoadIdentifyMain(joint_torque, joint_pos, t)``"
+    "Descripción", "Programa principal de identificación de carga"
+    "Parámetros obligatorios", "- ``joint_torque``： Par de las articulaciones j1-j6;
+    - ``joint_pos``：Posición de las articulaciones j1-j6
+    - ``t``：Período de muestreo"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取负载辨识结果
-++++++++++++++++++++++++++++++++++
+Obtener el resultado de la identificación de carga
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.1
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``LoadIdentifyGetResult(gain)``"
-    "描述", "获取负载辨识结果"
-    "必选参数", "- ``gain``：重力项系数double[6]，离心项系数double[6]"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``weight``：负载重量
-    - ``cog=[x,y,z]``：负载质心坐标"
+    "Prototipo", "``LoadIdentifyGetResult(gain)``"
+    "Descripción", "Obtener el resultado de la identificación de carga"
+    "Parámetros obligatorios", "- ``gain``：Coeficiente del término de gravedad double[6], coeficiente del término centrífugo double[6]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``weight``：Peso de la carga
+    - ``cog=[x,y,z]``：Coordenadas del centro de masa de la carga"
 
-机器人负载辨识代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de identificación de carga del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     retval = robot.LoadIdentifyDynFilterInit()
     print(f"LoadIdentifyDynFilterInit retval is: {retval}")
     retval = robot.LoadIdentifyDynVarInit()
     print(f"LoadIdentifyDynVarInit retval is: {retval}")
     error, posJ = robot.GetActualJointPosDegree(0)
-    posJ[1] += 10  # Modify joint 2
+    posJ[1] += 10  # Modificar la articulación 2
     error, joint_toq = robot.GetJointTorques(0)
-    joint_toq[1] += 2  # Modify torque on joint 2
+    joint_toq[1] += 2  # Modificar el par en la articulación 2
     tmpTorque = joint_toq.copy()
     retval = robot.LoadIdentifyMain(tmpTorque, posJ, 1)
     print(f"LoadIdentifyMain retval is: {retval}")
@@ -968,68 +968,68 @@
     print(f"LoadIdentifyGetResult retval is: {retval} ; weight is {weight}  cog is {load_pos[0]} {load_pos[1]} {load_pos[2]}")
     robot.CloseRPC()
 
-力传感器辅助拖动
-++++++++++++++++++++++++++++++++++
+Arrastre asistido por sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``EndForceDragControl(status, asaptiveFlag, interfereDragFlag, ingularityConstraintsFlag, M, B, K, F, Fmax, Vmax, forceCollisionFlag=0)``"
-    "描述", "力传感器辅助拖动"
-    "必选参数", "- ``status``：控制状态，0-关闭；1-开启
-    - ``asaptiveFlag``：自适应开启标志，0-关闭；1-开启
-    - ``interfereDragFlag``：干涉区拖动标志，0-关闭；1-开启
-    - ``ingularityConstraintsFlag``：奇异点策略，0-规避；1-穿越
-    - ``forceCollisionFlag``：辅助拖动时机器人碰撞检测标志；0-关闭；1-开启
-    - ``M=[m1,m2,m3,m4,m5,m6]``：惯性系数
-    - ``B=[b1,b2,b3,b4,b5,b6]``：阻尼系数
-    - ``K=[k1,k2,k3,k4,k5,k6]``：刚度系数
-    - ``F=[f1,f2,f3,f4,f5,f6]``：拖动六维力阈值
-    - ``Fmax``：最大拖动力限制
-    - ``Vmax``：最大关节速度限制"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``EndForceDragControl(status, asaptiveFlag, interfereDragFlag, ingularityConstraintsFlag, M, B, K, F, Fmax, Vmax, forceCollisionFlag=0)``"
+    "Descripción", "Arrastre asistido por sensor de fuerza"
+    "Parámetros obligatorios", "- ``status``：Estado de control, 0-desactivar; 1-activar
+    - ``asaptiveFlag``：Indicador de activación adaptativa, 0-desactivar; 1-activar
+    - ``interfereDragFlag``：Indicador de arrastre en zona de interferencia, 0-desactivar; 1-activar
+    - ``ingularityConstraintsFlag``：Estrategia de puntos singulares, 0-evitar; 1-atravesar
+    - ``forceCollisionFlag``：Indicador de detección de colisión del robot durante el arrastre asistido; 0-desactivar; 1-activar
+    - ``M=[m1,m2,m3,m4,m5,m6]``：Coeficientes de inercia
+    - ``B=[b1,b2,b3,b4,b5,b6]``：Coeficientes de amortiguación
+    - ``K=[k1,k2,k3,k4,k5,k6]``：Coeficientes de rigidez
+    - ``F=[f1,f2,f3,f4,f5,f6]``：Umbral de fuerza de seis dimensiones para el arrastre
+    - ``Fmax``：Límite máximo de fuerza de arrastre
+    - ``Vmax``：Límite máximo de velocidad de las articulaciones"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
         
-获取力传感器拖动开关状态
-++++++++++++++++++++++++++++++++++++++
+Obtener el estado del interruptor de arrastre del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetForceAndTorqueDragState()``"
-    "描述", "获取力传感器拖动开关状态"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``dragState``：力传感器辅助拖动控制状态，0-关闭；1-开启
-    - ``sixDimensionalDragState``：六维力辅助拖动控制状态，0-关闭；1-开启"
+    "Prototipo", "``GetForceAndTorqueDragState()``"
+    "Descripción", "Obtener el estado del interruptor de arrastre del sensor de fuerza"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``dragState``：Estado de control del arrastre asistido por sensor de fuerza, 0-desactivar; 1-activar
+    - ``sixDimensionalDragState``：Estado de control del arrastre asistido de fuerza de seis dimensiones, 0-desactivar; 1-activar"
     
-报错清除后力传感器自动开启
-++++++++++++++++++++++++++++++++++
+Apertura automática del sensor de fuerza tras el borrado de errores
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetForceSensorDragAutoFlag(status)``"
-    "描述", "报错清除后力传感器自动开启"
-    "必选参数", "- ``status``：控制状态，0-关闭；1-开启"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetForceSensorDragAutoFlag(status)``"
+    "Descripción", "Apertura automática del sensor de fuerza tras el borrado de errores"
+    "Parámetros obligatorios", "- ``status``：Estado de control, 0-desactivar; 1-activar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
     
-力传感器辅助拖动代码示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de código de arrastre asistido por sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.SetForceSensorDragAutoFlag(1)
     M = [15.0, 15.0, 15.0, 0.5, 0.5, 0.1]
@@ -1045,34 +1045,34 @@
     robot.EndForceDragControl(0, 0, 0, 0, M, B, K, F, 50, 100)
     robot.CloseRPC()
     
-设置六维力和关节阻抗混合拖动开关及参数
-++++++++++++++++++++++++++++++++++++++
+Establecer el interruptor y los parámetros del arrastre mixto de fuerza de seis dimensiones e impedancia de articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ForceAndJointImpedanceStartStop(status, impedanceFlag, lamdeDain, KGain, BGain, dragMaxTcpVel, dragMaxTcpOriVel)``"
-    "描述", "设置六维力和关节阻抗混合拖动开关及参数"
-    "必选参数", "- ``status``：控制状态，0-关闭；1-开启
-    - ``impedanceFlag``：阻抗开启标志，0-关闭；1-开启
-    - ``lamdeDain``：[D1,D2,D3,D4,D5, D6] 拖动增益
-    - ``KGain``：[K1,K2,K3,K4,K5,K6]刚度增益
-    - ``BGain``：[B1,B2,B3,B4,B5,B]阻尼增益
-    - ``dragMaxTcpVel``：拖动末端最大线速度限制
-    - ``dragMaxTcpOriVel``：拖动末端最大角速度限制"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ForceAndJointImpedanceStartStop(status, impedanceFlag, lamdeDain, KGain, BGain, dragMaxTcpVel, dragMaxTcpOriVel)``"
+    "Descripción", "Establecer el interruptor y los parámetros del arrastre mixto de fuerza de seis dimensiones e impedancia de articulaciones"
+    "Parámetros obligatorios", "- ``status``：Estado de control, 0-desactivar; 1-activar
+    - ``impedanceFlag``：Indicador de activación de impedancia, 0-desactivar; 1-activar
+    - ``lamdeDain``：[D1,D2,D3,D4,D5, D6] ganancia de arrastre
+    - ``KGain``：[K1,K2,K3,K4,K5,K6] ganancia de rigidez
+    - ``BGain``：[B1,B2,B3,B4,B5,B] ganancia de amortiguación
+    - ``dragMaxTcpVel``：Límite máximo de velocidad lineal del extremo durante el arrastre
+    - ``dragMaxTcpOriVel``：Límite máximo de velocidad angular del extremo durante el arrastre"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-六维力和关节阻抗混合拖动代码示例
-++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de arrastre mixto de fuerza de seis dimensiones e impedancia de articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.DragTeachSwitch(1)
     lamde_dain = [3.0, 2.0, 2.0, 2.0, 2.0, 3.0]
@@ -1086,36 +1086,36 @@
     print(f"ForceAndJointImpedanceStartStop rtn is {rtn}")
     robot.CloseRPC()
 
-阻抗启停控制
-+++++++++++++++++++++++++++++++++++++++++++++
+Control de inicio/parada de impedancia
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ImpedanceControlStartStop(status, workSpace, forceThreshold, m, b, k, maxV, maxVA, maxW, maxWA)``"
-    "描述", "阻抗启停控制"
-    "必选参数", "- ``status``：0-关闭；1-开启
-    - ``workSpace``：0-关节空间；1-迪卡尔空间
-    - ``forceThreshold``：触发力阈值(N)
-    - ``m``：质量参数
-    - ``b``：阻尼参数
-    - ``k``：刚度参数
-    - ``maxV``：最大线速度(mm/s)
-    - ``maxVA``：最大线加速度(mm/s2)
-    - ``maxW``：最大角速度(°/s)
-    - ``maxWA``：最大角加速度(°/s2)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ImpedanceControlStartStop(status, workSpace, forceThreshold, m, b, k, maxV, maxVA, maxW, maxWA)``"
+    "Descripción", "Control de inicio/parada de impedancia"
+    "Parámetros obligatorios", "- ``status``：0-desactivar; 1-activar
+    - ``workSpace``：0-espacio de articulaciones; 1-espacio cartesiano
+    - ``forceThreshold``：Umbral de fuerza de activación (N)
+    - ``m``：Parámetros de masa
+    - ``b``：Parámetros de amortiguación
+    - ``k``：Parámetros de rigidez
+    - ``maxV``：Velocidad lineal máxima (mm/s)
+    - ``maxVA``：Aceleración lineal máxima (mm/s2)
+    - ``maxW``：Velocidad angular máxima (°/s)
+    - ``maxWA``：Aceleración angular máxima (°/s2)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-阻抗启停控制代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de control de inicio/parada de impedancia
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     j1 = [102.622, -135.990, 120.769, -73.950, -90.848, 35.507]
     j2 = [93.674, -80.062, 82.947, -92.199, -90.967, 26.559]
@@ -1167,15 +1167,15 @@
     robot.ImpedanceControlStartStop(0, 1, forceThreshold, m, b, k, 1000, 500, 100, 100)
     robot.CloseRPC()
 
-开启力矩补偿功能及补偿系数
-++++++++++++++++++++++++++++++++++
+Activar la función de compensación de par y los coeficientes de compensación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetCoderCompenParams(status, torqueCoeff)``"
-    "描述", "开启力矩补偿功能及补偿系数"
-    "必选参数", "- ``status``：开关，0-关闭；1-开启
-    - ``torqueCoeff``：J1-J6力矩补偿系数[0-1]"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetCoderCompenParams(status, torqueCoeff)``"
+    "Descripción", "Activar la función de compensación de par y los coeficientes de compensación"
+    "Parámetros obligatorios", "- ``status``：Interruptor, 0-desactivar; 1-activar
+    - ``torqueCoeff``：Coeficientes de compensación de par J1-J6 [0-1]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"

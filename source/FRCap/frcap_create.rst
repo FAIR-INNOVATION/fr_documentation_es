@@ -1,74 +1,74 @@
-创建向导
+Asistente de creación
 =========================
 
 .. toctree:: 
    :maxdepth: 6
 
-“创建向导”为FRCap-Tools中的一个工具，通过该工具您可以通过输入少量的参数方便快捷的初始化一个FRCap项目。
+El "Asistente de creación" es una herramienta de FRCap-Tools; mediante esta herramienta puede inicializar de forma cómoda y rápida un proyecto FRCap introduciendo una pequeña cantidad de parámetros.
 
-参数配置
--------------
+Configuración de parámetros
+-----------------------------------
 
-创建FRCap主要需要两类参数，FRCap的基础信息和各级配置。下面将会分别进行说明。
+La creación de FRCap requiere principalmente dos tipos de parámetros: la información básica de FRCap y las configuraciones de cada nivel. A continuación se describen por separado.
 
-基础信息
-++++++++++++++++
+Información básica
++++++++++++++++++++++++++++
 
-基础信息中包含了“插件名称”、“插件作者”和“插件描述”。
+La información básica incluye el "Nombre del plugin", el "Autor del plugin" y la "Descripción del plugin".
 
-插件名称：
+Nombre del plugin:
 
-- 必填项；
-- 不限制输入字符和字符长度, 不允许输入空格；
-- 建议名称最好不要超过7个CKJ字符（汉语、日语、韩语等）或者10个全大写拉丁字母或者14个全小写拉丁字母（英语、法语等）;
-- 推荐的例子：
+- Campo obligatorio;
+- No se limitan los caracteres ni la longitud de los caracteres introducidos; no se permite introducir espacios;
+- Se recomienda que el nombre no supere los 7 caracteres CKJ (chino, japonés, coreano, etc.) o 10 letras latinas en mayúscula o 14 letras latinas en minúscula (inglés, francés, etc.);
+- Ejemplos recomendados:
 
-  - 码垛机Palletizer；
-  - 打磨工艺软件；
-  - Device Config；
-  - HELLO FRCAP。
+  - Paletizadora Palletizer;
+  - Software de proceso de pulido;
+  - Device Config;
+  - HELLO FRCAP.
 
-插件作者：
+Autor del plugin:
 
-- 必填项；
-- 不限制输入字符和字符长度，例如可以输入您个人姓名、公司名称等；
-- 推荐的例子：
+- Campo obligatorio;
+- No se limitan los caracteres ni la longitud de los caracteres introducidos; por ejemplo, puede introducir su nombre personal, el nombre de la empresa, etc.;
+- Ejemplos recomendados:
 
   - Zhang San
   - Franklin Peter
   - FAIR Innovation (Suzhou) Robot Systems Co., Ltd.
 
-插件描述：
+Descripción del plugin:
 
-- 非必填项；
-- 不限制输入字符和字符长度，简要描述您的插件即可。
+- Campo no obligatorio;
+- No se limitan los caracteres ni la longitud de los caracteres introducidos; basta con describir brevemente su plugin.
 
-高级配置
----------
+Configuración avanzada
+------------------------
 
-插件类型：
+Tipo de plugin:
 
-- 必填项；
-- 类型选项分别是“配置”和“应用”。
-- “配置”推荐用于实现设置参数、按钮操作等相对简单的配置及控制操作的FRCap。导入后在WebApp中的“辅助应用”->“FRCap”中使用。
-- “应用”推荐实现复杂工艺场景的FRCap，例如码垛场景、焊接工艺等行业应用。导入后直接在WebApp中的“辅助应用”下使用。
+- Campo obligatorio;
+- Las opciones de tipo son "Configuración" y "Aplicación".
+- "Configuración" se recomienda para FRCap que implementan operaciones de configuración y control relativamente sencillas, como el establecimiento de parámetros y la operación mediante botones. Tras su importación, se utiliza en "Aplicaciones auxiliares"->"FRCap" de WebApp.
+- "Aplicación" se recomienda para FRCap que implementan escenarios de proceso complejos, como escenarios de paletizado, procesos de soldadura y otras aplicaciones del sector. Tras su importación, se utiliza directamente en "Aplicaciones auxiliares" de WebApp.
 
-插件图标：
+Icono del plugin:
 
-- 非必填项；
-- 图标可以上传公司Logo或者任何您想使用的图标，注意使用版权，因任何原因导致的版权问题本公司概不负责；
-- 若您未上传图标，导出的FRCap项目中默认使用本公司“FAIRINO”Logo图标，您可以在项目文件夹下的public文件夹下进行替换修改。该图标仅供初始化示意，请勿直接在任何商业场景下使用“FAIRINO”Logo。
+- Campo no obligatorio;
+- El icono puede ser el logotipo de su empresa o cualquier icono que desee utilizar; tenga en cuenta los derechos de autor; nuestra empresa no se hace responsable de ningún problema de derechos de autor que se produzca por cualquier motivo;
+- Si no ha cargado un icono, el proyecto FRCap exportado utiliza por defecto el icono del logotipo "FAIRINO" de nuestra empresa, que puede sustituir y modificar en la carpeta public del directorio del proyecto. Dicho icono es solo una indicación de inicialización; no utilice directamente el logotipo "FAIRINO" en ningún escenario comercial.
 
 
-下载
+Descarga
 -------------
-以上所有的参数配置完成后且创建FRCap成功后，将跳转至下载页面。您需要确认名称无误即可将创建好的FRCap项目下载至本地计算机进行后续开发工作和构建使用。
+Una vez completada la configuración de todos los parámetros anteriores y creado correctamente FRCap, se saltará a la página de descarga. Debe confirmar que el nombre es correcto para poder descargar el proyecto FRCap creado al ordenador local para el trabajo de desarrollo posterior y su uso en la construcción.
 
-下载的插件为“.tar.gz”压缩格式。
+El plugin descargado tiene el formato comprimido ".tar.gz".
 
-在Windows系统我们推荐使用7-Zip软件解压。
+En el sistema Windows recomendamos utilizar el software 7-Zip para descomprimirlo.
 
-在Linux系统可以在终端使用以下指令进行解压。
+En el sistema Linux se puede descomprimir en la terminal con la siguiente instrucción.
 
 .. code-block:: c++
    :linenos:

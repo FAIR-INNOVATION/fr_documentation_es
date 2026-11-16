@@ -1,231 +1,232 @@
-外设
+Periféricos
 =============
 
 .. toctree:: 
   :maxdepth: 5
 
-末端Lua自定义开放协议
--------------------------
+Protocolo abierto personalizado Lua del extremo
+-----------------------------------------------
 
-概述
-~~~~~~~~
+Descripción general
+~~~~~~~~~~~~~~~~~~~
 
-在机器人末端提供了硬件接口用于连接485通信的外设，目前支持的外设包括夹爪、旋转夹爪、力传感器、焊接手柄等设备。以上末端设备均可通过撰写lua开放协议实现协议适配，实现控制外设及获取外设状态。其中针对SmartTool焊接手柄，用户还可以选择通过登录网页配置按键功能自动生成开放协议文件，生成后的协议会自动应用到末端。
+En el extremo del robot se proporciona una interfaz de hardware para conectar periféricos de comunicación 485; los periféricos admitidos actualmente incluyen pinzas, pinzas rotativas, sensores de fuerza, empuñaduras de soldadura y otros equipos. Todos los equipos del extremo mencionados pueden adaptarse mediante la redacción de protocolos abiertos Lua, permitiendo controlar los periféricos y obtener su estado. Para la empuñadura de soldadura SmartTool, el usuario también puede optar por configurar las funciones de las teclas a través de la página web para generar automáticamente el archivo de protocolo abierto; el protocolo generado se aplicará automáticamente al extremo.
 
-操作步骤
-~~~~~~~~~~~
+Pasos de operación
+~~~~~~~~~~~~~~~~~~
 
-**Step1**：进入系统设置->关于->固件升级界面，选择末端固件.bin文件，升级末端固件。
+**Step1**: Entrar en Configuración del sistema->Acerca de->interfaz de actualización de firmware, seleccionar el archivo de firmware del extremo .bin y actualizar el firmware del extremo.
 
 .. important:: 
-   需先确认末端固件版本 FV2.010.06及其之后软件版本是不是符合，若版本不符合，对应软件固件升级，否则不需要升级固件。
+   Es necesario confirmar primero si la versión del firmware del extremo FV2.010.06 y las versiones de software posteriores son compatibles; si la versión no es compatible, actualizar el software y firmware correspondiente; de lo contrario, no es necesario actualizar el firmware.
 
-   上传末端固件升级包之前，需要先将机器人去使能，再进入boot模式。
+   Antes de cargar el paquete de actualización del firmware del extremo, es necesario deshabilitar primero el robot y, a continuación, entrar en modo boot.
 
 .. figure:: robot_peripherals/001.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.1‑1 升级末端固件
+.. centered:: Figura 8.1‑1 Actualización del firmware del extremo
 
-**Step2**：打开WebApp，依次点击“初始设置”、“外设”，选择需要配置的末端外设(如夹爪)；外设的控制类型有已适配设备和外设开放协议两种：
+**Step2**: Abrir WebApp, hacer clic sucesivamente en "Configuración inicial", "Periféricos" y seleccionar el periférico del extremo que se desea configurar (por ejemplo, la pinza); el tipo de control del periférico puede ser "Dispositivo adaptado" o "Protocolo abierto de periféricos":
 
-- **已适配设备**：采用机器人控制器进行通信，不需要上传和应用。
-- **外设开放协议**：用户基于Lua撰写需要适配的末端开放协议实现通信控制其中末端协议分为两类，一类为用户自行上传的协议，另一类为机器人预设内置协议。自3.9.2版本开始，用户可不对需要上传到末端的lua协议通过额外的软件进行校验加密操作，直接上传即可，并且之前已校验加密的协议仍然可以正常上传使用，机器人会主动区分文件是否进行了校验加密，如果未校验则会进行校验加密后上传应用到末端，如果已加密则直接上传应用到末端。
+- **Dispositivo adaptado**: utiliza el controlador del robot para la comunicación; no requiere carga ni aplicación.
+- **Protocolo abierto de periféricos**: el usuario redacta en Lua el protocolo abierto del extremo que se desea adaptar para implementar el control de comunicación; los protocolos del extremo se dividen en dos categorías: una son los protocolos cargados por el propio usuario y la otra son los protocolos predefinidos internos del robot. A partir de la versión 3.9.2, el usuario puede cargar directamente el protocolo Lua que se desea cargar al extremo sin realizar operaciones adicionales de verificación y cifrado mediante software adicional; además, los protocolos ya verificados y cifrados anteriormente se pueden seguir cargando y utilizando con normalidad; el robot distingue activamente si el archivo ha sido verificado y cifrado; si no lo ha sido, realizará la verificación y el cifrado antes de cargarlo y aplicarlo al extremo; si ya está cifrado, lo cargará y aplicará directamente al extremo.
 
 .. figure:: robot_peripherals/002.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.1‑2 夹爪控制类型
+.. centered:: Figura 8.1‑2 Tipo de control de la pinza
 
-**Step3**：进入外设->夹爪/力传感器/焊接手柄的内容界面，点击“自定义协议”卡片进入界面，上传Lua末端开放协议，选择需要上传的Lua末端开放协议，进行上传操作。
+**Step3**: Entrar en la interfaz de contenido de Periféricos->Pinza/Sensor de fuerza/Empuñadura de soldadura, hacer clic en la tarjeta "Protocolo personalizado" para entrar en la interfaz, cargar el protocolo abierto Lua del extremo y seleccionar el protocolo abierto Lua del extremo que se desea cargar para realizar la operación de carga.
 
 .. important:: 
-  上传文件名需要以AXLE_LUA_开头命名。
+  El nombre del archivo cargado debe comenzar por `AXLE_LUA_`.
 
-**Step4**：配置末端通讯参数，通讯参数包含波特率、数据位、停止位等，配置完成后，点击“配置”按钮。
+**Step4**: Configurar los parámetros de comunicación del extremo; los parámetros de comunicación incluyen la velocidad en baudios, los bits de datos, los bits de parada, etc.; tras completar la configuración, hacer clic en el botón "Configurar".
 
 .. figure:: robot_peripherals/003.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.1‑3 配置末端通讯参数
+.. centered:: Figura 8.1‑3 Configuración de los parámetros de comunicación del extremo
 
-末端通讯详细参数如下：
+Los parámetros detallados de comunicación del extremo son los siguientes:
 
-- **波特率**：支持1-9600，2-14400，3-19200，4-38400，5-56000，6-67600，7-115200，8-128000；末端Rs485驱动芯片为低速485，波特率不能>200k；
-- **数据位**：数据位支持（8,9），目前常用为8；
-- **停止位**：1-1，2-0.5，3-2，4-1.5，目前常用为1；
-- **校验位**：0-None，1-Odd，2-Even,目前常用为0；
-- **超时时间**：1~1000ms，此值需要结合外设搭配设置合理的时间参数；
-- **超时次数**：1~10，主要进行超时重发，减少偶发异常提高用户体验；
-- **周期性指令时间间隔**：1~1000ms，主要用于周期性指令每次下发的时间间隔；
+- **Velocidad en baudios**: compatible con 1-9600, 2-14400, 3-19200, 4-38400, 5-56000, 6-67600, 7-115200, 8-128000; el chip driver Rs485 del extremo es de 485 de baja velocidad; la velocidad en baudios no puede ser >200k;
+- **Bits de datos**: los bits de datos admiten (8,9); actualmente el más habitual es 8;
+- **Bits de parada**: 1-1, 2-0.5, 3-2, 4-1.5; actualmente el más habitual es 1;
+- **Bit de paridad**: 0-None, 1-Odd, 2-Even; actualmente el más habitual es 0;
+- **Tiempo de espera agotado**: 1~1000ms; este valor debe configurarse con un tiempo razonable en combinación con el periférico;
+- **Número de tiempos de espera agotado**: 1~10; se utiliza principalmente para el reenvío tras tiempo de espera agotado, reduciendo anomalías ocasionales y mejorando la experiencia del usuario;
+- **Intervalo de tiempo de las instrucciones periódicas**: 1~1000ms; se utiliza principalmente para el intervalo de tiempo de cada envío de las instrucciones periódicas;
 
-**Step5**：末端Lua启用，点击“开启”按钮。
+**Step5**: Habilitación del Lua del extremo; hacer clic en el botón "Activar".
 
 .. figure:: robot_peripherals/004.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.1‑4 末端Lua启用
+.. centered:: Figura 8.1‑4 Habilitación del Lua del extremo
 
-当Lua文件发生异常时，提示“末端Lua文件异常”警告，可进行“不恢复/恢复”处理。关闭Lua启用按钮，警告提示关闭。
+Cuando se produce una anomalía en el archivo Lua, se muestra la advertencia "Anomalía en el archivo Lua del extremo", pudiendo realizarse el tratamiento de "No restaurar/Restaurar". Al desactivar el botón de habilitación del Lua, se cierra el aviso de advertencia.
 
 .. figure:: robot_peripherals/005.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.1‑5 Lua文件异常
+.. centered:: Figura 8.1‑5 Anomalía en el archivo Lua
 
-当设备类型为夹爪时，可以进行状态监控。
+Cuando el tipo de dispositivo es pinza, se puede realizar la monitorización de estado.
 
-**打开“状态监控”**：右侧夹爪状态栏展示实时显示夹爪运行速度、力矩、位置等状态信息。
+**Activar "Monitorización de estado"**: la barra de estado de la pinza de la derecha muestra en tiempo real información de estado como la velocidad de funcionamiento, el par y la posición de la pinza.
 
-**关闭“状态监控”**：右侧夹爪数据状态栏关闭。
+**Desactivar "Monitorización de estado"**: se cierra la barra de estado de datos de la pinza de la derecha.
 
 .. figure:: robot_peripherals/006.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.1‑6 状态监控
+.. centered:: Figura 8.1‑6 Monitorización de estado
 
-夹爪
+Pinza
 -------------------
 
-在“初始设置”->“外设”->“夹爪”界面中，当前可以通过已适配设备和末端Lua自定义开放协议使用夹爪。
+En la interfaz "Configuración inicial"->"Periféricos"->"Pinza", actualmente se puede utilizar la pinza mediante dispositivos adaptados y el protocolo abierto personalizado Lua del extremo.
 
-已适配设备
-~~~~~~~~~~~~~~~~~~~
+Dispositivo adaptado
+~~~~~~~~~~~~~~~~~~~~
 
-**Step1**：点击“已适配设备”进入末端外设配置界面。夹爪的配置信息分为夹爪厂商、夹爪类型、软件版本和挂载位置，用户可根据具体的生产需求来配置相应的夹爪信息。若用户需要更改配置，可先选择相应的夹爪编号，点击“清除”按钮，来清除相应的按钮，并重新根据需求配置；
+**Step1**: Hacer clic en "Dispositivo adaptado" para entrar en la interfaz de configuración de periféricos del extremo. La información de configuración de la pinza se divide en fabricante de la pinza, tipo de pinza, versión de software y posición de montaje; el usuario puede configurar la información correspondiente de la pinza según sus necesidades concretas de producción. Si el usuario necesita cambiar la configuración, puede seleccionar primero el número de pinza correspondiente, hacer clic en el botón "Borrar" para borrar el botón correspondiente y volver a configurar según sus necesidades;
 
 .. figure:: robot_peripherals/007.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.2‑1 夹爪配置
+.. centered:: Figura 8.2‑1 Configuración de la pinza
 
 .. important:: 
-	点击清除配置前，相应的夹爪应处于未激活状态。
+	Antes de hacer clic en borrar la configuración, la pinza correspondiente debe encontrarse en estado no activado.
 
-**Step2**：夹爪配置完成后，用户可在页面下方的夹爪信息表中查看相应的夹爪信息，若发现配置错误，可点击“清除”按钮，重新配置夹爪；
+**Step2**: Tras completar la configuración de la pinza, el usuario puede consultar la información correspondiente de la pinza en la tabla de información de pinza de la parte inferior de la página; si se detecta un error de configuración, se puede hacer clic en el botón "Borrar" y volver a configurar la pinza;
 
 .. figure:: robot_peripherals/008.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.2‑2 夹爪配置信息
+.. centered:: Figura 8.2‑2 Información de configuración de la pinza
 
-**Step3**：选择配置完成的夹爪，点击“复位”按钮，页面弹出命令发送成功后，再点击“激活”按钮，可查看夹爪信息表中的激活状态，来判断是否激活成功；
+**Step3**: Seleccionar la pinza ya configurada, hacer clic en el botón "Restablecer" y, cuando la página muestre que el comando se ha enviado correctamente, hacer clic en el botón "Activar" y consultar el estado de activación en la tabla de información de la pinza para determinar si la activación se ha realizado correctamente;
 
 .. important::
-	激活夹爪时，夹爪不可有夹持物。
+	Al activar la pinza, esta no debe tener ningún objeto agarrado.
 
-**Step4**：程序示教命令界面中选择“Gripper”命令。在夹爪命令界面中，用户可以选择想要控制的夹爪编号（已经完成配置并且被激活的夹爪），设置相应的开闭状态、开闭速度、开闭力矩已经等待夹爪动作的最大时间。完成设置后点击添加应用即可。此外还可以添加夹爪激活和复位指令，以便于在运行程序时去激活/复位夹爪。
+**Step4**: En la interfaz de comandos del programa de enseñanza, seleccionar el comando "Gripper". En la interfaz del comando de pinza, el usuario puede seleccionar el número de pinza que desea controlar (pinza ya configurada y activada), configurar el estado de apertura/cierre, la velocidad de apertura/cierre, el par de apertura/cierre y el tiempo máximo de espera del movimiento de la pinza. Tras completar la configuración, hacer clic en añadir y aplicar. Además, se pueden añadir instrucciones de activación y restablecimiento de la pinza para activar/restablecer la pinza durante la ejecución del programa.
 
 .. figure:: robot_peripherals/009.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.2‑3 夹爪指令编辑
+.. centered:: Figura 8.2‑3 Edición de la instrucción de pinza
 
-夹爪程序示教
-+++++++++++++++++
+Enseñanza del programa de pinza
++++++++++++++++++++++++++++++++
 
 .. list-table:: 
    :widths: 15 40 100
    :header-rows: 1
 
-   * - 序号
-     - 指令格式
-     - 注释
+   * - Número
+     - Formato de la instrucción
+     - Comentario
    * - 1
      - PTP(template2,100,-1,0)
-     - #等待夹取点
+     - #Punto de espera de agarre
    * - 2
      - PTP(template1,100,-1,0)
-     - #夹取点
+     - #Punto de agarre
    * - 3
      - MoveGripper(1,255,255,0,1000,0)
-     - #夹爪闭合
+     - #Cierre de la pinza
    * - 4
      - PTP(template2,100,-1,0)
      - /
    * - 5
      - PTP(template3,100,-1,0)
-     - #等待放件点
+     - #Punto de espera de colocación
    * - 6
      - PTP(template3,100,-1,0)
-     - #放件点
+     - #Punto de colocación
    * - 7
      - MoveGripper(1,0,255,0,1000,0)
-     - #夹爪开启
+     - #Apertura de la pinza
 
-夹爪Lua末端协议配置
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-打开WebApp，依次点击“初始设置”、“外设”、“夹爪”、“自定义协议”。点击“协议管理”，则可以进行末端协议的配置。
+Configuración del protocolo Lua del extremo de la pinza
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-用户上传的文件名需要以“AXLE_LUA_End”开头命名，上传后列表中的协议名称会变为以“Custom_End”开头，该类协议可以下载和删除，用户上传的重名的文件会自动覆盖为最新Lua。
+Abrir WebApp, hacer clic sucesivamente en "Configuración inicial", "Periféricos", "Pinza", "Protocolo personalizado". Hacer clic en "Gestión de protocolos" para configurar el protocolo del extremo.
+
+El nombre del archivo cargado por el usuario debe comenzar por "AXLE_LUA_End"; tras la carga, el nombre del protocolo de la lista pasará a comenzar por "Custom_End"; este tipo de protocolos se pueden descargar y eliminar; los archivos con el mismo nombre cargados por el usuario se sobrescribirán automáticamente con el Lua más reciente.
 
 .. figure:: robot_peripherals/277.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.2‑4-1 夹爪自定义协议上传
+.. centered:: Figura 8.2‑4-1 Carga del protocolo personalizado de la pinza
 
-机器人预设内嵌的协议以End_作为前缀，仅可下载，无法删除，其中夹爪（旋转夹爪、吸盘）的外设的内嵌协议如下图所示。
+Los protocolos predefinidos internos del robot tienen el prefijo `End_` y solo se pueden descargar, no eliminar; los protocolos internos de los periféricos de pinza (pinza rotativa, ventosa) se muestran en la figura siguiente.
 
 .. figure:: robot_peripherals/278.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.2‑4-2 夹爪（旋转夹爪、吸盘）预设内嵌协议
+.. centered:: Figura 8.2‑4-2 Protocolos internos predefinidos de la pinza (pinza rotativa, ventosa)
 
-在确保选择协议正确的情况下，可去使能机器人，并应用开放协议，应用后机器人会自动进入boot模式，并将选择的协议应用到末端，当页面提示“升级成功，请重启控制箱”后，可重新上电控制箱。
+Tras asegurarse de que el protocolo seleccionado es correcto, se puede deshabilitar el robot y aplicar el protocolo abierto; tras la aplicación, el robot entrará automáticamente en modo boot y aplicará el protocolo seleccionado al extremo; cuando la página muestre "Actualización correcta, reinicie la caja de control", se podrá volver a encender la caja de control.
 
 .. figure:: robot_peripherals/279.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.2‑4-3 末端开放协议应用到末端板
+.. centered:: Figura 8.2‑4-3 Aplicación del protocolo abierto del extremo a la placa del extremo
 
-重启进入WebApp页面后，页面会显示当前应用的协议名称，点击末端协议启用和设备启用后，则末端协议开始运行，其中设备ID为末端外设的Modbus从站地址，需要和协议中的内容配合使用。
+Tras reiniciar y entrar en la página de WebApp, la página mostrará el nombre del protocolo aplicado actualmente; tras hacer clic en la habilitación del protocolo del extremo y la habilitación del dispositivo, el protocolo del extremo comenzará a ejecutarse; el ID de dispositivo es la dirección de esclavo Modbus del periférico del extremo y debe utilizarse en coordinación con el contenido del protocolo.
 
 .. figure:: robot_peripherals/280.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.2‑4-4 夹爪末端协议配置显示及启用
+.. centered:: Figura 8.2‑4-4 Visualización y habilitación de la configuración del protocolo del extremo de la pinza
 
-末端板会对上传的Lua协议进行校验，当Lua文件存在异常时，提示“末端Lua文件异常”警告，可进行“不恢复/恢复”处理。关闭Lua启用按钮，警告提示关闭。
+La placa del extremo verifica el protocolo Lua cargado; cuando el archivo Lua presenta anomalías, se muestra la advertencia "Anomalía en el archivo Lua del extremo", pudiendo realizarse el tratamiento de "No restaurar/Restaurar". Al desactivar el botón de habilitación del Lua, se cierra el aviso de advertencia.
 
 .. figure:: robot_peripherals/005.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.2‑4-5 夹爪末端协议配置显示及启用
+.. centered:: Figura 8.2‑4-5 Visualización y habilitación de la configuración del protocolo del extremo de la pinza
 
-夹爪外设的Lua末端外设协议示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de protocolo Lua del extremo del periférico de pinza
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: console
   
-  function Getbit(X,Bit)--Getbit(),提取字节对应Bit函数，参数：X：被提取bit的字节；Bit：需要提取第几位，可选范围为0-7
+  function Getbit(X,Bit)--Getbit(), función para extraer el Bit correspondiente de un byte; parámetros: X: el byte del que se extrae el bit; Bit: el bit que se desea extraer, rango opcional 0-7
   return ((X&(1<<Bit))>>Bit)
   end
 
-  function GetOneByte(U32)--GetOneByte(),提取数据0x1234,获取其低字节，返回值为0x34
+  function GetOneByte(U32)--GetOneByte(), extrae del dato 0x1234 su byte bajo, valor de retorno 0x34
   return ((U32>>0)&0xFF)
   end
 
-  function GetTwoByte(U32)--GetTwoByte(),提取数据0x1234,获取其高字节，返回值为0x12
+  function GetTwoByte(U32)--GetTwoByte(), extrae del dato 0x1234 su byte alto, valor de retorno 0x12
   return ((U32>>8)&0xFF)
   end
-  function GetThreeByte(U32)--GetThreeByte(),提取数据0x56781234,提取后其返回值为0x78
+  function GetThreeByte(U32)--GetThreeByte(), extrae del dato 0x56781234, valor de retorno 0x78
   return ((U32>>16)&0xFF)
   end
-  function GetFourByte(U32)--GetFourByte(),提取数据0x56781234,提取后其返回值为0x56
+  function GetFourByte(U32)--GetFourByte(), extrae del dato 0x56781234, valor de retorno 0x56
   return ((U32>>24)&0xFF)
   end
   X,Speed,Torque=0,0,0
@@ -239,22 +240,22 @@
   local BFlag=LuaBreak()
   if(BFlag==1)then
   break
-  end--此处到文件末尾LuaGc(),end为固定用法
+  end--hasta aquí el final del archivo LuaGc(); end es un uso fijo
 
-  T1={0x01,0x06,0x03,0xE8,0x00,0x09,0xC9,0xBC}--填充夹爪指令(Modbus RTU指令)，T1-T5依次为夹爪动作执行指令，夹爪初始化指令，夹爪下发位置指令，夹爪下发速度指令，夹爪下发力矩指令
-  --/指令解析：T1[1]=0X01,为夹爪地址；T1[2]=0x06,写单个保持寄存器功能码；T1[3],T1[4]：0x03,0xE8,动作执行指令需要操作的寄存器的地址；T1[5],T1[6]：0x00,0x09,写入寄存器的数据；T1[7],T1[8]：0xC9,0xBC，CRC校验码，需要根据夹爪用户手册进行修改
+  T1={0x01,0x06,0x03,0xE8,0x00,0x09,0xC9,0xBC}--rellenar la instrucción de la pinza (instrucción Modbus RTU); T1-T5 son sucesivamente la instrucción de ejecución de acción de la pinza, la instrucción de inicialización de la pinza, la instrucción de envío de posición de la pinza, la instrucción de envío de velocidad de la pinza y la instrucción de envío de par de la pinza
+  --/análisis de la instrucción: T1[1]=0X01, es la dirección de la pinza; T1[2]=0x06, código de función de escritura de un único registro de retención; T1[3],T1[4]: 0x03,0xE8, dirección del registro que debe operar la instrucción de ejecución de acción; T1[5],T1[6]: 0x00,0x09, datos que se escriben en el registro; T1[7],T1[8]: 0xC9,0xBC, código de verificación CRC, que debe modificarse según el manual de usuario de la pinza
   T2={}
   T3={}
   T4={}
   T5={}
 
-  T7={0x01,0x03,0x07,0xD0,0x00,0x01,0x84,0x87}--T7-T12，夹爪状态读取指令，依次为读取夹爪状态指令,读取夹爪初始化指令,读取夹爪故障码指令,读取夹爪位置指令,读取夹爪速度指令,读取夹爪力矩指令
+  T7={0x01,0x03,0x07,0xD0,0x00,0x01,0x84,0x87}--T7-T12, instrucciones de lectura de estado de la pinza; sucesivamente, instrucción de lectura de estado de la pinza, instrucción de lectura de inicialización de la pinza, instrucción de lectura de código de fallo de la pinza, instrucción de lectura de posición de la pinza, instrucción de lectura de velocidad de la pinza e instrucción de lectura de par de la pinza
   T8={}
   T9={}
   T10={}
   T11={}
   T12={}
-  Rcmd1,Rcmd2,Rcmd3,Rcmd4=GetGripCmd()--固定用法，不需要进行修改，Rcm2为控制器下发的夹爪地址，Rcmd4为控制器下发的数据
+  Rcmd1,Rcmd2,Rcmd3,Rcmd4=GetGripCmd()--uso fijo, no requiere modificación; Rcm2 es la dirección de la pinza enviada por el controlador; Rcmd4 son los datos enviados por el controlador
   if(Rcmd1==1) then
   T1[1]=Rcmd2                   
   T2[1]=Rcmd2
@@ -267,12 +268,12 @@
   T9[1]=Rcmd2
   T10[1]=Rcmd2
   T11[1]=Rcmd2
-  T12[1]=Rcmd2                    --**夹爪地址更新
-  if (Rcmd3==1) then              --夹爪动作执行指令
-  T1[7],T1[8]=CrcValue(T1[1],T1[2],T1[3],T1[4],T1[5],T1[6])--计算Modbus RTU指令CRC值，两字节
-  EndTxGripData(T1[1],T1[2],T1[3],T1[4],T1[5],T1[6],T1[7],T1[8])--末端发送指令给夹爪
-  DelayMs(10)                                                   --延时10ms
-  A,Rxd1,Rxd2,Rxd3,Rxd4,Rxd5,Rxd6,Rxd7=EndRxGripData()--末端将接收到的夹爪的反馈数据返回到Lua中，具体反馈内容需要查阅夹爪用户手册
+  T12[1]=Rcmd2                    --**actualización de la dirección de la pinza
+  if (Rcmd3==1) then              --instrucción de ejecución de acción de la pinza
+  T1[7],T1[8]=CrcValue(T1[1],T1[2],T1[3],T1[4],T1[5],T1[6])--cálculo del valor CRC de la instrucción Modbus RTU, dos bytes
+  EndTxGripData(T1[1],T1[2],T1[3],T1[4],T1[5],T1[6],T1[7],T1[8])--el extremo envía la instrucción a la pinza
+  DelayMs(10)                                                   --retardo de 10ms
+  A,Rxd1,Rxd2,Rxd3,Rxd4,Rxd5,Rxd6,Rxd7=EndRxGripData()--el extremo devuelve al Lua los datos de realimentación recibidos de la pinza; el contenido concreto de la realimentación debe consultarse en el manual de usuario de la pinza
   GripStateBack(Rxd3)
   end
   if (Rcmd3==2) then
@@ -376,107 +377,107 @@
   LuaGc()
   end
 
-设备启用
-+++++++++++++++++++++++++++++
+Habilitación del dispositivo
+++++++++++++++++++++++++++++
 
-**Step1**：启用夹爪->选择夹爪ID->勾选夹爪适配的功能码->点击配置，已配置设备中显示夹爪的ID及功能码。
+**Step1**: Habilitar la pinza->seleccionar el ID de la pinza->marcar los códigos de función adaptados a la pinza->hacer clic en configurar; en los dispositivos ya configurados se muestran el ID y los códigos de función de la pinza.
 
 .. figure:: robot_peripherals/010.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.2‑4 配置夹爪
+.. centered:: Figura 8.2‑4 Configuración de la pinza
 
 .. note:: 
-  由于末端开放功能目前对夹爪设备地址支持范围为1~8，使用前应通过夹爪厂商的上位机调整夹爪设备地址。
+  Dado que la función abierta del extremo admite actualmente un rango de direcciones de dispositivo de pinza de 1~8, antes de su uso debe ajustarse la dirección de dispositivo de la pinza mediante el ordenador superior del fabricante de la pinza.
 
-  勾选功能码应通过夹爪厂商提供的产品说明书查询夹爪适配的功能，且应与末端Lua功能码保持对应，具体请查询《末端Lua适配夹爪说明手册》。
+  Los códigos de función marcados deben consultarse en el manual del producto proporcionado por el fabricante de la pinza para conocer las funciones adaptadas a la pinza, y deben corresponderse con los códigos de función del Lua del extremo; para más detalles, consulte el «Manual de descripción de adaptación de pinza con Lua del extremo».
 
-**Step2**：选择夹爪ID->复位->激活，夹爪进行一次初始化，具体初始化情况请参考夹爪厂商提供的产品说明书。
+**Step2**: Seleccionar el ID de la pinza->restablecer->activar; la pinza realiza una inicialización; para el caso concreto de la inicialización, consulte el manual del producto proporcionado por el fabricante de la pinza.
 
 .. figure:: robot_peripherals/011.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.2‑5 激活夹爪
+.. centered:: Figura 8.2‑5 Activación de la pinza
 
-**Step3**：进入示教程序->程序编程->添加夹爪运动指令。
+**Step3**: Entrar en Programa de enseñanza->Programación de programas->añadir la instrucción de movimiento de pinza.
 
 .. figure:: robot_peripherals/012.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.2‑6 添加夹爪运动指令
+.. centered:: Figura 8.2‑6 Adición de la instrucción de movimiento de pinza
 
 .. figure:: robot_peripherals/013.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.2‑7 夹爪运动指令示例
+.. centered:: Figura 8.2‑7 Ejemplo de instrucción de movimiento de pinza
 
-多个夹爪
-+++++++++++
+Múltiples pinzas
+++++++++++++++++
 
-激活和运动控制参考夹爪步骤。 
+Para la activación y el control del movimiento, consulte los pasos de la pinza. 
 
 .. figure:: robot_peripherals/014.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.2‑8 配置多个夹爪
+.. centered:: Figura 8.2‑8 Configuración de múltiples pinzas
 
-.. note:: 由于末端开放功能目前对夹爪设备地址支持范围为1~8，使用前应通过夹爪厂商的上位机调整夹爪设备地址。
+.. note:: Dado que la función abierta del extremo admite actualmente un rango de direcciones de dispositivo de pinza de 1~8, antes de su uso debe ajustarse la dirección de dispositivo de la pinza mediante el ordenador superior del fabricante de la pinza.
 
-旋转夹爪
-+++++++++++
+Pinza rotativa
+++++++++++++++
 
-**Step1**：启用夹爪->选择夹爪ID->勾选夹爪适配的功能码->点击配置，已配置设备中显示夹爪的ID及功能码。
+**Step1**: Habilitar la pinza->seleccionar el ID de la pinza->marcar los códigos de función adaptados a la pinza->hacer clic en configurar; en los dispositivos ya configurados se muestran el ID y los códigos de función de la pinza.
 
 .. figure:: robot_peripherals/010.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.2‑9 配置夹爪及功能码
+.. centered:: Figura 8.2‑9 Configuración de la pinza y de los códigos de función
 
-.. note:: 勾选功能码应通过夹爪厂商提供的产品说明书查询夹爪适配的功能，且应与末端Lua功能码保持对应，具体请查询《FR05-末端全外设协议-V2.5-20241101.xlsx》。
+.. note:: Los códigos de función marcados deben consultarse en el manual del producto proporcionado por el fabricante de la pinza para conocer las funciones adaptadas a la pinza, y deben corresponderse con los códigos de función del Lua del extremo; para más detalles, consulte «FR05-Protocolo de periféricos completos del extremo-V2.5-20241101.xlsx».
 
-**Step2**：选择夹爪ID->复位->激活，夹爪进行一次初始化，具体初始化情况请参考夹爪厂商提供的产品说明书。
+**Step2**: Seleccionar el ID de la pinza->restablecer->activar; la pinza realiza una inicialización; para el caso concreto de la inicialización, consulte el manual del producto proporcionado por el fabricante de la pinza.
 
 .. figure:: robot_peripherals/011.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.2‑10 激活夹爪
+.. centered:: Figura 8.2‑10 Activación de la pinza
 
-**Step3**：进入示教程序->程序编程->添加夹爪运动指令。
+**Step3**: Entrar en Programa de enseñanza->Programación de programas->añadir la instrucción de movimiento de pinza.
 
 .. figure:: robot_peripherals/012.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.2‑11 添加旋转夹爪运动指令
+.. centered:: Figura 8.2‑11 Adición de la instrucción de movimiento de pinza rotativa
 
 .. figure:: robot_peripherals/015.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.2‑12 旋转夹爪运动指令示例
+.. centered:: Figura 8.2‑12 Ejemplo de instrucción de movimiento de pinza rotativa
 
-.. note:: 旋转圈数为绝对旋转圈数，正转圈数最大为90圈，反转圈数最大为90圈，旋转后需要进行复位处理。
+.. note:: El número de vueltas de rotación es el número absoluto de vueltas de rotación; el número máximo de vueltas en sentido directo es 90 y el número máximo de vueltas en sentido inverso es 90; tras la rotación es necesario realizar un tratamiento de restablecimiento.
 
-夹爪工件掉落检测功能
+Función de detección de caída de pieza de la pinza
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-配置说明
+Descripción de la configuración
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-用户可通过修改末端开放协议，读取夹爪的掉落报警寄存器值，从而反馈给机器人，机器人会在夹爪置位该故障时，同步触发“夹爪工件掉落报警”故障。
+El usuario puede, modificando el protocolo abierto del extremo, leer el valor del registro de alarma de caída de la pinza y realimentarlo al robot; el robot, cuando la pinza activa dicho fallo, activará sincronizadamente el fallo "Alarma de caída de pieza de la pinza".
 
-下面以钧舵夹爪为例，末端开放协议增加夹爪掉落检测的示例如下。该段代码含义为读取夹爪0x07D0的bit1位，当该位置1后，则触发工件掉落标志，此时将GripState赋值为3传给机器人，触发“夹爪工件掉落报警”故障。
+A continuación se toma como ejemplo la pinza Junduo; el ejemplo de adición de la detección de caída de la pinza en el protocolo abierto del extremo es el siguiente. El significado de este fragmento de código es leer el bit 1 del registro 0x07D0 de la pinza; cuando dicho bit se pone a 1, se activa el indicador de caída de pieza; en ese momento se asigna a GripState el valor 3 y se transmite al robot, activando el fallo "Alarma de caída de pieza de la pinza".
 
-如果撰写过程中存在问题，请联系我司进行技术支持。
+Si tiene problemas durante la redacción, póngase en contacto con nuestra empresa para obtener soporte técnico.
 
-.. centered:: 末端开放协议增加钧舵夹爪掉落检测逻辑的示例
+.. centered:: Ejemplo de lógica de detección de caída de la pinza Junduo añadida al protocolo abierto del extremo
 
 .. code-block:: console
     :linenos:  
@@ -508,41 +509,41 @@
     end
     end
 
-基于增加掉落检测逻辑的末端协议，通过 “初始设置”->“外设”->“夹爪”，更新上传并应用末端lua开放协议。
+Basándose en el protocolo del extremo con la lógica de detección de caída añadida, actualizar la carga y aplicar el protocolo abierto Lua del extremo a través de "Configuración inicial"->"Periféricos"->"Pinza".
 
 .. figure:: robot_peripherals/316.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.2‑13 夹爪末端协议上传
+.. centered:: Figura 8.2‑13 Carga del protocolo del extremo de la pinza
 
-重启机器人后，即可正常使用夹爪，如果夹爪使用过程中出现工件掉落，则机器人会报出“夹爪工件脱落，请复位并重新激活夹爪”，同时机器人会同步停止当前运动和当前运行的lua程序。
+Tras reiniciar el robot se podrá utilizar la pinza con normalidad; si durante el uso de la pinza se produce la caída de una pieza, el robot informará de "Pieza de la pinza caída, restablezca y vuelva a activar la pinza", y el robot detendrá sincronizadamente el movimiento actual y el programa lua en ejecución.
 
-其中8083、20004端口的主子故障码会变为8-3，对应的夹爪错误码为3，夹爪其余自身上传的错误码控制器改为+3的处理。
+Entre ellos, los códigos de fallo principal y secundario de los puertos 8083 y 20004 pasarán a ser 8-3; el código de error correspondiente de la pinza es 3; los demás códigos de error cargados por la propia pinza se tratan en el controlador sumándoles +3.
 
 .. figure:: robot_peripherals/317.png
    :align: center
    :width: 3in
 
-.. centered:: 图表 8.2‑14 “夹爪工件脱落”故障
+.. centered:: Figura 8.2‑14 Fallo "Pieza de la pinza caída"
  
-需要注意的是，该故障在清除后，需要用户手动下发“夹爪复位”和“夹爪激活”指令，清除夹爪中寄存器的掉落标志，可以通过页面按键或lua指令下发，否则下一次运行依旧会报出该故障。
+Cabe señalar que, tras borrar este fallo, el usuario debe enviar manualmente las instrucciones "Restablecimiento de pinza" y "Activación de pinza" para borrar el indicador de caída del registro de la pinza; se puede enviar mediante el botón de la página o mediante instrucciones lua; de lo contrario, en la siguiente ejecución se volverá a informar de este fallo.
 
 .. figure:: robot_peripherals/318.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.2‑15 通过页面复位和激活夹爪
+.. centered:: Figura 8.2‑15 Restablecimiento y activación de la pinza mediante la página
 
 .. figure:: robot_peripherals/319.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.2‑16 通过lua指令复位和激活夹爪
+.. centered:: Figura 8.2‑16 Restablecimiento y activación de la pinza mediante instrucciones lua
 
-此外钧舵夹爪提供了掉落检测阈值的寄存器，寄存器地址为0x1399，需要通过0x10指令写入修改，修改范围为0~1000，本次提供的末端协议可更改该寄存器的值，每次运行协议后的第一次写入该值（0x14，可按需求修改），示例如下2-2所示，具体使用方法可以咨询钧舵夹爪厂商进行进一步了解。
+Además, la pinza Junduo proporciona un registro del umbral de detección de caída, con dirección de registro 0x1399, que debe modificarse mediante escritura con la instrucción 0x10; el rango de modificación es 0~1000; el protocolo del extremo proporcionado en esta ocasión puede modificar el valor de dicho registro; en la primera escritura tras cada ejecución del protocolo se escribe dicho valor (0x14, modificable según necesidades), como se muestra en el ejemplo 2-2; para el método de uso concreto, puede consultar al fabricante de la pinza Junduo para obtener más información.
 
-.. centered:: 末端开放协议增加钧舵夹爪掉落阈值修改的示例
+.. centered:: Ejemplo de modificación del umbral de caída de la pinza Junduo añadido al protocolo abierto del extremo
 
 .. code-block:: console
     :linenos:  
@@ -558,248 +559,248 @@
     Set=1
     end
 
-附录1：运动控制器错误及处理方式
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Anexo 1: Errores del controlador de movimiento y formas de tratamiento
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-.. centered:: 运动控制器错误码表
+.. centered:: Tabla de códigos de error del controlador de movimiento
 
 .. list-table:: 
    :widths: 15 40 100
    :header-rows: 1
 
-   * - 主故障码
-     - 子故障码
-     - 描述
-   * - 8-末端设备错误
+   * - Código de fallo principal
+     - Código de subfallo
+     - Descripción
+   * - 8-Error de dispositivo del extremo
      - 1
-     - 夹爪运动超时错误，可复位
-   * - 8-末端设备错误
+     - Error de tiempo de espera agotado en el movimiento de la pinza, reajustable
+   * - 8-Error de dispositivo del extremo
      - 2
-     - 末端485通信超时，可复位
-   * - 8-末端设备错误
+     - Tiempo de espera agotado en la comunicación 485 del extremo, reajustable
+   * - 8-Error de dispositivo del extremo
      - 3
-     - 夹爪工件掉落报警，可复位，清除故障后请重新复位并激活夹爪
+     - Alarma de caída de pieza de la pinza, reajustable; tras borrar el fallo, restablezca y vuelva a activar la pinza
 
-附：夹爪等待阻塞指令
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Apéndice: Instrucción de espera bloqueante de la pinza
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-点击“示教程序”-“外设指令”-“夹爪”，新增等待夹爪运动到位指令，可阻塞夹紧动作结束后获取夹爪实际物理位置。
+Hacer clic en "Programa de enseñanza"-"Instrucciones de periféricos"-"Pinza"; se ha añadido la instrucción de espera de finalización del movimiento de la pinza, que permite bloquear la obtención de la posición física real de la pinza tras finalizar la acción de agarre.
 
 .. image:: safety/032.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.2‑17 夹爪运动到位等待指令
+.. centered:: Figura 8.2‑17 Instrucción de espera de finalización del movimiento de la pinza
  
-- 夹爪状态：运动未完成，运动完成未检测到物体，运动完成检测到物体；
-- 超时时间：单位ms，-1代表永远等待。
-- 超时策略：可选择报错停止或继续运行。
-- 夹爪类型：可选择平行夹爪或旋转夹爪。
+- Estado de la pinza: movimiento no completado, movimiento completado sin detectar objeto, movimiento completado con detección de objeto;
+- Tiempo de espera agotado: en ms; -1 representa esperar siempre.
+- Estrategia tras tiempo de espera agotado: se puede seleccionar detener con error o continuar la ejecución.
+- Tipo de pinza: se puede seleccionar pinza paralela o pinza rotativa.
 
 .. note:: 
-   注意：等待夹爪运动完成指令仅自定义协议适用；已适配设备暂不支持。
+   Nota: la instrucción de espera de finalización del movimiento de la pinza solo es aplicable a los protocolos personalizados; los dispositivos adaptados aún no son compatibles.
 
-   也可直接使用GetGripperMotionDone()进行判断，输入参数夹爪类型，0平行夹爪，1旋转夹爪，返回值为夹爪错误和夹爪状态。其中夹爪错误为0无错误，其他存在错误，夹爪状态为0运动未完成，1运动完成未检测到物体，2运动完成检测到物体。等待夹爪运动完成和获取夹爪位置等指令示例程序如下：
+   También se puede utilizar directamente GetGripperMotionDone() para realizar la comprobación; el parámetro de entrada es el tipo de pinza, 0 pinza paralela, 1 pinza rotativa; el valor de retorno son el error de la pinza y el estado de la pinza. El error de la pinza es 0 si no hay error, y distinto de 0 si hay error; el estado de la pinza es 0 si el movimiento no está completado, 1 si el movimiento está completado sin detectar objeto y 2 si el movimiento está completado con detección de objeto. A continuación se muestra un programa de ejemplo con instrucciones como la espera de finalización del movimiento de la pinza y la obtención de la posición de la pinza:
 
 .. image:: safety/033.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 8.2‑18 夹爪运动示例程序
+.. centered:: Figura 8.2‑18 Programa de ejemplo de movimiento de pinza
 
-末端已适配夹爪状态查询
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Consulta del estado de la pinza adaptada del extremo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Descripción general
++++++++++++++++++++
 
-本次新增夹爪运行状态与位置查询功能，方便用户在示教程序中获取夹爪运动完成状态，并可通过 WebApp 实时监控夹爪的位置、速度、力矩及运动状态。
+En esta ocasión se añade la función de consulta del estado de funcionamiento y de la posición de la pinza, para facilitar al usuario la obtención del estado de finalización del movimiento de la pinza en el programa de enseñanza, así como la monitorización en tiempo real, a través de WebApp, de la posición, la velocidad, el par y el estado de movimiento de la pinza.
 
-环境配置
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configuración del entorno
++++++++++++++++++++++++++
 
-- 末端固件版本：FR_END_FV201014_MAIN_U1_T01_20260626
-- 机器人软件版本：V4.0.1及以上
+- Versión del firmware del extremo: FR_END_FV201014_MAIN_U1_T01_20260626
+- Versión del software del robot: V4.0.1 y superiores
 
-夹爪指令更新说明
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Descripción de la actualización de las instrucciones de la pinza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-获取夹爪运动完成状态
-*********************************************************************************
+Obtener el estado de finalización del movimiento de la pinza
+*************************************************************
 
-打开WebApp，进入示教程序->程序编程界面，打开外设指令-夹爪。生成获取夹爪运动完成状态指令，该指令仅用于查询夹爪当前运动完成状态。
+Abrir WebApp, entrar en la interfaz Programa de enseñanza->Programación de programas y abrir Instrucciones de periféricos-Pinza. Generar la instrucción de obtención del estado de finalización del movimiento de la pinza; esta instrucción solo se utiliza para consultar el estado actual de finalización del movimiento de la pinza.
 
 .. image:: safety/073.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 8.2‑19 获取夹爪运动完成状态
+.. centered:: Figura 8.2‑19 Obtención del estado de finalización del movimiento de la pinza
 
-获取夹爪当前位置
-*********************************************************************************
+Obtener la posición actual de la pinza
+*************************************************************
 
-打开WebApp，进入示教程序->程序编程界面，打开外设指令-夹爪。生成获取夹爪当前位置指令，该指令仅用于查询夹爪当前实际位置。
+Abrir WebApp, entrar en la interfaz Programa de enseñanza->Programación de programas y abrir Instrucciones de periféricos-Pinza. Generar la instrucción de obtención de la posición actual de la pinza; esta instrucción solo se utiliza para consultar la posición real actual de la pinza.
 
 .. image:: safety/074.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 8.2‑20 获取夹爪当前位置
+.. centered:: Figura 8.2‑20 Obtención de la posición actual de la pinza
 
-夹爪数据监控
-*********************************************************************************
+Monitorización de datos de la pinza
+*************************************************************
 
-打开WebApp，进入初始设置->外设->夹爪->界面，启用状态监控。下发控制指令后，在右侧Gripper界面，可以获取到夹爪位置、速度、力矩实时反馈数据以及夹爪运动状态。
+Abrir WebApp, entrar en Configuración inicial->Periféricos->Pinza->interfaz y habilitar la monitorización de estado. Tras enviar la instrucción de control, en la interfaz Gripper de la derecha se pueden obtener los datos de realimentación en tiempo real de la posición, la velocidad y el par de la pinza, así como su estado de movimiento.
 
-夹爪运动状态码定义：0-运动中；1-运动完成未检测到物体；2-运动到位检测到物体；3-工件掉落。
+Definición de los códigos de estado de movimiento de la pinza: 0- en movimiento; 1- movimiento completado sin detectar objeto; 2- movimiento completado con detección de objeto; 3- pieza caída.
 
 .. image:: safety/075.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 8.2‑21 夹爪运动状态码
+.. centered:: Figura 8.2‑21 Códigos de estado de movimiento de la pinza
 
-.. note:: 注：工件掉落时，WebApp页面将报警提示，同时 SDK 可读取到对应故障码。故障处理需按以下顺序操作：清除报警 → 复位夹爪 → 重新激活夹爪，后方可继续下发运动指令。
+.. note:: Nota: cuando se produce la caída de una pieza, la página de WebApp mostrará un aviso de alarma y el SDK podrá leer el código de fallo correspondiente. El tratamiento del fallo debe realizarse en el siguiente orden: borrar la alarma → restablecer la pinza → volver a activar la pinza; solo entonces se podrán seguir enviando instrucciones de movimiento.
 
-力传感器
+Sensor de fuerza
 -------------------------
 
-在“初始设置”->“外设”->“力传感器”界面中，当前可以通过已适配设备和末端Lua自定义开放协议使用力传感器。
+En la interfaz "Configuración inicial"->"Periféricos"->"Sensor de fuerza", actualmente se puede utilizar el sensor de fuerza mediante dispositivos adaptados y el protocolo abierto personalizado Lua del extremo.
 
-已适配设备
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Dispositivo adaptado
+~~~~~~~~~~~~~~~~~~~~
 
-**Step1**：点击“已适配设备”进入末端外设配置界面。
+**Step1**: Hacer clic en "Dispositivo adaptado" para entrar en la interfaz de configuración de periféricos del extremo.
 
-力传感器配置信息分为厂商、类型、软件版本和挂载位置，用户可根据具体的生产需求来配置相应的力传感器信息。若用户需要更改配置，可先选择相应的编号，点击“清除”按钮，来清除相应的信息，并重新根据需求配置；
+La información de configuración del sensor de fuerza se divide en fabricante, tipo, versión de software y posición de montaje; el usuario puede configurar la información correspondiente del sensor de fuerza según sus necesidades concretas de producción. Si el usuario necesita cambiar la configuración, puede seleccionar primero el número correspondiente, hacer clic en el botón "Borrar" para borrar la información correspondiente y volver a configurar según sus necesidades;
 
 .. figure:: robot_peripherals/016.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.3‑1 力传感器配置
+.. centered:: Figura 8.3‑1 Configuración del sensor de fuerza
 
 .. important:: 
-	点击清除配置前，相应的传感器应处于未激活状态。
+	Antes de hacer clic en borrar la configuración, el sensor correspondiente debe encontrarse en estado no activado.
 
-**Step2**：力传感器配置完成后，用户可在页面下方的信息表中查看相应的力传感器信息，若发现配置错误，可点击“清除”按钮，重新配置。
+**Step2**: Tras completar la configuración del sensor de fuerza, el usuario puede consultar la información correspondiente del sensor de fuerza en la tabla de información de la parte inferior de la página; si se detecta un error de configuración, se puede hacer clic en el botón "Borrar" y volver a configurar.
 
 .. figure:: robot_peripherals/017.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.3‑2 力传感器配置信息
+.. centered:: Figura 8.3‑2 Información de configuración del sensor de fuerza
 
-**Step3**：选择配置完成的力传感器编号，点击“复位”按钮，页面弹出命令发送成功后，再点击“激活”按钮，可查看力传感器信息表中的激活状态，来判断是否激活成功；此外，力传感器会有初始值，用户根据使用需求选择“零点矫正”和“去除零点”。力传感器零点矫正需要确保力传感器水平垂直向下，且机器人未配置负载。
+**Step3**: Seleccionar el número del sensor de fuerza ya configurado, hacer clic en el botón "Restablecer" y, cuando la página muestre que el comando se ha enviado correctamente, hacer clic en el botón "Activar" y consultar el estado de activación en la tabla de información del sensor de fuerza para determinar si la activación se ha realizado correctamente; además, el sensor de fuerza tendrá un valor inicial; el usuario selecciona "Corrección de cero" y "Eliminar cero" según sus necesidades de uso. La corrección de cero del sensor de fuerza requiere asegurarse de que el sensor de fuerza está horizontal y verticalmente hacia abajo, y que el robot no tiene carga configurada.
 
-**Step4**：力传感器配置完成后，需要配置传感器类型工具坐标系，可根据传感器与末端工具中心的距离直接输入传感器工具坐标系值并应用。
+**Step4**: Tras completar la configuración del sensor de fuerza, es necesario configurar el sistema de coordenadas de la herramienta de tipo sensor; se puede introducir directamente el valor del sistema de coordenadas de la herramienta del sensor según la distancia entre el sensor y el centro de la herramienta del extremo y aplicarlo.
 
-力传感器末端Lua协议
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Protocolo Lua del extremo del sensor de fuerza
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-打开WebApp，依次点击“初始设置”、“外设”、“力传感器”、“自定义协议”。点击“协议管理”，则可以进行末端协议的配置。目前力传感器预设内嵌的协议如下图所示。3.9.2版本新增内嵌End_JD_XJC_V1.0.lua、End_JD_GZCX_V1.0.lua两个夹爪+力传感器的组合协议。
+Abrir WebApp, hacer clic sucesivamente en "Configuración inicial", "Periféricos", "Sensor de fuerza", "Protocolo personalizado". Hacer clic en "Gestión de protocolos" para configurar el protocolo del extremo. Los protocolos internos predefinidos del sensor de fuerza se muestran en la figura siguiente. En la versión 3.9.2 se añaden dos protocolos combinados de pinza + sensor de fuerza internos: End_JD_XJC_V1.0.lua y End_JD_GZCX_V1.0.lua.
 
 .. figure:: robot_peripherals/281.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑2-2 力传感器预设内嵌协议
+.. centered:: Figura 8.3‑2-2 Protocolos internos predefinidos del sensor de fuerza
 
-焊接手柄末端Lua协议
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Protocolo Lua del extremo de la empuñadura de soldadura
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-打开WebApp，依次点击“初始设置”、“外设”、“焊接手柄”、“自定义协议”。点击“协议管理”，则可以进行末端协议的配置。目前焊接手柄预设内嵌的协议如下图所示。3.9.2版本新增内嵌End_SM_JD_V1.3.lua、End_SM_GZCX_V1.3.lua、End_SM_XJC_V1.3.lua三个SmartTool+夹爪或力传感器的组合协议。
+Abrir WebApp, hacer clic sucesivamente en "Configuración inicial", "Periféricos", "Empuñadura de soldadura", "Protocolo personalizado". Hacer clic en "Gestión de protocolos" para configurar el protocolo del extremo. Los protocolos internos predefinidos de la empuñadura de soldadura se muestran en la figura siguiente. En la versión 3.9.2 se añaden tres protocolos combinados internos de SmartTool + pinza o sensor de fuerza: End_SM_JD_V1.3.lua, End_SM_GZCX_V1.3.lua y End_SM_XJC_V1.3.lua.
 
 .. figure:: robot_peripherals/283.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑2-3 焊接手柄预设内嵌协议
+.. centered:: Figura 8.3‑2-3 Protocolos internos predefinidos de la empuñadura de soldadura
 
-末端lua协议自动生成
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Generación automática del protocolo Lua del extremo
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-本次新增功能，可对内嵌SmartTool焊接手柄外设相关的协议（目前仅支持End_SmartTool_V1.3.lua、End_SM_JD_V1.3.lua、End_SM_GZCX_V1.3.lua、End_SM_XJC_V1.3.lua四种协议可配置自动生成），通过Web页面配置后自动生成末端lua协议并上传应用到末端，无需用户撰写。用户按照需求对SmartTool焊接手柄的A、B、C、D、E、IO键进行配置，配置完成后需要去使能机器人，并点击“应用”， 此时页面会提示“是否进入boot并应用开放协议”，点击确认后机器人进入boot状态并自动上传自动生成的末端lua协议，重启机器人后则可以按照配置的按键进行SmartTool的使用。
+Esta nueva función permite configurar automáticamente a través de la página Web los protocolos relacionados con el periférico de la empuñadura de soldadura SmartTool internos (actualmente solo se pueden configurar y generar automáticamente los cuatro protocolos End_SmartTool_V1.3.lua, End_SM_JD_V1.3.lua, End_SM_GZCX_V1.3.lua y End_SM_XJC_V1.3.lua), generando automáticamente el protocolo Lua del extremo y cargándolo y aplicándolo al extremo, sin necesidad de que el usuario lo redacte. El usuario configura las teclas A, B, C, D, E e IO de la empuñadura de soldadura SmartTool según sus necesidades; tras completar la configuración es necesario deshabilitar el robot y hacer clic en "Aplicar"; en ese momento la página mostrará "¿Entrar en boot y aplicar el protocolo abierto?"; tras hacer clic en confirmar, el robot entrará en estado boot y cargará automáticamente el protocolo Lua del extremo generado automáticamente; tras reiniciar el robot se podrá utilizar el SmartTool según las teclas configuradas.
 
-自V3.9.8版本开始，基于末端协议的SmartTool可配置不同按键相同功能，并且新增了摆动编号、焊接工艺编号的选择，摆动编号默认为0，如配置了“摆动开始”则可以选择摆动编号。IO键与摆动开始设置一致。起弧收弧的最大时间最大可配置为10000ms。
+A partir de la versión V3.9.8, el SmartTool basado en el protocolo del extremo permite configurar la misma función en distintas teclas, y se añade la selección del número de oscilación y del número de proceso de soldadura; el número de oscilación es por defecto 0; si se configura "Inicio de oscilación" se puede seleccionar el número de oscilación. La tecla IO se configura igual que el inicio de oscilación. El tiempo máximo de encendido y apagado del arco se puede configurar hasta 10000ms.
 
 .. figure:: robot_peripherals/284.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑2-4 SmartTool焊接手柄配置协议自动生成
+.. centered:: Figura 8.3‑2-4 Generación automática del protocolo de configuración de la empuñadura de soldadura SmartTool
 
 .. figure:: robot_peripherals/285.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.3‑2-5 页面提示“是否进入boot并应用开放协议”
+.. centered:: Figura 8.3‑2-5 Aviso de la página "¿Entrar en boot y aplicar el protocolo abierto?"
   
-此外用户在使用IO键时需要选择当前焊机的通信类型，包括：控制器I/O、数字通信协议(UDP)、数字通信协议(ModbusTCP)，其中控制器I/O与数字通信协议(UDP)需要配置对应的DO为起弧功能才可选择生成焊接相关的指令，数字通信协议(ModbusTCP)则需要配置指令为焊接，方可选择生成焊接相关的指令，否则只会生成设置DO输出的相关指令。
+Además, al utilizar la tecla IO, el usuario debe seleccionar el tipo de comunicación de la máquina de soldar actual, que incluye: I/O del controlador, protocolo de comunicación digital (UDP) y protocolo de comunicación digital (ModbusTCP); entre ellos, para I/O del controlador y protocolo de comunicación digital (UDP) es necesario configurar el DO correspondiente como función de encendido del arco para poder seleccionar la generación de instrucciones relacionadas con la soldadura; para el protocolo de comunicación digital (ModbusTCP) es necesario configurar la instrucción como soldadura para poder seleccionar la generación de instrucciones relacionadas con la soldadura; de lo contrario, solo se generarán las instrucciones relacionadas con el establecimiento de la salida DO.
 
-.. note:: 需要注意的是在选择数字通信协议(UDP)、数字通信协议(ModbusTCP)通信焊机时，配置焊接指令需要保证通信建立正常。
+.. note:: Cabe señalar que, al seleccionar la máquina de soldar con protocolo de comunicación digital (UDP) o protocolo de comunicación digital (ModbusTCP), para configurar las instrucciones de soldadura es necesario garantizar que la comunicación se establece correctamente.
 
 .. figure:: robot_peripherals/321.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.3‑2-6 选择焊机控制类型和指令类型
+.. centered:: Figura 8.3‑2-6 Selección del tipo de control y del tipo de instrucción de la máquina de soldar
 
-SmartTool程序生成模板程序导入
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Importación de la plantilla de generación de programas de SmartTool
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-如果SmartTool按键配置了程序生成的功能，则基于开放协议可提供两种生成的程序，默认生成空白的lua程序，或者用户可以选择上传template_开头的模板作为新建程序的模板，当新建程序选择模板程序时，SmartTool触发“新建程序”生成的lua文件包含上传的模板文件内容，后续添加的指令均在模板内容之后新增添加。
+Si las teclas del SmartTool tienen configurada la función de generación de programas, basándose en el protocolo abierto se pueden proporcionar dos tipos de programas generados: por defecto se genera un programa lua en blanco, o bien el usuario puede seleccionar cargar una plantilla que comience por `template_` como plantilla del nuevo programa; cuando el nuevo programa selecciona la plantilla, el archivo lua generado al activar "Nuevo programa" en el SmartTool incluye el contenido del archivo de plantilla cargado, y las instrucciones añadidas posteriormente se añaden después del contenido de la plantilla.
 
 .. figure:: robot_peripherals/286.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.3‑2-7 SmartTool程序生成模板程序导入
+.. centered:: Figura 8.3‑2-7 Importación de la plantilla de generación de programas de SmartTool
 
-SmartTool运动指令点配置
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configuración de los puntos de instrucción de movimiento de SmartTool
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-SmartTool在配置“PTP”“LIN”“ARC”三条指令时，可选择生成指令点的存储数据库为“全局示教点”还是“局部示教点”。当选择“全局示教点”时，生成的指令点可通过“示教程序”、“示教点”查看；当选择为“局部示教点”时，生成的指令点可通过“示教程序”、“程序编程”、“局部示教点”查看。
+Al configurar las tres instrucciones "PTP", "LIN" y "ARC", el SmartTool permite seleccionar la base de datos de almacenamiento de los puntos de instrucción generados como "Punto de enseñanza global" o "Punto de enseñanza local". Al seleccionar "Punto de enseñanza global", los puntos de instrucción generados se pueden consultar a través de "Programa de enseñanza", "Puntos de enseñanza"; al seleccionar "Punto de enseñanza local", los puntos de instrucción generados se pueden consultar a través de "Programa de enseñanza", "Programación de programas", "Punto de enseñanza local".
 
 .. figure:: robot_peripherals/287.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.3‑2-8 SmartTool运动指令点“全局示教点”、“局部示教点”配置
+.. centered:: Figura 8.3‑2-8 Configuración de "Punto de enseñanza global" y "Punto de enseñanza local" de las instrucciones de movimiento de SmartTool
 
-SmartTool防误触模式
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Modo anti-pulsación accidental de SmartTool
++++++++++++++++++++++++++++++++++++++++++++++++++
 
-基于开放协议的SmartTool新增了防误触模式，依次点击“初始设置”、“外设”、“焊接手柄”、“自定义协议”。在启用末端协议后，可看到“防误触模式”的开关，当启用该功能时，SmartTool的“撤销程序”、“清空程序”两个按键功能需要按两次才能触发。
+Basándose en el protocolo abierto, el SmartTool incorpora un modo anti-pulsación accidental; hacer clic sucesivamente en "Configuración inicial", "Periféricos", "Empuñadura de soldadura", "Protocolo personalizado". Tras habilitar el protocolo del extremo, se puede ver el interruptor "Modo anti-pulsación accidental"; cuando se activa esta función, las funciones de las teclas "Deshacer programa" y "Vaciar programa" del SmartTool requieren dos pulsaciones para activarse.
 
 .. figure:: robot_peripherals/288.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑2-9 SmartTool“防误触模式”功能
+.. centered:: Figura 8.3‑2-9 Función "Modo anti-pulsación accidental" de SmartTool
 
-SmartTool IO键记忆清除功能
+Función de borrado de la memoria de la tecla IO de SmartTool
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-基于开放协议的SmartTool新增了IO键记忆清除功能，当用户按下一次IO键之后会进行记忆以便生成成对的指令，如果按下“清空程序”或“新建程序”功能，则会对IO键的记忆进行清除，并且下一次IO键会重新生成指令。
+Basándose en el protocolo abierto, el SmartTool incorpora la función de borrado de la memoria de la tecla IO; cuando el usuario pulsa una vez la tecla IO se realiza una memorización para generar instrucciones emparejadas; si se pulsa la función "Vaciar programa" o "Nuevo programa", se borra la memoria de la tecla IO y la siguiente pulsación de la tecla IO volverá a generar instrucciones.
 
-全局点位清除功能
+Función de borrado de puntos globales
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-新增了全局点位清除功能，打开WebApp，依次点击“示教程序”、“示教点”，选择“系统模式”，点击“清除全部”则可清除所有用户保存的点位。此时SmartTool生成保存的指令点序号重置，序号从1开始。
+Se ha añadido la función de borrado de puntos globales; abrir WebApp, hacer clic sucesivamente en "Programa de enseñanza", "Puntos de enseñanza", seleccionar "Modo de sistema" y hacer clic en "Borrar todo" para borrar todos los puntos guardados por el usuario. En este momento, los números de secuencia de los puntos de instrucción generados y guardados por el SmartTool se restablecen, comenzando desde 1.
 
 .. figure:: robot_peripherals/320.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑2-10 全局点位清除功能
+.. centered:: Figura 8.3‑2-10 Función de borrado de puntos globales
 
-焊接手柄的Lua末端外设协议示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de protocolo Lua del periférico del extremo de la empuñadura de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-A、B、C、D、E、IO键六个按键功能可通过代码中的31行的key值进行修改定义，其中K38=Getbit(R[7],1)，K0=Getbit(R[7],2)为“清空程序”和“撤销按键”，不可修改，后续5个K值可按照《末端全外设协议》文档中的定义进行修改。本次示例（内嵌SmartTool协议）中对应的按键功能为，A:LIN、B:PTP、C:创建程序、D:焊接中断恢复、E:焊接中断退出、IO：LIN+焊接+摆动。
+Las funciones de las seis teclas A, B, C, D, E e IO se pueden modificar y definir mediante los valores key de la línea 31 del código; entre ellos, K38=Getbit(R[7],1) y K0=Getbit(R[7],2) son "Vaciar programa" y "Deshacer tecla", y no se pueden modificar; los 5 valores K posteriores se pueden modificar según las definiciones del documento «Protocolo de periféricos completos del extremo». En este ejemplo (protocolo interno SmartTool), las funciones de las teclas correspondientes son: A: LIN, B: PTP, C: crear programa, D: recuperación de interrupción de soldadura, E: salida de interrupción de soldadura, IO: LIN + soldadura + oscilación.
 
-.. centered:: 焊接手柄的Lua末端外设协议示例（SmartTool）
+.. centered:: Ejemplo de protocolo Lua del periférico del extremo de la empuñadura de soldadura (SmartTool)
   
 .. code-block:: 
    :linenos:
@@ -809,7 +810,7 @@ A、B、C、D、E、IO键六个按键功能可通过代码中的31行的key值�
    end
 
    if(Getbit(GetRobotState(),0)==1)then
-   local SetParams={B6=3}-- B6-操作DO端口号为DO3
+   local SetParams={B6=3}-- B6-puerto DO de operación número DO3
    SetWeldParams(SetParams)
    while(1)
    do
@@ -835,117 +836,117 @@ A、B、C、D、E、IO键六个按键功能可通过代码中的31行的key值�
    Len=EndRxWeldData(R)
    if((Len==13)and(R[1]==0x7D)and(R[2]==0x01)and(R[3]==0x30))then
    local key={K38=Getbit(R[7],1),K0=Getbit(R[7],2),K3=Getbit(R[7],3),K25=Getbit(R[7],4),K39=Getbit(R[7],5),K27=Getbit(R[7],6),K28=Getbit(R[7],7), K44=Getbit(R[8],0),
-   K6=Getbit(R[8],1),K7=Getbit(R[8],2)}--smarttool焊接手柄按键设置，撤销按键-K38撤销程序；清空按键-K0清空程序；A按键-K3 LIN；B按键-K25 PTP；C按键-K39 创建程序；D按键-K27焊接中断恢复；E按键-K28焊接中断退出；IO键-K44 LIN+焊接+摆动手/自动按键-K6手/自动；运行/暂停按键-K7运行/暂停
+   K6=Getbit(R[8],1),K7=Getbit(R[8],2)}--configuración de las teclas de la empuñadura de soldadura SmartTool; tecla deshacer-K38 deshacer programa; tecla vaciar-K0 vaciar programa; tecla A-K3 LIN; tecla B-K25 PTP; tecla C-K39 crear programa; tecla D-K27 recuperación de interrupción de soldadura; tecla E-K28 salida de interrupción de soldadura; tecla IO-K44 LIN + soldadura + oscilación; tecla manual/automático-K6 manual/automático; tecla ejecutar/pausa-K7 ejecutar/pausa
    SetWeldToolKeys(key)
    end
    LuaGc()
    end
    end
 
-传感器负载辨识
-~~~~~~~~~~~~~~~~~~~~~~~~
+Identificación de carga del sensor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-在“初始设置”->“基础”->“负载”菜单栏下，点击“传感器辨识”，进入传感器负载辨识界面。
+En la barra de menú "Configuración inicial"->"Básico"->"Carga", hacer clic en "Identificación del sensor" para entrar en la interfaz de identificación de carga del sensor.
 
-特定姿态辨识：清除末端负载数据，配置好力传感器后，建立传感器坐标系，将机器人末端姿态调整为垂直向下，进行“零点矫正”后安装末端负载。首先选择对应传感器工具坐标系，调整机器人，使得传感器及工具垂直向下，记录数据，计算质量。接着，调整机器人3个不同姿态，分别记录三组数据，计算出质心，确认无误后点击应用。
+Identificación por actitud específica: borrar los datos de carga del extremo, configurar el sensor de fuerza, establecer el sistema de coordenadas del sensor, ajustar la actitud del extremo del robot a vertical hacia abajo, realizar la "Corrección de cero" e instalar la carga del extremo. En primer lugar, seleccionar el sistema de coordenadas de la herramienta del sensor correspondiente, ajustar el robot para que el sensor y la herramienta estén verticales hacia abajo, registrar los datos y calcular la masa. A continuación, ajustar el robot en 3 actitudes diferentes, registrar respectivamente tres conjuntos de datos, calcular el centro de masa y, tras confirmar que es correcto, hacer clic en aplicar.
 
-**动态辨识**：清除末端负载数据，配置好力传感器后，建立传感器坐标系，将机器人末端姿态调整为垂直向下，进行“零点矫正”后安装末端负载。点击“辨识开启”，拖动机器人进行运动，接着点击“辨识关闭”，即可自动将负载结果应用到机器人中。
+**Identificación dinámica**: borrar los datos de carga del extremo, configurar el sensor de fuerza, establecer el sistema de coordenadas del sensor, ajustar la actitud del extremo del robot a vertical hacia abajo, realizar la "Corrección de cero" e instalar la carga del extremo. Hacer clic en "Iniciar identificación", arrastrar el robot para realizar el movimiento y, a continuación, hacer clic en "Detener identificación" para aplicar automáticamente el resultado de la carga al robot.
 
-**自动校零**：传感器记录初始位置后，可自动校零。
+**Puesta a cero automática**: tras registrar el sensor la posición inicial, se puede realizar la puesta a cero automática.
 
 .. figure:: robot_peripherals/018.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.3‑3 传感器负载辨识
+.. centered:: Figura 8.3‑3 Identificación de carga del sensor
 
-力传感器辅助拖动
-~~~~~~~~~~~~~~~~~~~~~~~
+Arrastre asistido por sensor de fuerza
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-配置好传感器后，可以搭配传感器对拖动机器人进行更好的辅助。第一次使用时可以按照右侧图片的数据进行配置，应用完成后，此时无需进入拖动模式，直接对末端力传感器进行拖拽，即可控制机器人在固定姿态进行移动。（如下图中的数据为参考标准）
+Tras configurar el sensor, se puede combinar con el sensor para una mejor asistencia al arrastre del robot. La primera vez que se utilice se puede configurar según los datos de la imagen de la derecha; tras completar la aplicación, sin necesidad de entrar en el modo de arrastre, basta con arrastrar directamente el sensor de fuerza del extremo para controlar el movimiento del robot en una actitud fija. (Los datos de la figura siguiente son el estándar de referencia)
 
 .. figure:: robot_peripherals/019.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.3‑4 力/扭矩传感器拖动锁定
+.. centered:: Figura 8.3‑4 Bloqueo de arrastre del sensor de fuerza/par
 
 .. note:: 
-   奇异点策略是力传感器辅助锁定下开发的奇异点穿越及规避功能。
+   La estrategia de puntos singulares es la función de cruce y evitación de puntos singulares desarrollada bajo el bloqueo asistido por sensor de fuerza.
 
-   奇异点规避策略是默认功能选项，开启辅助拖动后即默认开启规避功能，奇异点规避是当机器人处于奇异构型时，施加虚拟力使机器人远离奇异构型的功能。
+   La estrategia de evitación de puntos singulares es la opción de función predeterminada; tras activar el arrastre asistido se activa por defecto la función de evitación; la evitación de puntos singulares es la función que, cuando el robot se encuentra en una configuración singular, aplica una fuerza virtual para alejar el robot de la configuración singular.
 
-   奇异构型：
+   Configuraciones singulares:
 
-   **肘奇异**：旋转轴2、3、4处于同一平面内，此时肘关节处于完全伸展或完全收缩，由于FR机器人机械限位，完全收缩这种形位机器人无法到达。
+   **Singularidad de codo**: los ejes de rotación 2, 3 y 4 se encuentran en el mismo plano; en este momento la articulación del codo está completamente extendida o completamente retraída; debido a los límites mecánicos del robot FR, la configuración completamente retraída no es alcanzable por el robot.
 
-   **腕奇异**：旋转轴4、6平行，此时由于FR机器人机械限位，这种形位机器人无法到达。
+   **Singularidad de muñeca**: los ejes de rotación 4 y 6 son paralelos; en este momento, debido a los límites mecánicos del robot FR, esta configuración no es alcanzable por el robot.
 
-   **肩奇异**：腕中心点位于旋转轴1、2所构成的平面。
+   **Singularidad de hombro**: el centro de la muñeca se encuentra en el plano formado por los ejes de rotación 1 y 2.
 
-   奇异点穿越功能，选择“奇异点策略”为“穿越”并应用，当机器人检测到当前位姿处于奇异构型，自动切换为电流环拖动模式，当检测退出奇异构型，拖动模式切换为力传感器辅助拖动继续运动。
+   La función de cruce de puntos singulares: seleccionar "Estrategia de puntos singulares" como "Cruzar" y aplicar; cuando el robot detecta que la pose actual se encuentra en una configuración singular, cambia automáticamente al modo de arrastre por bucle de corriente; cuando se detecta la salida de la configuración singular, el modo de arrastre cambia al arrastre asistido por sensor de fuerza para continuar el movimiento.
 
-**自适应选择**：在需要装配时开启，开启后拖动变重；
+**Selección adaptativa**: activar cuando se necesite ensamblaje; tras activarla el arrastre se vuelve más pesado;
 
-**惯性参数**：调节拖动过程中的手感，需在技术人员指导下谨慎操作。
+**Parámetros de inercia**: ajustan la sensación durante el arrastre; deben ajustarse con precaución bajo la guía de personal técnico.
 
-**阻尼参数**：
+**Parámetros de amortiguación**:
 
--  平动方向：建议设置参数在[100-200]之间；
+-  Dirección de traslación: se recomienda configurar los parámetros entre [100-200];
 
--  转动方向：建议设置参数在[3-10]之间，其中RZ方向设置范围在[0.1-5]；
+-  Dirección de rotación: se recomienda configurar los parámetros entre [3-10], con el rango de configuración de la dirección RZ entre [0.1-5];
 
--  效果：借助传感器拖动时，增大阻尼会导致拖动困难，减小阻尼会导致拖动机器人过于轻松（建议不要太小）；
+-  Efecto: al arrastrar con el sensor, aumentar la amortiguación provoca dificultad en el arrastre; reducir la amortiguación hace que el arrastre del robot sea demasiado ligero (se recomienda no demasiado pequeño);
 
--  阻尼参数整体范围：平动XYZ：[100-1000]；转动RX、RY：[3-50],RZ:[2-10]；
+-  Rango global de los parámetros de amortiguación: traslación XYZ: [100-1000]; rotación RX, RY: [3-50], RZ: [2-10];
 
--  最大拖动力为50，最大拖动速度为180。
+-  La fuerza de arrastre máxima es 50 y la velocidad de arrastre máxima es 180.
 
-**刚度参数**：均设为0；
+**Parámetros de rigidez**: todos configurados en 0;
 
-**拖动力阈值**：平动XYZ为[5-10]；转动RX、RY、RZ为[0.5-5]；
+**Umbral de fuerza de arrastre**: traslación XYZ [5-10]; rotación RX, RY, RZ [0.5-5];
 
 .. important:: 
-   通过加大平动方向XYZ或转动方向RX、RY、RZ的力阈值来实现锁定的方式。
+   El bloqueo se logra aumentando el umbral de fuerza en la dirección de traslación XYZ o en la dirección de rotación RX, RY, RZ.
 
-力/扭矩传感器碰撞检测
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Detección de colisiones del sensor de fuerza/par
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-指令说明：“FT_Guard”指令为碰撞检测指令。选择对应的传感器坐标系，勾选生效的力矩方向检测，设置当前值，碰撞最大阈值和碰撞最小阈值三项，碰撞检测条件正常范围为（当前值-最小阈值，当前值+最大阈值），将“开启”和“关闭”指令加入到程序中在。
+Descripción de la instrucción: la instrucción "FT_Guard" es una instrucción de detección de colisiones. Seleccionar el sistema de coordenadas del sensor correspondiente, marcar la detección de dirección de par efectiva, configurar el valor actual, el umbral máximo de colisión y el umbral mínimo de colisión; el rango normal de la condición de detección de colisiones es (valor actual - umbral mínimo, valor actual + umbral máximo); añadir las instrucciones "Activar" y "Desactivar" al programa.
 
 .. figure:: robot_peripherals/020.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑5 FT_Guard指令编辑
+.. centered:: Figura 8.3‑5 Edición de la instrucción FT_Guard
 
-程序示例：
+Ejemplo de programa:
 
 .. list-table::
    :widths: 50 80 80
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **指令格式**
-     - **注释**
+   * - **Número**
+     - **Formato de la instrucción**
+     - **Comentario**
 
    * - 1
      - FT_Guard(1,1,1,1,1,0,0,0,5,0,0,0,0,0,10,0,0,0,0,0,5,0,0,0,0,0)
-     - #力/矩碰撞检测开启
+     - #Activación de la detección de colisión de fuerza/par
 
    * - 2
      - PTP(template1,100,-1,0)
-     - #运动指令
+     - #Instrucción de movimiento
 
    * - 3
      - FT_Guard(0,1,1,1,1,0,0,0,5,0,0,0,0,0,10,0,0,0,0,0,5,0,0,0,0,0)
-     - #力/矩碰撞检测关闭
+     - #Desactivación de la detección de colisión de fuerza/par
 
-力/扭矩传感器力控运动
-~~~~~~~~~~~~~~~~~~~~~~~~
+Movimiento de control de fuerza del sensor de fuerza/par
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-指令说明：“FT_Control”指令为力控运动指令，可以使机器人在设定力的附近运动，常用于打磨场景中。选择对应的传感器坐标系，勾选生效的力矩方向检测，设置检测阈值，以及各个方向上PID比例系数(一般设置p为0.001)，设置最大调整距离（对应X,Y,Z）和最大调整角度（对应RX,RY,RZ），将“开启”和“关闭”指令加入到程序中在。
+Descripción de la instrucción: la instrucción "FT_Control" es una instrucción de movimiento de control de fuerza que permite al robot moverse en las proximidades de una fuerza establecida; se utiliza habitualmente en escenarios de pulido. Seleccionar el sistema de coordenadas del sensor correspondiente, marcar la detección de dirección de par efectiva, configurar el umbral de detección, así como los coeficientes de proporción PID en cada dirección (generalmente se configura p como 0.001), configurar la distancia máxima de ajuste (correspondiente a X, Y, Z) y el ángulo máximo de ajuste (correspondiente a RX, RY, RZ); añadir las instrucciones "Activar" y "Desactivar" al programa.
 
 .. figure:: robot_peripherals/021.png
    :align: center
@@ -955,400 +956,401 @@ A、B、C、D、E、IO键六个按键功能可通过代码中的31行的key值�
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑6 FT_Control指令编辑
+.. centered:: Figura 8.3‑6 Edición de la instrucción FT_Control
 
-程序示例：
+Ejemplo de programa:
 
 .. list-table::
    :widths: 50 80 80
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **指令格式**
-     - **注释**
+   * - **Número**
+     - **Formato de la instrucción**
+     - **Comentario**
 
    * - 1
      - FT_Control(1,11,1,0,1,0,0,0,10,0,5,0,0,0,0.001,0,0,0,0,0,0,0,0,10,5)
-     - #力/矩运动控制开启
+     - #Activación del control de movimiento de fuerza/par
 
    * - 2
      - Lin(template3,100,-1,0,0)
-     - #运动指令
+     - #Instrucción de movimiento
 
    * - 3
      - FT_Control(0,11,1,0,1,0,0,0,10,0,5,0,0,0,0.001,0,0,0,0,0,0,0,10,5)
-     - #力/矩运动控制关闭
+     - #Desactivación del control de movimiento de fuerza/par
 
-力/扭矩传感器螺旋插入
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Inserción en hélice del sensor de fuerza/par
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-指令说明：“FT_Spiral”指令为螺旋线探索插入，一般用于圆柱轴的轴孔装配动作。在运行动作之前，需要将机器人末端拖动至孔位的大致位置，根据当前场景，设定指令的参数，添加到程序中，运行后，机器人会以螺旋形的运动进行探索。
+Descripción de la instrucción: la instrucción "FT_Spiral" es una inserción por exploración en hélice, que se utiliza generalmente para la operación de ensamblaje de eje y orificio de ejes cilíndricos. Antes de ejecutar la acción, es necesario arrastrar el extremo del robot hasta la posición aproximada del orificio y, según el escenario actual, configurar los parámetros de la instrucción y añadirla al programa; tras la ejecución, el robot explorará con un movimiento en hélice.
 
 .. figure:: robot_peripherals/023.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑7 FT_Spiral指令编辑
+.. centered:: Figura 8.3‑7 Edición de la instrucción FT_Spiral
 
-程序示例：
+Ejemplo de programa:
 
 .. list-table::
    :widths: 50 80 80
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **指令格式**
-     - **注释**
+   * - **Número**
+     - **Formato de la instrucción**
+     - **Comentario**
 
    * - 1
      - FT_Control(1,10,0,0,1,0,0,0,0,0,5,0,0,0,0.0005,0,0,0,0,0,0,10,0)
-     - #力/矩运动控制开启
+     - #Activación del control de movimiento de fuerza/par
 
    * - 2
      - FT_SpiralSearch(0,0.7,0,60000,5)
-     - #螺旋插入
+     - #Inserción en hélice
 
    * - 3
      - FT_Control(0,10,0,0,1,0,0,0,0,0,5,0,0,0,0.0005,0,0,0,0,0,0,10,0)
-     - #力/矩运动控制关闭
+     - #Desactivación del control de movimiento de fuerza/par
 
-力/扭矩传感器旋转插入
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Inserción rotativa del sensor de fuerza/par
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-指令说明：“FT_Rot”指令为旋转探索插入，一般用于承接螺旋线插入动作，用于键轴的轴孔装配。在运行动作之前，需要将机器人末端移动至螺旋线探索找到的孔位或者完全对齐的示教孔位，根据当前场景，设定指令的参数，添加到程序中，运行后，机器人会以缓慢的旋转进行探索。
+Descripción de la instrucción: la instrucción "FT_Rot" es una inserción por exploración rotativa, que se utiliza generalmente para continuar la acción de inserción en hélice y para el ensamblaje de eje y orificio de ejes estriados. Antes de ejecutar la acción, es necesario desplazar el extremo del robot hasta el orificio encontrado por la exploración en hélice o hasta el orificio de enseñanza completamente alineado; según el escenario actual, configurar los parámetros de la instrucción y añadirla al programa; tras la ejecución, el robot explorará con una rotación lenta.
 
 .. figure:: robot_peripherals/024.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑8 FT_Rot指令编辑
+.. centered:: Figura 8.3‑8 Edición de la instrucción FT_Rot
 
-程序示例：
+Ejemplo de programa:
 
 .. list-table::
    :widths: 50 80 80
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **指令格式**
-     - **注释**
+   * - **Número**
+     - **Formato de la instrucción**
+     - **Comentario**
 
    * - 1
      - FT_Control(1,10,0,0,1,0,0,0,0,0,5,0,0,0,0.0005,0,0,0,0,0,0,10,0)
-     - #力/矩运动控制开启
+     - #Activación del control de movimiento de fuerza/par
 
    * - 2
      - FT_RotInsertion(0,3,0,5,1,0,1)
-     - #旋转插入
+     - #Inserción rotativa
 
    * - 3
      - FT_Control(0,10,0,0,1,0,0,0,0,0,5,0,0,0,0.0005,0,0,0,0,0,0,10,0)
-     - #力/矩运动控制关闭
+     - #Desactivación del control de movimiento de fuerza/par
 
-力/扭矩传感器直线插入
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Inserción en línea recta del sensor de fuerza/par
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-指令说明：“FT_Lin”指令为旋转探索插入，一般用于承接螺旋线插入动作或旋转插入动作，用于键轴的轴孔装配。在运行动作之前，需要将机器人末端移动至螺旋线探索找到的孔位，旋转插入动作结束的位置或者完全对齐的示教孔位，根据当前场景，设定指令的参数，添加到程序中，运行后，机器人会以设定的方向进行直线运动。
+Descripción de la instrucción: la instrucción "FT_Lin" es una inserción por exploración rotativa, que se utiliza generalmente para continuar la acción de inserción en hélice o la acción de inserción rotativa y para el ensamblaje de eje y orificio de ejes estriados. Antes de ejecutar la acción, es necesario desplazar el extremo del robot hasta el orificio encontrado por la exploración en hélice, la posición final de la acción de inserción rotativa o el orificio de enseñanza completamente alineado; según el escenario actual, configurar los parámetros de la instrucción y añadirla al programa; tras la ejecución, el robot se moverá en línea recta en la dirección establecida.
 
 .. figure:: robot_peripherals/025.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑9 FT_Lin指令编辑
+.. centered:: Figura 8.3‑9 Edición de la instrucción FT_Lin
 
-程序示例：
+Ejemplo de programa:
 
 .. list-table::
    :widths: 50 80 80
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **指令格式**
-     - **注释**
+   * - **Número**
+     - **Formato de la instrucción**
+     - **Comentario**
 
    * - 1
      - FT_Control(1,10,0,0,1,0,0,0,0,0,5,0,0,0,0.0005,0,0,0,0,0,0,10,0)
-     - #力/矩运动控制开启
+     - #Activación del control de movimiento de fuerza/par
 
    * - 2
      - FT LinInsertion(0,50,1,0,100,1)
-     - #直线插入
+     - #Inserción en línea recta
 
    * - 3
      - FT_Control(0,10,0,0,1,0,0,0,0,0,5,0,0,0,0.0005,0,0,0,0,0,0,10,0)
-     - #力/矩运动控制关闭
+     - #Desactivación del control de movimiento de fuerza/par
 
-力/扭矩传感器表面定位
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Localización de superficie del sensor de fuerza/par
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-指令说明：“FT_FindSurface”指令为表面定位，一般用于寻找物体表面。根据当前场景，设置对应坐标系，移动方向、移动轴、探索直线速度、探索直线加速度、最大探索距离、动作终止力阈值等参数，添加到程序中，运行程序，动作开始执行，机器人末端开始缓慢向表面所在方向移动。
+Descripción de la instrucción: la instrucción "FT_FindSurface" es una localización de superficie, que se utiliza generalmente para buscar la superficie de un objeto. Según el escenario actual, configurar el sistema de coordenadas correspondiente, la dirección de movimiento, el eje de movimiento, la velocidad lineal de exploración, la aceleración lineal de exploración, la distancia máxima de exploración, el umbral de fuerza de terminación de la acción y otros parámetros, y añadirla al programa; ejecutar el programa y la acción comenzará a ejecutarse; el extremo del robot comenzará a moverse lentamente en la dirección en que se encuentra la superficie.
 
 .. figure:: robot_peripherals/026.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑10 FT_FindSurface指令编辑
+.. centered:: Figura 8.3‑10 Edición de la instrucción FT_FindSurface
 
-程序示例：
+Ejemplo de programa:
 
 .. list-table::
    :widths: 50 80 80
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **指令格式**
-     - **注释**
+   * - **Número**
+     - **Formato de la instrucción**
+     - **Comentario**
 
    * - 1
      - PTP(1,30,-1,0)
-     - #初始位置
+     - #Posición inicial
 
    * - 2
      - FT FindSurface(0,1,3,1,0,100,5)
-     - #平面定位
+     - #Localización de superficie
 
-力/扭矩传感器中心定位
-~~~~~~~~~~~~~~~~~~~~~~~
+Localización de centro del sensor de fuerza/par
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-指令说明：“FT_CalCenter”指令为中心定位，一般用于寻找两表面的中间平面表面。根据当前场景，设置对应坐标系，移动方向、移动轴、探索直线速度、探索直线加速度、最大探索距离、动作终止力阈值等参数，分别寻找A平面和B平面，添加到程序中，运行程序，动作开始执行，机器人缓慢向表面A所在方向移动，定位到A面后，机器人缓慢向表面B所在方向移动，定位到B面后，即可算出中心平面位置。
+Descripción de la instrucción: la instrucción "FT_CalCenter" es una localización de centro, que se utiliza generalmente para buscar la superficie del plano intermedio entre dos superficies. Según el escenario actual, configurar el sistema de coordenadas correspondiente, la dirección de movimiento, el eje de movimiento, la velocidad lineal de exploración, la aceleración lineal de exploración, la distancia máxima de exploración, el umbral de fuerza de terminación de la acción y otros parámetros, y buscar respectivamente el plano A y el plano B; añadirla al programa y ejecutar el programa; la acción comenzará a ejecutarse; el robot se moverá lentamente en la dirección en que se encuentra la superficie A y, tras localizar el plano A, se moverá lentamente en la dirección en que se encuentra la superficie B; tras localizar el plano B, se podrá calcular la posición del plano central.
 
 .. figure:: robot_peripherals/027.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑11 FT_CalCenter指令编辑
+.. centered:: Figura 8.3‑11 Edición de la instrucción FT_CalCenter
 
-程序示例：
+Ejemplo de programa:
 
 .. list-table::
    :widths: 20 40 50
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **指令格式**
-     - **注释**
+   * - **Número**
+     - **Formato de la instrucción**
+     - **Comentario**
 
    * - 1
      - PTP(1,30,-1,0)
-     - #初始位置
+     - #Posición inicial
 
    * - 2
      - FT_CalCenterStart()
-     - #表面定位开始
+     - #Inicio de la localización de superficie
 
    * - 3
      - FT_Control(1,10,0,0,1,0,0,0,0,0,-10,0,0,0,0.00001,0,0,0,0,0,0,100,0)
-     - #力/矩运动控制开启
+     - #Activación del control de movimiento de fuerza/par
 
    * - 4
      - FT_FindSurface(1,2,2,10,0,200,5)
-     - #定位平面A
+     - #Localización del plano A
 
    * - 5
      - FT_Control(0,10,0,0,1,0,0,0,0,0,-10,0,0,0,0.00001,0,0,0,0,0,0,100,0)
-     - #力/矩运动控制关闭
+     - #Desactivación del control de movimiento de fuerza/par
 
    * - 6
      - PTP(1,30,-1,0)
-     - #初始位置
+     - #Posición inicial
 
    * - 7
      - FT_Control(1,10,0,0,1,0,0,0,0,0,-10,0,0,0,0.00001,0,0,0,0,0,0,100,0)
-     - #力/矩运动控制开启
+     - #Activación del control de movimiento de fuerza/par
      
    * - 8
      - FT FindSurface(1,1,2,20,0,200,5)
-     - #定位平面B
+     - #Localización del plano B
 
    * - 9
      - FT_Control(0,10,0,0,1,0,0,0,0,0,10,0,0,0,0.00001,0,0,0,0,0,0,100,0)
-     - #力/矩运动控制关闭
+     - #Desactivación del control de movimiento de fuerza/par
 
    * - 10
      - pos={}
-     - #定义数组pos
+     - #Definición del array pos
 
    * - 11
      - pos = FT_CalCenterEnd()
-     - #获取定位中心笛卡尔位姿
+     - #Obtención de la pose cartesiana del centro localizado
 
    * - 12
      - MoveCart(pos,GetActualTCPNum(),GetActualWObjNum(),30,10,100,-1,0)
-     - #运动至定位的中心位置
+     - #Movimiento hasta la posición del centro localizado
 
-自定义开放协议
-~~~~~~~~~~~~~~~~
+Protocolo abierto personalizado
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-点击“自定义协议”卡片进入界面，启用力传感器，已配置设备中显示力传感器。点击进入FT界面，查询力传感器数据。
+Hacer clic en la tarjeta "Protocolo personalizado" para entrar en la interfaz, habilitar el sensor de fuerza; en los dispositivos ya configurados se muestra el sensor de fuerza. Hacer clic para entrar en la interfaz FT y consultar los datos del sensor de fuerza.
 
 .. figure:: robot_peripherals/028.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑12 启用力传感器
+.. centered:: Figura 8.3‑12 Habilitación del sensor de fuerza
 
-凯维力传感器适配
+Adaptación del sensor de fuerza Kaiwei
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
-+++++++++++++++++++++++++++++++++++++++++++++
-设备适配新增凯维力传感器，传感器型号为KWL-SFTE75B。
+Descripción general
++++++++++++++++++++
 
-凯维力传感器适配
+La adaptación de dispositivos incorpora el sensor de fuerza Kaiwei, modelo KWL-SFTE75B.
+
+Adaptación del sensor de fuerza Kaiwei
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-(1) 初始设置->外设->力传感器，选择已适配设备。
+(1) Configuración inicial->Periféricos->Sensor de fuerza, seleccionar Dispositivo adaptado.
 
 .. figure:: robot_peripherals/322.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑13 已适配设备
+.. centered:: Figura 8.3‑13 Dispositivo adaptado
 
-(2) 在已适配设备中，选择厂商KWL，类型为KWL-SFTE75B，选择挂载位置，点击配置。
+(2) En Dispositivo adaptado, seleccionar el fabricante KWL, el tipo KWL-SFTE75B, seleccionar la posición de montaje y hacer clic en configurar.
 
 .. figure:: robot_peripherals/323.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑13 配置厂商
+.. centered:: Figura 8.3‑13 Configuración del fabricante
 
-(3) 选择对应的挂载位置编号，点击复位，激活。FT工具栏中Act_State为1，即可正常使用。
+(3) Seleccionar el número de posición de montaje correspondiente, hacer clic en restablecer y activar. Cuando Act_State en la barra de herramientas FT sea 1, se podrá utilizar con normalidad.
 
 .. figure:: robot_peripherals/324.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.3‑14 激活复位操作
+.. centered:: Figura 8.3‑14 Operación de restablecimiento y activación
 
-设备使用说明
+Instrucciones de uso del dispositivo
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-(1) FT工具栏中Fx，Fy，Fz，Tx，Ty，Tz为六维力数据，单位为N和N.m。
+(1) En la barra de herramientas FT, Fx, Fy, Fz, Tx, Ty, Tz son los datos de fuerza de seis dimensiones, en unidades de N y N.m.
 
 .. figure:: robot_peripherals/325.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.3‑15 FT工具栏六维力数据
+.. centered:: Figura 8.3‑15 Datos de fuerza de seis dimensiones de la barra de herramientas FT
 
-焊接手柄
+Empuñadura de soldadura
 -------------------------------------------------------------
 
-在“初始设置”->“外设”->“焊接手柄”界面中，当前可以通过已适配设备和末端Lua自定义开放协议使用焊接手柄。
+En la interfaz "Configuración inicial"->"Periféricos"->"Empuñadura de soldadura", actualmente se puede utilizar la empuñadura de soldadura mediante dispositivos adaptados y el protocolo abierto personalizado Lua del extremo.
 
-已适配设备
-~~~~~~~~~~~~~~~~~~~~~~
+Dispositivo adaptado
+~~~~~~~~~~~~~~~~~~~~
 
-配置步骤
-++++++++++++
+Pasos de configuración
+++++++++++++++++++++++
 
-**Step1**：点击“已适配设备”卡片进入已适配设备界面。配置信息分为厂商、类型、软件版本和挂载位置，用户可根据具体的生产需求来配置相应的信息。若用户需要更改配置，可先选择相应的厂商，点击“清除”按钮，来清除相应的信息，并重新根据需求配置；
+**Step1**: Hacer clic en la tarjeta "Dispositivo adaptado" para entrar en la interfaz de dispositivo adaptado. La información de configuración se divide en fabricante, tipo, versión de software y posición de montaje; el usuario puede configurar la información correspondiente según sus necesidades concretas de producción. Si el usuario necesita cambiar la configuración, puede seleccionar primero el fabricante correspondiente, hacer clic en el botón "Borrar" para borrar la información correspondiente y volver a configurar según sus necesidades;
 
 .. figure:: robot_peripherals/029.png
    :align: center
    :width: 3in
 
-.. centered:: 图表 8.4‑1 焊接手柄已适配设备配置
+.. centered:: Figura 8.4‑1 Configuración del dispositivo adaptado de la empuñadura de soldadura
 
 .. important:: 
-	点击清除配置前，相应的设备应处于未激活状态。
+	Antes de hacer clic en borrar la configuración, el dispositivo correspondiente debe encontrarse en estado no activado.
 
-**Step2**：依次配置A-E键位和IO键。Smart Tool配置完成后，任务管理器内部维护每个按钮对应的功能，当检测到某按钮被按下时，自动执行该按钮对应功能项。
+**Step2**: Configurar sucesivamente las teclas A-E y la tecla IO. Tras completar la configuración del Smart Tool, el gestor de tareas mantiene internamente la función correspondiente a cada botón; cuando se detecta que se ha pulsado un botón, se ejecuta automáticamente la función correspondiente a dicho botón.
 
-A-E键位功能：
+Funciones de las teclas A-E:
 
-- 运动指令：选择PTP、LIN、ARC运动指令时，需要输入对应点速度。其中LIN、ARC指令可选择“百分比”或“物理速度”：
-- 百分比：输入调试速度百分比，机器人按照最大速度的百分比进行运动，实际机器人运动速度换算为：V = 机器人最大速度×全局速度百分比×点速度百分比。将鼠标移至“点速度”输入框右侧的小眼睛上，将显示当前设置速度下，机器人在手动模式和自动模式下的实际物理速度(单位：mm/s)。
+- Instrucción de movimiento: al seleccionar las instrucciones de movimiento PTP, LIN o ARC, es necesario introducir la velocidad del punto correspondiente. Las instrucciones LIN y ARC permiten seleccionar "Porcentaje" o "Velocidad física":
+- Porcentaje: introducir el porcentaje de velocidad de depuración; el robot se mueve según el porcentaje de la velocidad máxima; la velocidad real de movimiento del robot se convierte en: V = velocidad máxima del robot × porcentaje de velocidad global × porcentaje de velocidad del punto. Al pasar el ratón sobre el pequeño ojo situado a la derecha del cuadro de entrada "Velocidad del punto", se mostrará la velocidad física real del robot en modo manual y en modo automático con la velocidad configurada actualmente (unidad: mm/s).
 
 .. image:: coding/469.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 8.4‑2-1 输入百分比显示实际物理速度值
+.. centered:: Figura 8.4‑2-1 Introducir porcentaje y mostrar el valor de velocidad física real
  
-- 物理速度：输入速度即为机器人实际运行速度，单位mm/s；输入加速度常设置为速度的2倍。(LIN指令最大物理速度受全局速度百分比限制，若机器人最大运行速度为1000mm/s，全局速度为50%，则LIN指令的最大物理速度为1000 × 50% = 500mm/s)。
+- Velocidad física: la velocidad introducida es la velocidad real de funcionamiento del robot, en unidades de mm/s; la aceleración introducida suele configurarse como el doble de la velocidad. (La velocidad física máxima de la instrucción LIN está limitada por el porcentaje de velocidad global; si la velocidad máxima de funcionamiento del robot es 1000 mm/s y la velocidad global es del 50%, la velocidad física máxima de la instrucción LIN es 1000 × 50% = 500 mm/s).
 
 .. image:: coding/470.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 8.4‑2-2 输入实际物理速度
+.. centered:: Figura 8.4‑2-2 Introducir la velocidad física real
 
-配置成功后，示教程序新增一条相关运动指令。
+Tras una configuración correcta, el programa de enseñanza añade una instrucción de movimiento relacionada.
 
-.. note:: 注意：配置ARC运动指令时，需先配置PTP/LIN指令，确保添加指令步骤规范。
+.. note:: Nota: al configurar la instrucción de movimiento ARC, es necesario configurar primero la instrucción PTP/LIN para garantizar la normalidad de los pasos de adición de instrucciones.
 
-- DO输出：选择“DO输出”时，显示下拉框可选择输出DO0⁓DO7选项。
+- Salida DO: al seleccionar "Salida DO", se muestra un cuadro desplegable para seleccionar las opciones de salida DO0⁓DO7.
 
 .. image:: coding/471.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 8.4‑2-3 Smart Tool配置（A-E键位）
+.. centered:: Figura 8.4‑2-3 Configuración de Smart Tool (teclas A-E)
 
-IO键位功能：
+Funciones de la tecla IO:
 
--  **IO信号配置**：下拉框可选择DO0⁓DO7选项、CO0⁓CO7选项、End-DO0、End-DO1和扩展IO（Aux-DO0⁓Aux-DO127）；
+-  **Configuración de señal IO**: el cuadro desplegable permite seleccionar las opciones DO0⁓DO7, CO0⁓CO7, End-DO0, End-DO1 e IO extendida (Aux-DO0⁓Aux-DO127);
 
--  **组合指令**：选择“IO信号”后，特定条件下显示“焊机选择”和“点速度”配置项，生成不同程序指令。
+-  **Instrucción combinada**: tras seleccionar "Señal IO", en determinadas condiciones se muestran los elementos de configuración "Selección de máquina de soldar" y "Velocidad del punto", generando distintas instrucciones de programa.
 
-  - 其中用户需要选择当前焊机的通信类型，包括：控制器I/O、数字通信协议(UDP)、数字通信协议(ModbusTCP)，其中控制器I/O与数字通信协议(UDP)需要配置对应的DO为起弧功能才可选择生成焊接相关的指令，数字通信协议(ModbusTCP)则需要配置指令为焊接，方可选择生成焊接相关的指令，否则只会生成设置DO输出的相关指令。需要注意的是在选择数字通信协议(UDP)、数字通信协议(ModbusTCP)通信焊机时，配置焊接指令需要保证通信建立正常。
-  - 同时新增焊接工艺编号的选择，此外起弧收弧的最大时间最大可配置为10000ms。摆动编号默认为0，如配置了“摆动开始”则可以选择摆动编号。IO键与摆动开始设置一致。
+  - Entre ellos, el usuario debe seleccionar el tipo de comunicación de la máquina de soldar actual, que incluye: I/O del controlador, protocolo de comunicación digital (UDP) y protocolo de comunicación digital (ModbusTCP); entre ellos, para I/O del controlador y protocolo de comunicación digital (UDP) es necesario configurar el DO correspondiente como función de encendido del arco para poder seleccionar la generación de instrucciones relacionadas con la soldadura; para el protocolo de comunicación digital (ModbusTCP) es necesario configurar la instrucción como soldadura para poder seleccionar la generación de instrucciones relacionadas con la soldadura; de lo contrario, solo se generarán las instrucciones relacionadas con el establecimiento de la salida DO. Cabe señalar que, al seleccionar la máquina de soldar con protocolo de comunicación digital (UDP) o protocolo de comunicación digital (ModbusTCP), para configurar las instrucciones de soldadura es necesario garantizar que la comunicación se establece correctamente.
+  - Asimismo, se añade la selección del número de proceso de soldadura; además, el tiempo máximo de encendido y apagado del arco se puede configurar hasta 10000ms. El número de oscilación es por defecto 0; si se configura "Inicio de oscilación" se puede seleccionar el número de oscilación. La tecla IO se configura igual que el inicio de oscilación.
 
 .. important::
-   -  当IO信号配置为DO0~DO7或CO0~CO7（未配置"起弧"）时，程序添加SetDO；此时隐藏“焊接选择”和“点速度”。
-   -  当IO信号配置为End-DO0、End-DO1时，程序添加SetToolDO；此时隐藏“焊接选择”和“点速度”。
-   -  当IO信号配置为扩展IO（未配置"焊机起弧"）时，程序添加SetAuxDO；此时隐藏“焊接选择”和“点速度”。
-   -  当IO信号配置为CO0~CO7（配置"起弧"）时，"焊机选择"为"无"时，程序添加SetDO；此时隐藏“焊接选择”和“点速度”。
-   -  当IO信号配置项为扩展IO（配置""焊机起弧"）时，"焊机选择"为"无"时，程序添加SetAuxDO；此时隐藏“焊接选择”和“点速度”。
-   -  当IO信号配置为CO0~CO7（配置"起弧"）或扩展IO（配置"焊机起弧"）时，"焊机选择"为"焊接"时，首次按下程序添加ARCStart，第二次程序添加ARCEnd，第三次程序添加ArcStart,第四次程序添加ARCStart,交替往复以上操作；此时隐藏“焊接选择”和“点速度”。
-   -  当IO信号配置为CO0~CO7（配置"起弧"）或扩展IO（配置"焊机起弧"）时，"焊机选择"为"LIN+焊接"时，首次按下程序添加LIN和ARCStart，第二次程序添加LIN和ARCEnd，第三次程序添加LIN和ARCStart,第四次程序添加LIN和ARCEnd,交替往复以上操作；此时显示“焊接选择”和“点速度”。
-   -  当IO信号配置为CO0~CO7（配置"起弧"）或扩展IO（配置"焊机起弧"）时，"焊机选择"为"LIN+焊接+摆动"时，首次按下程序添加LIN、ARCStart和WeaveStart，第二次程序添加LIN、ARCEnd和WeaveEnd，第三次程序添加LIN、ARCStart和WeaveStart,第四次程序添加LIN、ARCEnd和WeaveEnd,交替往复以上操作；此时隐藏“焊接选择”和“点速度”。
-   -  当按下“清空程序”或“新建程序”功能，则会对IO键的记忆进行清除，并且下一次IO键会重新生成指令。
+   -  Cuando la señal IO se configura como DO0~DO7 o CO0~CO7 (sin configurar "Encendido del arco"), el programa añade SetDO; en este momento se ocultan "Selección de máquina de soldar" y "Velocidad del punto".
+   -  Cuando la señal IO se configura como End-DO0, End-DO1, el programa añade SetToolDO; en este momento se ocultan "Selección de máquina de soldar" y "Velocidad del punto".
+   -  Cuando la señal IO se configura como IO extendida (sin configurar "Encendido del arco de la máquina de soldar"), el programa añade SetAuxDO; en este momento se ocultan "Selección de máquina de soldar" y "Velocidad del punto".
+   -  Cuando la señal IO se configura como CO0~CO7 (configurando "Encendido del arco") y "Selección de máquina de soldar" es "Ninguna", el programa añade SetDO; en este momento se ocultan "Selección de máquina de soldar" y "Velocidad del punto".
+   -  Cuando la señal IO se configura como IO extendida (configurando "Encendido del arco de la máquina de soldar") y "Selección de máquina de soldar" es "Ninguna", el programa añade SetAuxDO; en este momento se ocultan "Selección de máquina de soldar" y "Velocidad del punto".
+   -  Cuando la señal IO se configura como CO0~CO7 (configurando "Encendido del arco") o IO extendida (configurando "Encendido del arco de la máquina de soldar") y "Selección de máquina de soldar" es "Soldadura", la primera pulsación añade ARCStart al programa, la segunda añade ARCEnd, la tercera añade ArcStart y la cuarta añade ARCStart, alternando y repitiendo las operaciones anteriores; en este momento se ocultan "Selección de máquina de soldar" y "Velocidad del punto".
+   -  Cuando la señal IO se configura como CO0~CO7 (configurando "Encendido del arco") o IO extendida (configurando "Encendido del arco de la máquina de soldar") y "Selección de máquina de soldar" es "LIN + soldadura", la primera pulsación añade LIN y ARCStart al programa, la segunda añade LIN y ARCEnd, la tercera añade LIN y ARCStart y la cuarta añade LIN y ARCEnd, alternando y repitiendo las operaciones anteriores; en este momento se muestran "Selección de máquina de soldar" y "Velocidad del punto".
+   -  Cuando la señal IO se configura como CO0~CO7 (configurando "Encendido del arco") o IO extendida (configurando "Encendido del arco de la máquina de soldar") y "Selección de máquina de soldar" es "LIN + soldadura + oscilación", la primera pulsación añade LIN, ARCStart y WeaveStart al programa, la segunda añade LIN, ARCEnd y WeaveEnd, la tercera añade LIN, ARCStart y WeaveStart y la cuarta añade LIN, ARCEnd y WeaveEnd, alternando y repitiendo las operaciones anteriores; en este momento se ocultan "Selección de máquina de soldar" y "Velocidad del punto".
+   -  Al pulsar la función "Vaciar programa" o "Nuevo programa", se borra la memoria de la tecla IO y la siguiente pulsación de la tecla IO volverá a generar instrucciones.
 
 .. image:: robot_peripherals/031.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.4‑3 IO键位
+.. centered:: Figura 8.4‑3 Tecla IO
 
-焊接手柄末端Lua协议
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Protocolo Lua del extremo de la empuñadura de soldadura
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-点击“自定义协议”进入末端Lua开放协议适配焊接手柄功能界面。
+Hacer clic en "Protocolo personalizado" para entrar en la interfaz de la función de adaptación de la empuñadura de soldadura mediante el protocolo abierto Lua del extremo.
 
-协议管理
-++++++++++++++++++++++++++++++++++++++++++
+Gestión de protocolos
++++++++++++++++++++++
 
-打开WebApp，依次点击“初始设置”、“外设”、“焊接手柄”、“自定义协议”。点击“协议管理”，则可以进行末端协议的配置。目前焊接手柄预设内嵌的协议如下图所示。
+Abrir WebApp, hacer clic sucesivamente en "Configuración inicial", "Periféricos", "Empuñadura de soldadura", "Protocolo personalizado". Hacer clic en "Gestión de protocolos" para configurar el protocolo del extremo. Los protocolos internos predefinidos de la empuñadura de soldadura se muestran en la figura siguiente.
 
 .. figure:: robot_peripherals/032.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.4‑4 焊接手柄预设内嵌协议
+.. centered:: Figura 8.4‑4 Protocolos internos predefinidos de la empuñadura de soldadura
 
-打开“末端协议启用”滑块即可适配焊接手柄，启用后断电重启参数保持。
+Al activar el deslizador "Habilitación del protocolo del extremo" se puede adaptar la empuñadura de soldadura; tras la habilitación, los parámetros se mantienen tras el corte de energía y el reinicio.
 
 .. figure:: robot_peripherals/033.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.4‑5 末端开放协议启用
+.. centered:: Figura 8.4‑5 Habilitación del protocolo abierto del extremo
 
-组合设备Lua末端外设协议示例
-++++++++++++++++++++++++++++++
+Ejemplo de protocolo Lua del periférico del extremo del dispositivo combinado
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-A、B、C、D、E五个按键功能可通过代码中的30行的key值进行修改定义，其中K38=Getbit(R[7],1)，K0=Getbit(R[7],2)为“清空程序”和“撤销按键”，不可修改，后续5个K值可按照《末端全外设协议》文档中的定义进行修改。
+Las funciones de las cinco teclas A, B, C, D, E se pueden modificar y definir mediante los valores key de la línea 30 del código; entre ellos, K38=Getbit(R[7],1) y K0=Getbit(R[7],2) son "Vaciar programa" y "Deshacer tecla", y no se pueden modificar; los 5 valores K posteriores se pueden modificar según las definiciones del documento «Protocolo de periféricos completos del extremo».
 
-本次示例（内嵌SmartTool协议）中对应的按键功能为，A:MoveL,B:ArcStart,C:ArcEnd,D:rewelding start,E:rewelding quit。
+En este ejemplo (protocolo interno SmartTool), las funciones de las teclas correspondientes son: A: MoveL, B: ArcStart, C: ArcEnd, D: rewelding start, E: rewelding quit.
 
 .. code-block:: console
 
@@ -1357,7 +1359,7 @@ A、B、C、D、E五个按键功能可通过代码中的30行的key值进行修�
   end
 
   if(Getbit(GetRobotState(),0)==1)then
-  local SetParams={A3=2000,B6=3}--设置焊接参数，A3-起、收弧超时时间为2000ms，B6-操作DO端口号为3，如需配置焊接参数请查阅《RD36-焊接手柄自定义参数表-V0.2-20250903》
+  local SetParams={A3=2000,B6=3}--configuración de los parámetros de soldadura: A3- tiempo de espera agotado de encendido y apagado del arco 2000ms; B6- número de puerto DO de operación 3; si se necesitan configurar parámetros de soldadura, consulte «RD36-Tabla de parámetros personalizados de la empuñadura de soldadura-V0.2-20250903»
   SetWeldParams(SetParams)
   while(1)
   do
@@ -1382,21 +1384,21 @@ A、B、C、D、E五个按键功能可通过代码中的30行的key值进行修�
   Len=EndRxWeldData(R)
   if((Len==13)and(R[1]==0x7D)and(R[2]==0x01)and(R[3]==0x30))then
   local key={K38=Getbit(R[7],1),K0=Getbit(R[7],2),K3=Getbit(R[7],3),K32=Getbit(R[7],4),K33=Getbit(R[7],5),K27=Getbit(R[7],6),K28=Getbit(R[7],7),
-  K6=Getbit(R[8],1),K7=Getbit(R[8],2)}--smarttool焊接手柄按键设置，撤销按键-K38撤销程序；清空按键-K0清空程序；A按键-K3直线；B按键-K32起弧ArcStart；C按键-K33收弧ArcEnd；D按键-K27焊接中断恢复；E按键-K28焊接中断退出；手/自动按键-K6手/自动；运行/暂停按键-K7运行/暂停
+  K6=Getbit(R[8],1),K7=Getbit(R[8],2)}--configuración de las teclas de la empuñadura de soldadura SmartTool; tecla deshacer-K38 deshacer programa; tecla vaciar-K0 vaciar programa; tecla A-K3 línea recta; tecla B-K32 encendido del arco ArcStart; tecla C-K33 apagado del arco ArcEnd; tecla D-K27 recuperación de interrupción de soldadura; tecla E-K28 salida de interrupción de soldadura; tecla manual/automático-K6 manual/automático; tecla ejecutar/pausa-K7 ejecutar/pausa
   SetWeldToolKeys(key)
   end
   LuaGc()
   end
   end
 
-开放协议模板
+Plantilla de protocolo abierto
 ++++++++++++++++++++++++++++++
 
-以佳士达适配开放协议为例：
+Tomando como ejemplo el protocolo abierto de adaptación de Jiasda:
 
 .. code-block:: console
 
-   function Getbit(X,Bit)                   --提取X的对应bit位
+   function Getbit(X,Bit)                   --extrae el bit correspondiente de X
    return ((X&(1<<Bit))>>Bit)
    end
    while(1)
@@ -1415,30 +1417,30 @@ A、B、C、D、E五个按键功能可通过代码中的30行的key值进行修�
    T1={0x7D,0x08,0x22,0xB4,0x03,0x00}
    T2={0x7D,0X08,0X22,0XB5,0x1E,0x00}
    DelayMs(5)
-   RxLen=WeldToolMasterGetCmd(RxData)                                    --WeldToolMasterGetCmd()函数用于获取焊接手柄发送的指令（用于焊接手柄作为主站的情况）。使用时需要入栈一个空表（X={}）
+   RxLen=WeldToolMasterGetCmd(RxData)                                    --la función WeldToolMasterGetCmd() se utiliza para obtener la instrucción enviada por la empuñadura de soldadura (para el caso en que la empuñadura de soldadura actúa como maestro). Al utilizarla es necesario introducir una tabla vacía (X={})
    if (RxData[1]==0x7D)and(RxData[2]==0x08)and(RxData[3]==0x22) then
    if(RxData[4] == 0xB3)then                                              
-      --以佳士达焊接手柄的功能码为例，此处为0xB3(设置焊接参数)。
+      --tomando como ejemplo el código de función de la empuñadura de soldadura Jiasda, aquí es 0xB3 (establecer parámetros de soldadura).
    local SetParams={A2=RxData[7],A1=RxData[8],A6=(ByteToDwFloat(RxData[9],RxData[10],RxData[11],RxData[12]))*1000,
    A8=(ByteToDwFloat(RxData[13],RxData[14],RxData[15],RxData[16])),A7=(ByteToDwFloat(RxData[17],RxData[18],RxData[19],RxData[20])),
    A4=(ByteToDwFloat(RxData[21],RxData[22],RxData[23],RxData[24]))*1000,A5=(ByteToDwFloat(RxData[25],RxData[26],RxData[27],RxData[28]))*1000}
-   SetWeldParams(SetParams)                                                --SetWeldParams()函数用于设置控制器的焊接参数，需要参考焊接手柄自定义参数表，确定需要修改的焊接参数（总共划分了3个区域A,B,C）
-   Dword=GetRobotState()                                                   --GetRobotState()函数用于获取机器人的相关状态，目前bit0为机器人使能状况，bit1为机器人故障状态,bit2为机器人移动状态，bit3为起弧收弧指令信号，可参考末端全外设协议V2.7
+   SetWeldParams(SetParams)                                                --la función SetWeldParams() se utiliza para establecer los parámetros de soldadura del controlador; es necesario consultar la tabla de parámetros personalizados de la empuñadura de soldadura para determinar los parámetros de soldadura que se desean modificar (divididos en total en 3 zonas A, B, C)
+   Dword=GetRobotState()                                                   --la función GetRobotState() se utiliza para obtener el estado relacionado del robot; actualmente el bit0 es el estado de habilitación del robot, el bit1 el estado de fallo del robot, el bit2 el estado de movimiento del robot y el bit3 la señal de instrucción de encendido y apagado del arco; puede consultarse el protocolo de periféricos completos del extremo V2.7
    T0[7]=((Dword)&(1<<1))
-   T0[8],T0[9]=WeldToolCrcValue(T0)                                        --WeldToolCrcValue()法奥自定义协议CRC校验
+   T0[8],T0[9]=WeldToolCrcValue(T0)                                        --verificación CRC del protocolo personalizado de FAIRINO
    T0[10]=0x0E
-   EndTxWeldData(T0)                                                       --EndTxWeldData()函数用于发送组包数据（此处为响应焊接手柄设置焊接参数指令）
+   EndTxWeldData(T0)                                                       --la función EndTxWeldData() se utiliza para enviar los datos empaquetados (aquí es la respuesta a la instrucción de establecimiento de parámetros de soldadura de la empuñadura de soldadura)
    DelayMs(5)
    end
-   if(RxData[4] == 0xB4)then                                               --0xB4实时控制指令
+   if(RxData[4] == 0xB4)then                                               --instrucción de control en tiempo real 0xB4
    local key={K0=Getbit(RxData[7],0),K1=Getbit(RxData[7],1),K2=Getbit(RxData[7],2),K3=Getbit(RxData[7],3),
    K4=Getbit(RxData[7],4),K5=Getbit(RxData[7],5),K6=Getbit(RxData[7],6),K7=Getbit(RxData[7],7),
    K8=Getbit(RxData[8],0),K9=Getbit(RxData[8],1),K10=Getbit(RxData[8],2),K11=Getbit(RxData[8],3),
    K12=Getbit(RxData[8],4),K13=Getbit(RxData[8],5),K14=Getbit(RxData[8],6),K15=Getbit(RxData[9],0),
    K16=Getbit(RxData[9],1),K17=Getbit(RxData[9],2),K18=Getbit(RxData[9],3),K19=Getbit(RxData[9],4),
    K20=Getbit(RxData[9],5),K21=Getbit(RxData[9],6),K22=Getbit(RxData[9],7),K23=Getbit(RxData[10],0),
-   K24=Getbit(RxData[10],1)}                                               --按键值需要参考末端全外设协议V2.7表26，K0-K31对应DWordInput10的bit0-bit31,K32-K63对应DWordInput9的bit0-bit31
-   SetWeldToolKeys(key)                                                    --SetWeldToolKeys()函数用于将焊接手柄按键状态上传，可根据焊接手柄实际情况调整表中填写的按键值
+   K24=Getbit(RxData[10],1)}                                               --los valores de las teclas deben consultarse en la tabla 26 del protocolo de periféricos completos del extremo V2.7; K0-K31 corresponden a los bit0-bit31 de DWordInput10; K32-K63 corresponden a los bit0-bit31 de DWordInput9
+   SetWeldToolKeys(key)                                                    --la función SetWeldToolKeys() se utiliza para cargar el estado de las teclas de la empuñadura de soldadura; los valores de las teclas rellenados en la tabla pueden ajustarse según la situación real de la empuñadura de soldadura
    Dword=GetRobotState()
    T1[7]=(Dword)&(0x1)
    T1[8]=(Dword>>1)&(0x1)
@@ -1449,10 +1451,10 @@ A、B、C、D、E五个按键功能可通过代码中的30行的key值进行修�
    DelayMs(5)
    end
    if(RxData[4] == 0xB5)then                                               
-   --读取焊接参数(从控制器中获取，给到焊接手柄)
+   --lectura de parámetros de soldadura (obtenidos del controlador y enviados a la empuñadura de soldadura)
    local wldpams={"A2","A1","A6","A8","A7","A4","A5"}                      
-   --根据焊接手柄实际需要的焊接参数进行填写，此处佳士达需要这些，可参考末端全外设协议V2.7的表26
-   GetWeldParams(wldpams)                                                  --GetWeldParams()获取对应的焊接参数，并将其值替换到表中(假设A2=100，则调用函数后，wldpams[1]=100)
+   --rellenar según los parámetros de soldadura que necesite realmente la empuñadura de soldadura; aquí Jiasda necesita estos; puede consultarse la tabla 26 del protocolo de periféricos completos del extremo V2.7
+   GetWeldParams(wldpams)                                                  --GetWeldParams() obtiene los parámetros de soldadura correspondientes y sustituye su valor en la tabla (suponiendo A2=100, tras llamar a la función, wldpams[1]=100)
    T2[7]=wldpams[1]
    T2[8]=wldpams[2]
    wldpams[3]=wldpams[3]/1000
@@ -1473,12 +1475,12 @@ A、B、C、D、E五个按键功能可通过代码中的30行的key值进行修�
    LuaGc()
    end
 
-开放协议可支持指令
-++++++++++++++++++++++++++++++
+Instrucciones compatibles con el protocolo abierto
+++++++++++++++++++++++++++++++++++++++++++++++++++
 
-可在开放协议中配置以下指令，同时39-63预留，后续可扩展。
+En el protocolo abierto se pueden configurar las siguientes instrucciones; además, 39-63 están reservadas y pueden ampliarse posteriormente.
 
-.. centered:: 表格 8.4-1 开放协议可支持指令
+.. centered:: Tabla 8.4-1 Instrucciones compatibles con el protocolo abierto
 
 .. list-table:: 
    :widths: 20 80
@@ -1487,75 +1489,75 @@ A、B、C、D、E五个按键功能可通过代码中的30行的key值进行修�
    :class: sheet-center
 
    * - **Bit**
-     - **说明**
+     - **Descripción**
    * - 0
-     - 清空程序
+     - Vaciar programa
    * - 1
-     - 保存程序
+     - Guardar programa
    * - 2
-     - 生成安全点（LIN指令）
+     - Generar punto de seguridad (instrucción LIN)
    * - 3
-     - 生成直线运行点（LIN指令）
+     - Generar punto de ejecución de línea recta (instrucción LIN)
    * - 4
-     - 添加圆弧过渡点
+     - Añadir punto de transición de arco
    * - 5
-     - 添加圆弧终点并生成ARC指令
+     - Añadir punto final de arco y generar instrucción ARC
    * - 6
-     - 切换模式，默认处于手动模式
+     - Cambiar modo; por defecto en modo manual
    * - 7
-     - 切换机器人运行状态
+     - Cambiar el estado de funcionamiento del robot
    * - 8
-     - 切换机器人拖动状态
+     - Cambiar el estado de arrastre del robot
    * - 9
-     - 开始点焊
+     - Iniciar soldadura por puntos
    * - 10
-     - 添加开始摆弧指令
+     - Añadir instrucción de inicio de oscilación de arco
    * - 11
-     - 添加结束摆弧指令
+     - Añadir instrucción de fin de oscilación de arco
    * - 12
-     - X正方向点动
+     - Jog en dirección X positiva
    * - 13
-     - X负方向点动
+     - Jog en dirección X negativa
    * - 14
-     - Y正方向点动
+     - Jog en dirección Y positiva
    * - 15
-     - Y负方向点动
+     - Jog en dirección Y negativa
    * - 16
-     - Z正方向点动
+     - Jog en dirección Z positiva
    * - 17
-     - Z负方向点动
+     - Jog en dirección Z negativa
    * - 18
-     - RX正方向点动
+     - Jog en dirección RX positiva
    * - 19
-     - RX负方向点动
+     - Jog en dirección RX negativa
    * - 20
-     - RY正方向点动
+     - Jog en dirección RY positiva
    * - 21
-     - RY负方向点动
+     - Jog en dirección RY negativa
    * - 22
-     - RZ正方向点动
+     - Jog en dirección RZ positiva
    * - 23
-     - RZ负方向点动
+     - Jog en dirección RZ negativa
    * - 24
-     - 生成起始点
+     - Generar punto inicial
    * - 25
      - PTP
    * - 26
-     - 固定姿态拖动
+     - Arrastre con actitud fija
    * - 27
-     - 焊接中断恢复
+     - Recuperación de interrupción de soldadura
    * - 28
-     - 焊接中断退出
+     - Salida de interrupción de soldadura
    * - 29
      - SetDO
    * - 30
      - offline
    * - 31
-     - 配置参数更新
+     - Actualización de parámetros de configuración
    * - 32
-     - 起弧ArcStart
+     - Encendido del arco ArcStart
    * - 33
-     - 收弧ArcEnd
+     - Apagado del arco ArcEnd
    * - 34
      - Lin+ArcStart+weaveStart
    * - 35
@@ -1565,20 +1567,20 @@ A、B、C、D、E五个按键功能可通过代码中的30行的key值进行修�
    * - 37
      - Lin+ArcEnd
    * - 38
-     - 撤销程序
+     - Deshacer programa
    * - 39
-     - 预留
+     - Reservado
    * - ...
-     - 预留
+     - Reservado
    * - 63
-     - 预留
+     - Reservado
 
-开放协议可配置参数
-++++++++++++++++++++++++++++++
+Parámetros configurables del protocolo abierto
+++++++++++++++++++++++++++++++++++++++++++++++
 
-可在开放协议中配置以下参数。
+En el protocolo abierto se pueden configurar los siguientes parámetros.
 
-.. centered:: 表格 8.4-2 开放协议可配置参数
+.. centered:: Tabla 8.4-2 Parámetros configurables del protocolo abierto
 
 .. list-table:: 
    :widths: 10 40 20 30
@@ -1586,1542 +1588,1542 @@ A、B、C、D、E五个按键功能可通过代码中的30行的key值进行修�
    :align: center
    :class: sheet-center
 
-   * - **索引**
-     - **数据内容**
-     - **数据类型**
-     - **范围**
+   * - **Índice**
+     - **Contenido de datos**
+     - **Tipo de dato**
+     - **Rango**
 
    * - 0
-     - 焊接速度
+     - Velocidad de soldadura
      - float
      - 0-100%
 
    * - 1
-     - 空行速度
+     - Velocidad en línea vacía
      - float
      - 0-100%
 
    * - 2
-     - 起、收弧超时时间
+     - Tiempo de espera agotado de encendido y apagado del arco
      - float
      - 0-65535(ms)
 
    * - 3
-     - 摆动左停留时间
+     - Tiempo de permanencia izquierdo de oscilación
      - float
      - 0-99999（ms）
 
    * - 4
-     - 摆动右停留时间
+     - Tiempo de permanencia derecho de oscilación
      - float
      - 0-99999（ms）
 
    * - 5
-     - 点焊时间
+     - Tiempo de soldadura por puntos
      - float
      - 0-99999（ms）
 
    * - 6
-     - 摆动宽度
+     - Anchura de oscilación
      - float
      - 0-1000（0.1mm）
 
    * - 7
-     - 摆动频率
+     - Frecuencia de oscilación
      - float
      - 0-100(0.1Hz)
 
    * - 8
-     - 焊机控制类型；0-控制箱IO；1-数字通信协议(UDP)
+     - Tipo de control de la máquina de soldar; 0-IO de la caja de control; 1-protocolo de comunicación digital (UDP)
      - float
      - 0-255
 
    * - 9
-     - 焊接工艺编号(0-99)
+     - Número de proceso de soldadura (0-99)
      - float
      - 0-99
 
    * - 10
-     - 摆动类型
+     - Tipo de oscilación
      - float
      - 0-255
 
    * - 11
-     - 电流控制输出模拟量输出端口
+     - Puerto de salida analógica de control de corriente
      - float
      - 0-1
 
    * - 12
-     - 电压控制输出模拟量输出端口
+     - Puerto de salida analógica de control de tensión
      - float
      - 0-1
 
    * - 13
-     - 操作DO端口号
+     - Número de puerto DO de operación
      - float
      - 0-15
 
    * - 14
-     - 摆动参数编号
+     - Número de parámetro de oscilación
      - float
      - 0-255
 
    * - 15
-     - 手动模式全局速度
+     - Velocidad global en modo manual
      - float
      - 0-100%
 
    * - 16
-     - 自动模式全局速度
+     - Velocidad global en modo automático
      - float
      - 0-100%
 
    * - 17
-     - 焊接电流
+     - Corriente de soldadura
      - float
      - 0-999990（0.1A）
 
    * - 18
-     - 焊接电压
+     - Tensión de soldadura
      - float
      - 0-999990（0.1V）
 
    * - 19
-     - 单次点动最大距离
+     - Distancia máxima de jog individual
      - float
      - 0-1000（0.1mm）
 
    * - 20
-     - 焊机准备扩展DI端口
+     - Puerto DI extendido de preparación de la máquina de soldar
      - float
      - 0-127
 
    * - 21
-     - 起弧成功扩展DI端口
+     - Puerto DI extendido de éxito de encendido del arco
      - float
      - 0-127
 
    * - 22
-     - 焊接中断恢复扩展DI端口
+     - Puerto DI extendido de recuperación de interrupción de soldadura
      - float
      - 0-127
 
    * - 23
-     - 焊接中断退出扩展DI端口
+     - Puerto DI extendido de salida de interrupción de soldadura
      - float
      - 0-127
 
    * - 24
-     - 焊机起弧扩展DO端口
+     - Puerto DO extendido de encendido del arco de la máquina de soldar
      - float
      - 0-127
 
    * - 25
-     - 气体检测扩展D0端口
+     - Puerto D0 extendido de detección de gas
      - float
      - 0-127
 
    * - 26
-     - 正向送丝扩展D0端口
+     - Puerto D0 extendido de alimentación de alambre en sentido directo
      - float
      - 0-127
 
    * - 27
-     - 反向送丝扩展D0端口
+     - Puerto D0 extendido de alimentación de alambre en sentido inverso
      - float
      - 0-127
 
    * - 28
-     - 焊接中断恢复使能
+     - Habilitación de recuperación de interrupción de soldadura
      - float
      - 0-1
 
    * - 29
-     - 去再恢复点速度
+     - Velocidad del punto de re-recuperación
      - float
      - 0-100%
 
    * - 30
-     - 运动方式
+     - Modo de movimiento
      - float
      - 0-1
 
    * - 31
-     - 焊接电弧中断检测使能
+     - Habilitación de detección de interrupción del arco de soldadura
      - float
      - 0-1
 
    * - 32
-     - 是否包括等待时间(ms)
+     - ¿Incluye tiempo de espera (ms)?
      - float
      - 0-1
 
    * - 33
-     - 摆动回调比率
+     - Proporción de retorno de oscilación
      - float
      - 0-100%
 
    * - 34
-     - 摆动位置等待类型
+     - Tipo de espera de posición de oscilación
      - float
      - 0-255
 
    * - 35
-     - 起弧时间
+     - Tiempo de encendido del arco
      - float
      - 0-65535（ms）
 
    * - 36
-     - 收弧时间
+     - Tiempo de apagado del arco
      - float
      - 0-65535（ms）
 
    * - 37
-     - 焊接电弧中断确认时长
+     - Duración de confirmación de interrupción del arco de soldadura
      - float
      - 0-65535（ms）
 
    * - 38
-     - 重叠距离
+     - Distancia de solapamiento
      - float
      - 0-1000(0.1mm)
 
    * - 39
-     - 起弧电流
+     - Corriente de encendido del arco
      - float
      - 0-999990(0.1A)
 
    * - 40
-     - 起弧电压
+     - Tensión de encendido del arco
      - float
      - 0-999990(0.1V)
 
    * - 41
-     - 收弧电流
+     - Corriente de apagado del arco
      - float
      - 0-999990(0.1A)
 
    * - 42
-     - 收弧电压
+     - Tensión de apagado del arco
      - float
      - 0-999990(0.1V)
 
    * - 43
-     - 最小焊接电流
+     - Corriente mínima de soldadura
      - float
      - 0-999990(0.1A)
 
    * - 44
-     - 最大焊接电流
+     - Corriente máxima de soldadura
      - float
      - 0-999990(0.1A)
 
    * - 45
-     - 最小焊接电流对应输出模拟量
+     - Salida analógica correspondiente a la corriente mínima de soldadura
      - float
      - 0-100(0.1A)
 
    * - 46
-     - 最大焊接电流对应输出模拟量
+     - Salida analógica correspondiente a la corriente máxima de soldadura
      - float
      - 0-100(0.1A)
 
    * - 47
-     - 最小焊接电压
+     - Tensión mínima de soldadura
      - float
      - 0-2000(0.1V)
 
    * - 48
-     - 最大焊接电压
+     - Tensión máxima de soldadura
      - float
      - 0-2000(0.1V)
 
    * - 49
-     - 最小焊接电压对应输出模拟量
+     - Salida analógica correspondiente a la tensión mínima de soldadura
      - float
      - 0-100(0.1V)
 
    * - 50
-     - 最大焊接电压对应输出模拟量
+     - Salida analógica correspondiente a la tensión máxima de soldadura
      - float
      - 0-100(0.1V)
 
    * - 51
-     - 立三角摆动左弦长度
+     - Longitud del lado izquierdo de la oscilación triangular vertical
      - float
      - 0-1000(0.1mm)
 
    * - 52
-     - 立三角摆动右弦长度
+     - Longitud del lado derecho de la oscilación triangular vertical
      - float
      - 0-1000(0.1mm)
 
    * - 53
-     - 摆动方向方位角
+     - Ángulo de azimut de la dirección de oscilación
      - float
      - -1800-1800(0.1°)
 
    * - 54
-     - 摆动方向侧倾角
+     - Ángulo de inclinación lateral de la dirección de oscilación
      - float
      - -1800-1800(0.1°)
 
    * - 55
-     - 立三角摆动三角尖点等待时间
+     - Tiempo de espera de la punta del triángulo de la oscilación triangular vertical
      - float
      - 0-99999(ms)
 
-喷枪
--------------
+Pistola de pulverización
+-------------------------
 
-喷枪外设配置步骤
-~~~~~~~~~~~~~~~~~~
+Pasos de configuración del periférico de la pistola de pulverización
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Step1**：在“初始设置”->“外设”菜单栏中，点击“喷枪”进入喷枪配置界面。
+**Step1**: En la barra de menú "Configuración inicial"->"Periféricos", hacer clic en "Pistola de pulverización" para entrar en la interfaz de configuración de la pistola de pulverización.
 
-用户可以通过喷涂功能一键配置按键，对喷涂所需DO进行快速配置（默认配置DO10为喷涂启停，DO11为喷涂清枪）。 
+El usuario puede, mediante la configuración rápida de teclas de la función de pulverización, configurar rápidamente las DO necesarias para la pulverización (por defecto se configura DO10 como inicio/parada de pulverización y DO11 como limpieza de pistola de pulverización). 
 
-用户也可以根据自己的需求在“初始设置”->“基础”->“I/O设置”中，自定义配置DO。
+El usuario también puede configurar personalizadamente las DO según sus necesidades en "Configuración inicial"->"Básico"->"Configuración de I/O".
 
 .. important:: 
-	使用喷涂功能之前，需要先建立相应的工具坐标系，并在程序示教时应用建立好的工具坐标系。
+	Antes de utilizar la función de pulverización, es necesario establecer primero el sistema de coordenadas de herramienta correspondiente y aplicarlo durante la enseñanza del programa.
 
-**Step2**：配置完成后，点击“开始喷涂”、“停止喷涂”、“开始清枪”和“停止清枪”四个按钮，进行喷枪调试。
+**Step2**: Tras completar la configuración, hacer clic en los cuatro botones "Iniciar pulverización", "Detener pulverización", "Iniciar limpieza de pistola" y "Detener limpieza de pistola" para realizar la depuración de la pistola de pulverización.
 
 .. figure:: robot_peripherals/034.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.5‑1 喷枪配置
+.. centered:: Figura 8.5‑1 Configuración de la pistola de pulverización
 
-**Step3**：在程序编程命令界面选择“喷枪”命令。根据具体的程序示教需求，在相应的地方添加应用“开始喷涂”、“停止喷涂”、“开始清枪”和“停止清枪”四个指令。
+**Step3**: En la interfaz de comandos de programación de programas, seleccionar el comando "Pistola de pulverización". Según los requisitos concretos de enseñanza del programa, añadir y aplicar en el lugar correspondiente las cuatro instrucciones "Iniciar pulverización", "Detener pulverización", "Iniciar limpieza de pistola" y "Detener limpieza de pistola".
 
 .. figure:: robot_peripherals/035.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.5‑2 喷枪指令
+.. centered:: Figura 8.5‑2 Instrucción de pistola de pulverización
 
-喷涂程序示教
-~~~~~~~~~~~~~~
+Enseñanza del programa de pulverización
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. list-table:: 
    :widths: 15 40 100
    :header-rows: 1
 
-   * - 序号
-     - 指令格式
-     - 注释
+   * - Número
+     - Formato de la instrucción
+     - Comentario
    * - 1
      - Lin(template1,100,-1,0,0)
-     - #开始喷涂点
+     - #Punto de inicio de pulverización
    * - 2
      - SprayStart()
-     - #开始喷涂
+     - #Iniciar pulverización
    * - 3
      - Lin(template2,100,-1,0,0)
-     - #喷涂路径
+     - #Ruta de pulverización
    * - 4
      - Lin(template3,100,-1,0,0)
-     - #停止喷涂点
+     - #Punto de detención de pulverización
    * - 5
      - SprayStop()
-     - #停止喷涂
+     - #Detener pulverización
    * - 6
      - Lin(template4,100,-1,0,0)
-     - #清枪点
+     - #Punto de limpieza de pistola
    * - 7
      - PowerCleanStart()
-     - #开始清枪
+     - #Iniciar limpieza de pistola
    * - 8
      - WaitTime(5000)
-     - #清枪时间 ms
+     - #Tiempo de limpieza de pistola ms
    * - 9
      - PowerCleanStop()
-     - #停止清枪
+     - #Detener limpieza de pistola
 
-焊机
--------------
+Máquina de soldar
+------------------
 
-协作机器人携带焊枪进行焊接作业可以显著提高焊接效率和焊接质量，法奥协作机器人可以通过“控制器IO”或“数字通信协议（UDP）”或“数字通信协议（Modbus TCP）”三种方法进行焊接控制：
+El robot colaborativo que transporta una antorcha de soldadura para realizar operaciones de soldadura puede mejorar notablemente la eficiencia y la calidad de la soldadura; el robot colaborativo FAIRINO puede controlar la soldadura mediante tres métodos: "IO del controlador", "Protocolo de comunicación digital (UDP)" o "Protocolo de comunicación digital (Modbus TCP)":
 
-**控制器IO**：机器人通过设置控制箱模拟量输出(0-10V)进行焊接电流和焊接电压的大小控制，通过控制箱数字输出进行焊接起弧、送丝、送气的控制，通过控制箱数字输入采集焊机准备、起弧成功等信号输入。
+**IO del controlador**: el robot controla la magnitud de la corriente y la tensión de soldadura mediante el establecimiento de la salida analógica de la caja de control (0-10V), controla el encendido del arco, la alimentación de alambre y el suministro de gas mediante la salida digital de la caja de control, y recoge señales de entrada como la preparación de la máquina de soldar y el éxito del encendido del arco mediante la entrada digital de la caja de control.
 
-**数字通信协议（UDP）**：机器人通过UDP与PLC进行通信，PLC再通过CANOpen总线或其他协议与焊机通信，进而控制焊接电压、电流和焊机起弧、送丝、送气等操作(机器人UDP通信协议内容见附件一)。
+**Protocolo de comunicación digital (UDP)**: el robot se comunica con el PLC mediante UDP; el PLC se comunica con la máquina de soldar mediante el bus CANOpen u otro protocolo, controlando así la tensión y la corriente de soldadura y las operaciones de encendido del arco, alimentación de alambre y suministro de gas de la máquina de soldar (el contenido del protocolo de comunicación UDP del robot se muestra en el Anexo 1).
 
-**数字通信协议（Modbus TCP）**：即控制器外设开放协议，通常是一个可运行的LUA程序，程序包含通讯创建指令、循环向从站设备写入控制数据和读取实时状态数据指令，执行该LUA程序时，机器人与设备建立通讯，并进行数据交互。控制器外设开放协议LUA程序中可自定义IP地址、端口号、周期等通讯参数，用户在使用时需要根据实际设备情况对该协议内容进行修改。控制器外设开放协议支持的设备包括打磨头、激光传感器、CNC、焊机等。控制器外设开放协议文件名称需以CtrlDev_开头，如“CtrlDev_Welding.lua”，最多支持4个开放协议同时运行。
+**Protocolo de comunicación digital (Modbus TCP)**: es el protocolo abierto de periféricos del controlador, normalmente un programa LUA ejecutable; el programa incluye instrucciones de creación de comunicación, instrucciones de escritura cíclica de datos de control en el dispositivo esclavo y de lectura de datos de estado en tiempo real; al ejecutar dicho programa LUA, el robot establece comunicación con el dispositivo e intercambia datos. En el programa LUA del protocolo abierto de periféricos del controlador se pueden personalizar parámetros de comunicación como la dirección IP, el número de puerto y el período; el usuario debe modificar el contenido de dicho protocolo según la situación real del dispositivo durante su uso. Los dispositivos compatibles con el protocolo abierto de periféricos del controlador incluyen cabezales de pulido, sensores láser, CNC, máquinas de soldar, etc. El nombre del archivo del protocolo abierto de periféricos del controlador debe comenzar por `CtrlDev_`, por ejemplo "CtrlDev_Welding.lua"; se admite la ejecución simultánea de hasta 4 protocolos abiertos.
 
 .. figure:: robot_peripherals/036.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6‑1 焊机
+.. centered:: Figura 8.6‑1 Máquina de soldar
 
-“控制器IO”或“数字通信协议（UDP）”进行焊接控制主要包括以下几个步骤：①焊枪安装及信号接线；②焊机参数配置；③编写焊接控制程序。
+El control de soldadura mediante "IO del controlador" o "Protocolo de comunicación digital (UDP)" incluye principalmente los siguientes pasos: ① instalación de la antorcha de soldadura y cableado de señales; ② configuración de parámetros de la máquina de soldar; ③ escritura del programa de control de soldadura.
 
-焊枪安装
-~~~~~~~~~~~~~~~~~~~~~
+Instalación de la antorcha de soldadura
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-焊枪通过转接板安装于机器人末端，焊枪线缆需固定于机械臂上。
+La antorcha de soldadura se instala en el extremo del robot mediante una placa adaptadora; el cable de la antorcha de soldadura debe fijarse al brazo mecánico.
 
 .. figure:: robot_peripherals/037.png
    :align: center
    :width: 3in
 
-.. centered:: 图表 8.6‑2 焊枪安装于机器人末端
+.. centered:: Figura 8.6‑2 Instalación de la antorcha de soldadura en el extremo del robot
 
-焊枪固定安装完成后，通过六点法进行焊枪工具坐标系标定，并应用为当前工具坐标系，焊枪工具坐标系标定精度会影响实际焊接精度。
+Tras completar la instalación fija de la antorcha de soldadura, se realiza la calibración del sistema de coordenadas de herramienta de la antorcha mediante el método de seis puntos y se aplica como sistema de coordenadas de herramienta actual; la precisión de calibración del sistema de coordenadas de herramienta de la antorcha afecta a la precisión real de la soldadura.
 
 .. figure:: robot_peripherals/038.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-3 机器人工具坐标系标定及应用
+.. centered:: Figura 8.6-3 Calibración y aplicación del sistema de coordenadas de herramienta del robot
 
-焊机参数配置
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configuración de parámetros de la máquina de soldar
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-协作机器人可通过“控制器IO”信号或“数字通信协议”进行焊接过程控制，两种方式的配置操作主要有以下两个区别点：
+El robot colaborativo puede controlar el proceso de soldadura mediante señales de "IO del controlador" o mediante el "Protocolo de comunicación digital"; las operaciones de configuración de ambos métodos presentan principalmente las dos diferencias siguientes:
 
-①使用“控制器IO”时需要设置实际控制焊接电流电压与控制箱模拟量输出值之间的对应关系；
+①Al utilizar "IO del controlador" es necesario establecer la relación de correspondencia entre la corriente y tensión de soldadura reales controladas y los valores de salida analógica de la caja de control;
 
-②使用“数字通信协议”时需要配置通信参数。
+②Al utilizar el "Protocolo de comunicación digital" es necesario configurar los parámetros de comunicación.
 
-“控制器IO”焊接控制配置
-+++++++++++++++++++++++++++++++++++
+Configuración del control de soldadura mediante "IO del controlador"
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-在“初始设置”->“外设”->“焊机”菜单栏中，点击“控制器I/O”卡片进入界面。
+En la barra de menú "Configuración inicial"->"Periféricos"->"Máquina de soldar", hacer clic en la tarjeta "I/O del controlador" para entrar en la interfaz.
 
 .. figure:: robot_peripherals/039.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-4 控制器I/O
+.. centered:: Figura 8.6-4 I/O del controlador
 
-焊接IO信号配置
-****************************
+Configuración de las señales IO de soldadura
+********************************************
 
-如下图所示，选择焊机状态信号DI输入端口和焊机控制信号DO输出端口，点击“配置”按钮，各信号含义如下：
+Como se muestra en la figura siguiente, seleccionar el puerto de entrada DI de la señal de estado de la máquina de soldar y el puerto de salida DO de la señal de control de la máquina de soldar, y hacer clic en el botón "Configurar"; el significado de cada señal es el siguiente:
 
 .. figure:: robot_peripherals/040.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-5 设置焊机信号端口
+.. centered:: Figura 8.6-5 Configuración de los puertos de señal de la máquina de soldar
 
-**焊机准备**：当焊机已经准备完成可以进行焊接作业时，焊机输出该信号至机器人。
+**Preparación de la máquina de soldar**: cuando la máquina de soldar ya está preparada para realizar la operación de soldadura, la máquina de soldar emite esta señal al robot.
 
-当焊机故障或其他原因未准备完成时，焊机未将该信号输入至机器人，此时机器人WebApp右上角提示“焊机未准备好”。若您的焊机没有焊机准备好信号，可将该项端口设置为“无”。
+Cuando la máquina de soldar no está preparada por fallo u otras razones, la máquina de soldar no introduce esta señal en el robot; en este momento, la esquina superior derecha de WebApp del robot muestra "Máquina de soldar no preparada". Si su máquina de soldar no dispone de señal de preparación, puede configurar este puerto como "Ninguno".
 
 .. figure:: robot_peripherals/041.png
    :align: center
    :width: 3in
 
-.. centered:: 图表 8.6-6 焊机未准备好报错
+.. centered:: Figura 8.6-6 Error de máquina de soldar no preparada
 
 .. figure:: robot_peripherals/042.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-7 焊机准备设置为“无”
+.. centered:: Figura 8.6-7 Configuración de la preparación de la máquina de soldar como "Ninguno"
 
-**起弧成功**：焊机起弧已成功，机器人输出起弧信号至焊机后，等待焊机反馈起弧成功信号，在设定的超时时间内机器人未检测到焊机的起弧成功信号，机器人报“起弧超时”错误。
+**Éxito del encendido del arco**: la máquina de soldar ha encendido el arco correctamente; el robot emite la señal de encendido del arco a la máquina de soldar y espera a que esta realimente la señal de éxito del encendido del arco; si dentro del tiempo de espera agotado establecido el robot no detecta la señal de éxito del encendido del arco de la máquina de soldar, el robot informa del error "Tiempo de espera agotado en el encendido del arco".
 
-使用机器人焊接功能时若未配置起弧成功信号仍可进行焊接，但机器人会报“起弧成功DI未配置”警告；若您的焊机有起弧成功信号输出，我们建议您配置此信号以进行更安全的焊接。
+Al utilizar la función de soldadura del robot, si no se configura la señal de éxito del encendido del arco, se puede seguir soldando, pero el robot informará de la advertencia "DI de éxito del encendido del arco no configurada"; si su máquina de soldar dispone de salida de señal de éxito del encendido del arco, le recomendamos configurar esta señal para realizar una soldadura más segura.
 
 .. figure:: robot_peripherals/043.png
    :align: center
    :width: 3in
 
-.. centered:: 图表 8.6-8 起弧超时报错
+.. centered:: Figura 8.6-8 Error de tiempo de espera agotado en el encendido del arco
    
 .. figure:: robot_peripherals/044.png
    :align: center
    :width: 3in
 
-.. centered:: 图表 8.6-9 起弧成功DI未配置警告
+.. centered:: Figura 8.6-9 Advertencia de DI de éxito del encendido del arco no configurada
 
-**焊接中断恢复**：机器人焊接过程中电弧意外中断或操作人员主动暂停焊接时会触发焊接中断，焊接中断后外部向机器人输入该信号从无效变为有效时，机器人自动从原来中断的位置自动恢复焊接。
+**Recuperación de interrupción de soldadura**: cuando durante el proceso de soldadura del robot se interrumpe accidentalmente el arco o el operador pausa activamente la soldadura, se activa la interrupción de soldadura; tras la interrupción de soldadura, cuando la señal de entrada externa a la máquina cambia de no válida a válida, el robot reanuda automáticamente la soldadura desde la posición en que se interrumpió.
 
-**焊接中断退出**：机器人焊接过程中电弧意外中断或操作人员主动暂停焊接时会触发焊接中断，焊接中断后外部向机器人输入该信号从无效变为有效时，机器人终止焊接，焊接终止后不可再次恢复焊接。
+**Salida de interrupción de soldadura**: cuando durante el proceso de soldadura del robot se interrumpe accidentalmente el arco o el operador pausa activamente la soldadura, se activa la interrupción de soldadura; tras la interrupción de soldadura, cuando la señal de entrada externa a la máquina cambia de no válida a válida, el robot termina la soldadura; tras la terminación de la soldadura no se puede reanudar de nuevo.
 
-**焊机起弧**：机器人控制焊机起弧的DO输出端口，当机器人程序执行起弧指令时，焊机起弧对应DO输出端口自动输出有效。
+**Encendido del arco de la máquina de soldar**: puerto de salida DO del robot para controlar el encendido del arco de la máquina de soldar; cuando el programa del robot ejecuta la instrucción de encendido del arco, el puerto de salida DO correspondiente al encendido del arco de la máquina de soldar emite automáticamente un valor válido.
 
-**气体检测**：机器人控制焊机送气的DO输出端口，当机器人执行焊接送气指令时，送气对应的DO输出端口自动输出有效。
+**Detección de gas**: puerto de salida DO del robot para controlar el suministro de gas de la máquina de soldar; cuando el robot ejecuta la instrucción de suministro de gas de soldadura, el puerto de salida DO correspondiente al suministro de gas emite automáticamente un valor válido.
 
-**正向送丝**：机器人控制焊机正向送丝的DO输出端口，当机器人执行正向送丝指令时，正向送丝对应的DO输出端口自动输出有效。
+**Alimentación de alambre en sentido directo**: puerto de salida DO del robot para controlar la alimentación de alambre en sentido directo de la máquina de soldar; cuando el robot ejecuta la instrucción de alimentación de alambre en sentido directo, el puerto de salida DO correspondiente emite automáticamente un valor válido.
 
-**反向送丝**：机器人控制焊机反向送丝的DO输出端口，当机器人执行反向送丝指令时，反向送丝对应的DO输出端口自动输出有效。
+**Alimentación de alambre en sentido inverso**: puerto de salida DO del robot para controlar la alimentación de alambre en sentido inverso de la máquina de soldar; cuando el robot ejecuta la instrucción de alimentación de alambre en sentido inverso, el puerto de salida DO correspondiente emite automáticamente un valor válido.
 
-焊接工艺参数配置
-****************************
+Configuración de los parámetros del proceso de soldadura
+*********************************************************
 
-如下图所示，在焊接配置页面找到“焊接工艺参数”栏，协作机器人提供0 ~ 99共100组焊接工艺参数，其中工艺编号0表示不使用焊接工艺曲线，工艺编号1-99使用焊接工艺曲线。
+Como se muestra en la figura siguiente, en la página de configuración de soldadura, encontrar la columna "Parámetros del proceso de soldadura"; el robot colaborativo ofrece 100 grupos de parámetros del proceso de soldadura, del 0 al 99; el número de proceso 0 indica que no se utiliza la curva del proceso de soldadura, y los números de proceso 1-99 utilizan la curva del proceso de soldadura.
    
 .. figure:: robot_peripherals/045.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-10 焊接工艺参数配置 
+.. centered:: Figura 8.6-10 Configuración de los parámetros del proceso de soldadura 
 
-使用焊接工艺曲线时，以选择焊接工艺编号1为例，依次输入起弧电流 ~ 收弧时间参数如图8中所示，点击“配置”按钮，该工艺参数表示的实际焊接过程如下：
+Al utilizar la curva del proceso de soldadura, tomando como ejemplo la selección del número de proceso de soldadura 1, introducir sucesivamente los parámetros desde la corriente de encendido del arco hasta el tiempo de apagado del arco como se muestra en la Figura 8 y hacer clic en el botón "Configurar"; el proceso real de soldadura representado por estos parámetros del proceso es el siguiente:
 
-①设置焊接电流200A、电压23V；
+①Establecer la corriente de soldadura en 200A y la tensión en 23V;
 
-②执行起弧，等待起弧成功；
+②Ejecutar el encendido del arco y esperar al éxito del encendido del arco;
 
-③起弧成功后电弧保持500ms(起弧时间，机器人不运动)；
+③Tras el éxito del encendido del arco, mantener el arco durante 500ms (tiempo de encendido del arco; el robot no se mueve);
 
-④设置焊接电流150A、焊接电压21V，然后机器人开始运动并进行焊接；
+④Establecer la corriente de soldadura en 150A y la tensión de soldadura en 21V; a continuación, el robot comienza a moverse y a soldar;
 
-⑤焊接到终点后，设置焊接电流为100A、焊接电压为19V(收弧电流、收弧电压)；
+⑤Tras soldar hasta el punto final, establecer la corriente de soldadura en 100A y la tensión de soldadura en 19V (corriente y tensión de apagado del arco);
 
-⑥收弧电流、电压设置完成后保持500ms电弧燃烧(机器人不运动)，最后熄灭电弧。
+⑥Tras establecer la corriente y la tensión de apagado del arco, mantener el arco encendido durante 500ms (el robot no se mueve) y, por último, apagar el arco.
 
-不使用焊接工艺曲线时，即选择焊接工艺参数编号为0时，如下图，焊接过程为：
+Cuando no se utiliza la curva del proceso de soldadura, es decir, cuando se selecciona el número de parámetros del proceso de soldadura 0, como se muestra en la figura siguiente, el proceso de soldadura es:
 
-①设置焊接电流和焊接电压；
+①Establecer la corriente de soldadura y la tensión de soldadura;
 
-②机器人控制焊机起弧，并等待起弧成功；
+②El robot controla el encendido del arco de la máquina de soldar y espera al éxito del encendido del arco;
 
-③起弧成功后，机器人开始运动并进行焊接；
+③Tras el éxito del encendido del arco, el robot comienza a moverse y a soldar;
 
-④机器人焊接到终点后立即熄灭电弧。
+④Tras soldar hasta el punto final, el robot apaga inmediatamente el arco.
    
 .. figure:: robot_peripherals/046.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-11 不使用焊接工艺曲线 
+.. centered:: Figura 8.6-11 Sin utilizar la curva del proceso de soldadura 
 
-焊机JOB工艺序号
+Número de proceso JOB de la máquina de soldar
 *********************************************************************************************************
 
-选择扩展AO信号和工艺序号，输入等待时间。当工艺序号配置为非负1时，当焊接手柄的I/O选择扩展DO且扩展DO配置的信号为“焊机起弧”时，焊机起弧会选择对应的工艺。
+Seleccionar la señal AO extendida y el número de proceso, e introducir el tiempo de espera. Cuando el número de proceso se configura como un valor no negativo distinto de 1, cuando el I/O de la empuñadura de soldadura selecciona DO extendida y la señal configurada de la DO extendida es "Encendido del arco de la máquina de soldar", el encendido del arco de la máquina de soldar seleccionará el proceso correspondiente.
 
 .. figure:: robot_peripherals/326.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.6-11-1 焊机JOB工艺序号 
+.. centered:: Figura 8.6-11-1 Número de proceso JOB de la máquina de soldar 
 
-焊接电流电压与模拟量输出关系图设置
-***************************************
+Configuración del gráfico de relación entre corriente y tensión de soldadura y salida analógica
+***********************************************************************************************
 
-协作机器人焊接控制类型选择为“控制器IO”时，通过控制箱模拟量输出大小来控制焊接电流和焊接电压值(控制箱模拟量输出电压范围为0 ~ 10V)，此时需要配置控制箱模拟量输出值与实际焊接电流、焊接电压值的线性对应关系。
+Cuando el tipo de control de soldadura del robot colaborativo se selecciona como "IO del controlador", la corriente y la tensión de soldadura se controlan mediante la magnitud de la salida analógica de la caja de control (el rango de tensión de salida analógica de la caja de control es de 0 ~ 10V); en este momento es necesario configurar la relación lineal de correspondencia entre el valor de salida analógica de la caja de control y los valores reales de corriente y tensión de soldadura.
 
-如图12，在焊机配置页面找到“模拟量电流电压关系图”，其中“A-V”表示焊接电流与控制箱输出模拟量输出电压之间的对应关系，“V-V”表示焊接电压与控制箱输出模拟量电压之间的对应关系。
+Como se muestra en la Figura 12, en la página de configuración de la máquina de soldar, encontrar "Gráfico de relación corriente-tensión analógica", donde "A-V" representa la relación de correspondencia entre la corriente de soldadura y la tensión de salida analógica de la caja de control, y "V-V" representa la relación de correspondencia entre la tensión de soldadura y la tensión analógica de salida de la caja de control.
 
-选择“A-V”，输入焊接电流范围0-1000A，模拟量输出电压0-10V，输出AO为“Ctrl-AO0”(焊接电流控制模拟量输出端口为AO0)，点击“配置”按钮；在该参数下，控制箱输出模拟量电压1.5V时，对应焊接电流为150A。
+Seleccionar "A-V", introducir el rango de corriente de soldadura 0-1000A, la tensión de salida analógica 0-10V y la salida AO como "Ctrl-AO0" (el puerto de salida analógica de control de corriente de soldadura es AO0); hacer clic en el botón "Configurar"; con estos parámetros, cuando la caja de control emite una tensión analógica de 1.5V, la corriente de soldadura correspondiente es 150A.
    
 .. figure:: robot_peripherals/047.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-12 焊接电流与输出模拟量对应关系配置
+.. centered:: Figura 8.6-12 Configuración de la relación de correspondencia entre la corriente de soldadura y la salida analógica
 
-如图13，点击“V-V”设置焊接电压与控制箱模拟量输出电压之间的对应关系，输入焊接电压范围为0-60V，模拟量输出电压值为0-10V，输出AO为“Ctrl-AO1”(焊接电流控制模拟量输出端口为AO0)，点击“配置”按钮，此时。若控制箱AO1模拟量输出3.5V，实际控制焊接电压为21V。
+Como se muestra en la Figura 13, hacer clic en "V-V" para establecer la relación de correspondencia entre la tensión de soldadura y la tensión analógica de salida de la caja de control; introducir el rango de tensión de soldadura 0-60V, el valor de tensión de salida analógica 0-10V y la salida AO como "Ctrl-AO1" (el puerto de salida analógica de control de corriente de soldadura es AO0); hacer clic en el botón "Configurar"; en este momento, si la caja de control emite una salida analógica AO1 de 3.5V, la tensión de soldadura real controlada es 21V.
    
 .. figure:: robot_peripherals/048.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-13 焊接电压与输出模拟量对应关系配置
+.. centered:: Figura 8.6-13 Configuración de la relación de correspondencia entre la tensión de soldadura y la salida analógica
 
-焊机调试
-******************
+Depuración de la máquina de soldar
+***********************************
 
-如图14，在焊机配置页面中找到“焊机调试”，选择工艺编号1，输入超时时间为1000ms，点击“送气”，机器人即控制焊机开始输送保护气，点击“停气”按钮，机器人即控制焊机停止输送保护气。其他按钮“起弧”、“正向送丝”、“反向送丝”等操作方法相同，不再赘述。
+Como se muestra en la Figura 14, en la página de configuración de la máquina de soldar, encontrar "Depuración de la máquina de soldar", seleccionar el número de proceso 1 e introducir el tiempo de espera agotado de 1000ms; hacer clic en "Suministro de gas" y el robot controlará la máquina de soldar para comenzar a suministrar gas de protección; hacer clic en el botón "Corte de gas" y el robot controlará la máquina de soldar para detener el suministro de gas de protección. Los demás botones "Encendido del arco", "Alimentación de alambre en sentido directo", "Alimentación de alambre en sentido inverso", etc., se operan de la misma manera y no se detallan.
    
 .. figure:: robot_peripherals/049.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-14 焊机调试
+.. centered:: Figura 8.6-14 Depuración de la máquina de soldar
 
-“数字通信协议（UDP）”焊接控制配置
-+++++++++++++++++++++++++++++++++++
+Configuración del control de soldadura mediante "Protocolo de comunicación digital (UDP)"
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-机器人通过“数字通信协议”进行焊接控制，本质上是机器人与PLC进行UDP通信，机器人通过UDP通信将起弧、送丝、送气、电流、电压等控制数据传至PLC，再由PLC端进一步通过CANOpen总线(或其他方式)对焊机进行控制，同时PLC端采集实际的焊接电流电压、起弧成功信号反馈至机器人。(机器人UDP通信协议内容见附件一)。
+El control de soldadura del robot mediante el "Protocolo de comunicación digital" consiste esencialmente en la comunicación UDP entre el robot y el PLC; el robot transmite al PLC mediante comunicación UDP datos de control como el encendido del arco, la alimentación de alambre, el suministro de gas, la corriente y la tensión; el PLC controla a su vez la máquina de soldar mediante el bus CANOpen (u otro medio); al mismo tiempo, el PLC recoge la corriente y tensión de soldadura reales y la señal de éxito del encendido del arco y las realimenta al robot. (El contenido del protocolo de comunicación UDP del robot se muestra en el Anexo 1).
 
-在“初始设置”->“外设”菜单栏中，点击“焊机”进入焊机配置界面。如下图所示：
+En la barra de menú "Configuración inicial"->"Periféricos", hacer clic en "Máquina de soldar" para entrar en la interfaz de configuración de la máquina de soldar. Como se muestra en la figura siguiente:
    
 .. figure:: robot_peripherals/050.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-15 数字通信协议（UDP）
+.. centered:: Figura 8.6-15 Protocolo de comunicación digital (UDP)
 
-由于机器人与PLC进行UDP通信，因此需要配置UDP通信参数，其中各项参数的含义如下：
+Dado que el robot y el PLC se comunican mediante UDP, es necesario configurar los parámetros de comunicación UDP; el significado de cada parámetro es el siguiente:
 
-**IP地址**：UDP通信PLC端的IP地址；
+**Dirección IP**: dirección IP del extremo PLC de la comunicación UDP;
 
-**端口号**：PLC端UDP通信端口号；
+**Número de puerto**: número de puerto de comunicación UDP del extremo PLC;
 
-**通信周期**：机器人与PLC进行UDP通信的周期，默认为2ms；
+**Período de comunicación**: período de comunicación UDP entre el robot y el PLC, por defecto 2ms;
 
-**丢包检测周期、丢包次数**：在丢包检测周期内的丢包个数超过设定值时，机器人报“UDP通信丢包异常”错误，同时通信自动切断。
+**Período de detección de pérdida de paquetes, número de pérdidas de paquetes**: cuando el número de paquetes perdidos dentro del período de detección de pérdida de paquetes supera el valor establecido, el robot informa del error "Anomalía de pérdida de paquetes de comunicación UDP" y la comunicación se corta automáticamente.
 
-**通信中断确认时长**：机器人在该时长内未收到一帧完整的PLC反馈数据包即报“UDP通信中断”错误报警，同时切断UDP通信。
+**Duración de confirmación de interrupción de comunicación**: si el robot no recibe un paquete completo de datos de realimentación del PLC dentro de esta duración, informa de la alarma de error "Interrupción de comunicación UDP" y corta la comunicación UDP.
 
-**断电重启自动重连**：机器人检测到机器人断电重启后是否自动进行重连恢复；
+**Reconexión automática tras reinicio por corte de energía**: indica si el robot vuelve a conectarse automáticamente tras detectar el reinicio por corte de energía del robot;
 
-**通信中断自动重连**：机器人检测到UDP通信中断后是否自动进行重连恢复；
+**Reconexión automática tras interrupción de comunicación**: indica si el robot vuelve a conectarse automáticamente tras detectar una interrupción de la comunicación UDP;
 
-**重连周期、重连次数**：使能UDP通信中断自动重连且检测到UDP通信中断后，机器人以设定的周期进行重连，当重连次数达到最大设定值仍未连接成功时，机器人报“UDP通信中断”错误报警，同时切断UDP通信。
+**Período de reconexión, número de reconexiones**: tras habilitar la reconexión automática tras interrupción de comunicación UDP y detectar una interrupción de la comunicación UDP, el robot se reconecta con el período establecido; cuando el número de reconexiones alcanza el valor máximo establecido y aún no se ha conectado correctamente, el robot informa de la alarma de error "Interrupción de comunicación UDP" y corta la comunicación UDP.
 
-配置完成上述参数后，点击“配置”按钮。配置成功后，点击“加载”按钮。
+Tras configurar los parámetros anteriores, hacer clic en el botón "Configurar". Tras una configuración correcta, hacer clic en el botón "Cargar".
    
 .. figure:: robot_peripherals/051.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-16 UDP通讯配置
+.. centered:: Figura 8.6-16 Configuración de la comunicación UDP
 
 .. note:: 
    .. image:: robot_peripherals/052.png
       :height: 0.75in
       :align: left
 
-   名称：**编辑按钮**
+   Nombre: **Botón Editar**
    
-   作用：UDP通讯参数配置打开/关闭
+   Función: abrir/cerrar la configuración de los parámetros de comunicación UDP
 
 .. note:: 
    .. image:: robot_peripherals/053.png
       :height: 0.75in
       :align: left
 
-   名称：**加载按钮**
+   Nombre: **Botón Cargar**
    
-   作用：UDP通讯加载
+   Función: carga de la comunicación UDP
 
-焊接IO信号配置
-****************************
+Configuración de las señales IO de soldadura
+********************************************
 
-选择焊机状态信号DI输入端口和焊机控制信号DO输出端口，点击“配置”按钮，各信号含义如下：
+Seleccionar el puerto de entrada DI de la señal de estado de la máquina de soldar y el puerto de salida DO de la señal de control de la máquina de soldar, y hacer clic en el botón "Configurar"; el significado de cada señal es el siguiente:
    
 .. figure:: robot_peripherals/054.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-17 设置焊机信号端口
+.. centered:: Figura 8.6-17 Configuración de los puertos de señal de la máquina de soldar
 
-**焊机准备**：当焊机已经准备完成可以进行焊接作业时，焊机输出该信号至机器人；
+**Preparación de la máquina de soldar**: cuando la máquina de soldar ya está preparada para realizar la operación de soldadura, la máquina de soldar emite esta señal al robot;
 
-当焊机故障或其他原因未准备完成时，焊机未将该信号输入至机器人，此时机器人WebApp右上角提示“焊机未准备好”。若您的焊机没有焊机准备好信号，可将该项端口设置为“-1”。
+Cuando la máquina de soldar no está preparada por fallo u otras razones, la máquina de soldar no introduce esta señal en el robot; en este momento, la esquina superior derecha de WebApp del robot muestra "Máquina de soldar no preparada". Si su máquina de soldar no dispone de señal de preparación, puede configurar este puerto como "-1".
    
 .. figure:: robot_peripherals/041.png
    :align: center
    :width: 3in
 
-.. centered:: 图表 8.6-18 焊机未准备好报错
+.. centered:: Figura 8.6-18 Error de máquina de soldar no preparada
    
 .. figure:: robot_peripherals/055.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-19 焊机准备设置为“-1”
+.. centered:: Figura 8.6-19 Configuración de la preparación de la máquina de soldar como "-1"
 
-**起弧成功**：焊机起弧已成功，机器人输出起弧信号至焊机后，等待焊机反馈起弧成功信号，在设定的超时时间内机器人未检测到焊机的起弧成功信号，机器人报“起弧超时”错误；
+**Éxito del encendido del arco**: la máquina de soldar ha encendido el arco correctamente; el robot emite la señal de encendido del arco a la máquina de soldar y espera a que esta realimente la señal de éxito del encendido del arco; si dentro del tiempo de espera agotado establecido el robot no detecta la señal de éxito del encendido del arco de la máquina de soldar, el robot informa del error "Tiempo de espera agotado en el encendido del arco";
 
-使用机器人焊接功能时若未配置起弧成功信号仍可进行焊接，但机器人会报“起弧成功DI未配置”警告；若您的焊机有起弧成功信号输出，我们建议您配置此信号以进行更安全的焊接。
+Al utilizar la función de soldadura del robot, si no se configura la señal de éxito del encendido del arco, se puede seguir soldando, pero el robot informará de la advertencia "DI de éxito del encendido del arco no configurada"; si su máquina de soldar dispone de salida de señal de éxito del encendido del arco, le recomendamos configurar esta señal para realizar una soldadura más segura.
    
 .. figure:: robot_peripherals/043.png
    :align: center
    :width: 3in
 
-.. centered:: 图表 8.6-20 起弧超时报错	
+.. centered:: Figura 8.6-20 Error de tiempo de espera agotado en el encendido del arco	
       
 .. figure:: robot_peripherals/044.png
    :align: center
    :width: 3in
 
-.. centered:: 图表 8.6-21 起弧成功DI未配置报错
+.. centered:: Figura 8.6-21 Error de DI de éxito del encendido del arco no configurada
 
-**焊接中断恢复**：机器人焊接过程中电弧意外中断或操作人员主动暂停焊接时会触发焊接中断，焊接中断后外部向机器人输入该信号从无效变为有效时，机器人自动从原来中断的位置自动恢复焊接。
+**Recuperación de interrupción de soldadura**: cuando durante el proceso de soldadura del robot se interrumpe accidentalmente el arco o el operador pausa activamente la soldadura, se activa la interrupción de soldadura; tras la interrupción de soldadura, cuando la señal de entrada externa a la máquina cambia de no válida a válida, el robot reanuda automáticamente la soldadura desde la posición en que se interrumpió.
 
-**焊接中断退出**：机器人焊接过程中电弧意外中断或操作人员主动暂停焊接时会触发焊接中断，焊接中断后外部向机器人输入该信号从无效变为有效时，机器人终止焊接，焊接终止后不可再次恢复焊接。
+**Salida de interrupción de soldadura**: cuando durante el proceso de soldadura del robot se interrumpe accidentalmente el arco o el operador pausa activamente la soldadura, se activa la interrupción de soldadura; tras la interrupción de soldadura, cuando la señal de entrada externa a la máquina cambia de no válida a válida, el robot termina la soldadura; tras la terminación de la soldadura no se puede reanudar de nuevo.
 
-**焊机起弧**：机器人控制焊机起弧的DO输出端口，当机器人程序执行起弧指令时，焊机起弧对应DO输出端口自动输出有效。
+**Encendido del arco de la máquina de soldar**: puerto de salida DO del robot para controlar el encendido del arco de la máquina de soldar; cuando el programa del robot ejecuta la instrucción de encendido del arco, el puerto de salida DO correspondiente al encendido del arco de la máquina de soldar emite automáticamente un valor válido.
 
-**气体检测**：机器人控制焊机送气的DO输出端口，当机器人执行焊接送气指令时，送气对应的DO输出端口自动输出有效。
+**Detección de gas**: puerto de salida DO del robot para controlar el suministro de gas de la máquina de soldar; cuando el robot ejecuta la instrucción de suministro de gas de soldadura, el puerto de salida DO correspondiente al suministro de gas emite automáticamente un valor válido.
 
-**正向送丝**：机器人控制焊机正向送丝的DO输出端口，当机器人执行正向送丝指令时，正向送丝对应的DO输出端口自动输出有效。
+**Alimentación de alambre en sentido directo**: puerto de salida DO del robot para controlar la alimentación de alambre en sentido directo de la máquina de soldar; cuando el robot ejecuta la instrucción de alimentación de alambre en sentido directo, el puerto de salida DO correspondiente emite automáticamente un valor válido.
 
-**反向送丝**：机器人控制焊机反向送丝的DO输出端口，当机器人执行反向送丝指令时，反向送丝对应的DO输出端口自动输出有效。
+**Alimentación de alambre en sentido inverso**: puerto de salida DO del robot para controlar la alimentación de alambre en sentido inverso de la máquina de soldar; cuando el robot ejecuta la instrucción de alimentación de alambre en sentido inverso, el puerto de salida DO correspondiente emite automáticamente un valor válido.
 
-焊接工艺参数配置
-****************************
+Configuración de los parámetros del proceso de soldadura
+*********************************************************
 
-如图22，在焊接配置页面找到“焊接工艺参数”栏，协作机器人提供0 ~ 99共100组焊接工艺参数，其中工艺编号0表示不使用焊接工艺曲线，工艺编号1-99使用焊接工艺曲线。
+Como se muestra en la Figura 22, en la página de configuración de soldadura, encontrar la columna "Parámetros del proceso de soldadura"; el robot colaborativo ofrece 100 grupos de parámetros del proceso de soldadura, del 0 al 99; el número de proceso 0 indica que no se utiliza la curva del proceso de soldadura, y los números de proceso 1-99 utilizan la curva del proceso de soldadura.
       
 .. figure:: robot_peripherals/045.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-22 焊接工艺参数配置
+.. centered:: Figura 8.6-22 Configuración de los parámetros del proceso de soldadura
 
-使用焊接工艺曲线时，以选择焊接工艺编号1为例，依次输入起弧电流 ~ 收弧时间参数如图8中所示，点击“配置”按钮，该工艺参数表示的实际焊接过程如下：
+Al utilizar la curva del proceso de soldadura, tomando como ejemplo la selección del número de proceso de soldadura 1, introducir sucesivamente los parámetros desde la corriente de encendido del arco hasta el tiempo de apagado del arco como se muestra en la Figura 8 y hacer clic en el botón "Configurar"; el proceso real de soldadura representado por estos parámetros del proceso es el siguiente:
 
-①设置焊接电流200A、电压23V；
+①Establecer la corriente de soldadura en 200A y la tensión en 23V;
 
-②执行起弧，等待起弧成功；
+②Ejecutar el encendido del arco y esperar al éxito del encendido del arco;
 
-③起弧成功后电弧保持500ms(起弧时间，机器人不运动)；
+③Tras el éxito del encendido del arco, mantener el arco durante 500ms (tiempo de encendido del arco; el robot no se mueve);
 
-④设置焊接电流150A、焊接电压21V，然后机器人开始运动并进行焊接；
+④Establecer la corriente de soldadura en 150A y la tensión de soldadura en 21V; a continuación, el robot comienza a moverse y a soldar;
 
-⑤焊接到终点后，设置焊接电流为100A、焊接电压为19V(收弧电流、收弧电压)；
+⑤Tras soldar hasta el punto final, establecer la corriente de soldadura en 100A y la tensión de soldadura en 19V (corriente y tensión de apagado del arco);
 
-⑥设置完收弧电流、电压后保持500ms电弧燃烧(机器人不运动)，最后熄灭电弧。
+⑥Tras establecer la corriente y la tensión de apagado del arco, mantener el arco encendido durante 500ms (el robot no se mueve) y, por último, apagar el arco.
 
-不使用焊接工艺参数时，即选择焊接工艺参数编号为0时，焊接过程为：
+Cuando no se utilizan los parámetros del proceso de soldadura, es decir, cuando se selecciona el número de parámetros del proceso de soldadura 0, el proceso de soldadura es:
 
-①通过设置电流、电压接口设置相应的焊接电流和焊接电压；
+①Establecer la corriente y la tensión de soldadura correspondientes mediante la interfaz de establecimiento de corriente y tensión;
 
-②机器人控制焊机起弧，并等待起弧成功；
+②El robot controla el encendido del arco de la máquina de soldar y espera al éxito del encendido del arco;
 
-③起弧成功后，机器人开始运动并进行焊接；
+③Tras el éxito del encendido del arco, el robot comienza a moverse y a soldar;
 
-④机器人焊接到终点后立即熄灭电弧。
+④Tras soldar hasta el punto final, el robot apaga inmediatamente el arco.
       
 .. figure:: robot_peripherals/046.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-23 不使用焊接工艺曲线
+.. centered:: Figura 8.6-23 Sin utilizar la curva del proceso de soldadura
 
-焊机调试
-******************
+Depuración de la máquina de soldar
+***********************************
 
-在焊机配置页面中找到“焊机调试”，选择工艺编号1，输入超时时间为1000ms，点击“送气”，机器人即控制焊机开始输送保护气，点击“停气”按钮，机器人即控制焊机停止输送保护气。其他按钮“起弧”、“正向送丝”、“反向送丝”等操作方法相同，不再赘述。
+En la página de configuración de la máquina de soldar, encontrar "Depuración de la máquina de soldar", seleccionar el número de proceso 1 e introducir el tiempo de espera agotado de 1000ms; hacer clic en "Suministro de gas" y el robot controlará la máquina de soldar para comenzar a suministrar gas de protección; hacer clic en el botón "Corte de gas" y el robot controlará la máquina de soldar para detener el suministro de gas de protección. Los demás botones "Encendido del arco", "Alimentación de alambre en sentido directo", "Alimentación de alambre en sentido inverso", etc., se operan de la misma manera y no se detallan.
 
 .. figure:: robot_peripherals/049.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.5-24 焊机调试
+.. centered:: Figura 8.5-24 Depuración de la máquina de soldar
 
-焊接程序编写
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Escritura del programa de soldadura
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-使用焊接工艺曲线的程序编写
-++++++++++++++++++++++++++++++++++++
+Escritura del programa con curva del proceso de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-选择使用焊接工艺曲线时(即选择焊接工艺参数编号1 ~ 99)，焊接过程中的电压电流控制遵循某个工艺参数编号设置的曲线参数，不需要再单独添加设置焊接电压和电流的指令。如图25，点击“示教程”->“程序编程”，新建用户程序“testWeld.lua”。
+Al seleccionar el uso de la curva del proceso de soldadura (es decir, seleccionar el número de parámetros del proceso de soldadura 1 ~ 99), el control de tensión y corriente durante el proceso de soldadura sigue los parámetros de la curva establecidos por un determinado número de parámetro de proceso, sin necesidad de añadir instrucciones separadas para establecer la tensión y la corriente de soldadura. Como se muestra en la Figura 25, hacer clic en "Enseñanza"->"Programación de programas" y crear el programa de usuario "testWeld.lua".
 
 .. figure:: robot_peripherals/056.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.6-25 创建“testWeld.lua”程序
+.. centered:: Figura 8.6-25 Creación del programa "testWeld.lua"
 
-在打开的焊接指令添加页面中选择控制类型为“控制器I/O”(根据实际配置的焊接控制方式选择)，选择焊接工艺编号为1(工艺编号0不使用焊接工艺曲线，工艺编号1-99使用焊接工艺曲线)，最大等待时间为10000ms，依次点击“起弧”按钮和“收弧”按钮，最后点击“应用”。
+En la página de adición de instrucciones de soldadura abierta, seleccionar el tipo de control como "I/O del controlador" (seleccionar según el método de control de soldadura configurado realmente), seleccionar el número de proceso de soldadura 1 (el número de proceso 0 no utiliza la curva del proceso de soldadura; los números de proceso 1-99 utilizan la curva del proceso de soldadura), el tiempo máximo de espera de 10000ms; hacer clic sucesivamente en el botón "Encendido del arco" y en el botón "Apagado del arco" y, por último, hacer clic en "Aplicar".
 
 .. figure:: robot_peripherals/057.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.6-26 焊接指令添加
+.. centered:: Figura 8.6-26 Adición de la instrucción de soldadura
 
-此时“testWeld.lua”程序中已添加焊接起弧指令和焊接收弧指令，由于焊接起弧、收弧选择使用焊接工艺曲线编号1，因此焊接过程中的电压电流控制遵循工艺编号1设置的曲线参数，不需要再单独添加设置焊接电压和电流的指令。
+En este momento, en el programa "testWeld.lua" ya se han añadido la instrucción de encendido del arco de soldadura y la instrucción de apagado del arco de soldadura; dado que el encendido y el apagado del arco de soldadura seleccionan el uso del número de curva del proceso de soldadura 1, el control de tensión y corriente durante el proceso de soldadura sigue los parámetros de la curva establecidos por el número de proceso 1, sin necesidad de añadir instrucciones separadas para establecer la tensión y la corriente de soldadura.
 
 .. figure:: robot_peripherals/058.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.6-27 起弧收弧程序
+.. centered:: Figura 8.6-27 Programa de encendido y apagado del arco
 
-添加两个直线运动指令，并调整指令顺序，使机器人先运动到“P1”点，执行起弧，再运动到“P2”点，执行收弧，实现机器人从“P1”点焊接至“P2”点。
+Añadir dos instrucciones de movimiento en línea recta y ajustar el orden de las instrucciones para que el robot se desplace primero al punto "P1", ejecute el encendido del arco, y luego se desplace al punto "P2" y ejecute el apagado del arco, logrando que el robot suelde desde el punto "P1" hasta el punto "P2".
 
 .. figure:: robot_peripherals/059.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.6-28 机器人从P1点焊接至P2点
+.. centered:: Figura 8.6-28 El robot suelda desde el punto P1 hasta el punto P2
 
-不使用焊接工艺曲线的程序编写
-++++++++++++++++++++++++++++++++++++
+Escritura del programa sin curva del proceso de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-选择不使用焊接工艺曲线时(即选择焊接工艺参数编号0)，焊接程序中需添加设置焊接电压、电流的指令以控制实际的焊接参数。点击“示教模拟”、“程序示教”，新建用户程序“testWeld.lua”。
+Al seleccionar no utilizar la curva del proceso de soldadura (es decir, seleccionar el número de parámetros del proceso de soldadura 0), en el programa de soldadura es necesario añadir instrucciones para establecer la tensión y la corriente de soldadura, con el fin de controlar los parámetros reales de soldadura. Hacer clic en "Enseñanza por simulación", "Enseñanza de programas" y crear el programa de usuario "testWeld.lua".
 
 .. figure:: robot_peripherals/056.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.6-29 创建“testWeld.lua”程序
+.. centered:: Figura 8.6-29 Creación del programa "testWeld.lua"
 
-在打开的焊接指令添加页面中选择控制类型为“控制器I/O”(根据实际配置的焊接控制方式选择)，选择焊接工艺编号为0(工艺编号0不使用焊接工艺曲线，工艺编号1-99使用焊接工艺曲线)，焊接电流控制AO为“Ctrl-AO0”，焊接电流为150A，点击“添加”按钮；设置焊接电压控制AO为“Ctrl-AO1”，焊接电压为21V，点击“添加”按钮；设置最大等待时间为10000ms，依次点击“起弧”按钮和“收弧”按钮，最后点击“应用”。
+En la página de adición de instrucciones de soldadura abierta, seleccionar el tipo de control como "I/O del controlador" (seleccionar según el método de control de soldadura configurado realmente), seleccionar el número de proceso de soldadura 0 (el número de proceso 0 no utiliza la curva del proceso de soldadura; los números de proceso 1-99 utilizan la curva del proceso de soldadura), la AO de control de corriente de soldadura como "Ctrl-AO0", la corriente de soldadura de 150A, y hacer clic en el botón "Añadir"; configurar la AO de control de tensión de soldadura como "Ctrl-AO1", la tensión de soldadura de 21V, y hacer clic en el botón "Añadir"; configurar el tiempo máximo de espera de 10000ms; hacer clic sucesivamente en el botón "Encendido del arco" y en el botón "Apagado del arco" y, por último, hacer clic en "Aplicar".
 
 .. figure:: robot_peripherals/057.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.6-30 焊接指令添加
+.. centered:: Figura 8.6-30 Adición de la instrucción de soldadura
 
-此时“testWeld.lua”程序中已添加焊接起弧指令和焊接收弧指令，由于焊接起弧、收弧指令选择焊接工艺编号0，程序执行设置焊接电压、电流指令时，机器人将根据设置的焊接电压、电流数值和焊机配置页面中设置的“焊接电压、电流与输出模拟量对应关系”自动输出对应的控制箱模拟量。
+En este momento, en el programa "testWeld.lua" ya se han añadido la instrucción de encendido del arco de soldadura y la instrucción de apagado del arco de soldadura; dado que las instrucciones de encendido y apagado del arco de soldadura seleccionan el número de proceso de soldadura 0, cuando el programa ejecuta las instrucciones de establecimiento de tensión y corriente de soldadura, el robot emitirá automáticamente la salida analógica de la caja de control correspondiente según los valores de tensión y corriente de soldadura establecidos y la "Relación de correspondencia entre la tensión y corriente de soldadura y la salida analógica" establecida en la página de configuración de la máquina de soldar.
 
 .. figure:: robot_peripherals/060.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.6-31 设置焊接电压、电流、起弧、收弧程序
+.. centered:: Figura 8.6-31 Programa de establecimiento de tensión y corriente de soldadura, encendido y apagado del arco
 
-添加两个直线运动指令，并调整指令顺序，使机器人先运动到“P1”点，执行起弧，再运动到“P2”点，执行收弧，实现机器人从“P1”点焊接至“P2”点。
+Añadir dos instrucciones de movimiento en línea recta y ajustar el orden de las instrucciones para que el robot se desplace primero al punto "P1", ejecute el encendido del arco, y luego se desplace al punto "P2" y ejecute el apagado del arco, logrando que el robot suelde desde el punto "P1" hasta el punto "P2".
 
 .. figure:: robot_peripherals/061.png
    :align: center
    :width: 6in 
 
-.. centered:: 图表 8.6-32 机器人从P1点焊接至P2点
+.. centered:: Figura 8.6-32 El robot suelda desde el punto P1 hasta el punto P2
 
-运行上述程序，即可实现一条直线P1 ~ P2的焊接，在运行程序前请检查：
+Al ejecutar el programa anterior se puede realizar la soldadura de una línea recta de P1 a P2; antes de ejecutar el programa, compruebe:
 
-①焊枪是否已经正确安装，焊枪工具坐标系是否完成标定，并应用为当前的工具坐标系；
+①Si la antorcha de soldadura está correctamente instalada, si se ha completado la calibración del sistema de coordenadas de herramienta de la antorcha y si se ha aplicado como sistema de coordenadas de herramienta actual;
 
-②焊接电源、气路、丝路是否正常工作；
+②Si la fuente de alimentación de soldadura, el circuito de gas y el circuito de alambre funcionan con normalidad;
 
-③机器人与焊机之间的各信号线连接是否正常。
+③Si las conexiones de las distintas líneas de señal entre el robot y la máquina de soldar son normales.
 
-焊接中断与恢复
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Interrupción y recuperación de la soldadura
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-机器人焊接过程中可能在以下情况下发生中断：
+Durante el proceso de soldadura del robot se puede producir una interrupción en las siguientes situaciones:
 
-①操作人员主动暂停焊接，以观察实际焊接情况或清理喷嘴等操作；
+①El operador pausa activamente la soldadura para observar la situación real de la soldadura o limpiar la boquilla, etc.;
 
-②焊接电弧意外中断；
+②El arco de soldadura se interrumpe accidentalmente;
 
-③机器人发生碰撞导致焊接暂停；
+③El robot sufre una colisión que provoca la pausa de la soldadura;
 
-机器人焊接过程中发生中断后，操作人员可以将机器人切换至手动模式，拖动机器人至安全位置，并对中断发生原因进行处理。
+Tras producirse una interrupción durante el proceso de soldadura del robot, el operador puede cambiar el robot al modo manual, arrastrarlo hasta una posición segura y tratar la causa de la interrupción.
 
-问题处理完成后，协作机器人可以从当前位置自动移动到焊接中断发生的位置重新起弧并恢复焊接，具体的操作过程为：
+Tras resolver el problema, el robot colaborativo puede desplazarse automáticamente desde la posición actual hasta la posición en que se produjo la interrupción de soldadura, volver a encender el arco y reanudar la soldadura; el proceso concreto de operación es:
 
-①焊接中断恢复参数配置；
+①Configuración de los parámetros de recuperación de interrupción de soldadura;
 
-②执行焊接程序，在焊接过程中暂停焊接使焊接中断；
+②Ejecutar el programa de soldadura y pausar la soldadura durante el proceso para provocar la interrupción de soldadura;
 
-③将机器人切换至手动模式，并处理相关问题，处理完成后再将机器人切换至自动模式；
+③Cambiar el robot al modo manual y tratar los problemas correspondientes; tras completar el tratamiento, volver a cambiar el robot al modo automático;
 
-④点击“恢复焊接”按钮，机器人自动恢复焊接。
+④Hacer clic en el botón "Recuperar soldadura" y el robot reanuda automáticamente la soldadura.
 
-焊接中断恢复参数配置
-+++++++++++++++++++++++++++++
+Configuración de los parámetros de recuperación de interrupción de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-在“初始设置”->“外设”菜单栏中，点击“焊机”进入焊机配置界面，找到“检测电弧中断参数配置”栏，打开“功能启用”，输入“确认时长”为20ms，点击“配置”按钮，即焊接过程中起弧成功信号无效时间超过20ms时，机器人会报出“焊接电弧中断”错误。
+En la barra de menú "Configuración inicial"->"Periféricos", hacer clic en "Máquina de soldar" para entrar en la interfaz de configuración de la máquina de soldar y encontrar la columna "Configuración de parámetros de detección de interrupción del arco"; activar "Habilitación de función", introducir la "Duración de confirmación" de 20ms y hacer clic en el botón "Configurar"; es decir, cuando durante el proceso de soldadura la señal de éxito del encendido del arco no es válida durante más de 20ms, el robot informa del error "Interrupción del arco de soldadura".
 
 .. figure:: robot_peripherals/062.png
    :align: center
    :width: 4in 
 
-.. centered:: 图表 8.6-33 检测电弧中断参数配置参数配置
+.. centered:: Figura 8.6-33 Configuración de los parámetros de detección de interrupción del arco
 
 
-找到“焊接中断再恢复参数配置”栏，打开“功能启用”，输入“重叠距离”为5mm，“速度”为10%，“运动方式”为“PTP”，点击“配置”按钮，上述三个参数解释如下：
+Encontrar la columna "Configuración de parámetros de reanudación tras interrupción de soldadura", activar "Habilitación de función", introducir la "Distancia de solapamiento" de 5mm, la "Velocidad" del 10% y el "Modo de movimiento" como "PTP", y hacer clic en el botón "Configurar"; la explicación de los tres parámetros anteriores es la siguiente:
 
-**重叠距离**：焊接恢复时为了保证恢复后焊缝与中断前焊缝的连续性，恢复焊接的起弧点与原焊缝需要有一定的重叠距离。
+**Distancia de solapamiento**: para garantizar la continuidad entre la soldadura posterior a la recuperación y la soldadura anterior a la interrupción, el punto de encendido del arco de la recuperación de la soldadura debe tener una cierta distancia de solapamiento con la soldadura original.
 
-**速度**：焊接中断后往往需要将机器人移至安全位置并对焊缝进行处理，处理完成后执行焊接恢复时，机器人将从当前位置移至焊接再起弧点，该“速度”即表示机器人移动至再起弧点的速度。
+**Velocidad**: tras la interrupción de la soldadura, a menudo es necesario desplazar el robot hasta una posición segura y tratar la soldadura; tras completar el tratamiento, al ejecutar la recuperación de la soldadura, el robot se desplazará desde la posición actual hasta el punto de reencendido del arco; esta "Velocidad" representa la velocidad a la que el robot se desplaza hasta el punto de reencendido del arco.
 
-**运动方式**：焊接中断后往往需要将机器人移至安全位置并对焊缝进行处理，处理完成后执行焊接恢复时，机器人将从当前位置移至焊接再起弧点，该“运动方式”即表示机器人移动至再起弧点的运动方式，有“LIN”和“PTP”两种方式可供选择。
+**Modo de movimiento**: tras la interrupción de la soldadura, a menudo es necesario desplazar el robot hasta una posición segura y tratar la soldadura; tras completar el tratamiento, al ejecutar la recuperación de la soldadura, el robot se desplazará desde la posición actual hasta el punto de reencendido del arco; este "Modo de movimiento" representa el modo de movimiento con el que el robot se desplaza hasta el punto de reencendido del arco, pudiendo seleccionarse entre "LIN" y "PTP".
 
 .. figure:: robot_peripherals/063.png
    :align: center
    :width: 4in 
 
-.. centered:: 图表 8.6-34 焊接中断再恢复参数配置
+.. centered:: Figura 8.6-34 Configuración de los parámetros de reanudación tras interrupción de soldadura
 
-焊接中断恢复应用
-+++++++++++++++++++++++++++++
+Aplicación de la recuperación de interrupción de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-以“testWeld”程序为例，将机器人切换至自动模式，点击启动按钮，机器人开始进行焊接作业，在焊接过程中点击暂停按钮，此时焊接中断，在WebApp右上角弹出焊接中断恢复提示框，点击“恢复焊接”按钮，机器人自动移至再起弧点并执行后续的焊接作业。
+Tomando como ejemplo el programa "testWeld", cambiar el robot al modo automático y hacer clic en el botón de inicio; el robot comienza la operación de soldadura; durante el proceso de soldadura, hacer clic en el botón de pausa; en este momento se produce la interrupción de la soldadura y en la esquina superior derecha de WebApp aparece el cuadro de aviso de recuperación de interrupción de soldadura; hacer clic en el botón "Recuperar soldadura" y el robot se desplaza automáticamente hasta el punto de reencendido del arco y ejecuta la operación de soldadura posterior.
 
 .. figure:: robot_peripherals/064.png
    :align: center
    :width: 6in 
 
-.. centered:: 图表 8.6-35 执行焊接程序
+.. centered:: Figura 8.6-35 Ejecución del programa de soldadura
 
 .. figure:: robot_peripherals/065.png
    :align: center
    :width: 6in 
 
-.. centered:: 图表 8.6-36 焊接恢复
+.. centered:: Figura 8.6-36 Recuperación de la soldadura
 
 .. warning:: 
-   协作机器人焊接中断恢复功能仅可用于直线焊缝或圆弧焊缝，当使用while（1）循环焊接时，不支持嵌套多层while循环，不可包含含有局部变量的条件判断语句。如果使用段焊功能，请注意增加反馈段焊信息接口。
+   La función de recuperación de interrupción de soldadura del robot colaborativo solo se puede utilizar para soldaduras en línea recta o soldaduras en arco; cuando se utiliza la soldadura en bucle while(1), no se admite el anidamiento de múltiples bucles while y no se pueden incluir sentencias de juicio condicional con variables locales. Si se utiliza la función de soldadura por segmentos, tenga en cuenta añadir la interfaz de realimentación de información de soldadura por segmentos.
 
-机器人激光焊机通信适配
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adaptación de comunicación de la máquina de soldar láser del robot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-背景
+Antecedentes
 ++++++++++++++++++++++++++++++++++++++++++++
 
-本用户手册仅已当前已经适配的激光焊机REDSABERE 1500为例进行解释说明。机器人通过“数字通信协议”进行焊接控制，本质上是机器人与PLC进行UDP通信，机器人通过UDP通信将控制数据传至PLC，再由PLC端进一步通过Modbus RTU对激光焊机进行控制，同时PLC端采集实际的激光焊接工艺参数及控制信号等反馈至机器人。机器人UDP通信协议内容见附件一。
+Este manual de usuario se explica tomando como ejemplo la máquina de soldar láser REDSABERE 1500, que ya ha sido adaptada. El robot controla la soldadura mediante el "Protocolo de comunicación digital"; esencialmente se trata de la comunicación UDP entre el robot y el PLC; el robot transmite los datos de control al PLC mediante comunicación UDP; el PLC controla a su vez la máquina de soldar láser mediante Modbus RTU; al mismo tiempo, el PLC recoge los parámetros reales del proceso de soldadura láser y las señales de control y las realimenta al robot. El contenido del protocolo de comunicación UDP del robot se muestra en el Anexo 1.
 
-PLC配置
+Configuración del PLC
 ++++++++++++++++++++++++++++++++++++++++++++
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 1
 
-   * - 品牌
-     - 型号
-     - 软件
-     - IP地址
-   * - 汇川
+   * - Marca
+     - Modelo
+     - Software
+     - Dirección IP
+   * - Inovance
      - EASY521-0808TN
      - AutoShopV4.11.0.1
      - 192.168.58.88
 			
-程序下载：打开测试程序，PLCIP地址默认是“192.168.1.88”，将PLC IP地址改为“192.168.58.88”；
+Descarga del programa: abrir el programa de prueba; la dirección IP del PLC por defecto es "192.168.1.88"; cambiar la dirección IP del PLC a "192.168.58.88";
 
-单击test测试按钮，进行当前PLC通讯连接，如下图；     
+Hacer clic en el botón de prueba test para realizar la conexión de comunicación actual del PLC, como se muestra en la figura siguiente;     
 
 .. figure:: robot_peripherals/293.png
    :align: center
    :width: 6in 
 
-.. centered:: 图表 8.6-37 PLC通信连接
+.. centered:: Figura 8.6-37 Conexión de comunicación del PLC
 
-连接当前PLC通讯成功后，进行修改IP，如下图；
+Tras establecer correctamente la conexión de comunicación actual del PLC, modificar la IP, como se muestra en la figura siguiente;
 
 .. figure:: robot_peripherals/294.png
    :align: center
    :width: 6in 
 
-.. centered:: 图表 8.6-38 PLC修改IP地址
+.. centered:: Figura 8.6-38 Modificación de la dirección IP del PLC
 
-更改为192.168.58.88，默认网关更改为192.168.58.1，如下图；
+Cambiar a 192.168.58.88 y la puerta de enlace predeterminada a 192.168.58.1, como se muestra en la figura siguiente;
 
 .. figure:: robot_peripherals/295.png
    :align: center
    :width: 6in 
 
-.. centered:: 图表 8.6-39 PLC修改网关地址
+.. centered:: Figura 8.6-39 Modificación de la dirección de puerta de enlace del PLC
 
-更改电脑本地IP地址在58网段，再次单机test测试按钮，验证通讯是否成功，如下图；
+Cambiar la dirección IP local del ordenador al segmento de red 58 y volver a hacer clic en el botón de prueba test para verificar si la comunicación se ha realizado correctamente, como se muestra en la figura siguiente;
 
 .. figure:: robot_peripherals/296.png
    :align: center
    :width: 6in 
 
-.. centered:: 图表 8.6-40 PLC连接测试
+.. centered:: Figura 8.6-40 Prueba de conexión del PLC
 
-单击下载按钮，进行程序下载，如下图。
+Hacer clic en el botón de descarga para descargar el programa, como se muestra en la figura siguiente.
 
 .. figure:: robot_peripherals/297.png
    :align: center
    :width: 6in 
 
-.. centered:: 图表 8.6-41 PLC程序下载
+.. centered:: Figura 8.6-41 Descarga del programa del PLC
 
-激光焊机参数配置
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configuración de parámetros de la máquina de soldar láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-协作机器人通过“数字通信协议”进行焊接过程控制，使用“数字通信协议”时需要先配置通信参数。
+El robot colaborativo controla el proceso de soldadura mediante el "Protocolo de comunicación digital"; al utilizar el "Protocolo de comunicación digital" es necesario configurar primero los parámetros de comunicación.
 
-“数字通信协议”配置
+Configuración del "Protocolo de comunicación digital"
 *************************************************************************************
 
-如下图所示，打开WebApp，依次点击“初始设置”、“外设”、“焊机”、“激光焊”、“数字通信协议（UDP）”、“UDP通讯配置”。
+Como se muestra en la figura siguiente, abrir WebApp y hacer clic sucesivamente en "Configuración inicial", "Periféricos", "Máquina de soldar", "Soldadura láser", "Protocolo de comunicación digital (UDP)", "Configuración de comunicación UDP".
 
 .. figure:: robot_peripherals/298.png
    :align: center
    :width: 6in 
 
-.. centered:: 图表 8.6-42 通信协议配置
+.. centered:: Figura 8.6-42 Configuración del protocolo de comunicación
 
-其中各项参数的含义如下：
+El significado de cada parámetro es el siguiente:
 
-- **IP地址**：UDP通信PLC端的IP地址；
-- **端口号**：PLC端UDP通信端口号；
-- **通信周期**：机器人与PLC进行UDP通信的周期，默认为2ms；
-- **丢包检测周期、丢包次数**：在丢包检测周期内的丢包个数超过设定值时，机器人报“UDP通信丢包异常”错误，同时通信自动切断；
-- **通信中断确认时长**：机器人在该时长内未收到一帧完整的PLC反馈数据包即报“UDP通信中断”错误报警，同时切断UDP通信；
-- **通信中断自动重连**：机器人检测到UDP通信中断后是否自动进行重连恢复；
-- **重连周期、重连次数**：使能UDP通信中断自动重连且检测到UDP通信中断后，机器人以设定的周期进行重连，当重连次数达到最大设定值仍未连接成功时，机器人报“UDP通信中断”错误报警，同时切断UDP通信。
+- **Dirección IP**: dirección IP del extremo PLC de la comunicación UDP;
+- **Número de puerto**: número de puerto de comunicación UDP del extremo PLC;
+- **Período de comunicación**: período de comunicación UDP entre el robot y el PLC, por defecto 2ms;
+- **Período de detección de pérdida de paquetes, número de pérdidas de paquetes**: cuando el número de paquetes perdidos dentro del período de detección de pérdida de paquetes supera el valor establecido, el robot informa del error "Anomalía de pérdida de paquetes de comunicación UDP" y la comunicación se corta automáticamente;
+- **Duración de confirmación de interrupción de comunicación**: si el robot no recibe un paquete completo de datos de realimentación del PLC dentro de esta duración, informa de la alarma de error "Interrupción de comunicación UDP" y corta la comunicación UDP;
+- **Reconexión automática tras interrupción de comunicación**: indica si el robot vuelve a conectarse automáticamente tras detectar una interrupción de la comunicación UDP;
+- **Período de reconexión, número de reconexiones**: tras habilitar la reconexión automática tras interrupción de comunicación UDP y detectar una interrupción de la comunicación UDP, el robot se reconecta con el período establecido; cuando el número de reconexiones alcanza el valor máximo establecido y aún no se ha conectado correctamente, el robot informa de la alarma de error "Interrupción de comunicación UDP" y corta la comunicación UDP.
 
-配置完成上述参数后，依此点击“配置”和“加载”按钮。
+Tras configurar los parámetros anteriores, hacer clic sucesivamente en los botones "Configurar" y "Cargar".
 
-焊接功能IO配置
+Configuración de IO de la función de soldadura
 *************************************************************************************
 
-如下图，选择焊机状态信号DI输入端口和焊机控制信号DO输出端口，当前REDSABERE 1500激光焊机只支持焊机启动（出光）信号，其他信号暂未适配。选择端口后点击“配置”按钮进行配置。
+Como se muestra en la figura siguiente, seleccionar el puerto de entrada DI de la señal de estado de la máquina de soldar y el puerto de salida DO de la señal de control de la máquina de soldar; actualmente la máquina de soldar láser REDSABERE 1500 solo admite la señal de inicio (salida de luz) de la máquina de soldar; las demás señales aún no se han adaptado. Tras seleccionar los puertos, hacer clic en el botón "Configurar" para configurar.
 
 .. figure:: robot_peripherals/299.png
    :align: center
    :width: 4in 
 
-.. centered:: 图表 8.6-43 配置焊机功能IO
+.. centered:: Figura 8.6-43 Configuración de IO de la función de la máquina de soldar
 
-AUX-DI信号含义如下：
+El significado de las señales AUX-DI es el siguiente:
 
-- **焊机准备**：当焊机已经准备完成可以进行焊接作业时，焊机输出该信号至机器人；当焊机故障或其他原因未准备完成时，焊机未将该信号输入至机器人，此时机器人WebApp右上角提示“焊机未准备好”。REDSABERE 1500激光焊机不支持该信号，暂未适配。
-- **焊机运行状态**：当焊机进入运行状态时，焊机输出该信号至机器人。REDSABERE 1500激光焊机不支持该信号，暂未适配。
-- **焊机故障状态**：当焊机故障时，焊机将该信号输入至机器人。REDSABERE 1500激光焊机不支持该信号，暂未适配。
+- **Preparación de la máquina de soldar**: cuando la máquina de soldar ya está preparada para realizar la operación de soldadura, la máquina de soldar emite esta señal al robot; cuando la máquina de soldar no está preparada por fallo u otras razones, la máquina de soldar no introduce esta señal en el robot; en este momento, la esquina superior derecha de WebApp del robot muestra "Máquina de soldar no preparada". La máquina de soldar láser REDSABERE 1500 no admite esta señal; aún no se ha adaptado.
+- **Estado de funcionamiento de la máquina de soldar**: cuando la máquina de soldar entra en estado de funcionamiento, la máquina de soldar emite esta señal al robot. La máquina de soldar láser REDSABERE 1500 no admite esta señal; aún no se ha adaptado.
+- **Estado de fallo de la máquina de soldar**: cuando la máquina de soldar presenta un fallo, la máquina de soldar introduce esta señal en el robot. La máquina de soldar láser REDSABERE 1500 no admite esta señal; aún no se ha adaptado.
 
-AUX-DO信号含义如下：
+El significado de las señales AUX-DO es el siguiente:
 
-- **焊机使能**：机器人控制焊机使能的DO输出端口，当机器人程序执行焊机使能指令时，焊机使能对应DO输出端口自动输出有效。REDSABERE 1500激光焊机不支持该信号，暂未适配。
-- **焊机启动（出光）**：机器人控制焊机启动（出光）的DO输出端口，当机器人程序执行焊机启动（出光）指令时，焊机启动（出光）对应DO输出端口自动输出有效。修改DO输出端口时需要同时修改PLC程序对应的控制端口，当前PLC默认为DO1。
-- **气体检测**：机器人控制焊机送气的DO输出端口，当机器人执行焊接送气指令时，送气对应的DO输出端口自动输出有效。REDSABERE 1500激光焊机不支持该信号，暂未适配。
-- **焊机故障复位**：机器人控制焊机故障复位的DO输出端口，当机器人程序执行焊机故障复位指令时，焊机故障复位对应DO输出端口自动输出有效。REDSABERE 1500激光焊机不支持该信号，暂未适配。
-- **正向送丝**：机器人控制焊机正向送丝的DO输出端口，当机器人执行正向送丝指令时，正向送丝对应的DO输出端口自动输出有效。REDSABERE 1500激光焊机不支持该信号，暂未适配。
-- **反向送丝**：机器人控制焊机反向送丝的DO输出端口，当机器人执行反向送丝指令时，反向送丝对应的DO输出端口自动输出有效。REDSABERE 1500激光焊机不支持该信号，暂未适配。
+- **Habilitación de la máquina de soldar**: puerto de salida DO del robot para controlar la habilitación de la máquina de soldar; cuando el programa del robot ejecuta la instrucción de habilitación de la máquina de soldar, el puerto de salida DO correspondiente a la habilitación de la máquina de soldar emite automáticamente un valor válido. La máquina de soldar láser REDSABERE 1500 no admite esta señal; aún no se ha adaptado.
+- **Inicio de la máquina de soldar (salida de luz)**: puerto de salida DO del robot para controlar el inicio (salida de luz) de la máquina de soldar; cuando el programa del robot ejecuta la instrucción de inicio (salida de luz) de la máquina de soldar, el puerto de salida DO correspondiente al inicio (salida de luz) de la máquina de soldar emite automáticamente un valor válido. Al modificar el puerto de salida DO es necesario modificar simultáneamente el puerto de control correspondiente del programa del PLC; actualmente el PLC tiene por defecto DO1.
+- **Detección de gas**: puerto de salida DO del robot para controlar el suministro de gas de la máquina de soldar; cuando el robot ejecuta la instrucción de suministro de gas de soldadura, el puerto de salida DO correspondiente al suministro de gas emite automáticamente un valor válido. La máquina de soldar láser REDSABERE 1500 no admite esta señal; aún no se ha adaptado.
+- **Restablecimiento de fallo de la máquina de soldar**: puerto de salida DO del robot para controlar el restablecimiento de fallo de la máquina de soldar; cuando el programa del robot ejecuta la instrucción de restablecimiento de fallo de la máquina de soldar, el puerto de salida DO correspondiente emite automáticamente un valor válido. La máquina de soldar láser REDSABERE 1500 no admite esta señal; aún no se ha adaptado.
+- **Alimentación de alambre en sentido directo**: puerto de salida DO del robot para controlar la alimentación de alambre en sentido directo de la máquina de soldar; cuando el robot ejecuta la instrucción de alimentación de alambre en sentido directo, el puerto de salida DO correspondiente emite automáticamente un valor válido. La máquina de soldar láser REDSABERE 1500 no admite esta señal; aún no se ha adaptado.
+- **Alimentación de alambre en sentido inverso**: puerto de salida DO del robot para controlar la alimentación de alambre en sentido inverso de la máquina de soldar; cuando el robot ejecuta la instrucción de alimentación de alambre en sentido inverso, el puerto de salida DO correspondiente emite automáticamente un valor válido. La máquina de soldar láser REDSABERE 1500 no admite esta señal; aún no se ha adaptado.
 
-焊接工艺参数配置
+Configuración de los parámetros del proceso de soldadura
 *************************************************************************************
 
-如下图，在焊接配置页面找到“焊接工艺参数”栏，协作机器人提供0 ~ 10共10组焊接工艺参数，其中工艺编号0表示不使用焊接工艺曲线，工艺编号1-10使用焊接工艺曲线。
+Como se muestra en la figura siguiente, en la página de configuración de soldadura, encontrar la columna "Parámetros del proceso de soldadura"; el robot colaborativo ofrece 10 grupos de parámetros del proceso de soldadura, del 0 al 10; el número de proceso 0 indica que no se utiliza la curva del proceso de soldadura, y los números de proceso 1-10 utilizan la curva del proceso de soldadura.
 
 .. figure:: robot_peripherals/300.png
    :align: center
    :width: 4in 
 
-.. centered:: 图表 8.6-44 焊接工艺参数配置
+.. centered:: Figura 8.6-44 Configuración de los parámetros del proceso de soldadura
 
-使用焊接工艺曲线时，以选择焊接工艺编号1为例，依次输入“扫描速度（mm/s）”、“扫描宽度（mm）”、“峰值功率（W）”、“占空比（%）”、“频率（Hz）”。
+Al utilizar la curva del proceso de soldadura, tomando como ejemplo la selección del número de proceso de soldadura 1, introducir sucesivamente la "Velocidad de escaneo (mm/s)", la "Anchura de escaneo (mm)", la "Potencia de pico (W)", el "Ciclo de trabajo (%)" y la "Frecuencia (Hz)".
 
-REDSABERE 1500激光焊机扫描速度受扫描宽度限制，限制关系：10≤ 扫描速度/(扫描宽度×2) ≤500。超出则⾃动变为限值。扫描宽度设为0时不扫描 （即点光源）。否则会报错，web会显示“焊机通信异常”，当配置正常后错误会自动消失。如下图。
+La velocidad de escaneo de la máquina de soldar láser REDSABERE 1500 está limitada por la anchura de escaneo; relación de limitación: 10≤ velocidad de escaneo/(anchura de escaneo×2) ≤500. Si se supera, se convierte automáticamente en el valor límite. Cuando la anchura de escaneo se establece en 0 no se escanea (es decir, fuente de luz puntual). De lo contrario se informará de un error y la web mostrará "Anomalía de comunicación de la máquina de soldar"; tras una configuración correcta el error desaparecerá automáticamente. Como se muestra en la figura siguiente.
 
 .. figure:: robot_peripherals/301.png
    :align: center
    :width: 3in 
 
-.. centered:: 图表 8.6-45 焊机通信异常
+.. centered:: Figura 8.6-45 Anomalía de comunicación de la máquina de soldar
 
-焊机调试
+Depuración de la máquina de soldar
 *************************************************************************************
 
-如下图，在焊机配置页面中找到“焊机调试”，当前REDSABERE 1500激光焊机只支持收光、出光功能调试，“超时时间”，“使能”等其他按钮暂未适配。
+Como se muestra en la figura siguiente, en la página de configuración de la máquina de soldar, encontrar "Depuración de la máquina de soldar"; actualmente la máquina de soldar láser REDSABERE 1500 solo admite la depuración de las funciones de apagado y encendido de la luz; los demás botones "Tiempo de espera agotado", "Habilitación", etc., aún no se han adaptado.
 
 .. figure:: robot_peripherals/302.png
    :align: center
    :width: 4in 
 
-.. centered:: 图表 8.6-46 焊机调试
+.. centered:: Figura 8.6-46 Depuración de la máquina de soldar
 
-焊接程序编写
+Escritura del programa de soldadura
 ++++++++++++++++++++++++++++++++++++++++++++
 
-焊接功能指令已集成在示教程序内。如下图，点击“示教程序”、“程序编程”，新建用户程序“testWeld.lua”。
+Las instrucciones de la función de soldadura ya están integradas en el programa de enseñanza. Como se muestra en la figura siguiente, hacer clic en "Programa de enseñanza", "Programación de programas" y crear el programa de usuario "testWeld.lua".
 
 .. figure:: robot_peripherals/303.png
    :align: center
    :width: 6in 
 
-.. centered:: 图表 8.6-47 创建“testWeld.lua”程序
+.. centered:: Figura 8.6-47 Creación del programa "testWeld.lua"
 
-如下图，选择“焊接指令”，点击“激光焊”。
+Como se muestra en la figura siguiente, seleccionar "Instrucciones de soldadura" y hacer clic en "Soldadura láser".
 
 .. figure:: robot_peripherals/304.png
    :align: center
    :width: 6in 
 
-.. centered:: 图表 8.6-48 激光焊相关指令
+.. centered:: Figura 8.6-48 Instrucciones relacionadas con la soldadura láser
 
-如下图，激光焊接指令默认控制类型为“数字通信协议（UDP）”。可依此添加设置焊接工艺参数lua程序、获取焊接工艺参数lua程序、出光、收光指令。添加完lua指令后，点击“应用”按钮即可生成激光焊接lua程序，点击“保存”按钮，切换自动模式即可运行。
+Como se muestra en la figura siguiente, el tipo de control predeterminado de las instrucciones de soldadura láser es "Protocolo de comunicación digital (UDP)". Se pueden añadir sucesivamente el programa lua de establecimiento de parámetros del proceso de soldadura, el programa lua de obtención de parámetros del proceso de soldadura y las instrucciones de encendido y apagado de la luz. Tras añadir las instrucciones lua, hacer clic en el botón "Aplicar" para generar el programa lua de soldadura láser; hacer clic en el botón "Guardar", cambiar al modo automático y ejecutarlo.
 
 .. figure:: robot_peripherals/305.png
    :align: center
    :width: 6in 
 
-.. centered:: 图表 8.6-49 生成焊接程序
+.. centered:: Figura 8.6-49 Generación del programa de soldadura
 
-附件一：机器人UDP通信协议
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Anexo 1: Protocolo de comunicación UDP del robot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning:: 
-  1）CRC 校验方式：采用modbus 16 校验但只取低8位进行校验校验数据区域D100-D176，D200-D273。
+  1）Método de verificación CRC: se adopta la verificación modbus 16 pero solo se toman los 8 bits bajos para verificar la zona de datos D100-D176, D200-D273.
 
-  2）电弧跟踪：实际电流反馈是将PLC获取到焊机的实际电流转换成0-4095的模拟量传送到UDP数据协议的模拟量通道0即D168中。
+  2）Seguimiento de arco: la realimentación de corriente real consiste en convertir la corriente real de la máquina de soldar obtenida por el PLC en una señal analógica de 0-4095 y transmitirla al canal analógico 0 del protocolo de datos UDP, es decir, a D168.
 
-  3）速度换算逻辑：机器人下发速度（单位mm/s）V÷导程×60=V'；
+  3）Lógica de conversión de velocidad: la velocidad emitida por el robot (unidad mm/s) V÷paso×60=V';
 
-    PLC将机器人下发速度进行转换V'×编码器分辨率÷60=V"单位（脉冲/s）。
+    el PLC convierte la velocidad emitida por el robot V'×resolución del codificador÷60=V" unidad (pulsos/s).
 
-机器人控制器->PLC
-++++++++++++++++++++++
+Controlador del robot->PLC
+++++++++++++++++++++++++++
 
 .. list-table:: 
    :widths: 10 10 10 10 20
    :header-rows: 1
    :align: center
 
-   * - 序号
-     - 寄存器地址
-     - 数据类型
-     - 数据值
-     - 变量名
+   * - Número
+     - Dirección de registro
+     - Tipo de dato
+     - Valor de dato
+     - Nombre de variable
 
    * - 1
      - D199
      - INT
      - 0x5A5A
-     - 帧头
+     - Cabecera de trama
 
    * - 2
      - D200
      - INT
      - 
-     - 1#电机控制字
+     - Palabra de control del motor 1#
 
    * - 3
      - D201
      - DINT
      - 
-     - 1#目标位置输入
+     - Entrada de posición objetivo 1#
 
    * - 4
      - D202
      - DINT
      - 
-     - 1#目标位置输入
+     - Entrada de posición objetivo 1#
 
    * - 5
      - D203
      - INT
      - 
-     - 1#回零控制字
+     - Palabra de control de retorno a cero 1#
 
    * - 6
      - D204
      - DINT
      - 
-     - 1#回零高速度输入
+     - Entrada de velocidad alta de retorno a cero 1#
 
    * - 7
      - D205
      - DINT
      - 
-     - 1#回零高速度输入
+     - Entrada de velocidad alta de retorno a cero 1#
 
    * - 8
      - D206
      - DINT
      - 
-     - 1#回零低速度输入
+     - Entrada de velocidad baja de retorno a cero 1#
 
    * - 9
      - D207
      - DINT
      - 
-     - 1#回零低速度输入
+     - Entrada de velocidad baja de retorno a cero 1#
 
    * - 10
      - D208
      - DINT
      - 
-     - 1#位置偏置（预留）
+     - Desplazamiento de posición 1# (reservado)
 
    * - 11
      - D209
      - DINT
      - 
-     - 1#位置偏置（预留）
+     - Desplazamiento de posición 1# (reservado)
 
    * - 12
      - D210
      - DINT
      - 
-     - 1#速度偏置（预留）
+     - Desplazamiento de velocidad 1# (reservado)
 
    * - 13
      - D211
      - DINT
      - 
-     - 1#速度偏置（预留）
+     - Desplazamiento de velocidad 1# (reservado)
 
    * - 14
      - D212
      - DINT
      - 
-     - 1#转矩偏置（预留）
+     - Desplazamiento de par 1# (reservado)
 
    * - 15
      - D213
      - DINT
      - 
-     - 1#转矩偏置（预留）
+     - Desplazamiento de par 1# (reservado)
 
    * - 16
      - D214
      - INT
      - 
-     - 2#电机控制字
+     - Palabra de control del motor 2#
 
    * - 17
      - D215
      - DINT
      - 
-     - 2#目标位置输入
+     - Entrada de posición objetivo 2#
 
    * - 18
      - D216
      - DINT
      - 
-     - 2#目标位置输入
+     - Entrada de posición objetivo 2#
 
    * - 19
      - D217
      - INT
      - 
-     - 2#回零控制字
+     - Palabra de control de retorno a cero 2#
 
    * - 20
      - D218
      - DINT
      - 
-     - 2#回零高速度输入
+     - Entrada de velocidad alta de retorno a cero 2#
 
    * - 21
      - D219
      - DINT
      - 
-     - 2#回零高速度输入
+     - Entrada de velocidad alta de retorno a cero 2#
 
    * - 22
      - D220
      - DINT
      - 
-     - 2#回零低速度输入
+     - Entrada de velocidad baja de retorno a cero 2#
 
    * - 23
      - D221
      - DINT
      - 
-     - 2#回零低速度输入
+     - Entrada de velocidad baja de retorno a cero 2#
 
    * - 24
      - D222
      - DINT
      - 
-     - 2#位置偏置（预留）
+     - Desplazamiento de posición 2# (reservado)
 
    * - 25
      - D223
      - DINT
      - 
-     - 2#位置偏置（预留）
+     - Desplazamiento de posición 2# (reservado)
 
    * - 26
      - D224
      - DINT
      - 
-     - 2#速度偏置（预留）
+     - Desplazamiento de velocidad 2# (reservado)
 
    * - 27
      - D225
      - DINT
      - 
-     - 2#速度偏置（预留）
+     - Desplazamiento de velocidad 2# (reservado)
 
    * - 28
      - D226
      - DINT
      - 
-     - 2#转矩偏置（预留）
+     - Desplazamiento de par 2# (reservado)
 
    * - 29
      - D227
      - DINT
      - 
-     - 2#转矩偏置（预留）
+     - Desplazamiento de par 2# (reservado)
 
    * - 30
      - D228
      - INT
      - 
-     - 3#电机控制字
+     - Palabra de control del motor 3#
   
    * - 31
      - D229
      - DINT
      - 
-     - 3#目标位置输入
+     - Entrada de posición objetivo 3#
 
    * - 32
      - D230
      - DINT
      - 
-     - 3#目标位置输入
+     - Entrada de posición objetivo 3#
 
    * - 33
      - D231
      - INT
      - 
-     - 3#回零控制字
+     - Palabra de control de retorno a cero 3#
 
    * - 34
      - D232
      - DINT
      - 
-     - 3#回零高速度输入
+     - Entrada de velocidad alta de retorno a cero 3#
 
    * - 35
      - D233
      - DINT
      - 
-     - 3#回零高速度输入
+     - Entrada de velocidad alta de retorno a cero 3#
 
    * - 36
      - D234
      - DINT
      - 
-     - 3#回零低速度输入
+     - Entrada de velocidad baja de retorno a cero 3#
 
    * - 37
      - D235
      - DINT
      - 
-     - 3#回零低速度输入
+     - Entrada de velocidad baja de retorno a cero 3#
 
    * - 38
      - D236
      - DINT
      - 
-     - 3#位置偏置（预留）
+     - Desplazamiento de posición 3# (reservado)
 
    * - 39
      - D237
      - DINT
      - 
-     - 3#位置偏置（预留）
+     - Desplazamiento de posición 3# (reservado)
 
    * - 40
      - D238
      - DINT
      - 
-     - 3#速度偏置（预留）
+     - Desplazamiento de velocidad 3# (reservado)
 
    * - 41
      - D239
      - DINT
      - 
-     - 3#速度偏置（预留）
+     - Desplazamiento de velocidad 3# (reservado)
 
    * - 42
      - D240
      - DINT
      - 
-     - 3#转矩偏置（预留）
+     - Desplazamiento de par 3# (reservado)
 
    * - 43
      - D241
      - DINT
      - 
-     - 3#转矩偏置（预留）
+     - Desplazamiento de par 3# (reservado)
 
    * - 44
      - D242
      - INT
      - 
-     - 扫描速度（激光焊机）
+     - Velocidad de escaneo (máquina de soldar láser)
   
    * - 45
      - D243
      - DINT
      - 
-     - 扫描宽度（激光焊机）
+     - Anchura de escaneo (máquina de soldar láser)
 
    * - 46
      - D244
      - DINT
      - 
-     - 峰值功率（激光焊机）
+     - Potencia de pico (máquina de soldar láser)
 
    * - 47
      - D245
      - INT
      - 
-     - 占空比（激光焊机）
+     - Ciclo de trabajo (máquina de soldar láser)
 
    * - 48
      - D246
      - DINT
      - 
-     - 扫描频率（激光焊机）
+     - Frecuencia de escaneo (máquina de soldar láser)
 
    * - 49
      - D247
      - DINT
      - 
-     - 扫描频率（激光焊机）
+     - Frecuencia de escaneo (máquina de soldar láser)
 
    * - 50
      - D248
      - DINT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 51
      - D249
      - DINT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 52
      - D250
      - DINT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 53
      - D251
      - DINT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 54
      - D252
      - DINT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 55
      - D253
      - DINT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 56
      - D254
      - INT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 57
      - D255
      - INT
      - 
-     - 焊接模式设置（0-直流一元、1-脉冲一元、2-JOB模式、3-近控模式、4-分别模式、5-CC/CV、6-TIG、7-CMT模式）
+     - Configuración del modo de soldadura (0-CC unificado, 1-pulso unificado, 2-modo JOB, 3-modo de control próximo, 4-modo separado, 5-CC/CV, 6-TIG, 7-modo CMT)
 
    * - 58
      - D256
      - INT
      - 
-     - 普通输出DO(0-15)
+     - Salida DO normal (0-15)
 
    * - 59
      - D257
      - INT
      - 
-     - 普通输出DO(16-31)
+     - Salida DO normal (16-31)
 
    * - 60
      - D258
      - INT
      - 
-     - 普通输出DO(32-47)
+     - Salida DO normal (32-47)
 
    * - 61
      - D259
      - INT
      - 
-     - 普通输出DO(48-63)
+     - Salida DO normal (48-63)
 
    * - 62
      - D260
      - INT
      - 
-     - 普通输出DO(64-79)
+     - Salida DO normal (64-79)
 
    * - 63
      - D261
      - INT
      - 
-     - 普通输出DO(80-95)
+     - Salida DO normal (80-95)
 
    * - 64
      - D262
      - INT
      - 
-     - 高速输出DO(96-111)
+     - Salida DO de alta velocidad (96-111)
 
    * - 65
      - D263
      - INT
      - 
-     - 高速输出DO(112-127)
+     - Salida DO de alta velocidad (112-127)
 
    * - 66
      - D264
      - INT
      - 
-     - 模拟量输出AO0
+     - Salida analógica AO0
 
    * - 67
      - D265
      - INT
      - 
-     - 模拟量输出AO1
+     - Salida analógica AO1
 
    * - 68
      - D266
      - INT
      - 
-     - 模拟量输出AO2
+     - Salida analógica AO2
 
    * - 69
      - D267
      - INT
      - 
-     - 模拟量输出AO3
+     - Salida analógica AO3
 
    * - 70
      - D268
      - REAL
      - 
-     - 下发焊接电压
+     - Tensión de soldadura emitida
 
    * - 71
      - D269
      - REAL
      - 
-     - 下发焊接电压
+     - Tensión de soldadura emitida
 
    * - 72
      - D270
      - REAL
      - 
-     - 下发焊接电流
+     - Corriente de soldadura emitida
 
    * - 73
      - D271
      - REAL
      - 
-     - 下发焊接电流
+     - Corriente de soldadura emitida
 
    * - 74
      - D272
      - REAL
      - 
-     - 丢包检测周期
+     - Período de detección de pérdida de paquetes
 
    * - 75
      - D273
      - INT
      - 
-     - 丢包个数
+     - Número de paquetes perdidos
 
    * - 76
      - D274
      - INT
      - 
-     - 帧计数（0-255）
+     - Contador de tramas (0-255)
 
    * - 77
      - D275
      - INT
      - 
-     - CRC检验码
+     - Código de verificación CRC
 
-PLC -> 机器人控制器
-++++++++++++++++++++
+PLC -> Controlador del robot
+++++++++++++++++++++++++++++
 
 
 .. list-table:: 
@@ -3129,528 +3131,528 @@ PLC -> 机器人控制器
    :header-rows: 1
    :align: center
 
-   * - 序号
-     - 寄存器地址
-     - 数据类型
-     - 数据值
-     - 变量名
+   * - Número
+     - Dirección de registro
+     - Tipo de dato
+     - Valor de dato
+     - Nombre de variable
 
    * - 1
      - D99
      - INT
      - 0x5A5A
-     - 帧头
+     - Cabecera de trama
 
    * - 2
      - D100
      - INT
      - 
-     - 1#电机状态字
+     - Palabra de estado del motor 1#
 
    * - 3
      - D101
      - DINT
      - 
-     - 1#当前位置
+     - Posición actual 1#
 
    * - 4
      - D102
      - DINT
      - 
-     - 1#当前位置
+     - Posición actual 1#
 
    * - 5
      - D103
      - INT
      - 
-     - 1#回零状态字
+     - Palabra de estado de retorno a cero 1#
 
    * - 6
      - D104
      - DINT
      - 
-     - 1#回零高速度反馈
+     - Realimentación de velocidad alta de retorno a cero 1#
 
    * - 7
      - D105
      - DINT
      - 
-     - 1#回零高速度反馈
+     - Realimentación de velocidad alta de retorno a cero 1#
 
    * - 8
      - D106
      - DINT
      - 
-     - 1#回零低速度反馈
+     - Realimentación de velocidad baja de retorno a cero 1#
 
    * - 9
      - D107
      - DINT
      - 
-     - 1#回零低速度反馈
+     - Realimentación de velocidad baja de retorno a cero 1#
 
    * - 10
      - D108
      - INT
      - 
-     - 1#故障码
+     - Código de fallo 1#
 
    * - 11
      - D109
      - DINT
      - 
-     - 1#随动偏差（预留）
+     - Desviación de seguimiento 1# (reservado)
 
    * - 12
      - D110
      - DINT
      - 
-     - 1#随动偏差（预留）
+     - Desviación de seguimiento 1# (reservado)
 
    * - 13
      - D111
      - DINT
      - 
-     - 1#速度反馈（预留）
+     - Realimentación de velocidad 1# (reservado)
 
    * - 14
      - D112
      - DINT
      - 
-     - 1#速度反馈（预留）
+     - Realimentación de velocidad 1# (reservado)
 
    * - 15
      - D113
      - DINT
      - 
-     - 1#实时转矩（预留）将电机扭矩按照经过减速比后的输出值×100后传递给上位机
+     - Par en tiempo real 1# (reservado): el par del motor, tras aplicar la relación de reducción, se multiplica por 100 y se transmite al ordenador superior
 
    * - 16
      - D114
      - DINT
      - 
-     - 1#实时转矩（预留）将电机扭矩按照经过减速比后的输出值×100后传递给上位机
+     - Par en tiempo real 1# (reservado): el par del motor, tras aplicar la relación de reducción, se multiplica por 100 y se transmite al ordenador superior
 
    * - 17
      - D115
      - INT
      - 
-     - 2#电机状态字
+     - Palabra de estado del motor 2#
 
    * - 18
      - D116
      - DINT
      - 
-     - 2#当前位置
+     - Posición actual 2#
 
    * - 19
      - D117
      - DINT
      - 
-     - 2#当前位置
+     - Posición actual 2#
 
    * - 20
      - D118
      - INT
      - 
-     - 2#回零状态字
+     - Palabra de estado de retorno a cero 2#
 
    * - 21
      - D119
      - DINT
      - 
-     - 2#回零高速度反馈
+     - Realimentación de velocidad alta de retorno a cero 2#
 
    * - 22
      - D120
      - DINT
      - 
-     - 2#回零高速度反馈
+     - Realimentación de velocidad alta de retorno a cero 2#
 
    * - 23
      - D121
      - DINT
      - 
-     - 2#回零低速度反馈
+     - Realimentación de velocidad baja de retorno a cero 2#
 
    * - 24
      - D122
      - DINT
      - 
-     - 2#回零低速度反馈
+     - Realimentación de velocidad baja de retorno a cero 2#
 
    * - 25
      - D123
      - INT
      - 
-     - 2#故障码
+     - Código de fallo 2#
 
    * - 26
      - D124
      - DINT
      - 
-     - 2#随动偏差（预留）
+     - Desviación de seguimiento 2# (reservado)
 
    * - 27
      - D125
      - DINT
      - 
-     - 2#随动偏差（预留）
+     - Desviación de seguimiento 2# (reservado)
 
    * - 28
      - D126
      - DINT
      - 
-     - 2#速度反馈（预留）
+     - Realimentación de velocidad 2# (reservado)
 
    * - 29
      - D127
      - DINT
      - 
-     - 2#速度反馈（预留）
+     - Realimentación de velocidad 2# (reservado)
 
    * - 30
      - D128
      - DINT
      - 
-     - 2#实时转矩（预留）
+     - Par en tiempo real 2# (reservado)
   
    * - 31
      - D129
      - DINT
      - 
-     - 2#实时转矩（预留）
+     - Par en tiempo real 2# (reservado)
 
    * - 32
      - D130
      - INT
      - 
-     - 3#电机状态字
+     - Palabra de estado del motor 3#
 
    * - 33
      - D131
      - DINT
      - 
-     - 3#当前位置
+     - Posición actual 3#
 
    * - 34
      - D132
      - DINT
      - 
-     - 3#当前位置
+     - Posición actual 3#
 
    * - 35
      - D133
      - INT
      - 
-     - 3#回零状态字
+     - Palabra de estado de retorno a cero 3#
 
    * - 36
      - D134
      - DINT
      - 
-     - 3#回零高速度反馈
+     - Realimentación de velocidad alta de retorno a cero 3#
 
    * - 37
      - D135
      - DINT
      - 
-     - 3#回零高速度反馈
+     - Realimentación de velocidad alta de retorno a cero 3#
 
    * - 38
      - D136
      - DINT
      - 
-     - 3#回零低速度反馈
+     - Realimentación de velocidad baja de retorno a cero 3#
 
    * - 39
      - D137
      - DINT
      - 
-     - 3#回零低速度反馈
+     - Realimentación de velocidad baja de retorno a cero 3#
 
    * - 40
      - D138
      - DINT
      - 
-     - 3#故障码
+     - Código de fallo 3#
 
    * - 41
      - D139
      - DINT
      - 
-     - 3#随动偏差(预留)
+     - Desviación de seguimiento 3# (reservado)
 
    * - 42
      - D140
      - DINT
      - 
-     - 3#随动偏差(预留)
+     - Desviación de seguimiento 3# (reservado)
 
    * - 43
      - D141
      - DINT
      - 
-     - 3#速度反馈（预留）
+     - Realimentación de velocidad 3# (reservado)
 
    * - 44
      - D142
      - DINT
      - 
-     - 3#速度反馈（预留）
+     - Realimentación de velocidad 3# (reservado)
   
    * - 45
      - D143
      - DINT
      - 
-     - 3#实时转矩（预留）
+     - Par en tiempo real 3# (reservado)
 
    * - 46
      - D144
      - DINT
      - 
-     - 3#实时转矩（预留）
+     - Par en tiempo real 3# (reservado)
 
    * - 47
      - D145
      - INT
      - 
-     - 扫描速度（激光焊机）
+     - Velocidad de escaneo (máquina de soldar láser)
 
    * - 48
      - D146
      - DINT
      - 
-     - 扫描宽度（激光焊机）
+     - Anchura de escaneo (máquina de soldar láser)
 
    * - 49
      - D147
      - DINT
      - 
-     - 峰值功率（激光焊机）
+     - Potencia de pico (máquina de soldar láser)
 
    * - 50
      - D148
      - INT
      - 
-     - 占空比（激光焊机）
+     - Ciclo de trabajo (máquina de soldar láser)
 
    * - 51
      - D149
      - DINT
      - 
-     - 扫描频率（激光焊机）
+     - Frecuencia de escaneo (máquina de soldar láser)
 
    * - 52
      - D150
      - DINT
      - 
-     - 扫描频率（激光焊机）
+     - Frecuencia de escaneo (máquina de soldar láser)
 
    * - 53
      - D151
      - DINT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 54
      - D152
      - DINT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 55
      - D153
      - DINT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 56
      - D154
      - DINT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 57
      - D155
      - DINT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 58
      - D156
      - DINT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 59
      - D157
      - DINT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 60
      - D158
      - DINT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 61
      - D159
      - DINT
      - 
-     - 激光焊机预留
+     - Reservado de la máquina de soldar láser
 
    * - 62
      - D160
      - INT
      - 
-     - 普通输入DI(0-15)
+     - Entrada DI normal (0-15)
 
    * - 63
      - D161
      - INT
      - 
-     - 普通输入DI(16-31)
+     - Entrada DI normal (16-31)
 
    * - 64
      - D162
      - INT
      - 
-     - 普通输入DI(32-47)
+     - Entrada DI normal (32-47)
 
    * - 65
      - D163
      - INT
      - 
-     - 普通输入DI(48-63)
+     - Entrada DI normal (48-63)
 
    * - 66
      - D164
      - INT
      - 
-     - 普通输入DI(64-79)
+     - Entrada DI normal (64-79)
 
    * - 67
      - D165
      - INT
      - 
-     - 普通输入DI(80-95)
+     - Entrada DI normal (80-95)
 
    * - 68
      - D166
      - INT
      - 
-     - 高速输入DI(96-111)
+     - Entrada DI de alta velocidad (96-111)
 
    * - 69
      - D167
      - INT
      - 
-     - 高速输入DI(112-127)
+     - Entrada DI de alta velocidad (112-127)
 
    * - 70
      - D168
      - INT
      - 
-     - 模拟量AI0
+     - Entrada analógica AI0
 
    * - 71
      - D169
      - INT
      - 
-     - 模拟量AI1
+     - Entrada analógica AI1
 
    * - 72
      - D170
      - INT
      - 
-     - 模拟量AI2
+     - Entrada analógica AI2
 
    * - 73
      - D171
      - INT
      - 
-     - 模拟量AI3
+     - Entrada analógica AI3
 
    * - 74
      - D172
      - REAL
      - 
-     - 实际电流反馈
+     - Realimentación de corriente real
 
    * - 75
      - D173
      - REAL
      - 
-     - 实际电流反馈
+     - Realimentación de corriente real
 
    * - 76
      - D174
      - REAL
      - 
-     - 实际电压反馈
+     - Realimentación de tensión real
 
    * - 77
      - D175
      - REAL
      - 
-     - 实际电压反馈
+     - Realimentación de tensión real
 
    * - 78
      - D176
      - INT
      - 
-     - 故障码 0-无故障，1-UDP数据丢包 2-焊机通讯故障 3-扩展轴通讯故障 
+     - Código de fallo: 0-sin fallo, 1-pérdida de paquetes de datos UDP, 2-fallo de comunicación de la máquina de soldar, 3-fallo de comunicación del eje extendido 
 
    * - 79
      - D177
      - INT
      - 
-     - 帧计数
+     - Contador de tramas
 
    * - 80
      - D178
      - INT
      - 
-     - CRC检验码
+     - Código de verificación CRC
 
-数字通讯协议（Modbus TCP）
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Protocolo de comunicación digital (Modbus TCP)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-点击“初始设置”->“外设”->“焊机”进入焊机界面，点击“数字通讯协议（Modbus TCP）”卡片进入焊机开放协议界面。
+Hacer clic en "Configuración inicial"->"Periféricos"->"Máquina de soldar" para entrar en la interfaz de la máquina de soldar y hacer clic en la tarjeta "Protocolo de comunicación digital (Modbus TCP)" para entrar en la interfaz del protocolo abierto de la máquina de soldar.
 
-协议配置
-++++++++++++++
+Configuración del protocolo
++++++++++++++++++++++++++++
 
-在开放协议配置中，点击“上传”按钮，将编写完成的开放协议LUA程序文件上传至控制器中。选择一个开放协议ID和开放协议名称，点击“配置”按钮(选择协议ID需与开放协议文件中编写的ID一致)，为每个开放协议指定一个ID。
+En la configuración del protocolo abierto, hacer clic en el botón "Cargar" para cargar el archivo del programa LUA del protocolo abierto redactado en el controlador. Seleccionar un ID de protocolo abierto y un nombre de protocolo abierto, y hacer clic en el botón "Configurar" (el ID de protocolo seleccionado debe coincidir con el ID escrito en el archivo del protocolo abierto) para asignar un ID a cada protocolo abierto.
 
 .. figure:: robot_peripherals/066.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-50 控制器外设开放协议上传与配置
+.. centered:: Figura 8.6-50 Carga y configuración del protocolo abierto de periféricos del controlador
 
-在已配置的协议中，点击“加载”按钮，运行状态指示灯亮起，表示该开放协议已正常加载。
+En los protocolos ya configurados, hacer clic en el botón "Cargar"; el indicador luminoso de estado de funcionamiento se enciende, lo que indica que el protocolo abierto se ha cargado correctamente.
 
 .. figure:: robot_peripherals/067.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6-51 控制器外设开放协议加载与运行指示
+.. centered:: Figura 8.6-51 Indicación de carga y funcionamiento del protocolo abierto de periféricos del controlador
 
-焊机开放协议
-++++++++++++++
+Protocolo abierto de la máquina de soldar
+++++++++++++++++++++++++++++++++++++++++++
 
-机器人与焊机通过控制器外设开放协议进行ModbusTCP通讯，根据焊机从站寄存器定义编写对应通讯协议LUA文件，在该文件中对焊机IP地址、端口号等通讯参数和起弧控制、送丝控制等寄存器地址进行配置，将该协议上传至机器人控制器，并加载该协议，即可实现机器人与焊机之间的通讯。
+El robot y la máquina de soldar se comunican mediante ModbusTCP a través del protocolo abierto de periféricos del controlador; según la definición de los registros del esclavo de la máquina de soldar se redacta el archivo LUA del protocolo de comunicación correspondiente; en dicho archivo se configuran parámetros de comunicación como la dirección IP y el número de puerto de la máquina de soldar y direcciones de registro como el control de encendido del arco y el control de alimentación de alambre; se carga dicho protocolo en el controlador del robot y se carga el protocolo para realizar la comunicación entre el robot y la máquina de soldar.
 
-焊机开放协议示例
-************************
+Ejemplo de protocolo abierto de la máquina de soldar
+*****************************************************
 
 .. code-block:: console
    :linenos:
 
-   local id = 1 --协议编号,需与WebApp配置的协议编号匹配
+   local id = 1 --número de protocolo; debe coincidir con el número de protocolo configurado en WebApp
    local ctrlValues = {0, 0, 0, 0, 0, 0}
    local realTimeState = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
    ModbusTCPMasterClose(id)
@@ -3696,441 +3698,442 @@ PLC -> 机器人控制器
    sleep_ms(10)
    end
 
-焊机开放协议解析
-******************************
+Análisis del protocolo abierto de la máquina de soldar
+******************************************************
 
-焊机开放协议主要包括三个部分：
+El protocolo abierto de la máquina de soldar incluye principalmente tres partes:
 
-**①建立通讯连接**：主指定协议编号id(加载开放协议时设置的协议编号需要与协议文件中的编号一致)、焊机IP地址、端口号等参数，通过“ModbusTCPMasterCreate()”指令使实现机器人与焊机之间建立ModbusTCP连接。
+**①Establecer la conexión de comunicación**: el maestro especifica el número de protocolo id (el número de protocolo establecido al cargar el protocolo abierto debe coincidir con el número del archivo del protocolo), la dirección IP de la máquina de soldar, el número de puerto y otros parámetros, y mediante la instrucción "ModbusTCPMasterCreate()" se establece la conexión ModbusTCP entre el robot y la máquina de soldar.
 
-**②循环向焊机写入控制数据**：焊机开放协议执行时先从机器人控制器内部读取当前的焊机控制数据，再将数据写入焊机控制焊机动作。协议中读取机器人控制焊接数据指令“WeldingGetCtrlState()”返回值定义如表2-1，可根据实际焊机控制寄存器定义对控制数据进行分解，再通过ModbusTCP将数据写入焊机。
+**②Escritura cíclica de datos de control en la máquina de soldar**: durante la ejecución del protocolo abierto de la máquina de soldar se leen primero del interior del controlador del robot los datos de control actuales de la máquina de soldar y, a continuación, se escriben los datos en la máquina de soldar para controlar su acción. La definición del valor de retorno de la instrucción de lectura de los datos de control de soldadura del robot "WeldingGetCtrlState()" del protocolo se muestra en la Tabla 2-1; se pueden descomponer los datos de control según la definición real de los registros de control de la máquina de soldar y, a continuación, escribir los datos en la máquina de soldar mediante ModbusTCP.
 
-.. centered:: 表 8.19-1 WeldingGetCtrlState()返回值
+.. centered:: Tabla 8.19-1 Valor de retorno de WeldingGetCtrlState()
 
 .. list-table:: 
    :widths: 10 20 30 40
    :align: center
    :class: sheet-center
    
-   * - **序号**
-     - **类型**
-     - **名称**
-     - **描述**
+   * - **Número**
+     - **Tipo**
+     - **Nombre**
+     - **Descripción**
 
    * - 1
      - uint16_t
      - setArcStart
-     - 起弧信号；0-熄弧；1-起弧
+     - Señal de encendido del arco; 0-apagado del arco; 1-encendido del arco
 
    * - 2
      - uint16_t
      - setWireForward
-     - 正向送丝：0-停止送丝；1-正向送丝
+     - Alimentación de alambre en sentido directo: 0-detener la alimentación de alambre; 1-alimentación de alambre en sentido directo
 
    * - 3
      - uint16_t
      - setWireReverse
-     - 反向送丝：0-停止送丝；1-反向送丝
+     - Alimentación de alambre en sentido inverso: 0-detener la alimentación de alambre; 1-alimentación de alambre en sentido inverso
 
    * - 4
      - uint16_t
      - setShieldingGas
-     - 保护气控制：0-停气；1-送气
+     - Control del gas de protección: 0-corte de gas; 1-suministro de gas
 
    * - 5
      - uint16_t
      - setTouchEnable
-     - 焊丝寻位使能：0-去使能；1-使能
+     - Habilitación de la búsqueda de posición del alambre de soldadura: 0-deshabilitar; 1-habilitar
 
    * - 6
      - uint16_t
      - setRobotError
-     - 机器人故障：0-无故障；1-故障
+     - Fallo del robot: 0-sin fallo; 1-fallo
 
    * - 7
      - uint16_t
      - setRobotEnableState
-     - 机器人使能状态：0-未使能；1-使能
+     - Estado de habilitación del robot: 0-no habilitado; 1-habilitado
 
    * - 8
      - uint16_t
      - default1
-     - 预留
+     - Reservado
 
    * - 9
      - uint16_t
      - default2
-     - 预留
+     - Reservado
 
    * - 10
      - uint16_t
      - default3
-     - 预留
+     - Reservado
 
    * - 11
      - uint16_t
      - default4
-     - 预留
+     - Reservado
 
    * - 12
      - uint16_t
      - setCurrent
-     - 设置焊接电流(0.1A)
+     - Establecer la corriente de soldadura (0.1A)
 
    * - 13
      - uint16_t
      - setVoltage
-     - 设置焊接电压(0.01V)
+     - Establecer la tensión de soldadura (0.01V)
 
    * - 14
      - uint16_t
      - SetMode
-     - 设置焊接模式：0-直流一元、1-脉冲一元、2-JOB模式、3-近控模式、4-分别模式、5-CC/CV、6-TIG、7-CMT模式
+     - Establecer el modo de soldadura: 0-CC unificado, 1-pulso unificado, 2-modo JOB, 3-modo de control próximo, 4-modo separado, 5-CC/CV, 6-TIG, 7-modo CMT
 
    * - 15
      - uint16_t
      - default6
-     - 预留
+     - Reservado
 
    * - 16
      - uint16_t
      - default7
-     - 预留
+     - Reservado
 
    * - 17
      - uint16_t
      - default8
-     - 预留
+     - Reservado
 
    * - 18
      - uint16_t
      - default9
-     - 预留
+     - Reservado
 
    * - 19
      - uint16_t
      - default10
-     - 预留
+     - Reservado
 
    * - 20
      - uint16_t
      - default11
-     - 预留
+     - Reservado
 
-**③循环从焊机读取状态数据**：焊机开放协议先通过ModbusTCP从焊机读取实时的状态数据，再将相关数据写入机器人控制器，使机器人能监控到焊机实时动作状态。协议向机器人设置焊机状态接口“WeldingSetRealtimeState()”参数为一个包含所有焊机状态的数组（注意：在开放协议LUA中，数组索引从1开始）如表2-2，可根据实际焊机状态寄存器定义通过ModbusTCP读取焊机状态数据，再组合成焊机状态数组并写入机器人控制器。
+**③Lectura cíclica de datos de estado de la máquina de soldar**: el protocolo abierto de la máquina de soldar lee primero mediante ModbusTCP los datos de estado en tiempo real de la máquina de soldar y, a continuación, escribe los datos relevantes en el controlador del robot, de modo que el robot pueda monitorizar el estado de acción en tiempo real de la máquina de soldar. El parámetro de la interfaz de establecimiento del estado de la máquina de soldar en el robot "WeldingSetRealtimeState()" es un array que contiene todos los estados de la máquina de soldar (nota: en el protocolo abierto LUA, el índice del array comienza en 1), como se muestra en la Tabla 2-2; se pueden leer los datos de estado de la máquina de soldar mediante ModbusTCP según la definición real de los registros de estado de la máquina de soldar y, a continuación, combinarlos en un array de estado de la máquina de soldar y escribirlos en el controlador del robot.
 
-.. centered:: 表 8.19-2 WeldingSetRealtimeState()详细参数
+.. centered:: Tabla 8.19-2 Parámetros detallados de WeldingSetRealtimeState()
 
 .. list-table:: 
    :widths: 10 20 30 40
    :align: center
    :class: sheet-center
    
-   * - **类型**
-     - **名称**
-     - **数组索引**
-     - **描述**
+   * - **Tipo**
+     - **Nombre**
+     - **Índice del array**
+     - **Descripción**
 
    * - uint16_t[20]
      - realTimeState
      - 1
-     - 焊机型号
+     - Modelo de la máquina de soldar
 
    * - uint16_t[20]
      - realTimeState
      - 2
-     - 电弧状态：0-未起弧；1-已起弧
+     - Estado del arco: 0-sin arco; 1-arco encendido
 
    * - uint16_t[20]
      - realTimeState
      - 3
-     - 焊丝接触状态：0-未接触；1-已接触
+     - Estado de contacto del alambre de soldadura: 0-sin contacto; 1-en contacto
 
    * - uint16_t[20]
      - realTimeState
      - 4
-     - 焊机故障状态：0-无故障；1-焊机故障
+     - Estado de fallo de la máquina de soldar: 0-sin fallo; 1-fallo de la máquina de soldar
 
    * - uint16_t[20]
      - realTimeState
      - 5
-     - 预留
+     - Reservado
 
    * - uint16_t[20]
      - realTimeState
      - 6
-     - 预留
+     - Reservado
 
    * - uint16_t[20]
      - realTimeState
      - 7
-     - 预留
+     - Reservado
 
    * - uint16_t[20]
      - realTimeState
      - 8
-     - 预留
+     - Reservado
 
    * - uint16_t[20]
      - realTimeState
      - 9
-     - 预留
+     - Reservado
 
    * - uint16_t[20]
      - realTimeState
      - 10
-     - 预留
+     - Reservado
 
    * - uint16_t[20]
      - realTimeState
      - 11
-     - 预留
+     - Reservado
 
    * - uint16_t[20]
      - realTimeState
      - 12
-     - 实时焊接电流(0.1A)
+     - Corriente de soldadura en tiempo real (0.1A)
 
    * - uint16_t[20]
      - realTimeState
      - 13
-     - 实时焊接电压(0.01V)
+     - Tensión de soldadura en tiempo real (0.01V)
 
    * - uint16_t[20]
      - realTimeState
      - 14
-     - 焊机故障码
+     - Código de fallo de la máquina de soldar
 
    * - uint16_t[20]
      - realTimeState
      - 15
-     - 焊机通讯心跳数据
+     - Datos de latido de comunicación de la máquina de soldar
 
    * - uint16_t[20]
      - realTimeState
      - 16
-     - 预留
+     - Reservado
 
    * - uint16_t[20]
      - realTimeState
      - 17
-     - 预留
+     - Reservado
 
    * - uint16_t[20]
      - realTimeState
      - 18
-     - 预留
+     - Reservado
 
    * - uint16_t[20]
      - realTimeState
      - 19
-     - 预留
+     - Reservado
 
    * - uint16_t[20]
      - realTimeState
      - 20
-     - 预留
+     - Reservado
 
-焊机开放协议上传与加载
-***************************************
+Carga y carga del protocolo abierto de la máquina de soldar
+******************************************************************
 
-依次点击“初始设置”、“外设”、“控制箱”、“外设开放协议”，点击“上传”按钮，上传焊机开放协议“CtrlDev_WELDING.lua”(协议文件名称需以CtrlDev_开头，且后缀名为“.lua”)。
+Hacer clic sucesivamente en "Configuración inicial", "Periféricos", "Caja de control", "Protocolo abierto de periféricos" y hacer clic en el botón "Cargar" para cargar el protocolo abierto de la máquina de soldar "CtrlDev_WELDING.lua" (el nombre del archivo del protocolo debe comenzar por `CtrlDev_` y la extensión debe ser ".lua").
 
 .. figure:: robot_peripherals/068.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6‑39 焊机开放协议上传
+.. centered:: Figura 8.6‑39 Carga del protocolo abierto de la máquina de soldar
 
-在“协议配置”中选择一个“协议编号”(需要与开放协议文件中的协议编号匹配)，此处以编号1为例，并选择“协议名称”为焊机开放协议“CtrlDev_WELDING.lua”，点击“配置”按钮，此时在“设备操作及状态”中显示已配置的焊机开放协议。
+En "Configuración de protocolo", seleccionar un "Número de protocolo" (debe coincidir con el número de protocolo del archivo del protocolo abierto); aquí se toma como ejemplo el número 1, seleccionar el "Nombre del protocolo" como el protocolo abierto de la máquina de soldar "CtrlDev_WELDING.lua" y hacer clic en el botón "Configurar"; en este momento, en "Operación y estado del dispositivo" se muestra el protocolo abierto de la máquina de soldar ya configurado.
 
 .. figure:: robot_peripherals/069.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6‑40 焊机开放协议配置
+.. centered:: Figura 8.6‑40 Configuración del protocolo abierto de la máquina de soldar
 
-点击“连接”按钮加载焊机开放协议，运行状态指示灯亮起表示机器人和焊机正在通讯。
+Hacer clic en el botón "Conectar" para cargar el protocolo abierto de la máquina de soldar; el indicador luminoso de estado de funcionamiento se enciende, lo que indica que el robot y la máquina de soldar están comunicándose.
 
 .. figure:: robot_peripherals/070.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6‑41 焊机开放协议加载
+.. centered:: Figura 8.6‑41 Carga del protocolo abierto de la máquina de soldar
 
-焊机调试
-**************************
-在进行焊机调试前，请先确保焊机开放协议已正常加载，相关寄存器地址配置正确。
+Depuración de la máquina de soldar
+**********************************
 
-依次点击“初始设置”、“外设”、“焊机”，选择“数字通信协议(ModbusTcp)”。
+Antes de realizar la depuración de la máquina de soldar, asegúrese primero de que el protocolo abierto de la máquina de soldar se ha cargado correctamente y de que las direcciones de registro correspondientes están configuradas correctamente.
+
+Hacer clic sucesivamente en "Configuración inicial", "Periféricos", "Máquina de soldar" y seleccionar "Protocolo de comunicación digital (ModbusTcp)".
 
 .. figure:: robot_peripherals/036.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6‑42 选择“数字通信协议(ModbusTcp)”
+.. centered:: Figura 8.6‑42 Selección de "Protocolo de comunicación digital (ModbusTcp)"
 
-点击“起弧”、“收弧”、“送气”、“关气”等按钮，观察实际焊机动作是否与设置一致，若焊机未进行设置的动作，则检查焊机开放协议中寄存器配置是否有误，并做进一步调试。
+Hacer clic en los botones "Encendido del arco", "Apagado del arco", "Suministro de gas", "Corte de gas", etc., y observar si la acción real de la máquina de soldar coincide con la configuración; si la máquina de soldar no realiza la acción configurada, comprobar si la configuración de registros del protocolo abierto de la máquina de soldar es errónea y realizar una depuración adicional.
 
 .. figure:: robot_peripherals/049.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6‑43 焊机调试
+.. centered:: Figura 8.6‑43 Depuración de la máquina de soldar
 
-焊接程序编写
-********************************
+Escritura del programa de soldadura
+***********************************
 
-点击“初始设置”、“示教程序”、“程序编程”，新建一个程序“testWeld.lua”。
+Hacer clic en "Configuración inicial", "Programa de enseñanza", "Programación de programas" y crear un nuevo programa "testWeld.lua".
 
 .. figure:: robot_peripherals/056.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.6‑44 创建焊接LUA程序
+.. centered:: Figura 8.6‑44 Creación del programa LUA de soldadura
 
-点击“焊接”按钮,在弹出焊接指令添加页面中选择“数字通信协议(Modbus Tcp)”，依次选择“起弧”、点击“添加”、点击“收弧”、点击“添加”按钮，最后点击“应用”按钮。
+Hacer clic en el botón "Soldadura"; en la página de adición de instrucciones de soldadura que aparece, seleccionar "Protocolo de comunicación digital (Modbus Tcp)"; seleccionar sucesivamente "Encendido del arco", hacer clic en "Añadir", hacer clic en "Apagado del arco", hacer clic en "Añadir" y, por último, hacer clic en el botón "Aplicar".
 
 .. figure:: robot_peripherals/071.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.6‑45 添加起弧、收弧指令
+.. centered:: Figura 8.6‑45 Adición de las instrucciones de encendido y apagado del arco
 
-此时“testWeld.lua”中即添加起弧、收弧指令完成。
+En este momento, en "testWeld.lua" ya se han añadido las instrucciones de encendido y apagado del arco.
 
 .. figure:: robot_peripherals/058.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6‑46 添加起弧、收弧指令
+.. centered:: Figura 8.6‑46 Adición de las instrucciones de encendido y apagado del arco
 
-依次添加完成焊接起始点和焊接终止点。将机器人切换至自动模式，在确保安全的条件下，启动程序，机器人即控制焊机进行一条焊缝的焊接作业。
+Añadir sucesivamente el punto inicial de soldadura y el punto final de soldadura. Cambiar el robot al modo automático y, en condiciones de seguridad, iniciar el programa; el robot controla la máquina de soldar para realizar la operación de soldadura de una costura de soldadura.
 
 .. figure:: robot_peripherals/059.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6‑47 焊接程序
+.. centered:: Figura 8.6‑47 Programa de soldadura
 
-焊机开放协议卸载
-****************************
+Descarga del protocolo abierto de la máquina de soldar
+******************************************************
 
-依次点击“初始设置”、“外设”、“控制箱”、“外设开放协议”，在“设备操作及状态”中点击“卸载”按钮。
+Hacer clic sucesivamente en "Configuración inicial", "Periféricos", "Caja de control", "Protocolo abierto de periféricos" y hacer clic en el botón "Descargar" de "Operación y estado del dispositivo".
 
 .. figure:: robot_peripherals/067.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6‑48 卸载开放协议
+.. centered:: Figura 8.6‑48 Descarga del protocolo abierto
 
-此时协议运行状态指示灯熄灭。
+En este momento el indicador luminoso de estado de funcionamiento del protocolo se apaga.
 
 .. figure:: robot_peripherals/072.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.6‑49 开放协议卸载
+.. centered:: Figura 8.6‑49 Descarga del protocolo abierto
 
-此时进行焊接调试或执行焊接程序，机器人在WebApp左下角报出“协议未加载错误”。
+En este momento, si se realiza la depuración de soldadura o se ejecuta el programa de soldadura, el robot muestra en la esquina inferior izquierda de WebApp el error "Error de protocolo no cargado".
 
 .. figure:: robot_peripherals/073.png
    :align: center
    :width: 3in
 
-.. centered:: 图表 8.6‑50 协议未加载报错
+.. centered:: Figura 8.6‑50 Error de protocolo no cargado
 
-扩展轴配置
------------------
+Configuración del eje extendido
+-------------------------------
 
-在“初始设置”->“外设”中，点击“扩展轴”进入扩展轴配置界面，包含扩展轴坐标系配置和扩展轴外设配置。扩展轴配置首次进入界面如下：
+En "Configuración inicial"->"Periféricos", hacer clic en "Eje extendido" para entrar en la interfaz de configuración del eje extendido, que incluye la configuración del sistema de coordenadas del eje extendido y la configuración de periféricos del eje extendido. La primera vez que se entra en la configuración del eje extendido, la interfaz es la siguiente:
 
 .. figure:: robot_peripherals/074.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.7‑1 扩展轴配置首次进入界面
+.. centered:: Figura 8.7‑1 Interfaz de primera entrada en la configuración del eje extendido
 
-目前扩展轴外设配置根据通讯方式分为以下两种：
+Actualmente, la configuración de periféricos del eje extendido se divide, según el modo de comunicación, en los dos tipos siguientes:
 
-- 控制器+PLC（UDP通讯）。
+- Controlador + PLC (comunicación UDP).
   
-- 控制器+伺服驱动器（485通讯）。
+- Controlador + servomotor (comunicación 485).
 
-扩展轴坐标系
-~~~~~~~~~~~~~
+Sistema de coordenadas del eje extendido
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-扩展轴坐标系设置界面中可实现扩展轴坐标的应用、清除和配置。
+En la interfaz de configuración del sistema de coordenadas del eje extendido se pueden realizar la aplicación, el borrado y la configuración de las coordenadas del eje extendido.
 
 .. note:: 
    .. image:: robot_peripherals/075.png
       :height: 0.75in
       :align: left
 
-   名称：**应用**
+   Nombre: **Aplicar**
    
-   作用：应用扩展轴坐标系
+   Función: aplicar el sistema de coordenadas del eje extendido
   
 .. note:: 
    .. image:: robot_peripherals/076.png
       :height: 0.75in
       :align: left
 
-   名称：**清除**
+   Nombre: **Borrar**
    
-   作用：清除扩展轴坐标系数据
+   Función: borrar los datos del sistema de coordenadas del eje extendido
 
-扩展轴坐标系的下拉列表中共有5个编号，从exaxis0~exaxis4，选择对应的坐标系后会在下方显示对应坐标值，选择某一坐标系后点击“应用”按钮，当前使用的扩展轴坐标系变为所选择的坐标，如下图所示。
+En la lista desplegable del sistema de coordenadas del eje extendido hay un total de 5 números, de exaxis0 a exaxis4; tras seleccionar el sistema de coordenadas correspondiente se mostrarán debajo los valores de coordenadas correspondientes; tras seleccionar un sistema de coordenadas, hacer clic en el botón "Aplicar", y el sistema de coordenadas del eje extendido en uso actualmente pasa a ser el seleccionado, como se muestra en la figura siguiente.
 
 .. image:: robot_peripherals/077.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.7‑2 扩展轴坐标系
+.. centered:: Figura 8.7‑2 Sistema de coordenadas del eje extendido
 
-选择非“exaxis0”的扩展轴坐标系，点击“配置”进入扩展轴坐标系配置界面，对该编号的扩展轴标系进行重新设置。如下图所示:
+Seleccionar un sistema de coordenadas del eje extendido distinto de "exaxis0" y hacer clic en "Configurar" para entrar en la interfaz de configuración del sistema de coordenadas del eje extendido y volver a configurar el sistema de coordenadas del eje extendido de ese número. Como se muestra en la figura siguiente:
 
 .. important::
-  - 标定之前先清除需要标定的扩展轴坐标系，并应用此扩展轴坐标系。
+  - Antes de la calibración, borrar primero el sistema de coordenadas del eje extendido que se desea calibrar y aplicar dicho sistema de coordenadas del eje extendido.
 
-  - 选择扩展轴的编号，获取信息可以获取对应扩展轴的驱动器信息，我们可以根据该信息进行参数配置。
+  - Seleccionar el número de eje extendido; al obtener la información se puede obtener la información del accionamiento del eje extendido correspondiente, y podemos realizar la configuración de parámetros según dicha información.
 
 .. image:: robot_peripherals/078.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.7‑3 扩展轴坐标系标定
+.. centered:: Figura 8.7‑3 Calibración del sistema de coordenadas del eje extendido
 
-当前扩展轴方案如下:
+Los esquemas de eje extendido actuales son los siguientes:
 
-- 0-单自由度直线滑轨
+- 0-riel deslizante lineal de un grado de libertad
 
-- 1-两自由度L型变位机
+- 1-posicionador tipo L de dos grados de libertad
 
-- 2-三自由度（暂未开放）
+- 2-tres grados de libertad (aún no disponible)
 
-- 3-四自由度（暂未开放）
+- 3-cuatro grados de libertad (aún no disponible)
 
-- 4-单自由度变位机
+- 4-posicionador de un grado de libertad
 
-- 5-两自由度小车
+- 5-carro de dos grados de libertad
 
 
-**单自由度直线滑轨**: 先设置DH参数，然后设置机器人相对扩展轴位置，直线导轨为扩展轴上。若不标定，点击保存即可，此时扩展轴只能异步运动。
+**Riel deslizante lineal de un grado de libertad**: configurar primero los parámetros DH y, a continuación, configurar la posición del robot respecto al eje extendido; el riel guía lineal está en el eje extendido. Si no se calibra, basta con hacer clic en guardar; en este caso el eje extendido solo puede moverse de forma asíncrona.
 
 .. image:: robot_peripherals/079.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.7-4 直线滑轨DH参数配置
+.. centered:: Figura 8.7-4 Configuración de los parámetros DH del riel deslizante lineal
 
 .. image:: robot_peripherals/080.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.7-5 直线滑轨--机器人相对扩展轴位置配置
+.. centered:: Figura 8.7-5 Riel deslizante lineal -- configuración de la posición del robot respecto al eje extendido
 
-若需跟机器人同步运动，在扩展轴零点处，点击操作区Eaxis使能扩展轴，将机器人末端中心（应用工具坐标系下用工具末端点）以两个不同姿势对准扩展轴上固定一点，分别设定点1和点2。
+Si se necesita un movimiento sincronizado con el robot, en el punto cero del eje extendido, hacer clic en Eaxis del área de operación para habilitar el eje extendido, alinear el centro del extremo del robot (el punto del extremo de la herramienta cuando se aplica el sistema de coordenadas de herramienta) con un punto fijo del eje extendido en dos actitudes diferentes y configurar respectivamente el punto 1 y el punto 2.
 
 .. image:: robot_peripherals/081.png
    :width: 3in
@@ -4140,9 +4143,9 @@ PLC -> 机器人控制器
    :width: 3in
    :align: center
 
-.. centered:: 图表 8.7‑6 直线滑轨标定点1和2
+.. centered:: Figura 8.7‑6 Calibración de los puntos 1 y 2 del riel deslizante lineal
 
-去除使能，将扩展轴移动一段距离，使能后，同样将机器人末端中心点对准之前固定点，设定点3。去除使能，将扩展轴移至零点，使能扩展轴。将机器人末端中心点移至固定点垂直往上空间一点，设定点4，计算坐标系并保存。
+Quitar la habilitación, desplazar el eje extendido una cierta distancia, volver a habilitarlo y, del mismo modo, alinear el centro del extremo del robot con el punto fijo anterior y configurar el punto 3. Quitar la habilitación, desplazar el eje extendido hasta el punto cero y habilitar el eje extendido. Desplazar el centro del extremo del robot hasta un punto del espacio situado verticalmente por encima del punto fijo, configurar el punto 4, calcular el sistema de coordenadas y guardar.
 
 .. image:: robot_peripherals/083.png
    :width: 3in
@@ -4152,31 +4155,31 @@ PLC -> 机器人控制器
    :width: 3in
    :align: center
 
-.. centered:: 图表 8.7‑7 直线滑轨标定点3和4
+.. centered:: Figura 8.7‑7 Calibración de los puntos 3 y 4 del riel deslizante lineal
 
-**两自由度L型变位机**：变位机由两个扩展轴组成。先设置DH参数，根据图示测量出变位机的DH参数，输入到输入框中。设置机器人相对扩展轴位置，变位机为扩展轴外。若不标定，点击保存即可，此时扩展轴只能异步运动。
+**Posicionador tipo L de dos grados de libertad**: el posicionador está compuesto por dos ejes extendidos. Configurar primero los parámetros DH; medir los parámetros DH del posicionador según la figura e introducirlos en los cuadros de entrada. Configurar la posición del robot respecto al eje extendido; el posicionador está fuera del eje extendido. Si no se calibra, basta con hacer clic en guardar; en este caso el eje extendido solo puede moverse de forma asíncrona.
 
 .. image:: robot_peripherals/085.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.7‑8 两自由度L型变位机DH参数配置
+.. centered:: Figura 8.7‑8 Configuración de los parámetros DH del posicionador tipo L de dos grados de libertad
 
 .. image:: robot_peripherals/086.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.7‑9 两自由度L型变位机--机器人相对扩展轴位置
+.. centered:: Figura 8.7‑9 Posicionador tipo L de dos grados de libertad -- posición del robot respecto al eje extendido
 
-若需跟机器人同步运动，在扩展轴零点处，点击操作区Eaxis使能扩展轴，在变位机上建立坐标系，选择一点，输入该点在该坐标系下的笛卡尔位姿，比如选择Y正向一点，测出Y为100mm，则输入如图所示数值，点击参考点，即可设定参考点。后续四个标定点都需将机器人末端中心（应用工具坐标系下用工具末端点）对准该参考点。
+Si se necesita un movimiento sincronizado con el robot, en el punto cero del eje extendido, hacer clic en Eaxis del área de operación para habilitar el eje extendido; establecer un sistema de coordenadas en el posicionador, seleccionar un punto e introducir la pose cartesiana de dicho punto en dicho sistema de coordenadas; por ejemplo, seleccionar un punto en la dirección Y positiva, medir Y como 100mm e introducir el valor mostrado en la figura; hacer clic en punto de referencia para establecer el punto de referencia. Los cuatro puntos de calibración posteriores deben alinear el centro del extremo del robot (el punto del extremo de la herramienta cuando se aplica el sistema de coordenadas de herramienta) con dicho punto de referencia.
 
 .. image:: robot_peripherals/087.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.7‑10 两自由度L型变位机--参考点配置
+.. centered:: Figura 8.7‑10 Posicionador tipo L de dos grados de libertad -- configuración del punto de referencia
 
-将机器人末端中心（应用工具坐标系下用工具末端点）对准该参考点，设定点1，点击操作区Eaxis点动两个轴一小段距离，将机器人末端中心对准参考点，设定点2，继续点动两个轴，机器人末端中心对准参考点，设定点3，最后继续点动两个轴，将机器人末端中心对准参考点，设定点4，点击计算，得到坐标系结果，点击保存，应用即可。
+Alinear el centro del extremo del robot (el punto del extremo de la herramienta cuando se aplica el sistema de coordenadas de herramienta) con dicho punto de referencia y configurar el punto 1; hacer clic en Eaxis del área de operación para hacer jog de los dos ejes una pequeña distancia, alinear el centro del extremo del robot con el punto de referencia y configurar el punto 2; continuar haciendo jog de los dos ejes, alinear el centro del extremo del robot con el punto de referencia y configurar el punto 3; por último, continuar haciendo jog de los dos ejes, alinear el centro del extremo del robot con el punto de referencia y configurar el punto 4; hacer clic en calcular para obtener el resultado del sistema de coordenadas, hacer clic en guardar y aplicar.
 
 .. image:: robot_peripherals/088.png
    :width: 3in
@@ -4194,31 +4197,31 @@ PLC -> 机器人控制器
    :width: 3in
    :align: center
 
-.. centered:: 图表 8.7‑11 两自由度L型变位机标定
+.. centered:: Figura 8.7‑11 Calibración del posicionador tipo L de dos grados de libertad
 
-**单自由度变位机**：由一个旋转扩展轴组成，DH参数设置为0。设置机器人相对扩展轴位置为扩展轴外。若不标定，点击保存即可，此时扩展轴只能异步运动。
+**Posicionador de un grado de libertad**: compuesto por un eje extendido de rotación; los parámetros DH se configuran en 0. Configurar la posición del robot respecto al eje extendido como fuera del eje extendido. Si no se calibra, basta con hacer clic en guardar; en este caso el eje extendido solo puede moverse de forma asíncrona.
 
 .. image:: robot_peripherals/092.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.7‑12 单自由度变位机DH参数配置
+.. centered:: Figura 8.7‑12 Configuración de los parámetros DH del posicionador de un grado de libertad
 
 .. image:: robot_peripherals/093.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.7‑13 单自由度变位机--机器人相对扩展轴位置
+.. centered:: Figura 8.7‑13 Posicionador de un grado de libertad -- posición del robot respecto al eje extendido
 
-若需跟机器人同步运动，在扩展轴零点处，点击操作区Eaxis使能扩展轴，在变位机上建立坐标系，选择一点，输入该点在该坐标系下的笛卡尔位姿，点击“参考点”，即可设定参考点。
+Si se necesita un movimiento sincronizado con el robot, en el punto cero del eje extendido, hacer clic en Eaxis del área de operación para habilitar el eje extendido; establecer un sistema de coordenadas en el posicionador, seleccionar un punto e introducir la pose cartesiana de dicho punto en dicho sistema de coordenadas; hacer clic en "Punto de referencia" para establecer el punto de referencia.
 
 .. image:: robot_peripherals/094.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.7‑14 单自由度变位机参考的配置
+.. centered:: Figura 8.7‑14 Configuración de la referencia del posicionador de un grado de libertad
 
-后续四个标定点都需将机器人末端中心（应用工具坐标系下用工具末端点）对准该参考点。将机器人末端中心（应用工具坐标系下用工具末端点）对准该参考点，设定点1，点击操作区Eaxis点动旋转轴一小段距离，将机器人末端中心对准参考点，设定点2，继续点动旋转轴，机器人末端中心对准参考点，设定点3，最后继续点动旋转轴，将机器人末端中心对准参考点，设定点4，点击计算，得到坐标系结果，点击保存，应用即可。
+Los cuatro puntos de calibración posteriores deben alinear el centro del extremo del robot (el punto del extremo de la herramienta cuando se aplica el sistema de coordenadas de herramienta) con dicho punto de referencia. Alinear el centro del extremo del robot (el punto del extremo de la herramienta cuando se aplica el sistema de coordenadas de herramienta) con dicho punto de referencia y configurar el punto 1; hacer clic en Eaxis del área de operación para hacer jog del eje de rotación una pequeña distancia, alinear el centro del extremo del robot con el punto de referencia y configurar el punto 2; continuar haciendo jog del eje de rotación, alinear el centro del extremo del robot con el punto de referencia y configurar el punto 3; por último, continuar haciendo jog del eje de rotación, alinear el centro del extremo del robot con el punto de referencia y configurar el punto 4; hacer clic en calcular para obtener el resultado del sistema de coordenadas, hacer clic en guardar y aplicar.
 
 .. image:: robot_peripherals/095.png
    :width: 3in
@@ -4236,28 +4239,99 @@ PLC -> 机器人控制器
    :width: 3in
    :align: center
 
-.. centered:: 图表 8.7‑15 单自由度变位机标定
+.. centered:: Figura 8.7‑15 Calibración del posicionador de un grado de libertad
 
 .. important:: 
-   1. 扩展轴坐标系是基于工具基础上进行标定的，需要在已建立工具坐标系的基础上进行扩展轴坐标系的建立。
-   2. 扩展轴系一般使用exaxis1~ exaxis4，应用exaxis0代表无扩展轴坐标系，在进行扩展轴坐标系标定时，首先需将扩展轴坐标系应用至exaxis0，然后选择其他扩展轴坐标系进行标定及应用。
+   1. El sistema de coordenadas del eje extendido se calibra sobre la base de la herramienta, por lo que es necesario establecer el sistema de coordenadas del eje extendido sobre la base de un sistema de coordenadas de herramienta ya establecido.
+   2. El sistema de ejes extendidos utiliza generalmente exaxis1~ exaxis4; aplicar exaxis0 representa que no hay sistema de coordenadas de eje extendido; al calibrar el sistema de coordenadas del eje extendido, primero es necesario aplicar el sistema de coordenadas del eje extendido a exaxis0 y, a continuación, seleccionar otro sistema de coordenadas del eje extendido para calibrarlo y aplicarlo.
 
-控制器+PLC（UDP通讯）
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Controlador + PLC (comunicación UDP)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-使用扩展轴UDP通讯方式之前，需要先建立相应的扩展轴标系，在相应的扩展轴坐标系下配置相应的扩展轴方案，并在程序示教时应用建立好的工具坐标系。扩展轴功能主要与焊机功能和激光跟踪传感器功能配合使用。
+Antes de utilizar el modo de comunicación UDP del eje extendido, es necesario establecer primero el sistema de coordenadas del eje extendido correspondiente, configurar el esquema de eje extendido correspondiente bajo dicho sistema de coordenadas del eje extendido y aplicar el sistema de coordenadas de herramienta establecido durante la enseñanza del programa. La función de eje extendido se utiliza principalmente en combinación con la función de la máquina de soldar y la función del sensor de seguimiento láser.
 
 .. figure:: robot_peripherals/099.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.7‑16 扩展轴坐标系应用和当前扩展轴方案显示
+.. centered:: Figura 8.7‑16 Aplicación del sistema de coordenadas del eje extendido y visualización del esquema actual del eje extendido
 
-当只需要修改当前扩展轴坐标系时，在外设扩展轴配置界面选择坐标系即可应用。当需要更改扩展轴方案时需要进入扩展轴坐标系配置界面修改。
+Cuando solo se necesite modificar el sistema de coordenadas del eje extendido actual, basta con seleccionar el sistema de coordenadas en la interfaz de configuración de periféricos del eje extendido para aplicarlo. Cuando se necesite cambiar el esquema del eje extendido es necesario entrar en la interfaz de configuración del sistema de coordenadas del eje extendido para modificarlo.
 
-当扩展轴方案为“0-单自由度直线滑轨”、“1-两自由度L型变位机”、“2-三自由度”、“3-四自由度”和“4-单自由度变位机”时，UDP通讯配置成功后显示“UDP扩展轴”和“定位完成时间设置”内容，当扩展轴方案为“5-两自由度小车”时，界面显示“两自由度小车测试”内容。
+Cuando el esquema del eje extendido es "0-riel deslizante lineal de un grado de libertad", "1-posicionador tipo L de dos grados de libertad", "2-tres grados de libertad", "3-cuatro grados de libertad" y "4-posicionador de un grado de libertad", tras una configuración correcta de la comunicación UDP se muestran los contenidos "Eje extendido UDP" y "Configuración del tiempo de finalización de posicionamiento"; cuando el esquema del eje extendido es "5-carro de dos grados de libertad", la interfaz muestra el contenido "Prueba del carro de dos grados de libertad".
 
-UDP通讯配置
+Configuración de comunicación UDP
+++++++++++++++++++++++++++++++++++
+
+.. note:: 
+   .. image:: robot_peripherals/100.png
+      :height: 0.75in
+      :align: left
+
+   Nombre: **Botón Editar**
+   
+   Función: configuración de los parámetros de comunicación UDP
+
+.. note:: 
+   .. image:: robot_peripherals/101.png
+      :height: 0.75in
+      :align: left
+
+   Nombre: **Botón Cargar**
+   
+   Función: carga de la comunicación UDP
+
+**Step1**: Configurar los parámetros de comunicación UDP del eje extendido: establecer la dirección IP, el número de puerto, el período de comunicación, el período de detección de pérdida de paquetes, el número de pérdidas de paquetes y otros parámetros; entre ellos, el período de reconexión y el número de reconexiones solo se pueden configurar tras activar el interruptor de reconexión automática tras interrupción de comunicación.
+
+- Dirección IP: dirección ip personalizada;
+
+- Número de puerto: definir según la situación real;
+
+- Período de comunicación: definir según la situación real, en unidades de ms;
+
+- Período de comunicación de detección de pérdida de paquetes: 10 ~ 1000 ms;
+
+- Número de pérdidas de paquetes: 1 ~ 100;
+
+- Duración de confirmación de interrupción de comunicación: 0 ~ 500 ms;
+
+- Reconexión automática tras reinicio por corte de energía: activado/desactivado;
+
+- Reconexión automática tras interrupción de comunicación: activado/desactivado;
+
+- Período de reconexión: 1 ~ 1000 ms;
+
+- Número de reconexiones: 1 ~ 100;
+
+.. figure:: robot_peripherals/102.png
+   :align: center
+   :width: 4in
+
+.. centered:: Figura 8.7‑17 Configuración de los parámetros de comunicación UDP del eje extendido
+
+.. important:: 
+  1. Tras establecer la duración de confirmación de desconexión de comunicación, solo se confirma la desconexión de comunicación y se informa del error cuando la anomalía de comunicación supera dicha duración;
+  2. Tras la desconexión de la comunicación UDP, se activa el error de desconexión UDP (reajustable); se puede hacer clic en el botón de borrar mensaje de advertencia y la comunicación UDP se vuelve a establecer.
+
+**Step2**: Tras una configuración correcta de los parámetros de comunicación, hacer clic en el botón "Cargar" para establecer la comunicación UDP; tras una comunicación correcta, el botón situado delante de "Configuración de comunicación UDP" se vuelve verde y, en el estado del eje extendido de los distintos estados del robot, se puede comprobar que el eje extendido ya está servoenposición.
+
+.. figure:: robot_peripherals/103.png
+   :align: center
+   :width: 4in
+
+.. centered:: Figura 8.7‑18 Establecimiento de la comunicación UDP del eje extendido
+
+.. figure:: robot_peripherals/104.png
+   :align: center
+   :width: 4in
+
+.. centered:: Figura 8.7‑19 Eje extendido servoenposición
+
+.. important:: 
+  1. Cuando no se ha establecido la conexión de comunicación UDP, no se puede configurar ni consultar la información del número de eje extendido UDP;
+  2. Antes de cargar la comunicación UDP del eje extendido es imprescindible configurar y aplicar primero el sistema de coordenadas del eje extendido distinto del número 0.
+
+Eje extendido UDP
 +++++++++++++++++
 
 .. note:: 
@@ -4265,348 +4339,277 @@ UDP通讯配置
       :height: 0.75in
       :align: left
 
-   名称：**编辑按钮**
+   Nombre: **Botón Editar**
    
-   作用：UDP通讯参数配置
-
-.. note:: 
-   .. image:: robot_peripherals/101.png
-      :height: 0.75in
-      :align: left
-
-   名称：**加载按钮**
-   
-   作用：UDP通讯加载
-
-**Step1**：配置扩展轴UDP通讯参数：设置IP地址、端口号、通信周期、丢包检测周期、丢包次数等参数，其中重连周期和重连次数需在通讯中断自动重连开关开启后才可配置。
-
-- IP地址：自定义ip地址；
-
-- 端口号：根据实际情况定义；
-
-- 通讯周期：根据实际情况定义，单位ms；
-
-- 丢包检测通讯周期：10 ~ 1000 ms；
-
-- 丢包次数：1 ~ 100；
-
-- 通讯中断确认时长：0 ~ 500 ms；
-
-- 断电重启自动重连：开/关；
-
-- 通讯中断自动重连：开/关；
-
-- 重连周期：1 ~ 1000 ms；
-
-- 重连次数：1 ~ 100；
-
-.. figure:: robot_peripherals/102.png
-   :align: center
-   :width: 4in
-
-.. centered:: 图表 8.7‑17 扩展轴UDP通讯参数配置
-
-.. important:: 
-  1. 设置通讯断开确认时长后，当通讯异常超出该时长时才确认通讯断开并报错；
-  2. UDP通讯断开后，触发UDP断开报错(可复位)，可点击清除警告信息按钮，UDP通讯再次建立。
-
-**Step2**：通讯参数配置成功后，点击“加载”按钮，建立UDP通讯，通讯成功后“UDP通讯配置”前方按钮变绿，机器人各类状态中的扩展轴状态查看扩展轴已经伺服到位。
-
-.. figure:: robot_peripherals/103.png
-   :align: center
-   :width: 4in
-
-.. centered:: 图表 8.7‑18 扩展轴UDP建立通讯
-
-.. figure:: robot_peripherals/104.png
-   :align: center
-   :width: 4in
-
-.. centered:: 图表 8.7‑19 扩展轴伺服到位
-
-.. important:: 
-  1. UDP通讯未建立连接时，无法配置和查看UDP扩展轴编号信息；
-  2. 在进行扩展轴UDP通讯加载之前务必先进行除序号0以外扩展轴坐标系的配置和应用。
-
-UDP扩展轴
-+++++++++++++
-
-.. note:: 
-   .. image:: robot_peripherals/100.png
-      :height: 0.75in
-      :align: left
-
-   名称：**编辑按钮**
-   
-   作用：扩展轴参数配置
+   Función: configuración de los parámetros del eje extendido
 
 .. note:: 
    .. image:: robot_peripherals/105.png
       :height: 0.75in
       :align: left
 
-   名称：**使能按钮**
+   Nombre: **Botón Habilitar**
    
-   作用：扩展轴使能状态，点击按钮扩展轴去使能
+   Función: estado de habilitación del eje extendido; hacer clic en el botón para deshabilitar el eje extendido
 
 .. note:: 
    .. image:: robot_peripherals/106.png
       :height: 0.75in
       :align: left
 
-   名称：**去使能按钮**
+   Nombre: **Botón Deshabilitar**
    
-   作用：扩展轴去使能状态，点击按钮扩展轴使能
+   Función: estado de deshabilitación del eje extendido; hacer clic en el botón para habilitar el eje extendido
 
 .. note:: 
    .. image:: robot_peripherals/107.png
       :height: 0.75in
       :align: left
 
-   名称：**回零按钮**
+   Nombre: **Botón Retorno a cero**
    
-   作用：扩展轴回零方式设置
+   Función: configuración del modo de retorno a cero del eje extendido
 
 .. note:: 
    .. image:: robot_peripherals/108.png
       :height: 0.75in
       :align: left
 
-   名称：**测试按钮**
+   Nombre: **Botón Prueba**
    
-   作用：扩展轴功能测试
+   Función: prueba de la función del eje extendido
 
-**Step1**：选择任意扩展轴编号（目前只有编号1、2、3、4），点击扩展轴编号后方的“编辑”按钮进入详细配置界面。设置轴类型、轴方向、运行速度、加速度、正方向限位、反方向限位、导程、编码器分辨率、起点偏置、厂家、型号和模式，点击配置即可配置完成。
+**Step1**: Seleccionar cualquier número de eje extendido (actualmente solo los números 1, 2, 3 y 4) y hacer clic en el botón "Editar" situado detrás del número de eje extendido para entrar en la interfaz de configuración detallada. Configurar el tipo de eje, la dirección del eje, la velocidad de funcionamiento, la aceleración, el límite en sentido positivo, el límite en sentido negativo, el paso, la resolución del codificador, el desplazamiento del punto de inicio, el fabricante, el modelo y el modo, y hacer clic en configurar para completar la configuración.
 
-- 轴类型：直线导轨、旋转轴和无限旋转轴；
+- Tipo de eje: riel guía lineal, eje de rotación y eje de rotación infinita;
 
-- 轴方向：正/负；
+- Dirección del eje: positiva/negativa;
 
-- 运行速度：0~2000mm/s；
+- Velocidad de funcionamiento: 0~2000mm/s;
 
-- 加速度：0 ~ 2000 mm/s²；
+- Aceleración: 0 ~ 2000 mm/s²;
 
-- 正方向限位：0 ~ 50000；
+- Límite en sentido positivo: 0 ~ 50000;
 
-- 反方向限位：-50000 ~ 0；
+- Límite en sentido negativo: -50000 ~ 0;
 
-- 导程：0~1000；
+- Paso: 0~1000;
 
-- 编码器分辨率：0 ~ 10000000；
+- Resolución del codificador: 0 ~ 10000000;
 
-- 起点偏置：0 ~ 10000mm；
+- Desplazamiento del punto de inicio: 0 ~ 10000mm;
 
-- 厂家：禾川、汇川和松下；
+- Fabricante: Hechuan, Inovance y Panasonic;
 
-- 型号：根据厂家自动匹配型号列表；
+- Modelo: se empareja automáticamente con la lista de modelos según el fabricante;
 
-- 模式：增量系统和绝对位置系统；
+- Modo: sistema incremental y sistema de posición absoluta;
 
 .. figure:: robot_peripherals/109.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.7‑20 扩展轴参数配置
+.. centered:: Figura 8.7‑20 Configuración de los parámetros del eje extendido
 
-**Step2**：扩展轴参数配置完成后，点击“去使能”按钮，将对应扩展轴编号使能，使能成功后即可设置回零方式和扩展轴测试，当扩展轴未使能时无法进行回零方式设置和扩展轴测试。
+**Step2**: Tras completar la configuración de los parámetros del eje extendido, hacer clic en el botón "Deshabilitar" para habilitar el número de eje extendido correspondiente; tras una habilitación correcta se puede configurar el modo de retorno a cero y realizar la prueba del eje extendido; cuando el eje extendido no está habilitado no se puede configurar el modo de retorno a cero ni realizar la prueba del eje extendido.
 
 .. figure:: robot_peripherals/110.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.7‑21 扩展轴使能/去使能
+.. centered:: Figura 8.7‑21 Habilitación/deshabilitación del eje extendido
 
-**Step3**：扩展轴未使能成功无法进入设置界面，按钮置灰；扩展轴使能成功后，点击“回零”按钮进入回零方式设置界面。设置回零方式、寻零速度和零点箍位速度，点击“设置”按钮，扩展轴开始回零，回零状态会显示在轴方向下方空白处，当出现“回零已完成”提示表明扩展轴零点设置成功。
+**Step3**: Si el eje extendido no se ha habilitado correctamente no se puede entrar en la interfaz de configuración y el botón aparece en gris; tras una habilitación correcta del eje extendido, hacer clic en el botón "Retorno a cero" para entrar en la interfaz de configuración del modo de retorno a cero. Configurar el modo de retorno a cero, la velocidad de búsqueda de cero y la velocidad de sujeción del punto cero, y hacer clic en el botón "Configurar"; el eje extendido comienza el retorno a cero y el estado del retorno a cero se muestra en el espacio en blanco situado debajo de la dirección del eje; cuando aparece el aviso "Retorno a cero completado" indica que el punto cero del eje extendido se ha configurado correctamente.
 
-- 回零方式：当前位置回零、负限位回零和正限位回零；
+- Modo de retorno a cero: retorno a cero en la posición actual, retorno a cero por límite negativo y retorno a cero por límite positivo;
 
-- 寻零速度：0~2000mm/s；
+- Velocidad de búsqueda de cero: 0~2000mm/s;
 
-- 零点箍位速度：0~2000mm/s；
+- Velocidad de sujeción del punto cero: 0~2000mm/s;
 
 .. figure:: robot_peripherals/111.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.7‑22 回零方式设置
+.. centered:: Figura 8.7‑22 Configuración del modo de retorno a cero
 
-**Step4**：扩展轴未使能成功无法进入设置界面，按钮置灰；扩展轴使能成功且回零方式设置完成后，点击“测试”按钮进入扩展轴测试界面。设置运行速度、加速度和最大距离，进行正向转动和反向转动测试扩展轴，同时在转动过程中可以点击“停止”按钮测试扩展轴是否可以正常停止。
+**Step4**: Si el eje extendido no se ha habilitado correctamente no se puede entrar en la interfaz de configuración y el botón aparece en gris; tras una habilitación correcta del eje extendido y completada la configuración del modo de retorno a cero, hacer clic en el botón "Prueba" para entrar en la interfaz de prueba del eje extendido. Configurar la velocidad de funcionamiento, la aceleración y la distancia máxima, y realizar las pruebas de giro en sentido directo y en sentido inverso del eje extendido; además, durante el giro se puede hacer clic en el botón "Detener" para probar si el eje extendido se detiene con normalidad.
 
 .. figure:: robot_peripherals/112.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.7‑23 扩展轴测试
+.. centered:: Figura 8.7‑23 Prueba del eje extendido
 
-**Step5**：扩展轴通常于激光传感器配合使用，此时激光传感器通常采用外部安装方式，传感器参考点配置需要采用三点法标定，而不是之前使用的六点法标定。将工具中心对准右侧横截面底部中间点（靠近相机那一侧）设定点1，将工具中心点对准另一截面即左侧横截面底部中间点，设定点2，将工具中心点移至传感器右侧横截面上边缘中间点，设定点3，计算并保存，点击应用完成三点法标定。
+**Step5**: El eje extendido se utiliza normalmente en combinación con el sensor láser; en este caso el sensor láser suele adoptar un modo de instalación externo, y la configuración del punto de referencia del sensor debe realizarse mediante el método de tres puntos, en lugar del método de seis puntos utilizado anteriormente. Alinear el centro de la herramienta con el punto medio de la parte inferior de la sección transversal derecha (el lado más cercano a la cámara) y configurar el punto 1; alinear el centro de la herramienta con el punto medio de la parte inferior de la otra sección transversal, es decir, la sección transversal izquierda, y configurar el punto 2; desplazar el centro de la herramienta hasta el punto medio del borde superior de la sección transversal derecha del sensor y configurar el punto 3; calcular y guardar, y hacer clic en aplicar para completar la calibración por el método de tres puntos.
 
 .. figure:: robot_peripherals/113.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.7‑24 传感器三点法标定
+.. centered:: Figura 8.7‑24 Calibración por el método de tres puntos del sensor
 
-**Step6**：在“示教程序”->“程序编程”界面选择外设指令的“扩展轴”命令。根据具体的程序示教需求，在相应的地方添加指令。
+**Step6**: En la interfaz "Programa de enseñanza"->"Programación de programas", seleccionar el comando "Eje extendido" de las instrucciones de periféricos. Según los requisitos concretos de enseñanza del programa, añadir la instrucción en el lugar correspondiente.
 
 .. figure:: robot_peripherals/114.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.7‑25 扩展轴指令编辑
+.. centered:: Figura 8.7‑25 Edición de la instrucción de eje extendido
 
-扩展轴配合激光跟踪焊接示教程序
-+++++++++++++++++++++++++++++++
+Programa de enseñanza de soldadura con seguimiento láser combinado con eje extendido
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. list-table::
    :widths: 50 80 80
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **指令格式**
-     - **注释**
+   * - **Número**
+     - **Formato de la instrucción**
+     - **Comentario**
 
    * - 1
      - EXT_AXIS_PTP(1,1laserstart)
-     - #外部轴运动激光传感器起始点
+     - #Punto inicial del sensor láser de movimiento del eje externo
 
    * - 2
      - PTP(laserstart,10,-1,0)
-     - #机器人运动激光传感器起始点
+     - #Punto inicial del sensor láser de movimiento del robot
 
    * - 3
      - LTSearchStart(3,20,10,10000)
-     - #开始寻位
+     - #Iniciar búsqueda de posición
 
    * - 4
      - LTSearchStop()
-     - #停止寻位
+     - #Detener búsqueda de posición
 
    * - 5
      - EXT_AXIS_PTP(1,1,seamPos)
-     - #外部轴运动焊缝起点
+     - #Punto inicial de la soldadura de movimiento del eje externo
 
    * - 6
      - Lin(seamPos,20,-1,00,0)
-     - #机器人运动焊缝起点
+     - #Punto inicial de la soldadura de movimiento del robot
 
    * - 7
      - LTTrackOn()
-     - #激光跟踪
+     - #Seguimiento láser
 
    * - 8
      - ARCStart(0,10000)
-     - #焊机起弧
+     - #Encendido del arco de la máquina de soldar
 
    * - 9
      - EXT_AXIS_PTP(1,1,laserend)
-     - #外部轴运动焊缝终点
+     - #Punto final de la soldadura de movimiento del eje externo
 
    * - 10
      - Lin( laserend,10,-1,0,0)
-     - #机器人运动焊缝终点
+     - #Punto final de la soldadura de movimiento del robot
 
    * - 11
      - ARCEnd(0,10000)
-     - #焊机收弧
+     - #Apagado del arco de la máquina de soldar
 
    * - 12
      - LTTrackOff
-     - #激光跟踪关闭
+     - #Desactivación del seguimiento láser
 
-定位完成时间
-++++++++++++++++
+Tiempo de finalización de posicionamiento
++++++++++++++++++++++++++++++++++++++++++
 
-当扩展轴建立UDP通讯后，输入时间，点击“配置”按钮即可完成设置。该配置项用于监听扩展轴运动停止的时间。
+Tras establecer la comunicación UDP del eje extendido, introducir el tiempo y hacer clic en el botón "Configurar" para completar la configuración. Este elemento de configuración se utiliza para monitorizar el tiempo de detención del movimiento del eje extendido.
 
 .. figure:: robot_peripherals/115.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.7‑26 定位完成时间配置
+.. centered:: Figura 8.7‑26 Configuración del tiempo de finalización de posicionamiento
 
-两自由度小车测试
-~~~~~~~~~~~~~~~~~~~~~~
+Prueba del carro de dos grados de libertad
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-在扩展轴坐标系配置扩展轴方案为“5-两自由度小车”时，进入UDP通讯界面后显示该内容，否则无法查看。
+Cuando en la configuración del sistema de coordenadas del eje extendido el esquema del eje extendido es "5-carro de dos grados de libertad", tras entrar en la interfaz de comunicación UDP se muestra este contenido; de lo contrario no se puede consultar.
 
 .. figure:: robot_peripherals/116.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.7‑27 扩展轴方案为“5-两自由度小车”界面
+.. centered:: Figura 8.7‑27 Interfaz con el esquema de eje extendido "5-carro de dos grados de libertad"
 
-.. important:: 两自由度小车默认应用扩展轴编号1和2，UDP通讯成功后通过机器人	各类状态中的扩展轴状态查看扩展轴1和2伺服到位。
+.. important:: El carro de dos grados de libertad aplica por defecto los números de eje extendido 1 y 2; tras una comunicación UDP correcta, comprobar mediante el estado del eje extendido de los distintos estados del robot que los ejes extendidos 1 y 2 están servoenposición.
 
 .. figure:: robot_peripherals/117.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.7‑28 两自由度小车扩展轴伺服到位
+.. centered:: Figura 8.7‑28 Ejes extendidos del carro de dos grados de libertad servoenposición
 
 .. note:: 
    .. image:: robot_peripherals/105.png
       :height: 0.75in
       :align: left
 
-   名称：**使能按钮**
+   Nombre: **Botón Habilitar**
    
-   作用：扩展轴使能状态，点击按钮扩展轴去使能
+   Función: estado de habilitación del eje extendido; hacer clic en el botón para deshabilitar el eje extendido
 
 .. note:: 
    .. image:: robot_peripherals/106.png
       :height: 0.75in
       :align: left
 
-   名称：**去使能按钮**
+   Nombre: **Botón Deshabilitar**
    
-   作用：扩展轴去使能状态，点击按钮扩展轴使能
+   Función: estado de deshabilitación del eje extendido; hacer clic en el botón para habilitar el eje extendido
 
 .. note:: 
    .. image:: robot_peripherals/107.png
       :height: 0.75in
       :align: left
 
-   名称：**回零按钮**
+   Nombre: **Botón Retorno a cero**
    
-   作用：扩展轴当前位置回零
+   Función: retorno a cero en la posición actual del eje extendido
 
 .. note:: 
    .. image:: robot_peripherals/108.png
       :height: 0.75in
       :align: left
 
-   名称：**测试按钮**
+   Nombre: **Botón Prueba**
    
-   作用：两自由度小车功能测试
+   Función: prueba de la función del carro de dos grados de libertad
 
-**Step1**：UDP通讯成功后，点击“去使能”按钮，将两自由度小车对应扩展轴使能，通过机器人各类状态中的扩展轴状态查看扩展轴1和2伺服使能。
+**Step1**: Tras una comunicación UDP correcta, hacer clic en el botón "Deshabilitar" para habilitar el eje extendido correspondiente del carro de dos grados de libertad; comprobar mediante el estado del eje extendido de los distintos estados del robot la habilitación del servo de los ejes extendidos 1 y 2.
 
 .. figure:: robot_peripherals/118.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.7‑29 两自由度小车扩展轴使能
+.. centered:: Figura 8.7‑29 Habilitación de los ejes extendidos del carro de dos grados de libertad
 
-**Step2**：扩展轴使能成功后，点击“回零”按钮，设置扩展轴当前位置回零，回零成功后测试按钮高亮，反之置灰。
+**Step2**: Tras una habilitación correcta del eje extendido, hacer clic en el botón "Retorno a cero" para establecer el retorno a cero en la posición actual del eje extendido; tras un retorno a cero correcto, el botón de prueba se resalta; de lo contrario aparece en gris.
 
 .. figure:: robot_peripherals/119.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.7‑30 两自由度小车当前位置回零成功
+.. centered:: Figura 8.7‑30 Retorno a cero correcto en la posición actual del carro de dos grados de libertad
 
-**Step3**：两自由度小车当前位置回零成功后，点击“测试”按钮进入界面，选择运动方式，输入参数进行运动测试，在运动过程中点击“停止”按钮测试停止功能。
+**Step3**: Tras un retorno a cero correcto en la posición actual del carro de dos grados de libertad, hacer clic en el botón "Prueba" para entrar en la interfaz, seleccionar el modo de movimiento, introducir los parámetros y realizar la prueba de movimiento; durante el movimiento, hacer clic en el botón "Detener" para probar la función de detención.
 
-- 运动方式：直线/圆弧；
+- Modo de movimiento: línea recta/arco;
 
-- 距离：-5000~5000mm（直线运动方式）；
+- Distancia: -5000~5000mm (modo de movimiento en línea recta);
 
-- 半径：1~5000mm（直线运动方式）；
+- Radio: 1~5000mm (modo de movimiento en línea recta);
 
-- 角度：-360~360°（圆弧运动方式）；
+- Ángulo: -360~360° (modo de movimiento en arco);
 
-- 速度：1~100%
+- Velocidad: 1~100%
 
 .. figure:: robot_peripherals/120.png
    :align: center
@@ -4616,60 +4619,60 @@ UDP扩展轴
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.7‑31 两自由度小车测试
+.. centered:: Figura 8.7‑31 Prueba del carro de dos grados de libertad
 
-控制器+伺服驱动器（485通讯）
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Controlador + servomotor (comunicación 485)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-硬件接线
-+++++++++++
+Cableado de hardware
+++++++++++++++++++++
 
-使用RS485通信控制伺服扩展轴前，请先将伺服驱动器的RS485通信接口与机器人控制箱上的RS485通信接口建立连接。法奥机器人易制造控制箱电气接口示意图如下：
+Antes de utilizar la comunicación RS485 para controlar el eje extendido del servo, establecer primero la conexión entre la interfaz de comunicación RS485 del servomotor y la interfaz de comunicación RS485 de la caja de control del robot. El esquema de las interfaces eléctricas de la caja de control de fabricación fácil del robot FAIRINO es el siguiente:
 
 .. figure:: robot_peripherals/122.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.7‑32 法奥机器人mini控制箱电气接口示意图
+.. centered:: Figura 8.7‑32 Esquema de las interfaces eléctricas de la caja de control mini del robot FAIRINO
 
-以戴纳泰克伺服驱动器FD100-750C型号为例，参考改驱动器面板端子示意图和FD100-750C的X3A-IN端子定义，当机器人配置与FD100-750C伺服扩展轴通信时，需要将控制箱上的485-A0端子、485-B0端子分别与驱动器X3A-IN端子的4号和5号引脚连接。（请注意：您可以在伺服驱动器面板上看到一个“485”标志的插线端子，该端子暂未开放用户使用，请勿将您的RS485通信线缆连接到此端子上）。同时，若连接多个伺服驱动器，且该驱动器为链路的最后一个，需要将面板上的RS485通信中断电阻拨码开关（2号拨码）打开。
+Tomando como ejemplo el modelo de servomotor Dynatec FD100-750C, consultar el esquema de los terminales del panel de dicho accionamiento y la definición del terminal X3A-IN del FD100-750C; cuando el robot se configura para comunicarse con el eje extendido del servo FD100-750C, es necesario conectar los terminales 485-A0 y 485-B0 de la caja de control con los pines 4 y 5 del terminal X3A-IN del accionamiento respectivamente. (Tenga en cuenta: en el panel del servomotor puede verse un terminal de conexión marcado con "485"; este terminal aún no está disponible para el usuario; no conecte su cable de comunicación RS485 a este terminal). Asimismo, si se conectan varios servomotores y este accionamiento es el último de la cadena, es necesario activar el interruptor DIP de resistencia de terminación de comunicación RS485 del panel (interruptor DIP número 2).
 
 .. figure:: robot_peripherals/123.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.7‑33 FD100-750C驱动器面板
+.. centered:: Figura 8.7‑33 Panel del accionamiento FD100-750C
 
 .. figure:: robot_peripherals/124.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.7‑34 FD100-750C的X3A-IN端子定义
+.. centered:: Figura 8.7‑34 Definición del terminal X3A-IN del FD100-750C
 
-通信配置
-++++++++++++++
+Configuración de comunicación
++++++++++++++++++++++++++++++
 
-确保您的RS485通信线缆正确连接且机器人和伺服扩展轴都正常上电后，打开机器人WebApp。
+Tras asegurarse de que el cable de comunicación RS485 está correctamente conectado y de que tanto el robot como el eje extendido del servo están correctamente encendidos, abrir WebApp del robot.
 
-点击组合方式为“控制器 + 伺服驱动器”的图片进入详细配置界面。在伺服驱动器配置中，选择编号为“1”（请注意：当连接多个伺服时，此编号用于区分不同的伺服，后面我们会多次提到该编号），厂商为“戴纳泰克”，选择相应的伺服驱动器型号，此处型号为“FD00-750C”，软件版本为V1.0，填写伺服驱动器对应的分辨率，此处为131072，根据您的机构模型填写机械传动比，此处为15.45，点击“配置”按钮。
+Hacer clic en la imagen del modo de combinación "Controlador + servomotor" para entrar en la interfaz de configuración detallada. En la configuración del servomotor, seleccionar el número "1" (tenga en cuenta: al conectar varios servos, este número se utiliza para distinguir los distintos servos; más adelante se mencionará este número en varias ocasiones), el fabricante "Dynatec", seleccionar el modelo correspondiente de servomotor, aquí el modelo es "FD00-750C", la versión de software V1.0, rellenar la resolución correspondiente del servomotor, aquí 131072, rellenar la relación de transmisión mecánica según el modelo de su mecanismo, aquí 15.45, y hacer clic en el botón "Configurar".
 
 .. figure:: robot_peripherals/125.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.7‑35 伺服驱动器配置
+.. centered:: Figura 8.7‑35 Configuración del servomotor
 
-至此我们已经完成机器人与伺服驱动器的485通讯配置，您可以在WebApp中右侧的“伺服状态栏”中查看伺服的实时状态信息。如下图所示：
+Con esto hemos completado la configuración de la comunicación 485 entre el robot y el servomotor; en la "Barra de estado del servo" de la derecha de WebApp puede consultar la información de estado en tiempo real del servo. Como se muestra en la figura siguiente:
 
 .. figure:: robot_peripherals/126.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.7‑36 伺服状态栏
+.. centered:: Figura 8.7‑36 Barra de estado del servo
 
-现在您需要按顺序对扩展轴设备进行使能和回零方式设置后，即可进行一定的运动测试，请在确保安全的前提下跟着本手册做如下测试操作。
+Ahora es necesario habilitar y configurar el modo de retorno a cero del dispositivo de eje extendido en orden para, a continuación, poder realizar una determinada prueba de movimiento; realice las siguientes operaciones de prueba siguiendo este manual y siempre que se garantice la seguridad.
 
-已配置伺服驱动器
+Servomotor configurado
 ++++++++++++++++++++++
 
 .. note:: 
@@ -4677,603 +4680,603 @@ UDP扩展轴
       :height: 0.75in
       :align: left
 
-   名称：**查看按钮**
+   Nombre: **Botón Ver**
    
-   作用：点击查看伺服驱动器配置信息
+   Función: hacer clic para consultar la información de configuración del servomotor
 
 .. note:: 
    .. image:: robot_peripherals/105.png
       :height: 0.75in
       :align: left
 
-   名称：**使能按钮**
+   Nombre: **Botón Habilitar**
    
-   作用：伺服驱动器使能状态，点击按钮伺服驱动器去使能
+   Función: estado de habilitación del servomotor; hacer clic en el botón para deshabilitar el servomotor
 
 .. note:: 
    .. image:: robot_peripherals/106.png
       :height: 0.75in
       :align: left
 
-   名称：**去使能按钮**
+   Nombre: **Botón Deshabilitar**
    
-   作用：伺服驱动器去使能状态，点击按钮伺服驱动器使
+   Función: estado de deshabilitación del servomotor; hacer clic en el botón para habilitar el servomotor
 
 .. note:: 
    .. image:: robot_peripherals/107.png
       :height: 0.75in
       :align: left
 
-   名称：**回零按钮**
+   Nombre: **Botón Retorno a cero**
    
-   作用：伺服驱动器回零方式设置
+   Función: configuración del modo de retorno a cero del servomotor
 
 .. note:: 
    .. image:: robot_peripherals/108.png
       :height: 0.75in
       :align: left
 
-   名称：**测试按钮**
+   Nombre: **Botón Prueba**
    
-   作用：伺服驱动器测试
+   Función: prueba del servomotor
 
 .. note:: 
    .. image:: robot_peripherals/128.png
       :height: 0.75in
       :align: left
 
-   名称：**伺服错误清除按钮**
+   Nombre: **Botón Borrar error del servo**
    
-   作用：伺服驱动器提示错误时，点击清除
+   Función: cuando el servomotor muestra un error, hacer clic para borrarlo
 
-伺服控制模式与使能
-********************
+Modo de control y habilitación del servo
+****************************************
 
-在“已配置伺服驱动器”中，选择控制模式为“位置模式”，选择对应的伺服编号，点击“去使能”按钮，此时会先设置伺服驱动器编号，设置成功后设置控制模式，控制模式设置成功后将伺服驱动器使能（请注意：切换控制模式后，需要先将伺服驱动器去除使能，再将伺服驱动器使能，伺服的控制模式切换才会生效，伺服使能成功后将切换控制模式将禁用）。
+En "Servomotor configurado", seleccionar el modo de control como "Modo de posición", seleccionar el número de servo correspondiente y hacer clic en el botón "Deshabilitar"; en este momento se establecerá primero el número de servomotor y, tras una configuración correcta, se establecerá el modo de control; tras una configuración correcta del modo de control, se habilitará el servomotor (tenga en cuenta: tras cambiar el modo de control, es necesario deshabilitar primero el servomotor y volver a habilitarlo para que el cambio del modo de control del servo surta efecto; tras una habilitación correcta del servo, el cambio de modo de control se desactivará).
 
 .. figure:: robot_peripherals/129.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.7‑37 伺服控制模式与使能 
+.. centered:: Figura 8.7‑37 Modo de control y habilitación del servo 
 
-伺服使能成功后查看机器人各类状态栏中的“Servo”中可观察到对“伺服使能”状态灯亮起，表示伺服驱动器已经使能。点击“使能”状态按钮，将伺服驱动器去使能，“伺服使能”状态灯熄灭。
+Tras una habilitación correcta del servo, en "Servo" de las distintas barras de estado del robot se puede observar que el indicador de estado "Servo habilitado" se enciende, lo que indica que el servomotor está habilitado. Hacer clic en el botón de estado "Habilitar" para deshabilitar el servomotor; el indicador de estado "Servo habilitado" se apaga.
 
 .. figure:: robot_peripherals/130.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.7‑38 伺服驱动器状态栏 
+.. centered:: Figura 8.7‑38 Barra de estado del servomotor 
 
-伺服回零
-****************
+Retorno a cero del servo
+************************
 
-伺服驱动器使能成功后，“回零”按钮高亮，点击按钮进入设置界面。选择回零模式为“当前位置回零”，回零速度为5mm/s，零点箍位速度为1mm/s；点击“设置”按钮，即完成了伺服当前位置回零操作，在机器人各类状态栏中的“Servo”中，可观察到当前的“伺服位置”为0；（请您完全阅读本手册后，再将回零模式选择为“负限位回零”或“正限位回零”进行回零测试）。
+Tras una habilitación correcta del servomotor, el botón "Retorno a cero" se resalta; hacer clic en el botón para entrar en la interfaz de configuración. Seleccionar el modo de retorno a cero como "Retorno a cero en la posición actual", la velocidad de retorno a cero de 5mm/s y la velocidad de sujeción del punto cero de 1mm/s; hacer clic en el botón "Configurar" para completar la operación de retorno a cero en la posición actual del servo; en "Servo" de las distintas barras de estado del robot se puede observar que la "Posición del servo" actual es 0; (lea completamente este manual antes de seleccionar el modo de retorno a cero como "Retorno a cero por límite negativo" o "Retorno a cero por límite positivo" para realizar la prueba de retorno a cero).
 
 .. figure:: robot_peripherals/131.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.7‑39 伺服回零
+.. centered:: Figura 8.7‑39 Retorno a cero del servo
 
-伺服运动
-***************
+Movimiento del servo
+********************
 
-在实际控制伺服电机运动前，请先了解伺服电机的“位置模式”和“速度模式”，再次提醒您：
+Antes de controlar realmente el movimiento del servomotor, conozca primero el "Modo de posición" y el "Modo de velocidad" del servomotor; le recordamos de nuevo:
 
-**位置模式**：您可以输入一定的运动速度和目标位置参数，伺服将以设置的速度运动到目标位置，运动到目标位置后，伺服将停止运动。
+**Modo de posición**: se pueden introducir determinados parámetros de velocidad de movimiento y posición objetivo; el servo se moverá a la velocidad establecida hasta la posición objetivo y, tras llegar a la posición objetivo, el servo detendrá el movimiento.
 
-**速度模式**：您可以输入一定的目标速度，伺服将按照您设置的目标速度一直运动，直至您将目标速度设置为0或将伺服电机下使能；
+**Modo de velocidad**: se puede introducir una determinada velocidad objetivo; el servo se moverá continuamente a la velocidad objetivo establecida hasta que se establezca la velocidad objetivo en 0 o se deshabilite el servomotor;
 
-当切换控制模式时，“当前控制模式”显示会自动切换（请注意：切换控制模式后，需要先将伺服去除使能，再将伺服使能，伺服的控制模式切换才会生效）。若目前您的伺服未处于“位置模式”，请将您的伺服切换至位置模式。输入“目标位置”为50mm，运行速度为5mm/s，在确认安全的条件下，点击“设置”按钮，此时伺服电机将按照您设置的参数运动，您可以在机器人各类状态栏中的“Servo”中实时观察伺服的位置和速度等。
+Al cambiar el modo de control, la visualización de "Modo de control actual" cambia automáticamente (tenga en cuenta: tras cambiar el modo de control, es necesario deshabilitar primero el servo y volver a habilitarlo para que el cambio del modo de control del servo surta efecto). Si actualmente su servo no se encuentra en "Modo de posición", cambie su servo al modo de posición. Introducir la "Posición objetivo" de 50mm y la velocidad de funcionamiento de 5mm/s y, en condiciones de seguridad, hacer clic en el botón "Configurar"; en este momento el servomotor se moverá según los parámetros establecidos; en "Servo" de las distintas barras de estado del robot se puede observar en tiempo real la posición y la velocidad del servo, etc.
 
 .. figure:: robot_peripherals/132.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.7‑40 伺服运动调试（位置模式）
+.. centered:: Figura 8.7‑40 Depuración del movimiento del servo (modo de posición)
 
-将伺服的控制模式改为“速度模式”，点击“使能”状态按钮将伺服驱动器去使能，再点击“去使能”状态按钮，此时伺服切换为速度模式（请注意：当伺服电机运动后，只能通过将目标速度设置为0使伺服电机停止）。输入目标速度为5mm/s，点击“设置”按钮，伺服电机将以5mm/s的速度保持运动，同样您可以在机器人各类状态栏中的“Servo”中实时观察伺服的位置和速度等。
+Cambiar el modo de control del servo a "Modo de velocidad", hacer clic en el botón de estado "Habilitar" para deshabilitar el servomotor y volver a hacer clic en el botón de estado "Deshabilitar"; en este momento el servo cambia al modo de velocidad (tenga en cuenta: tras el movimiento del servomotor, solo se puede detener el servomotor estableciendo la velocidad objetivo en 0). Introducir la velocidad objetivo de 5mm/s y hacer clic en el botón "Configurar"; el servomotor mantendrá el movimiento a la velocidad de 5mm/s; del mismo modo, en "Servo" de las distintas barras de estado del robot se puede observar en tiempo real la posición y la velocidad del servo, etc.
 
 .. figure:: robot_peripherals/133.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.7‑41 伺服运动调试（速度模式）
+.. centered:: Figura 8.7‑41 Depuración del movimiento del servo (modo de velocidad)
 
-高级设置
-++++++++++++++
+Configuración avanzada
+++++++++++++++++++++++
 
-若机器人发生碰撞、按下急停等紧急情况下扩展轴能触发急停，并按照设定的急停减速度停止运动，碰撞报警恢复后能继续下发指令使扩展轴恢复运行。需要在高级设置中，设置伺服加减速度和伺服急停加减速，如下图所示：
+Si el robot sufre una colisión, se pulsa la parada de emergencia u otras situaciones de emergencia, el eje extendido puede activar la parada de emergencia y detener el movimiento según la deceleración de parada de emergencia establecida; tras recuperarse la alarma de colisión se pueden seguir enviando instrucciones para que el eje extendido reanude el funcionamiento. En la configuración avanzada es necesario establecer la aceleración y deceleración del servo y la aceleración y deceleración de parada de emergencia del servo, como se muestra en la figura siguiente:
 
 .. figure:: robot_peripherals/134.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.7‑42 高级设置
+.. centered:: Figura 8.7‑42 Configuración avanzada
 
-扩展轴编程
-++++++++++++++
+Programación del eje extendido
+++++++++++++++++++++++++++++++
 
-在“示教程序”->“程序编程”中新建一个用户程序“testServo.lua”，选择“外设指令”。
+En "Programa de enseñanza"->"Programación de programas", crear un nuevo programa de usuario "testServo.lua" y seleccionar "Instrucciones de periféricos".
 
 .. figure:: robot_peripherals/135.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.7‑43 打开外设指令
+.. centered:: Figura 8.7‑43 Apertura de las instrucciones de periféricos
 
-点击“扩展轴”，打开添加扩展轴指令界面。选择组合方式为“控制器 + 伺服驱动器(485)”，将控制模式设为“位置模式”，点击右侧的“添加”按钮。将添加扩展轴指令界面翻到底部，点击“应用”按钮。
+Hacer clic en "Eje extendido" para abrir la interfaz de adición de instrucciones de eje extendido. Seleccionar el modo de combinación "Controlador + servomotor (485)", establecer el modo de control como "Modo de posición" y hacer clic en el botón "Añadir" de la derecha. Desplazarse hasta el final de la interfaz de adición de instrucciones de eje extendido y hacer clic en el botón "Aplicar".
 
 .. figure:: robot_peripherals/136.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.7‑44 设置扩展轴的控制模式
+.. centered:: Figura 8.7‑44 Configuración del modo de control del eje extendido
 
-此时“testServo.lua”程序中即出现一组切换伺服控制模式的指令，您可以将机器人切换到自动模式，并执行该程序。
+En este momento, en el programa "testServo.lua" aparece un conjunto de instrucciones para conmutar el modo de control del servo; se puede cambiar el robot al modo automático y ejecutar el programa.
 
 .. figure:: robot_peripherals/137.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.7‑45 设置伺服控制模式程序
+.. centered:: Figura 8.7‑45 Programa de configuración del modo de control del servo
 
-如何通过用户程序控制伺服运动？同样打开添加扩展轴指令界面，如下图所示，找到参数配置栏，以位置模式为例，输入目标位置和运行速度，点击“添加”按钮；将添加扩展轴指令界面翻到底部，点击“应用”按钮，并关闭添加扩展轴指令界面。
+¿Cómo controlar el movimiento del servo mediante el programa de usuario? Abrir de nuevo la interfaz de adición de instrucciones de eje extendido, como se muestra en la figura siguiente, encontrar la columna de configuración de parámetros y, tomando como ejemplo el modo de posición, introducir la posición objetivo y la velocidad de funcionamiento, y hacer clic en el botón "Añadir"; desplazarse hasta el final de la interfaz de adición de instrucciones de eje extendido, hacer clic en el botón "Aplicar" y cerrar la interfaz de adición de instrucciones de eje extendido.
 
 .. figure:: robot_peripherals/138.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.7‑46 增加位置模式运动指令
+.. centered:: Figura 8.7‑46 Añadir la instrucción de movimiento en modo de posición
 
-“testServo.lua”程序中增加伺服运动指令：“AuxServoSetTargetPos(1,50,5)”。指令函数中的三个参数含义分别为：
+En el programa "testServo.lua" se añade la instrucción de movimiento del servo: "AuxServoSetTargetPos(1,50,5)". El significado de los tres parámetros de la función de la instrucción es:
 
-- 1：伺服编号为1。
+- 1: número de servo 1.
 
-- 50：目标位置。
+- 50: posición objetivo.
 
-- 5：目标速度。
+- 5: velocidad objetivo.
 
 .. figure:: robot_peripherals/139.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.7‑47 位置模式伺服运动程序
+.. centered:: Figura 8.7‑47 Programa de movimiento del servo en modo de posición
 
-将机器人切换到自动模式，运行该程序，此时您的伺服将以5mm/s的速度运动到50mm的位置。
+Cambiar el robot al modo automático y ejecutar el programa; en este momento su servo se moverá a la velocidad de 5mm/s hasta la posición de 50mm.
 
-至此，我们已经完成RS485控制伺服扩展轴的初步配置和测试，您可以根据实际情况编写机器人运动与伺服运动组合的程序，如下图一个示例程序。
+Con esto hemos completado la configuración y las pruebas preliminares del eje extendido del servo controlado por RS485; puede redactar programas que combinen el movimiento del robot con el movimiento del servo según la situación real, como se muestra en el programa de ejemplo de la figura siguiente.
 
-扩展轴与机械人协同运动程序示例
-*******************************
+Ejemplo de programa de movimiento coordinado entre el eje extendido y el robot
+****************************************************************************************
 
 .. list-table::
    :widths: 50 80 80
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **指令格式**
-     - **注释**
+   * - **Número**
+     - **Formato de la instrucción**
+     - **Comentario**
 
    * - 1
      - AuxServoSetTargetPos(1,50,5)
-     - #扩展轴运动到复位点
+     - #El eje extendido se desplaza hasta el punto de restablecimiento
 
    * - 2
      - if(GetDI(8,0) == 1) then
-     - #如果CI0输入有效
+     - #Si la entrada CI0 es válida
 
    * - 3
      - AuxServoSetTargetPos(1,50,5)
-     - #扩展轴运动到50mm
+     - #El eje extendido se desplaza a 50mm
 
    * - 4
      - PTP(testptp1,100,-1,0)
-     - #机器人运动到testptp1点
+     - #El robot se desplaza al punto testptp1
 
    * - 5
      - elseif(GetDI(9,0) == 1) then
-     - #如果CI1输入有效
+     - #Si la entrada CI1 es válida
 
    * - 6
      - AuxServoSetTargetPos(1,150,5)
-     - #扩展轴运动到150mm
+     - #El eje extendido se desplaza a 150mm
 
    * - 7
      - PTP(testptp2,100,-1,0)
-     - #机器人运动到testptp2点
+     - #El robot se desplaza al punto testptp2
 
    * - 8
      - else
-     - #若CI0和CI1输入均无效
+     - #Si las entradas CI0 y CI1 no son válidas
 
    * - 9
      - AuxServoSetTargetPos(1,300,5)
-     - #扩展轴运动到300mm
+     - #El eje extendido se desplaza a 300mm
 
    * - 10
      - PTP(testptp3,100,-1,0)
-     - #机器人运动到testptp3点
+     - #El robot se desplaza al punto testptp3
 
    * - 11
      - end
-     - #结束
+     - #Fin
 
-总结
-+++++++++
+Resumen
++++++++
 
-综上所述，配置协作机器人与伺服扩展轴RS485通讯有以下注意要点：
+En resumen, la configuración de la comunicación RS485 entre el robot colaborativo y el eje extendido del servo presenta los siguientes puntos de atención:
 
-1. 正确连接协作机器人与伺服驱动器的RS485通信线缆；
+1. Conectar correctamente el cable de comunicación RS485 entre el robot colaborativo y el servomotor;
 
-2. 正确选择伺服扩展轴的控制模式；
+2. Seleccionar correctamente el modo de control del eje extendido del servo;
 
-3. 切换控制模式后，必须先去除使能，再伺服使能，控制模式切换才能生效。
+3. Tras cambiar el modo de control, es necesario deshabilitar primero el servo y volver a habilitarlo para que el cambio del modo de control surta efecto.
 
-线激光传感器
----------------
+Sensor láser de línea
+-----------------------
 
-法奥协作机器人与激光传感器配合使用，通过传感器识别焊缝等特征位置以达到简化编程、提高生产效率的目的。协作机器人可适配睿牛、创想和全视三种厂商的激光传感器，使用不同传感器时只需要加载对应的通信协议即可。
+El robot colaborativo FAIRINO se utiliza en combinación con el sensor láser para identificar posiciones de características como las soldaduras mediante el sensor, con el fin de simplificar la programación y mejorar la eficiencia de la producción. El robot colaborativo puede adaptarse a los sensores láser de los tres fabricantes Ruineng, Chuangxiang y Quanshi; al utilizar distintos sensores, basta con cargar el protocolo de comunicación correspondiente.
 
-硬件接线
-~~~~~~~~~~~~~
+Cableado de hardware
+~~~~~~~~~~~~~~~~~~~~
 
-使用激光传感器前需要将激光传感器安装于合适位置，将激光传感器的网线直接连接或通过交换机连接到机器人控制箱的任一RJ45接口。
+Antes de utilizar el sensor láser es necesario instalarlo en una posición adecuada y conectar el cable de red del sensor láser directamente o a través de un conmutador a cualquiera de las interfaces RJ45 de la caja de control del robot.
 
-传感器配置
-~~~~~~~~~~~~~
+Configuración del sensor
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-请确保您的激光传感器和焊枪已经固定安装于机器人末端，激光传感器已经与机器人控制箱通过网线连接，并且激光传感器与机器人控制箱的IP地址处于同一网段，打开机器人和传感器电源，下图为睿牛激光传感器安装。
+Asegúrese de que su sensor láser y la antorcha de soldadura están correctamente instalados y fijados en el extremo del robot, de que el sensor láser está conectado con la caja de control del robot mediante cable de red y de que la dirección IP del sensor láser y la de la caja de control del robot están en el mismo segmento de red; encienda el robot y la alimentación del sensor; la figura siguiente muestra la instalación del sensor láser Ruineng.
 
 .. figure:: robot_peripherals/140.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑1 激光传感器安装
+.. centered:: Figura 8.8‑1 Instalación del sensor láser
 
-在通信配置栏中输入传感器的IP地址、端口号，点击“配置”按钮，采样周期默认为25，坐标系选择“激光平面坐标系”，根据您的传感器型号选择对应的通信协议，点击“加载”按钮。
+En la columna de configuración de comunicación, introducir la dirección IP y el número de puerto del sensor, hacer clic en el botón "Configurar"; el período de muestreo es por defecto 25; seleccionar "Sistema de coordenadas del plano láser" como sistema de coordenadas; seleccionar el protocolo de comunicación correspondiente según el modelo de su sensor y hacer clic en el botón "Cargar".
 
 .. figure:: robot_peripherals/141.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑2 激光传感器配置
+.. centered:: Figura 8.8‑2 Configuración del sensor láser
 
-在“跟踪传感器测试”栏，依次点击“打开”和“关闭”传感器，观察传感器的激光是否打开或关闭，若激光正常打开或关闭则表示机器人与传感器已经正常建立通信，否则请检查IP地址和端口号等参数是否正确，以及传感器与机器人网络连接是否正确。
+En la columna "Prueba del sensor de seguimiento", hacer clic sucesivamente en "Abrir" y "Cerrar" del sensor y observar si el láser del sensor se enciende o se apaga; si el láser se enciende o apaga con normalidad, significa que el robot y el sensor han establecido correctamente la comunicación; de lo contrario, compruebe si parámetros como la dirección IP y el número de puerto son correctos, así como si la conexión de red entre el sensor y el robot es correcta.
 
 .. figure:: robot_peripherals/142.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑3 激光传感器通讯测试
+.. centered:: Figura 8.8‑3 Prueba de comunicación del sensor láser
 
-传感器标定
-~~~~~~~~~~~~
+Calibración del sensor
+~~~~~~~~~~~~~~~~~~~~~~
 
-在使用激光传感器前需要先对激光传感器进行标定，标定精度直接影响激光传感器的跟踪精度。激光传感器的标定方法有五点法、六点法和八点法，以焊接应用场景下最常用的五点法为例，其标定原理为先通过工具（焊枪）指向一个固定标定点（如图4），再通过激光传感器从四个不同的姿态照射并识别到该点。
+Antes de utilizar el sensor láser es necesario calibrarlo primero; la precisión de la calibración afecta directamente a la precisión de seguimiento del sensor láser. Los métodos de calibración del sensor láser son el método de cinco puntos, el método de seis puntos y el método de ocho puntos; tomando como ejemplo el método de cinco puntos, el más utilizado en escenarios de aplicación de soldadura, su principio de calibración consiste en apuntar primero con la herramienta (antorcha de soldadura) a un punto de calibración fijo (como se muestra en la Figura 4) y, a continuación, iluminar e identificar dicho punto con el sensor láser desde cuatro actitudes diferentes.
 
 .. note::
-  该标定点必须可以被激光传感器准确识别到，否则无法精确标定。 
+  Dicho punto de calibración debe poder ser identificado con precisión por el sensor láser; de lo contrario no se podrá calibrar con precisión. 
 
-进而计算出传感器坐标位姿，下面详细介绍其标定过程：
+A continuación se calcula la pose del sistema de coordenadas del sensor; a continuación se detalla su proceso de calibración:
 
 .. figure:: robot_peripherals/143.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑4 激光传感器标定点
+.. centered:: Figura 8.8‑4 Punto de calibración del sensor láser
 
-**step1**：打开机器人WebApp，依次点击“初始设置”->“基础”->“工具坐标”进入工具坐标系界面。选择一个未使用的工具坐标系，点击修改其名称为“焊枪”，工具类型为“工具”，安装位置为“末端”。
+**step1**: Abrir WebApp del robot y hacer clic sucesivamente en "Configuración inicial"->"Básico"->"Coordenadas de herramienta" para entrar en la interfaz del sistema de coordenadas de herramienta. Seleccionar un sistema de coordenadas de herramienta no utilizado, hacer clic en modificar y cambiar su nombre a "Antorcha de soldadura", el tipo de herramienta a "Herramienta" y la posición de instalación a "Extremo".
 
 .. figure:: robot_peripherals/144.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑5 设置“焊枪”坐标系
+.. centered:: Figura 8.8‑5 Configuración del sistema de coordenadas "Antorcha de soldadura"
 
-再次选择一个未使用的坐标系，将其名称修改为“激光传感器”，选择工具类型为“传感器”，安装位置为“末端”。
+Seleccionar de nuevo un sistema de coordenadas no utilizado, cambiar su nombre a "Sensor láser", seleccionar el tipo de herramienta "Sensor" y la posición de instalación "Extremo".
 
 .. figure:: robot_peripherals/145.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑6 设置“激光传感器”坐标系
+.. centered:: Figura 8.8‑6 Configuración del sistema de coordenadas "Sensor láser"
 
-**step2**：用六点法对焊枪的工具坐标系进行标定：选则“焊枪”坐标系，点击修改按钮，使用六点法进行焊枪工具坐标系的标定（具体标定方法参照法奥文档，本文不做赘述）。
+**step2**: Calibrar el sistema de coordenadas de herramienta de la antorcha de soldadura con el método de seis puntos: seleccionar el sistema de coordenadas "Antorcha de soldadura", hacer clic en el botón modificar y calibrar el sistema de coordenadas de herramienta de la antorcha de soldadura con el método de seis puntos (para el método concreto de calibración, consulte la documentación de FAIRINO; no se detalla en este documento).
 
 .. figure:: robot_peripherals/146.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑7 “焊枪”坐标系标定
+.. centered:: Figura 8.8‑7 Calibración del sistema de coordenadas "Antorcha de soldadura"
 
-**step3**：在“工具坐标系设置”中选择0号坐标系(基座标系)，默认名称为“toolcoord0”，点击“应用”，将当前的坐标系切换为基座标系。
+**step3**: En "Configuración del sistema de coordenadas de herramienta", seleccionar el sistema de coordenadas número 0 (sistema de coordenadas base), cuyo nombre por defecto es "toolcoord0", y hacer clic en "Aplicar" para cambiar el sistema de coordenadas actual al sistema de coordenadas base.
 
 .. figure:: robot_peripherals/147.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑8 传感器标定步骤1
+.. centered:: Figura 8.8‑8 Paso 1 de la calibración del sensor
 
-**step4**：再次选择之前设置的“激光传感器”坐标系(不点击“应用”)，点击“编辑”按钮，选择工具类型为“传感器”，传感器固定在“机器人末端”，标定方法选择“五点法”。
+**step4**: Seleccionar de nuevo el sistema de coordenadas "Sensor láser" establecido anteriormente (sin hacer clic en "Aplicar"), hacer clic en el botón "Editar", seleccionar el tipo de herramienta "Sensor", el sensor fijado en el "Extremo del robot" y el método de calibración "Método de cinco puntos".
 
 .. figure:: robot_peripherals/148.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑9 传感器标定步骤2
+.. centered:: Figura 8.8‑9 Paso 2 de la calibración del sensor
 
-**step5**：拖动机器人使焊枪尖端对准标定点，选择“焊枪”坐标系，点击“应用”，点击“设置点1”，如图13。
+**step5**: Arrastrar el robot para que la punta de la antorcha de soldadura apunte al punto de calibración, seleccionar el sistema de coordenadas "Antorcha de soldadura", hacer clic en "Aplicar" y hacer clic en "Configurar punto 1", como se muestra en la Figura 13.
 
 .. figure:: robot_peripherals/149.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑10 传感器标定步骤3
+.. centered:: Figura 8.8‑10 Paso 3 de la calibración del sensor
 
 .. figure:: robot_peripherals/150.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑11 传感器标定步骤4
+.. centered:: Figura 8.8‑11 Paso 4 de la calibración del sensor
 
-**step6**：再次选择0号坐标系（“toolcoord0”）；然后选择“传感器”坐标系（不点击“应用”），即可继续进行标定。
+**step6**: Seleccionar de nuevo el sistema de coordenadas número 0 ("toolcoord0"); a continuación, seleccionar el sistema de coordenadas "Sensor" (sin hacer clic en "Aplicar") para poder continuar con la calibración.
 
 .. figure:: robot_peripherals/147.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑12 传感器标定步骤5
+.. centered:: Figura 8.8‑12 Paso 5 de la calibración del sensor
 
 .. figure:: robot_peripherals/145.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑13 传感器标定步骤6
+.. centered:: Figura 8.8‑13 Paso 6 de la calibración del sensor
 
-**step7**：移动激光传感器位置，使激光刚好扫描到标定点，点击“设置点2”；此时左侧的传感器输出值对应序号位置会显示当前的传感器数据，若数据正常则表示当前标定点成功，否则需要重新标定。
+**step7**: Desplazar la posición del sensor láser para que el láser escanee justo el punto de calibración y hacer clic en "Configurar punto 2"; en este momento, en la posición de número correspondiente del valor de salida del sensor de la izquierda se mostrarán los datos actuales del sensor; si los datos son normales, significa que el punto de calibración actual es correcto; de lo contrario, es necesario volver a calibrar.
 
 .. figure:: robot_peripherals/151.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑14 传感器标定步骤7
+.. centered:: Figura 8.8‑14 Paso 7 de la calibración del sensor
 
 .. figure:: robot_peripherals/152.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑15 传感器标定步骤8
+.. centered:: Figura 8.8‑15 Paso 8 de la calibración del sensor
 
-**step8**：依次使激光再从三个不同的姿态照射标定点，并分别点击“设置点3”、“设置点4”和“设置点5”，最后在确保每个点的数据都正常的情况下，点击“计算”按钮。
+**step8**: Hacer que el láser ilumine sucesivamente el punto de calibración desde tres actitudes diferentes y hacer clic respectivamente en "Configurar punto 3", "Configurar punto 4" y "Configurar punto 5"; por último, tras asegurarse de que los datos de cada punto son normales, hacer clic en el botón "Calcular".
 
 .. figure:: robot_peripherals/153.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑16 传感器标定步骤9
+.. centered:: Figura 8.8‑16 Paso 9 de la calibración del sensor
 
-**step9**：此时WebApp上显示传感器的标定结果和标定精度，点击“应用”按钮，即完成了激光传感器的标定。若标定精度过差，则可以选择点击“取消”按钮，并重新进行标定。
+**step9**: En este momento WebApp muestra el resultado de la calibración del sensor y la precisión de la calibración; hacer clic en el botón "Aplicar" para completar la calibración del sensor láser. Si la precisión de la calibración es demasiado baja, se puede optar por hacer clic en el botón "Cancelar" y volver a calibrar.
 
 .. figure:: robot_peripherals/154.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑17 传感器标定精度
+.. centered:: Figura 8.8‑17 Precisión de la calibración del sensor
 
-激光传感器应用
-~~~~~~~~~~~~~~~~
+Aplicación del sensor láser
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-使用激光传感器前，先将“焊枪”工具坐标系应用到当前工具坐标系。
+Antes de utilizar el sensor láser, aplicar primero el sistema de coordenadas de herramienta "Antorcha de soldadura" al sistema de coordenadas de herramienta actual.
 
 .. figure:: robot_peripherals/144.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑18 应用焊枪坐标系
+.. centered:: Figura 8.8‑18 Aplicación del sistema de coordenadas de la antorcha de soldadura
 
-激光传感器示教点
-++++++++++++++++++
+Punto de enseñanza del sensor láser
++++++++++++++++++++++++++++++++++++
 
-拖动机器人使激光传感器光线指向想要示教的焊缝点。在WebApp选择传感器为“激光传感器”，输入传感器点名称为“laserPt”，点击“添加”按钮。新建用户程序“testLaser.lua”，创建运动指令PTP，目标点选择“laserPt”，单步执行该指令，此时焊枪将运动到之前激光传感器的指向点。
+Arrastrar el robot para que el rayo del sensor láser apunte al punto de soldadura que se desea enseñar. En WebApp, seleccionar el sensor como "Sensor láser", introducir el nombre del punto del sensor como "laserPt" y hacer clic en el botón "Añadir". Crear el nuevo programa de usuario "testLaser.lua", crear la instrucción de movimiento PTP, seleccionar "laserPt" como punto objetivo y ejecutar la instrucción paso a paso; en este momento la antorcha de soldadura se desplazará hasta el punto al que apuntaba anteriormente el sensor láser.
 
 .. figure:: robot_peripherals/155.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑19 激光传感焊缝点
+.. centered:: Figura 8.8‑19 Punto de soldadura del sensor láser
 
 .. figure:: robot_peripherals/156.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑20 示教传感器点
+.. centered:: Figura 8.8‑20 Enseñanza del punto del sensor
 
 .. figure:: robot_peripherals/157.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑21 焊枪指向焊缝点
+.. centered:: Figura 8.8‑21 La antorcha de soldadura apunta al punto de soldadura
 
-激光寻位 + 跟踪
-++++++++++++++++
+Búsqueda de posición láser + seguimiento
+++++++++++++++++++++++++++++++++++++++++
 
-协作机器人与激光传感器配合完成激光寻位 + 激光跟踪功能共需要一下几步：
+La realización de la función de búsqueda de posición láser + seguimiento láser por parte del robot colaborativo en combinación con el sensor láser requiere los siguientes pasos:
 
-(1) 机器人运动到焊缝外部的某一点；
+(1) El robot se desplaza hasta un punto situado en el exterior de la soldadura;
 
-(2) 开始激光寻位，且机器人携带激光传感器向焊缝位置移动；
+(2) Se inicia la búsqueda de posición láser y el robot, que transporta el sensor láser, se desplaza hacia la posición de la soldadura;
 
-(3) 激光传感器识别到焊缝，机器人带动焊枪运动到焊缝识别点；
+(3) El sensor láser identifica la soldadura y el robot desplaza la antorcha de soldadura hasta el punto de identificación de la soldadura;
 
-(4) 激光跟踪开始，同时机器人向焊缝终点运动，激光传感器在运动过程中实时记录位置；
+(4) Se inicia el seguimiento láser y, al mismo tiempo, el robot se desplaza hacia el punto final de la soldadura; el sensor láser registra la posición en tiempo real durante el movimiento;
 
-(5) 焊枪沿激光传感器记录的位置进行运动，实现跟踪效果。
+(5) La antorcha de soldadura se desplaza según la posición registrada por el sensor láser, realizando el efecto de seguimiento.
 
-在寻位跟踪调试前，请先确保传感器已经正确安装、“焊枪”工具坐标系已经正确标定，激光传感器也已经正确标定完成。假设图中绿色直线为待焊焊缝，使机器人实现自动寻找焊接起点A点，并自动焊接至B点，需要进行如下指令编写：
+Antes de la depuración de la búsqueda de posición y el seguimiento, asegúrese primero de que el sensor está correctamente instalado, de que el sistema de coordenadas de herramienta "Antorcha de soldadura" se ha calibrado correctamente y de que el sensor láser también se ha calibrado correctamente. Suponiendo que la línea recta verde de la figura es la soldadura a soldar, para que el robot encuentre automáticamente el punto inicial de soldadura A y suelde automáticamente hasta el punto B, es necesario escribir las siguientes instrucciones:
 
 .. figure:: robot_peripherals/158.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑22 传感器安装
+.. centered:: Figura 8.8‑22 Instalación del sensor
 
-编写寻位指令
-*************
+Escritura de la instrucción de búsqueda de posición
+***************************************************
 
-新建用户程序“laserTrack.lua”，选择“焊接指令”。点击“激光跟踪”，弹出激光跟踪指令添加页面。
+Crear el nuevo programa de usuario "laserTrack.lua" y seleccionar "Instrucciones de soldadura". Hacer clic en "Seguimiento láser" para que aparezca la página de adición de instrucciones de seguimiento láser.
 
 .. figure:: robot_peripherals/159.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑23 激光跟踪指令
+.. centered:: Figura 8.8‑23 Instrucción de seguimiento láser
 
-找到“寻位命令”，选择坐标系名称为“激光传感器”，方向选择“+x”表示机器人携带激光传感器从当前位置沿“焊枪”坐标系的“+x”方向边运动边搜寻焊缝，“速度”为激光传感器寻位的移动速度，长度为激光传感器的最大寻位长度，当机器人寻位距离超出该长度仍未寻找到焊缝时机器人将报错，最大寻位时间与长度类似，超出该时间仍未找到焊缝时机器人报错。请您根据实际场景正确输入上述相关参数。依次点击“寻位开始”和“寻位结束”指令，并点击“应用”按钮。
+Encontrar "Comando de búsqueda de posición", seleccionar el nombre del sistema de coordenadas "Sensor láser" y la dirección "+x", lo que indica que el robot, que transporta el sensor láser, se desplaza desde la posición actual en la dirección "+x" del sistema de coordenadas "Antorcha de soldadura" mientras busca la soldadura; la "Velocidad" es la velocidad de desplazamiento de la búsqueda de posición del sensor láser; la longitud es la longitud máxima de búsqueda de posición del sensor láser; cuando la distancia de búsqueda de posición del robot supera dicha longitud y aún no se ha encontrado la soldadura, el robot informará de un error; el tiempo máximo de búsqueda de posición es similar a la longitud; cuando se supera dicho tiempo y aún no se ha encontrado la soldadura, el robot informa de un error. Introduzca correctamente los parámetros anteriores según el escenario real. Hacer clic sucesivamente en las instrucciones "Inicio de búsqueda de posición" y "Fin de búsqueda de posición" y hacer clic en el botón "Aplicar".
 
 .. figure:: robot_peripherals/160.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑24 添加寻位指令
+.. centered:: Figura 8.8‑24 Adición de la instrucción de búsqueda de posición
 
-此时“laserTrack.lua”中将增加对应的激光寻位开始和结束的指令。
+En este momento, en "laserTrack.lua" se añadirán las instrucciones correspondientes de inicio y fin de la búsqueda de posición láser.
 
 .. figure:: robot_peripherals/161.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑25 寻位程序
+.. centered:: Figura 8.8‑25 Programa de búsqueda de posición
 
-编写运动到寻位点指令
-*********************
+Escritura de la instrucción de movimiento hasta el punto de búsqueda de posición
+*********************************************************************************
 
-添加点到点运动LIN指令，目标点为“seamPos”即激光传感器寻位点。
+Añadir la instrucción de movimiento punto a punto LIN, con el punto objetivo "seamPos", es decir, el punto de búsqueda de posición del sensor láser.
 
-.. note:: “seamPos点为机器人系统内部专用于激光传感器寻位的点位名称，不需要示教该点，激光传感器寻位后会自动将寻位点信息存入“seamPos点中”。
+.. note:: "seamPos" es el nombre del punto interno del sistema del robot dedicado a la búsqueda de posición del sensor láser; no es necesario enseñar dicho punto; tras la búsqueda de posición del sensor láser, la información del punto de búsqueda de posición se almacena automáticamente en "seamPos".
 
-寻位点可以设置偏移，偏移类型可选择“基座标系偏移”、“工具坐标系偏移”和“激光原始数据偏移”。
+El punto de búsqueda de posición puede configurarse con desplazamiento; el tipo de desplazamiento puede seleccionarse como "Desplazamiento del sistema de coordenadas base", "Desplazamiento del sistema de coordenadas de herramienta" y "Desplazamiento de datos originales del láser".
 
 .. figure:: robot_peripherals/162.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑26 寻位偏移选项
+.. centered:: Figura 8.8‑26 Opciones de desplazamiento de la búsqueda de posición
 
-当启用寻位偏移功能时，可设置偏移参数，“dx”表示沿所选坐标系x方向的偏移距离，“drx”表示沿所选坐标系x轴旋转的角度。点击“添加”按钮，点击“应用”按钮。
+Cuando se activa la función de desplazamiento de la búsqueda de posición, se pueden configurar los parámetros de desplazamiento; "dx" representa la distancia de desplazamiento a lo largo de la dirección x del sistema de coordenadas seleccionado, y "drx" representa el ángulo de rotación alrededor del eje x del sistema de coordenadas seleccionado. Hacer clic en el botón "Añadir" y hacer clic en el botón "Aplicar".
 
 .. figure:: robot_peripherals/163.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑27 寻位偏移参数设置
+.. centered:: Figura 8.8‑27 Configuración de los parámetros de desplazamiento de la búsqueda de posición
 
-此时“testTrack.lua”中将增加运动到寻位点的指令，如下图。
+En este momento, en "testTrack.lua" se añadirá la instrucción de movimiento hasta el punto de búsqueda de posición, como se muestra en la figura siguiente.
 
 .. figure:: robot_peripherals/164.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑28 寻位偏移程序
+.. centered:: Figura 8.8‑28 Programa de desplazamiento de la búsqueda de posición
 
-编写激光跟踪指令
-******************
+Escritura de la instrucción de seguimiento láser
+*************************************************
 
-再次打开“激光跟踪”指令添加页面，依次点击“开始跟踪”和“停止跟踪”按钮，最后点击页面最下面的“应用”按钮。
+Abrir de nuevo la página de adición de instrucciones "Seguimiento láser", hacer clic sucesivamente en los botones "Iniciar seguimiento" y "Detener seguimiento" y, por último, hacer clic en el botón "Aplicar" de la parte inferior de la página.
 
 .. figure:: robot_peripherals/165.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑29 激光跟踪开始与停止
+.. centered:: Figura 8.8‑29 Inicio y detención del seguimiento láser
 
-此时的用户程序“testTrack.lua”：
+El programa de usuario "testTrack.lua" en este momento:
 
 .. figure:: robot_peripherals/166.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑30 激光跟踪程序
+.. centered:: Figura 8.8‑30 Programa de seguimiento láser
 
-编写寻位开始点和跟踪终点指令
-*****************************
+Escritura de las instrucciones de punto inicial de búsqueda de posición y punto final de seguimiento
+*****************************************************************************************************
 
-在激光寻位开始前，需要先指定一个寻位起始点，机器人先运动到寻位起始点，然后再沿一定的方向和速度进行寻位。在激光传感器光线靠近焊缝起点A点附近示教寻位开始点“seamStartPt”，注意匹配寻位起始点与寻位方向，保证机器人能在设定的距离和最大寻位时间内找到焊缝位置。
+Antes de iniciar la búsqueda de posición láser es necesario especificar primero un punto inicial de búsqueda de posición; el robot se desplaza primero hasta el punto inicial de búsqueda de posición y, a continuación, realiza la búsqueda de posición a lo largo de una determinada dirección y velocidad. Enseñar el punto inicial de búsqueda de posición "seamStartPt" cerca del punto A, el punto inicial de la soldadura, cuando el rayo del sensor láser se aproxima a dicho punto; tenga en cuenta la correspondencia entre el punto inicial de búsqueda de posición y la dirección de búsqueda de posición, para garantizar que el robot pueda encontrar la posición de la soldadura dentro de la distancia establecida y del tiempo máximo de búsqueda de posición.
 
 .. figure:: robot_peripherals/167.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑31 寻位起点
+.. centered:: Figura 8.8‑31 Punto inicial de búsqueda de posición
 
-在焊缝末端示教跟踪终止点“trackEndPt”。
+Enseñar el punto final de seguimiento "trackEndPt" en el extremo de la soldadura.
 
 .. figure:: robot_peripherals/168.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑32 寻位终点
+.. centered:: Figura 8.8‑32 Punto final de búsqueda de posición
 
-将上述两个点添加到“testTrack.lua”用户程序中，最终的用户程序如下：
+Añadir los dos puntos anteriores al programa de usuario "testTrack.lua"; el programa de usuario final es el siguiente:
 
 .. figure:: robot_peripherals/169.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑33 寻位跟踪程序
+.. centered:: Figura 8.8‑33 Programa de búsqueda de posición y seguimiento
 
-编写焊接相关指令
-*****************
+Escritura de las instrucciones relacionadas con la soldadura
+************************************************************
 
-最后，在焊接寻位点“seampos”和“trackEndPt”之间加上焊接指令，最终的程序如下：
+Por último, añadir las instrucciones de soldadura entre el punto de búsqueda de posición de soldadura "seampos" y "trackEndPt"; el programa final es el siguiente:
 
 .. figure:: robot_peripherals/170.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑34 寻位跟踪焊接程序
+.. centered:: Figura 8.8‑34 Programa de búsqueda de posición, seguimiento y soldadura
 
-执行上述程序，机器人将携带激光传感器从寻位起点开始寻位运动，寻找到焊缝后，机器人立即运动到焊缝起点，并执行起弧操作，起弧成功后，机器人向焊缝终点运动并在运动过程中跟踪焊缝轨迹，机器人运动到焊缝终点后即停止焊接。
+Al ejecutar el programa anterior, el robot, que transporta el sensor láser, iniciará el movimiento de búsqueda de posición desde el punto inicial de búsqueda de posición; tras encontrar la soldadura, el robot se desplazará inmediatamente hasta el punto inicial de la soldadura y ejecutará la operación de encendido del arco; tras el éxito del encendido del arco, el robot se desplazará hacia el punto final de la soldadura y realizará el seguimiento de la trayectoria de la soldadura durante el movimiento; tras llegar al punto final de la soldadura, el robot detendrá la soldadura.
 
-激光轨迹记录 + 轨迹复现
-++++++++++++++++++++++++
+Registro de trayectoria láser + reproducción de trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-激光轨迹记录+轨迹复现的工作流程为：
+El flujo de trabajo del registro de trayectoria láser + reproducción de trayectoria es el siguiente:
 
-(1) 机器人携带激光传感器沿焊缝运动一段轨迹，激光传感器在运动的过程中实时记录焊缝位置轨迹数据；
+(1) El robot, que transporta el sensor láser, se desplaza a lo largo de la soldadura durante un tramo de trayectoria; el sensor láser registra en tiempo real los datos de la trayectoria de la posición de la soldadura durante el movimiento;
 
-(2) 轨迹记录完成后，机器人运动至轨迹记录的起始点；
+(2) Tras completar el registro de la trayectoria, el robot se desplaza hasta el punto inicial del registro de la trayectoria;
 
-(3) 机器人沿激光传感记录的轨迹进行轨迹复现运动。
+(3) El robot realiza el movimiento de reproducción de la trayectoria registrada por el sensor láser.
 
-机器人轨迹记录指令编写
-************************
+Escritura de la instrucción de registro de trayectoria del robot
+***************************************************************************
 
-新建用户程序“testRecord.lua”，点击“激光记录”打开激光记录指令添加页面，找到“焊缝数据记录”，选择“开始记录”，点击“添加”按钮，选择停止记录，再次点击“添加”按钮；最后点击“应用”按钮。
+Crear el nuevo programa de usuario "testRecord.lua", hacer clic en "Registro láser" para abrir la página de adición de instrucciones de registro láser, encontrar "Registro de datos de soldadura", seleccionar "Iniciar registro" y hacer clic en el botón "Añadir"; seleccionar detener registro y volver a hacer clic en el botón "Añadir"; por último, hacer clic en el botón "Aplicar".
 
 .. figure:: robot_peripherals/171.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑35 激光记录
+.. centered:: Figura 8.8‑35 Registro láser
 
 .. figure:: robot_peripherals/172.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑36 开始记录与停止记录
+.. centered:: Figura 8.8‑36 Inicio y detención del registro
 
-此时页面上出现轨迹记录开始和停止指令。
+En este momento aparecen en la página las instrucciones de inicio y detención del registro de trayectoria.
 
 .. figure:: robot_peripherals/173.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑37 轨迹记录程序
+.. centered:: Figura 8.8‑37 Programa de registro de trayectoria
 
-假设图中绿色线段AB为焊缝，分别使激光照射到焊缝起始点A和焊缝中断B，并示教轨迹记录的起点“recordStartPt”和终点“recordEndPt”。
+Suponiendo que el segmento de línea verde AB de la figura es la soldadura, hacer que el láser ilumine respectivamente el punto inicial A y el punto intermedio B de la soldadura y enseñar el punto inicial "recordStartPt" y el punto final "recordEndPt" del registro de trayectoria.
 
 .. figure:: robot_peripherals/174.png
    :align: center
@@ -5283,405 +5286,406 @@ UDP扩展轴
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑38 轨迹记录起点和终点
+.. centered:: Figura 8.8‑38 Punto inicial y punto final del registro de trayectoria
 
-在“testRecord.lua”中添加两条直线(LIN)运动指令，分别为运动到轨迹记录起点“recordStartPt”和终点“recordEndPt”，并调整指令位置，使机器人进行如下操作：先运动到“recordStartPt”点，开始轨迹记录，机器人运动到“recordEndPt”点，停止轨迹记录。
+Añadir en "testRecord.lua" dos instrucciones de movimiento en línea recta (LIN), para desplazarse respectivamente al punto inicial "recordStartPt" y al punto final "recordEndPt" del registro de trayectoria, y ajustar la posición de las instrucciones para que el robot realice las siguientes operaciones: desplazarse primero al punto "recordStartPt", iniciar el registro de trayectoria, desplazarse al punto "recordEndPt" y detener el registro de trayectoria.
 
 .. figure:: robot_peripherals/176.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑39 轨迹记录程序
+.. centered:: Figura 8.8‑39 Programa de registro de trayectoria
 
-机器人运动到轨迹记录起点指令编写
-*********************************
+Escritura de la instrucción de movimiento hasta el punto inicial del registro de trayectoria
+*********************************************************************************************
 
-点击“激光记录”打开激光记录指令添加页面，找到“运动至焊缝点”栏，选择运动方式为PTP，输入一定的运动速度，点击“运动至起点”，点击“应用”按钮。
+Hacer clic en "Registro láser" para abrir la página de adición de instrucciones de registro láser, encontrar la columna "Movimiento hasta el punto de soldadura", seleccionar el modo de movimiento PTP, introducir una determinada velocidad de movimiento, hacer clic en "Movimiento hasta el punto inicial" y hacer clic en el botón "Aplicar".
 
 .. figure:: robot_peripherals/177.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑40 运动至轨迹起点
+.. centered:: Figura 8.8‑40 Movimiento hasta el punto inicial de la trayectoria
 
-此时“testRecord.lua”用户程序如下：
+El programa de usuario "testRecord.lua" en este momento es el siguiente:
 
 .. figure:: robot_peripherals/178.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑41 运动至轨迹起点程序
+.. centered:: Figura 8.8‑41 Programa de movimiento hasta el punto inicial de la trayectoria
 
-激光传感器轨迹复现指令编写
-****************************
+Escritura de la instrucción de reproducción de trayectoria del sensor láser
+*****************************************************************************
 
-点击“激光记录”打开激光记录指令添加页面，找到“焊缝数据记录”，选择“轨迹复现”，点击“添加”按钮，点击“激光跟踪复现”按钮，最后点击“应用”按钮。
+Hacer clic en "Registro láser" para abrir la página de adición de instrucciones de registro láser, encontrar "Registro de datos de soldadura", seleccionar "Reproducción de trayectoria" y hacer clic en el botón "Añadir"; hacer clic en el botón "Reproducción de seguimiento láser" y, por último, hacer clic en el botón "Aplicar".
 
 .. figure:: robot_peripherals/179.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑42 轨迹复现
+.. centered:: Figura 8.8‑42 Reproducción de trayectoria
 
-添加完成后的程序如下：
+El programa tras completar la adición es el siguiente:
 
 .. figure:: robot_peripherals/180.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑43 轨迹复现程序
+.. centered:: Figura 8.8‑43 Programa de reproducción de trayectoria
 
-焊接相关指令编写
-********************
+Escritura de las instrucciones relacionadas con la soldadura
+*************************************************************
 
-最后在轨迹复现开始前和结束后加上焊接开始和焊接结束指令：
+Por último, añadir las instrucciones de inicio y fin de soldadura antes del inicio y después del fin de la reproducción de trayectoria:
 
 .. figure:: robot_peripherals/181.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.8‑44 轨迹记录复现焊接程序
+.. centered:: Figura 8.8‑44 Programa de registro, reproducción y soldadura de trayectoria
 
-执行上述程序，机器人将携带激光传感器先沿焊缝轨迹运动，并记录整个轨迹，然后机器人运动到轨迹记录的起点，机器人起弧并沿激光传感器记录的轨迹开始焊接，当机器人轨迹复现完成后，焊接电弧熄灭，完成焊接。
+Al ejecutar el programa anterior, el robot, que transporta el sensor láser, se desplazará primero a lo largo de la trayectoria de la soldadura y registrará toda la trayectoria; a continuación, el robot se desplazará hasta el punto inicial del registro de trayectoria, encenderá el arco y comenzará a soldar a lo largo de la trayectoria registrada por el sensor láser; tras completar la reproducción de la trayectoria del robot, el arco de soldadura se apaga y se completa la soldadura.
 
-激光传感器适配控制器外设开放协议
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adaptación del sensor láser al protocolo abierto de periféricos del controlador
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Step1**：如果需要采用“开放协议连接”和“控制激光传感器”，则在传感器跟踪配置中，“协议类型”选项选择“外设开放协议”，如果采用原方案则选择“已适配设备”，在跟踪传感器界面配置加载激光外设。
+**Step1**: Si se necesita utilizar "Conexión mediante protocolo abierto" y "Control del sensor láser", en la configuración del seguimiento del sensor, seleccionar "Protocolo abierto de periféricos" en la opción "Tipo de protocolo"; si se utiliza el esquema original, seleccionar "Dispositivo adaptado"; configurar y cargar el periférico láser en la interfaz del sensor de seguimiento.
 
 .. figure:: robot_peripherals/182.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑45 “开放协议连接”和“控制激光传感器”配置界面
+.. centered:: Figura 8.8‑45 Interfaz de configuración de "Conexión mediante protocolo abierto" y "Control del sensor láser"
 
-**Step2**：点击“外设开放协议”进入界面，在“开放协议设置”中，上传对应激光传感器的外设开放协议，上传成功后选择协议编号和上传的文件名，点击配置，并在设备操作及状态中，运行上传的激光传感器，即可和对应的激光传感器建立连接。
+**Step2**: Hacer clic en "Protocolo abierto de periféricos" para entrar en la interfaz; en "Configuración del protocolo abierto", cargar el protocolo abierto de periféricos correspondiente al sensor láser; tras una carga correcta, seleccionar el número de protocolo y el nombre del archivo cargado, hacer clic en configurar y, en Operación y estado del dispositivo, ejecutar el sensor láser cargado para establecer la conexión con el sensor láser correspondiente.
 
 .. figure:: robot_peripherals/183.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.8‑46 激光传感器建立连接
+.. centered:: Figura 8.8‑46 Establecimiento de la conexión con el sensor láser
 
-打磨
+Pulido
 ---------------
 
-在“初始设置”->“外设”->“打磨”界面中，当前可以通过已适配设备和外设开放协议使用打磨。
+En la interfaz "Configuración inicial"->"Periféricos"->"Pulido", actualmente se puede utilizar el pulido mediante dispositivos adaptados y el protocolo abierto de periféricos.
 
 .. figure:: robot_peripherals/184.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.9-1 打磨状态配置页面
+.. centered:: Figura 8.9-1 Página de configuración del estado de pulido
 
-已适配设备
-~~~~~~~~~~~~~~~~~
+Dispositivo adaptado
+~~~~~~~~~~~~~~~~~~~~
 
-**通信配置与加载**: 配置通讯信息，需要配置IP地址、端口、采样周期和通信协议。通过加载/卸载按钮与打磨设备建立通信。
+**Configuración y carga de comunicación**: configurar la información de comunicación; es necesario configurar la dirección IP, el puerto, el período de muestreo y el protocolo de comunicación. Establecer la comunicación con el equipo de pulido mediante los botones de carga/descarga.
 
 .. figure:: robot_peripherals/185.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.9-2 通信配置与加载
+.. centered:: Figura 8.9-2 Configuración y carga de comunicación
 
-**设备功能**：可进行设备使能、错误清除和力传感器清零等操作。
+**Funciones del dispositivo**: permite realizar operaciones como la habilitación del dispositivo, el borrado de errores y la puesta a cero del sensor de fuerza.
 
 .. figure:: robot_peripherals/186.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.9-3 设备功能
+.. centered:: Figura 8.9-3 Funciones del dispositivo
 
-**参数配置**：可设置打磨设备的转速、接触力、伸出距离和控制模式。设置成功后，可在右侧"Polish"状态反馈栏显示相应数据和状态。
+**Configuración de parámetros**: permite configurar la velocidad de rotación, la fuerza de contacto, la distancia de extensión y el modo de control del equipo de pulido. Tras una configuración correcta, los datos y el estado correspondientes se muestran en la barra de realimentación de estado "Polish" de la derecha.
 
 .. figure:: robot_peripherals/187.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.9-4 参数配置
+.. centered:: Figura 8.9-4 Configuración de parámetros
 
 .. figure:: robot_peripherals/188.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.9-5 参数配置
+.. centered:: Figura 8.9-5 Configuración de parámetros
 
-外设开放协议
-~~~~~~~~~~~~~~~~~
+Protocolo abierto de periféricos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-点击“外设开放协议”进入界面，在“开放协议设置”中，上传对应打磨的外设开放协议，上传成功后选择协议编号和上传的文件名，点击配置，并在设备操作及状态中，运行上传的打磨外设开放协议，即可和对应的打磨设备建立连接。
+Hacer clic en "Protocolo abierto de periféricos" para entrar en la interfaz; en "Configuración del protocolo abierto", cargar el protocolo abierto de periféricos correspondiente al pulido; tras una carga correcta, seleccionar el número de protocolo y el nombre del archivo cargado, hacer clic en configurar y, en Operación y estado del dispositivo, ejecutar el protocolo abierto de periféricos de pulido cargado para establecer la conexión con el equipo de pulido correspondiente.
 
 .. figure:: robot_peripherals/189.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.9‑6 激光传感器建立连接
+.. centered:: Figura 8.9‑6 Establecimiento de la conexión con el sensor láser
 
-辅助传感器
--------------------
+Sensor auxiliar
+---------------
 
-在“初始设置”->“外设”->“辅助传感器”界面中，当前可以通过已适配设备使用，自定义协议功能暂未开放。
+En la interfaz "Configuración inicial"->"Periféricos"->"Sensor auxiliar", actualmente se puede utilizar mediante dispositivos adaptados; la función de protocolo personalizado aún no está disponible.
 
 .. figure:: robot_peripherals/190.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.10‑1 辅助传感器--已适配设备
+.. centered:: Figura 8.10‑1 Sensor auxiliar -- dispositivo adaptado
 
-已适配设备
-~~~~~~~~~~~~~~~~~~~
+Dispositivo adaptado
+~~~~~~~~~~~~~~~~~~~~
 
-点击“已适配设备”进入辅助传感器配置界面。
+Hacer clic en "Dispositivo adaptado" para entrar en la interfaz de configuración del sensor auxiliar.
 
-辅助传感器的配置信息分为厂商、类型、软件版本和挂载位置，用户可根据具体的生产需求来配置相应的辅助传感器信息。
+La información de configuración del sensor auxiliar se divide en fabricante, tipo, versión de software y posición de montaje; el usuario puede configurar la información correspondiente del sensor auxiliar según sus necesidades concretas de producción.
 
-若用户需要更改配置，可先选择相应的辅助传感器编号，点击“清除”按钮，来清除相应的按钮，并重新根据需求配置；
+Si el usuario necesita cambiar la configuración, puede seleccionar primero el número correspondiente del sensor auxiliar, hacer clic en el botón "Borrar" para borrar el botón correspondiente y volver a configurar según sus necesidades;
 
 .. figure:: robot_peripherals/191.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.10‑2 辅助传感器--已适配设备
+.. centered:: Figura 8.10‑2 Sensor auxiliar -- dispositivo adaptado
 
-组合设备（SmartTool+力传感器组合）
-----------------------------------------------------
+Dispositivo combinado (combinación SmartTool + sensor de fuerza)
+-----------------------------------------------------------------
 
-在“初始设置”->“外设”->“组合设备”界面中，当前可以通过已适配设备使用，自定义协议暂未开放。
+En la interfaz "Configuración inicial"->"Periféricos"->"Dispositivo combinado", actualmente se puede utilizar mediante dispositivos adaptados; la función de protocolo personalizado aún no está disponible.
 
 .. figure:: robot_peripherals/192.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.11-1 组合设备
+.. centered:: Figura 8.11-1 Dispositivo combinado
 
-已适配设备
-~~~~~~~~~~~~~~~~~~~
+Dispositivo adaptado
+~~~~~~~~~~~~~~~~~~~~
 
-点击“已适配设备”进入配置界面。
+Hacer clic en "Dispositivo adaptado" para entrar en la interfaz de configuración.
 
-配置信息分为厂商、类型、软件版本和挂载位置。不同厂商对应不同的类型，当前厂商为FR。
+La información de configuración se divide en fabricante, tipo, versión de software y posición de montaje. Distintos fabricantes corresponden a distintos tipos; actualmente el fabricante es FR.
 
-用户可根据具体的生产需求来配置相应的设备信息，配置成功后展示设备信息表格。若用户需要更改配置，可先选择相应的编号，点击“清除”按钮，来清除相应的信息，并重新根据需求配置设备信息。
+El usuario puede configurar la información correspondiente del dispositivo según sus necesidades concretas de producción; tras una configuración correcta se muestra la tabla de información del dispositivo. Si el usuario necesita cambiar la configuración, puede seleccionar primero el número correspondiente, hacer clic en el botón "Borrar" para borrar la información correspondiente y volver a configurar la información del dispositivo según sus necesidades.
 
 .. important:: 
-  点击清除配置前，相应的设备应处于未激活状态。
+  Antes de hacer clic en borrar la configuración, el dispositivo correspondiente debe encontrarse en estado no activado.
 
 .. image:: robot_peripherals/193.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.11‑2 已适配设备
+.. centered:: Figura 8.11‑2 Dispositivo adaptado
 
 FR
-++++++++++
+++
 
-FR对应的类型为“SmartTool ”与力传感器组合使用，协作机器人可适配鑫精诚、NSR和港智创信的三种力传感器，使用不同传感器时只需要加载对应的通信协议即可，具体如下：
+El tipo correspondiente a FR es "SmartTool" utilizado en combinación con el sensor de fuerza; el robot colaborativo puede adaptarse a los tres sensores de fuerza XJC (Xinjingcheng), NSR y GZCX (Gangzhi Chuangxin); al utilizar distintos sensores, basta con cargar el protocolo de comunicación correspondiente, concretamente como sigue:
 
-- SmartTool + XJC-6F-D82（鑫精诚）。
-- SmartTool + NSR-FT Sensor A（NSR）。
-- SmartTool + GZCX-6F-75A（港智创信）。
+- SmartTool + XJC-6F-D82 (Xinjingcheng).
+- SmartTool + NSR-FT Sensor A (NSR).
+- SmartTool + GZCX-6F-75A (Gangzhi Chuangxin).
 
-1. 硬件安装
+1. Instalación de hardware
 
-1) 将SmartTool 手柄拆开，取出中间的工装，安装在机器人末端，工装安装完成后，将SmartTool手柄拼接好，拼接成功后将连接线与机器人末端连接。
+1) Desmontar la empuñadura SmartTool, extraer la pieza intermedia e instalarla en el extremo del robot; tras completar la instalación de la pieza, volver a ensamblar la empuñadura SmartTool y, tras un ensamblaje correcto, conectar el cable de conexión al extremo del robot.
 
 .. image:: robot_peripherals/194.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 8.11‑3 安装SmartTool 手柄中间的工装
+.. centered:: Figura 8.11‑3 Instalación de la pieza intermedia de la empuñadura SmartTool
 
 .. image:: robot_peripherals/195.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 8.11‑4 SmartTool 手柄安装成功
+.. centered:: Figura 8.11‑4 Instalación correcta de la empuñadura SmartTool
 
-2) SmartTool手柄安装完毕后，将力传感器（以港智创信为例）安装于SmartTool手柄末端，并将连接线与SmartTool手柄连接。
+2) Tras completar la instalación de la empuñadura SmartTool, instalar el sensor de fuerza (tomando como ejemplo el de Gangzhi Chuangxin) en el extremo de la empuñadura SmartTool y conectar el cable de conexión a la empuñadura SmartTool.
 
 .. image:: robot_peripherals/196.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 8.11‑5 港智创信力传感器安装于SmartTool手柄末端
+.. centered:: Figura 8.11‑5 Instalación del sensor de fuerza de Gangzhi Chuangxin en el extremo de la empuñadura SmartTool
 
-2. 设备配置
+2. Configuración del dispositivo
 
-.. important:: 请确保您的SmartTool手柄已经固定安装于机器人末端并正确连接机器人末端以及力传感器已经固定安装于SmartTool手柄末端并正确连接SmartTool手柄。
+.. important:: Asegúrese de que su empuñadura SmartTool está correctamente instalada y fijada en el extremo del robot y de que está correctamente conectada al extremo del robot, y de que el sensor de fuerza está correctamente instalado y fijado en el extremo de la empuñadura SmartTool y de que está correctamente conectado a la empuñadura SmartTool.
 
-1) 配置SmartTool手柄（参考焊接手柄按键功能配置）。
+1) Configurar la empuñadura SmartTool (consulte la configuración de las funciones de las teclas de la empuñadura de soldadura).
 
-2) SmartTool手柄按键功能配置完成后，配置厂商为“FR”，选择“类型”、“软件版本”和“挂在位置”信息，点击“配置”按钮；
+2) Tras completar la configuración de las funciones de las teclas de la empuñadura SmartTool, configurar el fabricante como "FR", seleccionar la información de "Tipo", "Versión de software" y "Posición de montaje" y hacer clic en el botón "Configurar";
 
 .. image:: robot_peripherals/197.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.11‑6 FR设备信息配置界面
+.. centered:: Figura 8.11‑6 Interfaz de configuración de la información del dispositivo FR
 
-3) 配置设备信息成功后，选择已配置的力传感器，点击“激活”按钮激活力传感器，激活成功后点击“零点矫正”按钮进行力传感器的清零，查看表格数据；
+3) Tras una configuración correcta de la información del dispositivo, seleccionar el sensor de fuerza configurado y hacer clic en el botón "Activar" para activar el sensor de fuerza; tras una activación correcta, hacer clic en el botón "Corrección de cero" para poner a cero el sensor de fuerza y consultar los datos de la tabla;
 
 .. image:: robot_peripherals/198.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.11‑7 力传感器校零
+.. centered:: Figura 8.11‑7 Puesta a cero del sensor de fuerza
 
-4) 根据当前末端安装，在“负载”界面配置负载数据，在“工具坐标”界面配置工具坐标的数据、工具类型和安装位置。
+4) Según la instalación actual del extremo, configurar los datos de carga en la interfaz "Carga" y configurar los datos del sistema de coordenadas de herramienta, el tipo de herramienta y la posición de instalación en la interfaz "Coordenadas de herramienta".
 
 .. image:: robot_peripherals/199.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.11‑8 “末端负载”配置
+.. centered:: Figura 8.11‑8 Configuración de la "Carga del extremo"
 
 .. image:: robot_peripherals/200.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 8.11‑9 “工具坐标”配置
+.. centered:: Figura 8.11‑9 Configuración de las "Coordenadas de herramienta"
 
-3. 应用
+3. Aplicación
 
-设备信息配置成功后，可以独立实现SmartTool按键功能和力传感器的功能，例如：测量力的大小及受力方向和基于力传感器的辅助拖动锁定。
+Tras una configuración correcta de la información del dispositivo, se pueden realizar de forma independiente las funciones de las teclas del SmartTool y las funciones del sensor de fuerza, por ejemplo: la medición de la magnitud y la dirección de la fuerza y el bloqueo del arrastre asistido basado en el sensor de fuerza.
 
 .. image:: robot_peripherals/201.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 8.11‑10 测量力的大小及受力方向
+.. centered:: Figura 8.11‑10 Medición de la magnitud y la dirección de la fuerza
 
-组合设备末端Lua协议
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Protocolo Lua del extremo del dispositivo combinado
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-目前末端可支持两个设备的组合协议应用，可通过一分二的通信线或法奥的SmartTool485接口连接第二个设备。目前预设内嵌的组合设备协议包括：钧舵夹爪+鑫精诚力传感、钧舵夹爪+港智创新力传感器、SmartTool+钧舵夹爪、SmartTool +鑫精诚力传感器、SmartTool +港智创新力传感器。其中夹爪+力传感器的内嵌协议在“初始设置”、“外设”、“力传感器”中可选择，SmartTool+夹爪或力传感器的内嵌协议在“初始设置”、“外设”、“焊接手柄”中可选择。
+Actualmente el extremo puede admitir la aplicación del protocolo combinado de dos dispositivos; el segundo dispositivo se puede conectar mediante un cable de comunicación de uno a dos o mediante la interfaz SmartTool485 de FAIRINO. Los protocolos internos predefinidos de dispositivos combinados incluyen actualmente: pinza Junduo + sensor de fuerza Xinjingcheng, pinza Junduo + sensor de fuerza Gangzhi Chuangxin, SmartTool + pinza Junduo, SmartTool + sensor de fuerza Xinjingcheng y SmartTool + sensor de fuerza Gangzhi Chuangxin. Entre ellos, el protocolo interno de pinza + sensor de fuerza se puede seleccionar en "Configuración inicial", "Periféricos", "Sensor de fuerza"; el protocolo interno de SmartTool + pinza o sensor de fuerza se puede seleccionar en "Configuración inicial", "Periféricos", "Empuñadura de soldadura".
 
 
-操作步骤如下：
+Los pasos de operación son los siguientes:
 
-打开WebApp，依次点击“初始设置”、“外设”,选择需要组合的某一个设备类型（如焊接手柄），选择“自定义协议”。点击“协议管理”，则可以进行末端协议的配置。
+Abrir WebApp, hacer clic sucesivamente en "Configuración inicial", "Periféricos", seleccionar uno de los tipos de dispositivo que se desea combinar (por ejemplo, empuñadura de soldadura) y seleccionar "Protocolo personalizado". Hacer clic en "Gestión de protocolos" para configurar el protocolo del extremo.
 
-目前预设内嵌的组合设备协议包括：钧舵夹爪+鑫精诚力传感、SmartTool+钧舵夹爪、SmartTool +鑫精诚力传感器，组合设备预设协议属于用户自定义协议，以“Custom_End”开头，可以下载和删除，如下图所示。
+Los protocolos internos predefinidos de dispositivos combinados incluyen actualmente: pinza Junduo + sensor de fuerza Xinjingcheng, SmartTool + pinza Junduo y SmartTool + sensor de fuerza Xinjingcheng; los protocolos predefinidos de dispositivos combinados son protocolos personalizados del usuario, comienzan por "Custom_End" y se pueden descargar y eliminar, como se muestra en la figura siguiente.
 
 .. image:: robot_peripherals/282.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 8.11‑11 焊接手柄预设内嵌协议
+.. centered:: Figura 8.11‑11 Protocolos internos predefinidos de la empuñadura de soldadura
 
-阵列式吸盘
------------------
+Ventosas en matriz
+-------------------
 
-概述
-~~~~~~~~~~~~~~~~~~~~~~
-在机器人末端安装阵列式吸盘可帮助机器人快速部署不同场景的物料抓取工作站，可针对不同尺寸、形状的物料自定义吸盘数量和布局，提高工作效率和稳定性。
+Descripción general
+~~~~~~~~~~~~~~~~~~~
 
-协作机器人支持最多20个吸盘组成的吸盘阵列，可以单独控制其中某个吸盘的抓取和释放，也可以控制当前连接的整个阵列所有吸盘同步动作。每个吸盘从站号支持1~20配置，配置基于DynamicLAB软件进行。 
+La instalación de ventosas en matriz en el extremo del robot ayuda a desplegar rápidamente estaciones de trabajo de agarre de materiales en distintos escenarios; se puede personalizar el número y la disposición de las ventosas según las distintas dimensiones y formas de los materiales, mejorando la eficiencia y la estabilidad del trabajo.
 
-硬件描述
-+++++++++++++++++++++++++++++++++++++++++++
+El robot colaborativo admite una matriz de ventosas compuesta por un máximo de 20 ventosas; se puede controlar individualmente el agarre y la liberación de una determinada ventosa, o controlar el movimiento sincronizado de todas las ventosas de la matriz actualmente conectada. Cada número de esclavo de ventosa admite la configuración de 1~20; la configuración se realiza basándose en el software DynamicLAB. 
 
-协作机器人通过以太网转485模块与吸盘阵列进行通讯控制，在WebApp上生成阵列式吸盘通讯协议，协议将控制数据通过TCPIP发送至以太网转485模块，模块再将收到的控制数据通过485发送至各个吸盘，从而实现对阵列式吸盘的控制（上述控制数据格式为ModbusRTU协议格式）。
+Descripción del hardware
++++++++++++++++++++++++++
 
-其中以太网转485模块为以太网通讯的服务端、485通讯的主站，阵列中的每个吸盘均为485通讯从站，且每个吸盘应配置不同的从站号。
+El robot colaborativo controla la comunicación con la matriz de ventosas mediante un módulo de conversión de Ethernet a 485; en WebApp se genera el protocolo de comunicación de la matriz de ventosas; el protocolo envía los datos de control al módulo de conversión de Ethernet a 485 mediante TCP/IP y el módulo envía los datos de control recibidos a cada ventosa mediante 485, realizando así el control de la matriz de ventosas (el formato de los datos de control anteriores es el formato del protocolo ModbusRTU).
+
+Entre ellos, el módulo de conversión de Ethernet a 485 es el servidor de la comunicación Ethernet y el maestro de la comunicación 485; cada ventosa de la matriz es un esclavo de comunicación 485 y cada ventosa debe configurarse con un número de esclavo diferente.
 
 .. figure:: robot_peripherals/202.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.12-1 协作机器人吸盘阵列夹爪应用
+.. centered:: Figura 8.12-1 Aplicación de la pinza de matriz de ventosas del robot colaborativo
 
-以太网转485模块通常有两个TCPServer端口对应多个485从站端口，以CH9121为例，其TCPServer端口1对应485从站端口1-10，TCPServer端口2对应485从站端口11-20。机器人与以太网转485模块建立两个TCP通信，最终分别控制20个吸盘。
+El módulo de conversión de Ethernet a 485 suele tener dos puertos TCPServer correspondientes a múltiples puertos de esclavo 485; tomando como ejemplo el CH9121, su puerto TCPServer 1 corresponde a los puertos de esclavo 485 1-10 y el puerto TCPServer 2 corresponde a los puertos de esclavo 485 11-20. El robot establece dos comunicaciones TCP con el módulo de conversión de Ethernet a 485, controlando finalmente las 20 ventosas respectivamente.
 
-上述以太网转485模块需进行如下配置：
+El módulo de conversión de Ethernet a 485 anterior debe configurarse de la siguiente manera:
 
-- ①以太网端配置为TCPServer，IP地址为：192.168.58.10，端口1的端口号为50001，端口2的端口号为50002；
-- ②485端配置波特率为115200，数据位8，停止位1，无校验。以太网转485模块通常会配备一个调试软件，可以在调试软件中进行上述配置，下图是CH9121型号以太网转485模块的配置工具页面：
+- ①El extremo Ethernet se configura como TCPServer, con dirección IP: 192.168.58.10, el número de puerto del puerto 1 es 50001 y el número de puerto del puerto 2 es 50002;
+- ②El extremo 485 se configura con velocidad en baudios 115200, 8 bits de datos, 1 bit de parada y sin paridad. El módulo de conversión de Ethernet a 485 suele incluir un software de depuración en el que se pueden realizar las configuraciones anteriores; la figura siguiente muestra la página de la herramienta de configuración del módulo de conversión de Ethernet a 485 modelo CH9121:
 
 .. figure:: robot_peripherals/203.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.12-2 以太网转485模块调试工具
+.. centered:: Figura 8.12-2 Herramienta de depuración del módulo de conversión de Ethernet a 485
 
-功能配置
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configuración de la función
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-打开WebApp，依次点击“初始设置”->“外设”->“阵列式吸盘”；阵列式吸盘的控制模式有单播模式和广播模式两种：
+Abrir WebApp, hacer clic sucesivamente en "Configuración inicial"->"Periféricos"->"Ventosas en matriz"; el modo de control de las ventosas en matriz puede ser el modo unidifusión o el modo difusión:
 
-**单播模式**：通讯协议中包含对每个吸盘的通讯控制内容，可实现对阵列中的每个吸盘独立控制。
+**Modo unidifusión**: el protocolo de comunicación incluye el contenido de control de comunicación de cada ventosa, permitiendo el control independiente de cada ventosa de la matriz.
 
-**广播模式**：对阵列中的所有吸盘生成通讯协议，可同步控制阵列中所有吸盘的抓取和释放，但不能单独控制其中的某一个吸盘。
+**Modo difusión**: se genera el protocolo de comunicación para todas las ventosas de la matriz, permitiendo controlar sincronizadamente el agarre y la liberación de todas las ventosas de la matriz, pero sin poder controlar individualmente una de ellas.
 
-工作中可根据实际场景可仅配置单播模式，也可两种模式同时配置(既可以单独控制某个吸盘，也可以同步控制所有吸盘)。
+En el trabajo se puede configurar solo el modo unidifusión según el escenario real, o configurar ambos modos simultáneamente (pudiendo controlar individualmente una ventosa y controlar sincronizadamente todas las ventosas).
 
 .. figure:: robot_peripherals/204.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-3 阵列吸盘控制模式
+.. centered:: Figura 8.12-3 Modo de control de las ventosas en matriz
 
-单播模式配置
+Configuración del modo unidifusión
 ++++++++++++++++++++++++++++++++++
 
-打开WebApp，依次点击“初始设置”->“外设”->“阵列式吸盘”->“单播模式”。单播模式协议配置方式有“自动配置”和“手动配置”两种：
+Abrir WebApp, hacer clic sucesivamente en "Configuración inicial"->"Periféricos"->"Ventosas en matriz"->"Modo unidifusión". El modo de configuración del protocolo del modo unidifusión puede ser "Configuración automática" o "Configuración manual":
 
 .. figure:: robot_peripherals/205.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-4 单播配置模式
+.. centered:: Figura 8.12-4 Modo de configuración unidifusión
 
-**自动配置**：将已存在的协议文件直接上传至机器人控制器，已存在的协议文件可能来自：①其它已配置和调试完成阵列式吸盘的机器人中下载得到；②技术人员根据实际场景编写得到（用户编写协议文件可以实现更灵活、更高效的吸盘控制）。若多台设备使用相同的阵列式吸盘，通过自动配置直接上传协议的方式可以提高部署速度。
+**Configuración automática**: cargar directamente en el controlador del robot un archivo de protocolo ya existente; el archivo de protocolo ya existente puede proceder de: ① otro robot con ventosas en matriz ya configuradas y depuradas, del que se ha descargado; ② personal técnico que lo ha redactado según el escenario real (el protocolo redactado por el usuario permite un control de las ventosas más flexible y eficiente). Si varios equipos utilizan la misma matriz de ventosas, cargar directamente el protocolo mediante la configuración automática puede aumentar la velocidad de despliegue.
 
-**手动配置**：根据阵列中吸盘的从站ID和真空度情况配置每个吸盘的通讯协议。手动配置操作步骤如下：
+**Configuración manual**: configurar el protocolo de comunicación de cada ventosa según el ID de esclavo y la situación de vacío de las ventosas de la matriz. Los pasos de la configuración manual son los siguientes:
 
-选择从站号为1，输入最大真空度、最小真空度、抓取超时时间(超时时间暂未开放)，点击“配置”按钮。此时在“设备操作及状态”栏中出现协议编号为1的吸盘协议，同时在“手动配置”、“从站号”标签上会显示当前已经配置的所有从站号。
+Seleccionar el número de esclavo 1, introducir el vacío máximo, el vacío mínimo y el tiempo de espera agotado de agarre (el tiempo de espera agotado aún no está disponible) y hacer clic en el botón "Configurar". En este momento, en la columna "Operación y estado del dispositivo" aparece el protocolo de ventosa con número de protocolo 1 y, en las etiquetas "Configuración manual" y "Número de esclavo", se muestran todos los números de esclavo ya configurados.
 
 .. figure:: robot_peripherals/206.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-5 配置单播吸盘
+.. centered:: Figura 8.12-5 Configuración de la ventosa en modo unidifusión
 
-重复上述步骤，可根据需要配置多个从站号的吸盘，每配置一个吸盘，机器人系统都会自动更新“协议编号：1”对应的吸盘通讯协议内容，最多支持配置20个吸盘。所有吸盘都配置完成后，在“协议编号1”框中点击“连接”按钮，机器人与吸盘的通讯开始运行，“运行状态”指示灯亮起(注意：请先配置完成所有的从站号吸盘，再点击“连接”按钮，通讯建立后再配置吸盘从站无效)。
+Repetir los pasos anteriores para configurar las ventosas de varios números de esclavo según sea necesario; cada vez que se configura una ventosa, el sistema del robot actualiza automáticamente el contenido del protocolo de comunicación de la ventosa correspondiente al "Número de protocolo: 1"; se admite la configuración de hasta 20 ventosas. Tras configurar todas las ventosas, hacer clic en el botón "Conectar" del cuadro "Número de protocolo 1"; la comunicación entre el robot y las ventosas comienza a ejecutarse y el indicador luminoso de "Estado de funcionamiento" se enciende (tenga en cuenta: configure primero todas las ventosas de número de esclavo y, a continuación, haga clic en el botón "Conectar"; una vez establecida la comunicación, la configuración de esclavos de ventosa no será válida).
 
-机器人与吸盘的通讯建立成功后，在“设备操作及状态”栏中出现所有配置的吸盘从站操作框列表；在每个从站号对应吸盘的操作框页面中可以进行吸盘的控制和状态监控（包括“吸取状态”、“当前真空度”、“吸盘压力”等），下图中配置的吸盘从站ID分别为2和11。
+Tras establecer correctamente la comunicación entre el robot y las ventosas, en la columna "Operación y estado del dispositivo" aparece la lista de cuadros de operación de esclavo de todas las ventosas configuradas; en la página del cuadro de operación de la ventosa correspondiente a cada número de esclavo se puede realizar el control y la monitorización del estado de la ventosa (incluidos el "Estado de aspiración", el "Vacío actual", la "Presión de la ventosa", etc.); en la figura siguiente, los ID de esclavo de las ventosas configuradas son 2 y 11 respectivamente.
 
 .. figure:: robot_peripherals/207.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-6 单播吸盘连接
+.. centered:: Figura 8.12-6 Conexión de la ventosa en modo unidifusión
 
-在从站号1吸盘的控制框右上角点击“吸取”按钮，吸盘即执行“设定真空度吸取”动作。此时“吸取”按钮变成“释放”按钮，再次点击该按钮，吸盘即执行释放动作。吸盘执行上述动作时，对应的“吸取状态”、“当前真空度”等状态项将实时显示吸盘的状态。
+Hacer clic en el botón "Aspirar" de la esquina superior derecha del cuadro de control de la ventosa de número de esclavo 1; la ventosa ejecuta la acción de "aspirar con el vacío establecido". En este momento el botón "Aspirar" se convierte en el botón "Liberar"; al volver a hacer clic en dicho botón, la ventosa ejecuta la acción de liberación. Cuando la ventosa ejecuta las acciones anteriores, los elementos de estado correspondientes "Estado de aspiración", "Vacío actual", etc., muestran en tiempo real el estado de la ventosa.
 
-.. note:: 注意：配置吸盘协议并连接完成后，需要点击一次“吸取”按钮激活该吸盘，同时也可以测试机器人与吸盘间的通讯是否正常。
+.. note:: Nota: tras completar la configuración del protocolo de la ventosa y la conexión, es necesario hacer clic una vez en el botón "Aspirar" para activar dicha ventosa; al mismo tiempo también se puede probar si la comunicación entre el robot y la ventosa es normal.
   
-若机器人与吸盘连接失败，则不会显示吸盘控制框，且“协议编号：1”中的运行状态指示灯熄灭。
+Si falla la conexión entre el robot y la ventosa, no se mostrará el cuadro de control de la ventosa y el indicador luminoso de estado de funcionamiento del "Número de protocolo: 1" se apagará.
 
-.. note:: 注意：若使用过程中吸盘与以太网转485模块通讯物理连接断开再重新连接，可能出现协议无法建立连接的情况，此时可以拔插以太网转485模块的网线，再重新尝试连接。
+.. note:: Nota: si durante el uso se desconecta y vuelve a conectar la conexión física de comunicación entre la ventosa y el módulo de conversión de Ethernet a 485, puede producirse una situación en la que el protocolo no pueda establecer la conexión; en este caso se puede desenchufar y volver a enchufar el cable de red del módulo de conversión de Ethernet a 485 y volver a intentar la conexión.
 
 .. figure:: robot_peripherals/208.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-7 机器人与吸盘连接失败
+.. centered:: Figura 8.12-7 Fallo de conexión entre el robot y la ventosa
 
-单播模式协议下载
-++++++++++++++++++++++++++++++++++++++++++
+Descarga del protocolo del modo unidifusión
++++++++++++++++++++++++++++++++++++++++++++
 
-在“手动配置”中点击“下载”按钮，即可将吸盘协议下载到本地计算机。吸盘协议为一个循环执行的LUA程序，程序在每个循环执行如下步骤：
+En "Configuración manual", hacer clic en el botón "Descargar" para descargar el protocolo de la ventosa al ordenador local. El protocolo de la ventosa es un programa LUA de ejecución cíclica; en cada ciclo el programa ejecuta los siguientes pasos:
 
-- ①从机器人中读取吸盘控制数据；
-- ②通过socket将控制数据写入到吸盘；
-- ③通过socket从吸盘读取状态数据；
-- ④向机器人中反馈吸盘状态数据；
+- ①Leer los datos de control de la ventosa del robot;
+- ②Escribir los datos de control en la ventosa mediante socket;
+- ③Leer los datos de estado de la ventosa mediante socket;
+- ④Realimentar los datos de estado de la ventosa al robot;
 
-吸盘通讯协议循环执行实现机器人与吸盘的通讯控制。在通讯协议中用户可自定义循环周期、控制数据寄存器地址和状态数据寄存器地址，可根据实际情况对该协议内容进行修改。以下为一个吸盘通讯协议代码示例：
+La ejecución cíclica del protocolo de comunicación de la ventosa realiza el control de comunicación entre el robot y la ventosa. En el protocolo de comunicación el usuario puede personalizar el período de ciclo, la dirección de registro de los datos de control y la dirección de registro de los datos de estado; el contenido de dicho protocolo se puede modificar según la situación real. A continuación se muestra un ejemplo del código del protocolo de comunicación de una ventosa:
 
-吸盘协议程序示例：
+Ejemplo de programa del protocolo de la ventosa:
 
 .. code-block:: console
     :linenos:
@@ -5740,9 +5744,9 @@ FR对应的类型为“SmartTool ”与力传感器组合使用，协作机器�
       sleep_ms(100) 
     end 
 
-上述协议通过getSuckerCtrlState()指令获取吸盘控制数据，并通过ModbusRTUOverTCPWriteSingleReg()指令将控制数据通过通信写入到吸盘中，通过ModbusRTUOverTCPReadReg()指令读取吸盘的状态数据，再通过setSuckerRealtimeState()将吸盘状态数据反馈至机器人中。上述几个指令的详细定义如下：
+El protocolo anterior obtiene los datos de control de la ventosa mediante la instrucción getSuckerCtrlState(), escribe los datos de control en la ventosa mediante la instrucción ModbusRTUOverTCPWriteSingleReg() a través de la comunicación, lee los datos de estado de la ventosa mediante la instrucción ModbusRTUOverTCPReadReg() y realimenta los datos de estado de la ventosa al robot mediante setSuckerRealtimeState(). La definición detallada de estas instrucciones es la siguiente:
 
-.. centered:: 表格 8.12-1 getSuckerCtrlState()返回值
+.. centered:: Tabla 8.12-1 Valor de retorno de getSuckerCtrlState()
 
 .. list-table:: 
    :widths: 10 10 20 40
@@ -5750,22 +5754,22 @@ FR对应的类型为“SmartTool ”与力传感器组合使用，协作机器�
    :align: center
    :class: sheet-center
 
-   * - **序号**
-     - **类型**
-     - **变量名**
-     - **描述**
+   * - **Número**
+     - **Tipo**
+     - **Nombre de variable**
+     - **Descripción**
 
    * - 1
      - int
      - setAllCtrl
-     - 广播模式控制数据：1-按最大真空度吸取；2-按设置真空度吸取，即吸盘真空度保持在最大真空度和最小真空度之间；3-停止吸取
+     - Datos de control del modo difusión: 1-aspirar con el vacío máximo; 2-aspirar con el vacío establecido, es decir, el vacío de la ventosa se mantiene entre el vacío máximo y el vacío mínimo; 3-detener la aspiración
 
    * - 2 ~ 21
      - int
      - ctrlValues[i]
-     - 从站号1 ~ 20对应的吸盘控制数据：1-按最大真空度吸取；2-按设置真空度吸取，即吸盘真空度保持在最大真空度和最小真空度之间；3-停止吸取
+     - Datos de control de la ventosa correspondientes a los números de esclavo 1 ~ 20: 1-aspirar con el vacío máximo; 2-aspirar con el vacío establecido, es decir, el vacío de la ventosa se mantiene entre el vacío máximo y el vacío mínimo; 3-detener la aspiración
 
-.. centered:: 表格 8.12-2 ModbusRTUOverTCPWriteSingleReg()详细参数
+.. centered:: Tabla 8.12-2 Parámetros detallados de ModbusRTUOverTCPWriteSingleReg()
 
 .. list-table:: 
    :widths: 10 10 20 40
@@ -5773,32 +5777,32 @@ FR对应的类型为“SmartTool ”与力传感器组合使用，协作机器�
    :align: center
    :class: sheet-center
 
-   * - **序号**
-     - **类型**
-     - **变量名**
-     - **描述**
+   * - **Número**
+     - **Tipo**
+     - **Nombre de variable**
+     - **Descripción**
 
    * - 1
      - int
      - socket
-     - socket句柄
+     - identificador de socket
 
    * - 2
      - int
      - slaveID
-     - 从站号 0-20；0-广播；1~20-从站号
+     - Número de esclavo 0-20; 0-difusión; 1~20-número de esclavo
 
    * - 3
      - uint16_t
      - regAddr
-     - 写入寄存器地址
+     - Dirección del registro de escritura
 
    * - 4
      - uint16_t
      - data
-     - 要写入的数据
+     - Dato que se desea escribir
 
-.. centered:: 表格 8.12-3 ModbusRTUOverTCPWriteMultiReg()详细参数
+.. centered:: Tabla 8.12-3 Parámetros detallados de ModbusRTUOverTCPWriteMultiReg()
 
 .. list-table:: 
    :widths: 10 10 20 40
@@ -5806,37 +5810,37 @@ FR对应的类型为“SmartTool ”与力传感器组合使用，协作机器�
    :align: center
    :class: sheet-center
 
-   * - **序号**
-     - **类型**
-     - **变量名**
-     - **描述**
+   * - **Número**
+     - **Tipo**
+     - **Nombre de variable**
+     - **Descripción**
 
    * - 1
      - int
      - socket
-     - socket句柄
+     - identificador de socket
 
    * - 2
      - int
      - slaveID
-     - 从站号 0-20；0-广播；1~20-从站号
+     - Número de esclavo 0-20; 0-difusión; 1~20-número de esclavo
 
    * - 3
      - uint16_t
      - regStartAddr
-     - 写入多个寄存器起始地址
+     - Dirección inicial de escritura de varios registros
 
    * - 4
      - int
      - num
-     - 写入寄存器数量
+     - Número de registros a escribir
 
    * - 5
      - uint16_t[]
      - data
-     - 要写入的数据内容数组
+     - Array con el contenido de los datos que se desean escribir
 
-.. centered:: 表格 8.12-4 ModbusRTUOverTCPReadReg()详细参数
+.. centered:: Tabla 8.12-4 Parámetros detallados de ModbusRTUOverTCPReadReg()
 
 .. list-table:: 
    :widths: 10 10 20 40
@@ -5844,32 +5848,32 @@ FR对应的类型为“SmartTool ”与力传感器组合使用，协作机器�
    :align: center
    :class: sheet-center
 
-   * - **序号**
-     - **类型**
-     - **变量名**
-     - **描述**
+   * - **Número**
+     - **Tipo**
+     - **Nombre de variable**
+     - **Descripción**
 
    * - 1
      - int
      - socket
-     - socket句柄
+     - identificador de socket
 
    * - 2
      - int
      - slaveID
-     - 从站号 0-20；0-广播；1~20-从站号
+     - Número de esclavo 0-20; 0-difusión; 1~20-número de esclavo
 
    * - 3
      - uint16_t
      - regStartAddr
-     - 读多个寄存器起始地址
+     - Dirección inicial de lectura de varios registros
 
    * - 4
      - int
      - num
-     - 读取寄存器数量
+     - Número de registros a leer
 
-.. centered:: 表格 8.12-5 ModbusRTUOverTCPReadReg()返回值
+.. centered:: Tabla 8.12-5 Valores de retorno de ModbusRTUOverTCPReadReg()
 
 .. list-table:: 
    :widths: 10 10 20 40
@@ -5877,27 +5881,27 @@ FR对应的类型为“SmartTool ”与力传感器组合使用，协作机器�
    :align: center
    :class: sheet-center
 
-   * - **序号**
-     - **类型**
-     - **变量名**
-     - **描述**
+   * - **Número**
+     - **Tipo**
+     - **Nombre de variable**
+     - **Descripción**
 
    * - 1
      - int
      - suckState
-     - 吸盘当前状态：0-释放物体或吸盘启动成功；1-检测到工件，吸附到物体；2-没有吸附到物体；3-物体脱离
+     - Estado actual de la ventosa: 0-liberación del objeto o inicio correcto de la ventosa; 1-objeto detectado, adherido al objeto; 2-no se ha adherido al objeto; 3-objeto desprendido
 
    * - 2
      - float
      - pressValue
-     - 当前真空度/压力
+     - Vacío/presión actual
 
    * - 3
      - int
      - err
-     - 错误码：0-正常；其它：异常
+     - Código de error: 0-normal; otros: anomalía
 
-.. centered:: 表格 8.12-6 setSuckerRealtimeState()详细参数
+.. centered:: Tabla 8.12-6 Parámetros detallados de setSuckerRealtimeState()
 
 .. list-table:: 
    :widths: 10 10 20 40
@@ -5905,181 +5909,181 @@ FR对应的类型为“SmartTool ”与力传感器组合使用，协作机器�
    :align: center
    :class: sheet-center
 
-   * - **序号**
-     - **类型**
-     - **变量名**
-     - **描述**
+   * - **Número**
+     - **Tipo**
+     - **Nombre de variable**
+     - **Descripción**
 
    * - 1
      - int
      - slaveID
-     - 从站ID
+     - ID de esclavo
 
    * - 2
      - int[]
      - states
-     - states[1]：当前状态0-释放物体或吸盘启动成功；1-检测到工件，吸附到物体；2-没有吸附到物体；3-物体脱离。
-        states[2]：当前真空度/压力；
-        states[3]：等待寄存器值；
-        states[4]：控制状态；
-        states[5]：最大真空度；
-        states[6]：最小真空度；
-        state[7]：超时时间；
-        states[8~10]：预留。
+     - states[1]: estado actual 0-liberación del objeto o inicio correcto de la ventosa; 1-objeto detectado, adherido al objeto; 2-no se ha adherido al objeto; 3-objeto desprendido.
+        states[2]: vacío/presión actual;
+        states[3]: valor del registro de espera;
+        states[4]: estado de control;
+        states[5]: vacío máximo;
+        states[6]: vacío mínimo;
+        state[7]: tiempo de espera agotado;
+        states[8~10]: reservado.
 
-广播模式
-++++++++++++++++++++++++++++++++++
+Modo difusión
++++++++++++++
 
-协作机器人通过广播模式可以同时控制连接的所有吸盘动作。
+El robot colaborativo puede, mediante el modo difusión, controlar simultáneamente el movimiento de todas las ventosas conectadas.
 
-.. note:: 注意：需要先配置完成单播模式，才能配置广播模式
+.. note:: Nota: es necesario configurar primero el modo unidifusión para poder configurar el modo difusión
 
-打开WebApp，依次点击“初始设置”->“外设”->“阵列式吸盘”，先在单播模式配置完成所有需要的吸盘从站(仅配置，不进行通信协议连接建立)。
+Abrir WebApp, hacer clic sucesivamente en "Configuración inicial"->"Periféricos"->"Ventosas en matriz" y configurar primero en el modo unidifusión todas las ventosas de esclavo necesarias (solo configurar, sin establecer la conexión del protocolo de comunicación).
 
-点击“广播模式”，在“参数配置”中输入吸盘的“最大真空度”、“最小真空度”、“抓取超时时间”(超时时间暂未开放)，点击“配置”按钮，此时在“设备操作及状态”框中出现广播模式通讯协议。在广播模式下，设置真空度参数对连接的每个吸盘均生效。
+Hacer clic en "Modo difusión", introducir en "Configuración de parámetros" el "Vacío máximo", el "Vacío mínimo" y el "Tiempo de espera agotado de agarre" de las ventosas (el tiempo de espera agotado aún no está disponible) y hacer clic en el botón "Configurar"; en este momento, en el cuadro "Operación y estado del dispositivo" aparece el protocolo de comunicación del modo difusión. En el modo difusión, el establecimiento de los parámetros de vacío surte efecto para cada ventosa conectada.
 
 .. figure:: robot_peripherals/209.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-8 广播模式参数配置
+.. centered:: Figura 8.12-8 Configuración de parámetros del modo difusión
 
-在“协议编号1”操作框中点击“连接”按钮，“运行状态”指示灯亮起，表示机器人与阵列式吸盘已经建立通讯连接，连接成功后，所有连接的吸盘操作框列表显示在“设备操作及状态”栏中。
+Hacer clic en el botón "Conectar" del cuadro de operación "Número de protocolo 1"; el indicador luminoso de "Estado de funcionamiento" se enciende, lo que indica que el robot y las ventosas en matriz han establecido la conexión de comunicación; tras una conexión correcta, la lista de cuadros de operación de todas las ventosas conectadas se muestra en la columna "Operación y estado del dispositivo".
 
-在“参数配置”->“一键吸取”中点击“开始”，阵列式吸盘中的每个吸盘即按照“设定真空度吸取”动作，点击“停止”，阵列式吸盘中的每个吸盘即停止吸取动作。
+En "Configuración de parámetros"->"Aspiración con un clic", hacer clic en "Iniciar"; cada ventosa de la matriz de ventosas ejecuta la acción de "aspirar con el vacío establecido"; hacer clic en "Detener" y cada ventosa de la matriz de ventosas detiene la acción de aspiración.
 
 .. figure:: robot_peripherals/210.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-9 广播模式通信建立
+.. centered:: Figura 8.12-9 Establecimiento de la comunicación en modo difusión
 
-广播模式下载协议文件与单播模式操作一致，两处下载的协议文件均可以通过单播模式页面中的“自动配置”处上传至机器人中。
+La descarga del archivo de protocolo del modo difusión es igual que en el modo unidifusión; los archivos de protocolo descargados en ambos lugares se pueden cargar al robot mediante la opción "Configuración automática" de la página del modo unidifusión.
 
-阵列式吸盘LUA程序应用
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Aplicación del programa LUA de ventosas en matriz
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-在机器人LUA程序中增加阵列吸盘控制、状态获取等指令，配合机器人运动指令，可以灵活、便捷的实现物料抓取搬运应用。
+Añadir en el programa LUA del robot instrucciones de control de las ventosas en matriz, de obtención de estado, etc.; en combinación con las instrucciones de movimiento del robot, se pueden realizar de forma flexible y cómoda aplicaciones de agarre y transporte de materiales.
 
-打开WebApp，依次点击“示教程序”->“程序编程”，新建LUA程序“testSucker.lua”。
+Abrir WebApp, hacer clic sucesivamente en "Programa de enseñanza"->"Programación de programas" y crear el nuevo programa LUA "testSucker.lua".
 
 .. figure:: robot_peripherals/211.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-10 新建“testSucker.lua”程序
+.. centered:: Figura 8.12-10 Creación del programa "testSucker.lua"
 
-选择指令类型为“外设指令”，在外设指令中点击“吸盘”按钮。此时在WebApp右侧出现“Sucker”阵列式吸盘指令添加页面。
+Seleccionar el tipo de instrucción como "Instrucciones de periféricos" y hacer clic en el botón "Ventosa" de las instrucciones de periféricos. En este momento aparece en la parte derecha de WebApp la página de adición de instrucciones de ventosas en matriz "Sucker".
 
 .. figure:: robot_peripherals/212.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-11 阵列式吸盘指令添加
+.. centered:: Figura 8.12-11 Adición de instrucciones de ventosas en matriz
 
-吸盘控制指令添加
-+++++++++++++++++++++++++++++++++++++++++++
+Adición de instrucciones de control de la ventosa
++++++++++++++++++++++++++++++++++++++++++++++++++
 
-在LUA程序中编写吸盘控制指令可以对吸盘进行吸取控制和释放控制。单播模式和广播模式的控制有不同的逻辑效果。
+Escribir instrucciones de control de la ventosa en el programa LUA permite realizar el control de aspiración y de liberación de la ventosa. El control del modo unidifusión y del modo difusión tiene efectos lógicos diferentes.
 
-单播模式控制指令添加
-***********************************************************
+Adición de instrucciones de control del modo unidifusión
+*********************************************************
 
-单播模式控制可以根据从站起始地址和数量进行单个或多个吸盘控制，可为每个吸盘设置不同的控制状态。
+El control del modo unidifusión permite controlar una o varias ventosas según la dirección inicial del esclavo y el número, pudiendo configurar un estado de control diferente para cada ventosa.
 
-在吸盘指令添加页面中点击“吸盘控制指令”，选择控制模式为“单播模式”，输入从站号为1，写入数量为2，吸取状态为“1,2”。点击“添加”按钮，即在“程序预览”中添加一条单播模式的吸盘控制指令。
+En la página de adición de instrucciones de la ventosa, hacer clic en "Instrucción de control de la ventosa", seleccionar el modo de control "Modo unidifusión", introducir el número de esclavo 1, la cantidad de escritura 2 y el estado de aspiración "1,2". Hacer clic en el botón "Añadir" para añadir una instrucción de control de la ventosa en modo unidifusión en la "Vista previa del programa".
 
 .. figure:: robot_peripherals/213.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-12 添加吸盘控制指令
+.. centered:: Figura 8.12-12 Adición de la instrucción de control de la ventosa
 
-吸盘控制指令中的各参数含义如下：
+El significado de cada parámetro de la instrucción de control de la ventosa es el siguiente:
 
-- **从站号**：单播模式控制吸盘起始从站号。
-- **写入数量**：单播模式控制从起始从站号开始要控制的吸盘数量。
-- **吸取状态**：单播模式从起始从站号开始，每个吸盘的控制状态标志（1-按最大真空度吸取；2-按设置真空度吸取，即吸盘真空度保持在最大真空度和最小真空度之间；3-停止吸取）；其中每个吸盘的控制状态标志通过“,”分割，且控制标志个数与要控制的吸盘个数要一致；若要控制两个吸盘，其控制操作分别按“最大真空度吸取”和“设置真空度吸取”，则该项输入内容为“1,2”。
+- **Número de esclavo**: número de esclavo inicial de la ventosa controlada en modo unidifusión.
+- **Cantidad de escritura**: número de ventosas que se desean controlar en modo unidifusión a partir del número de esclavo inicial.
+- **Estado de aspiración**: a partir del número de esclavo inicial, indicador del estado de control de cada ventosa en modo unidifusión (1-aspirar con el vacío máximo; 2-aspirar con el vacío establecido, es decir, el vacío de la ventosa se mantiene entre el vacío máximo y el vacío mínimo; 3-detener la aspiración); los indicadores del estado de control de cada ventosa se separan mediante ",", y el número de indicadores de control debe coincidir con el número de ventosas que se desean controlar; si se desean controlar dos ventosas cuyas operaciones de control son respectivamente "aspirar con el vacío máximo" y "aspirar con el vacío establecido", el contenido a introducir en este elemento es "1,2".
 
-点击“应用”按钮，此时“testSucker.lua”程序中即添加一条吸盘控制指令，将机器人切换至自动模式，执行该LUA程序，机器人将控制从站号分别为1和2的两个吸盘分别按最大真空度和设定真空度进行吸取动作。
+Hacer clic en el botón "Aplicar"; en este momento en el programa "testSucker.lua" se añade una instrucción de control de la ventosa; cambiar el robot al modo automático y ejecutar dicho programa LUA; el robot controlará las dos ventosas con números de esclavo 1 y 2 respectivamente para que realicen la acción de aspiración con el vacío máximo y con el vacío establecido.
 
 .. figure:: robot_peripherals/214.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-13 LUA程序中添加吸盘指令
+.. centered:: Figura 8.12-13 Adición de la instrucción de la ventosa en el programa LUA
 
-广播模式控制指令添加
-***********************************************************
+Adición de instrucciones de control del modo difusión
+******************************************************
 
-广播模式控制指令设置的吸取状态对当前连接的所有吸盘生效。
+El estado de aspiración establecido en la instrucción de control del modo difusión surte efecto para todas las ventosas conectadas actualmente.
 
-点击“吸盘控制指令”，选择控制模式为“广播模式”，输入吸取状态为1（按最大真空度吸取）。点击“添加”按钮。
+Hacer clic en "Instrucción de control de la ventosa", seleccionar el modo de control "Modo difusión" e introducir el estado de aspiración 1 (aspirar con el vacío máximo). Hacer clic en el botón "Añadir".
 
 .. figure:: robot_peripherals/215.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-14 添加一条广播控制指令
+.. centered:: Figura 8.12-14 Adición de una instrucción de control en modo difusión
 
-点击“应用”按钮，此时“testSucker.lua”中即添加一条广播模式吸盘控制指令。将机器人切换到自动模式，执行该程序，则连接的所有吸盘均开始按最大真空度吸取动作。
+Hacer clic en el botón "Aplicar"; en este momento en "testSucker.lua" se añade una instrucción de control de la ventosa en modo difusión. Cambiar el robot al modo automático y ejecutar dicho programa; todas las ventosas conectadas comienzan la acción de aspiración con el vacío máximo.
 
 .. figure:: robot_peripherals/216.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-15 在LUA程序中添加一条广播控制指令
+.. centered:: Figura 8.12-15 Adición de una instrucción de control en modo difusión en el programa LUA
 
-吸盘状态获取指令添加
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Adición de instrucciones de obtención del estado de la ventosa
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“获取吸盘状态”，选择要获取状态吸盘的从站号，依次点击“添加”、“应用”按钮。即在“testSucker.lua”中添加一条获取吸盘状态的指令“GetSuckerState(1)”。
+Hacer clic en "Obtener estado de la ventosa", seleccionar el número de esclavo de la ventosa cuyo estado se desea obtener y hacer clic sucesivamente en los botones "Añadir" y "Aplicar". Es decir, en "testSucker.lua" se añade una instrucción "GetSuckerState(1)" para obtener el estado de la ventosa.
 
 .. figure:: robot_peripherals/217.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-16 添加获取吸盘状态指令
+.. centered:: Figura 8.12-16 Adición de la instrucción de obtención del estado de la ventosa
 
-GetSuckerState()指令返回3个数值，分别如下：
+La instrucción GetSuckerState() devuelve 3 valores, que son los siguientes:
 
-- **state**：吸盘当前状态：0-释放物体或吸盘启动成功；1-检测到工件，吸附到物体；2-没有吸附到物体；3-物体脱离。
-- **pressValue**：当前真空度/压力；
-- **err**：错误码：0-正常；其它：异常。
+- **state**: estado actual de la ventosa: 0-liberación del objeto o inicio correcto de la ventosa; 1-objeto detectado, adherido al objeto; 2-no se ha adherido al objeto; 3-objeto desprendido.
+- **pressValue**: vacío/presión actual;
+- **err**: código de error: 0-normal; otros: anomalía.
 
-在“testSucker.lua”中用三个变量接收GetSuckerState()函数的返回值。并通过Lua变量查询将上述信息显示在WebApp变量查询显示区中。
+En "testSucker.lua", utilizar tres variables para recibir los valores de retorno de la función GetSuckerState(). Y mostrar la información anterior en el área de visualización de consulta de variables de WebApp mediante la consulta de variables Lua.
 
 .. figure:: robot_peripherals/218.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-17 获取吸盘状态程序
+.. centered:: Figura 8.12-17 Programa de obtención del estado de la ventosa
 
-等待吸盘吸附状态指令添加
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Adición de instrucciones de espera del estado de aspiración de la ventosa
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-阵列式吸盘实际场景应用中常需要等待吸盘吸取(释放)完成后再执行下一动作。协作机器人提供等待吸盘动作完成指令，当吸盘达到设定状态时指令执行结束，否则在设定超时时间内一直阻塞等待吸盘动作完成。
+En las aplicaciones reales de la matriz de ventosas a menudo es necesario esperar a que finalice la aspiración (liberación) de la ventosa para ejecutar la siguiente acción. El robot colaborativo proporciona la instrucción de espera de finalización del movimiento de la ventosa; cuando la ventosa alcanza el estado establecido la instrucción finaliza; de lo contrario, dentro del tiempo de espera agotado establecido se bloquea esperando a que finalice el movimiento de la ventosa.
 
-在阵列式吸盘指令添加页面中点击“等待吸盘吸附状态”，选择吸盘对应的从站号1，选择控制模式为“检测到工件，吸附到物体”，输入超时时间为10000ms。点击“添加”按钮。
+En la página de adición de instrucciones de ventosas en matriz, hacer clic en "Esperar el estado de aspiración de la ventosa", seleccionar el número de esclavo 1 correspondiente a la ventosa, seleccionar el modo de control "Objeto detectado, adherido al objeto" e introducir el tiempo de espera agotado de 10000ms. Hacer clic en el botón "Añadir".
 
 .. figure:: robot_peripherals/219.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-18 等待吸盘状态指令添加
+.. centered:: Figura 8.12-18 Adición de la instrucción de espera del estado de la ventosa
 
-点击“应用”按钮，“testSucker.lua”中即添加一条等待吸盘吸取到物体的指令。
+Hacer clic en el botón "Aplicar"; en "testSucker.lua" se añade una instrucción de espera a que la ventosa aspire el objeto.
 
 .. figure:: robot_peripherals/220.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.12-19 LUA程序中添加等待吸盘吸取到物体
+.. centered:: Figura 8.12-19 Adición en el programa LUA de la espera de aspiración de la ventosa al objeto
 
-应用示例
-++++++++++++++++++++++++++++++++++
+Ejemplo de aplicación
++++++++++++++++++++++
 
-吸盘搬运控制LUA程序示例：
+Ejemplo de programa LUA de control de transporte con ventosa:
 
 .. code-block:: console
   :linenos:
@@ -6153,25 +6157,25 @@ GetSuckerState()指令返回3个数值，分别如下：
   end
   end 
 
-基于FOCAS的CNC功能包（仅在Linux系统下使用）
--------------------------------------------------
+Paquete de funciones CNC basado en FOCAS (solo se utiliza en el sistema Linux)
+------------------------------------------------------------------------------
 
-概述
-~~~~~~~~~~~~~
+Descripción general
+~~~~~~~~~~~~~~~~~~~
 
-为了在机床加工中，实现自动化上下料流程，开发了基于FOCAS通信的CNC功能包，可实现协作机器人与CNC机床的通信交互与协同运动。
+Para lograr el flujo automatizado de carga y descarga en el mecanizado por CNC, se ha desarrollado el paquete de funciones CNC basado en la comunicación FOCAS, que permite la interacción de comunicación y el movimiento colaborativo entre el robot colaborativo y la máquina CNC.
 
-如图所示，FOCAS通信是基于以太网的，通过网线连接机器人控制箱网口与机床内嵌网口，即可建立机器人与机床的FOCAS通信，实现在机器人端的CNC控制和机床状态监控。
+Como se muestra en la figura, la comunicación FOCAS se basa en Ethernet; conectando mediante cable de red el puerto de red de la caja de control del robot con el puerto de red integrado de la máquina herramienta se puede establecer la comunicación FOCAS entre el robot y la máquina herramienta, realizando el control CNC y la monitorización del estado de la máquina herramienta en el lado del robot.
 
 .. figure:: robot_peripherals/221.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.13‑1 机器人与CNC的FOCAS通信拓扑图
+.. centered:: Figura 8.13‑1 Topología de la comunicación FOCAS entre el robot y el CNC
 
-目前控制箱基于FOCAS通信的CNC功能包支持的机床控制、状态反馈的功能如表所示。
+Actualmente, las funciones de control de la máquina herramienta y de realimentación de estado compatibles con el paquete de funciones CNC basado en la comunicación FOCAS de la caja de control se muestran en la tabla.
 
-.. centered:: 表格 8.13-1 基于FOCAS通信的CNC功能包支持的功能表
+.. centered:: Tabla 8.13-1 Tabla de funciones compatibles con el paquete de funciones CNC basado en la comunicación FOCAS
 
 .. list-table:: 
    :widths: 15 40 100
@@ -6179,62 +6183,62 @@ GetSuckerState()指令返回3个数值，分别如下：
    :align: center
    :class: sheet-center
 
-   * - **序号**
-     - **功能名称**
-     - **说明**
+   * - **Número**
+     - **Nombre de la función**
+     - **Descripción**
    * - 1
-     - 机床类型
-     - 状态反馈
+     - Tipo de máquina herramienta
+     - Realimentación de estado
    * - 2
-     - FOCAS通信状态
-     - 状态反馈
+     - Estado de la comunicación FOCAS
+     - Realimentación de estado
    * - 3
-     - 自动模式运行
-     - 控制、状态反馈
+     - Funcionamiento en modo automático
+     - Control, realimentación de estado
    * - 4
-     - 报警状态
-     - 状态反馈
+     - Estado de alarma
+     - Realimentación de estado
    * - 5
-     - 安全门
-     - 状态反馈
+     - Puerta de seguridad
+     - Realimentación de estado
    * - 6
-     - 卡盘
-     - 控制、状态反馈
+     - Plato de sujeción
+     - Control, realimentación de estado
    * - 7
-     - 急停
-     - 控制、状态反馈
+     - Parada de emergencia
+     - Control, realimentación de estado
   
-相关操作说明
-~~~~~~~~~~~~~~~~~~~~~~
+Descripción de las operaciones relacionadas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-FOCAS通信建立
-+++++++++++++++++++
+Establecimiento de la comunicación FOCAS
+++++++++++++++++++++++++++++++++++++++++
 
-FOCAS通信是基于以太网，需要将机器人、CNC机床、PC端电脑组成局域网实现物理链路衔接，并通过机器人开放协议实现最终FOCAS的通信建立。
+La comunicación FOCAS se basa en Ethernet; es necesario formar una red de área local con el robot, la máquina CNC y el ordenador PC para realizar el enlace físico y, mediante el protocolo abierto del robot, realizar el establecimiento final de la comunicación FOCAS.
 
-网络配置
-*************************
+Configuración de red
+********************
 
-**Step1**：首先将PC端电脑IP地址改为和机器人控制箱同一网段，机器人控制箱的IP地址为"192.168.58.2"。
+**Step1**: En primer lugar, cambiar la dirección IP del ordenador PC al mismo segmento de red que la caja de control del robot; la dirección IP de la caja de control del robot es "192.168.58.2".
 
-如果没有交换机组网，可以用机器人控制箱上自带的两个网口进行组网，操作如下：登录机器人的WebAPP，在系统设置->通用设置->网络设置中，设置网口0的IP为：192.168.58.2；网口1的IP为192.168.57.2。同时设置WebAPP为网口0，WebRecovery为网口1，如图所示。完成全部设置后点击设置网络。
+Si no se dispone de un conmutador para la red, se pueden utilizar los dos puertos de red integrados en la caja de control del robot para formar la red; la operación es la siguiente: iniciar sesión en WebAPP del robot y, en Configuración del sistema->Configuración general->Configuración de red, establecer la IP del puerto de red 0 como: 192.168.58.2; la IP del puerto de red 1 como 192.168.57.2. Asimismo, establecer WebAPP como puerto de red 0 y WebRecovery como puerto de red 1, como se muestra en la figura. Tras completar toda la configuración, hacer clic en configurar red.
 
 .. figure:: robot_peripherals/222.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.13‑2 机器人网络配置图
+.. centered:: Figura 8.13‑2 Diagrama de configuración de red del robot
 
-**Step2**：接着重启控制箱，并通过网卡0网口与PC端相连，登录机器人WebApp。同时配置需要通信的CNC机床的IP地址和PC端、机器人控制箱为同一个网段，即192.168.58.xx，同时机床的端口改为8193。即可完成所有网络配置。
+**Step2**: A continuación, reiniciar la caja de control y conectarla con el PC a través del puerto de la tarjeta de red 0, e iniciar sesión en WebApp del robot. Asimismo, configurar la dirección IP de la máquina CNC que se desea comunicar en el mismo segmento de red que el PC y la caja de control del robot, es decir, 192.168.58.xx, y cambiar el puerto de la máquina herramienta a 8193. Con esto se completa toda la configuración de red.
 
-开放协议文件配置
-*************************
+Configuración del archivo de protocolo abierto
+**********************************************
 
-**Step1**：随后进行外设开放协议配置，首先需要新建一个以CtrlDev_CNC命名开头的lua文件作为建立FOCAS通信的开放协议文件，如CtrlDev_CNC_demo.lua。
+**Step1**: A continuación, realizar la configuración del protocolo abierto de periféricos; en primer lugar es necesario crear un archivo lua cuyo nombre comience por CtrlDev_CNC como archivo de protocolo abierto para establecer la comunicación FOCAS, por ejemplo CtrlDev_CNC_demo.lua.
 
-该文件中需要设置开放协议ID，并通过CNCComSet函数与CNC建立或断开连接。其中CNCComSet函数参数说明见下表。实例代码如下。
+En dicho archivo es necesario establecer el ID del protocolo abierto y establecer o desconectar la conexión con el CNC mediante la función CNCComSet. La descripción de los parámetros de la función CNCComSet se muestra en la tabla siguiente. El código de ejemplo es el siguiente.
 
-.. centered:: 表格 8.13-2 CNCComSet函数参数说明表
+.. centered:: Tabla 8.13-2 Tabla de descripción de los parámetros de la función CNCComSet
 
 .. list-table:: 
    :widths: 15 40 100
@@ -6242,68 +6246,68 @@ FOCAS通信是基于以太网，需要将机器人、CNC机床、PC端电脑组�
    :align: center
    :class: sheet-center
 
-   * - **序号**
-     - **功能名称**
-     - **说明**
+   * - **Número**
+     - **Nombre de la función**
+     - **Descripción**
    * - 1
-     - 机床厂商
-     - 0-无效 1-机床（FOCAS）
+     - Fabricante de la máquina herramienta
+     - 0-no válido 1-máquina herramienta (FOCAS)
    * - 2
-     - 通信指令
-     - 1-建立连接 1001-断开连接
+     - Instrucción de comunicación
+     - 1-establecer conexión 1001-desconectar
    * - 3
-     - 机床IP地址
+     - Dirección IP de la máquina herramienta
      - --
    * - 4
-     - 机床端口号
+     - Número de puerto de la máquina herramienta
      - --
 
-FOCAS通信建立连接开放协议实例代码：
+Código de ejemplo del protocolo abierto para el establecimiento de la conexión de comunicación FOCAS:
 
 .. code-block:: console
     :linenos:
 
-    local id = 1      --开放LUA协议ID
-    --FOCAS断开连接
+    local id = 1      --ID del protocolo LUA abierto
+    --Desconexión de FOCAS
     CNCComSet(1, 1001, '192.168.57.100', 8193)
     sleep_ms(1000)
-    --FOCAS建立连接
+    --Establecimiento de la conexión FOCAS
     CNCComSet(1, 1, '192.168.57.100', 8193)
     sleep_ms(1000)
     while(1) do
     sleep_ms(5000)
     end
 
-**Step2**：完成开放协议lua文件的编写，选择刚刚的CtrlDev_CNC_fanuc.lua文件并上传，选择文件中设置的ID，下拉选择上传的开放协议文件并点击配置。
+**Step2**: Tras completar la redacción del archivo lua del protocolo abierto, seleccionar el archivo CtrlDev_CNC_fanuc.lua recién creado y cargarlo; seleccionar el ID establecido en el archivo, seleccionar en el cuadro desplegable el archivo de protocolo abierto cargado y hacer clic en configurar.
 
 .. figure:: robot_peripherals/223.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.13‑3 开放协议文件上传与配置
+.. centered:: Figura 8.13‑3 Carga y configuración del archivo de protocolo abierto
 
-**Step3**：随后检查所有通信链路正常，并确认CNC机床处于开机状态，点击开放协议中的连接按钮，通过右侧的状态反馈栏中的CNC->FOCAS通信状态可确认是否与机床建立连接（红灯：建立连接；灰色：断开连接），如图所示。
+**Step3**: A continuación, comprobar que todos los enlaces de comunicación son normales y confirmar que la máquina CNC está encendida; hacer clic en el botón de conexión del protocolo abierto y, a través de la columna de realimentación de estado de la derecha, en CNC->Estado de la comunicación FOCAS, se puede confirmar si se ha establecido la conexión con la máquina herramienta (luz roja: conexión establecida; gris: conexión desconectada), como se muestra en la figura.
 
 .. figure:: robot_peripherals/224.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.13‑4 FOCAS通信连接建立 
+.. centered:: Figura 8.13‑4 Establecimiento de la conexión de comunicación FOCAS 
 
-CNC状态反馈说明
-++++++++++++++++++++++++++
+Descripción de la realimentación de estado del CNC
+++++++++++++++++++++++++++++++++++++++++++++++++++
 
-CNC机床的状态反馈显示在WebAPP最右侧的外设状态反馈的CNC外形图标，如图所示。点击则会显示当前机床全部的状态，包括设备厂商、机床类型、FOCAS通信状态、报警标志、机床运行加工状态、机床门开关状态、机床卡盘状态、机床急停状态。
+La realimentación de estado de la máquina CNC se muestra en el icono con la forma del CNC de la realimentación de estado de periféricos de la parte más a la derecha de WebAPP, como se muestra en la figura. Al hacer clic se muestra todo el estado actual de la máquina herramienta, incluidos el fabricante del equipo, el tipo de máquina herramienta, el estado de la comunicación FOCAS, el indicador de alarma, el estado de mecanizado en funcionamiento de la máquina herramienta, el estado de apertura/cierre de la puerta de la máquina herramienta, el estado del plato de sujeción de la máquina herramienta y el estado de parada de emergencia de la máquina herramienta.
 
 .. figure:: robot_peripherals/225.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.13‑5 CNC状态反馈栏 
+.. centered:: Figura 8.13‑5 Columna de realimentación de estado del CNC 
 
-CNC各状态反馈显示灯的含义如下表所示。
+El significado de las luces de visualización de cada realimentación de estado del CNC se muestra en la tabla siguiente.
 
-.. centered:: 表格 8.13-3 CNC状态反馈图标灯含义表
+.. centered:: Tabla 8.13-3 Tabla de significado de las luces del icono de realimentación de estado del CNC
 
 .. list-table:: 
    :widths: 15 40 100
@@ -6311,57 +6315,57 @@ CNC各状态反馈显示灯的含义如下表所示。
    :align: center
    :class: sheet-center
 
-   * - **序号**
-     - **功能名称**
-     - **说明**
+   * - **Número**
+     - **Nombre de la función**
+     - **Descripción**
    * - 1
-     - FOCAS通信状态
-     - 灰色-通信断开 红色-通信正常
+     - Estado de la comunicación FOCAS
+     - Gris-comunicación desconectada Rojo-comunicación normal
    * - 2
-     - 报警标志
-     - 灰色-无警告 红色-存在警告
+     - Indicador de alarma
+     - Gris-sin advertencia Rojo-existe advertencia
    * - 3
-     - 机床运行加工状态
-     - 灰色-停机 绿色-运行中
+     - Estado de mecanizado en funcionamiento de la máquina herramienta
+     - Gris-detenida Verde-en funcionamiento
    * - 4
-     - 机床门开关状态
-     - 灰色-关门 绿色-开门
+     - Estado de apertura/cierre de la puerta de la máquina herramienta
+     - Gris-cerrada Verde-abierta
    * - 5
-     - 机床卡盘状态
-     - 灰色-松开 绿色-夹紧
+     - Estado del plato de sujeción de la máquina herramienta
+     - Gris-suelto Verde-sujeto
    * - 6
-     - 机床急停状态
-     - 灰色-急停无效 绿色-急停生效
+     - Estado de parada de emergencia de la máquina herramienta
+     - Gris-parada de emergencia no válida Verde-parada de emergencia activa
 
-CNC状态反馈说明
-++++++++++++++++++++++++++
+Descripción de la realimentación de estado del CNC
+++++++++++++++++++++++++++++++++++++++++++++++++++
 
-CNC机床的控制位于外设开放协议中，当完成FOCAS通信连接后，点击所配置的外设开放协议右上角，则可打开CNC的控制页面，如图所示。
+El control de la máquina CNC se encuentra en el protocolo abierto de periféricos; tras completar la conexión de comunicación FOCAS, hacer clic en la esquina superior derecha del protocolo abierto de periféricos configurado para abrir la página de control del CNC, como se muestra en la figura.
 
-.. note:: 其中控制按钮包括门控制（开门、关门），卡盘控制（夹紧、松开），启停控制（运行、停止），急停控制（急停、无效）。所有的控制信号都是边沿信号触发控制。
+.. note:: Entre ellos, los botones de control incluyen el control de la puerta (abrir puerta, cerrar puerta), el control del plato de sujeción (sujetar, soltar), el control de inicio/parada (ejecutar, detener) y el control de parada de emergencia (parada de emergencia, no válida). Todas las señales de control se activan por flanco.
 
 .. figure:: robot_peripherals/226.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.13‑6 CNC控制页面 
+.. centered:: Figura 8.13‑6 Página de control del CNC 
 
-CNC示教程序说明
-++++++++++++++++++++++++++
+Descripción del programa de enseñanza del CNC
++++++++++++++++++++++++++++++++++++++++++++++
 
-CNC功能包支持在示教程序中调用控制指令，并实时获取机床状态，依次打开“示教程序”->“程序编程”->“外设指令”->“CNC”，可以看到全部支持的CNC示教指令，如图所示。
+El paquete de funciones CNC permite llamar a instrucciones de control en el programa de enseñanza y obtener en tiempo real el estado de la máquina herramienta; abrir sucesivamente "Programa de enseñanza"->"Programación de programas"->"Instrucciones de periféricos"->"CNC" para ver todas las instrucciones de enseñanza del CNC compatibles, como se muestra en la figura.
 
 .. figure:: robot_peripherals/227.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.13‑7 CNC示教指令 
+.. centered:: Figura 8.13‑7 Instrucciones de enseñanza del CNC 
 
-.. note:: 其中控制指令与CNC控制一一对应，均为边沿信号生效，即启动命令执行后一定要执行停机后，下一次启动命令才会生效。
+.. note:: Entre ellas, las instrucciones de control se corresponden una a una con el control del CNC y todas se activan por flanco, es decir, tras ejecutar la instrucción de arranque es necesario ejecutar la parada para que la siguiente instrucción de arranque surta efecto.
 
-“机床当前状态获取”为lua函数，该函数返回值为9个参数，含义如下表所示。
+"Obtener el estado actual de la máquina herramienta" es una función lua; el valor de retorno de dicha función son 9 parámetros, cuyo significado se muestra en la tabla siguiente.
 
-.. centered:: 表格 8.13-4 “机床当前状态获取”返回值说明表
+.. centered:: Tabla 8.13-4 Tabla de descripción del valor de retorno de "Obtener el estado actual de la máquina herramienta"
 
 .. list-table:: 
    :widths: 15 40 100
@@ -6369,40 +6373,40 @@ CNC功能包支持在示教程序中调用控制指令，并实时获取机床�
    :align: center
    :class: sheet-center
 
-   * - **序号**
-     - **名称**
-     - **含义**
+   * - **Número**
+     - **Nombre**
+     - **Significado**
    * - 1
-     - 设备厂商
-     - 0-无效 1-其他-预留
+     - Fabricante del equipo
+     - 0-no válido 1-otros-reservado
    * - 2
-     - FOCAS通信状态
-     - 0-通信正常 其他-通信断开
+     - Estado de la comunicación FOCAS
+     - 0-comunicación normal otros-comunicación desconectada
    * - 3
-     - 机床型号(string)
+     - Modelo de la máquina herramienta (string)
      - '15' : Series 150/150i '16' : Series 160/160i '18' : Series 180/180i '21' : Series 210/210i '30' : Series 300i '31' : Series 310i '32' : Series 320i '0' : Series 0i 
    * - 4
-     - 机床型号(string)
+     - Modelo de la máquina herramienta (string)
      - '15' : Series 150/150i '16' : Series 160/160i '18' : Series 180/180i '21' : Series 210/210i '30' : Series 300i '31' : Series 310i '32' : Series 320i '0' : Series 0i 
    * - 5
-     - 机床运行状态
-     - 0-停机 1-运行
+     - Estado de funcionamiento de la máquina herramienta
+     - 0-detenida 1-en funcionamiento
    * - 6
-     - 机床急停状态
-     - 0-急停生效 其他-急停无效
+     - Estado de parada de emergencia de la máquina herramienta
+     - 0-parada de emergencia activa otros-parada de emergencia no válida
    * - 7
-     - 机床告警状态
-     - 0-无警告 其他-存在警告
+     - Estado de alarma de la máquina herramienta
+     - 0-sin advertencia otros-existe advertencia
    * - 8
-     - 机床门状态
-     - 0-开门 1-关门
+     - Estado de la puerta de la máquina herramienta
+     - 0-abierta 1-cerrada
    * - 9
-     - 机床卡盘状态
-     - 0-松开 1-夹紧
+     - Estado del plato de sujeción de la máquina herramienta
+     - 0-suelto 1-sujeto
 
-以机器人上下料流程为例编写了lua示教程序示例，该示例程序包括了控制CNC关门、开门、运行、停机、卡盘松开、卡盘夹紧，并通过获取CNC当前状态作为判断条件，设置机器人在安全点、取料点、放料点三个点运动，如代码所示。
+Tomando como ejemplo el flujo de carga y descarga del robot se ha redactado un ejemplo de programa de enseñanza lua; dicho programa de ejemplo incluye el control del cierre y apertura de la puerta del CNC, el funcionamiento y la parada, el aflojamiento y la sujeción del plato de sujeción, y utiliza la obtención del estado actual del CNC como condición de juicio, configurando el movimiento del robot en tres puntos: punto de seguridad, punto de recogida de material y punto de colocación de material, como se muestra en el código.
 
-机器人与CNC协同运动示教lua程序实例：
+Ejemplo de programa lua de enseñanza del movimiento colaborativo entre el robot y el CNC:
 
 .. code-block:: console
     :linenos:
@@ -6436,15 +6440,15 @@ CNC功能包支持在示教程序中调用控制指令，并实时获取机床�
          end
     end
 
-基于力传感器的虚拟墙配置
--------------------------------------------------
+Configuración de muro virtual basada en sensor de fuerza
+---------------------------------------------------------
 
-基于力传感器的虚拟墙功能，可以通过人为设置虚拟墙，用于限制机器人的工作空间，避免直接发生碰撞接触。
+La función de muro virtual basada en sensor de fuerza permite, mediante el establecimiento artificial de un muro virtual, limitar el espacio de trabajo del robot y evitar el contacto directo por colisión.
 
-力传感器的安装配置
-~~~~~~~~~~~~~~~~~~~~~~
+Instalación y configuración del sensor de fuerza
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Step1**：以“坤维”传感器为例，安装时需要力传感器的坐标系方向与末端法兰坐标系保持一致，如图1所示（图1中，红色为末端法兰坐标系X+方向，绿色为末端法兰坐标系Y+方向，蓝色为末端法兰坐标系Z+方向）；
+**Step1**: Tomando como ejemplo el sensor "Kunwei", durante la instalación la dirección del sistema de coordenadas del sensor de fuerza debe coincidir con la del sistema de coordenadas de la brida del extremo, como se muestra en la Figura 1 (en la Figura 1, el rojo es la dirección X+ del sistema de coordenadas de la brida del extremo, el verde es la dirección Y+ del sistema de coordenadas de la brida del extremo y el azul es la dirección Z+ del sistema de coordenadas de la brida del extremo);
 
 .. figure:: robot_peripherals/228.png
    :align: center
@@ -6454,36 +6458,36 @@ CNC功能包支持在示教程序中调用控制指令，并实时获取机床�
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.14‑1 力传感器安装
+.. centered:: Figura 8.14‑1 Instalación del sensor de fuerza
 
-**Step2**：在“初始设置”->“外设”->“力传感器”的菜单栏下，点击“已适配设备”进入力传感器设备配置界面。
+**Step2**: En la barra de menú "Configuración inicial"->"Periféricos"->"Sensor de fuerza", hacer clic en "Dispositivo adaptado" para entrar en la interfaz de configuración del dispositivo sensor de fuerza.
 
-力传感器配置信息分为厂商、类型、软件版本和挂载位置，用户可根据具体的生产需求来配置相应的力传感器信息。若用户需要更改配置，可先选择相应的编号，点击“清除”按钮，来清除相应的信息，并重新根据需求配置；具体操作如图所示。
+La información de configuración del sensor de fuerza se divide en fabricante, tipo, versión de software y posición de montaje; el usuario puede configurar la información correspondiente del sensor de fuerza según sus necesidades concretas de producción. Si el usuario necesita cambiar la configuración, puede seleccionar primero el número correspondiente, hacer clic en el botón "Borrar" para borrar la información correspondiente y volver a configurar según sus necesidades; la operación concreta se muestra en la figura.
 
-**Step3**：选择配置完成的力传感器编号，点击“复位”按钮，页面弹出命令发送成功后，再点击“激活”按钮，可查看力传感器信息表中的激活状态，来判断是否激活成功；此外，力传感器会有初始值，用户根据使用需求选择“零点矫正”和“去除零点”。力传感器零点矫正需要确保力传感器水平垂直向下，且机器人未配置负载。
+**Step3**: Seleccionar el número del sensor de fuerza ya configurado, hacer clic en el botón "Restablecer" y, cuando la página muestre que el comando se ha enviado correctamente, hacer clic en el botón "Activar" y consultar el estado de activación en la tabla de información del sensor de fuerza para determinar si la activación se ha realizado correctamente; además, el sensor de fuerza tendrá un valor inicial; el usuario selecciona "Corrección de cero" y "Eliminar cero" según sus necesidades de uso. La corrección de cero del sensor de fuerza requiere asegurarse de que el sensor de fuerza está horizontal y verticalmente hacia abajo, y que el robot no tiene carga configurada.
 
 .. figure:: robot_peripherals/016.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.14‑2 力传感器配置与激活
+.. centered:: Figura 8.14‑2 Configuración y activación del sensor de fuerza
 
 .. figure:: robot_peripherals/017.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.14‑3 力传感器激活
+.. centered:: Figura 8.14‑3 Activación del sensor de fuerza
 
-虚拟墙配置
-~~~~~~~~~~~~~~~~~~~~~~
+Configuración del muro virtual
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-借助力传感器进行辅助拖动，需要在力传感器下安装拖动把手，并配置工具坐标系，具体操作如图4所示。此时，检测干涉区的方式以设置的工具坐标系位置为参考，不设置时以末端法兰为参考。
+Para el arrastre asistido mediante sensor de fuerza es necesario instalar un asa de arrastre bajo el sensor de fuerza y configurar el sistema de coordenadas de herramienta, cuya operación concreta se muestra en la Figura 4. En este momento, el modo de detección de la zona de interferencia toma como referencia la posición del sistema de coordenadas de herramienta establecido; si no se establece, toma como referencia la brida del extremo.
 
-**Step1**：在“初始设置”->“安全”->“干涉区”的菜单栏下，点击“单个”进入干涉区配置功能界面；
+**Step1**: En la barra de menú "Configuración inicial"->"Seguridad"->"Zona de interferencia", hacer clic en "Individual" para entrar en la interfaz de la función de configuración de la zona de interferencia;
 
-**Step2**：需要对干涉方式和进入干涉区操作进行配置；点击“立方体干涉”进入配置界面，进入干涉区拖动配置为“不限制拖动”，进入干涉区运动配置均可；
+**Step2**: Es necesario configurar el modo de interferencia y la operación de entrada en la zona de interferencia; hacer clic en "Interferencia de cubo" para entrar en la interfaz de configuración; la entrada en la zona de interferencia en modo de arrastre se configura como "No limitar el arrastre", pudiendo configurarse el movimiento de entrada en la zona de interferencia;
 
-**Step3**：根据需求，可以对参数配置进行修改。检测方法分为“指令位置”和“反馈位置”两种，干涉区模式分为“范围内干涉”和“范围外干涉”两种，参考坐标系选择为“基坐标”，根据实际使用选择设置。详细操作见图所示；
+**Step3**: Según las necesidades, se puede modificar la configuración de parámetros. El método de detección se divide en "Posición de instrucción" y "Posición de realimentación"; el modo de la zona de interferencia se divide en "Interferencia dentro del rango" e "Interferencia fuera del rango"; el sistema de coordenadas de referencia se selecciona como "Sistema de coordenadas base"; configurar según el uso real. La operación detallada se muestra en la figura;
 
 .. figure:: robot_peripherals/230.png
    :align: center
@@ -6493,48 +6497,48 @@ CNC功能包支持在示教程序中调用控制指令，并实时获取机床�
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.14‑4 安装拖动把手并设置工具坐标系
+.. centered:: Figura 8.14‑4 Instalación del asa de arrastre y configuración del sistema de coordenadas de herramienta
 
 .. figure:: robot_peripherals/232.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.14‑5 虚拟墙参数配置
+.. centered:: Figura 8.14‑5 Configuración de parámetros del muro virtual
 
-**Step4**：参数配置下的干涉区模式分为“范围内干涉”和“范围外干涉”两种；
+**Step4**: En la configuración de parámetros, el modo de la zona de interferencia se divide en "Interferencia dentro del rango" e "Interferencia fuera del rango";
 
 .. figure:: robot_peripherals/233.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.14‑6 范围内干涉
+.. centered:: Figura 8.14‑6 Interferencia dentro del rango
 
 .. figure:: robot_peripherals/234.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.14‑7 范围外干涉
+.. centered:: Figura 8.14‑7 Interferencia fuera del rango
 
-**Step5**：建立干涉区，具体操作如图7和图8所示；建议在选择“范围外干涉”时，将干涉区域设置尽可能大。
+**Step5**: Establecer la zona de interferencia; la operación concreta se muestra en la Figura 7 y la Figura 8; se recomienda que, al seleccionar "Interferencia fuera del rango", la zona de interferencia se establezca lo más grande posible.
 
 .. figure:: robot_peripherals/235.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.14‑8 两点法建立干涉区
+.. centered:: Figura 8.14‑8 Establecimiento de la zona de interferencia por el método de dos puntos
 
 .. figure:: robot_peripherals/236.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.14‑9 中心点+边长法建立干涉区
+.. centered:: Figura 8.14‑9 Establecimiento de la zona de interferencia por el método de centro + longitud de lado
 
-力传感器辅助拖动
-~~~~~~~~~~~~~~~~~~~~~~
+Arrastre asistido por sensor de fuerza
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Step1**：在“辅助应用”->“工具应用”的菜单栏下，点击“拖动锁定”进入力传感器辅助锁定功能界面；
+**Step1**: En la barra de menú "Aplicaciones auxiliares"->"Aplicación de herramientas", hacer clic en "Bloqueo de arrastre" para entrar en la interfaz de la función de bloqueo asistido por sensor de fuerza;
 
-**Step2**：按照如图所示的参数进行设置，即可实现基于力传感器的虚拟墙功能。具体效果为：靠近虚拟墙，阻力变大；远离虚拟墙，基于力传感器辅助拖动功能正常。
+**Step2**: Configurar según los parámetros mostrados en la figura para realizar la función de muro virtual basada en el sensor de fuerza. El efecto concreto es: al acercarse al muro virtual, la resistencia aumenta; al alejarse del muro virtual, la función de arrastre asistido por sensor de fuerza funciona con normalidad.
 
 .. figure:: robot_peripherals/237.png
    :align: center
@@ -6544,534 +6548,536 @@ CNC功能包支持在示教程序中调用控制指令，并实时获取机床�
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.14‑10 力传感器辅助拖动的参数设置
+.. centered:: Figura 8.14‑10 Configuración de parámetros del arrastre asistido por sensor de fuerza
 
-参数的具体作用：
+Función concreta de los parámetros:
 
-**自适应选择**：在需要装配时开启，开启后拖动变重；
+**Selección adaptativa**: activar cuando se necesite ensamblaje; tras activarla el arrastre se vuelve más pesado;
 
-**惯性参数**：调节拖动过程中的手感，需在技术人员指导下谨慎操作。
+**Parámetros de inercia**: ajustan la sensación durante el arrastre; deben ajustarse con precaución bajo la guía de personal técnico.
 
-**阻尼参数**：
+**Parámetros de amortiguación**:
 
--  平动方向：建议设置参数在[100-200]之间；
+-  Dirección de traslación: se recomienda configurar los parámetros entre [100-200];
 
--  转动方向：建议设置参数在[3-10]之间，其中RZ方向设置范围在[0.1-5]；
+-  Dirección de rotación: se recomienda configurar los parámetros entre [3-10], con el rango de configuración de la dirección RZ entre [0.1-5];
 
--  效果：借助传感器拖动时，增大阻尼会导致拖动困难，减小阻尼会导致拖动机器人过于轻松（建议不要太小）；
+-  Efecto: al arrastrar con el sensor, aumentar la amortiguación provoca dificultad en el arrastre; reducir la amortiguación hace que el arrastre del robot sea demasiado ligero (se recomienda no demasiado pequeño);
 
--  阻尼参数整体范围：平动XYZ：[100-1000]；转动RX、RY：[3-50],RZ:[2-10]；
+-  Rango global de los parámetros de amortiguación: traslación XYZ: [100-1000]; rotación RX, RY: [3-50], RZ: [2-10];
 
--  最大拖动力为50，最大拖动速度为180。
+-  La fuerza de arrastre máxima es 50 y la velocidad de arrastre máxima es 180.
 
-**刚度参数**：均设为0；
+**Parámetros de rigidez**: todos configurados en 0;
 
-**拖动力阈值**：平动XYZ为[5-10]；转动RX、RY、RZ为[0.5-5]；
+**Umbral de fuerza de arrastre**: traslación XYZ [5-10]; rotación RX, RY, RZ [0.5-5];
 
-**最大拖动力**：50；
+**Fuerza de arrastre máxima**: 50;
 
-**最大拖动速度**：180；
+**Velocidad de arrastre máxima**: 180;
 
-六维力和关节阻抗混合拖动功能
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Función de arrastre mixto de fuerza de seis dimensiones e impedancia articular
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
-++++++
+Descripción general
++++++++++++++++++++
 
-六维力和关节阻抗混合拖动功能，是借助力传感器感知外力，机器人在拖动模式下进行辅助拖动，可以通过调整增益系数获得不同的拖动体验。而关节阻抗是采用阻抗控制对拖动力进行限制。
+La función de arrastre mixto de fuerza de seis dimensiones e impedancia articular consiste en que el robot, mediante el sensor de fuerza para percibir la fuerza externa, realiza un arrastre asistido en el modo de arrastre, pudiendo obtener distintas experiencias de arrastre ajustando los coeficientes de ganancia. Por su parte, la impedancia articular utiliza el control de impedancia para limitar la fuerza de arrastre.
 
-力传感器的安装配置及校零操作
-++++++++++++++++++++++++++++++++++
+Instalación, configuración y puesta a cero del sensor de fuerza
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-1. 力传感器的安装配置
+1. Instalación y configuración del sensor de fuerza
 
-力传感器的安装配置的详细操作见上文：基于力传感器的虚拟墙配置。
+Para la operación detallada de la instalación y configuración del sensor de fuerza, consulte el apartado anterior: Configuración de muro virtual basada en sensor de fuerza.
 
-2. 力传感器的校零
+2. Puesta a cero del sensor de fuerza
 
-为便于拖动机器人，需要在传感器下方安装拖动把手，如图1所示。
+Para facilitar el arrastre del robot es necesario instalar un asa de arrastre bajo el sensor, como se muestra en la Figura 1.
 
 .. figure:: robot_peripherals/239.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.14‑11 拖动把手
+.. centered:: Figura 8.14‑11 Asa de arrastre
 
-**Step1**：根据实际把手的长度，设置工具坐标系，如图2所示。
+**Step1**: Según la longitud real del asa, configurar el sistema de coordenadas de herramienta, como se muestra en la Figura 2.
 
-**Step2**：在“初始设置”->“基础”->“负载”菜单栏下，点击“传感器”，进入力/扭矩传感器负载界面。
+**Step2**: En la barra de menú "Configuración inicial"->"Básico"->"Carga", hacer clic en "Sensor" para entrar en la interfaz de carga del sensor de fuerza/par.
 
-借助拖动按钮，调整机器人末端水平朝下，依次点击“负载”->“传感器辨识”进入界面，找到“传感器自动校零”一栏中的“记录初始位置”的按钮。然后，切换机器人模式为自动模式，点击“自动校零”的按钮。待程序运行结束，即完成传感器校零工作。详细操作见图所示。
+Con ayuda del botón de arrastre, ajustar el extremo del robot horizontal hacia abajo y hacer clic sucesivamente en "Carga"->"Identificación del sensor" para entrar en la interfaz y encontrar el botón "Registrar posición inicial" de la sección "Puesta a cero automática del sensor". A continuación, cambiar el modo del robot a modo automático y hacer clic en el botón "Puesta a cero automática". Cuando finalice la ejecución del programa se habrá completado la puesta a cero del sensor. La operación detallada se muestra en la figura.
 
 .. figure:: robot_peripherals/231.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.14‑12 工具坐标系设置
+.. centered:: Figura 8.14‑12 Configuración del sistema de coordenadas de herramienta
 
 .. figure:: robot_peripherals/240.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.14‑13 力/扭矩传感器自动校零
+.. centered:: Figura 8.14‑13 Puesta a cero automática del sensor de fuerza/par
 
-六维力和关节阻抗混合拖动
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Arrastre mixto de fuerza de seis dimensiones e impedancia articular
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-辅助拖动
-********************************************************
+Arrastre asistido
+*****************
 
-**Step1**：在“辅助应用”->“工具应用”的菜单栏下，点击“拖动锁定”进入拖动锁定功能界面。
+**Step1**: En la barra de menú "Aplicaciones auxiliares"->"Aplicación de herramientas", hacer clic en "Bloqueo de arrastre" para entrar en la interfaz de la función de bloqueo de arrastre.
 
-**Step2**：在“六维力和关节阻抗混合拖动”一栏中，设置控制状态为“开启”，阻抗开启状态为“关闭”，设置拖动增益，末端线速度为1000mm/s，角速度限制为100°/s，再点击“应用”按钮，功能即启用。具体配置如下图。
+**Step2**: En la sección "Arrastre mixto de fuerza de seis dimensiones e impedancia articular", establecer el estado de control como "Activado", el estado de activación de la impedancia como "Desactivado", configurar la ganancia de arrastre, la velocidad lineal del extremo en 1000mm/s y la limitación de velocidad angular en 100°/s, y hacer clic en el botón "Aplicar" para activar la función. La configuración concreta se muestra en la figura siguiente.
 
 .. figure:: robot_peripherals/241.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.14‑14 六维力辅助拖动的配置参数
+.. centered:: Figura 8.14‑14 Parámetros de configuración del arrastre asistido por fuerza de seis dimensiones
 
-关节阻抗控制
-********************************************************
+Control de impedancia articular
+*******************************
 
-阻抗控制的作用是对拖动力和拖动位置进行限制，其默认状态为“关闭”。
+La función del control de impedancia es limitar la fuerza de arrastre y la posición de arrastre; su estado predeterminado es "Desactivado".
 
-具体操作见下图所示，设置阻抗开启状态为“开启”，再按照图示设置阻尼系数和刚度系数。其中，刚度系数的功能暂未开放。
+La operación concreta se muestra en la figura siguiente: establecer el estado de activación de la impedancia como "Activado" y, a continuación, configurar el coeficiente de amortiguación y el coeficiente de rigidez según se muestra en la figura. Entre ellos, la función del coeficiente de rigidez aún no está disponible.
 
 .. figure:: robot_peripherals/242.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.14‑15 关节阻抗的配置参数
+.. centered:: Figura 8.14‑15 Parámetros de configuración de la impedancia articular
 
-参数的具体作用：
+Función concreta de los parámetros:
 
-- **控制状态**：开启后，在拖动模式下可使用此功能。
+- **Estado de control**: tras activarlo, se puede utilizar esta función en el modo de arrastre.
   
-- **阻抗开启**：开启后，需要配置刚度参数和阻尼参数。作用是对拖动力和拖动位置进行限制。
+- **Activación de la impedancia**: tras activarla es necesario configurar los parámetros de rigidez y de amortiguación. Su función es limitar la fuerza de arrastre y la posición de arrastre.
   
-- **拖动增益**：参数建议设置在[0-5]之间。参数设置为0，机器人无法拖动。参数设置为1，拖动效果没有改善。参数大于1，拖动轻，拖动体验好。参数越大，拖动越轻松。
+- **Ganancia de arrastre**: se recomienda configurar el parámetro entre [0-5]. Con el parámetro en 0, el robot no se puede arrastrar. Con el parámetro en 1, el efecto de arrastre no mejora. Con el parámetro mayor que 1, el arrastre es ligero y la experiencia de arrastre es buena. Cuanto mayor es el parámetro, más ligero es el arrastre.
   
-- **刚度增益**：设置为0，其作用是在拖动后恢复到拖动前的初始位置。
+- **Ganancia de rigidez**: configurada en 0, su función es, tras el arrastre, volver a la posición inicial previa al arrastre.
   
-- **阻尼增益**：作用是限制拖动力。1-3轴参数范围为[0-0.5]，4-5轴参数范围为[0-0.1]；6轴参数范围为[0-0.05]。
+- **Ganancia de amortiguación**: su función es limitar la fuerza de arrastre. El rango de parámetros de los ejes 1-3 es [0-0.5], el de los ejes 4-5 es [0-0.1] y el del eje 6 es [0-0.05].
   
-- **末端线速度**：1000mm/s，当超出末端线速度限制，机器人切换模式至手动模式，并提示TCP超速。
+- **Velocidad lineal del extremo**: 1000mm/s; cuando se supera el límite de velocidad lineal del extremo, el robot cambia al modo manual y muestra el aviso de sobrevelocidad del TCP.
   
-- **角速度限制**：100°/s，当超出角速度限制，机器人切换模式至手动模式，并提示TCP超速。
+- **Limitación de velocidad angular**: 100°/s; cuando se supera la limitación de velocidad angular, el robot cambia al modo manual y muestra el aviso de sobrevelocidad del TCP.
 
 .. note::
-  1. 拖动参数设置
+  1. Configuración de parámetros de arrastre
 
-  (1)对于FR3WML机器人，参数设置建议如下：拖动增益[1.5, 1.5, 1.5, 1.5, 1.5, 2]，开启阻抗功能后的阻尼增益[0.1, 0.1, 0.1, 0.05, 0.05, 0.05]；
+  (1)Para el robot FR3WML, se recomienda la siguiente configuración de parámetros: ganancia de arrastre [1.5, 1.5, 1.5, 1.5, 1.5, 2]; ganancia de amortiguación tras activar la función de impedancia [0.1, 0.1, 0.1, 0.05, 0.05, 0.05];
 
-  (2)对于FR3WMS机器人，参数设置建议如下：拖动增益[2, 2, 2, 2, 2, 2]，开启阻抗功能后的阻尼增益[0.1, 0.1, 0.1, 0.05, 0.05, 0.05]；
+  (2)Para el robot FR3WMS, se recomienda la siguiente configuración de parámetros: ganancia de arrastre [2, 2, 2, 2, 2, 2]; ganancia de amortiguación tras activar la función de impedancia [0.1, 0.1, 0.1, 0.05, 0.05, 0.05];
 
-  (3)对于FR3C机器人，参数设置建议如下：拖动增益[2, 2, 2, 2, 2, 2]，开启阻抗功能后的阻尼增益[0.1, 0.1, 0.1, 0.05, 0.05, 0.05].
+  (3)Para el robot FR3C, se recomienda la siguiente configuración de parámetros: ganancia de arrastre [2, 2, 2, 2, 2, 2]; ganancia de amortiguación tras activar la función de impedancia [0.1, 0.1, 0.1, 0.05, 0.05, 0.05].
 
-  (4)对于FR5C机器人，参数设置建议如下：拖动增益[2, 2, 2, 2, 2, 2]，开启阻抗功能后的阻尼增益[0.1, 0.1, 0.1, 0.05, 0.05, 0.05].
+  (4)Para el robot FR5C, se recomienda la siguiente configuración de parámetros: ganancia de arrastre [2, 2, 2, 2, 2, 2]; ganancia de amortiguación tras activar la función de impedancia [0.1, 0.1, 0.1, 0.05, 0.05, 0.05].
 
-  2. 拖动增益参数均设置0，拖动阻滞感强烈，难以拖动；拖动增益参数均设置为5，拖动手感轻；参数越大拖动越轻松。
+  2. Si todos los parámetros de ganancia de arrastre se configuran en 0, la sensación de bloqueo del arrastre es intensa y resulta difícil arrastrar; si todos los parámetros de ganancia de arrastre se configuran en 5, la sensación de arrastre es ligera; cuanto mayor es el parámetro, más ligero es el arrastre.
 
-扩展轴加激光定点跟踪功能
--------------------------------------------------
+Función de seguimiento de punto fijo láser con eje extendido
+-------------------------------------------------------------
 
-机器人扩展轴加激光定点跟踪系统构成
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Composición del sistema de seguimiento de punto fijo láser con eje extendido del robot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. figure:: robot_peripherals/243.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.15‑1 机器人扩展轴加激光定点跟踪系统构成
+.. centered:: Figura 8.15‑1 Composición del sistema de seguimiento de punto fijo láser con eje extendido del robot
 
-系统中，（a）为计算机，（b）为机器人及其控制箱，（c）为变位机及驱动设备，（d）焊缝跟踪激光传感器，（e）为焊机与配套设备。
+En el sistema, (a) es el ordenador, (b) es el robot y su caja de control, (c) es el posicionador y el equipo de accionamiento, (d) es el sensor láser de seguimiento de soldadura y (e) es la máquina de soldar y el equipo complementario.
 
 .. figure:: robot_peripherals/244.png
    :align: center
    :width: 3in
 
-.. centered:: 图表 8.15‑2 外设安装示意图
+.. centered:: Figura 8.15‑2 Esquema de instalación de los periféricos
 
-焊缝跟踪激光传感器及焊枪（b）安装于机器人（a）末端法兰上，变位机（c）固定安装于机器人外。
+El sensor láser de seguimiento de soldadura y la antorcha de soldadura (b) se instalan en la brida del extremo del robot (a); el posicionador (c) se fija en el exterior del robot.
 
-扩展轴通讯配置
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configuración de comunicación del eje extendido
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-机器人与扩展轴的通讯方式包括使用UDP或RS485这两种形式。
+Los modos de comunicación entre el robot y el eje extendido incluyen el uso de UDP o RS485.
 
 .. figure:: robot_peripherals/074.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.15‑3 扩展轴配置页面
+.. centered:: Figura 8.15‑3 Página de configuración del eje extendido
 
-在机器人操作界面点击“初始设置”->“外设”->“扩展轴”按钮，进入扩展轴配置页面。以使用PLC通过UDP通讯与机器人相连为例，点击“UDP通信”图标进入UDP通讯的扩展轴配置页面。
+En la interfaz de operación del robot, hacer clic en los botones "Configuración inicial"->"Periféricos"->"Eje extendido" para entrar en la página de configuración del eje extendido. Tomando como ejemplo el uso de un PLC conectado al robot mediante comunicación UDP, hacer clic en el icono "Comunicación UDP" para entrar en la página de configuración del eje extendido por comunicación UDP.
 
 .. figure:: robot_peripherals/110.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.15‑4 UDP通信配置界面
+.. centered:: Figura 8.15‑4 Interfaz de configuración de la comunicación UDP
 
-在UDP通讯的扩展轴配置页面，能够选择对应的扩展轴号，连接与配置UDP通讯参数（地址、端口、周期、丢包检测等），以及扩展轴定位完成时间。
+En la página de configuración del eje extendido por comunicación UDP se puede seleccionar el número de eje extendido correspondiente, conectar y configurar los parámetros de comunicación UDP (dirección, puerto, período, detección de pérdida de paquetes, etc.), así como el tiempo de finalización de posicionamiento del eje extendido.
 
-扩展轴配置内容非本功能介绍重点，详细配置见对应部分用户手册。
+El contenido de la configuración del eje extendido no es el punto central de la introducción de esta función; para la configuración detallada, consulte la parte correspondiente del manual de usuario.
 
-焊缝跟踪激光传感器连接配置
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Conexión y configuración del sensor láser de seguimiento de soldadura
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-通过以下配置页面连接焊缝跟踪激光传感器:
+Conectar el sensor láser de seguimiento de soldadura mediante la siguiente página de configuración:
 
 .. figure:: robot_peripherals/245.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.15‑5 激光传感器连接与配置页面
+.. centered:: Figura 8.15‑5 Página de conexión y configuración del sensor láser
 
-点击“初始设置”->“外设”->“线激光传感器”的“已适配设备”进入配置页面。配置页面包括“传感器配置”、“通信配置与加载”、“基准计算”，点击“传感器配置”可设置传感器输入量滤波参数，点击“通信配置与加载”可输入对应通信参数连接激光传感器。
+Hacer clic en "Dispositivo adaptado" de "Configuración inicial"->"Periféricos"->"Sensor láser de línea" para entrar en la página de configuración. La página de configuración incluye "Configuración del sensor", "Configuración y carga de comunicación" y "Cálculo de referencia"; hacer clic en "Configuración del sensor" para configurar los parámetros de filtrado de la entrada del sensor; hacer clic en "Configuración y carga de comunicación" para introducir los parámetros de comunicación correspondientes y conectar el sensor láser.
 
-激光传感器配置内容非本功能介绍重点，详细配置见对应部分用户手册。
+El contenido de la configuración del sensor láser no es el punto central de la introducción de esta función; para la configuración detallada, consulte la parte correspondiente del manual de usuario.
 
-焊机连接配置
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Conexión y configuración de la máquina de soldar
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-通过以下配置页面配置焊机：
+Configurar la máquina de soldar mediante la siguiente página de configuración:
 
 .. figure:: robot_peripherals/246.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.15‑6 焊机配置页面
+.. centered:: Figura 8.15‑6 Página de configuración de la máquina de soldar
 
-焊机通信可使用IO通信或RS485通信，点击“初始设置”、“外设”、“焊机”进入配置与连接界面，可配置“控制类型”、“信号对应IO”、“焊接工艺参数”、“焊机调试”等模块。
+La comunicación de la máquina de soldar puede utilizar comunicación IO o comunicación RS485; hacer clic en "Configuración inicial", "Periféricos", "Máquina de soldar" para entrar en la interfaz de configuración y conexión, donde se pueden configurar los módulos "Tipo de control", "IO de señal correspondiente", "Parámetros del proceso de soldadura", "Depuración de la máquina de soldar", etc.
 
-焊机配置内容非本功能介绍重点，详细配置见对应部分用户手册。
+El contenido de la configuración de la máquina de soldar no es el punto central de la introducción de esta función; para la configuración detallada, consulte la parte correspondiente del manual de usuario.
 
-工具坐标系与激光传感器坐标系标定
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Calibración del sistema de coordenadas de herramienta y del sistema de coordenadas del sensor láser
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-在机器人末端安装焊枪后，对焊枪与激光传感器外参进行标定：
+Tras instalar la antorcha de soldadura en el extremo del robot, calibrar los parámetros externos de la antorcha de soldadura y del sensor láser:
 
 .. figure:: robot_peripherals/247.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.15‑7 工具坐标系配置页面
+.. centered:: Figura 8.15‑7 Página de configuración del sistema de coordenadas de herramienta
 
-点击“初始设置”、“基础”、“坐标系”、“工具”进入工件坐标系设置页面。
+Hacer clic en "Configuración inicial", "Básico", "Sistema de coordenadas", "Herramienta" para entrar en la página de configuración del sistema de coordenadas de pieza.
 
 .. figure:: robot_peripherals/248.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.15‑8 选择6点法对焊枪进行标定
+.. centered:: Figura 8.15‑8 Selección del método de 6 puntos para calibrar la antorcha de soldadura
 
-选择一个空坐标系，选择工具类型为“工具”，选择6点法进行焊枪工具标定。
+Seleccionar un sistema de coordenadas vacío, seleccionar el tipo de herramienta "Herramienta" y seleccionar el método de 6 puntos para la calibración de la herramienta de la antorcha de soldadura.
 
 .. figure:: robot_peripherals/148.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.15‑9 选择5点法对激光传感器进行标定
+.. centered:: Figura 8.15‑9 Selección del método de 5 puntos para calibrar el sensor láser
 
-选择一个空坐标系，选择工具类型为“传感器”，选择5点法进行激光传感器标定。
+Seleccionar un sistema de coordenadas vacío, seleccionar el tipo de herramienta "Sensor" y seleccionar el método de 5 puntos para la calibración del sensor láser.
 
-工具坐标系与激光传感器坐标系标定内容非本功能介绍重点，详细标定方法见对应部分用户手册。
+El contenido de la calibración del sistema de coordenadas de herramienta y del sistema de coordenadas del sensor láser no es el punto central de la introducción de esta función; para el método de calibración detallado, consulte la parte correspondiente del manual de usuario.
 
-扩展轴与激光定点跟踪功能
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Función de seguimiento de punto fijo láser con eje extendido
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-扩展轴与激光定点跟踪分两种方法，激光数据有变换方式执行“先记录后复现”的跟踪策略，激光数据无变换方式执行“边记录边复现”的跟踪策略。
+El seguimiento de punto fijo láser con eje extendido se divide en dos métodos: el método con transformación de datos láser ejecuta la estrategia de seguimiento de "registrar primero y reproducir después", y el método sin transformación de datos láser ejecuta la estrategia de seguimiento de "registrar y reproducir simultáneamente".
 
-扩展轴坐标系标定
-+++++++++++++++++++++++++++++
+Calibración del sistema de coordenadas del eje extendido
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-使用扩展轴坐标系实现扩展轴与机器人同步激光跟踪时需要标定扩展轴坐标系。
+Cuando se utiliza el sistema de coordenadas del eje extendido para realizar el seguimiento láser sincronizado del eje extendido con el robot, es necesario calibrar el sistema de coordenadas del eje extendido.
 
 .. figure:: robot_peripherals/077.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.15‑10 扩展轴坐标系设置页面
+.. centered:: Figura 8.15‑10 Página de configuración del sistema de coordenadas del eje extendido
 
-点击“初始设置”->外设->“扩展轴”进入扩展轴坐标系设置界面，选择需要设置的扩展轴号，点击编辑按钮，选择“4-单自由度变位机”并保存。
+Hacer clic en "Configuración inicial"->Periféricos->"Eje extendido" para entrar en la interfaz de configuración del sistema de coordenadas del eje extendido, seleccionar el número de eje extendido que se desea configurar, hacer clic en el botón editar, seleccionar "4-posicionador de un grado de libertad" y guardar.
 
 .. figure:: robot_peripherals/249.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.15‑11 扩展轴标定页面
+.. centered:: Figura 8.15‑11 Página de calibración del eje extendido
 
-在标定扩展轴时注意选择“机器人相对扩展轴位置”为“扩展轴外”。对于变位机的情况，选择4点法进行标定。
+Al calibrar el eje extendido, tenga en cuenta seleccionar "Posición del robot respecto al eje extendido" como "Exterior al eje extendido". Para el caso del posicionador, seleccionar el método de 4 puntos para la calibración.
 
-扩展轴标定内容非本功能介绍重点，详细标定方法见对应部分用户手册。
+El contenido de la calibración del eje extendido no es el punto central de la introducción de esta función; para el método de calibración detallado, consulte la parte correspondiente del manual de usuario.
 
-扩展轴与机器人同步激光跟踪
-+++++++++++++++++++++++++++++
+Seguimiento láser sincronizado del eje extendido con el robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-激光数据有变换方式
-**************************
+Método con transformación de datos láser
+****************************************
 
-基座标系下的扩展轴与机器人同步激光跟踪无需标定外部轴，其余功能设置和组成与扩展轴坐标系下的同步跟踪一致。
+El seguimiento láser sincronizado del eje extendido con el robot bajo el sistema de coordenadas base no requiere calibrar el eje externo; el resto de la configuración de funciones y la composición son idénticas a las del seguimiento sincronizado bajo el sistema de coordenadas del eje extendido.
 
-先进行激光跟踪数据配置，将激光跟踪器数据设置为有变换类型的数据。
+En primer lugar, realizar la configuración de los datos de seguimiento láser y establecer los datos del rastreador láser como datos de tipo con transformación.
 
 .. figure:: robot_peripherals/250.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.15‑12 设置激光数据有变换类型
+.. centered:: Figura 8.15‑12 Configuración de los datos láser como tipo con transformación
 
-点击“初始设置”、“外设”、“跟踪”、“传感器”，在页面下拉框点击“传感器配置”，将“数据处理”调整为有变换类型的数据。
+Hacer clic en "Configuración inicial", "Periféricos", "Seguimiento", "Sensor" y, en el cuadro desplegable de la página, hacer clic en "Configuración del sensor" para ajustar el "Procesamiento de datos" a datos de tipo con transformación.
 
 .. figure:: robot_peripherals/251.png
    :align: center
    :width: 6in
  
-.. centered:: 图表 8.15‑13 激光跟踪功能页面
+.. centered:: Figura 8.15‑13 Página de la función de seguimiento láser
 
-本功能通过多功能模块组合实现，主要功能模块在“激光跟踪”功能内包含。点击“示教程序”->“程序编程”->“激光跟踪”进入激光跟踪页面，也可点击“激光记录”直接进入记录页面。
+Esta función se realiza mediante la combinación de módulos multifunción; los módulos funcionales principales están incluidos en la función "Seguimiento láser". Hacer clic en "Programa de enseñanza"->"Programación de programas"->"Seguimiento láser" para entrar en la página de seguimiento láser; también se puede hacer clic en "Registro láser" para entrar directamente en la página de registro.
 
 .. figure:: robot_peripherals/252.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.15‑14 添加开始记录激光数据指令
+.. centered:: Figura 8.15‑14 Adición de la instrucción de inicio del registro de datos láser
 
-在扩展轴运动到焊接起始点后添加开始记录激光数据指令。
+Tras desplazar el eje extendido hasta el punto inicial de soldadura, añadir la instrucción de inicio del registro de datos láser.
 
 .. figure:: robot_peripherals/253.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.15‑15 添加结束记录激光数据指令
+.. centered:: Figura 8.15‑15 Adición de la instrucción de fin del registro de datos láser
 
-在扩展轴运动到焊接终止点后添加停止记录激光数据指令。   
+Tras desplazar el eje extendido hasta el punto final de soldadura, añadir la instrucción de detención del registro de datos láser.   
 
-机器人在原地记录完扩展轴运动时焊缝的运动轨迹后，就可使扩展轴回到焊接起始点，准备开始同步跟踪焊接。
+Tras registrar el robot en el lugar la trayectoria de movimiento de la soldadura durante el movimiento del eje extendido, se puede hacer que el eje extendido vuelva al punto inicial de soldadura para preparar el inicio del seguimiento sincronizado de la soldadura.
 
-焊接开始时需将焊枪运动到激光传感器记录数据的起点位置，需添加运动到焊接点指令：
+Al iniciar la soldadura es necesario desplazar la antorcha de soldadura hasta la posición inicial de los datos registrados por el sensor láser; es necesario añadir la instrucción de movimiento hasta el punto de soldadura:
 
 .. figure:: robot_peripherals/254.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.15‑16 添加运动到焊接点指令
+.. centered:: Figura 8.15‑16 Adición de la instrucción de movimiento hasta el punto de soldadura
 
-点击“示教程序->“程序编程”->“激光记录”按钮，选择“运动到焊接点”，设置运动方式与运动速度，点击“起点”按钮并应用。
+Hacer clic en "Programa de enseñanza->"Programación de programas"->botón "Registro láser", seleccionar "Movimiento hasta el punto de soldadura", configurar el modo de movimiento y la velocidad de movimiento, hacer clic en el botón "Punto inicial" y aplicar.
 
 .. figure:: robot_peripherals/255.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.15‑17 添加轨迹复现激光记录的数据指令
+.. centered:: Figura 8.15‑17 Adición de la instrucción de reproducción de los datos registrados por láser
 
-在“激光跟踪”页面选择“数据记录”->“轨迹复现”指令，点击“添加”并应用。指令中，等待时间默认为0ms，速度为复现速度相较记录速度的比值，建议大于50%。
+En la página "Seguimiento láser", seleccionar "Registro de datos"->instrucción "Reproducción de trayectoria", hacer clic en "Añadir" y aplicar. En la instrucción, el tiempo de espera es por defecto 0ms; la velocidad es la relación entre la velocidad de reproducción y la velocidad de registro; se recomienda que sea superior al 50%.
 
-在“轨迹复现”指令后添加扩展轴运动指令即可实现扩展轴与机器人激光跟踪同步运动。
+Añadir la instrucción de movimiento del eje extendido después de la instrucción "Reproducción de trayectoria" permite realizar el movimiento sincronizado del eje extendido con el seguimiento láser del robot.
 
-以下为一段典型的扩展轴加激光定点跟踪的LUA程序：
+A continuación se muestra un programa LUA típico de seguimiento de punto fijo láser con eje extendido:
 
 .. figure:: robot_peripherals/256.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.15‑18 扩展轴加激光数据有变换定点跟踪示例程序
+.. centered:: Figura 8.15‑18 Programa de ejemplo de seguimiento de punto fijo con datos láser con transformación y eje extendido
 
-机器人执行“先记录后复现”的流程，先记录扩展轴运动时工件焊缝的变化轨迹，之后在焊接时扩展轴与轨迹复现同步执行。
+El robot ejecuta el flujo de "registrar primero y reproducir después": primero registra la trayectoria de variación de la soldadura de la pieza durante el movimiento del eje extendido y, después, durante la soldadura, el eje extendido se ejecuta sincronizadamente con la reproducción de la trayectoria.
 
-激光数据无变换方式
-**************************
+Método sin transformación de datos láser
+****************************************
 
-使用激光数据无变换方式进行定点跟踪无需标定扩展轴坐标系。
+El seguimiento de punto fijo mediante el método sin transformación de datos láser no requiere calibrar el sistema de coordenadas del eje extendido.
 
-将激光跟踪传感器数据设置为无变换类型。
+Establecer los datos del sensor de seguimiento láser como tipo sin transformación.
 
 .. figure:: robot_peripherals/257.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.15‑19 设置激光数据无变换类型
+.. centered:: Figura 8.15‑19 Configuración de los datos láser como tipo sin transformación
 
-点击“初始设置”->“外设”->“线激光传感器”，在页面下拉框点击“传感器配置”，将“数据处理”调整为无变换类型的数据。
+Hacer clic en "Configuración inicial"->"Periféricos"->"Sensor láser de línea" y, en el cuadro desplegable de la página, hacer clic en "Configuración del sensor" para ajustar el "Procesamiento de datos" a datos de tipo sin transformación.
 
 .. figure:: robot_peripherals/251.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.15‑20 激光跟踪功能页面
+.. centered:: Figura 8.15‑20 Página de la función de seguimiento láser
 
-点击“示教程序”->“程序编程”->“激光跟踪”进入激光跟踪页面，也可点击“激光记录”直接进入记录页面。
+Hacer clic en "Programa de enseñanza"->"Programación de programas"->"Seguimiento láser" para entrar en la página de seguimiento láser; también se puede hacer clic en "Registro láser" para entrar directamente en la página de registro.
 
 .. figure:: robot_peripherals/258.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.15‑21 添加边记录边复现指令
+.. centered:: Figura 8.15‑21 Adición de la instrucción de registrar y reproducir simultáneamente
 
-在“激光记录”页面选择“边记录边复现”指令，点击“添加”并应用。指令中，可选择“延迟时间”或“延迟距离”（推荐选择距离），补偿灵敏度系数根据实际传感器激光数据进行调整，数值越低调整灵敏度越低抗干扰性越好，复现速度默认100%。
+En la página "Registro láser", seleccionar la instrucción "Registrar y reproducir simultáneamente", hacer clic en "Añadir" y aplicar. En la instrucción se puede seleccionar "Tiempo de retardo" o "Distancia de retardo" (se recomienda seleccionar la distancia); el coeficiente de sensibilidad de compensación se ajusta según los datos láser reales del sensor; cuanto menor es el valor, menor es la sensibilidad de ajuste y mejor es la resistencia a las interferencias; la velocidad de reproducción es por defecto del 100%.
 
-在“边记录边复现”指令后添加扩展轴运动指令即可实现扩展轴与机器人激光跟踪同步运动。
+Añadir la instrucción de movimiento del eje extendido después de la instrucción "Registrar y reproducir simultáneamente" permite realizar el movimiento sincronizado del eje extendido con el seguimiento láser del robot.
 
-以下为一段典型的扩展轴加激光数据无变换定点跟踪的LUA程序：
+A continuación se muestra un programa LUA típico de seguimiento de punto fijo sin transformación de datos láser con eje extendido:
 
 .. figure:: robot_peripherals/259.png
    :align: center
    :width: 5in
 
-.. centered:: 图表 8.15‑22 扩展轴加激光数据无变换定点跟踪示例程序
+.. centered:: Figura 8.15‑22 Programa de ejemplo de seguimiento de punto fijo sin transformación de datos láser con eje extendido
 
-焊枪对齐前置激光处的偏移量后，机器人扩展轴运动并执行“边记录边复现”的流程，前置的激光跟踪器先记录扩展轴运动时工件焊缝的变化轨迹，经过设定延迟距离或时间后在焊枪处调整。
+Tras alinear la antorcha de soldadura con la desviación en el láser delantero, el eje extendido del robot se mueve y ejecuta el flujo de "registrar y reproducir simultáneamente"; el rastreador láser delantero registra primero la trayectoria de variación de la soldadura de la pieza durante el movimiento del eje extendido y, tras la distancia o el tiempo de retardo establecidos, se ajusta en la antorcha de soldadura.
   
-激光寻位点位置获取功能
------------------------------------------------------------
+Función de obtención de la posición del punto de búsqueda de posición láser
+-----------------------------------------------------------------------------
 
-机器人激光寻位点位置获取系统构成
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Composición del sistema de obtención de la posición del punto de búsqueda de posición láser del robot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. figure:: robot_peripherals/260.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.16‑1 机器人激光寻位点位置获取系统构成拓扑图
-.. centered:: 系统中，（a）为计算机，（b）为机器人及其控制箱，（c）为激光传感器。
+.. centered:: Figura 8.16‑1 Topología de la composición del sistema de obtención de la posición del punto de búsqueda de posición láser del robot
+.. centered:: En el sistema, (a) es el ordenador, (b) es el robot y su caja de control, (c) es el sensor láser.
 
-激光传感器通信配置
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configuración de comunicación del sensor láser
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-打开WebApp，依次点击“初始设置”->“外设”->“线激光传感器”，对传感器通信进行配置。
+Abrir WebApp y hacer clic sucesivamente en "Configuración inicial"->"Periféricos"->"Sensor láser de línea" para configurar la comunicación del sensor.
 
 .. figure:: robot_peripherals/245.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.16‑2 传感器通信配置
+.. centered:: Figura 8.16‑2 Configuración de comunicación del sensor
 
-激光寻位点位置获取功能
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Función de obtención de la posición del punto de búsqueda de posición láser
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-获取激光寻位点位置的操作流程如下：
+El flujo de operación para obtener la posición del punto de búsqueda de posición láser es el siguiente:
 
-**Step 1**:激光寻位之前首先指定寻位开始点“seamStartPt1”、“seamStartPt2”，然后点击“示教程序”、“程序编程”，选择“点到点”，让激光传感器的光线靠近焊缝1起点附近的寻位开始点1 “seamStartPt1”。
+**Step 1**: Antes de la búsqueda de posición láser, especificar primero los puntos iniciales de búsqueda de posición "seamStartPt1" y "seamStartPt2"; a continuación, hacer clic en "Programa de enseñanza", "Programación de programas", seleccionar "Punto a punto" y hacer que el rayo del sensor láser se acerque al punto inicial de búsqueda de posición 1 "seamStartPt1" cercano al punto inicial de la soldadura 1.
 
 .. figure:: robot_peripherals/261.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.16‑3 添加移动到寻位开始点1指令
+.. centered:: Figura 8.16‑3 Adición de la instrucción de movimiento hasta el punto inicial de búsqueda de posición 1
 
-**Step 2**:在指令类型中点击“寻位开始”后，选择标定的传感器坐标系，设置寻位方向、速度、长度以及最大寻位时间，点击“添加”按钮。然后点击“寻位结束”，点击“添加”按钮。
+**Step 2**: En el tipo de instrucción, hacer clic en "Inicio de búsqueda de posición" y, a continuación, seleccionar el sistema de coordenadas del sensor calibrado, configurar la dirección de búsqueda de posición, la velocidad, la longitud y el tiempo máximo de búsqueda de posición, y hacer clic en el botón "Añadir". A continuación, hacer clic en "Fin de búsqueda de posición" y hacer clic en el botón "Añadir".
 
 .. figure:: robot_peripherals/262.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.16‑4 添加寻位开始指令
+.. centered:: Figura 8.16‑4 Adición de la instrucción de inicio de búsqueda de posición
 
-**Step 3**:选择“传感器取点运动”，坐标系名称选择标定的“激光传感器”，运动方式选择“PTP”或者“LIN”，设置调试速度以及选择“是否配置位姿”，点击“添加”按钮，点击“应用”按钮添加至LUA程序。
+**Step 3**: Seleccionar "Movimiento de captación por sensor", seleccionar el "Sensor láser" calibrado como nombre del sistema de coordenadas, seleccionar "PTP" o "LIN" como modo de movimiento, configurar la velocidad de depuración y seleccionar "¿Configurar pose?", hacer clic en el botón "Añadir" y hacer clic en el botón "Aplicar" para añadirlo al programa LUA.
 
 .. figure:: robot_peripherals/263.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.16‑5 添加传感器取点运动指令
+.. centered:: Figura 8.16‑5 Adición de la instrucción de movimiento de captación por sensor
 
-**Step 4**:在“程序编程”界面点击“切换模式”按钮，将变量“pos”改为“pos1”，并删除移动到寻位点指令。
+**Step 4**: En la interfaz "Programación de programas", hacer clic en el botón "Cambiar modo", cambiar la variable "pos" por "pos1" y eliminar la instrucción de movimiento hasta el punto de búsqueda de posición.
 
 .. figure:: robot_peripherals/264.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.16‑6 程序编程切换模式
+.. centered:: Figura 8.16‑6 Cambio de modo de la programación de programas
 
 .. figure:: robot_peripherals/265.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.16‑7 修改获取激光寻位点程序
+.. centered:: Figura 8.16‑7 Modificación del programa de obtención del punto de búsqueda de posición láser
 
-**Step 5**:按照步骤Step1-Step4，进行第二条焊缝的寻位，获取激光寻位点位置。
+**Step 5**: Según los pasos Step1-Step4, realizar la búsqueda de posición de la segunda soldadura y obtener la posición del punto de búsqueda de posición láser.
 
 .. figure:: robot_peripherals/266.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.16‑8 第二条焊缝寻位点获取
+.. centered:: Figura 8.16‑8 Obtención del punto de búsqueda de posición de la segunda soldadura
 
-大儒DFC力控打磨头应用
------------------------------------------------------------
+Aplicación del cabezal de pulido de control de fuerza DFC de Daru
+-------------------------------------------------------------------
 
-概述
-~~~~~~~~~~~~~~~~~~~~~~~
+Descripción general
+~~~~~~~~~~~~~~~~~~~
 
-在机器人末端安装DFC打磨头可帮助机器人快速部署不同场景的打磨、抛光、去除毛刺等工作，可针对不同尺寸、形状的工件自定义打磨力控大小，提高打磨工作的精度和效果。
+La instalación del cabezal de pulido DFC en el extremo del robot ayuda a desplegar rápidamente trabajos de pulido, abrillantado y desbarbado en distintos escenarios, permitiendo personalizar la magnitud del control de fuerza de pulido según las distintas dimensiones y formas de las piezas, mejorando la precisión y el efecto del trabajo de pulido.
 
-硬件描述
-+++++++++++++++++++++++++++++
-协作机器人通过以太网与大儒DFC打磨头进行通讯控制，在WebApp上生成大儒DFC打磨头通讯协议，协议将控制数据通过TCPIP发送至大儒力控控制器模块，模块再将收到的控制数据发送至DFC力控执行器，从而实现对打磨头的控制。其中力控控制器模块为以太网通讯的服务端，可连接两个通道的打磨头执行器。
+Descripción del hardware
+++++++++++++++++++++++++
+
+El robot colaborativo controla la comunicación con el cabezal de pulido DFC de Daru mediante Ethernet; en WebApp se genera el protocolo de comunicación del cabezal de pulido DFC de Daru; el protocolo envía los datos de control mediante TCP/IP al módulo controlador de control de fuerza de Daru y el módulo envía los datos de control recibidos al actuador de control de fuerza DFC, realizando así el control del cabezal de pulido. Entre ellos, el módulo controlador de control de fuerza es el servidor de la comunicación Ethernet y puede conectar los actuadores del cabezal de pulido de dos canales.
 
 .. figure:: robot_peripherals/267.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.17‑1 协作机器人大儒DFC打磨头应用
+.. centered:: Figura 8.17‑1 Aplicación del cabezal de pulido DFC de Daru del robot colaborativo
 
-力控控制器模块需进行如下配置：以太网端配置为IP地址为：192.168.58.88，端口号为2000。 
+El módulo controlador de control de fuerza debe configurarse de la siguiente manera: el extremo Ethernet se configura con la dirección IP: 192.168.58.88 y el número de puerto 2000. 
 
-功能配置
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-打开WebApp，依次点击“初始设置”、“外设”、“打磨”；打磨头的控制类型有已适配设备和外设开放协议两种：
-已适配设备：对已适配的打磨头设备类型自动生成加载开放协议，不需要用户撰写。
-外设开放协议：用户通过lua撰写需要适配的打磨头开放协议实现通信控制。
+Configuración de la función
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Abrir WebApp y hacer clic sucesivamente en "Configuración inicial", "Periféricos", "Pulido"; el tipo de control del cabezal de pulido puede ser "Dispositivo adaptado" o "Protocolo abierto de periféricos":
+Dispositivo adaptado: genera y carga automáticamente el protocolo abierto para el tipo de dispositivo de cabezal de pulido ya adaptado, sin necesidad de que el usuario lo redacte.
+Protocolo abierto de periféricos: el usuario redacta en lua el protocolo abierto del cabezal de pulido que se desea adaptar para implementar el control de comunicación.
 
 .. figure:: robot_peripherals/268.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.17‑2 打磨控制类型
+.. centered:: Figura 8.17‑2 Tipo de control del pulido
 
-已适配设备配置
-+++++++++++++++++++++++++++++++++++++++
+Configuración del dispositivo adaptado
+++++++++++++++++++++++++++++++++++++++
 
-打开WebApp，依次点击“初始设置”、“外设”、“打磨头”、“已适配设备”。设备状态中的类型选择“大儒DFC打磨头”，点击“配置”，则会自动加载内嵌的外设开放协议“CtrlDev_DARUDFCPOLISH.lua”
+Abrir WebApp y hacer clic sucesivamente en "Configuración inicial", "Periféricos", "Cabezal de pulido", "Dispositivo adaptado". En el estado del dispositivo, seleccionar el tipo "Cabezal de pulido DFC de Daru" y hacer clic en "Configurar"; se cargará automáticamente el protocolo abierto de periféricos interno "CtrlDev_DARUDFCPOLISH.lua".
 
 .. figure:: robot_peripherals/269.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.17‑3 大儒DFC设备外设开放协议自动加载
+.. centered:: Figura 8.17‑3 Carga automática del protocolo abierto de periféricos del dispositivo DFC de Daru
  
-在确保硬件链路连接正确的情况下，可启动开放协议，当运行状态为绿色并且右侧Polish状态反馈的通信状态为建立连接时说明机器人成功与打磨头控制器建立通信。此时可通过参数配置，配置需要设置力控的打磨头通道及设定力大小，开放协议会循环发送设定值、通道、机器人当前的rx、ry、rz至打磨头，如图2-3所示。此外Polish状态反馈也会实时显示当前打磨头反馈的力控值和力控超限警告，当产生警告时，页面右上角也会进行报警提醒，如图2-4所示。
+Tras asegurarse de que el enlace de hardware está correctamente conectado, se puede iniciar el protocolo abierto; cuando el estado de funcionamiento es verde y el estado de comunicación de la realimentación de estado Polish de la derecha es de conexión establecida, significa que el robot ha establecido correctamente la comunicación con el controlador del cabezal de pulido. En este momento se puede, mediante la configuración de parámetros, configurar el canal del cabezal de pulido cuyo control de fuerza se desea establecer y la magnitud de la fuerza establecida; el protocolo abierto envía cíclicamente el valor establecido, el canal y los valores rx, ry, rz actuales del robot al cabezal de pulido, como se muestra en la Figura 2-3. Además, la realimentación de estado Polish también muestra en tiempo real el valor de control de fuerza realimentado actualmente por el cabezal de pulido y la advertencia de superación del límite de control de fuerza; cuando se produce una advertencia, también se muestra un aviso de alarma en la esquina superior derecha de la página, como se muestra en la Figura 2-4.
 
 .. figure:: robot_peripherals/270.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.17‑4 DFC打磨头页面设置及状态反馈
+.. centered:: Figura 8.17‑4 Configuración de la página y realimentación de estado del cabezal de pulido DFC
 
 .. figure:: robot_peripherals/271.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.17‑5 DFC打磨头力控超限报警
+.. centered:: Figura 8.17‑5 Alarma de superación del límite de control de fuerza del cabezal de pulido DFC
 
-外设开放协议下载
-+++++++++++++++++++++++++++++++++++++++
+Descarga del protocolo abierto de periféricos
++++++++++++++++++++++++++++++++++++++++++++++
 
-在“外设开放协议”中点击“下载”按钮，即可将协议下载到本地计算机。外设开放协议为一个循环执行的LUA程序，程序在每个循环执行如下步骤：
+En "Protocolo abierto de periféricos", hacer clic en el botón "Descargar" para descargar el protocolo al ordenador local. El protocolo abierto de periféricos es un programa LUA de ejecución cíclica; en cada ciclo el programa ejecuta los siguientes pasos:
 
-①从机器人中读取DFC打磨头的控制数据；
+①Leer los datos de control del cabezal de pulido DFC del robot;
 
-②通过socket将控制数据写入到DFC打磨头中；
+②Escribir los datos de control en el cabezal de pulido DFC mediante socket;
 
-③通过socket从DFC打磨头读取状态数据；
+③Leer los datos de estado del cabezal de pulido DFC mediante socket;
 
-④向机器人中反馈DFC打磨头状态数据；
+④Realimentar los datos de estado del cabezal de pulido DFC al robot;
 
-通讯协议循环执行实现机器人与打磨头的通讯控制。在通讯协议中用户可自定义循环周期、需要连接的服务端端口及IP。
+La ejecución cíclica del protocolo de comunicación realiza el control de comunicación entre el robot y el cabezal de pulido. En el protocolo de comunicación el usuario puede personalizar el período de ciclo, el puerto del servidor que se desea conectar y la IP.
 
-以下为大儒DFC打磨头通讯协议代码示例：
+A continuación se muestra un ejemplo del código del protocolo de comunicación del cabezal de pulido DFC de Daru:
 
 .. code-block:: 
     :linenos:
@@ -7120,68 +7126,68 @@ CNC功能包支持在示教程序中调用控制指令，并实时获取机床�
         end    
     end
 
-DFC打磨头LUA程序应用
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Aplicación del programa LUA del cabezal de pulido DFC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-在机器人LUA程序中增加DFC力控配置和通道切换、状态获取等指令，配合机器人运动指令，可以灵活、便捷的实现打磨应用。
-打开WebApp，依次点击“示教程序”、“程序编程”，新建LUA程序“testDFC.lua”。
+Añadir en el programa LUA del robot instrucciones de configuración del control de fuerza DFC, de conmutación de canal y de obtención de estado, etc.; en combinación con las instrucciones de movimiento del robot, se pueden realizar de forma flexible y cómoda aplicaciones de pulido.
+Abrir WebApp y hacer clic sucesivamente en "Programa de enseñanza", "Programación de programas" y crear el nuevo programa LUA "testDFC.lua".
 
 .. figure:: robot_peripherals/272.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.17‑6 新建“testDFC.lua”程序
+.. centered:: Figura 8.17‑6 Creación del programa "testDFC.lua"
 
-选择指令类型为“外设指令”，在外设指令中点击“打磨设备”按钮。此时在WebApp右侧出现“Polish”打磨指令添加页面，设备类型选择“大儒DFC打磨头”。
+Seleccionar el tipo de instrucción como "Instrucciones de periféricos" y hacer clic en el botón "Equipo de pulido" de las instrucciones de periféricos. En este momento aparece en la parte derecha de WebApp la página de adición de instrucciones de pulido "Polish"; seleccionar el tipo de dispositivo "Cabezal de pulido DFC de Daru".
 
 .. figure:: robot_peripherals/273.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.17‑7 打磨头指令添加
+.. centered:: Figura 8.17‑7 Adición de instrucciones del cabezal de pulido
 
-打磨头控制指令添加
-++++++++++++++++++++++++++++++++++++++++++++
+Adición de instrucciones de control del cabezal de pulido
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-在LUA程序中编写打磨头控制指令可以对DFC进行力控设置和通道选择。
+Escribir instrucciones de control del cabezal de pulido en el programa LUA permite realizar la configuración del control de fuerza y la selección de canal del DFC.
 
-在打磨设备指令添加页面中点击“设置DFC”，选择打磨头通道模式为“2”，设定力为“10”。点击“添加”按钮，即在“程序预览”中添加打磨头设置指令。
+En la página de adición de instrucciones del equipo de pulido, hacer clic en "Configurar DFC", seleccionar el modo de canal del cabezal de pulido "2" y establecer la fuerza en "10". Hacer clic en el botón "Añadir" para añadir la instrucción de configuración del cabezal de pulido en la "Vista previa del programa".
 
 .. figure:: robot_peripherals/274.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.17‑8 添加打磨头控制指令
+.. centered:: Figura 8.17‑8 Adición de la instrucción de control del cabezal de pulido
  
-打磨头状态获取指令添加
-++++++++++++++++++++++++++++++++++++++++++++++++
+Adición de instrucciones de obtención del estado del cabezal de pulido
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-点击“获取DFC数据”，依次点击“添加”、“应用”按钮。即在“testDFC.lua”中添加一条获取打磨头数据的指令“GetDFCState()”。
+Hacer clic en "Obtener datos DFC" y hacer clic sucesivamente en los botones "Añadir" y "Aplicar". Es decir, en "testDFC.lua" se añade una instrucción "GetDFCState()" para obtener los datos del cabezal de pulido.
 
 .. figure:: robot_peripherals/275.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.17‑9 添加获取打磨头状态指令
+.. centered:: Figura 8.17‑9 Adición de la instrucción de obtención del estado del cabezal de pulido
 
-GetDFCState ()指令返回2个数值，分别如下：
+La instrucción GetDFCState () devuelve 2 valores, que son los siguientes:
 
-**DFCwarn**：力控超限警告 0-正常 1-报警；
+**DFCwarn**: advertencia de superación del límite de control de fuerza 0-normal 1-alarma;
 
-**force**：力控反馈值。
+**force**: valor de realimentación del control de fuerza.
 
-在“testDFC.lua”中用三个变量接收GetDFCState ()函数的返回值。并通过Lua变量查询将上述信息显示在WebApp变量查询显示区中。
+En "testDFC.lua", utilizar tres variables para recibir los valores de retorno de la función GetDFCState (). Y mostrar la información anterior en el área de visualización de consulta de variables de WebApp mediante la consulta de variables Lua.
 
 .. figure:: robot_peripherals/276.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.17‑10 获取打磨头状态程序
+.. centered:: Figura 8.17‑10 Programa de obtención del estado del cabezal de pulido
 
-应用示例
-+++++++++++++++++++++++++++++++++++++++
+Ejemplo de aplicación
++++++++++++++++++++++
 
-以下为DFC 打磨头控制及监控LUA程序示例：
+A continuación se muestra un ejemplo de programa LUA de control y monitorización del cabezal de pulido DFC:
 
 .. code-block:: 
     :linenos:
@@ -7203,60 +7209,62 @@ GetDFCState ()指令返回2个数值，分别如下：
         SetDO(0,0,0,0)
     end
 
-末端透传功能
-----------------------------------------------------------
+Función de transmisión transparente del extremo
+------------------------------------------------
 
-概述
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-用户可通过配置末端透传功能，基于末端外设开放协议+CNDE+SDK接口，实现任意末端外设的非周期数据收发及周期数据获取的功能。其中周期数据需要撰写末端lua开放协议并上传应用到末端，实现周期性与外设交互读取，并通过CNDE配置获取外设反馈周期数据，非周期数据通过SDK接口实现数据帧的收发。 
+Descripción general
+~~~~~~~~~~~~~~~~~~~
 
-使用说明
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+El usuario puede, mediante la configuración de la función de transmisión transparente del extremo y basándose en el protocolo abierto de periféricos del extremo + CNDE + interfaz SDK, realizar la recepción y envío de datos no periódicos y la obtención de datos periódicos de cualquier periférico del extremo. Entre ellos, los datos periódicos requieren redactar el protocolo abierto lua del extremo y cargarlo y aplicarlo al extremo para realizar la interacción periódica con el periférico y la lectura; a través de la configuración de CNDE se obtienen los datos periódicos realimentados por el periférico; los datos no periódicos se envían y reciben mediante la interfaz SDK.
 
-**Step1**：打开机器人页面选择“初始设置”->“外设”->“末端透传”，上传并应用需要适配外设的末端lua开放协议。
+Instrucciones de uso
+~~~~~~~~~~~~~~~~~~~~
+
+**Step1**: Abrir la página del robot, seleccionar "Configuración inicial"->"Periféricos"->"Transmisión transparente del extremo" y cargar y aplicar el protocolo abierto lua del extremo del periférico que se desea adaptar.
 
 .. figure:: robot_peripherals/289.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.18‑1 末端透传协议上传
+.. centered:: Figura 8.18‑1 Carga del protocolo de transmisión transparente del extremo
  
-**Step2**：重启机器人后，打开“末端协议启用”按钮，即可开启该功能。需要注意的是开启该功能后，其他已适配末端设备将不可同时使用。
+**Step2**: Tras reiniciar el robot, activar el botón "Habilitación del protocolo del extremo" para activar esta función. Cabe señalar que tras activar esta función, los demás dispositivos de extremo ya adaptados no se podrán utilizar simultáneamente.
 
 .. figure:: robot_peripherals/290.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.18‑2 末端透传协议开启
+.. centered:: Figura 8.18‑2 Activación del protocolo de transmisión transparente del extremo
  
-**Step3**：打开机器人页面选择“示教程序”->“外设指令”->“末端透传”，即可在末端透传开启后，通过lua接口进行末端非周期数据的收发及周期数据的获取的调试测试，实际使用需要配合机器人的CNDE功能及SDK进行使用。其中非周期指令发送与接受数据长度最长16byte，周期数据最大128byte。
+**Step3**: Abrir la página del robot, seleccionar "Programa de enseñanza"->"Instrucciones de periféricos"->"Transmisión transparente del extremo"; tras activar la transmisión transparente del extremo, se puede realizar mediante la interfaz lua la depuración y prueba del envío y recepción de datos no periódicos y de la obtención de datos periódicos del extremo; el uso real requiere el uso combinado con la función CNDE y el SDK del robot. Entre ellos, la longitud máxima de envío y recepción de datos de las instrucciones no periódicas es de 16 bytes y la de los datos periódicos es de 128 bytes.
 
 .. figure:: robot_peripherals/291.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.18‑3 末端透传非周期数据lua接口
+.. centered:: Figura 8.18‑3 Interfaz lua de datos no periódicos de la transmisión transparente del extremo
 
 .. figure:: robot_peripherals/292.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.18‑4 末端透传周期数据lua接口
+.. centered:: Figura 8.18‑4 Interfaz lua de datos periódicos de la transmisión transparente del extremo
 
-末端透传功能Lua脚本
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Script Lua de la función de transmisión transparente del extremo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
-++++++++++++++++++++++++
+Descripción general
++++++++++++++++++++++++++++++++
 
-Lua开放协议功能新增通用数据透传接口，根据约定的Lua C接口编写Lua脚本，配合CNDE，实现对末端挂载设备的数据收发。
+La función del protocolo abierto Lua incorpora una interfaz genérica de transmisión transparente de datos; según la interfaz Lua C acordada se redacta el script Lua y, en combinación con CNDE, se realiza el envío y recepción de datos con el dispositivo montado en el extremo.
 
-末端Lua脚本编写说明
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Descripción de la redacción del script Lua del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Rs485发送与接收Lua C注册函数
-*********************************************************************
-（1）Rs485发送Lua C注册函数：EndTxCustomData()。此函数将指令通过Rs485发送给挂载设备。
+Funciones de registro Lua C de envío y recepción Rs485
+*******************************************************
+
+(1) Función de registro Lua C de envío Rs485: EndTxCustomData(). Esta función envía la instrucción al dispositivo montado mediante Rs485.
 
 .. code-block:: 
     :linenos:
@@ -7264,9 +7272,9 @@ Rs485发送与接收Lua C注册函数
     Tcmd={0}
     EndTxCustomData(Tcmd)
 
-.. centered:: 代码8.18-1 Lua脚本说明
+.. centered:: Código 8.18-1 Descripción del script Lua
 
-（2）Rs485接收Lua C注册函数：EndRxCustomData()。此函数接收挂载设备通过Rs485反馈的响应指令。
+(2) Función de registro Lua C de recepción Rs485: EndRxCustomData(). Esta función recibe la instrucción de respuesta realimentada por el dispositivo montado mediante Rs485.
 
 .. code-block:: 
     :linenos:
@@ -7274,12 +7282,12 @@ Rs485发送与接收Lua C注册函数
     Rcmd={0}
     EndRxCustomData(Rcmd)
 
-.. centered:: 代码8.18-2 Lua脚本说明
+.. centered:: Código 8.18-2 Descripción del script Lua
 
-非周期数据下发与反馈Lua C注册函数
-*********************************************************************
+Funciones de registro Lua C de envío y realimentación de datos no periódicos
+****************************************************************************
 
-（1）非周期数据下发Lua C注册函数：GetHostTransparentCmd()。通过此函数获取控制器是否下发非周期数据指令，有下发指令后获取非周期数据指令。非周期数据指令发送长度最大16Bytes。
+(1) Función de registro Lua C de envío de datos no periódicos: GetHostTransparentCmd(). Mediante esta función se obtiene si el controlador envía una instrucción de datos no periódicos y, tras el envío de la instrucción, se obtienen los datos de la instrucción no periódica. La longitud máxima de envío de la instrucción de datos no periódicos es de 16 Bytes.
 
 .. code-block:: 
     :linenos:
@@ -7290,9 +7298,9 @@ Rs485发送与接收Lua C注册函数
     if(RxFlag == 1)then
     EndTxCustomData(Tcmd)
 
-.. centered:: 代码8.18-3 Lua脚本说明
+.. centered:: Código 8.18-3 Descripción del script Lua
 
-（2）非周期数据指令反馈Lua C注册函数：BackHostTransparentCmd()。通过此函数将挂载设备响应的非周期数据指令透传给控制器。非周期数据指令接收长度最大16Bytes。
+(2) Función de registro Lua C de realimentación de la instrucción de datos no periódicos: BackHostTransparentCmd(). Mediante esta función se transmite al controlador la instrucción de datos no periódicos de respuesta del dispositivo montado. La longitud máxima de recepción de la instrucción de datos no periódicos es de 16 Bytes.
 
 .. code-block:: 
     :linenos:
@@ -7301,12 +7309,12 @@ Rs485发送与接收Lua C注册函数
     EndRxCustomData(Rcmd)
     BackHostTransparentCmd(Rcmd)
 
-.. centered:: 代码8.18-4 Lua脚本说明
+.. centered:: Código 8.18-4 Descripción del script Lua
 
-周期数据反馈Lua C注册函数
-*********************************************************************
+Función de registro Lua C de realimentación de datos periódicos
+***************************************************************
 
-（1）周期数据反馈Lua C注册函数：SetDWrodInputBack()。通过此函数将读取到的挂载设备周期数据透传给控制器。周期数据反馈最大128Bytes。
+(1) Función de registro Lua C de realimentación de datos periódicos: SetDWrodInputBack(). Mediante esta función se transmiten al controlador los datos periódicos del dispositivo montado leídos. La realimentación máxima de datos periódicos es de 128 Bytes.
 
 .. code-block:: 
     :linenos:
@@ -7316,16 +7324,16 @@ Rs485发送与接收Lua C注册函数
     PacketNum=0
     TotalNum,PacketNum=SetDWrodInputBack(R)
 
-.. centered:: 代码8.18-5 Lua脚本说明
+.. centered:: Código 8.18-5 Descripción del script Lua
 
-以倍益康艾灸头为例编写的Lua脚本
-*********************************************************************
+Script Lua redactado tomando como ejemplo el cabezal de moxibustión Beiyikang
+******************************************************************************
 
 .. code-block:: 
     :linenos:
 
     --***
-    --维持末端其他功能正常运行
+    --Mantener el funcionamiento normal de las demás funciones del extremo
     while(1)
     do
     IwdgTaskHandle()
@@ -7339,10 +7347,10 @@ Rs485发送与接收Lua C注册函数
     end
     --***
     --***
-    --非周期数据下发示例
-    Rcmd = {0}       --存储挂载设备响应的非周期数据
-    Tcmd = {0}       --存储控制器下发的非周期数据
-    RxFlag=0         --控制器是否下发指令标志位
+    --Ejemplo de envío de datos no periódicos
+    Rcmd = {0}       --almacena los datos no periódicos de respuesta del dispositivo montado
+    Tcmd = {0}       --almacena los datos no periódicos enviados por el controlador
+    RxFlag=0         --indicador de si el controlador envía la instrucción
     RxFlag = GetHostTransparentCmd(Tcmd)
     if(RxFlag == 1)then
     EndTxCustomData(Tcmd)
@@ -7354,16 +7362,16 @@ Rs485发送与接收Lua C注册函数
     end
     --***
     --***
-    --周期数据下发示例
-    R = {0}          --存储挂载设备响应的周期数据
-    T = {0xAB,0xBA,0x14,0x01,0xAA,0x24}     --查询挂载设备周期数据指令
+    --Ejemplo de envío de datos periódicos
+    R = {0}          --almacena los datos periódicos de respuesta del dispositivo montado
+    T = {0xAB,0xBA,0x14,0x01,0xAA,0x24}     --instrucción de consulta de datos periódicos del dispositivo montado
     if TotalNum==0 then
     EndTxCustomData(T)
     DelayMs(35)
     EndRxCustomData(R)
     end
-    TotalNum =0      --周期数据如需分包，总分包数
-    PacketNum=0     --当前包序号
+    TotalNum =0      --si los datos periódicos deben subdividirse en paquetes, número total de subpaquetes
+    PacketNum=0     --número de secuencia del paquete actual
     if((#R==19)and(R[1]==0xAB)and(R[2]==0xBA)and(R[3]==0x14)and(R[4]==0x0E))then
     TotalNum,PacketNum=SetDWrodInputBack(R)
     if PacketNum>TotalNum then
@@ -7375,57 +7383,57 @@ Rs485发送与接收Lua C注册函数
     LuaGc()
     end
 
-灵巧手功能
----------------------------------------------------------------------
+Función de mano diestra
+-----------------------
 
-概述
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Descripción general
+~~~~~~~~~~~~~~~~~~~
 
-末端Lua开放协议新增如下功能：
+El protocolo abierto Lua del extremo incorpora las siguientes funciones:
 
-1. 末端Lua开放协议适配灵巧手，实现灵巧手关节同步运动。
-2. 新增多从站同步指令下发功能，多从站电机同步响应。
+1. El protocolo abierto Lua del extremo se adapta a la mano diestra, realizando el movimiento sincronizado de las articulaciones de la mano diestra.
+2. Se añade la función de envío de instrucciones sincronizadas de múltiples esclavos, con respuesta sincronizada de los motores de múltiples esclavos.
 
-环境配置
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configuración del entorno
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-末端固件版本：FR_END_FV201013_MAIN_U1_T01_20260407
+Versión del firmware del extremo: FR_END_FV201013_MAIN_U1_T01_20260407
 
-机器人软件版本：V3.9.7及以上
+Versión del software del robot: V3.9.7 y superiores
 
-灵巧手相关操作说明
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Descripción de las operaciones relacionadas con la mano diestra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-灵巧手配置
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configuración de la mano diestra
+++++++++++++++++++++++++++++++++
 
-1. 打开WebApp，进入初始设置->外设->灵巧手->协议管理界面，上传灵巧手Lua文件，选择上传的文件后点击“应用”按钮，提示升级成功后重启控制箱。
+1. Abrir WebApp, entrar en Configuración inicial->Periféricos->Mano diestra->interfaz de gestión de protocolos, cargar el archivo Lua de la mano diestra, seleccionar el archivo cargado y hacer clic en el botón "Aplicar"; tras el aviso de actualización correcta, reiniciar la caja de control.
 
 .. figure:: robot_peripherals/306.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.19‑1 协议管理
+.. centered:: Figura 8.19‑1 Gestión de protocolos
 
-2. 打开WebApp，进入初始设置->外设->灵巧手->通讯参数界面，配置通讯参数，通讯参数包含波特率、数据位、停止位等，完成后点击“配置”按钮。
+2. Abrir WebApp, entrar en Configuración inicial->Periféricos->Mano diestra->interfaz de parámetros de comunicación, configurar los parámetros de comunicación; los parámetros de comunicación incluyen la velocidad en baudios, los bits de datos, los bits de parada, etc.; tras completarlo, hacer clic en el botón "Configurar".
 
 .. figure:: robot_peripherals/307.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.19‑2 通讯参数配置
+.. centered:: Figura 8.19‑2 Configuración de los parámetros de comunicación
 
-末端通讯详细参数如下：
+Los parámetros detallados de comunicación del extremo son los siguientes:
 
-- **波特率**：支持1-9600，2-14400，3-19200，4-38400，5-56000，6-67600，7-115200，8-128000；末端Rs485驱动芯片为低速485，波特率不能>200k；
-- **数据位**：数据位支持（8,9），目前常用为8；
-- **停止位**：1-1，2-0.5，3-2，4-1.5，目前常用为1；
-- **校验位**：0-None，1-Odd，2-Even，目前常用为0；
-- **超时时间**：1~1000ms，此值需要结合外设搭配设置合理的时间参数；
-- **超时次数**：1~10，主要进行超时重发，减少偶发异常提高用户体验；
-- **周期性指令时间间隔**：1~1000ms，主要用于周期性指令每次下发的时间间隔；
+- **Velocidad en baudios**: compatible con 1-9600, 2-14400, 3-19200, 4-38400, 5-56000, 6-67600, 7-115200, 8-128000; el chip driver Rs485 del extremo es de 485 de baja velocidad; la velocidad en baudios no puede ser >200k;
+- **Bits de datos**: los bits de datos admiten (8,9); actualmente el más habitual es 8;
+- **Bits de parada**: 1-1, 2-0.5, 3-2, 4-1.5; actualmente el más habitual es 1;
+- **Bit de paridad**: 0-None, 1-Odd, 2-Even; actualmente el más habitual es 0;
+- **Tiempo de espera agotado**: 1~1000ms; este valor debe configurarse con un tiempo razonable en combinación con el periférico;
+- **Número de tiempos de espera agotado**: 1~10; se utiliza principalmente para el reenvío tras tiempo de espera agotado, reduciendo anomalías ocasionales y mejorando la experiencia del usuario;
+- **Intervalo de tiempo de las instrucciones periódicas**: 1~1000ms; se utiliza principalmente para el intervalo de tiempo de cada envío de las instrucciones periódicas;
 
-3. 打开WebApp，进入初始设置->外设->灵巧手->末端协议启用界面，启用末端协议，启动灵巧手设备，配置灵巧手所对应的功能码。
+3. Abrir WebApp, entrar en Configuración inicial->Periféricos->Mano diestra->interfaz de habilitación del protocolo del extremo, habilitar el protocolo del extremo, iniciar el dispositivo de mano diestra y configurar los códigos de función correspondientes a la mano diestra.
 
 .. figure:: robot_peripherals/308.png
    :align: center
@@ -7435,9 +7443,9 @@ Rs485发送与接收Lua C注册函数
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.19‑3 灵巧手对应功能码
+.. centered:: Figura 8.19‑3 Códigos de función correspondientes a la mano diestra
 
-4. 目前已定义的末端 lua 开放协议的功能码如下图所示。
+4. Los códigos de función del protocolo abierto lua del extremo definidos actualmente se muestran en la figura siguiente.
 
 .. figure:: robot_peripherals/310.png
    :align: center
@@ -7447,58 +7455,58 @@ Rs485发送与接收Lua C注册函数
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.19‑4 开放协议功能码
+.. centered:: Figura 8.19‑4 Códigos de función del protocolo abierto
   
-灵巧手动作控制指令为0x31-0x36，说明如下：
+Las instrucciones de control de movimiento de la mano diestra son 0x31-0x36, cuya descripción es la siguiente:
 
-- ①0x31为灵巧手初始化功能码，具体实现根据灵巧手实际情况确定。
-- ②0x32-0x34为灵巧手控制参数下发功能码，分别对应位置控制参数、速度控制参数和力矩控制参数，用于设定各关节的运动目标值。
-- ③0x35为夹持运动触发功能码，灵巧手运动控制通常分为两种模式：一种为位置寄存器写入后立即执行运动；另一种为位置寄存器写入后需向动作触发寄存器写入特定值才开始运动。根据灵巧手实际情况确定是否启用该触发功能
-- ④0x36为多轴同步运动功能码，根据灵巧手实际情况确定是否支持多轴同步运动。若支持，则用于实现多个手指关节在时间上协调规划、同时启动并同时到达各自目标位置/速度的复合运动；若不支持，则各轴通过单轴控制指令依次下发以实现近似协同效果。
+- ①0x31 es el código de función de inicialización de la mano diestra; su implementación concreta se determina según la situación real de la mano diestra.
+- ②0x32-0x34 son los códigos de función de envío de parámetros de control de la mano diestra, que corresponden respectivamente a los parámetros de control de posición, los parámetros de control de velocidad y los parámetros de control de par, utilizados para establecer el valor objetivo de movimiento de cada articulación.
+- ③0x35 es el código de función de activación del movimiento de agarre; el control de movimiento de la mano diestra suele dividirse en dos modos: uno en el que el movimiento se ejecuta inmediatamente después de escribir el registro de posición, y otro en el que, tras escribir el registro de posición, es necesario escribir un valor específico en el registro de activación de acción para iniciar el movimiento. Según la situación real de la mano diestra se determina si se activa esta función de activación.
+- ④0x36 es el código de función de movimiento sincronizado multieje; según la situación real de la mano diestra se determina si se admite el movimiento sincronizado multieje. Si se admite, se utiliza para realizar el movimiento compuesto de múltiples articulaciones de los dedos coordinadas en el tiempo, que se inician simultáneamente y alcanzan simultáneamente sus respectivas posiciones/velocidades objetivo; si no se admite, cada eje envía sucesivamente instrucciones de control individuales para lograr un efecto de coordinación aproximado.
 
-灵巧手状态查询指令为0xA0-0xA6，说明如下：
+Las instrucciones de consulta de estado de la mano diestra son 0xA0-0xA6, cuya descripción es la siguiente:
 
-- ⑤0xA0为读取单轴运行状态功能码，用于查询指定关节的当前运动状态及夹持状态信息。
-- ⑥0xA2为读取初始化状态功能码，用于查询灵巧手的初始化完成状态及系统就绪情况，具体实现根据灵巧手实际情况确定。
-- ⑦0xA3-0xA5为读取灵巧手实时状态参数功能码，分别对应当前实际位置、当前实际速度和当前实际力矩，用于闭环控制及状态监测。
-- ⑧0xA6为读取灵巧手报警信息功能码，用于获取灵巧手底层的故障代码及报警状态，便于异常诊断与保护处理。
+- ⑤0xA0 es el código de función de lectura del estado de funcionamiento de un solo eje, utilizado para consultar la información del estado de movimiento actual y del estado de agarre de una articulación especificada.
+- ⑥0xA2 es el código de función de lectura del estado de inicialización, utilizado para consultar el estado de finalización de la inicialización de la mano diestra y la situación de preparación del sistema; su implementación concreta se determina según la situación real de la mano diestra.
+- ⑦0xA3-0xA5 son los códigos de función de lectura de los parámetros de estado en tiempo real de la mano diestra, que corresponden respectivamente a la posición real actual, la velocidad real actual y el par real actual, utilizados para el control en lazo cerrado y la monitorización del estado.
+- ⑧0xA6 es el código de función de lectura de la información de alarma de la mano diestra, utilizado para obtener el código de fallo de la capa inferior de la mano diestra y el estado de alarma, facilitando el diagnóstico de anomalías y el tratamiento de protección.
 
-.. note:: 灵巧手必须支持读取运行状态相关功能码，以便于查询运动状态。
+.. note:: La mano diestra debe admitir los códigos de función relacionados con la lectura del estado de funcionamiento para poder consultar el estado de movimiento.
   
-灵巧手运动控制
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Control de movimiento de la mano diestra
++++++++++++++++++++++++++++++++++++++++++
 
-1. 打开WebApp，进入示教程序->程序编程界面，打开灵巧手外设指令。
+1. Abrir WebApp, entrar en Programa de enseñanza->interfaz de Programación de programas y abrir las instrucciones de periféricos de la mano diestra.
 
 .. figure:: robot_peripherals/312.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 8.19‑5 灵巧手外设指令
+.. centered:: Figura 8.19‑5 Instrucciones de periféricos de la mano diestra
    
-2. 点击激活，选择对应灵巧手起始地址，添加对应激活指令。
+2. Hacer clic en activar, seleccionar la dirección inicial correspondiente de la mano diestra y añadir la instrucción de activación correspondiente.
 
 .. figure:: robot_peripherals/313.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.19‑6 灵巧手激活指令
+.. centered:: Figura 8.19‑6 Instrucción de activación de la mano diestra
 
-3. 点击控制，填写灵巧手单个从站运动所需要的位置、速度、力矩数据，填写最大超时时间，添加对应控制指令。
+3. Hacer clic en control, rellenar los datos de posición, velocidad y par necesarios para el movimiento de un solo esclavo de la mano diestra, rellenar el tiempo máximo de espera agotado y añadir la instrucción de control correspondiente.
 
 .. figure:: robot_peripherals/314.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.19‑7 灵巧手控制指令
+.. centered:: Figura 8.19‑7 Instrucción de control de la mano diestra
 
-灵巧手数据监控
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Monitorización de datos de la mano diestra
+++++++++++++++++++++++++++++++++++++++++++
 
-打开WebApp，进入初始设置->外设->灵巧手->末端协议启用界面，启用状态监控。下发控制指令后，在右侧Dexterous界面，可以获取到灵巧手单个从站位置、速度、力矩实时反馈数据。
+Abrir WebApp, entrar en Configuración inicial->Periféricos->Mano diestra->interfaz de habilitación del protocolo del extremo y habilitar la monitorización de estado. Tras enviar la instrucción de control, en la interfaz Dexterous de la derecha se pueden obtener los datos de realimentación en tiempo real de la posición, la velocidad y el par de un solo esclavo de la mano diestra.
 
 .. figure:: robot_peripherals/315.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 8.19‑8 灵巧手实时反馈数据
+.. centered:: Figura 8.19‑8 Datos de realimentación en tiempo real de la mano diestra

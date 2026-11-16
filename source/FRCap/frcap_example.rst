@@ -1,39 +1,39 @@
-FRCap案例
+Casos de FRCap
 =========================
 
 .. toctree:: 
    :maxdepth: 6
 
-FAIRINO Palletizer（码垛机）
------------------------------
+FAIRINO Palletizer (Paletizadora)
+---------------------------------------------------
 
-将项目中的build文件夹下的“码垛机Palletizer.plugin”在WebApp中上传注册启用后即可使用。
+Una vez cargado, registrado y habilitado en WebApp el archivo "Paletizadora Palletizer.plugin" de la carpeta build del proyecto, se puede utilizar.
 
 .. image:: frcap_pictures/011.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 7.1 码垛FRCap使用
+.. centered:: Figura 7.1 Uso de FRCap de paletizado
 
-码垛工件配置
-+++++++++++++++
+Configuración de la pieza de paletizado
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-指令名称：palletizing_config_box。 
+Nombre de la instrucción: palletizing_config_box. 
 
-指令参数：
+Parámetros de la instrucción:
 
 .. code-block:: c++
    :linenos:
 
    /** 
-   * @param  int length 工件长度
-   * @param  int width 工件速度
-   * @param  int height 工件高度
-   * @param  int payload 工件负载
-   * @param  string grip_point工件抓取点
+   * @param  int length longitud de la pieza
+   * @param  int width velocidad de la pieza
+   * @param  int height altura de la pieza
+   * @param  int payload carga de la pieza
+   * @param  string grip_point punto de agarre de la pieza
    * /
 
-指令案例：
+Ejemplo de instrucción:
 
 .. code-block:: c++
    :linenos:
@@ -49,7 +49,7 @@ FAIRINO Palletizer（码垛机）
       }
    } 
 
-指令反馈：
+Respuesta de la instrucción:
 
 .. code-block:: c++
    :linenos:
@@ -59,25 +59,25 @@ FAIRINO Palletizer（码垛机）
    * @return status:404 "fail"
    */
 
-码垛托盘配置
-+++++++++++++++
+Configuración del palé de paletizado
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-指令名称：palletizing_config_pallet。
+Nombre de la instrucción: palletizing_config_pallet.
 
-指令参数：
+Parámetros de la instrucción:
 
 .. code-block:: c++
    :linenos:
 
    /** 
-   * @param  int front 托盘前边
-   * @param  int side 托盘侧边
-   * @param  int height 托盘高度
-   * @param  int left_pallet 左托盘启用
-   * @param  int right_pallet 右托盘启用
+   * @param  int front borde frontal del palé
+   * @param  int side borde lateral del palé
+   * @param  int height altura del palé
+   * @param  int left_pallet activación del palé izquierdo
+   * @param  int right_pallet activación del palé derecho
    */
 
-指令案例：
+Ejemplo de instrucción:
 
 .. code-block:: c++
    :linenos:
@@ -93,7 +93,7 @@ FAIRINO Palletizer（码垛机）
          }
    }
 
-指令反馈：
+Respuesta de la instrucción:
 
 .. code-block:: c++
    :linenos:
@@ -103,28 +103,28 @@ FAIRINO Palletizer（码垛机）
    * @return status:404 "fail"
    */ 
 
-码垛高级配置
-+++++++++++++++
+Configuración avanzada de paletizado
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-指令名称：palletizing_advanced_cfg。
+Nombre de la instrucción: palletizing_advanced_cfg.
 
-指令参数：
+Parámetros de la instrucción:
 
 .. code-block:: c++
    :linenos:
 
    /** 
-   * @param  string height 码垛抓取点抬升高度
-   * @param  string x1 码垛渐进点1：x 方向偏移,单位mm
-   * @param  string y1 码垛渐进点1：y 方向偏移,单位mm
-   * @param  string z1 码垛渐进点1：z 方向偏移,单位mm
-   * @param  string x2 码垛渐进点2：x 方向偏移,单位mm
-   * @param  string y2 码垛渐进点2：y 方向偏移,单位mm
-   * @param  string z2 码垛渐进点2：z 方向偏移,单位mm
-   * @param  string time 吸料等待时间,单位 ms
+   * @param  string height altura de elevación del punto de agarre del paletizado
+   * @param  string x1 punto progresivo 1 del paletizado: desplazamiento en la dirección x, en mm
+   * @param  string y1 punto progresivo 1 del paletizado: desplazamiento en la dirección y, en mm
+   * @param  string z1 punto progresivo 1 del paletizado: desplazamiento en la dirección z, en mm
+   * @param  string x2 punto progresivo 2 del paletizado: desplazamiento en la dirección x, en mm
+   * @param  string y2 punto progresivo 2 del paletizado: desplazamiento en la dirección y, en mm
+   * @param  string z2 punto progresivo 2 del paletizado: desplazamiento en la dirección z, en mm
+   * @param  string time tiempo de espera de aspiración del material, en ms
    */ 
 
-指令案例：
+Ejemplo de instrucción:
 
 .. code-block:: c++
    :linenos:
@@ -143,7 +143,7 @@ FAIRINO Palletizer（码垛机）
          }
    }
 
-指令反馈：
+Respuesta de la instrucción:
 
 .. code-block:: c++
    :linenos:
@@ -153,24 +153,24 @@ FAIRINO Palletizer（码垛机）
    * @return status:404 "fail"
    */
 
-码垛设备尺寸配置
-+++++++++++++++++
+Configuración de dimensiones del equipo de paletizado
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-指令名称：palletizing_config_device。
+Nombre de la instrucción: palletizing_config_device.
 
-指令参数：
+Parámetros de la instrucción:
 
 .. code-block:: c++
    :linenos:
 
    /** 
-   * @param  int x 左托盘右上角点相对于机器人基座标系坐标轴的x方向绝对值
-   * @param  int y 左托盘右上角点相对于机器人基座标系坐标轴的y方向绝对值
-   * @param  int z 左托盘右上角点相对于机器人基座标系坐标轴的z方向绝对值
-   * @param  int angle 机器人安装时的旋转角度
+   * @param  int x valor absoluto en la dirección x del punto de la esquina superior derecha del palé izquierdo respecto a los ejes del sistema de coordenadas base del robot
+   * @param  int y valor absoluto en la dirección y del punto de la esquina superior derecha del palé izquierdo respecto a los ejes del sistema de coordenadas base del robot
+   * @param  int z valor absoluto en la dirección z del punto de la esquina superior derecha del palé izquierdo respecto a los ejes del sistema de coordenadas base del robot
+   * @param  int angle ángulo de rotación en el momento de la instalación del robot
    */ 
 
-指令案例：
+Ejemplo de instrucción:
 
 .. code-block:: c++
    :linenos:
@@ -185,7 +185,7 @@ FAIRINO Palletizer（码垛机）
       }
    }
 
-指令反馈：
+Respuesta de la instrucción:
 
 .. code-block:: c++
    :linenos:
@@ -195,30 +195,30 @@ FAIRINO Palletizer（码垛机）
    * @return status:404 "fail"
    */
 
-码垛模式配置
-+++++++++++++++
+Configuración del modo de paletizado
++++++++++++++++++++++++++++++++++++++++++++++++++
 
-指令名称：palletizing_config_pattern。
+Nombre de la instrucción: palletizing_config_pattern.
 
-指令参数：
+Parámetros de la instrucción:
 
 .. code-block:: c++
    :linenos:
 
    /** 
-   * @param  int layers 码垛层数
-   * @param  int box_gap 工件像素点间隔，单位：mm
-   * @param  string sequence 码垛工作模式
-   * @param  int pattern_b_enable 模式b是否开启，1：开启，0：不开启
-   * @param  string left_pattern_a 左工位模式a笛卡尔坐标
-   * @param  string left_pattern_b 左工位模式b笛卡尔坐标
-   * @param  string right_pattern_a 右工位模式a笛卡尔坐标
-   * @param  string right_pattern_b 右工位模式b笛卡尔坐标
-   * @param  string origin_pattern_a 初始模式a笛卡尔坐标
-   * @param  string origin_pattern_b 初始模式b笛卡尔坐标
+   * @param  int layers número de capas de paletizado
+   * @param  int box_gap intervalo de puntos de píxeles de la pieza, en mm
+   * @param  string sequence modo de trabajo del paletizado
+   * @param  int pattern_b_enable si el modo b está activado, 1: activado, 0: no activado
+   * @param  string left_pattern_a coordenadas cartesianas del modo a de la estación izquierda
+   * @param  string left_pattern_b coordenadas cartesianas del modo b de la estación izquierda
+   * @param  string right_pattern_a coordenadas cartesianas del modo a de la estación derecha
+   * @param  string right_pattern_b coordenadas cartesianas del modo b de la estación derecha
+   * @param  string origin_pattern_a coordenadas cartesianas del modo a inicial
+   * @param  string origin_pattern_b coordenadas cartesianas del modo b inicial
    */
 
-指令案例：
+Ejemplo de instrucción:
 
 .. code-block:: c++
    :linenos:
@@ -239,7 +239,7 @@ FAIRINO Palletizer（码垛机）
       }
    }
 
-指令反馈：
+Respuesta de la instrucción:
 
 .. code-block:: c++
    :linenos:
@@ -249,23 +249,23 @@ FAIRINO Palletizer（码垛机）
    * @return status:404 "fail"
    */
 
-码垛程序生成
-+++++++++++++++
+Generación del programa de paletizado
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-指令名称：generate_palletizing_program。
+Nombre de la instrucción: generate_palletizing_program.
 
-指令参数：
+Parámetros de la instrucción:
 
 .. code-block:: c++
    :linenos:
 
    /**
-   * @param  string palletizing_name 码垛名称
-   * @param  string depalletizing_name 拆垛名称
-   * @param  string flag 码垛或者拆垛程序是否生成，0-不生成，1生成
+   * @param  string palletizing_name nombre del paletizado
+   * @param  string depalletizing_name nombre del despaletizado
+   * @param  string flag si se genera el programa de paletizado o despaletizado, 0-no se genera, 1 se genera
    */ 
 
-指令案例：
+Ejemplo de instrucción:
 
 .. code-block:: c++
    :linenos:
@@ -279,7 +279,7 @@ FAIRINO Palletizer（码垛机）
       }
    }
 
-指令反馈：
+Respuesta de la instrucción:
 
 .. code-block:: c++
    :linenos:
@@ -289,21 +289,21 @@ FAIRINO Palletizer（码垛机）
    * @return status:404 "fail"
    */
 
-获取码垛配方
-+++++++++++++++
+Obtener la receta de paletizado
++++++++++++++++++++++++++++++++++++++++++++++++++
 
-指令名称：get_palletizing_formula。
+Nombre de la instrucción: get_palletizing_formula.
 
-指令参数：
+Parámetros de la instrucción:
 
 .. code-block:: c++
    :linenos:
 
    /** 
-   * @param  string name 码垛配方名称
+   * @param  string name nombre de la receta de paletizado
    */ 
 
-指令案例：
+Ejemplo de instrucción:
 
 .. code-block:: c++
    :linenos:
@@ -315,25 +315,25 @@ FAIRINO Palletizer（码垛机）
       }
    }
 
-指令反馈：
+Respuesta de la instrucción:
 
 .. code-block:: c++
    :linenos:
 
    /** 
    * @return status:200 
-   * @param  object box_config 工件配置
-   * @param  object pallet_config 托盘配置
-   * @param  object device_config 安装设备位置
-   * @param  object pattern_config 模式配置
-   * @param  object program_config 程序生成配置
-   * @param  object lefttransitionpoint 左过渡点笛卡尔坐标
-   * @param  object righttransitionpoint 右过渡点笛卡尔坐标
-   * @param  object advanced_config 高级配置
+   * @param  object box_config configuración de la pieza
+   * @param  object pallet_config configuración del palé
+   * @param  object device_config posición del equipo de instalación
+   * @param  object pattern_config configuración de modos
+   * @param  object program_config configuración de generación del programa
+   * @param  object lefttransitionpoint coordenadas cartesianas del punto de transición izquierdo
+   * @param  object righttransitionpoint coordenadas cartesianas del punto de transición derecho
+   * @param  object advanced_config configuración avanzada
    * @return status:404 "fail"
    */
 
-指令反馈案例：
+Ejemplo de respuesta de la instrucción:
 
 .. code-block:: c++
    :linenos:
@@ -408,14 +408,14 @@ FAIRINO Palletizer（码垛机）
       }
    }
 
-获取码垛已有配方名称列表
-++++++++++++++++++++++++++++
+Obtener la lista de nombres de recetas de paletizado existentes
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-指令名称：get_palletizing_formula_list。
+Nombre de la instrucción: get_palletizing_formula_list.
 
-指令参数：无。
+Parámetros de la instrucción: ninguno.
 
-指令案例：
+Ejemplo de instrucción:
 
 .. code-block:: c++
    :linenos:
@@ -424,22 +424,20 @@ FAIRINO Palletizer（码垛机）
       cmd: "get_palletizing_formula_list"
    }
 
-指令反馈：
+Respuesta de la instrucción:
 
 .. code-block:: c++
    :linenos:
 
    /** 
    * @return status:200 
-   * @param  Array ${name} 码垛名称列表
+   * @param  Array ${name} lista de nombres de paletizado
    * @return status:404 "fail"
    */
 
-指令反馈案例：
+Ejemplo de respuesta de la instrucción:
 
 .. code-block:: c++
    :linenos:
 
    ["palletizing1"]
-
-

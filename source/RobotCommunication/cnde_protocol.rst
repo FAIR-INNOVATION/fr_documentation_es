@@ -1,9 +1,9 @@
-CNDE数据帧协议格式
-=========================
+Formato del protocolo de tramas de datos CNDE
+=============================================================
 
-协作机器人CNDE通讯协议如下，客户端向机器人发送数据及机器人向客户端反馈数据均需要遵循该协议；协议通过帧类型区分不同功能的数据帧，帧类型定义见表2-2；不同类型帧对应不用的数据内容，具体数据内容定义见表3-1 ~ 表3-7。
+El protocolo de comunicación CNDE del robot colaborativo es el siguiente. Tanto el envío de datos del cliente al robot como la retroalimentación de datos del robot al cliente deben seguir este protocolo; el protocolo distingue las tramas de datos de diferentes funciones mediante el tipo de trama, y la definición del tipo de trama se muestra en la Tabla 2-2; los diferentes tipos de trama corresponden a contenidos de datos diferentes, y la definición específica del contenido de datos se muestra en las Tablas 3-1 ~ 3-7.
 
-.. centered:: 表2-1 机器人CNDE数据帧格式
+.. centered:: Tabla 2-1 Formato de la trama de datos CNDE del robot
 
 .. list-table::
    :widths: 20 20 20 20 20 20 20
@@ -11,15 +11,15 @@ CNDE数据帧协议格式
    :align: center
    :class: sheet-center
 
-   * - **名称**
-     - **帧头**
-     - **帧计数**
-     - **帧类型**
-     - **数据长度**
-     - **内容**
-     - **帧尾**
+   * - **Nombre**
+     - **Cabecera de trama**
+     - **Contador de trama**
+     - **Tipo de trama**
+     - **Longitud de datos**
+     - **Contenido**
+     - **Cola de trama**
    
-   * - **长度(byte)**
+   * - **Longitud (byte)**
      - 2
      - 1
      - 1
@@ -27,15 +27,15 @@ CNDE数据帧协议格式
      - --
      - 2
    
-   * - **内容**
+   * - **Contenido**
      - 0x5A5A
      - 0 ~ 255
      - 0 ~ 8
-     - “数据内容”的字节个数
-     - 数据帧内容
+     - Número de bytes del "contenido de datos"
+     - Contenido de la trama de datos
      - 0xA5A5
 
-.. centered:: 表2-2 机器人CNDE数据帧类型
+.. centered:: Tabla 2-2 Tipos de tramas de datos CNDE del robot
 
 .. list-table::
    :widths: 40 20 40
@@ -43,42 +43,42 @@ CNDE数据帧协议格式
    :align: center
    :class: sheet-center
 
-   * - **类型**
-     - **数值**
-     - **数据帧方向**
+   * - **Tipo**
+     - **Valor**
+     - **Dirección de la trama de datos**
 
-   * - 输入配置帧（控制配置）
+   * - Trama de configuración de entrada (configuración de control)
      - 0x00
      - Client->Robot
 
-   * - 输出配置帧（状态配置）
+   * - Trama de configuración de salida (configuración de estado)
      - 0x01
      - Client->Robot
 
-   * - CNDE输出启动
+   * - Inicio de salida CNDE
      - 0x02
      - Client->Robot
 
-   * - CNDE输出停止
+   * - Parada de salida CNDE
      - 0x03
      - Client->Robot
 
-   * - 输出数据帧（状态数据）
+   * - Trama de datos de salida (datos de estado)
      - 0x04
      - Robot->Client
 
-   * - 输入数据帧（控制数据）
+   * - Trama de datos de entrada (datos de control)
      - 0x05
      - Client->Robot
 
-   * - 字符提示消息
+   * - Mensaje de aviso de caracteres
      - 0x06
      - Client->Robot, Robot->Client
 
-   * - 设置机器人CNDE协议版本号
+   * - Establecer el número de versión del protocolo CNDE del robot
      - 0x07
      - Client->Robot
 
-   * - 获取机器人软固件版本
+   * - Obtener la versión de software y firmware del robot
      - 0x08
      - Client->Robot, Robot->Client

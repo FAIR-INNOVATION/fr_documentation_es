@@ -1,77 +1,77 @@
-机器人安全设置
-=================
+Configuración de seguridad del robot
+=====================================
 
 .. toctree:: 
     :maxdepth: 5
 
-设置碰撞等级
-+++++++++++++++
+Establecer nivel de colisión
++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetAnticollision (mode,level,config)``"
-    "描述", "设置碰撞等级"
-    "必选参数", "- ``mode``:0-等级，1-百分比；
-    - ``level=[j1,j2,j3,j4,j5,j6]``:碰撞阈值；
-    - ``config``:0-不更新配置文件，1-更新配置文件"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetAnticollision (mode,level,config)``"
+    "Descripción", "Establecer nivel de colisión"
+    "Parámetros obligatorios", "- ``mode``:0-nivel，1-porcentaje；
+    - ``level=[j1,j2,j3,j4,j5,j6]``:umbral de colisión；
+    - ``config``:0-no actualizar archivo de configuración，1-actualizar archivo de configuración"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置碰撞后策略
-++++++++++++++++++
+Establecer estrategia tras colisión
+++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetCollisionStrategy(strategy,safeTime,safeDistance,safeVel,safetyMargin)``"
-    "描述", "设置碰撞后策略"
-    "必选参数", "- ``strategy``：0-报错暂停，1-继续运行，2-报错停止，3-重力矩模式，4-震荡相应模式，5-碰撞回弹模式"
-    "默认参数", "- ``safeTime``：安全停止时间[1000-2000]ms，默认为：1000
-    - ``safeDistance``：安全停止距离[1-150]mm，默认为：100
-    - ``safeVel``：安全停止速度[50-250]mm/s，默认为：250
-    - ``safetyMargin[6]``：安全系数[1-10]，默认为：[10,10,10,10,10,10]"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetCollisionStrategy(strategy,safeTime,safeDistance,safeVel,safetyMargin)``"
+    "Descripción", "Establecer estrategia tras colisión"
+    "Parámetros obligatorios", "- ``strategy``：0-pausar con error，1-continuar ejecutando，2-detener con error，3-modo de par de gravedad，4-modo de respuesta oscilante，5-modo de rebote tras colisión"
+    "Parámetros predeterminados", "- ``safeTime``：tiempo de parada segura[1000-2000]ms，predeterminado：1000
+    - ``safeDistance``：distancia de parada segura[1-150]mm，predeterminado：100
+    - ``safeVel``：velocidad de parada segura[50-250]mm/s，predeterminado：250
+    - ``safetyMargin[6]``：coeficiente de seguridad[1-10]，predeterminado：[10,10,10,10,10,10]"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-自定义碰撞检测阈值功能开始，设置关节端和TCP端的碰撞检测阈值
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Inicio de la función de umbral de detección de colisión personalizado, establecimiento de umbrales de detección de colisión del lado articular y del lado TCP
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.0
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``CustomCollisionDetectionStart(flag, jointDetectionThreshould, tcpDetectionThreshould, block)``"
-    "描述", "自定义碰撞检测阈值功能开始，设置关节端和TCP端的碰撞检测阈值"
-    "必选参数", "- ``flag``： 1-仅关节检测开启；2-仅TCP检测开启；3-关节和TCP检测同时开启
-    - ``jointDetectionThreshould``： 关节碰撞检测阈值 j1-j6
-    - ``tcpDetectionThreshould``： TCP碰撞检测阈值，xyzabc
-    - ``block``： 0-非阻塞；1-阻塞"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Prototipo", "``CustomCollisionDetectionStart(flag, jointDetectionThreshould, tcpDetectionThreshould, block)``"
+    "Descripción", "Inicio de la función de umbral de detección de colisión personalizado, establecimiento de umbrales de detección de colisión del lado articular y del lado TCP"
+    "Parámetros obligatorios", "- ``flag``： 1-solo detección articular activada；2-solo detección TCP activada；3-detección articular y TCP activadas simultáneamente
+    - ``jointDetectionThreshould``： umbral de detección de colisión articular j1-j6
+    - ``tcpDetectionThreshould``： umbral de detección de colisión TCP，xyzabc
+    - ``block``： 0-no bloqueante；1-bloqueante"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-自定义碰撞检测阈值功能关闭
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Cierre de la función de umbral de detección de colisión personalizado
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.0
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``CustomCollisionDetectionEnd()``"
-    "描述", "自定义碰撞检测阈值功能关闭"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Prototipo", "``CustomCollisionDetectionEnd()``"
+    "Descripción", "Cierre de la función de umbral de detección de colisión personalizado"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-机器人碰撞等级设置代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración del nivel de colisión del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     mode = 0
     config = 1
@@ -103,51 +103,51 @@
     print(f"CustomCollisionDetectionEnd rtn is {rtn}")
     robot.CloseRPC()
 
-设置正限位
-+++++++++++++
+Establecer límite positivo
+++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetLimitPositive(p_limit)``"
-    "描述", "设置正限位"
-    "必选参数", "- ``p_limit=[j1,j2,j3,j4,j5,j6]``：六个关节位置"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetLimitPositive(p_limit)``"
+    "Descripción", "Establecer límite positivo"
+    "Parámetros obligatorios", "- ``p_limit=[j1,j2,j3,j4,j5,j6]``：seis posiciones articulares"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置负限位
-+++++++++++++
+Establecer límite negativo
+++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetLimitNegative(n_limit)``"
-    "描述", "设置负限位"
-    "必选参数", "- ``n_limit=[j1,j2,j3,j4,j5,j6]``：六个关节位置"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetLimitNegative(n_limit)``"
+    "Descripción", "Establecer límite negativo"
+    "Parámetros obligatorios", "- ``n_limit=[j1,j2,j3,j4,j5,j6]``：seis posiciones articulares"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取关节软限位角度
-+++++++++++++++++++
+Obtener ángulo de límite suave articular
++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetJointSoftLimitDeg(flag=1)``"
-    "描述", "获取关节软限位角度"
-    "必选参数", "无"
-    "默认参数", "``flag``：0-阻塞，1-非阻塞  默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``[j1min,j1max,j2min,j2max,j3min,j3max, j4min,j4max,j5min, j5max, j6min,j6max]``：轴1~轴6，关节负限位与正限位，单位[mm]"
+    "Prototipo", "``GetJointSoftLimitDeg(flag=1)``"
+    "Descripción", "Obtener ángulo de límite suave articular"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "``flag``：0-bloqueante，1-no bloqueante  predeterminado1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``[j1min,j1max,j2min,j2max,j3min,j3max, j4min,j4max,j5min, j5max, j6min,j6max]``：eje1~eje6，límite negativo y límite positivo articular，unidad[mm]"
 
-机器人限位设置代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración de límites del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     plimit = [170.0, 80.0, 150.0, 80.0, 170.0, 160.0]
     robot.SetLimitPositive(plimit)
@@ -158,47 +158,47 @@
     print(f"neg limit deg: {neg_deg[0]}, {neg_deg[2]}, {neg_deg[4]}, {neg_deg[6]}, {neg_deg[8]}, {neg_deg[10]}")
     robot.CloseRPC()
 
-设置机器人碰撞检测方法
-+++++++++++++++++++++++++++++++++
+Establecer método de detección de colisión del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetCollisionDetectionMethod(method, thresholdMode)``"
-    "描述", "设置机器人碰撞检测方法"
-    "必选参数", "
-    - ``method``：碰撞检测方法：0-电流模式；1-双编码器；2-电流和双编码器同时开启
-    - ``thresholdMode``：碰撞等级阈值方式；0-碰撞等级固定阈值方式；1-自定义碰撞检测阈值  
+    "Prototipo", "``SetCollisionDetectionMethod(method, thresholdMode)``"
+    "Descripción", "Establecer método de detección de colisión del robot"
+    "Parámetros obligatorios", "
+    - ``method``：método de detección de colisión：0-modo de corriente；1-doble codificador；2-corriente y doble codificador activados simultáneamente
+    - ``thresholdMode``：modo de umbral del nivel de colisión；0-modo de umbral fijo por nivel de colisión；1-umbral de detección de colisión personalizado  
     "
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-设置静态下碰撞检测开始关闭
-+++++++++++++++++++++++++++++++++
+Establecer inicio y cierre de la detección de colisión en estado estático
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetStaticCollisionOnOff(status)``"
-    "描述", "设置静态下碰撞检测开始关闭"
-    "必选参数", "
-    - ``status``： 0-关闭；1-开启
+    "Prototipo", "``SetStaticCollisionOnOff(status)``"
+    "Descripción", "Establecer inicio y cierre de la detección de colisión en estado estático"
+    "Parámetros obligatorios", "
+    - ``status``： 0-cerrar；1-abrir
     "
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-设置机器人碰撞检测方法代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código para establecer el método de detección de colisión del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     rtn = robot.SetCollisionDetectionMethod(0,0)
     rtn = robot.SetStaticCollisionOnOff(1)
@@ -208,31 +208,31 @@
     print(f"SetStaticCollisionOnOff Off rtn is {rtn}")
     robot.CloseRPC()
 
-关节扭矩功率检测
-+++++++++++++++++++++++++++++++++
+Detección de potencia de par articular
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetPowerLimit(status, power)``"
-    "描述", "关节扭矩功率检测"
-    "必选参数", "
-    - ``status``：0-关闭；1-开启
-    - ``power``：设定最大功率(W)
+    "Prototipo", "``SetPowerLimit(status, power)``"
+    "Descripción", "Detección de potencia de par articular"
+    "Parámetros obligatorios", "
+    - ``status``：0-cerrar；1-abrir
+    - ``power``：establecer potencia máxima(W)
     "
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
     
-关节扭矩功率检测代码示例
-+++++++++++++++++++++++++++++++++
+Ejemplo de código de detección de potencia de par articular
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer conexión con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.DragTeachSwitch(1)
     robot.SetPowerLimit(1, 200)
@@ -242,31 +242,31 @@
     while count > 0:
         error = robot.ServoJT(torques, 0.001)
         count -= 1
-        time.sleep(0.001)  # 1ms delay
+        time.sleep(0.001)  # retardo de 1ms
     error = robot.ServoJTEnd()
     robot.DragTeachSwitch(0)
     robot.CloseRPC()
 
-设置安全速度参数
-+++++++++++++++++++++++++++++++++
+Establecer parámetros de velocidad de seguridad
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetVelReducePara(enable, maxTCPVel, strategy, maxJointVel=[45.0, 45.0, 45.0, 45.0, 45.0, 45.0])``"
-    "描述", "设置安全速度参数"
-    "必选参数", "
-    - ``enable``：0-关；1-手动模式启用；2-所有模式启用(不支持自动限速)
-    - ``maxTCPVel``：限制最大TCP速度;[0-1000]mm/s
-    - ``strategy``：超速后策略；0-停止报警；1-自动限速；2-停止报警并去使能
-    - ``maxJointVel``：6个关节最大速度(°/s) 默认为[45.0, 45.0, 45.0, 45.0, 45.0, 45.0]
+    "Prototipo", "``SetVelReducePara(enable, maxTCPVel, strategy, maxJointVel=[45.0, 45.0, 45.0, 45.0, 45.0, 45.0])``"
+    "Descripción", "Establecer parámetros de velocidad de seguridad"
+    "Parámetros obligatorios", "
+    - ``enable``：0-desactivado；1-activado en modo manual；2-activado en todos los modos(no soporta limitación automática de velocidad)
+    - ``maxTCPVel``：limitar la velocidad máxima TCP;[0-1000]mm/s
+    - ``strategy``：estrategia tras exceso de velocidad；0-detener con alarma；1-limitación automática de velocidad；2-detener con alarma y deshabilitar
+    - ``maxJointVel``：velocidad máxima de las 6 articulaciones(°/s) predeterminado[45.0, 45.0, 45.0, 45.0, 45.0, 45.0]
     "
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-设置安全速度参数的SDK代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código SDK de configuración de parámetros de velocidad de seguridad
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
@@ -314,40 +314,40 @@
     if __name__ == "__main__":
         main()
 
-获取安全配置参数校验和
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener suma de verificación de los parámetros de configuración de seguridad
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetSafetyParamsCheckSum(self)``"
-    "描述", "获取安全配置参数校验和"
-    "必选参数", "
-    - ``status``：校验状态，0-有效，1-校验中，2-校验失败
-    - ``checksum``：校验和 8位16进制（底层返回uint32_t，需要手动转换）
+    "Prototipo", "``GetSafetyParamsCheckSum(self)``"
+    "Descripción", "Obtener suma de verificación de los parámetros de configuración de seguridad"
+    "Parámetros obligatorios", "
+    - ``status``：estado de verificación，0-válido，1-en verificación，2-verificación fallida
+    - ``checksum``：suma de verificación 8 dígitos hexadecimales (la capa inferior devuelve uint32_t, requiere conversión manual)
     "
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-安全操作密码校验
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Verificación de contraseña de operación de seguridad
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SafetyOPPasswordCheck(self,status,password)``"
-    "描述", "安全操作密码校验"
-    "必选参数", "
-    - ``status``：校验，0-开启，1-关闭
-    - ``password``：密码
+    "Prototipo", "``SafetyOPPasswordCheck(self,status,password)``"
+    "Descripción", "Verificación de contraseña de operación de seguridad"
+    "Parámetros obligatorios", "
+    - ``status``：verificación，0-abrir，1-cerrar
+    - ``password``：contraseña
     "
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-安全配置参数密码校验代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de verificación de contraseña de los parámetros de configuración de seguridad
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos: 
@@ -356,7 +356,7 @@
     import time
     from fairino import Robot
 
-    # 与机器人控制器建立连接
+    # Establecer conexión con el controlador del robot
     robot = Robot.RPC('192.168.58.2')
 
 

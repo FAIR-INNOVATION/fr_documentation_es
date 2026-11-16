@@ -1,62 +1,62 @@
-其他接口
+Otras interfaces
 =================
 
 .. toctree:: 
     :maxdepth: 5
 
-获取SSH公钥
-++++++++++++++++++++++++++
+Obtener la clave pública SSH
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetSSHKeygen()``"
-    "描述", "获取SSH公钥"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``keygen``：公钥"
+    "Prototipo", "``GetSSHKeygen()``"
+    "Descripción", "Obtener la clave pública SSH"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``keygen``：Clave pública"
 
-下发SCP指令
-+++++++++++++++++++++++++++++++++++++++++++++
+Enviar comando SCP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetSSHScpCmd(mode, sshname, sship, usr_file_url, robot_file_url)``"
-    "描述", "下发SCP指令"
-    "必选参数", "- ``mode``：0-上传（上位机->控制器），1-下载（控制器->上位机）
-    - ``sshname``：上位机用户名
-    - ``sship``：上位机ip地址
-    - ``usr_file_url``：上位机文件路径
-    - ``robot_file_url``：机器人控制器文件路径"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetSSHScpCmd(mode, sshname, sship, usr_file_url, robot_file_url)``"
+    "Descripción", "Enviar comando SCP"
+    "Parámetros obligatorios", "- ``mode``：0-carga (PC anfitrión->controlador), 1-descarga (controlador->PC anfitrión)
+    - ``sshname``：Nombre de usuario del PC anfitrión
+    - ``sship``：Dirección IP del PC anfitrión
+    - ``usr_file_url``：Ruta del archivo en el PC anfitrión
+    - ``robot_file_url``：Ruta del archivo en el controlador del robot"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-计算指定路径下文件的MD5值
-++++++++++++++++++++++++++
+Calcular el valor MD5 del archivo en la ruta especificada
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ComputeFileMD5(file_path)``"
-    "描述", "计算指定路径下文件的MD5值"
-    "必选参数", "- ``file_path``：文件路径包含文件名，默认Traj文件夹路径为:/fruser/traj/,如/fruser/traj/trajHelix_aima_1.txt"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``md5``：文件MD5值"
+    "Prototipo", "``ComputeFileMD5(file_path)``"
+    "Descripción", "Calcular el valor MD5 del archivo en la ruta especificada"
+    "Parámetros obligatorios", "- ``file_path``：Ruta del archivo incluido el nombre del archivo; la ruta predeterminada de la carpeta Traj es: /fruser/traj/, por ejemplo /fruser/traj/trajHelix_aima_1.txt"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``md5``：Valor MD5 del archivo"
 
-机器人SSH、MD5指令代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de las instrucciones SSH y MD5 del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     file_path = "/fruser/airlab.lua"
     md5 = ""
@@ -79,44 +79,44 @@
     print(f"md5 is: {md5}")
     robot.CloseRPC()
 
-设置机器人 20004 端口反馈周期
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el período de retroalimentación del puerto 20004 del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetRobotRealtimeStateSamplePeriod(period)``"
-    "描述", "设置机器人 20004 端口反馈周期"
-    "必选参数", "- ``period``：机器人 20004 端口反馈周期(ms)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetRobotRealtimeStateSamplePeriod(period)``"
+    "Descripción", "Establecer el período de retroalimentación del puerto 20004 del robot"
+    "Parámetros obligatorios", "- ``period``：Período de retroalimentación del puerto 20004 del robot (ms)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-获取机器人 20004 端口反馈周期
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el período de retroalimentación del puerto 20004 del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetRobotRealtimeStateSamplePeriod()``"
-    "描述", "获取机器人 20004 端口反馈周期"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``period``：机器人 20004 端口反馈周期(ms)"
+    "Prototipo", "``GetRobotRealtimeStateSamplePeriod()``"
+    "Descripción", "Obtener el período de retroalimentación del puerto 20004 del robot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``period``：Período de retroalimentación del puerto 20004 del robot (ms)"
 
-机器人20004端口状态反馈周期配置代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración del período de retroalimentación de estado del puerto 20004 del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.SetRobotRealtimeStateSamplePeriod(10)
     error,getPeriod = robot.GetRobotRealtimeStateSamplePeriod()
@@ -124,45 +124,45 @@
     time.sleep(1)
     robot.CloseRPC()
 
-机器人软件升级
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Actualización del software del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SoftwareUpgrade(filePath, block)``"
-    "描述", "机器人软件升级"
-    "必选参数", "- ``filePath``：软件升级包全路径
-    - ``block``：是否阻塞至升级完成 true:阻塞；false:非阻塞"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode "
+    "Prototipo", "``SoftwareUpgrade(filePath, block)``"
+    "Descripción", "Actualización del software del robot"
+    "Parámetros obligatorios", "- ``filePath``：Ruta completa del paquete de actualización de software
+    - ``block``：Si se bloquea hasta completar la actualización true:bloquear; false:no bloquear"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode "
 
-获取机器人软件升级状态
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado de actualización del software del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetSoftwareUpgradeState()``"
-    "描述", "获取机器人软件升级状态"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``state``：机器人软件包升级状态，0：空闲中或上传升级包中，1~100：升级完成百分比，-1：升级软件失败，-2：校验失败，-3：版本校验失败，-4：解压失败，-5：用户配置升级失败，-6：外设配置升级失败，-7：扩展轴配置升级失败，-8：机器人配置升级失败，-9：DH参数配置升级失败"
+    "Prototipo", "``GetSoftwareUpgradeState()``"
+    "Descripción", "Obtener el estado de actualización del software del robot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``state``：Estado de actualización del paquete de software del robot, 0: inactivo o subiendo paquete de actualización, 1~100: porcentaje completado de la actualización, -1: fallo al actualizar el software, -2: fallo de verificación, -3: fallo de verificación de versión, -4: fallo de descompresión, -5: fallo de actualización de la configuración de usuario, -6: fallo de actualización de la configuración de periféricos, -7: fallo de actualización de la configuración del eje extendido, -8: fallo de actualización de la configuración del robot, -9: fallo de actualización de la configuración de parámetros DH"
 
-机器人软件升级代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de actualización del software del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     error = robot.SoftwareUpgrade("D://zUP/QNX382/software.tar.gz", False)
     print(f"SoftwareUpgrade error is {error}")
@@ -172,8 +172,8 @@
         time.sleep(3)
     robot.CloseRPC()
 
-下载点位表数据库
-+++++++++++++++++++++++++++++++
+Descargar la base de datos de la tabla de puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: python SDK-v2.0.1
 
@@ -181,64 +181,64 @@
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``PointTableDownLoad(point_table_name, save_file_path)``"
-    "描述", "下载点位表数据库"
-    "必选参数", "- ``point_table_name``：要下载的点位表名称    pointTable1.db;
-    - ``save_file_path``:下载点位表的存储路径   C://test/;"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``PointTableDownLoad(point_table_name, save_file_path)``"
+    "Descripción", "Descargar la base de datos de la tabla de puntos"
+    "Parámetros obligatorios", "- ``point_table_name``：Nombre de la tabla de puntos a descargar    pointTable1.db;
+    - ``save_file_path``:Ruta de guardado de la tabla de puntos a descargar   C://test/;"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-上传点位表数据库
-+++++++++++++++++++++++++++++++++
+Subir la base de datos de la tabla de puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.1
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``PointTableUpLoad(point_table_file_path)``"
-    "描述", "上传点位表数据库"
-    "必选参数", "- ``point_table_file_path``：上传点位表的全路径名   C://test/pointTable1.db"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``PointTableUpLoad(point_table_file_path)``"
+    "Descripción", "Subir la base de datos de la tabla de puntos"
+    "Parámetros obligatorios", "- ``point_table_file_path``：Nombre de ruta completo de la tabla de puntos a subir   C://test/pointTable1.db"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-点位表更新lua文件
-+++++++++++++++++++++++++++++++++
+Actualizar el archivo lua de la tabla de puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.1
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``PointTableUpdateLua(point_table_name, lua_file_name)``"
-    "描述", "点位表更新lua文件"
-    "必选参数", "- ``point_table_name``：要切换的点位表名称pointTable1.db,当点位表为空，即""时，表示将lua程序更新为未应用点位表的初始程序
-    - ``lua_file_name``: 要更新的lua文件名称 testPointTable.lua"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``PointTableUpdateLua(point_table_name, lua_file_name)``"
+    "Descripción", "Actualizar el archivo lua de la tabla de puntos"
+    "Parámetros obligatorios", "- ``point_table_name``：Nombre de la tabla de puntos a cambiar pointTable1.db, cuando la tabla de puntos está vacía, es decir "" , indica que el programa lua se actualiza al programa inicial sin aplicar la tabla de puntos
+    - ``lua_file_name``: Nombre del archivo lua a actualizar testPointTable.lua"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-点位表切换并应用
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Cambio y aplicación de la tabla de puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``PointTableSwitch(self, point_table_name)``"
-    "描述", "点位表切换"
-    "必选参数", "
-    - ``point_table_name``：要切换的点位表名称 `pointTable1.db`,当点位表为空，即``时，表示将lua程序更新为未应用点位表的初始程序
+    "Prototipo", "``PointTableSwitch(self, point_table_name)``"
+    "Descripción", "Cambio de la tabla de puntos"
+    "Parámetros obligatorios", "
+    - ``point_table_name``：Nombre de la tabla de puntos a cambiar `pointTable1.db`, cuando la tabla de puntos está vacía, es decir `` , indica que el programa lua se actualiza al programa inicial sin aplicar la tabla de puntos
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-机器人点位表操作代码示例
-+++++++++++++++++++++++++++++++++
+Ejemplo de código de operación de la tabla de puntos del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     save_path = "D://zDOWN/"
     point_table_name = "point_table_FR5.db"
@@ -253,57 +253,57 @@
     print(f"retval is: {rtn}")
     robot.CloseRPC()
 
-控制器日志下载
-+++++++++++++++++++++++++++++++++++++++++++++
+Descarga del registro del controlador
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.1
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``RbLogDownload(savePath)``"
-    "描述", "控制器日志下载"
-    "必选参数", "- ``savePath``：保存文件路径D://zDown/"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``RbLogDownload(savePath)``"
+    "Descripción", "Descarga del registro del controlador"
+    "Parámetros obligatorios", "- ``savePath``：Ruta de guardado del archivo D://zDown/"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-所有数据源下载
-+++++++++++++++++++++++++++++++++++++++++++++
+Descarga de todas las fuentes de datos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.1
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AllDataSourceDownload(savePath)``"
-    "描述", "所有数据源下载"
-    "必选参数", "- ``savePath``：保存文件路径D://zDown/"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AllDataSourceDownload(savePath)``"
+    "Descripción", "Descarga de todas las fuentes de datos"
+    "Parámetros obligatorios", "- ``savePath``：Ruta de guardado del archivo D://zDown/"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-数据备份包下载
-+++++++++++++++++++++++++++++++++++++++++++++
+Descarga del paquete de copia de seguridad de datos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.1
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``DataPackageDownload(savePath)``"
-    "描述", "数据备份包下载"
-    "必选参数", "- ``savePath``：保存文件路径D://zDown/"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``DataPackageDownload(savePath)``"
+    "Descripción", "Descarga del paquete de copia de seguridad de datos"
+    "Parámetros obligatorios", "- ``savePath``：Ruta de guardado del archivo D://zDown/"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-下载控制器数据代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de descarga de datos del controlador
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     rtn = robot.RbLogDownload("D://zDOWN/")
     print(f"RbLogDownload rtn is {rtn}")
@@ -313,88 +313,88 @@
     print(f"DataPackageDownload rtn is {rtn}")
     robot.CloseRPC()
 
-设置编码器升级
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer la actualización del codificador
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetEncoderUpgrade(path)``"
-    "描述", "设置编码器升级"
-    "必选参数", "- ``path``：本地升级包全路径(D://zUP/XXXXX.bin)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetEncoderUpgrade(path)``"
+    "Descripción", "Establecer la actualización del codificador"
+    "Parámetros obligatorios", "- ``path``：Ruta completa local del paquete de actualización (D://zUP/XXXXX.bin)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
     
-设置关节固件升级
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer la actualización del firmware de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetJointFirmwareUpgrade(type, path)``"
-    "描述", "设置关节固件升级"
-    "必选参数", "- ``type``：升级文件类型；1-升级固件；2-升级从站配置文件
-    - ``path``：本地升级包全路径(D://zUP/XXXXX.bin)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetJointFirmwareUpgrade(type, path)``"
+    "Descripción", "Establecer la actualización del firmware de las articulaciones"
+    "Parámetros obligatorios", "- ``type``：Tipo de archivo de actualización; 1-actualizar firmware; 2-actualizar archivo de configuración de esclavo
+    - ``path``：Ruta completa local del paquete de actualización (D://zUP/XXXXX.bin)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置控制箱固件升级
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer la actualización del firmware de la caja de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetCtrlFirmwareUpgrade(type, path)``"
-    "描述", "设置控制箱固件升级"
-    "必选参数", "- ``type``：升级文件类型；1-升级固件；2-升级从站配置文件
-    - ``path``：本地升级包全路径(D://zUP/XXXXX.bin)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetCtrlFirmwareUpgrade(type, path)``"
+    "Descripción", "Establecer la actualización del firmware de la caja de control"
+    "Parámetros obligatorios", "- ``type``：Tipo de archivo de actualización; 1-actualizar firmware; 2-actualizar archivo de configuración de esclavo
+    - ``path``：Ruta completa local del paquete de actualización (D://zUP/XXXXX.bin)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
     
-设置末端固件升级
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer la actualización del firmware del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetEndFirmwareUpgrade(type, path)``"
-    "描述", "设置末端固件升级"
-    "必选参数", "- ``type``：升级文件类型；1-升级固件；2-升级从站配置文件
-    - ``path``：本地升级包全路径(D://zUP/XXXXX.bin)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetEndFirmwareUpgrade(type, path)``"
+    "Descripción", "Establecer la actualización del firmware del extremo"
+    "Parámetros obligatorios", "- ``type``：Tipo de archivo de actualización; 1-actualizar firmware; 2-actualizar archivo de configuración de esclavo
+    - ``path``：Ruta completa local del paquete de actualización (D://zUP/XXXXX.bin)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
        
-关节全参数配置文件升级
-+++++++++++++++++++++++++++++++++++++++++++++
+Actualización del archivo de configuración de todos los parámetros de las articulaciones
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``JointAllParamUpgrade(path)``"
-    "描述", "关节全参数配置文件升级"
-    "必选参数", "- ``path``：本地升级包全路径(D://zUP/XXXXX.bin)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``JointAllParamUpgrade(path)``"
+    "Descripción", "Actualización del archivo de configuración de todos los parámetros de las articulaciones"
+    "Parámetros obligatorios", "- ``path``：Ruta completa local del paquete de actualización (D://zUP/XXXXX.bin)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-机器人从站固件升级代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de actualización del firmware del esclavo del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.RobotEnable(0)
     time.sleep(0.2)
@@ -414,97 +414,97 @@
     print(f"robot SetJointFirmwareUpgrade rtn is {rtn}")
     robot.CloseRPC()
        
-机器人操作系统升级(LA控制箱)
-+++++++++++++++++++++++++++++++++++++++++++++
+Actualización del sistema operativo del robot (caja de control LA)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``KernelUpgrade(filePath)``"
-    "描述", "机器人操作系统升级(LA控制箱)"
-    "必选参数", "- ``filePath``：操作系统升级包全路径"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``KernelUpgrade(filePath)``"
+    "Descripción", "Actualización del sistema operativo del robot (caja de control LA)"
+    "Parámetros obligatorios", "- ``filePath``：Ruta completa del paquete de actualización del sistema operativo"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
        
-获取机器人操作系统升级结果(LA控制箱)
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el resultado de la actualización del sistema operativo del robot (caja de control LA)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.6
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetKernelUpgradeResult()``"
-    "描述", "获取机器人操作系统升级结果(LA控制箱)"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``GetKernelUpgradeResult()``"
+    "Descripción", "Obtener el resultado de la actualización del sistema operativo del robot (caja de control LA)"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
        
-机器人MCU日志生成
-+++++++++++++++++++++++++++++++++++++++++++++
+Generación del registro MCU del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``RobotMCULogCollect()``"
-    "描述", "机器人MCU日志生成"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``RobotMCULogCollect()``"
+    "Descripción", "Generación del registro MCU del robot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
            
-设置端口通讯断开时停止机器人运行
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer la detención del robot al desconectarse la comunicación del puerto
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetRobotStopOnComDisc(portID, enable, confirmTime)``"
-    "描述", "设置端口通讯断开时停止机器人运行"
-    "必选参数", "
-    - ``portID``：端口编号 0-8080；1-8083；2-20002；3-20004
-    - ``enable``：0-关闭；1-开启
-    - ``confirmTime``：通讯中断确认时长(ms)[0-5000]"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetRobotStopOnComDisc(portID, enable, confirmTime)``"
+    "Descripción", "Establecer la detención del robot al desconectarse la comunicación del puerto"
+    "Parámetros obligatorios", "
+    - ``portID``：Número de puerto 0-8080; 1-8083; 2-20002; 3-20004
+    - ``enable``：0-desactivar; 1-activar
+    - ``confirmTime``：Duración de confirmación de interrupción de comunicación (ms) [0-5000]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
            
-获取端口通讯断开时停止机器人运行参数
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener los parámetros de detención del robot al desconectarse la comunicación del puerto
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetRobotStopOnComDisc(portID)``"
-    "描述", "获取端口通讯断开时停止机器人运行参数"
-    "必选参数", "
-    - ``portID``：端口编号 0-8080；1-8083；2-20002；3-20004
-    - ``enable``：0-关闭；1-开启
-    - ``confirmTime``：通讯中断确认时长(ms)[0-5000]"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``GetRobotStopOnComDisc(portID)``"
+    "Descripción", "Obtener los parámetros de detención del robot al desconectarse la comunicación del puerto"
+    "Parámetros obligatorios", "
+    - ``portID``：Número de puerto 0-8080; 1-8083; 2-20002; 3-20004
+    - ``enable``：0-desactivar; 1-activar
+    - ``confirmTime``：Duración de confirmación de interrupción de comunicación (ms) [0-5000]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-端口通讯断开时停止机器人运行参数代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de los parámetros de detención del robot al desconectarse la comunicación del puerto
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from time import sleep
     import time
     from fairino import Robot
-    # 与机器人控制器建立连接
+    # Establecer comunicación con el controlador del robot
     robot = Robot.RPC('192.168.58.2')
 
     def test_robot_stop_on_com_disc(self):
-        # 初始化参数
+        # Inicializar parámetros
         enable = False
         confirm_time = 0
 
-        # 设置通信断开时机器人停止功能
+        # Establecer la función de detención del robot al desconectarse la comunicación
         rtn = robot.SetRobotStopOnComDisc(0, True, 330)
         print(f"SetRobotStopOnComDisc index0: {rtn}")
 
@@ -517,7 +517,7 @@
         rtn = robot.SetRobotStopOnComDisc(3, True, 220)
         print(f"SetRobotStopOnComDisc index3: {rtn}")
 
-        # 获取通信断开时机器人停止设置
+        # Obtener la configuración de detención del robot al desconectarse la comunicación
         rtn, enable, confirm_time = robot.GetRobotStopOnComDisc(0)
         print(f"GetRobotStopOnComDisc 8080 rtn {rtn}; enable is {enable}; confirm time is {confirm_time}")
 
@@ -530,27 +530,27 @@
         rtn, enable, confirm_time = robot.GetRobotStopOnComDisc(3)
         print(f"GetRobotStopOnComDisc 20004 rtn {rtn}; enable is {enable}; confirm time is {confirm_time}")
 
-        # 关闭RPC连接
+        # Cerrar la conexión RPC
         robot.CloseRPC()
         return 0
 
     test_robot_stop_on_com_disc(robot)
 
-UDP发送指令帧
-+++++++++++++++++++++++++++++++++++++++++++++
+Envío de trama de instrucciones por UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SendUDPFrame(frame)``"
-    "描述", "UDP发送指令帧"
-    "必选参数", "
-    - ``frame``：发送UDP数据，透传，不封装"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SendUDPFrame(frame)``"
+    "Descripción", "Envío de trama de instrucciones por UDP"
+    "Parámetros obligatorios", "
+    - ``frame``：Datos UDP a enviar, transmisión transparente, sin encapsulación"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-基于UDP通信的SDK代码示例
+Ejemplo de código SDK basado en comunicación UDP
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
@@ -559,13 +559,13 @@ UDP发送指令帧
     import time
     from fairino import Robot
 
-    # 与机器人控制器建立连接
+    # Establecer comunicación con el controlador del robot
     robot = Robot.RPC('192.168.58.2')
 
     def TestSendUDPFrame(self):
-        # 设置回调
+        # Establecer la función de devolución de llamada
         def callback(src_type, count, cmd_id, data_len, content):
-            print("收到回复: cmd_id={} count={} data_len={} content={}".format(cmd_id, count, data_len, content))
+            print("Respuesta recibida: cmd_id={} count={} data_len={} content={}".format(cmd_id, count, data_len, content))
             return 0
         robot.SetUDPCmdRpyCallback(callback)
 
@@ -592,7 +592,7 @@ UDP发送指令帧
 
         time.sleep(1)
 
-        # 发送UDP帧数据校验测试
+        # Prueba de verificación de datos de trama UDP enviada
         rtn = robot.SendUDPFrame("/f/bIII20III303III7IIIMode(0)III/b/f")
         print(f"SendUDPFrame rtn is {rtn}")
 
@@ -616,25 +616,25 @@ UDP发送指令帧
 
     TestSendUDPFrame(robot)
     
-设置用户自定义机器人末端灯色
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer el color de la luz del extremo del robot personalizado por el usuario
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetUserLEDColor(r, g, b)``"
-    "描述", "设置用户自定义机器人末端灯色"
-    "必选参数", "
-    - ``r``：末端红灯控制；0-灭；1-亮
-    - ``g``：末端绿灯控制；0-灭；1-亮
-    - ``b``：末端蓝灯控制；0-灭；1-亮
+    "Prototipo", "``SetUserLEDColor(r, g, b)``"
+    "Descripción", "Establecer el color de la luz del extremo del robot personalizado por el usuario"
+    "Parámetros obligatorios", "
+    - ``r``：Control de la luz roja del extremo; 0-apagada; 1-encendida
+    - ``g``：Control de la luz verde del extremo; 0-apagada; 1-encendida
+    - ``b``：Control de la luz azul del extremo; 0-apagada; 1-encendida
     - "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置用户自定义机器人末端灯色的SDK代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código SDK de establecimiento del color de la luz del extremo del robot personalizado por el usuario
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
@@ -642,54 +642,54 @@ UDP发送指令帧
     import time
     from fairino import Robot
 
-    # 与机器人控制器建立连接
+    # Establecer comunicación con el controlador del robot
     robot = Robot.RPC('192.168.58.2')
 
 
     def testled(self):
-        # 设置用户LED灯颜色
-        # 参数顺序: R, G, B (红, 绿, 蓝)
+        # Establecer el color de la luz LED personalizada del usuario
+        # Orden de parámetros: R, G, B (rojo, verde, azul)
 
-        # 白色 (红绿蓝全亮)
+        # Blanco (rojo, verde y azul encendidos)
         robot.SetUserLEDColor(True, True, True)
         time.sleep(1)
 
-        # 关闭所有灯
+        # Apagar todas las luces
         robot.SetUserLEDColor(False, False, False)
         time.sleep(1)
 
-        # 红色 (仅红灯亮)
+        # Rojo (solo luz roja encendida)
         robot.SetUserLEDColor(True, False, False)
         time.sleep(1)
 
-        # 绿色 (仅绿灯亮)
+        # Verde (solo luz verde encendida)
         robot.SetUserLEDColor(False, True, False)
         time.sleep(1)
 
-        # 蓝色 (仅蓝灯亮)
+        # Azul (solo luz azul encendida)
         robot.SetUserLEDColor(False, False, True)
 
-        # 关闭连接
+        # Cerrar la conexión
         robot.CloseRPC()
 
     testled(robot)
 
-通过TCP8080发送自定义指令帧
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Enviar trama de instrucciones personalizada a través de TCP 8080
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SendTCPFrame(self, frame):``"
-    "描述", "通过TCP8080发送自定义指令帧（mTLS 模式下自动经加密通道）"
-    "必选参数", "
-    - ``frame``：完整指令帧，如 /f/bIII52III236III7IIIMode(0)III/b/f"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SendTCPFrame(self, frame):``"
+    "Descripción", "Enviar trama de instrucciones personalizada a través de TCP 8080 (en modo mTLS se realiza automáticamente a través del canal cifrado)"
+    "Parámetros obligatorios", "
+    - ``frame``：Trama de instrucciones completa, como /f/bIII52III236III7IIIMode(0)III/b/f"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-通过TCP8080发送自定义指令帧代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de envío de trama de instrucciones personalizada a través de TCP 8080
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
@@ -697,22 +697,22 @@ UDP发送指令帧
     import time
 
     def main():
-        # Establish connection with the robot controller (TLS enabled)
+        # Establecer comunicación con el controlador del robot (TLS habilitado)
         robot = Robot.RPC(
             '192.168.58.2',
             tls_enable=True,
             tls_cert_path=r"E:\certs"
         )
-        time.sleep(0.5)  # Wait for connection and data reception
+        time.sleep(0.5)  # Esperar la conexión y la recepción de datos
 
-        # Set simple UDP command reply callback
+        # Establecer una función de devolución de llamada simple de respuesta de comandos UDP
         def callback(src_type, count, cmd_id, data_len, content):
             print("Callback: cmd_id={} count={} data_len={} content={}".format(cmd_id, count, data_len, content))
             return 0
 
         robot.SetUDPCmdRpyCallback(callback)
 
-        # Program name to load
+        # Nombre del programa a cargar
         program_name = "mtls.lua"
         state = 0
         line = 0
@@ -731,7 +731,7 @@ UDP发送指令帧
         print(f"[SEND] {mode0}")
         robot.SendTCPFrame(mode0)
 
-        # Set auto mode and load program
+        # Establecer modo automático y cargar el programa
         robot.Mode(0)
         robot.LoadDefaultProgConfig(0, program_name)
         robot.ProgramLoad(program_name)
@@ -739,7 +739,7 @@ UDP发送指令帧
         robot.ProgramRun()
         time.sleep(5)
 
-        # Pause and query program state
+        # Pausar y consultar el estado del programa
         robot.PauseMotion()
         rtn, state = robot.GetProgramState()
         print(f"program state:{state}\n")
@@ -750,101 +750,101 @@ UDP发送指令帧
         rtn, loaded_name = robot.GetLoadedProgram()
         print(f"program name:{loaded_name}\n")
 
-        # Resume and pause again
+        # Reanudar y pausar de nuevo
         robot.ResumeMotion()
         time.sleep(2)
         robot.PauseMotion()
         time.sleep(2)
 
-        # Close connection
+        # Cerrar la conexión
         robot.CloseRPC()
         time.sleep(1)
 
     if __name__ == "__main__":
         main()
         
-数据备份包上传升级
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Actualización por carga del paquete de copia de seguridad de datos
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``DataPackageUpgrade(self, filePath)``"
-    "描述", "数据备份包上传升级"
-    "必选参数", "
-    - ``filePath``：上传数据备份包文件路径；D://zUP/fr_user_data.tar.gz"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``DataPackageUpgrade(self, filePath)``"
+    "Descripción", "Actualización por carga del paquete de copia de seguridad de datos"
+    "Parámetros obligatorios", "
+    - ``filePath``：Ruta del archivo del paquete de copia de seguridad de datos a subir; D://zUP/fr_user_data.tar.gz"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取数据备份包升级进度百分比    
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``GetDataPackageUpgradeProgress(self)``"
-    "描述", "获取数据备份包升级进度百分比"
-    "必选参数", "
-    - ``progress``：升级进度百分比[0-100], -1:升级失败"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
-
-获取关节全参数升级进度百分比    
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el porcentaje de progreso de la actualización del paquete de copia de seguridad de datos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetJointAllParamUpgradeProgress(self)``"
-    "描述", "获取关节全参数升级进度百分比"
-    "必选参数", "
-    - ``progress``：升级进度百分比[0-100], -1:升级失败"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``GetDataPackageUpgradeProgress(self)``"
+    "Descripción", "Obtener el porcentaje de progreso de la actualización del paquete de copia de seguridad de datos"
+    "Parámetros obligatorios", "
+    - ``progress``：Porcentaje de progreso de la actualización [0-100], -1:fallo de la actualización"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-数据备份包上传升级并查询升级进度代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el porcentaje de progreso de la actualización de todos los parámetros de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``GetJointAllParamUpgradeProgress(self)``"
+    "Descripción", "Obtener el porcentaje de progreso de la actualización de todos los parámetros de las articulaciones"
+    "Parámetros obligatorios", "
+    - ``progress``：Porcentaje de progreso de la actualización [0-100], -1:fallo de la actualización"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
+
+Ejemplo de código de actualización por carga del paquete de copia de seguridad de datos y consulta del progreso de la actualización
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     def test_data_package_upgrade(robot):
-    """Data package upgrade test"""
-    print("\n========== Data Package Upgrade Test ==========")
+    """Prueba de actualización del paquete de datos"""
+    print("\n========== Prueba de actualización del paquete de datos ==========")
 
     time.sleep(0.2)  # 200ms
 
-    # Data package upgrade
+    # Actualización del paquete de datos
     rtn = robot.DataPackageUpgrade("D://zUP/upgrade/FR5/fr_user_data.tar.gz")
     print(f"robot DataPackageUpgrade rtn is {rtn}")
 
-    # Poll upgrade progress until 100%
+    # Consultar el progreso de la actualización hasta el 100%
     upgradeProgress = 0
     while upgradeProgress < 100:
         rtn, upgradeProgress = robot.GetDataPackageUpgradeProgress()
         print(f"robot data package upgrade progress : {upgradeProgress}")
         time.sleep(0.2)  # 200ms
         
-关节全参数升级并查询关节全参数升级进度代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de actualización de todos los parámetros de las articulaciones y consulta del progreso de la actualización
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     def test_joint_all_param_upgrade(robot):
-    """Joint all parameters upgrade test"""
-    print("\n========== Joint All Param Upgrade Test ==========")
+    """Prueba de actualización de todos los parámetros de las articulaciones"""
+    print("\n========== Prueba de actualización de todos los parámetros de las articulaciones ==========")
 
-    # Disable robot before upgrading parameters
+    # Deshabilitar el robot antes de actualizar los parámetros
     robot.RobotEnable(0)
     time.sleep(0.2)  # 200ms
 
-    # Joint all parameters upgrade
+    # Actualización de todos los parámetros de las articulaciones
     rtn = robot.JointAllParamUpgrade("D://zUP/upgrade/FR3WMS/jointallparameters.db")
     print(f"robot JointAllParamUpgrade rtn is {rtn}")
 
-    # Poll upgrade progress until 100%
+    # Consultar el progreso de la actualización hasta el 100%
     upgradeProgress = 0
     while upgradeProgress < 100:
         rtn, upgradeProgress = robot.GetJointAllParamUpgradeProgress()

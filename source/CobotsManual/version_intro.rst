@@ -1,1145 +1,1144 @@
-版本 V4.0.1
+Versión V4.0.1
 -----------------
 
-日期：2026-10-27
+Fecha: 2026-10-27
 
-- **优化后台程序功能**： 
-    路径：示教程序 -> 程序编程 -> 后台程序。
+- **Optimización de la función de programas en segundo plano**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> Programa en segundo plano.
 
-    说明：1.后台程序支持socket通讯、板卡总线通讯、扩展IO交互；2.后台程序支持printmsg功能；3.新增机器人已就位的DO输出配置。
+    Descripción: 1. El programa en segundo plano admite comunicación socket, comunicación de bus de tarjeta y interacción de IO extendida; 2. El programa en segundo plano admite la función printmsg; 3. Se añade la configuración de salida DO de robot en posición.
 
-- **优化Lin\Arc\Circle物理速度显示**： 
+- **Optimización de la visualización de la velocidad física de Lin\Arc\Circle**: 
 
-    说明：在lin、arc、circle指令速度界面及对应指令修改界面、smarttool配置界面的物理速度，增加单位换算显示当前物理速度（cm/min）。
+    Descripción: En las interfaces de velocidad de las instrucciones lin, arc y circle, en las interfaces de modificación de las instrucciones correspondientes y en la interfaz de configuración de smarttool, se añade la conversión de unidades para mostrar la velocidad física actual (cm/min).
 
-- **优化Servo指令**： 
-    路径：示教程序 -> 程序编程 -> 伺服运动指令。
+- **Optimización de la instrucción Servo**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucción de movimiento servo.
 
-    说明：1.全局滤波设置，实现servoj（含servocart）运动时可调滤波时间；2.servoj及servocart指令滤波、位置增益参数开放可调。
+    Descripción: 1. Configuración de filtrado global, que permite ajustar el tiempo de filtrado durante el movimiento servoj (incluido servocart); 2. Los parámetros de filtrado y ganancia de posición de las instrucciones servoj y servocart se abren y son ajustables.
 
-- **优化夹爪状态查询功能**： 
-    路径：示教程序 -> 程序编程 -> 夹爪指令。
+- **Optimización de la función de consulta del estado de la pinza**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucción de pinza.
 
-    说明：1.web界面已适配夹爪状态增加状态监控开关，2.扩充已适配夹爪运动状态，新增夹持物体、物体掉落状态检测，支持指令查询。
+    Descripción: 1. La interfaz web añade un interruptor de monitorización de estado para las pinzas adaptadas; 2. Se amplía el estado de movimiento de las pinzas adaptadas, añadiendo la detección del estado de agarre de objeto y de caída de objeto, con soporte para consulta mediante instrucciones.
 
-- **新增板卡功能**： 
+- **Nueva función de tarjeta**: 
 
-    说明：新增板卡FieldBusSlaveWaitDI、FieldBusSlaveWaitAI等待超时报主子故障码功能。
+    Descripción: Se añade la función de reporte de subcódigo de fallo por tiempo de espera agotado de FieldBusSlaveWaitDI y FieldBusSlaveWaitAI de la tarjeta.
 
-- **新增单步运行调试功能**： 
-    路径：示教程序 -> 程序编程 -> 单步调试。
+- **Nueva función de depuración paso a paso**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> Depuración paso a paso.
 
-    说明：程序示教lua程序支持在手动模式下进行单步调试运行，可添加断点进行调试。
+    Descripción: El programa de enseñanza lua admite la depuración paso a paso en modo manual, pudiendo añadir puntos de interrupción para la depuración.
 
-- **新增安全停止信号暂停恢复策略可配置功能**： 
-    路径：初始设置 -> 安全 -> 安全停止。
+- **Nueva función configurable de estrategia de pausa y reanudación de la señal de parada de seguridad**: 
+    Ruta: Configuración inicial -> Seguridad -> Parada de seguridad.
 
-    说明：增加暂停恢复策略可配置，可自主选择手动或自动恢复运行。
+    Descripción: Se añade la configuración de la estrategia de pausa y reanudación, pudiendo elegir de forma autónoma la reanudación manual o automática del funcionamiento.
 
-- **新增PLC自动化整机出厂功能**： 
-    路径：辅助应用 -> 工具应用 -> 数据备份；初始设置 -> 安全 -> 网络安全。
+- **Nueva función de fábrica completa automatizada por PLC**: 
+    Ruta: Aplicaciones auxiliares -> Aplicación de herramientas -> Copia de seguridad de datos; Configuración inicial -> Seguridad -> Seguridad de red.
 
-    说明：1.备份包上传；2.查询全参数升级进度；3.增加恢复出厂设置、WebApp语言设置、SN码设置、按钮盒状态获取指令；4.PLC获取1ms机器人状态；5.DHCP、NTP启用配置(仅LA版)，8082端口启用配置。
+    Descripción: 1. Carga del paquete de copia de seguridad; 2. Consulta del progreso de actualización de todos los parámetros; 3. Se añaden instrucciones de restauración de configuración de fábrica, configuración del idioma de WebApp, configuración del código SN y obtención del estado de la caja de botones; 4. El PLC obtiene el estado del robot cada 1ms; 5. Configuración de activación de DHCP y NTP (solo versión LA), configuración de activación del puerto 8082.
 
-版本 V4.0.0
+Versión V4.0.0
 -----------------
 
-日期：2026-09-23
+Fecha: 2026-09-23
 
-- **优化速度缩减模式**： 
+- **Optimización del modo de reducción de velocidad**: 
 
-    说明：优化退出缩减模式后全局速度。
+    Descripción: Optimización de la velocidad global tras salir del modo reducido.
 
-- **优化赫优讯板卡远程模式通信**： 
-    路径：远程模式 -> 固件升级。
+- **Optimización de la comunicación en modo remoto de la tarjeta Hilscher**: 
+    Ruta: Modo remoto -> Actualización de firmware.
 
-    说明：提升通信实时性与稳定性。
+    Descripción: Mejora de la realimentación y la estabilidad de la comunicación.
 
-- **优化电流环负载辨识问题**： 
-    路径：初始设置 -> 负载 -> 辨识运动。
+- **Optimización del problema de identificación de carga del bucle de corriente**: 
+    Ruta: Configuración inicial -> Carga -> Movimiento de identificación.
 
-    说明：对大机型的负载辨识进行隐藏，小机型（FR3-FR16及对应的机型）的功能正常使用，小机型的标准负载辨识偏差约30%。
+    Descripción: Se oculta la identificación de carga para los modelos grandes; la función de los modelos pequeños (FR3-FR16 y modelos correspondientes) funciona con normalidad; la desviación de la identificación de carga estándar de los modelos pequeños es de aproximadamente el 30%.
 
-- **新增焊接过程中基于物理速度实时调速功能**： 
+- **Nueva función de ajuste de velocidad en tiempo real basado en la velocidad física durante la soldadura**: 
 
-    说明：对机器人运动速度进行实时调整。
+    Descripción: Ajuste en tiempo real de la velocidad de movimiento del robot.
 
-- **新增WebApp打开程序文件和工具模型交互功能+焊接JOB扩展功能**： 
-    路径：示教程序 -> 力控指令。
+- **Nueva función de interacción de apertura de archivos de programa y modelos de herramienta de WebApp + función de extensión JOB de soldadura**: 
+    Ruta: Programa de enseñanza -> Instrucciones de control de fuerza.
 
-    说明：1. 打开程序功能文件按A-Z或时间排序方便查找；2. 工具模型绑定工具进行关联加载；3. CO由3个JOB信号功能扩展至8个，支持256个工艺；4. 焊机UDP通讯新增JOB工艺序号配置。
+    Descripción: 1. La función de apertura de archivos de programa ordena por A-Z o por hora para facilitar la búsqueda; 2. El modelo de herramienta se asocia y carga vinculado a la herramienta; 3. CO se amplía de 3 funciones de señal JOB a 8, con soporte para 256 procesos; 4. La comunicación UDP de la máquina de soldar añade la configuración del número de proceso JOB.
 
-- **新增电流环拖动锁定机型适配**： 
-    路径：辅助应用 -> 工具应用 -> 拖动锁定。
+- **Nueva adaptación de modelos a la función de bloqueo de arrastre del bucle de corriente**: 
+    Ruta: Aplicaciones auxiliares -> Aplicación de herramientas -> Bloqueo de arrastre.
 
-    说明：扩展至FR20、FR30、FR3WML、FR3WMS四款新机型。
+    Descripción: Se amplía a los cuatro nuevos modelos FR20, FR30, FR3WML y FR3WMS.
 
-- **新增网络安全功能**： 
-    路径：初始设置 -> 安全 -> 网络安全。
+- **Nueva función de seguridad de red**: 
+    Ruta: Configuración inicial -> Seguridad -> Seguridad de red.
 
-    说明：1.浏览器访问webApp，通信协议自动跳转使用 HTTPS；2.客户端新增指令协议证书功能；3.软件启动时增加完整性校验。
+    Descripción: 1. Al acceder a webApp desde el navegador, el protocolo de comunicación salta automáticamente a HTTPS; 2. El cliente añade la función de certificado del protocolo de instrucciones; 3. Se añade la verificación de integridad al iniciar el software.
 
-- **新增安全日志导出功能**： 
-    路径：初始设置 -> 安全 -> 安全日志。
+- **Nueva función de exportación del registro de seguridad**: 
+    Ruta: Configuración inicial -> Seguridad -> Registro de seguridad.
 
-    说明：新增安全日志导出、删除功能。
+    Descripción: Se añaden las funciones de exportación y eliminación del registro de seguridad.
 
-版本 V3.9.9
+Versión V3.9.9
 -----------------
 
-日期：2026-09-01
+Fecha: 2026-09-01
 
-- **优化力控装配工艺包**： 
-    路径：示教程序 -> 力控指令。
+- **Optimización del paquete de proceso de ensamblaje por control de fuerza**: 
+    Ruta: Programa de enseñanza -> Instrucciones de control de fuerza.
 
-    说明：提升工艺易用性与可靠性。
+    Descripción: Mejora de la facilidad de uso y la fiabilidad del proceso.
 
-- **优化IGH主站动态从站配置**： 
+- **Optimización de la configuración dinámica de esclavos del maestro IGH**: 
 
-    说明：提升多机型兼容性与维护便捷性。
+    Descripción: Mejora de la compatibilidad entre múltiples modelos y de la facilidad de mantenimiento.
 
-- **新增多机型关节阻抗拖动功能扩展**： 
-    路径：辅助应用 -> 拖动锁定。
+- **Nueva extensión de la función de arrastre por impedancia articular para múltiples modelos**: 
+    Ruta: Aplicaciones auxiliares -> Bloqueo de arrastre.
 
-    说明：FR3-WML、FR3-WMS、FR3-C、FR5-C 机型拖动功能支持。
+    Descripción: Soporte de la función de arrastre para los modelos FR3-WML, FR3-WMS, FR3-C y FR5-C.
 
-- **新增安全配置校验功能**： 
-    路径：初始设置 -> 安全。
+- **Nueva función de verificación de la configuración de seguridad**: 
+    Ruta: Configuración inicial -> Seguridad.
 
-    说明：安全页面重构、安全配置密码校验、配置合法性校验及安全报告PDF生成。
+    Descripción: Reestructuración de la página de seguridad, verificación de la contraseña de configuración de seguridad, verificación de la legitimidad de la configuración y generación del informe de seguridad en PDF.
 
-- **新增凯维力六维力传感器完整适配**： 
-    路径：初始设置 -> 外设 -> 力传感器。
+- **Nueva adaptación completa del sensor de fuerza de seis dimensiones Kaiwei**: 
+    Ruta: Configuración inicial -> Periféricos -> Sensor de fuerza.
 
-    说明：新增KWL力传感器适配。
+    Descripción: Se añade la adaptación del sensor de fuerza KWL.
 
-- **新增激光扫描复现支持摆动功能**： 
-    路径：程序编程 -> 激光记录 -> 激光跟踪复现指令。
+- **Nuevo soporte de oscilación en la reproducción de escaneo láser**: 
+    Ruta: Programación de programas -> Registro láser -> Instrucción de reproducción de seguimiento láser.
 
-    说明：提升激光焊接工艺适配性与焊缝质量。
+    Descripción: Mejora de la adaptabilidad del proceso de soldadura láser y de la calidad de la soldadura.
 
-- **新增IGH协议栈物理链路健康诊断**： 
+- **Nuevo diagnóstico de salud del enlace físico de la pila de protocolos IGH**: 
 
-    说明：新增读取与界面显示，便于快速定位总线问题。
+    Descripción: Se añade la lectura y visualización en la interfaz, facilitando la localización rápida de problemas del bus.
 
-版本 V3.9.8
+Versión V3.9.8
 -----------------
 
-日期：2026-07-27
+Fecha: 2026-07-27
 
-- **优化传送带跟踪运动**： 
-    路径：示教程序 -> 传送带指令。
+- **Optimización del movimiento de seguimiento de cinta transportadora**: 
+    Ruta: Programa de enseñanza -> Instrucción de cinta transportadora.
 
-    说明：1.优化IO切入点与程序初始点设置；2.优化IO信号运动过程中多次触发。
+    Descripción: 1. Optimización del punto de entrada de IO y de la configuración del punto inicial del programa; 2. Optimización de la activación múltiple de la señal IO durante el movimiento.
 
-- **优化大型LUA程序及子程序web加载功能**： 
-    路径：示教程序 -> 导入程序。
+- **Optimización de la función de carga web de programas LUA de gran tamaño y subprogramas**: 
+    Ruta: Programa de enseñanza -> Importar programa.
 
-    说明：上传大型lua程序文件（超过50M）进行加载运行。
+    Descripción: Carga y ejecución de archivos de programa lua de gran tamaño (superiores a 50M).
 
-- **优化设置/获取机器人工具、工件坐标系、负载指令**： 
-    路径：初始设置 -> 工具、工件坐标系、负载。
+- **Optimización de las instrucciones de establecimiento/obtención de herramienta, sistema de coordenadas de pieza y carga del robot**: 
+    Ruta: Configuración inicial -> Herramienta, sistema de coordenadas de pieza, carga.
 
-    说明：通过8080指令端口、SDK、webapp均可正常设置和获取坐标系和负载参数。
+    Descripción: A través del puerto de instrucciones 8080, el SDK y webapp se pueden establecer y obtener con normalidad los parámetros del sistema de coordenadas y de la carga.
 
-- **新增smarttool相关功能**： 
-    路径：初始设置 -> 外设 -> 焊接手柄。
+- **Nuevas funciones relacionadas con smarttool**: 
+    Ruta: Configuración inicial -> Periféricos -> Empuñadura de soldadura.
 
-    说明：1、清空程序或新建程序后，对IO键记忆进行复位；2、对起弧相关的3条指令生成，新增工艺编号选择，同时放开起弧的超时时间设置限制；3、新增全局点位清除功能，并在清除后序号重置；4、放开PTP、LIN、ARC重复配置限制。
+    Descripción: 1. Tras vaciar el programa o crear un programa nuevo, se restablece la memoria de la tecla IO; 2. Para la generación de las 3 instrucciones relacionadas con el encendido del arco, se añade la selección del número de proceso y se libera la limitación de configuración del tiempo de espera agotado del encendido del arco; 3. Se añade la función de borrado de puntos globales y, tras el borrado, se restablece el número de secuencia; 4. Se libera la limitación de configuración repetida de PTP, LIN y ARC.
 
-- **新增适配五指灵巧手功能**： 
-    路径：初始设置 -> 外设 -> 灵巧手。
+- **Nueva función de adaptación de la mano diestra de cinco dedos**: 
+    Ruta: Configuración inicial -> Periféricos -> Mano diestra.
 
-    说明：新增末端Lua适配五指灵巧手功能。
+    Descripción: Se añade la función de adaptación de la mano diestra de cinco dedos mediante Lua del extremo.
 
-- **新增FR3-WML适配关节阻抗拖动功能**： 
-    路径：辅助应用 -> 工具应用 -> 拖动锁定。
+- **Nueva adaptación de FR3-WML a la función de arrastre por impedancia articular**: 
+    Ruta: Aplicaciones auxiliares -> Aplicación de herramientas -> Bloqueo de arrastre.
 
-    说明：针对FR3-WML调整六维力和关节阻抗混合拖动参数，实现拖动功能。
+    Descripción: Ajuste de los parámetros de arrastre mixto de fuerza de seis dimensiones e impedancia articular para FR3-WML, realizando la función de arrastre.
 
-版本 V3.9.7
+Versión V3.9.7
 -----------------
 
-日期：2026-06-25
+Fecha: 2026-06-25
 
-- **优化软件日语语言包**： 
+- **Optimización del paquete de idioma japonés del software**: 
   
-    说明：优化日语语言包翻译内容。
+    Descripción: Optimización del contenido de la traducción del paquete de idioma japonés.
 
-- **优化机器人LUA程序路径参数**： 
+- **Optimización de los parámetros de ruta del programa LUA del robot**: 
 
-    说明：文件输入仅需名称，无需提供路径。
+    Descripción: Para la entrada de archivos solo se necesita el nombre, sin necesidad de proporcionar la ruta.
 
-- **优化新样条直线圆弧过渡叠加摆动功能**： 
-    路径：辅助应用 -> 工艺包 -> 焊接专家库 -> 新样条摆动焊。
+- **Optimización de la función de oscilación superpuesta a la transición de línea recta y arco en la nueva spline**: 
+    Ruta: Aplicaciones auxiliares -> Paquete de proceso -> Biblioteca de expertos en soldadura -> Soldadura oscilante con nueva spline.
 
-    说明：适配新样条直线圆弧过渡功能摆动功能。
+    Descripción: Adaptación de la función de oscilación a la función de transición de línea recta y arco en la nueva spline.
 
-- **优化关节软限位保护功能**： 
-    路径：初始设置 -> 基础 -> 关节 -> 软限位。
+- **Optimización de la función de protección de límite suave de articulación**: 
+    Ruta: Configuración inicial -> Básico -> Articulación -> Límite suave.
 
-    说明：优化各关节软限位的刚度和阻尼系数。
+    Descripción: Optimización de los coeficientes de rigidez y amortiguación del límite suave de cada articulación.
 
-- **新增机器人LUA程序print打印功能**： 
-    路径：示教程序 -> 打印功能。
+- **Nueva función de impresión print del programa LUA del robot**: 
+    Ruta: Programa de enseñanza -> Función de impresión.
 
-    说明：实时查看LUA程序中的自定义打印信息。
+    Descripción: Consulta en tiempo real de la información de impresión personalizada del programa LUA.
 
-- **新增末端Lua适配三指灵巧手功能**： 
-    路径：初始设置 -> 外设 -> 吸盘。
+- **Nueva función de adaptación de la mano diestra de tres dedos mediante Lua del extremo**: 
+    Ruta: Configuración inicial -> Periféricos -> Ventosa.
 
-    说明：1、新增末端吸盘、灵巧手适配；2、优化现有末端Lua开放协议。
+    Descripción: 1. Se añade la adaptación de la ventosa y la mano diestra del extremo; 2. Optimización del protocolo abierto Lua del extremo existente.
 
-- **新增夹爪掉落监测报错功能**： 
-    路径：初始设置 -> 外设 -> 夹爪。
+- **Nueva función de error por monitorización de caída de la pinza**: 
+    Ruta: Configuración inicial -> Periféricos -> Pinza.
 
-    说明：新增夹爪工件掉落报错，报错后停止运动。
+    Descripción: Se añade el error por caída de pieza de la pinza; tras el error se detiene el movimiento.
 
-- **新增宽电压控制箱DO模块24V短路保护触发反馈功能**： 
+- **Nueva función de realimentación de activación de la protección contra cortocircuito de 24V del módulo DO de la caja de control de tensión amplia**: 
 
-    说明：增加短路保护和报错提示。
+    Descripción: Se añade la protección contra cortocircuito y el aviso de error.
 
-版本 V3.9.6
+Versión V3.9.6
 -----------------
 
-日期：2026-05-26
+Fecha: 2026-05-26
 
-- **优化矩阵移动功能**： 
-    路径：辅助应用 -> 工艺包 -> 矩阵移动。
+- **Optimización de la función de movimiento matricial**: 
+    Ruta: Aplicaciones auxiliares -> Paquete de proceso -> Movimiento matricial.
   
-    说明：优化矩阵移动指令集功能。
+    Descripción: Optimización de la función del conjunto de instrucciones de movimiento matricial.
 
-- **优化DI减速功能**： 
-    路径：初始设置 -> 基础 -> I/O设置。
+- **Optimización de la función de deceleración DI**: 
+    Ruta: Configuración inicial -> Básico -> Configuración de I/O.
   
-    说明：1.DI信号触发时，调速过程速度平滑无冲击、无卡顿；2.调速前后机器人末端路径不发生变化；3.DI触发调速时无报错、无停顿 4.DI触发停止时立即执行、不报错。
+    Descripción: 1. Al activarse la señal DI, el proceso de ajuste de velocidad es suave, sin impactos ni bloqueos; 2. La ruta del extremo del robot no cambia antes y después del ajuste de velocidad; 3. Al activarse el ajuste de velocidad por DI no hay errores ni pausas; 4. Al activarse la parada por DI se ejecuta inmediatamente, sin errores.
 
-- **增加机器人激光焊机通信适配功能**： 
-    路径：初始设置 -> 外设 -> 焊机。
+- **Adición de la función de adaptación de comunicación de la máquina de soldar láser del robot**: 
+    Ruta: Configuración inicial -> Periféricos -> Máquina de soldar.
   
-    说明：1.WebAPP新增激光焊机相关设置、调试、lua程序生成指令；2.新增激光焊机相关参数；3.PLC开发适配程序。
+    Descripción: 1. WebAPP añade la configuración, depuración e instrucciones de generación de programas lua relacionadas con la máquina de soldar láser; 2. Se añaden parámetros relacionados con la máquina de soldar láser; 3. Programa de adaptación desarrollado en el PLC.
     
-- **增加FRJ-PCIeN-EIP/CC/PN-RJ-V10板卡EIP/CClink-IE协议适配**： 
-    路径：初始设置 -> 外设 -> 板卡通讯。
+- **Adición de la adaptación del protocolo EIP/CClink-IE de la tarjeta FRJ-PCIeN-EIP/CC/PN-RJ-V10**: 
+    Ruta: Configuración inicial -> Periféricos -> Comunicación de tarjeta.
   
-    说明：1.支持通讯周期可配置；2.支持获取总线连接状态；3.兼容EIP、CC协议。
+    Descripción: 1. Soporte de período de comunicación configurable; 2. Soporte de obtención del estado de conexión del bus; 3. Compatibilidad con los protocolos EIP y CC.
 
-版本 V3.9.5
+Versión V3.9.5
 -----------------
 
-日期：2026-04-24
+Fecha: 2026-04-24
 
-- **优化控制器功能**： 
-    路径：通用设置 -> 网络设置；示教程序 -> 程序编程。
+- **Optimización de la función del controlador**: 
+    Ruta: Configuración general -> Configuración de red; Programa de enseñanza -> Programación de programas.
   
-    说明：1.ETH0与ETH1配置相同IP地址校验报错；2.优化程序当前运行行号颜色显示。
+    Descripción: 1. Error de verificación de configuración de la misma dirección IP en ETH0 y ETH1; 2. Optimización de la visualización del color del número de línea de ejecución actual del programa.
 
-- **优化FR30速度**： 
+- **Optimización de la velocidad del FR30**: 
   
-    说明：提升运行速度。
+    Descripción: Mejora de la velocidad de funcionamiento.
 
-- **优化圆弧摆动功能**： 
-    路径：示教程序 -> 程序编程 -> 圆弧指令。
+- **Optimización de la función de oscilación en arco**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucción de arco.
   
-    说明：能够进行摆动运行。
+    Descripción: Permite realizar el movimiento de oscilación.
 
-- **优化SetTrajectoryJSpeed调试不卡顿功能**： 
+- **Optimización de la función de depuración sin bloqueos de SetTrajectoryJSpeed**: 
   
-    说明：指令调速过程，机器人速度切换时不降至0速。
+    Descripción: Durante el proceso de ajuste de velocidad de la instrucción, la velocidad del robot no desciende a 0 al conmutar la velocidad.
 
-- **优化程序编程模块中Lua程序指令编辑模式操作**： 
-    路径：示教程序 -> 程序编程。
+- **Optimización de la operación del modo de edición de instrucciones del programa Lua en el módulo de programación de programas**: 
+    Ruta: Programa de enseñanza -> Programación de programas.
   
-    说明：优化为指令内容可精准匹配显示。
+    Descripción: Optimización para que el contenido de la instrucción se visualice con coincidencia precisa.
 
-- **增加FRJ-PCIeN-EC-RJ-V20板卡PN/Ecat/EIP/cclink协议适配**： 
-    路径：初始设置 -> 外设 -> 板卡通讯。
+- **Adición de la adaptación del protocolo PN/Ecat/EIP/cclink de la tarjeta FRJ-PCIeN-EC-RJ-V20**: 
+    Ruta: Configuración inicial -> Periféricos -> Comunicación de tarjeta.
   
-    说明：1.支持固件在线升级/获取 2.支持通讯周期可配置 3.支持获取总线连接状态。
+    Descripción: 1. Soporte de actualización/obtención de firmware en línea; 2. Soporte de período de comunicación configurable; 3. Soporte de obtención del estado de conexión del bus.
 
-- **增加控制器指令**： 
-    路径：示教程序 -> 程序编程; 初始设置 -> 安全 -> 安全停止。
+- **Adición de instrucciones del controlador**: 
+    Ruta: Programa de enseñanza -> Programación de programas; Configuración inicial -> Seguridad -> Parada de seguridad.
   
-    说明：1.运动指令增加工件坐标系偏移类型选项；2.增加安全停止功能；3.控制箱、末端、扩展IO增加读取DO、AO指令。
+    Descripción: 1. Las instrucciones de movimiento añaden la opción de tipo de desplazamiento del sistema de coordenadas de pieza; 2. Se añade la función de parada de seguridad; 3. La caja de control, el extremo y la IO extendida añaden instrucciones de lectura de DO y AO.
 
-- **增加控制箱-急停后DO信号配置功能**： 
-    路径：初始设置 -> 基础 -> DO。
+- **Adición de la función de configuración de señal DO tras la parada de emergencia de la caja de control**: 
+    Ruta: Configuración inicial -> Básico -> DO.
   
-    说明：新增控制箱急停后DO信号配置功能。
+    Descripción: Se añade la función de configuración de señal DO tras la parada de emergencia de la caja de control.
 
-- **增加葡萄牙语软件版本语言包适配**： 
+- **Adición de la adaptación del paquete de idioma portugués de la versión de software**: 
   
-    说明：增加葡萄牙语言切换。
+    Descripción: Se añade la conmutación al idioma portugués.
 
-版本 V3.9.4
+Versión V3.9.4
 -----------------
 
-日期：2026-04-08
+Fecha: 2026-04-08
 
-- **优化机器人轨迹示教复现TPD功能**： 
-    路径：示教程序 -> 程序编程 -> TPD指令。
+- **Optimización de la función TPD de reproducción de la enseñanza de trayectoria del robot**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucción TPD.
   
-    说明：1.自动生成初始点lua指令 2.开始按钮防呆设计。
+    Descripción: 1. Generación automática de la instrucción lua del punto inicial; 2. Diseño a prueba de errores del botón de inicio.
 
-- **优化Webapp数据备份功能**： 
+- **Optimización de la función de copia de seguridad de datos de Webapp**: 
   
-    说明：对数据备份功能进行完善优化。
+    Descripción: Perfeccionamiento y optimización de la función de copia de seguridad de datos.
 
-- **FR3WML软限位及打包姿态优化**： 
+- **Optimización del límite suave y la actitud de embalaje del FR3WML**: 
   
-    说明：3关节软限位设置范围±163°。
+    Descripción: Rango de configuración del límite suave de la articulación 3 de ±163°.
 
-- **DH全参数补偿功能优化及快速验证**： 
+- **Optimización de la función de compensación de todos los parámetros DH y verificación rápida**: 
   
-    说明：补偿全参数模型。
+    Descripción: Modelo de compensación de todos los parámetros.
  
-- **增加PTP运动阻抗控制功能**： 
+- **Adición de la función de control de impedancia del movimiento PTP**: 
   
-    说明：提高机器人与人交互过程中的安全性。
+    Descripción: Mejora de la seguridad del robot en el proceso de interacción con las personas.
 
-- **增加艾灸头末端设备通信协议功能**： 
-    路径：初始设置 -> 外设 -> 末端透传。
+- **Adición de la función de protocolo de comunicación del dispositivo de extremo del cabezal de moxibustión**: 
+    Ruta: Configuración inicial -> Periféricos -> Transmisión transparente del extremo.
   
-    说明：新增末端设备通信协议适配。
+    Descripción: Se añade la adaptación del protocolo de comunicación del dispositivo de extremo.
 
-- **增加德语软件版本语言包适配**： 
+- **Adición de la adaptación del paquete de idioma alemán de la versión de software**: 
   
-    说明：增加德语语言切换。
+    Descripción: Se añade la conmutación al idioma alemán.
 
-- **增加安全速度设置对servo运动指令生效功能**： 
-    路径：初始设置 -> 安全 -> 安全速度。
+- **Adición de la aplicación de la configuración de velocidad de seguridad a las instrucciones de movimiento servo**: 
+    Ruta: Configuración inicial -> Seguridad -> Velocidad de seguridad.
   
-    说明：增加安全策略超速后停止报错去使能选项
+    Descripción: Se añade la opción de deshabilitar tras parada con error por sobrevelocidad en la estrategia de seguridad.
 
-- **增加LA适配TP-LINK AX3000 无线路由器**： 
+- **Adición de la adaptación de LA al router inalámbrico TP-LINK AX3000**: 
   
-    说明：解决在断电重启后无法直接通过无线访问webApp问题。
+    Descripción: Solución al problema de no poder acceder directamente a webApp de forma inalámbrica tras el reinicio por corte de energía.
     
-- **增加定点摆动功能**： 
-    路径：示教程序 -> 程序编程 -> Weave指令。
+- **Adición de la función de oscilación en punto fijo**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucción Weave.
   
-    说明：配合外部激光传感器，进行定点摆动功能。
+    Descripción: Función de oscilación en punto fijo en combinación con el sensor láser externo.
 
-版本 V3.9.3
+Versión V3.9.3
 -----------------
 
-日期：2026-02-11
+Fecha: 2026-02-11
 
-- **优化SmartTool运动指令速度设置**： 
-    路径：初始设置 -> 外设 -> 焊接手柄。
+- **Optimización de la configuración de velocidad de las instrucciones de movimiento de SmartTool**: 
+    Ruta: Configuración inicial -> Periféricos -> Empuñadura de soldadura.
   
-    说明：PTP,LIN,ARC指令速度设置范围调整为0-100%（原先速度设置上限为30%）。
+    Descripción: El rango de configuración de velocidad de las instrucciones PTP, LIN y ARC se ajusta a 0-100% (anteriormente el límite superior de configuración de velocidad era del 30%).
 
-- **优化无力传感器外力观测及拖动体验提升**： 
-    路径：辅助应用 -> 工具应用 -> 拖动锁定。
+- **Optimización de la observación de fuerza externa sin sensor de fuerza y mejora de la experiencia de arrastre**: 
+    Ruta: Aplicaciones auxiliares -> Aplicación de herramientas -> Bloqueo de arrastre.
   
-    说明：提高外力观测精度至±0.5N。
+    Descripción: Mejora de la precisión de observación de fuerza externa hasta ±0.5N.
 
-- **优化Modbus TCP主站重连机制**： 
-    路径：示教程序 -> 程序编程 -> Modbus TCP。
+- **Optimización del mecanismo de reconexión del maestro Modbus TCP**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> Modbus TCP.
   
-    说明：增加暂停逻辑。
+    Descripción: Se añade la lógica de pausa.
 
-- **增加扩展轴调试指令功能**： 
-    路径：初始设置 -> 外设 -> 扩展轴。
+- **Adición de la función de instrucción de depuración del eje extendido**: 
+    Ruta: Configuración inicial -> Periféricos -> Eje extendido.
   
-    说明：实现扩展轴坐标系下的机器人逆解以及带扩展轴的ServoCart伺服运动。
+    Descripción: Realización de la cinemática inversa del robot bajo el sistema de coordenadas del eje extendido y del movimiento servo ServoCart con eje extendido.
 
-- **增加暂停恢复DO复位状态可配置功能**： 
-    路径：初始设置 -> 外设 -> 焊接手柄。
+- **Adición de la función configurable del estado de reinicio de DO en pausa y reanudación**: 
+    Ruta: Configuración inicial -> Periféricos -> Empuñadura de soldadura.
   
-    说明：可选恢复运动后DO输出状态是否与暂停前一致。
+    Descripción: Permite seleccionar si el estado de salida DO tras reanudar el movimiento es consistente con el anterior a la pausa.
 
-版本 V3.9.2
+Versión V3.9.2
 -----------------
 
-日期：2026-01-26
+Fecha: 2026-01-26
 
-- **优化关节扭矩传感器位置环拖动示教**： 
-    路径：辅助应用 -> 工具应用 -> 拖动锁定。
+- **Optimización de la enseñanza por arrastre del bucle de posición del sensor de par articular**: 
+    Ruta: Aplicaciones auxiliares -> Aplicación de herramientas -> Bloqueo de arrastre.
   
-    说明：解决关节间拖动2s内对点精度不足问题。
+    Descripción: Solución al problema de precisión insuficiente en el posicionamiento entre articulaciones durante el arrastre en 2s.
 
-- **优化扩展板卡**： 
+- **Optimización de la tarjeta de expansión**: 
   
-    说明：优化扩展DO数据同步机制。
+    Descripción: Optimización del mecanismo de sincronización de datos de DO extendida.
 
-- **优化电弧跟踪功能**： 
-    路径：初始设置 -> 外设 -> 焊机。
+- **Optimización de la función de seguimiento de arco**: 
+    Ruta: Configuración inicial -> Periféricos -> Máquina de soldar.
   
-    说明：增加通过外设开放协议ModbusTCP进行实时焊接电流采集。
+    Descripción: Se añade la recogida de corriente de soldadura en tiempo real mediante el protocolo abierto de periféricos ModbusTCP.
 
-- **优化控制器及实体示教器IP重置功能**： 
-    路径：系统设置 -> 网络。
+- **Optimización de la función de restablecimiento de IP del controlador y del teach pendant físico**: 
+    Ruta: Configuración del sistema -> Red.
   
-    说明：①在webrecovery中新增重置控制器IP功能，需要二次确认；②实体示教器新增IP重置功能；③实体示教器增加在未连接时，可通过物理按键重置实体示教器IP，示教器IP为192.168.58.77。
+    Descripción: ① Se añade la función de restablecimiento de IP del controlador en webrecovery, que requiere segunda confirmación; ② El teach pendant físico añade la función de restablecimiento de IP; ③ El teach pendant físico añade la posibilidad de restablecer su IP mediante botones físicos cuando no está conectado; la IP del teach pendant es 192.168.58.77.
 
-- **新增FR3C新型机器人配置**： 
+- **Nueva configuración del nuevo robot FR3C**: 
   
-    说明：关节运行范围与FR3系列一致，大小臂与WMS一致，额定负载3kg。
+    Descripción: El rango de funcionamiento de las articulaciones es idéntico al de la serie FR3; el brazo grande y el pequeño son idénticos a los del WMS; la carga nominal es de 3kg.
 
-- **新增立方体干涉功能**： 
-    路径：初始设置 -> 安全 -> 干涉区 -> 立方体干涉。
+- **Nueva función de interferencia de cubo**: 
+    Ruta: Configuración inicial -> Seguridad -> Zona de interferencia -> Interferencia de cubo.
   
-    说明：实现至少4个立方体同时干涉检查，并可配置CO输出对应干涉信号。
+    Descripción: Realización de la comprobación de interferencia de al menos 4 cubos simultáneamente, pudiendo configurar la salida CO correspondiente a la señal de interferencia.
 
-- **新增slave_interpret模块功能扩展（PROFINET协议）及Web量IO显示功能**： 
-    路径：初始设置 -> 外设 -> 板卡通讯-> 板卡升级。
+- **Nueva extensión del módulo slave_interpret (protocolo PROFINET) y función de visualización de IO completa en Web**: 
+    Ruta: Configuración inicial -> Periféricos -> Comunicación de tarjeta-> Actualización de tarjeta.
   
-    说明：增加骥远板卡EtherCAT固件升级、PLC通讯检测、周期可配置及Web全量IO显示功能（PROFINET协议）。
+    Descripción: Se añade la actualización de firmware EtherCAT de la tarjeta Jiyuan, la detección de comunicación del PLC, el período configurable y la visualización de IO completa en Web (protocolo PROFINET).
 
-- **新增smarttool开放协议功能**： 
-    路径：初始设置 -> 外设 -> 焊接手柄。
+- **Nueva función de protocolo abierto de smarttool**: 
+    Ruta: Configuración inicial -> Periféricos -> Empuñadura de soldadura.
   
-    说明：①新增基于开放协议的smarttool程序创建解析及检测信号处理，增加“撤销、删除”按键防呆功能。②smarttool开放协议按键配置新增自动生成功能。
+    Descripción: ① Se añaden la creación y el análisis de programas smarttool basados en protocolo abierto y el procesamiento de señales de detección, y se añade la función a prueba de errores de las teclas "Deshacer" y "Eliminar". ② La configuración de teclas del protocolo abierto de smarttool añade la función de generación automática.
 
-- **新增QX与LA软件版本的备份包相互兼容**： 
-    路径：辅助应用 -> 工具应用 -> 数据备份。
+- **Nueva compatibilidad mutua de los paquetes de copia de seguridad entre las versiones de software QX y LA**: 
+    Ruta: Aplicaciones auxiliares -> Aplicación de herramientas -> Copia de seguridad de datos.
   
-    说明：①QX支持且可完整导入LA备份包，LA支持且可完整导入QX备份包；②兼容v3.8.7版本及以后备份包。
+    Descripción: ① QX admite y puede importar completamente el paquete de copia de seguridad de LA; LA admite y puede importar completamente el paquete de copia de seguridad de QX; ② Compatibilidad con paquetes de copia de seguridad de la versión v3.8.7 y posteriores.
 
-- **新增末端CI与控制器CI可配置参数**： 
-    路径：初始设置 -> 基础 -> I/O设置 -> DI。
+- **Nuevos parámetros configurables de CI del extremo y CI del controlador**: 
+    Ruta: Configuración inicial -> Básico -> Configuración de I/O -> DI.
   
-    说明：实现末端CI可配置运动中断，实现末端CI同步部分控制器CI可配置功能。
+    Descripción: Permite configurar la interrupción de movimiento en la CI del extremo y sincronizar parte de las funciones configurables de la CI del controlador en la CI del extremo.
 
-- **新增机器人激光数据伺服跟踪功能**： 
-    路径：初始设置 -> 外设 -> 线激光传感器。
+- **Nueva función de seguimiento servo de datos láser del robot**: 
+    Ruta: Configuración inicial -> Periféricos -> Sensor láser de línea.
   
-    说明：实现机器人直接通过激光传感器数据进行跟踪。
+    Descripción: Permite que el robot realice el seguimiento directamente con los datos del sensor láser.
 
-- **新增示教器配置功能**： 
+- **Nueva función de configuración del teach pendant**: 
   
-    说明：①示教器上F1-F4按键支持在WEB界面配置自定义的功能；②钥匙切换自定义模式可配置为拖动模式。
+    Descripción: ① Las teclas F1-F4 del teach pendant permiten configurar funciones personalizadas en la interfaz WEB; ② La conmutación de la llave al modo personalizado se puede configurar como modo de arrastre.
 
-版本 V3.9.1
+Versión V3.9.1
 -----------------
 
-日期：2025-12-30
+Fecha: 2025-12-30
 
-- **机器人后台记录故障和报警事件功能**： 
+- **Función de registro en segundo plano de fallos y eventos de alarma del robot**: 
   
-    说明：在用户界面登出期间，能够记录故障和报警信息，并在重新登陆后可查看。
+    Descripción: Durante el cierre de sesión de la interfaz de usuario se pueden registrar la información de fallos y alarmas, que se puede consultar tras volver a iniciar sesión.
 
-- **PTP、LIN指令增加当前位置相对运动功能、WebApp增加ServoJ指令添加功能**： 
-    路径：示教程序 -> 程序编程 -> PTP/LIN指令。
+- **Las instrucciones PTP y LIN añaden la función de movimiento relativo a la posición actual; WebApp añade la función de adición de la instrucción ServoJ**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucciones PTP/LIN.
   
-    说明：解决机械臂没有示教点位，但是需要基于当前位置偏移时，指令操作复杂问题，输入一条指令即可实现。
+    Descripción: Solución al problema de la complejidad de operación de las instrucciones cuando el brazo mecánico no dispone de puntos de enseñanza pero se necesita un desplazamiento basado en la posición actual; basta con introducir una instrucción para realizarlo.
 
-- **末端lua开放协议调试开关及语法校验功能**： 
-    路径：初始设置 -> 外设 -> 夹爪、力传感器、焊接手柄。
+- **Interruptor de depuración del protocolo abierto lua del extremo y función de verificación de sintaxis**: 
+    Ruta: Configuración inicial -> Periféricos -> Pinza, sensor de fuerza, empuñadura de soldadura.
   
-    说明：目前控制器整合集成已适配末端协议（夹爪、力传感器、焊接手柄），本次同步优化在webAPP中可直接选择应用到末端；webServer新增协议lua语法校验，校验失败直接报错；webAPP新增lua开放协议调试开关，调试状态下运行末端lua屏蔽传感器通信超时报错。
+    Descripción: Actualmente el controlador integra los protocolos de extremo ya adaptados (pinza, sensor de fuerza, empuñadura de soldadura); esta optimización permite seleccionar y aplicar directamente al extremo desde webAPP; webServer añade la verificación de sintaxis del protocolo lua, informando directamente del error en caso de fallo de verificación; webAPP añade el interruptor de depuración del protocolo abierto lua; en estado de depuración, la ejecución del lua del extremo bloquea el error de tiempo de espera agotado de comunicación del sensor.
 
-- **FRCap码垛场景功能优化**： 
-    路径：辅助应用 -> 工艺包 -> 码垛。
+- **Optimización de la función del escenario de paletizado FRCap**: 
+    Ruta: Aplicaciones auxiliares -> Paquete de proceso -> Paletizado.
   
-    说明：码垛支持两个取料点--两条流水线来料后，机器人根据顺序分别从两个流水线上的取料点抓取物料后放到两个对应码垛盘上。
+    Descripción: El paletizado admite dos puntos de recogida de material; tras la llegada de material por dos líneas de producción, el robot, según el orden, recoge el material de los puntos de recogida de las dos líneas de producción y lo coloca en las dos paletas de paletizado correspondientes.
 
-- **实体示教器功能优化**： 
-    路径：系统设置 -> 通用设置 -> 网络
+- **Optimización de la función del teach pendant físico**: 
+    Ruta: Configuración del sistema -> Configuración general -> Red
   
-    说明：当前客户在使用示教器时必须先切换到webapp再进入自己的上位机界面，较为繁琐，优化后可以在未登录示教界面时，旋转物理钥匙开关，机器人可切换手动/自动模式。
+    Descripción: Actualmente el cliente, al utilizar el teach pendant, debe cambiar primero a webapp y luego entrar en su propia interfaz de ordenador superior, lo que resulta engorroso; tras la optimización, sin haber iniciado sesión en la interfaz de enseñanza, al girar el interruptor físico de llave el robot puede conmutar entre modo manual y automático.
 
-- **碰撞功能优化**： 
-    路径：初始设置 -> 基础 -> 关节 -> 碰撞等级 -> 误报检测。
+- **Optimización de la función de colisión**: 
+    Ruta: Configuración inicial -> Básico -> Articulación -> Nivel de colisión -> Detección de falsos positivos.
   
-    说明：碰撞等级为1时也可以任意速度运行且不会因为速度快而误报错，当有碰撞或挤压时会报错停止；
+    Descripción: Con el nivel de colisión en 1 también se puede funcionar a cualquier velocidad sin falsos avisos de error por velocidad alta; cuando hay colisión o compresión se informa del error y se detiene;
 
-- **光电传感器TCP标定功能**： 
-    路径：初始设置 -> 基础 -> 工具坐标 -> 光电自动标定。
+- **Función de calibración automática del TCP con sensor fotoeléctrico**: 
+    Ruta: Configuración inicial -> Básico -> Coordenadas de herramienta -> Calibración automática fotoeléctrica.
   
-    说明：支持直柄焊枪和弯柄焊枪的自动标定；
+    Descripción: Compatibilidad con la calibración automática de antorchas de soldadura de mango recto y de mango curvo;
 
-版本 V3.9.0
+Versión V3.9.0
 -----------------
 
-日期：2025-11-27
+Fecha: 2025-11-27
 
-- **大儒DFC力控打磨头应用**： 
-    路径：初始设置 -> 外设 -> 打磨 -> 大儒DFC力控打磨头。
+- **Aplicación del cabezal de pulido de control de fuerza DFC de Daru**: 
+    Ruta: Configuración inicial -> Periféricos -> Pulido -> Cabezal de pulido de control de fuerza DFC de Daru.
   
-    说明：DFC智能柔性打磨力控外设软件部分适配并测试，满足DFC打磨系统的适配需求。
+    Descripción: Adaptación y prueba de la parte de software del periférico de control de fuerza de pulido flexible inteligente DFC, satisfaciendo los requisitos de adaptación del sistema de pulido DFC.
 
-- **关节扭矩传感器在整机上的参数标定**： 
-    路径：辅助应用 -> 工具应用 -> 拖动锁定 -> 关节扭矩传感器整机拖动。
+- **Calibración de parámetros del sensor de par articular en la máquina completa**: 
+    Ruta: Aplicaciones auxiliares -> Aplicación de herramientas -> Bloqueo de arrastre -> Arrastre de la máquina completa del sensor de par articular.
   
-    说明：运行既定轨迹完成关节扭矩传感器的灵敏度、线性度、迟滞误差、重复精度的参数标定。
+    Descripción: Ejecución de una trayectoria predefinida para completar la calibración de los parámetros de sensibilidad, linealidad, error de histéresis y precisión de repetición del sensor de par articular.
 
-- **新增基于关节扭矩传感器引导拖动示教避免过冲功能**： 
-    路径：辅助应用 -> 工具应用 -> 拖动锁定 -> 关节扭矩传感器整机拖动。
+- **Nueva función de evitación de sobrepaso en la enseñanza por arrastre guiada por sensor de par articular**: 
+    Ruta: Aplicaciones auxiliares -> Aplicación de herramientas -> Bloqueo de arrastre -> Arrastre de la máquina completa del sensor de par articular.
   
-    说明：缓解在电流环上的拖动过冲现象，该功能开启后，能便捷地实现拖动对点操作。
+    Descripción: Mitigación del fenómeno de sobrepaso en el arrastre en el bucle de corriente; tras activar esta función se puede realizar cómodamente la operación de posicionamiento por arrastre.
 
-- **相贯线焊接功能**： 
-    路径：示教程序 -> 程序编程 -> 相贯线指令。
+- **Función de soldadura de línea de intersección de tubos**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucción de línea de intersección de tubos.
   
-    说明：在主管和拼接管的横截面上分别记录6个示教点，输入运动方向、速度、加速度、偏移值等参数，机器人能够得到两圆管相交形成的相贯线轨迹，并进行焊接。
+    Descripción: Se registran 6 puntos de enseñanza en las secciones transversales del tubo principal y del tubo de unión respectivamente; introduciendo parámetros como la dirección de movimiento, la velocidad, la aceleración y los valores de desplazamiento, el robot puede obtener la trayectoria de la línea de intersección formada por la intersección de los dos tubos circulares y realizar la soldadura.
 
-- **Modbus等待模拟输入设置增加等于判断功能**： 
-    路径：示教程序 -> 程序编程 -> Modbus指令。
+- **La configuración de espera de entrada analógica de Modbus añade la función de juicio de igualdad**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucción Modbus.
   
-    说明：从站等待模拟输入等待状态新增等于判断。
+    Descripción: El estado de espera de espera de entrada analógica del esclavo añade el juicio de igualdad.
 
-- **示教点一键更新&Lin单点执行功能**： 
-    路径：示教程序 -> 示教点 -> 示教管理。
+- **Función de actualización con un clic de puntos de enseñanza y ejecución de un solo punto Lin**: 
+    Ruta: Programa de enseñanza -> Puntos de enseñanza -> Gestión de la enseñanza.
   
-    说明：示教点界面通过机器人本体操作条更新当前机器人位姿到对应的点位且可以选择是否同步示教程序，新增Lin单点执行的方式。
+    Descripción: La interfaz de puntos de enseñanza actualiza mediante la barra de operación del cuerpo del robot la pose actual del robot al punto correspondiente y permite seleccionar si se sincroniza el programa de enseñanza; se añade el modo de ejecución de un solo punto Lin.
 
-- **优化点位表模式下记点功能**： 
-    路径：示教程序 -> 示教点 -> 示教管理。
+- **Optimización de la función de registro de puntos en el modo de tabla de puntos**: 
+    Ruta: Programa de enseñanza -> Puntos de enseñanza -> Gestión de la enseñanza.
   
-    说明：点位表模式下重新记点可同步更新lua程序,优化解决PTP缩减模式偶发超速、LIN调速模式偶发达位后运动停止问题。
+    Descripción: En el modo de tabla de puntos, el nuevo registro de puntos puede actualizar sincronizadamente el programa lua; optimización y solución de los problemas de sobrevelocidad ocasional en el modo reducido PTP y de parada del movimiento tras alcanzar la posición de forma ocasional en el modo de ajuste de velocidad LIN.
 
-- **user配置文件**： 
-    说明：优化机器人出现user配置文件加载失败问题，增加自动重启备份配置文件、回滚备份配置文件功能。
+- **Archivo de configuración user**: 
+    Descripción: Optimización del problema de fallo de carga del archivo de configuración user del robot; se añaden las funciones de reinicio automático del archivo de configuración de respaldo y reversión del archivo de configuración de respaldo.
 
-- **web界面版本**： 
-    说明：web界面版本更新为2.0，更新优化软件操作界面。
+- **Versión de la interfaz web**: 
+    Descripción: La versión de la interfaz web se actualiza a 2.0, actualizando y optimizando la interfaz de operación del software.
 
-- **新增V6.5机器人型号**： 
-    说明：通过减速器等硬件及算法优化，降低机器人的抖动量并提升轨迹精度，新增FR3、FR5、FR10、FR16、FR20机器人型号。
+- **Nuevos modelos de robot V6.5**: 
+    Descripción: Mediante la optimización de hardware como el reductor y de algoritmos, se reduce la vibración del robot y se mejora la precisión de la trayectoria; se añaden los modelos de robot FR3, FR5, FR10, FR16 y FR20.
 
-- **新增FR5C机器人型号配置**： 
-    说明：LA版本软件新增FR5C机器人型号配置功能。
+- **Nueva configuración del modelo de robot FR5C**: 
+    Descripción: La versión de software LA añade la función de configuración del modelo de robot FR5C.
 
-版本 V3.8.7
+Versión V3.8.7
 -----------------
 
-日期：2025-10-21
+Fecha: 2025-10-21
 
-- **直线齿条导轨的机器人碰撞检测功能**： 
-    路径：初始设置 -> 基础 -> 关节 -> 碰撞等级 -> 直线齿条导轨的机器人碰撞检测。
+- **Función de detección de colisiones del robot con riel guía de cremallera recta**: 
+    Ruta: Configuración inicial -> Básico -> Articulación -> Nivel de colisión -> Detección de colisiones del robot con riel guía de cremallera recta.
   
-    说明：使得导轨在运动中发生碰撞可紧急停机，从而提高操作安全性。
+    Descripción: Permite la parada de emergencia en caso de colisión durante el movimiento del riel, mejorando así la seguridad de la operación.
 
-- **新增新螺旋线实际物理速度设置功能**： 
-    路径：示教程序 -> 程序编程 -> 新螺旋N-Spiral指令。
+- **Nueva función de configuración de la velocidad física real de la nueva hélice**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucción de nueva hélice N-Spiral.
   
-    说明：使机器人末端工具线速度的匀速段与设定值一致；
+    Descripción: Hace que el tramo de velocidad uniforme de la velocidad lineal de la herramienta del extremo del robot coincida con el valor establecido;
 
-- **安全停止恢复可选自动使能功能**： 
-    路径：初始设置 -> 安全 -> 急停停机。
+- **Función opcional de habilitación automática en la recuperación de parada de seguridad**: 
+    Ruta: Configuración inicial -> Seguridad -> Parada de emergencia.
   
-    说明：新增1b类下急停复位后使能策略配置。
+    Descripción: Se añade la configuración de la estrategia de habilitación tras el restablecimiento de la parada de emergencia de tipo 1b.
 
-- **力传感器带载校零及开放姿态顺应的导纳参数**： 
-    路径：初始设置 -> 基础 -> 负载，示教程序 -> 程序编程 -> F/T Control指令。
+- **Puesta a cero con carga del sensor de fuerza y parámetros de admitancia para la conformidad de actitud abierta**: 
+    Ruta: Configuración inicial -> Básico -> Carga; Programa de enseñanza -> Programación de programas -> Instrucción F/T Control.
   
-    说明：新增开放姿态顺应的导纳参数。
+    Descripción: Se añaden los parámetros de admitancia para la conformidad de actitud abierta.
 
-- **新增圆弧和整圆的激光跟踪功能**： 
+- **Nueva función de seguimiento láser para arcos y círculos completos**: 
   
-    说明：能够实现圆弧和整圆的激光实时跟踪功能，运动过程中姿态跟随变化，能够实现圆弧和整圆的激光扫描复现功能。
+    Descripción: Permite realizar el seguimiento láser en tiempo real de arcos y círculos completos, con cambio de actitud durante el movimiento, y permite realizar la reproducción del escaneo láser de arcos y círculos completos.
     
-- **按钮盒功能**： 
+- **Función de la caja de botones**: 
   
-    说明：优化1.0版本按钮盒复位IP功能。
+    Descripción: Optimización de la función de restablecimiento de IP de la caja de botones versión 1.0.
 
-版本 V3.8.6
+Versión V3.8.6
 -----------------
 
-日期：2025-09-19
+Fecha: 2025-09-19
 
-- **新增机器人阻抗控制功能**： 
-    路径：示教程序 -> 程序编程 -> F/T指令。
+- **Nueva función de control de impedancia del robot**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucción F/T.
   
-    说明：通过外力的实时检测，当达到设定阈值后主动顺应外力，偏离运动轨迹，当外力降至阈值后回归运动轨迹，从而更好地实现人机交互。
+    Descripción: Mediante la detección en tiempo real de la fuerza externa, cuando se alcanza el umbral establecido se adapta activamente a la fuerza externa desviándose de la trayectoria de movimiento, y cuando la fuerza externa desciende por debajo del umbral regresa a la trayectoria de movimiento, realizando así una mejor interacción humano-máquina.
 
-- **新增拖动前的力矩检测功能**： 
-    路径：初始设置 -> 基础 -> 碰撞等级。
+- **Nueva función de detección de par antes del arrastre**: 
+    Ruta: Configuración inicial -> Básico -> Nivel de colisión.
   
-    说明：在进入拖动模式前，会进行各关节转矩指令与反馈的差值计算。当错误配置负载或安装方式时，会导致差值超过阈值，无法进入拖动模式，避免机器人进入拖动模式后失控。
+    Descripción: Antes de entrar en el modo de arrastre se realiza el cálculo de la diferencia entre la instrucción de par y la realimentación de cada articulación. Cuando se configura erróneamente la carga o el modo de instalación, la diferencia supera el umbral y no se puede entrar en el modo de arrastre, evitando que el robot pierda el control tras entrar en el modo de arrastre.
 
-- **新增自定义摆动焊接功能**： 
-    路径：示教程序 -> 程序编程 -> Weave指令。
+- **Nueva función de soldadura oscilante personalizada**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucción Weave.
   
-    说明：用户可自己设计摆焊模式去执行摆焊。
+    Descripción: El usuario puede diseñar su propio modo de soldadura oscilante para ejecutar la soldadura oscilante.
 
-- **ModbusTCP**： 
-    路径：示教程序 -> 程序编程 -> ModbusTCP。
+- **ModbusTCP**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> ModbusTCP.
   
-    说明：优化ModbusTCP主站超时时间检测功能。
+    Descripción: Optimización de la función de detección del tiempo de espera agotado del maestro ModbusTCP.
 
-- **气动式吸盘**： 
-    路径：初始设置 -> 外设 -> 阵列式吸盘。
+- **Ventosa neumática**: 
+    Ruta: Configuración inicial -> Periféricos -> Ventosas en matriz.
   
-    说明：优化气动式吸盘web页面适配功能。
+    Descripción: Optimización de la función de adaptación de la página web de la ventosa neumática.
 
-- **焊丝寻位故障报错**： 
+- **Error de fallo de búsqueda de posición del alambre de soldadura**: 
   
-    说明：优化WebAPP焊丝寻位故障报错，可复位。
+    Descripción: Optimización del error de fallo de búsqueda de posición del alambre de soldadura de WebAPP, reajustable.
 
-- **可配置IO功能**： 
+- **Función de IO configurable**: 
   
-    说明：新增FR3C-FR3MT可配置IO功能,可配置输入为CI0-CI4,可配置输出为CO0-CO4。
+    Descripción: Se añade la función de IO configurable para FR3C-FR3MT; las entradas configurables son CI0-CI4 y las salidas configurables son CO0-CO4.
 
-版本 V3.8.5
+Versión V3.8.5
 -----------------
 
-日期：2025-08-19
+Fecha: 2025-08-19
 
-- **Socket网络调试**： 
-    路径：示教程序 -> 程序编程 -> Socket网络调试。
+- **Depuración de red Socket**: 
+    Ruta: Programa de enseñanza -> Programación de programas -> Depuración de red Socket.
   
-    说明：可新增、配置、删除socket连接配置，最多支持配置4个socket连接。可通过指令模块生成打开连接、关闭连接、发送数据、接收数据示教编程。
+    Descripción: Permite añadir, configurar y eliminar configuraciones de conexión socket; se admite la configuración de hasta 4 conexiones socket. Mediante el módulo de instrucciones se puede generar la enseñanza y programación de apertura de conexión, cierre de conexión, envío de datos y recepción de datos.
 
-- **CAD生成G代码转机器人轨迹规划功能**： 
-    路径：辅助应用 -> 工具应用 -> G代码转化。
+- **Función de conversión de código G generado por CAD a planificación de trayectoria del robot**: 
+    Ruta: Aplicaciones auxiliares -> Aplicación de herramientas -> Conversión de código G.
   
-    说明：在Solidworks、FUSION360等具有CAM功能的软件中把直线、圆弧、圆、样条线等加工轨迹生成G代码文件，然后将G代码文件导入到Web端。
+    Descripción: En software con función CAM como Solidworks, FUSION360, etc., se genera el archivo de código G de trayectorias de mecanizado como líneas rectas, arcos, círculos y splines, y a continuación se importa el archivo de código G al lado Web.
 
-- **直线、圆弧、整圆运动指令增加实际物理速度功能**： 
-    路径：示教程序 -> 程序编程，初始设置 -> 外设 -> 焊接手柄。
+- **Las instrucciones de movimiento en línea recta, arco y círculo completo añaden la función de velocidad física real**: 
+    Ruta: Programa de enseñanza -> Programación de programas; Configuración inicial -> Periféricos -> Empuñadura de soldadura.
   
-    说明：可直接定义当前运动指令实际运行物理速度。
+    Descripción: Permite definir directamente la velocidad física real de funcionamiento de la instrucción de movimiento actual.
     
-- **优化PTP调速功能**： 
+- **Optimización de la función de ajuste de velocidad PTP**: 
   
-    说明：确保调速过程流畅，减少调速衔接处指令速度波动。
+    Descripción: Garantiza la fluidez del proceso de ajuste de velocidad y reduce las fluctuaciones de velocidad de la instrucción en la unión del ajuste de velocidad.
     
-- **机器人模型配置**： 
+- **Configuración del modelo de robot**: 
   
-    说明：新增FR30L机器人模型配置选项。
+    Descripción: Se añade la opción de configuración del modelo de robot FR30L.
     
-- **控制箱适配**： 
+- **Adaptación de la caja de control**: 
   
-    说明：新增控制箱适配ETMP03E板卡（EtherCAT协议）。
+    Descripción: Se añade la adaptación de la caja de control a la tarjeta ETMP03E (protocolo EtherCAT).
 
-版本 V3.8.4.1
+Versión V3.8.4.1
 -----------------
 
-日期：2025-07-30
+Fecha: 2025-07-30
 
-- **控制箱适配以太网透传模块及吸盘夹爪控制功能**： 
-    路径：初始设置 -> 外设 -> 阵列式吸盘。
+- **Adaptación de la caja de control al módulo de transmisión transparente Ethernet y función de control de pinza de ventosa**: 
+    Ruta: Configuración inicial -> Periféricos -> Ventosas en matriz.
   
-    说明：可基于页面和外设开放协议，通过以太网转485透传模块控制阵列式吸盘（最多20个）。
+    Descripción: Basándose en la página y en el protocolo abierto de periféricos, se pueden controlar las ventosas en matriz (hasta 20) mediante el módulo de transmisión transparente de Ethernet a 485.
 
-- **机器人前瞻轨迹规划（匀速前瞻）**： 
-    路径：示教程序 -> 程序编程、图形化编程、节点图编程。
+- **Planificación de trayectoria con previsión del robot (previsión a velocidad uniforme)**: 
+    Ruta: Programa de enseñanza -> Programación de programas, programación gráfica, programación por grafo de nodos.
   
-    说明：增加匀速开关选项，开启时机器人以匀速进行前瞻运动。
+    Descripción: Se añade la opción de interruptor de velocidad uniforme; al activarla, el robot realiza el movimiento con previsión a velocidad uniforme.
 
-- **控制箱从站模式功能优化功能**： 
-    路径：初始设置 -> 外设 -> 板卡通讯、远程模式。
+- **Optimización de la función del modo esclavo de la caja de control**: 
+    Ruta: Configuración inicial -> Periféricos -> Comunicación de tarjeta, modo remoto.
   
-    说明：新增控制箱适配骥远ETMP03E板卡（EtherCAT协议）。
+    Descripción: Se añade la adaptación de la caja de control a la tarjeta Jiyuan ETMP03E (protocolo EtherCAT).
 
-- **激光寻位点位置获取功能**： 
-    路径：初始设置 -> 外设 -> 线激光传感器。
+- **Función de obtención de la posición del punto de búsqueda de posición láser**: 
+    Ruta: Configuración inicial -> Periféricos -> Sensor láser de línea.
   
-    说明：在激光寻位焊缝成功后，能够使用SDK或TCP协议指令获取到存放在“seamPos”中的位置数据。
+    Descripción: Tras el éxito de la búsqueda de posición láser de la soldadura, se pueden obtener mediante SDK o instrucciones del protocolo TCP los datos de posición almacenados en "seamPos".
 
-- **FR5和FR10速度开放功能**： 
+- **Función de apertura de velocidad de FR5 y FR10**: 
   
-    说明：将FR5线速度由1.0m/s提升至1.7m/s；FR10线速度由1.5m/s提升至2.0m/s。
+    Descripción: La velocidad lineal del FR5 se eleva de 1.0m/s a 1.7m/s; la velocidad lineal del FR10 se eleva de 1.5m/s a 2.0m/s.
 
-- **机器人模型配置**： 
+- **Configuración del modelo de robot**: 
   
-    说明：新增FR5-WML长臂展机器人模型配置选项。
+    Descripción: Se añade la opción de configuración del modelo de robot de brazo largo FR5-WML.
 
-- **优化软件升级**： 
+- **Optimización de la actualización de software**: 
   
-    说明：缩短升级时间，兼容高版本降级任一低版本（3.7.6-3.8.4）。
+    Descripción: Reducción del tiempo de actualización, compatibilidad con la degradación de una versión superior a cualquier versión inferior (3.7.6-3.8.4).
 
-- **优化恢复出厂设置**： 
+- **Optimización de la restauración de la configuración de fábrica**: 
   
-    说明：恢复出厂设置保留机器人型号、刚度、动力学设置、按钮盒版本等。
+    Descripción: La restauración de la configuración de fábrica conserva el modelo de robot, la rigidez, la configuración dinámica, la versión de la caja de botones, etc.
 
-版本 V3.8.4
+Versión V3.8.4
 -----------------
 
-日期：2025-07-18
+Fecha: 2025-07-18
     
-- **扩展轴blending平滑功能实现**： 
-    路径：示教程序 -> 程序编程、图形化编程、节点图编程。
+- **Implementación de la función de suavizado blending del eje extendido**: 
+    Ruta: Programa de enseñanza -> Programación de programas, programación gráfica, programación por grafo de nodos.
   
-    说明：实现扩展轴指令间的平滑运动，提高工作效率。
+    Descripción: Realización del movimiento suave entre instrucciones del eje extendido, mejorando la eficiencia del trabajo.
     
-- **控制箱从站模式功能优化功能**： 
-    路径：初始设置 -> 外设 -> 板卡通讯、远程模式。
+- **Optimización de la función del modo esclavo de la caja de control**: 
+    Ruta: Configuración inicial -> Periféricos -> Comunicación de tarjeta, modo remoto.
   
-    说明：增加板卡IP配置、界面LUA指令下发， 增加远程模式下，控制器从站协议自启动功能。
+    Descripción: Se añade la configuración de IP de la tarjeta y el envío de instrucciones LUA desde la interfaz; se añade la función de inicio automático del protocolo de esclavo del controlador en modo remoto.
     
-- **控制箱N2L板卡QX适配(EtherCAT)**： 
-    说明：法奥工业实时总线通信板卡，miniPCIe板卡，支持EtherCAT协议通信。
+- **Adaptación QX de la tarjeta N2L de la caja de control (EtherCAT)**: 
+    Descripción: Tarjeta de comunicación de bus en tiempo real industrial de FAIRINO, tarjeta miniPCIe, compatible con comunicación del protocolo EtherCAT.
     
-- **机器人JOG运动**： 
-    说明：增加机器人JOG运动CO状态输出功能。
+- **Movimiento JOG del robot**: 
+    Descripción: Se añade la función de salida del estado CO del movimiento JOG del robot.
 
-版本 V3.8.3
+Versión V3.8.3
 -----------------
 
-日期：2025-06-27
+Fecha: 2025-06-27
     
-- **控制箱从站模式功能**： 
-    路径：初始设置 -> 外设 -> 板卡通讯。
+- **Función del modo esclavo de la caja de control**: 
+    Ruta: Configuración inicial -> Periféricos -> Comunicación de tarjeta.
   
-    说明：机器人外设界面新增板卡通讯模块配置，可基于国内扩展板卡，实现EIP、CClink、PN协议与机器人从站交互功能。
+    Descripción: La interfaz de periféricos del robot añade el módulo de configuración de comunicación de tarjeta, que permite, basándose en tarjetas de expansión nacionales, realizar la interacción de los protocolos EIP, CClink y PN con el esclavo del robot.
         
-- **增加手动模式下力传感器辅助拖动的碰撞检测功能**： 
-    路径：辅助应用 -> 工具应用 -> 拖动锁定 -> 力传感器辅助锁定。
+- **Adición de la función de detección de colisiones en el arrastre asistido por sensor de fuerza en modo manual**: 
+    Ruta: Aplicaciones auxiliares -> Aplicación de herramientas -> Bloqueo de arrastre -> Bloqueo asistido por sensor de fuerza.
   
-    说明：开启力传感器辅助拖动功能时，机器人处于手动模式时，也会触发碰撞检测功能，避免末端设备损坏。
+    Descripción: Al activar la función de arrastre asistido por sensor de fuerza, cuando el robot se encuentra en modo manual también se activa la función de detección de colisiones, evitando daños en el equipo del extremo.
 
-- **增加T形速度特性轨迹规划+blending平滑功能**： 
-    路径：示教程序 -> 程序编程、图形化编程、节点图编程。
+- **Adición de la función de planificación de trayectoria con características de velocidad en forma de T + suavizado blending**: 
+    Ruta: Programa de enseñanza -> Programación de programas, programación gráfica, programación por grafo de nodos.
   
-    说明：实现各运动指令间的平滑运动，提高工作效率能。
+    Descripción: Realización del movimiento suave entre las distintas instrucciones de movimiento, mejorando la eficiencia del trabajo.
         
-- **WebApp状态查询界面功能优化**： 
-    路径：状态信息 -> 状态查询。
+- **Optimización de la función de la interfaz de consulta de estado de WebApp**: 
+    Ruta: Información de estado -> Consulta de estado.
   
-    说明：优化状态查询参数设置为6个，波形时间最长为30s，增加数据视图显示并可复制数据，增加重命名图标名称。
+    Descripción: Optimización de la configuración de parámetros de consulta de estado a 6, tiempo de forma de onda máximo de 30s, adición de la visualización de la vista de datos con posibilidad de copiar datos, y adición del nombre del icono de cambio de nombre.
 
-- **FR全系列机器人拖动力优化**： 
-    路径：初始设置 -> 基础 -> 关节 -> 摩擦力补偿 -> 拖动力补偿。
+- **Optimización de la fuerza de arrastre de toda la serie de robots FR**: 
+    Ruta: Configuración inicial -> Básico -> Articulación -> Compensación de fricción -> Compensación de la fuerza de arrastre.
   
-    说明：通过在拖动过程中给予补偿力矩来使拖动更加省力。
+    Descripción: Hace que el arrastre sea más ligero proporcionando un par de compensación durante el arrastre.
     
-- **Web系统日志存储功能优化**： 
-    说明：修复系统日志文件异常问题，设置日志保留天数默认为7天。
+- **Optimización de la función de almacenamiento del registro del sistema Web**: 
+    Descripción: Corrección del problema de anomalía de los archivos de registro del sistema; se establece el número de días de conservación del registro por defecto en 7 días.
 
-版本 V3.8.2
+Versión V3.8.2
 -----------------
 
-日期：2025-05-29 
+Fecha: 2025-05-29 
     
-- **末端Lua开放协议适配焊接手柄功能**： 
-    路径：初始设置 -> 外设 -> 焊接手柄。
+- **Función de adaptación de la empuñadura de soldadura mediante protocolo abierto Lua del extremo**: 
+    Ruta: Configuración inicial -> Periféricos -> Empuñadura de soldadura.
   
-    说明：可使用开放协议适配smarttool焊接手柄，同时支持所有参数可配置。
+    Descripción: Se puede utilizar el protocolo abierto para adaptar la empuñadura de soldadura smarttool, con soporte para todos los parámetros configurables.
     
-- **控制器外设开放协议增加焊机开放协议**： 
-    路径：初始设置 -> 外设 -> 焊机。
+- **Adición del protocolo abierto de la máquina de soldar al protocolo abierto de periféricos del controlador**: 
+    Ruta: Configuración inicial -> Periféricos -> Máquina de soldar.
   
-    说明：可通过控制器外设开放协议(ModbusTCP)与焊机通讯进行焊机控制。
+    Descripción: Permite controlar la máquina de soldar comunicándose con ella mediante el protocolo abierto de periféricos del controlador (ModbusTCP).
 
-- **增加LUA程序暂停功能**： 
-    路径：示教程序 -> 程序编程。
+- **Adición de la función de pausa del programa LUA**: 
+    Ruta: Programa de enseñanza -> Programación de programas.
   
-    说明：示教程序运行时，可在任意行点击暂停，包括等待类指令、通讯类指令，并且暂停时不占用超时时间。    
+    Descripción: Durante la ejecución del programa de enseñanza se puede hacer clic en pausa en cualquier línea, incluidas las instrucciones de espera y las instrucciones de comunicación, y la pausa no ocupa el tiempo de espera agotado.    
 
-- **增加T型速度修形+Blending功能**： 
-    路径：示教程序 -> 程序编程、图形化编程、节点图编程。
+- **Adición de la función de modificación de la velocidad en forma de T + Blending**: 
+    Ruta: Programa de enseñanza -> Programación de programas, programación gráfica, programación por grafo de nodos.
 
-    说明：开启T型速度修形开关后，速度曲线平滑，当前支持blending类型为（PTP-PTP，LIN-LIN，ARC-ARC，LIN-ARC，ARC-LIN）。
+    Descripción: Tras activar el interruptor de modificación de la velocidad en forma de T, la curva de velocidad es suave; actualmente se admiten los tipos de blending (PTP-PTP, LIN-LIN, ARC-ARC, LIN-ARC, ARC-LIN).
     
-- **FIR自适应参数功能+FIR暂停恢复功能**： 
-    路径：示教程序 -> 程序编程、图形化编程、节点图编程，初始设置 -> 安全 -> 运动配置。
+- **Función de parámetros adaptativos FIR + función de pausa y reanudación FIR**: 
+    Ruta: Programa de enseñanza -> Programación de programas, programación gráfica, programación por grafo de nodos; Configuración inicial -> Seguridad -> Configuración de movimiento.
 
-    说明：FIR功能添加全局开启FIR及自适应参数开关，开启后运行普通PTP/LIN/ARC指令自动转化为FIR规划（不可带blend半径）。
+    Descripción: La función FIR añade el interruptor de activación global de FIR y de parámetros adaptativos; tras activarlo, la ejecución de las instrucciones normales PTP/LIN/ARC se convierte automáticamente en planificación FIR (sin radio de blend).
     
-- **Modbus RTU功能优化**： 
-    路径：示教程序 -> 程序编程、图形化编程、节点图编程，示教程序 -> 程序编程 -> Modbus RTU设置。
+- **Optimización de la función Modbus RTU**: 
+    Ruta: Programa de enseñanza -> Programación de programas, programación gráfica, programación por grafo de nodos; Programa de enseñanza -> Programación de programas -> Configuración de Modbus RTU.
 
-    说明：可在WebApp配置ModbusRTU主站、配置波特率、检验方式、站号等。可监控ModbusRTU寄存器实时数值。
+    Descripción: Permite configurar el maestro ModbusRTU en WebApp, configurar la velocidad en baudios, el modo de verificación, el número de estación, etc. Permite monitorizar los valores en tiempo real de los registros ModbusRTU.
     
-- **关节软限位保护功能**： 
-    路径：初始设置 -> 关节 -> 软限位。
+- **Función de protección de límite suave de articulación**: 
+    Ruta: Configuración inicial -> Articulación -> Límite suave.
 
-    说明：拖动模式下，当关节接近界面所设软限位时，存在阻尼力，同时在撤销外力矩后，关节能够回到软限位内。
+    Descripción: En el modo de arrastre, cuando la articulación se aproxima al límite suave establecido en la interfaz existe una fuerza de amortiguación y, tras retirar el par externo, la articulación puede volver dentro del límite suave.
     
-- **机器人摆动侧倾角功能**： 
-    路径：示教程序 -> 程序编程、图形化编程、节点图编程。
+- **Función de ángulo de inclinación lateral de oscilación del robot**: 
+    Ruta: Programa de enseñanza -> Programación de programas, programación gráfica, programación por grafo de nodos.
 
-    说明：支持机器人末端工具在摆动运动过程中绕摆动坐标系Rx方向自定义摆动角度。
+    Descripción: Permite configurar el ángulo de oscilación personalizado de la herramienta del extremo del robot alrededor de la dirección Rx del sistema de coordenadas de oscilación durante el movimiento de oscilación.
     
-- **工艺参数渐变焊接功能**： 
-    路径：示教程序 -> 程序编程、图形化编程、节点图编程。
+- **Función de soldadura con variación gradual de los parámetros del proceso**: 
+    Ruta: Programa de enseñanza -> Programación de programas, programación gráfica, programación por grafo de nodos.
 
-    说明：能够实现焊接过程中前进速度渐变、电流电压渐变。
+    Descripción: Permite realizar la variación gradual de la velocidad de avance y de la corriente y la tensión durante el proceso de soldadura.
     
-- **模拟量电弧跟踪功能**： 
-    路径：初始设置 -> 基础 -> I/O设置 -> AI。
+- **Función de seguimiento de arco por señal analógica**: 
+    Ruta: Configuración inicial -> Básico -> Configuración de I/O -> AI.
 
-    说明：直接使用控制箱DI、DO及AI、AO与焊机IO口相连，实现基于模拟量电流反馈的电弧跟踪。
+    Descripción: Conexión directa de las DI, DO y AI, AO de la caja de control con los puertos IO de la máquina de soldar, realizando el seguimiento de arco basado en la realimentación de corriente analógica.
     
-- **FRCap插件系统+码垛插件包功能**： 
+- **Sistema de plugins FRCap + paquete de plugin de paletizado**: 
   
-    说明：适配了QX x86版本的FRCap插件系统及码垛插件包，FRCap可以通过提供的官方接口与机器人控制器交互，或者客户依据实际需求编写自定义接口指令和处理逻辑进行个性化开发。
+    Descripción: Se ha adaptado el sistema de plugins FRCap y el paquete de plugin de paletizado para la versión QX x86; FRCap puede interactuar con el controlador del robot mediante las interfaces oficiales proporcionadas, o el cliente puede desarrollar personalizadamente escribiendo instrucciones de interfaz y lógica de tratamiento según sus necesidades reales.
     
-- **机器人型号及模型**： 
+- **Modelos y modelos de robot**: 
   
-    说明：增加FR3-C机器人型号及模型配置。
+    Descripción: Se añaden el modelo de robot FR3-C y la configuración del modelo.
     
-版本 V3.8.1
+Versión V3.8.1
 -----------------
 
-日期：2025-04-14 
+Fecha: 2025-04-14 
     
-- **T形速度功能优化**： 
-    路径：示教程序 -> 程序编程、图形化编程、节点图编程，初始设置 -> 基础模块。
+- **Optimización de la función de velocidad en forma de T**: 
+    Ruta: Programa de enseñanza -> Programación de programas, programación gráfica, programación por grafo de nodos; Configuración inicial -> Módulo básico.
   
-    说明：运动配置新增梯形速度优化模式，优化启停阶段急动度，增加加速阶段加速度。主要应用于启停阶段容易报碰撞的工况，以及启停阶段残余震动明显的工况。
+    Descripción: La configuración de movimiento añade el modo de optimización de velocidad trapezoidal, optimizando el jerk en las fases de arranque y parada y aumentando la aceleración en la fase de aceleración. Se aplica principalmente a condiciones de trabajo propensas a errores de colisión en las fases de arranque y parada, así como a condiciones de trabajo con vibración residual evidente en las fases de arranque y parada.
     
-- **传送带跟踪功能优化**： 
-    路径：辅助应用 -> 工艺包 -> 传送带跟踪。
+- **Optimización de la función de seguimiento de cinta transportadora**: 
+    Ruta: Aplicaciones auxiliares -> Paquete de proceso -> Seguimiento de cinta transportadora.
   
-    说明：在传送带跟踪运动模式下新增追检运动功能，无需在工件坐标系下进行运动示教，可自定义触发延迟距离。
+    Descripción: En el modo de movimiento de seguimiento de cinta transportadora se añade la función de movimiento de seguimiento e inspección, que no requiere realizar la enseñanza del movimiento bajo el sistema de coordenadas de pieza y permite personalizar la distancia de retardo de activación.
 
-- **增加轴干涉区的阻抗回调功能**：
-    路径：初始设置 -> 安全 -> 干涉区。
+- **Adición de la función de retorno de impedancia de la zona de interferencia de eje**:
+    Ruta: Configuración inicial -> Seguridad -> Zona de interferencia.
   
-    说明：在力传感器辅助拖动下，进入干涉区可以起到阻抗回调作用。
+    Descripción: Con el arrastre asistido por sensor de fuerza, al entrar en la zona de interferencia se produce un efecto de retorno de impedancia.
 
-- **焊接手柄适配功能**：
-    说明：新增焊接手柄适配：机器人末端安装焊接手柄可进行焊接程序编写及控制机器人启动、停止程序、手自动切换、拖动等功能。
+- **Función de adaptación de la empuñadura de soldadura**:
+    Descripción: Se añade la adaptación de la empuñadura de soldadura: la instalación de la empuñadura de soldadura en el extremo del robot permite la escritura de programas de soldadura y el control de las funciones de inicio, parada, conmutación manual/automático y arrastre del robot.
 
-- **WEB端页面增加关节限位环显示**：
-    说明：开启限位环显示功能，能实时显示关节所处位置。
+- **Adición de la visualización del anillo de límite articular en la página del lado WEB**:
+    Descripción: Al activar la función de visualización del anillo de límite se puede mostrar en tiempo real la posición en que se encuentran las articulaciones.
     
-- **SDK新增功能**：
-    说明：SDK增加下载控制器日志、所有数据源、数据备份包功能。
+- **Nuevas funciones del SDK**:
+    Descripción: El SDK añade las funciones de descarga del registro del controlador, de todas las fuentes de datos y del paquete de copia de seguridad de datos.
     
-- **碰撞前后关节信息记录功能**：
-    说明：记录碰撞前后的关节位置、速度、加速度及力矩信息，便于直接分析客户现场出现碰撞时的原因。
+- **Función de registro de la información de las articulaciones antes y después de la colisión**:
+    Descripción: Registro de la posición, velocidad, aceleración e información de par de las articulaciones antes y después de la colisión, facilitando el análisis directo de las causas de la colisión en el sitio del cliente.
 
-版本 V3.8.0
+Versión V3.8.0
 -----------------
 
-日期：2025-03-03 
+Fecha: 2025-03-03 
   
-- **偏置及摆幅单调渐变电弧跟踪功能**：
-    路径：示教程序 -> 程序编程、图形化编程、节点图编程。
+- **Función de seguimiento de arco con desplazamiento y amplitud de oscilación de variación monótona gradual**:
+    Ruta: Programa de enseñanza -> Programación de programas, programación gráfica, programación por grafo de nodos.
   
-    说明：摆动参数之摆动宽度可以实现在一段焊接运动中逐渐变化，段首摆幅参数逐渐向段末摆幅参数过渡，焊接中心可以主动偏移出焊缝中心。
+    Descripción: La anchura de oscilación del parámetro de oscilación puede variar gradualmente a lo largo de un movimiento de soldadura, de modo que el parámetro de amplitud del inicio del segmento transita gradualmente hacia el parámetro de amplitud del final del segmento; el centro de soldadura puede desplazarse activamente fuera del centro de la soldadura.
   
-- **自定义碰撞检测力矩阈值功能**：
-    路径：示教程序 -> 程序编程、图形化编程、节点图编程。
+- **Función de umbral de par de detección de colisiones personalizado**:
+    Ruta: Programa de enseñanza -> Programación de programas, programación gráfica, programación por grafo de nodos.
   
-    说明：可在运行中，设置碰撞检测力矩阈值。可以根据需要选择关节力矩阈值或TCP侧力矩阈值，碰撞后打印关节速度、加速度、力矩等信息到日志文件。
+    Descripción: Permite establecer durante el funcionamiento el umbral de par de detección de colisiones. Se puede seleccionar según las necesidades el umbral de par articular o el umbral de par del lado del TCP; tras la colisión se imprimen en el archivo de registro la velocidad, la aceleración, el par y otra información de las articulaciones.
   
-- **实时前瞻轨迹规划方法功能**：
-    路径：示教程序 -> 程序编程、图形化编程、节点图编程。
+- **Función de método de planificación de trayectoria con previsión en tiempo real**:
+    Ruta: Programa de enseñanza -> Programación de programas, programación gráfica, programación por grafo de nodos.
   
-    说明：实现多轨迹点拟合平滑衔接，运行速度随路径曲率自适应调整。
+    Descripción: Realización del ajuste suave de múltiples puntos de trayectoria; la velocidad de funcionamiento se ajusta de forma adaptativa según la curvatura de la ruta.
 
-- **FR全系列机型负载曲线绘制**：
-    说明：更新FR全系列机型负载曲线图表。
+- **Dibujo de las curvas de carga de toda la serie de modelos FR**:
+    Descripción: Actualización de los gráficos de curvas de carga de toda la serie de modelos FR.
 
-- **缩减模式速度切换逻辑优化**：
-    说明：缩减模式触发时，偶尔会出现速度远低于缩减模式速度的运动，对该问题进行优化和解决。
+- **Optimización de la lógica de conmutación de velocidad del modo reducido**:
+    Descripción: Al activarse el modo reducido a veces se producía un movimiento con velocidad muy inferior a la del modo reducido; se optimiza y resuelve dicho problema.
 
-- **示教点位优化**：
-    说明：示教点位添加提示信息优化。
+- **Optimización de los puntos de enseñanza**:
+    Descripción: Optimización de la información de aviso añadida a los puntos de enseñanza.
 
-- **基于FOCAS的CNC功能包功能**：
-    说明：增加FOCAS的CNC功能。
+- **Función del paquete de funciones CNC basado en FOCAS**:
+    Descripción: Se añade la función CNC de FOCAS.
 
-- **从站指令适配板卡**：
-    说明：从站指令适配EnTalk miniPCIe板卡（Profinet协议、Ethernet/IP协议、CC-Link IEF Basic协议），适配CIFX 9OE-RE/F/PNS miniPCIe板卡（Profinet协议、Ethernet/IP协议、Ethercat协议、CC-Link IEF Basic协议）。
+- **Adaptación de las instrucciones de esclavo a las tarjetas**:
+    Descripción: Las instrucciones de esclavo se adaptan a la tarjeta EnTalk miniPCIe (protocolo Profinet, protocolo Ethernet/IP, protocolo CC-Link IEF Basic) y a la tarjeta CIFX 9OE-RE/F/PNS miniPCIe (protocolo Profinet, protocolo Ethernet/IP, protocolo Ethercat, protocolo CC-Link IEF Basic).
 
-- **checkpoint时间戳反馈功能**：
-    说明：servo J运动可以收到时间戳结果，包含指令号及下发、入队、出队、执行时间戳。
+- **Función de realimentación de marca de tiempo checkpoint**:
+    Descripción: El movimiento servo J puede recibir el resultado de la marca de tiempo, incluidos el número de instrucción y las marcas de tiempo de envío, entrada en cola, salida de cola y ejecución.
 
-- **激光传感器适配控制器外设开放协议**：
-    说明：增加激光外设开放协议通信功能。
+- **Adaptación del sensor láser al protocolo abierto de periféricos del controlador**:
+    Descripción: Se añade la función de comunicación del protocolo abierto de periféricos láser.
    
-版本 V3.7.8
+Versión V3.7.8
 -----------------
 
-日期：2025-01-20 
+Fecha: 2025-01-20 
   
-- **扩展轴加激光数据无变换定点跟踪功能**：
-    路径：示教程序 -> 程序编程、图形化编程、节点图编程，初始设置 -> 外设 -> 线激光传感器。
+- **Función de seguimiento de punto fijo sin transformación de datos láser con eje extendido**:
+    Ruta: Programa de enseñanza -> Programación de programas, programación gráfica, programación por grafo de nodos; Configuración inicial -> Periféricos -> Sensor láser de línea.
   
-    说明：主要针对变位机的实时定点跟踪，使扩展轴在运动时激光记录的工件偏差补偿在机器人工具末端。
+    Descripción: Dirigida principalmente al seguimiento de punto fijo en tiempo real del posicionador, hace que la desviación de la pieza registrada por láser durante el movimiento del eje extendido se compense en el extremo de la herramienta del robot.
   
-- **机器人CI配置新增及优化功能**：
-    路径：初始设置 -> 基础 -> I/O设置 -> DI，示教程序 -> 程序编程、图形化编程、节点图编程。
+- **Adición y optimización de la configuración de CI del robot**:
+    Ruta: Configuración inicial -> Básico -> Configuración de I/O -> DI; Programa de enseñanza -> Programación de programas, programación gráfica, programación por grafo de nodos.
   
-    说明：1.CI可配置输入增加高低电平切换机器人手自动模式功能。配置CI端口为“手自动切换(高低电平)”，当该端口输入信号有效时，机器人自动切换至自动模式，当该端口输入信号无效时，机器人自动切换至手动模式。2.WebApp打开LUA程序后，通过可配置CI启动LUA程序时自动运行当前打开的LUA程序，而不是上次保存的程序。
+    Descripción: 1. La entrada configurable CI añade la función de conmutación del modo manual/automático del robot por nivel alto/bajo. Al configurar el puerto CI como "Conmutación manual/automático (nivel alto/bajo)", cuando la señal de entrada de dicho puerto es válida el robot cambia automáticamente al modo automático, y cuando la señal de entrada de dicho puerto no es válida el robot cambia automáticamente al modo manual. 2. Tras abrir un programa LUA en WebApp, al iniciar el programa LUA mediante una CI configurable se ejecuta automáticamente el programa LUA abierto actualmente, en lugar del último programa guardado.
   
-- **WebApp状态查询功能优化**： 
-    路径：状态信息 -> 状态查询。
+- **Optimización de la función de consulta de estado de WebApp**: 
+    Ruta: Información de estado -> Consulta de estado.
   
-    说明：前后端数据交互方式将前端轮询请求方式改为websocket主动发送数据的方式实现，降低CPU占用。
+    Descripción: El modo de interacción de datos entre el frontend y el backend se cambia del modo de solicitud de sondeo del frontend al modo de envío activo de datos mediante websocket, reduciendo el uso de CPU.
   
-- **控制箱固件DO开机高低有效可配置功能**：
-    路径：初始设置 -> 基础 -> I/O设置 -> DO。
+- **Función configurable del nivel alto/bajo válido del DO de encendido del firmware de la caja de control**:
+    Ruta: Configuración inicial -> Básico -> Configuración de I/O -> DO.
   
-    说明：新增“上电期间控制箱DO输出”配置,机器人使能前，控制箱DO可根据具体使用场景配置为所需的高低电平状态。
+    Descripción: Se añade la configuración "Salida DO de la caja de control durante el encendido"; antes de habilitar el robot, el DO de la caja de control se puede configurar con el estado de nivel alto/bajo requerido según el escenario de uso concreto.
   
-- **实时前瞻轨迹规划方法功能**：
-    路径：示教程序 -> 程序编程、图形化编程、节点图编程。
+- **Función de método de planificación de trayectoria con previsión en tiempo real**:
+    Ruta: Programa de enseñanza -> Programación de programas, programación gráfica, programación por grafo de nodos.
   
-    说明：新增“TrajectoryLA”指令。
-  
-- **基于力传感器碰撞后的策略功能**：
-    路径：初始设置 -> 关节 -> 碰撞等级。
-  
-    说明：碰撞回弹模式新增“安全速度”参数。
+    Descripción: Se añade la instrucción "TrajectoryLA".
 
-- **力传感器碰撞后自动抬升功能**：
-    说明：实现基于力传感器的碰撞检测后，机器人自动抬升功能，并能限制抬升过程的速度。
+- **Función de estrategia tras la colisión basada en el sensor de fuerza**:
+    Ruta: Configuración inicial -> Articulación -> Nivel de colisión.
+  
+    Descripción: El modo de rebote por colisión añade el parámetro "Velocidad de seguridad".
 
-- **FR全系列机型负载曲线绘制**：
-    说明：更新FR全系列机型负载曲线图表。
+- **Función de elevación automática tras la colisión del sensor de fuerza**:
+    Descripción: Realización de la función de elevación automática del robot tras la detección de colisiones basada en el sensor de fuerza, con limitación de la velocidad durante el proceso de elevación.
 
-版本 V3.7.7
+- **Dibujo de las curvas de carga de toda la serie de modelos FR**:
+    Descripción: Actualización de los gráficos de curvas de carga de toda la serie de modelos FR.
+
+Versión V3.7.7
 -----------------
 
-日期：2024-12-30
+Fecha: 2024-12-30
   
-- **夹爪状态数据实时监控功能**：
-    路径：初始设置 -> 外设 -> 夹爪 -> 状态监控。
+- **Función de monitorización en tiempo real de los datos de estado de la pinza**:
+    Ruta: Configuración inicial -> Periféricos -> Pinza -> Monitorización de estado.
   
-    说明：实时显示夹爪运行速度、力矩、位置等状态信息。
+    Descripción: Visualización en tiempo real de información de estado como la velocidad de funcionamiento, el par y la posición de la pinza.
   
-- **控制器故障数据采集功能**：
-    路径：系统设置 -> 通用设置 -> 故障数据。
+- **Función de recogida de datos de fallo del controlador**:
+    Ruta: Configuración del sistema -> Configuración general -> Datos de fallo.
 
-    说明：机器人运行过程中发生碰撞、指令点错误等故障时，控制器自动记录故障发生前后各15s的机器人位置、速度等状态信息。WebApp可导出.csv格式故障信息，帮助排查分析故障原因。
+    Descripción: Cuando durante el funcionamiento del robot se producen fallos como colisiones o errores de punto de instrucción, el controlador registra automáticamente información de estado como la posición y la velocidad del robot en los 15s anteriores y posteriores al fallo. WebApp permite exportar la información de fallo en formato .csv, ayudando a investigar y analizar la causa del fallo.
   
-- **基于力传感器辅助拖动的奇异点规避及穿越功能**：
-    路径：辅助应用 -> 工具应用 -> 拖动锁定 -> 力传感器辅助锁定。
+- **Función de evitación y cruce de puntos singulares en el arrastre asistido por sensor de fuerza**:
+    Ruta: Aplicaciones auxiliares -> Aplicación de herramientas -> Bloqueo de arrastre -> Bloqueo asistido por sensor de fuerza.
 
-    说明：1、在力传感器辅助拖动界面，选择策略为规避，当拖动机器人靠近奇异点时，会产生虚拟力。2、选择策略为穿越时，在靠近奇异点时，会切换至拖动模式，当远离奇异点时，会切换至力传感器辅助拖动。
+    Descripción: 1. En la interfaz de arrastre asistido por sensor de fuerza, al seleccionar la estrategia de evitación, cuando se arrastra el robot cerca de un punto singular se genera una fuerza virtual. 2. Al seleccionar la estrategia de cruce, al acercarse al punto singular se cambia al modo de arrastre y, al alejarse del punto singular, se vuelve al arrastre asistido por sensor de fuerza.
 
-- **旧动力学适配360°自由安装及备份包导入适应动力学功能**：
-    路径：初始设置 -> 基础 -> 安装，辅助应用 -> 工具应用 -> 数据备份。
+- **Adaptación de la dinámica antigua a la instalación libre de 360° y función de adaptación de la dinámica en la importación del paquete de copia de seguridad**:
+    Ruta: Configuración inicial -> Básico -> Instalación; Aplicaciones auxiliares -> Aplicación de herramientas -> Copia de seguridad de datos.
 
-    说明：备份包导入时，增加校验机器人类型、安装方式、安装角度和动力学配置类型，上述参数不一致时，提示禁止导入。
+    Descripción: Al importar el paquete de copia de seguridad se añade la verificación del tipo de robot, el modo de instalación, el ángulo de instalación y el tipo de configuración dinámica; cuando los parámetros anteriores no son consistentes se avisa de que está prohibida la importación.
   
-- **自动模式下奇异点穿越功能**：
-    路径：示教程序 -> 外设 -> LIN/ARC指令。 
+- **Función de cruce de puntos singulares en modo automático**:
+    Ruta: Programa de enseñanza -> Periféricos -> Instrucciones LIN/ARC. 
 
-    说明：新增“奇异点穿越”运动保护配置。
+    Descripción: Se añade la configuración de protección de movimiento "Cruce de puntos singulares".
 
-- **末端按钮记录点位后自动更新对应点位Lua程序功能**：
-    路径：示教程序 -> 程序编程 -> 示教点。
+- **Función de actualización automática del programa Lua del punto correspondiente tras registrar el punto con el botón del extremo**:
+    Ruta: Programa de enseñanza -> Programación de programas -> Puntos de enseñanza.
 
-    说明：新增末端按钮记录点位后可自动更新对应点位Lua程序功能。
+    Descripción: Se añade la función de actualización automática del programa Lua del punto correspondiente tras registrar el punto con el botón del extremo.
 
-- **状态查询界面优化**：
-    路径：状态信息 -> 状态查询。
+- **Optimización de la interfaz de consulta de estado**:
+    Ruta: Información de estado -> Consulta de estado.
 
-    说明：状态查询界面UI和交互优化。
+    Descripción: Optimización de la UI y la interacción de la interfaz de consulta de estado.
 
-- **WebApp、示教器界面优化**：
-    说明：WebApp、示教器新增俄语、繁体中文显示界面。
+- **Optimización de la interfaz de WebApp y del teach pendant**:
+    Descripción: WebApp y el teach pendant añaden la visualización de la interfaz en ruso y chino tradicional.
 
-- **WebApp展示界面优化功能**：
-    说明：WebApp界面左下角新增软件版本和机器人型号展示。
+- **Función de optimización de la interfaz de visualización de WebApp**:
+    Descripción: La esquina inferior izquierda de la interfaz de WebApp añade la visualización de la versión de software y del modelo de robot.
 
-- **扩展轴加激光跟踪功能**：
-    说明：1.机器人与外部轴同步运动，激光器实现外部轴坐标系下的同步跟踪。2.机器人与外部轴异步运动，激光能够在机器人基坐标系下或外部轴坐标系下跟踪。
+- **Función de seguimiento láser con eje extendido**:
+    Descripción: 1. El robot se mueve sincronizadamente con el eje externo y el láser realiza el seguimiento sincronizado bajo el sistema de coordenadas del eje externo. 2. El robot se mueve de forma asíncrona con el eje externo y el láser puede realizar el seguimiento bajo el sistema de coordenadas base del robot o bajo el sistema de coordenadas del eje externo.
 
-- **基于力传感器的工具点拖动功能**：
-    说明：在web界面，设置FT参考坐标系为自定义坐标系，开启力传感器辅助拖动后，机器人沿着设置的工具坐标系运动。
+- **Función de arrastre del punto de herramienta basada en el sensor de fuerza**:
+    Descripción: En la interfaz web, al configurar el sistema de coordenadas de referencia FT como sistema de coordenadas personalizado y activar el arrastre asistido por sensor de fuerza, el robot se mueve a lo largo del sistema de coordenadas de herramienta establecido.
 
-- **机器人CNDE功能**：
-    说明：客户端可通过CNDE获取机器人状态反馈和向机器人发送控制数据(UDP通讯)，其中状态反馈周期可配置(1-200ms),机器人状态反馈数据内容和客户端输入控制机器人数据内容可自由配置。
+- **Función CNDE del robot**:
+    Descripción: El cliente puede, mediante CNDE, obtener la realimentación de estado del robot y enviar datos de control al robot (comunicación UDP); el período de realimentación de estado es configurable (1-200ms); el contenido de los datos de realimentación de estado del robot y el contenido de los datos de entrada del cliente para controlar el robot se pueden configurar libremente.
 
-版本 V3.7.6
+Versión V3.7.6
 -----------------
 
-日期：2024-11-18
+Fecha: 2024-11-18
 
-- **初始设置页面布局优化**：
-    路径：初始设置。
+- **Optimización de la disposición de la página de configuración inicial**:
+    Ruta: Configuración inicial.
   
-    说明：优化工具设定界面、负载配置界面以及部分功能图标显示。
+    Descripción: Optimización de la interfaz de configuración de herramienta, de la interfaz de configuración de carga y de la visualización de algunos iconos de función.
 
-- **WebApp外设扩展轴配置功能交互优化**：
-    路径：初始设置 -> 外设 -> 扩展轴。
+- **Optimización de la interacción de la función de configuración del eje extendido de periféricos de WebApp**:
+    Ruta: Configuración inicial -> Periféricos -> Eje extendido.
   
-    说明：扩展轴界面布局和交互优化。
+    Descripción: Optimización de la disposición y la interacción de la interfaz del eje extendido.
 
-- **系统日志功能优化**：
-    路径：状态信息 -> 系统日志。
+- **Optimización de la función del registro del sistema**:
+    Ruta: Información de estado -> Registro del sistema.
   
-    说明：新增日志分页展示与日志详细操作类别区分。
+    Descripción: Se añade la visualización paginada del registro y la distinción de categorías de operación detalladas del registro.
   
-- **XY方向横向恒力打磨功能**：
-    路径：示教程序 -> 程序编程 -> 力控集 -> F/T_Control指令。
+- **Función de pulido de fuerza constante transversal en dirección XY**:
+    Ruta: Programa de enseñanza -> Programación de programas -> Conjunto de control de fuerza -> Instrucción F/T_Control.
   
-    说明：增加“打磨盘半径”参数，可贴着工件表面进行反复直线/曲线运动。
+    Descripción: Se añade el parámetro "Radio del disco de pulido", que permite realizar movimientos repetidos en línea recta/curva adheridos a la superficie de la pieza.
   
-- **激光取点运动功能**：
-    路径：辅助应用 -> 工具应用 -> 交点生成。
+- **Función de movimiento de captación por láser**:
+    Ruta: Aplicaciones auxiliares -> Aplicación de herramientas -> Generación de puntos de intersección.
   
-    说明：三点与四点寻位求交点坐标功能增加lua脚本指令使用。
+    Descripción: La función de obtención de coordenadas del punto de intersección mediante búsqueda de posición de tres y cuatro puntos añade el uso de instrucciones de script lua.
     
-- **外部轴构型-两自由度小车功能**：
-    路径：初始设置 -> 外设 -> 扩展轴。
+- **Configuración del eje externo - función de carro de dos grados de libertad**:
+    Ruta: Configuración inicial -> Periféricos -> Eje extendido.
   
-    说明：增加“两自由度小车”扩展轴方案，机器人与PLC间进行UDP通讯，再由PLC通过EtherCat控制两自由度小车。
+    Descripción: Se añade el esquema de eje extendido "Carro de dos grados de libertad"; el robot se comunica mediante UDP con el PLC y este controla el carro de dos grados de libertad mediante EtherCat.
    
-- **基于平板工具的TCP标定方法功能**：
-    路径：初始设置 -> 坐标系 -> 工具坐标。
+- **Función del método de calibración del TCP basado en la herramienta de placa plana**:
+    Ruta: Configuración inicial -> Sistema de coordenadas -> Coordenadas de herramienta.
   
-    说明：新增“平板工具标定”坐标系标定方法。
+    Descripción: Se añade el método de calibración del sistema de coordenadas "Calibración con herramienta de placa plana".
          
-- **机器人后台程序功能**：
-    路径：示教程序 -> 程序编程。
+- **Función de programas en segundo plano del robot**:
+    Ruta: Programa de enseñanza -> Programación de programas.
   
-    说明：后台程序能够正常获取I/O接口数据，包括系统I/O、modbus、扩展I/O。
+    Descripción: El programa en segundo plano puede obtener con normalidad los datos de la interfaz de I/O, incluidas las I/O del sistema, modbus y las I/O extendidas.
    
-- **机器人轨迹自动规避奇异点功能**：
-    路径：示教程序 -> 程序编程 -> 直线Lin/圆弧Arc指令。
+- **Función de evitación automática de puntos singulares en la trayectoria del robot**:
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucción de línea recta Lin/arco Arc.
   
-    说明：新增“奇异点规避”运动保护配置。
+    Descripción: Se añade la configuración de protección de movimiento "Evitación de puntos singulares".
    
-- **旋转夹爪末端适配功能**：
-    路径：初始设置 -> 外设 -> 夹爪。
+- **Función de adaptación del extremo de la pinza rotativa**:
+    Ruta: Configuración inicial -> Periféricos -> Pinza.
   
-    说明：增加旋转夹爪相关功能码配置。
+    Descripción: Se añade la configuración de códigos de función relacionados con la pinza rotativa.
        
-- **自定义协议从站指令**：
-    路径：远程模式。
+- **Instrucción de esclavo de protocolo personalizado**:
+    Ruta: Modo remoto.
   
-    说明：新增“控制器从站协议”配置。
+    Descripción: Se añade la configuración "Protocolo de esclavo del controlador".
     
-- **UDP通讯焊丝寻位功能**：
+- **Función de búsqueda de posición del alambre de soldadura por comunicación UDP**:
   
-    说明：机器人可以通过UDP扩展IO进行焊丝寻位启停控制及获取焊丝寻位成功信号。
+    Descripción: El robot puede, mediante la IO extendida UDP, realizar el control de inicio y parada de la búsqueda de posición del alambre de soldadura y obtener la señal de éxito de la búsqueda de posición del alambre de soldadura.
     
-- **备份包功能优化**：
+- **Optimización de la función del paquete de copia de seguridad**:
 
-    说明：支持旧版本数据包导入使用（QX 3.6.1及之后版本数据包）。
+    Descripción: Soporte de importación y uso de paquetes de datos de versiones antiguas (paquetes de datos de QX 3.6.1 y posteriores).
 
-- **恢复出厂设置功能优化**：新增文件校验，增加系统恢复出厂稳定性。
+- **Optimización de la función de restauración de configuración de fábrica**: Se añade la verificación de archivos, aumentando la estabilidad de la restauración de configuración de fábrica del sistema.
 
-    说明：新增文件校验，增加系统恢复出厂稳定性。
+    Descripción: Se añade la verificación de archivos, aumentando la estabilidad de la restauración de configuración de fábrica del sistema.
 
-- **升级功能优化**：
+- **Optimización de la función de actualización**:
 
-    说明：QX3.6.9及之后版本可直接升级到QX3.7.6，升级后保留当前版本用户数据。
+    Descripción: Las versiones QX3.6.9 y posteriores se pueden actualizar directamente a QX3.7.6, conservando tras la actualización los datos de usuario de la versión actual.
 
-- **页面降级功能**：
+- **Función de degradación de página**:
   
-    说明：WebApp页面支持降级，可降到QX3.6.9及之后任意版本，降级后保留当前版本用户数据。
+    Descripción: La página de WebApp admite la degradación a cualquier versión de QX3.6.9 y posteriores, conservando tras la degradación los datos de usuario de la versión actual.
 
-版本 V3.7.5
+Versión V3.7.5
 -----------------
 
-日期：2024-09-30
+Fecha: 2024-09-30
 
-- **包角姿态过渡角速度可调功能**：
-    路径：示教程序 -> 程序编程 -> 直线Lin指令。
+- **Función de ajuste de la velocidad angular de transición de actitud de envolvente de esquina**:
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucción de línea recta Lin.
   
-    说明：新增“过渡点角速度可调”运动保护配置。
+    Descripción: Se añade la configuración de protección de movimiento "Velocidad angular de punto de transición ajustable".
        
-- **电弧跟踪多层多道焊接功能**：
-    路径：辅助应用 -> 工艺包 -> 焊接专家库 -> 多层多道焊。
+- **Función de soldadura multicapa y multipasada con seguimiento de arco**:
+    Ruta: Aplicaciones auxiliares -> Paquete de proceso -> Biblioteca de expertos en soldadura -> Soldadura multicapa y multipasada.
   
-    说明：新增“首层焊接摆动功能”和“电弧跟踪功能”配置。
+    Descripción: Se añaden las configuraciones "Función de oscilación de la primera capa" y "Función de seguimiento de arco".
   
-- **485扩展轴配置功能**：
-    路径：初始设置 -> 外设 -> 扩展轴。
+- **Función de configuración del eje extendido 485**:
+    Ruta: Configuración inicial -> Periféricos -> Eje extendido.
   
-    说明：增加“加速度及急停”配置。
+    Descripción: Se añade la configuración "Aceleración y parada de emergencia".
   
-- **机器人工具TCP自动标定功能（自制光纤传感器工装）**：
-    路径：初始设置 -> 基础 -> 工具坐标。
+- **Función de calibración automática del TCP de la herramienta del robot (utillaje de sensor de fibra óptica de fabricación propia)**:
+    Ruta: Configuración inicial -> Básico -> Coordenadas de herramienta.
   
-    说明：新增“光电自动标定”坐标系标定。
+    Descripción: Se añade la calibración del sistema de coordenadas "Calibración automática fotoeléctrica".
   
-- **示教器多语言设置功能**：
-    路径：登录页面。
+- **Función de configuración multilingüe del teach pendant**:
+    Ruta: Página de inicio de sesión.
   
-    说明：新增“语言切换”配置。
+    Descripción: Se añade la configuración "Conmutación de idioma".
     
-版本 V3.7.4
+Versión V3.7.4
 -----------------
 
-日期：2024-08-09
+Fecha: 2024-08-09
 
-- **基于lua末端开放协议软件功能（夹爪部分）**：
-    路径：初始设置 -> 外设 -> 夹爪。
+- **Función de software de protocolo abierto del extremo basado en lua (parte de pinza)**:
+    Ruta: Configuración inicial -> Periféricos -> Pinza.
   
-    说明：新增“末端协议启用”配置。
+    Descripción: Se añade la configuración "Habilitación del protocolo del extremo".
        
-- **斜锯齿摆动功能**：
-    路径：示教程序 -> 程序编程 -> 摆动Weave指令。
+- **Función de oscilación en diente de sierra inclinado**:
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucción de oscilación Weave.
   
-    说明：增加“摆动方向方位角”参数配置。
+    Descripción: Se añade la configuración del parámetro "Ángulo de azimut de la dirección de oscilación".
        
-- **机器人焊接工艺包优化功能**：
-    路径：初始设置 -> 外设 -> 焊机 -> 焊机配置。
+- **Función de optimización del paquete de proceso de soldadura del robot**:
+    Ruta: Configuración inicial -> Periféricos -> Máquina de soldar -> Configuración de la máquina de soldar.
   
-    说明：新增“焊接工艺参数”配置。
+    Descripción: Se añade la configuración "Parámetros del proceso de soldadura".
        
-- **Lin指令关节超速处理功能**：
-    路径：示教程序 -> 程序编程 -> 直线Lin指令。
+- **Función de tratamiento de sobrevelocidad articular de la instrucción Lin**:
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucción de línea recta Lin.
   
-    说明：新增“关节超速保护”运动保护配置。
+    Descripción: Se añade la configuración de protección de movimiento "Protección contra sobrevelocidad articular".
        
-版本 V3.7.3
+Versión V3.7.3
 -----------------
 
-日期：2024-06-28
+Fecha: 2024-06-28
 
-- **Modbus从站控制机器人功能**：
-    路径：示教程序 -> 程序编程 -> ModbusTCP。
+- **Función de control del robot mediante esclavo Modbus**:
+    Ruta: Programa de enseñanza -> Programación de programas -> ModbusTCP.
   
-    说明：新增“从站控制器”配置。
+    Descripción: Se añade la configuración "Controlador esclavo".
        
-- **急停停机类型功能**： 
-    路径：初始设置 -> 安全 -> 急停停机。
+- **Función de tipo de parada de emergencia**: 
+    Ruta: Configuración inicial -> Seguridad -> Parada de emergencia.
   
-    说明：停机类型新增“1a类、2a类、2类”停机类型。
+    Descripción: Se añaden los tipos de parada "tipo 1a, tipo 2a y tipo 2".
        
-版本 V3.7.2
+Versión V3.7.2
 -----------------
 
-日期：2024-06-07
+Fecha: 2024-06-07
 
-- **基于Lua末端开放协议配置功能**：
-    路径：初始设置 -> 外设 -> 末端工具 -> 开放协议。
+- **Función de configuración del protocolo abierto del extremo basado en Lua**:
+    Ruta: Configuración inicial -> Periféricos -> Herramienta del extremo -> Protocolo abierto.
   
-    说明：新增“开放协议”配置。
+    Descripción: Se añade la configuración "Protocolo abierto".
      
-- **运动AO控制指令功能**：
-    路径：示教程序 -> 程序编程。
+- **Función de instrucción de control AO de movimiento**:
+    Ruta: Programa de enseñanza -> Programación de programas.
   
-    说明：新增“运动AO指令”。
+    Descripción: Se añade la "Instrucción AO de movimiento".
      
-- **六维力和关节阻抗混合拖动功能**： 
-    路径：辅助应用 -> 工具应用 -> 拖动锁定。
+- **Función de arrastre mixto de fuerza de seis dimensiones e impedancia articular**: 
+    Ruta: Aplicaciones auxiliares -> Aplicación de herramientas -> Bloqueo de arrastre.
   
-    说明：新增“六维力和关节阻抗混合拖动”。
+    Descripción: Se añade el "Arrastre mixto de fuerza de seis dimensiones e impedancia articular".
      
-- **碰撞后响应策略功能**： 
-    路径：初始设置 -> 基础 -> 关节 -> 碰撞等级。
+- **Función de estrategia de respuesta tras la colisión**: 
+    Ruta: Configuración inicial -> Básico -> Articulación -> Nivel de colisión.
   
-    说明：新增“碰撞策略”配置。
+    Descripción: Se añade la configuración "Estrategia de colisión".
      
-- **机器人首次激活功能**： 
-    路径：登录设置。
+- **Función de primera activación del robot**: 
+    Ruta: Configuración de inicio de sesión.
   
-    说明：新增机器人首次激活验证功能。
+    Descripción: Se añade la función de verificación de la primera activación del robot.
      
-版本 V3.7.1
+Versión V3.7.1
 -----------------
 
-日期：2024-05-10
+Fecha: 2024-05-10
 
-- **web界面上锁功能**： 
-    路径：系统设置 -> 自定义信息。
+- **Función de bloqueo de la interfaz web**: 
+    Ruta: Configuración del sistema -> Información personalizada.
   
-    说明：新增“web界面锁屏”配置。 
+    Descripción: Se añade la configuración "Bloqueo de pantalla de la interfaz web". 
      
-- **寻位三点与四点求交点坐标功能**： 
-    路径：辅助应用 -> 工具应用 -> 交点生成。
+- **Función de obtención de coordenadas del punto de intersección mediante búsqueda de posición de tres y cuatro puntos**: 
+    Ruta: Aplicaciones auxiliares -> Aplicación de herramientas -> Generación de puntos de intersección.
   
-    说明：新增“寻位三点与四点求交点坐标功能”。
+    Descripción: Se añade la "Función de obtención de coordenadas del punto de intersección mediante búsqueda de posición de tres y cuatro puntos".
      
-- **段焊运动姿态优化功能**：
-    路径：示教程序 -> 程序编程 -> 段焊Segment指令。
+- **Función de optimización de la actitud del movimiento de soldadura por segmentos**:
+    Ruta: Programa de enseñanza -> Programación de programas -> Instrucción de soldadura por segmentos Segment.
   
-    说明：增加“段焊模式”配置。
+    Descripción: Se añade la configuración "Modo de soldadura por segmentos".
   
-- **基于力传感器的虚拟墙功能**：
-    路径：初始设置 -> 外设 -> 力传感器，辅助应用 -> 工具应用 -> 拖动锁定。
+- **Función de muro virtual basada en sensor de fuerza**:
+    Ruta: Configuración inicial -> Periféricos -> Sensor de fuerza; Aplicaciones auxiliares -> Aplicación de herramientas -> Bloqueo de arrastre.
   
-    说明：末端外设配置增加“力传感器”相关配置参数，力传感器辅助锁定增加“惯性系数”配置。
+    Descripción: La configuración de periféricos del extremo añade los parámetros de configuración relacionados con el "Sensor de fuerza"; el bloqueo asistido por sensor de fuerza añade la configuración "Coeficiente de inercia".
   
-- **SmartTool+力传感器组合新增功能**：
-    路径：初始设置 -> 外设 -> 焊接手柄。
+- **Nueva función de combinación SmartTool + sensor de fuerza**:
+    Ruta: Configuración inicial -> Periféricos -> Empuñadura de soldadura.
   
-    说明：新增键位功能配置。
-  
+    Descripción: Se añade la configuración de funciones de las teclas.

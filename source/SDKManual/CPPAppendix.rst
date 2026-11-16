@@ -1,95 +1,95 @@
-附录
+Apéndice
 =================
 
 .. toctree:: 
     :maxdepth: 5
 
-源码下载
+Descarga del código fuente
 ------------------------------------------------
 
-在法奥文档(https://fairino-doc-zhs.readthedocs.io/latest/)中找到“资料下载”模块，点击“CPP SDK”按钮，在右侧页面中点击“FAIRINO CPP SDK”，等待浏览器下载完成。
+En la documentación de FAIRINO (https://fairino-doc-es.readthedocs.io/latest/) busque el módulo "Descarga de materiales", haga clic en el botón "CPP SDK" y, en la página de la derecha, haga clic en "FAIRINO CPP SDK"; espere a que el navegador complete la descarga.
 
 .. image:: image/001.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 15.1‑1 C++SDK源码下载
+.. centered:: Figura 15.1‑1 Descarga del código fuente del SDK de C++
 
-解开压缩包，下载点位文件目录如图，其中：
+Descomprima el paquete; el directorio de archivos de puntos descargado se muestra en la figura, donde:
 
-- windows：VS2015~VS2019等常用环境下编译器编译的头文件和库文件(.lib和.dll)，包含Debug和Release模式；
-- linux：gcc、rk3399、rk3568等常用环境下的头文件和库文件(.so);
-- libfairino：C++SDK源码；
+- windows: archivos de encabezado y de librería (.lib y .dll) compilados con el compilador en entornos habituales como VS2015~VS2019, incluyendo los modos Debug y Release;
+- linux: archivos de encabezado y de librería (.so) en entornos habituales como gcc, rk3399, rk3568;
+- libfairino: código fuente del SDK de C++;
 
 .. image:: image/002.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 15.1‑2 C++SDK源码目录
+.. centered:: Figura 15.1‑2 Directorio del código fuente del SDK de C++
 
-Windows平台下源码编译
-------------------------------------------------
-①打开Visual Studio，点击右下角的“继续但无需代码(W)”；
+Compilación del código fuente en la plataforma Windows
+---------------------------------------------------------
+①Abra Visual Studio y haga clic en "Continuar sin código (W)" en la esquina inferior derecha;
 
 .. image:: image/003.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 15.2‑1 打开Visual Studio
+.. centered:: Figura 15.2‑1 Abrir Visual Studio
 
-②依次点击“文件”、“打开”、“CMake(M)”,弹出文件选择框，选择下载的C++SDK源码中的“\libfairino\CMakeLists.txt”文件，VisualStudio将自动根据CMakeLists.txt中的定义加载工程。
+②Haga clic sucesivamente en "Archivo", "Abrir", "CMake(M)"; aparecerá un cuadro de selección de archivos. Seleccione el archivo "\libfairino\CMakeLists.txt" del código fuente del SDK de C++ descargado; Visual Studio cargará automáticamente el proyecto según la definición de CMakeLists.txt.
 
 .. image:: image/004.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 15.2‑2 打开Cmake工程
+.. centered:: Figura 15.2‑2 Abrir el proyecto CMake
 
-③根据需求选择编译平台“x64-Debug”或“x64-Release”等，选择启动项为“fairino.dll”。
+③Seleccione según sea necesario la plataforma de compilación "x64-Debug" o "x64-Release", etc., y seleccione como elemento de inicio "fairino.dll".
 
 .. image:: image/005.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 15.2‑3 选择启动项
+.. centered:: Figura 15.2‑3 Seleccionar el elemento de inicio
 
-④在菜单栏中依次点击“生成”，“重新生成fairino.dll”，编译器即自动开始编译。
+④En la barra de menús, haga clic sucesivamente en "Generar", "Regenerar fairino.dll"; el compilador comenzará a compilar automáticamente.
 
 .. image:: image/006.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 15.2‑4 生成fairino.dll
+.. centered:: Figura 15.2‑4 Generar fairino.dll
 
-⑤在右侧工程目录中找到“build”文件夹，并在文件夹内找到编译得到的fairino.dll和fairino.lib文件。
+⑤En el directorio del proyecto de la derecha, localice la carpeta "build" y dentro de ella encuentre los archivos fairino.dll y fairino.lib obtenidos de la compilación.
 
 .. image:: image/007.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 15.2‑5 找到fairino.lib和fairino.dll
+.. centered:: Figura 15.2‑5 Localizar fairino.lib y fairino.dll
 
-⑥使用协作机器人C++SDK时，先在右侧工程目录中找到机器人SDK编译的头文件/libfairino/src/include/Robot-CN/，将该文件夹下的三个头文件“robot.h”、“robot_error.h”、“robot_type.h”拷贝到工程目录中，将fairino.lib添加到链接库，最后将fairino.dll放置到可执行文件目录下即可使用。
+⑥Al utilizar el SDK de C++ del robot colaborativo, primero localice en el directorio del proyecto de la derecha los archivos de encabezado compilados del SDK del robot /libfairino/src/include/Robot-CN/; copie los tres archivos de encabezado "robot.h", "robot_error.h" y "robot_type.h" de esa carpeta al directorio del proyecto, añada fairino.lib a la librería de enlace y, por último, coloque fairino.dll en el directorio del ejecutable para poder utilizarlo.
 
-Linux平台下源码编译
-------------------------------------------------
+Compilación del código fuente en la plataforma Linux
+---------------------------------------------------------
 
-linux源码编译前，请先确保系统中已安装gcc、g++编译器和cmake构建系统(3.10版本及以上)。
+Antes de compilar el código fuente en Linux, asegúrese de que el sistema tiene instalados los compiladores gcc y g++ y el sistema de compilación cmake (versión 3.10 o superior).
 
-C++源码目录中\libfairino\linuxBuild\文件夹中“buildGcc.sh”脚本内包含“cmake..”、“make”、将最终头文件、库文件复制到\linuxBuild\文件夹中等指令，执行该脚本即可完成C++SDK的源码编译。
+El script "buildGcc.sh" de la carpeta \libfairino\linuxBuild\ del directorio del código fuente de C++ contiene las instrucciones "cmake..", "make", y la copia de los archivos de encabezado y de librería finales a la carpeta \linuxBuild\, entre otras; ejecute este script para completar la compilación del código fuente del SDK de C++.
 
-①打开一个终端，进入到\libfairino\linuxBuild\目录，输入命令：“sh buildGcc.sh”并回车，SDK即开始编译，等待编译完成。
+①Abra un terminal, acceda al directorio \libfairino\linuxBuild\, introduzca el comando: "sh buildGcc.sh" y pulse Intro; el SDK comenzará a compilarse; espere a que finalice la compilación.
 
 .. image:: image/008.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 15.3‑1 输入编译脚本指令
+.. centered:: Figura 15.3‑1 Introducir la instrucción del script de compilación
 
-②编译完成后，再次进入\libfairino\linuxBuild\目录下，找到\include\文件夹和\lib\文件夹，分别为需要的头文件和库文件目录。
+②Una vez completada la compilación, acceda de nuevo al directorio \libfairino\linuxBuild\ y localice las carpetas \include\ y \lib\, que son los directorios de los archivos de encabezado y de librería necesarios, respectivamente.
 
 .. image:: image/009.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 15.3‑2 编译结果
+.. centered:: Figura 15.3‑2 Resultado de la compilación

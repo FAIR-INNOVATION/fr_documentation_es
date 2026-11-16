@@ -1,171 +1,171 @@
-机器人力控
-============
+Control de fuerza del robot
+============================
 
 .. toctree:: 
     :maxdepth: 5
 
-力传感器配置
-+++++++++++++++++++++++
+Configuración del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  配置力传感器
-    * @param  [in] company  力传感器厂商，17-坤维科技
-    * @param  [in] device  设备号，暂不使用，默认为0
-    * @param  [in] softvesion  软件版本号，暂不使用，默认为0
-    * @param  [in] bus 设备挂在末端总线位置，暂不使用，默认为0
-    * @return  错误码
+    * @brief  Configurar el sensor de fuerza
+    * @param  [in] company  Fabricante del sensor de fuerza, 17-Kunwei Technology
+    * @param  [in] device  Número de dispositivo, no se utiliza por ahora, por defecto 0
+    * @param  [in] softvesion  Número de versión del software, no se utiliza por ahora, por defecto 0
+    * @param  [in] bus Posición del bus del extremo donde está conectado el dispositivo, no se utiliza por ahora, por defecto 0
+    * @return  Código de error
     */
     int FT_SetConfig(int company, int device, int softvesion, int bus); 
 
-获取力传感器配置 
-+++++++++++++++++++++++
+Obtener la configuración del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /** 
-    * @brief 获取力传感器配置 
-    * @param [out] deviceID 力传感器编号 
-    * @param [out] company 力传感器厂商，，力传感器厂商，17-坤维科技，19-航天十一院，20-ATI传感器，21-中科米点，22-伟航敏芯
-    * @param [out] device  设备号，坤维(0-KWR75B)，航天十一院(0-MCS6A-200-4)，ATI (0-AXIA80 -M8)，中科米点(0-MST2010)，伟航敏芯(0-WHC6L-YB-10A) 
-    * @param [out] softvesion 软件版本号，暂不使用，默认为 0 
-    * @return 错误码 
+    * @brief Obtener la configuración del sensor de fuerza 
+    * @param [out] deviceID Número del sensor de fuerza 
+    * @param [out] company Fabricante del sensor de fuerza, fabricante del sensor de fuerza, 17-Kunwei Technology, 19-Instituto 11 de Aeroespacial, 20-sensor ATI, 21-Zhongke Midian, 22-Weihang Minxin
+    * @param [out] device  Número de dispositivo, Kunwei (0-KWR75B), Instituto 11 de Aeroespacial (0-MCS6A-200-4), ATI (0-AXIA80 -M8), Zhongke Midian (0-MST2010), Weihang Minxin (0-WHC6L-YB-10A) 
+    * @param [out] softvesion Número de versión del software, no se utiliza por ahora, por defecto 0 
+    * @return Código de error 
     */ 
     int FT_GetConfig(ref int deviceID, ref int company, ref int device, ref int softvesion); 
 
-力传感器激活
-+++++++++++++++++++++++
+Activación del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  力传感器激活
-    * @param  [in] act  0-复位，1-激活
-    * @return  错误码
+    * @brief  Activación del sensor de fuerza
+    * @param  [in] act  0-restablecer, 1-activar
+    * @return  Código de error
     */
     int FT_Activate(byte act); 
 
-力传感器校零
-+++++++++++++++++++++++
+Puesta a cero del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  力传感器校零
-    * @param  [in] act  0-去除零点，1-零点矫正
-    * @return  错误码
+    * @brief  Puesta a cero del sensor de fuerza
+    * @param  [in] act  0-eliminar el cero, 1-corrección del cero
+    * @return  Código de error
     */
     int FT_SetZero(byte act); 
 
-设置力传感器参考坐标系
-+++++++++++++++++++++++
+Establecer el sistema de coordenadas de referencia del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  设置力传感器参考坐标系
-    * @param  [in] ref  0-工具坐标系，1-基坐标系
-    * @return  错误码
+    * @brief  Establecer el sistema de coordenadas de referencia del sensor de fuerza
+    * @param  [in] ref  0-sistema de coordenadas de herramienta, 1-sistema de coordenadas base
+    * @return  Código de error
     */
     int FT_SetRCS(byte type); 
 
-设置力传感器下负载重量
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer el peso de la carga bajo el sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  设置力传感器下负载重量
-    * @param  [in] weight 负载重量 kg
-    * @return  错误码
+    * @brief  Establecer el peso de la carga bajo el sensor de fuerza
+    * @param  [in] weight Peso de la carga kg
+    * @return  Código de error
     */
     int SetForceSensorPayLoad(double weight);
 
-设置力传感器下负载质心
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer el centro de gravedad de la carga bajo el sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  设置力传感器下负载质心
-    * @param  [in] x 负载质心x mm 
-    * @param  [in] y 负载质心y mm
-    * @param  [in] z 负载质心z mm
-    * @return  错误码
+    * @brief  Establecer el centro de gravedad de la carga bajo el sensor de fuerza
+    * @param  [in] x Centro de gravedad de la carga x mm 
+    * @param  [in] y Centro de gravedad de la carga y mm
+    * @param  [in] z Centro de gravedad de la carga z mm
+    * @return  Código de error
     */
     int SetForceSensorPayLoadCog(double x, double y, double z);
 
-获取力传感器下负载重量
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el peso de la carga bajo el sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  获取力传感器下负载重量
-    * @param  [in] weight 负载重量 kg
-    * @return  错误码
+    * @brief  Obtener el peso de la carga bajo el sensor de fuerza
+    * @param  [in] weight Peso de la carga kg
+    * @return  Código de error
     */
     int GetForceSensorPayLoad(ref double weight);
 
-获取力传感器下负载质心
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el centro de gravedad de la carga bajo el sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  获取力传感器下负载质心
-    * @param  [out] x 负载质心x mm 
-    * @param  [out] y 负载质心y mm
-    * @param  [out] z 负载质心z mm
-    * @return  错误码
+    * @brief  Obtener el centro de gravedad de la carga bajo el sensor de fuerza
+    * @param  [out] x Centro de gravedad de la carga x mm 
+    * @param  [out] y Centro de gravedad de la carga y mm
+    * @param  [out] z Centro de gravedad de la carga z mm
+    * @return  Código de error
     */
     int GetForceSensorPayLoadCog(ref double x, ref double y, ref double z);
 
-力传感器自动校零
-+++++++++++++++++++++++++++++++++++++++++++++
+Puesta a cero automática del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  力传感器自动校零
-    * @param  [out] weight 传感器质量 kg 
-    * @param  [out] pos 传感器质心 mm
-    * @return  错误码
+    * @brief  Puesta a cero automática del sensor de fuerza
+    * @param  [out] weight Masa del sensor kg 
+    * @param  [out] pos Centro de gravedad del sensor mm
+    * @return  Código de error
     */
     int ForceSensorAutoComputeLoad(ref double weight, ref DescTran pos);
 
-获取参考坐标系下力/扭矩数据
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener los datos de fuerza/par en el sistema de coordenadas de referencia
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  获取参考坐标系下力/扭矩数据
-    * @param  [out] ft  力/扭矩，fx,fy,fz,tx,ty,tz
-    * @return  错误码
+    * @brief  Obtener los datos de fuerza/par en el sistema de coordenadas de referencia
+    * @param  [out] ft  Fuerza/par, fx,fy,fz,tx,ty,tz
+    * @return  Código de error
     */   
     int FT_GetForceTorqueRCS(byte flag, ref ForceTorque ft); 
 
-获取力传感器原始力/扭矩数据
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener los datos brutos de fuerza/par del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  获取力传感器原始力/扭矩数据
-    * @param  [out] ft  力/扭矩，fx,fy,fz,tx,ty,tz
-    * @return  错误码
+    * @brief  Obtener los datos brutos de fuerza/par del sensor de fuerza
+    * @param  [out] ft  Fuerza/par, fx,fy,fz,tx,ty,tz
+    * @return  Código de error
     */   
     int FT_GetForceTorqueOrigin(byte flag, ref ForceTorque ft); 
 
-力传感器配置及自动校零代码示例
-+++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración y puesta a cero automática del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -219,57 +219,57 @@
 
     } 
 
-负载重量辨识记录
-+++++++++++++++++++++++
+Registro de identificación del peso de la carga
++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  负载重量辨识记录
-    * @param  [in] id  传感器坐标系编号，范围[1~14]
-    * @return  错误码
+    * @brief  Registro de identificación del peso de la carga
+    * @param  [in] id  Número del sistema de coordenadas del sensor, rango [1~14]
+    * @return  Código de error
     */
     int FT_PdIdenRecord(int id);
 
-负载重量辨识计算
-+++++++++++++++++++++++
+Cálculo de identificación del peso de la carga
++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  负载重量辨识计算
-    * @param  [out] weight  负载重量，单位kg
-    * @return  错误码
+    * @brief  Cálculo de identificación del peso de la carga
+    * @param  [out] weight  Peso de la carga, unidad kg
+    * @return  Código de error
     */   
     int FT_PdIdenCompute(ref double weight);
 
-负载质心辨识记录
-+++++++++++++++++++++++
+Registro de identificación del centro de gravedad de la carga
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  负载质心辨识记录
-    * @param  [in] id  传感器坐标系编号，范围[1~14]
-    * @param  [in] index 点编号，范围[1~3]
-    * @return  错误码
+    * @brief  Registro de identificación del centro de gravedad de la carga
+    * @param  [in] id  Número del sistema de coordenadas del sensor, rango [1~14]
+    * @param  [in] index Número de punto, rango [1~3]
+    * @return  Código de error
     */
     int FT_PdCogIdenRecord(int id, int index); 
 
-负载质心辨识计算
-+++++++++++++++++++++++
+Cálculo de identificación del centro de gravedad de la carga
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  负载质心辨识计算
-    * @param  [out] cog  负载质心，单位mm
-    * @return  错误码
+    * @brief  Cálculo de identificación del centro de gravedad de la carga
+    * @param  [out] cog  Centro de gravedad de la carga, unidad mm
+    * @return  Código de error
     */   
     int FT_PdCogIdenCompute(ref DescTran cog);
 
-力传感器负载辨识代码示例
-++++++++++++++++++++++++++++++
+Ejemplo de código de identificación de carga del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -327,26 +327,26 @@
         Console.WriteLine($"cog: {cog.x}, {cog.y}, {cog.z}");
     }
 
-碰撞守护
-+++++++++++++++++++++++++++++++++++++++++++++
+Protección contra colisiones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  碰撞守护
-    * @param  [in] flag 0-关闭碰撞守护，1-开启碰撞守护
-    * @param  [in] sensor_id 力传感器编号
-    * @param  [in] select  选择六个自由度是否检测碰撞，0-不检测，1-检测
-    * @param  [in] ft  碰撞力/扭矩，fx,fy,fz,tx,ty,tz
-    * @param  [in] max_threshold 最大阈值
-    * @param  [in] min_threshold 最小阈值
-    * @note   力/扭矩检测范围：(ft-min_threshold, ft+max_threshold)
-    * @return  错误码
+    * @brief  Protección contra colisiones
+    * @param  [in] flag 0-desactivar la protección contra colisiones, 1-activar la protección contra colisiones
+    * @param  [in] sensor_id Número del sensor de fuerza
+    * @param  [in] select  Seleccionar si se detectan colisiones en los seis grados de libertad, 0-no detectar, 1-detectar
+    * @param  [in] ft  Fuerza/par de colisión, fx,fy,fz,tx,ty,tz
+    * @param  [in] max_threshold Umbral máximo
+    * @param  [in] min_threshold Umbral mínimo
+    * @note   Rango de detección de fuerza/par: (ft-min_threshold, ft+max_threshold)
+    * @return  Código de error
     */   
     int FT_Guard(int flag, int sensor_id, int[] select, ForceTorque ft, double[] max_threshold, double[] min_threshold); 
 
-碰撞守护代码示例
-+++++++++++++++++++++++
+Ejemplo de código de protección contra colisiones
++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -387,38 +387,38 @@
         robot.FT_Guard(0, sensor_id, select, ft, max_threshold, min_threshold);
     }
 
-恒力控制
-+++++++++++++++++++++++++++++++++++++++++++++
+Control de fuerza constante
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C#SDK-V1.1.9  Web-3.8.7
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  恒力控制
-    * @param  [in] flag 0-关闭恒力控制，1-开启恒力控制
-    * @param  [in] sensor_id 力传感器编号
-    * @param  [in] select  选择六个自由度是否检测碰撞，0-不检测，1-检测
-    * @param  [in] ft  碰撞力/扭矩，fx,fy,fz,tx,ty,tz
-    * @param  [in] ft_pid 力pid参数，力矩pid参数
-    * @param  [in] adj_sign 自适应启停控制，0-关闭，1-开启
-    * @param  [in] ILC_sign ILC启停控制， 0-停止，1-训练，2-实操
-    * @param  [in] max_dis 最大调整距离，单位mm
-    * @param  [in] max_ang 最大调整角度，单位deg
-    * @param  [in] M rx、ry质量参数[0.1-10],默认2
-    * @param  [in] B rx、ry阻尼参数[0.1-50],默认8
-    * @param  [in] threshold rx、ry启动阈值[0-10],默认0.2
-    * @param  [in] adjustCoeff rx、ry力矩调节系数[0-1],默认1
-    * @param  [in] polishRadio 打磨半径，单位mm
-    * @param  [in] filter_Sign 滤波开启标志 0-关；1-开，默认关闭
-    * @param  [in] posAdapt_sign 姿态顺应开启标志 0-关；1-开，默认关闭
-    * @param  [in] isNoBlock 阻塞标志，0-阻塞；1-非阻塞
-    * @return  错误码
+    * @brief  Control de fuerza constante
+    * @param  [in] flag 0-desactivar el control de fuerza constante, 1-activar el control de fuerza constante
+    * @param  [in] sensor_id Número del sensor de fuerza
+    * @param  [in] select  Seleccionar si se detectan colisiones en los seis grados de libertad, 0-no detectar, 1-detectar
+    * @param  [in] ft  Fuerza/par de colisión, fx,fy,fz,tx,ty,tz
+    * @param  [in] ft_pid Parámetros pid de fuerza, parámetros pid de par
+    * @param  [in] adj_sign Control de inicio/parada adaptativo, 0-desactivar, 1-activar
+    * @param  [in] ILC_sign Control de inicio/parada ILC, 0-detener, 1-entrenamiento, 2-operación real
+    * @param  [in] max_dis Distancia máxima de ajuste, unidad mm
+    * @param  [in] max_ang Ángulo máximo de ajuste, unidad deg
+    * @param  [in] M Parámetros de masa rx, ry [0.1-10], por defecto 2
+    * @param  [in] B Parámetros de amortiguación rx, ry [0.1-50], por defecto 8
+    * @param  [in] threshold Umbral de activación rx, ry [0-10], por defecto 0.2
+    * @param  [in] adjustCoeff Coeficiente de ajuste de par rx, ry [0-1], por defecto 1
+    * @param  [in] polishRadio Radio de pulido, unidad mm
+    * @param  [in] filter_Sign Indicador de activación del filtro 0-desactivado; 1-activado, desactivado por defecto
+    * @param  [in] posAdapt_sign Indicador de activación de adaptación de orientación 0-desactivado; 1-activado, desactivado por defecto
+    * @param  [in] isNoBlock Indicador de bloqueo, 0-bloqueante; 1-no bloqueante
+    * @return  Código de error
     */
     public int FT_Control(byte flag, int sensor_id, byte[] select, ForceTorque ft, float[] ft_pid,byte adj_sign, byte ILC_sign, float max_dis, float max_ang,double[] M, double[] B, double[] threshold, double[] adjustCoeff,double polishRadio, int filter_Sign, int posAdapt_sign, int isNoBlock)
 
-具有阻尼的恒力控制代码示例
-+++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de control de fuerza constante con amortiguación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C#SDK-V1.1.9  Web-3.8.7
     
 .. code-block:: c#
@@ -461,64 +461,64 @@
         }
     }
 
-旋转插入
-+++++++++++++++++++++++++++++++++++++++++++++
+Inserción rotativa
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 旋转插入
-    * @param [in] rcs 参考坐标系，0-工具坐标系，1-基坐标系
-    * @param [in] angVelRot 旋转角速度，单位deg/s
-    * @param [in] ft 力/扭矩阈值，fx,fy,fz,tx,ty,tz，范围[0~100]
-    * @param [in] max_angle 最大旋转角度，单位deg
-    * @param [in] orn 力/扭矩方向，1-沿z轴方向，2-绕z轴方向
-    * @param [in] max_angAcc 最大旋转加速度，单位deg/s^2，暂不使用，默认为0
-    * @param [in] rotorn 旋转方向，1-顺时针，2-逆时针
-    * @param [in] strategy 未检测到力/力矩的处理策略，0-报错；1-警告，继续运动
-    * @return 错误码
+    * @brief Inserción rotativa
+    * @param [in] rcs Sistema de coordenadas de referencia, 0-sistema de coordenadas de herramienta, 1-sistema de coordenadas base
+    * @param [in] angVelRot Velocidad angular de rotación, unidad deg/s
+    * @param [in] ft Umbral de fuerza/par, fx,fy,fz,tx,ty,tz, rango [0~100]
+    * @param [in] max_angle Ángulo máximo de rotación, unidad deg
+    * @param [in] orn Dirección de fuerza/par, 1-a lo largo del eje z, 2-alrededor del eje z
+    * @param [in] max_angAcc Aceleración angular máxima de rotación, unidad deg/s^2, no se utiliza por ahora, por defecto 0
+    * @param [in] rotorn Dirección de rotación, 1-horario, 2-antihorario
+    * @param [in] strategy Estrategia de tratamiento cuando no se detecta fuerza/par, 0-error; 1-advertencia, continuar el movimiento
+    * @return Código de error
     */
     public int FT_RotInsertion(int rcs, double angVelRot, double ft, double max_angle, int orn, double max_angAcc, int rotorn, int strategy)
 
-螺旋线探索
+Exploración helicoidal
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  螺旋线探索
-    * @param  [in] rcs 参考坐标系，0-工具坐标系，1-基坐标系
-    * @param  [in] dr 每圈半径进给量
-    * @param  [in] ft 力/扭矩阈值，fx,fy,fz,tx,ty,tz，范围[0~100]
-    * @param  [in] max_t_ms 最大探索时间，单位ms
-    * @param  [in] max_vel 最大线速度，单位mm/s
-    * @param  [in] strategy 未检测到力/力矩的处理策略，0-报错；1-警告，继续运动
-    * @return  错误码
+    * @brief  Exploración helicoidal
+    * @param  [in] rcs Sistema de coordenadas de referencia, 0-sistema de coordenadas de herramienta, 1-sistema de coordenadas base
+    * @param  [in] dr Avance de radio por vuelta
+    * @param  [in] ft Umbral de fuerza/par, fx,fy,fz,tx,ty,tz, rango [0~100]
+    * @param  [in] max_t_ms Tiempo máximo de exploración, unidad ms
+    * @param  [in] max_vel Velocidad lineal máxima, unidad mm/s
+    * @param  [in] strategy Estrategia de tratamiento cuando no se detecta fuerza/par, 0-error; 1-advertencia, continuar el movimiento
+    * @return  Código de error
     */
     public int FT_SpiralSearch(int rcs, float dr, float ft, float max_t_ms, float max_vel, int strategy = 0)
 
-直线插入
-+++++++++++++++++++++++++++++++++++++++++++++
+Inserción lineal
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  直线插入
-    * @param  [in] rcs 参考坐标系，0-工具坐标系，1-基坐标系
-    * @param  [in] ft  力/扭矩阈值，fx,fy,fz,tx,ty,tz，范围[0~100]
-    * @param  [in] lin_v 直线速度，单位mm/s
-    * @param  [in] lin_a 直线加速度，单位mm/s^2，暂不使用
-    * @param  [in] max_dis 最大插入距离，单位mm
-    * @param  [in] linorn  插入方向，0-负方向，1-正方向
-    * @param  [in] strategy 未检测到力/力矩的处理策略，0-报错；1-警告，继续运动
-    * @return  错误码
+    * @brief  Inserción lineal
+    * @param  [in] rcs Sistema de coordenadas de referencia, 0-sistema de coordenadas de herramienta, 1-sistema de coordenadas base
+    * @param  [in] ft  Umbral de fuerza/par, fx,fy,fz,tx,ty,tz, rango [0~100]
+    * @param  [in] lin_v Velocidad lineal, unidad mm/s
+    * @param  [in] lin_a Aceleración lineal, unidad mm/s^2, no se utiliza por ahora
+    * @param  [in] max_dis Distancia máxima de inserción, unidad mm
+    * @param  [in] linorn  Dirección de inserción, 0-dirección negativa, 1-dirección positiva
+    * @param  [in] strategy Estrategia de tratamiento cuando no se detecta fuerza/par, 0-error; 1-advertencia, continuar el movimiento
+    * @return  Código de error
     */
     public int FT_LinInsertion(int rcs, float ft, float lin_v, float lin_a, float max_dis, byte linorn, int strategy=0)
 
-力传感器旋转插入代码示例
+Ejemplo de código de inserción rotativa del sensor de fuerza
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
@@ -529,21 +529,21 @@
         ROBOT_STATE_PKG pkg = new ROBOT_STATE_PKG();
         int rtn;
 
-        float forceInsertion = 5.0f; // Force or torque threshold (0~100), unit N or Nm
-        int angleMax = 300; // Maximum rotation angle, unit °
-        byte orn = 1; // Force direction, 1-fz, 2-mz
-        float angAccmax = 0; // Maximum rotational angular acceleration, unit °/s^2, not used temporarily
-        byte status = 1;  // Constant force control enable flag, 0-off, 1-on
-        int sensor_num = 11; // Force sensor number
-        float[] gain = { 0.0001f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };  // Maximum threshold
-        byte adj_sign = 0;  // Adaptive start/stop status, 0-off, 1-on
-        byte ILC_sign = 0;  // ILC control start/stop status, 0-stop, 1-training, 2-operational
-        float max_dis = 1000.0f;  // Maximum adjustment distance
-        float max_ang = 20.0f;  // Maximum adjustment angle
+        float forceInsertion = 5.0f; // Umbral de fuerza o par (0~100), unidad N o Nm
+        int angleMax = 300; // Ángulo máximo de rotación, unidad °
+        byte orn = 1; // Dirección de fuerza, 1-fz, 2-mz
+        float angAccmax = 0; // Aceleración angular máxima de rotación, unidad °/s^2, no se utiliza por ahora
+        byte status = 1;  // Indicador de activación del control de fuerza constante, 0-desactivado, 1-activado
+        int sensor_num = 11; // Número del sensor de fuerza
+        float[] gain = { 0.0001f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };  // Umbral máximo
+        byte adj_sign = 0;  // Estado de inicio/parada adaptativo, 0-desactivado, 1-activado
+        byte ILC_sign = 0;  // Estado de inicio/parada del control ILC, 0-detener, 1-entrenamiento, 2-operación real
+        float max_dis = 1000.0f;  // Distancia máxima de ajuste
+        float max_ang = 20.0f;  // Ángulo máximo de ajuste
         ForceTorque ft = new ForceTorque();
-        int rcs = 0;  // Reference coordinate system, 0-tool coordinate system, 1-base coordinate system
-        float angVelRot = 1.0f;  // Rotational angular velocity, unit °/s
-        byte rotorn = 1; // Rotation direction, 1-clockwise, 2-counterclockwise
+        int rcs = 0;  // Sistema de coordenadas de referencia, 0-sistema de coordenadas de herramienta, 1-sistema de coordenadas base
+        float angVelRot = 1.0f;  // Velocidad angular de rotación, unidad °/s
+        byte rotorn = 1; // Dirección de rotación, 1-horario, 2-antihorario
         JointPos j1 = new JointPos(100.968, -108.678, 126.166, -106.630, -93.253, 19.584);
         DescPose desc_p1 = new DescPose(159.473, -316.570, 334.560, -179.718, -3.352, 171.400);
         ExaxisPos epos = new ExaxisPos(0.0f, 0.0f, 0.0f, 0.0f);
@@ -574,52 +574,52 @@
         Console.WriteLine("robot errcode " + pkg.main_code + "  " + pkg.sub_code);
     }
 
-表面定位
+Localización de superficie
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  表面定位
-    * @param  [in] rcs 参考坐标系，0-工具坐标系，1-基坐标系
-    * @param  [in] dir  移动方向，1-正方向，2-负方向
-    * @param  [in] axis 移动轴，1-x轴，2-y轴，3-z轴
-    * @param  [in] lin_v 探索直线速度，单位mm/s
-    * @param  [in] lin_a 探索直线加速度，单位mm/s^2，暂不使用，默认为0
-    * @param  [in] max_dis 最大探索距离，单位mm
-    * @param  [in] ft  动作终止力/扭矩阈值，fx,fy,fz,tx,ty,tz
-    * @param  [in] strategy 未检测到力/力矩的处理策略，0-报错；1-警告，继续运动
-    * @return  错误码
+    * @brief  Localización de superficie
+    * @param  [in] rcs Sistema de coordenadas de referencia, 0-sistema de coordenadas de herramienta, 1-sistema de coordenadas base
+    * @param  [in] dir  Dirección de movimiento, 1-dirección positiva, 2-dirección negativa
+    * @param  [in] axis Eje de movimiento, 1-eje x, 2-eje y, 3-eje z
+    * @param  [in] lin_v Velocidad lineal de exploración, unidad mm/s
+    * @param  [in] lin_a Aceleración lineal de exploración, unidad mm/s^2, no se utiliza por ahora, por defecto 0
+    * @param  [in] max_dis Distancia máxima de exploración, unidad mm
+    * @param  [in] ft  Umbral de fuerza/par de finalización de la acción, fx,fy,fz,tx,ty,tz
+    * @param  [in] strategy Estrategia de tratamiento cuando no se detecta fuerza/par, 0-error; 1-advertencia, continuar el movimiento
+    * @return  Código de error
     */
     public int FT_FindSurface(int rcs, byte dir, byte axis, float lin_v, float lin_a, float max_dis, float ft, int stragety = 0)
 
-计算中间平面位置开始
+Inicio del cálculo de la posición del plano intermedio
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  计算中间平面位置开始
-    * @return  错误码
+    * @brief  Inicio del cálculo de la posición del plano intermedio
+    * @return  Código de error
     */
     public int FT_CalCenterStart()
 
-计算中间平面位置结束
+Fin del cálculo de la posición del plano intermedio
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  计算中间平面位置结束
-    * @param  [out] pos 中间平面位姿
-    * @return  错误码
+    * @brief  Fin del cálculo de la posición del plano intermedio
+    * @param  [out] pos Pose del plano intermedio
+    * @return  Código de error
     */
     public int FT_CalCenterEnd(ref DescPose pos)
 
-表面点位代码示例
+Ejemplo de código de punto de superficie
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
@@ -692,19 +692,19 @@
 
     }
 
-设置摆动实时偏移
+Establecer el desplazamiento en tiempo real de la oscilación
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  设置摆动实时偏移
-    * @param [in] offset 实时偏移量[mm、°]
-    * @return  错误码
+    * @brief  Establecer el desplazamiento en tiempo real de la oscilación
+    * @param [in] offset Desplazamiento en tiempo real [mm、°]
+    * @return  Código de error
     */
     public int SetWeaveOffsetRT(DescPose offset)
 
-摆动实时调速和偏移代码示例
+Ejemplo de código de ajuste de velocidad y desplazamiento en tiempo real de la oscilación
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:   
@@ -735,35 +735,35 @@
         JointPos j3 = new JointPos(59.787, -117.594, -57.183, -95.222, 90.006, 75.562);
         DescPose d3 = new DescPose(324.998, 355.441, 260.002, 179.995, 0.003, -105.775);
 
-        // ---- Step 1: MoveJ to start point ----
-        Console.WriteLine("\nStep 1: MoveJ to start point");
+        // ---- Paso 1: MoveJ al punto de inicio ----
+        Console.WriteLine("\nPaso 1: MoveJ al punto de inicio");
         rtn = robot.MoveJ(j1, d1, 1, 0, 100, 100, 50, epos, -1, 0, offset_pos);
         Console.WriteLine("  MoveJ(j1) rtn={0}", rtn);
         Thread.Sleep(500);
 
-        // ---- Step 2: MoveJ to weave entry ----
-        Console.WriteLine("\nStep 2: MoveJ to weave entry point");
+        // ---- Paso 2: MoveJ a la entrada de oscilación ----
+        Console.WriteLine("\nPaso 2: MoveJ al punto de entrada de oscilación");
         rtn = robot.MoveJ(j2, d2, 1, 0, 100, 100, 50, epos, -1, 0, offset_pos);
         Console.WriteLine("  MoveJ(j2) rtn={0}", rtn);
         Thread.Sleep(500);
 
-        // ---- Step 3: WeaveStart, launch weave MoveL thread ----
-        Console.WriteLine("\nStep 3: WeaveStart + MoveL in background thread");
+        // ---- Paso 3: WeaveStart, lanzar el hilo de MoveL de oscilación ----
+        Console.WriteLine("\nPaso 3: WeaveStart + MoveL en hilo en segundo plano");
         robot.WeaveStart(0);
 
         bool weaveRunning = true;
         Thread weaveThread = new Thread(() =>
         {
             rtn = robot.MoveL(j3, d3, 1, 0, 100, 100, 5, -1, 0, epos, 0, 0, offset_pos, 5, 0, 0, 10);
-            Console.WriteLine("  MoveL(weave) thread finished, rtn={0}", rtn);
+            Console.WriteLine("  Hilo MoveL(weave) finalizado, rtn={0}", rtn);
             weaveRunning = false;
         });
         weaveThread.IsBackground = true;
         weaveThread.Start();
-        Thread.Sleep(500);  // Wait for motion to start
+        Thread.Sleep(500);  // Esperar a que comience el movimiento
 
-        // ---- Step 4: Speed test (main thread, weave MoveL in background) ----
-        Console.WriteLine("\nStep 4: SetSpeed test during weaving");
+        // ---- Paso 4: Prueba de velocidad (hilo principal, MoveL de oscilación en segundo plano) ----
+        Console.WriteLine("\nPaso 4: Prueba de SetSpeed durante la oscilación");
         int[] speedValues = { 20, 50, 80, 30, 60, 10 };
         foreach (int speed in speedValues)
         {
@@ -776,8 +776,8 @@
 
 
         Thread.Sleep(5000);
-        // ---- Step 5: SetWeaveOffsetRT offset test (main thread, weave MoveL in background) ----
-        Console.WriteLine("\nStep 5: SetWeaveOffsetRT test (50 iterations, delta=0.1)");
+        // ---- Paso 5: Prueba de desplazamiento SetWeaveOffsetRT (hilo principal, MoveL de oscilación en segundo plano) ----
+        Console.WriteLine("\nPaso 5: Prueba de SetWeaveOffsetRT (50 iteraciones, delta=0.1)");
         double accumOffset = 0.0;
         for (int i = 0; i < 50 && weaveRunning; i++)
         {
@@ -791,50 +791,50 @@
             Thread.Sleep(100);
         }
 
-        // ---- Step 6: Wait for weave MoveL, then WeaveEnd ----
-        Console.WriteLine("\nStep 6: Wait for weave MoveL, then WeaveEnd");
+        // ---- Paso 6: Esperar el MoveL de oscilación y luego WeaveEnd ----
+        Console.WriteLine("\nPaso 6: Esperar el MoveL de oscilación y luego WeaveEnd");
         weaveThread.Join();
         robot.WeaveEnd(0);
         Thread.Sleep(500);
 
-        // ---- Step 7: MoveL back to start ----
-        Console.WriteLine("\nStep 7: MoveL back to start");
+        // ---- Paso 7: MoveL de vuelta al inicio ----
+        Console.WriteLine("\nPaso 7: MoveL de vuelta al inicio");
         rtn = robot.MoveL(j1, d1, 1, 0, 100, 100, 50, -1, 0, epos, 0, 0, offset_pos, 50, 0, 0, 10);
         Console.WriteLine("  MoveL(back) rtn={0}", rtn);
 
         robot.GetRobotRealTimeState(ref pkg);
-        Console.WriteLine("\n  Final robot state: main_code={0}, sub_code={1}", pkg.main_code, pkg.sub_code);
+        Console.WriteLine("\n  Estado final del robot: main_code={0}, sub_code={1}", pkg.main_code, pkg.sub_code);
         Console.WriteLine("============================================================");
         Console.WriteLine("  Weave Speed and Offset Test Complete");
         Console.WriteLine("============================================================");
     } 
 
-柔顺控制开启
-+++++++++++++++++++++++++++++++++++++++++++++
+Inicio del control de compliance
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  柔顺控制开启
-    * @param  [in] p 位置调节系数或柔顺系数
-    * @param  [in] force 柔顺开启力阈值，单位N
-    * @return  错误码
+    * @brief  Inicio del control de compliance
+    * @param  [in] p Coeficiente de ajuste de posición o coeficiente de compliance
+    * @param  [in] force Umbral de fuerza de activación del compliance, unidad N
+    * @return  Código de error
     */   
     int FT_ComplianceStart(float p, float force);
 
-柔顺控制关闭
-+++++++++++++++++++++++++++++++++++++++++++++
+Fin del control de compliance
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  柔顺控制关闭
-    * @return  错误码
+    * @brief  Fin del control de compliance
+    * @return  Código de error
     */   
     int FT_ComplianceStop(); 
 
-柔顺控制代码示例
-++++++++++++++++++++++++++++++
+Ejemplo de código de control de compliance
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -891,8 +891,8 @@
         robot.FT_Control(flag, (byte)sensor_id, select, ft, ft_pid, adj_sign, ILC_sign, max_dis, max_ang);
     }
 
-负载辨识初始化
-+++++++++++++++++++++++++++++++++++++++++++++
+Inicialización de la identificación de carga
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C#SDK-v1.0.4
 
@@ -900,13 +900,13 @@
     :linenos:
 
     /**
-    * @brief 负载辨识初始化
-    * @return 错误码
+    * @brief Inicialización de la identificación de carga
+    * @return Código de error
     */
     int LoadIdentifyDynFilterInit();
 
-负载辨识变量初始化
-+++++++++++++++++++++++++++++++++++++++++++++
+Inicialización de las variables de identificación de carga
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C#SDK-v1.0.4
 
@@ -914,13 +914,13 @@
     :linenos:
 
     /**
-    * @brief 负载辨识变量初始化
-    * @return 错误码
+    * @brief Inicialización de las variables de identificación de carga
+    * @return Código de error
     */
     int LoadIdentifyDynVarInit();
 
-负载辨识主程序
-+++++++++++++++++++++++++++++++++++++++++++++
+Programa principal de identificación de carga
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C#SDK-v1.0.4
 
@@ -928,32 +928,32 @@
     :linenos:
 
     /**
-    * @brief 负载辨识主程序
-    * @param [in] joint_torque 关节扭矩
-    * @param [in] joint_pos 关节位置
-    * @param [in] t 采样周期
-    * @return 错误码
+    * @brief Programa principal de identificación de carga
+    * @param [in] joint_torque Par de las articulaciones
+    * @param [in] joint_pos Posición de las articulaciones
+    * @param [in] t Período de muestreo
+    * @return Código de error
     */
     int LoadIdentifyMain(double[] joint_torque, double[] joint_pos, double t);
 
-获取负载辨识结果
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el resultado de la identificación de carga
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C#SDK-v1.0.4
 
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 获取负载辨识结果
-    * @param [in] gain  重力项系数double[6]，离心项系数double[6]
-    * @param [out] weight 负载重量
-    * @param [out] cog 负载质心
-    * @return 错误码
+    * @brief Obtener el resultado de la identificación de carga
+    * @param [in] gain  Coeficiente del término de gravedad double[6], coeficiente del término centrífugo double[6]
+    * @param [out] weight Peso de la carga
+    * @param [out] cog Centro de gravedad de la carga
+    * @return Código de error
     */
     int LoadIdentifyGetResult(double[] gain, ref double weight, ref DescTran cog);
 
-机器人负载辨识代码示例
-+++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de identificación de carga del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -992,57 +992,57 @@
         Console.WriteLine("LoadIdentifyGetResult retval is: {0}; weight is {1} cog is {2} {3} {4}", retval, weight, load_pos.x, load_pos.y, load_pos.z);
     }
 
-力传感器辅助拖动
-+++++++++++++++++++++++++++++++++++++++++++++
+Arrastre asistido por sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C#SDK-V1.1.4  Web-3.8.3
     
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  力传感器辅助拖动
-    * @param  [in] status 控制状态，0-关闭；1-开启
-    * @param  [in] asaptiveFlag 自适应开启标志，0-关闭；1-开启
-    * @param  [in] interfereDragFlag 干涉区拖动标志，0-关闭；1-开启
-    * @param  [in] ingularityConstraintsFlag 奇异点策略，0-规避；1-穿越
-    * @param  [in] forceCollisionFlag 辅助拖动时机器人碰撞检测标志；0-关闭；1-开启
-    * @param  [in] M 惯性系数
-    * @param  [in] B 阻尼系数
-    * @param  [in] K 刚度系数
-    * @param  [in] F 拖动六维力阈值
-    * @param  [in] Fmax 最大拖动力限制 Nm
-    * @param  [in] Vmax 最大关节速度限制 °/s
-    * @return  错误码
+    * @brief  Arrastre asistido por sensor de fuerza
+    * @param  [in] status Estado de control, 0-desactivar; 1-activar
+    * @param  [in] asaptiveFlag Indicador de activación adaptativa, 0-desactivar; 1-activar
+    * @param  [in] interfereDragFlag Indicador de arrastre en zona de interferencia, 0-desactivar; 1-activar
+    * @param  [in] ingularityConstraintsFlag Estrategia de singularidad, 0-evitar; 1-atravesar
+    * @param  [in] forceCollisionFlag Indicador de detección de colisiones del robot durante el arrastre asistido; 0-desactivar; 1-activar
+    * @param  [in] M Coeficiente de inercia
+    * @param  [in] B Coeficiente de amortiguación
+    * @param  [in] K Coeficiente de rigidez
+    * @param  [in] F Umbral de fuerza de arrastre de seis dimensiones
+    * @param  [in] Fmax Límite máximo de fuerza de arrastre Nm
+    * @param  [in] Vmax Límite máximo de velocidad articular °/s
+    * @return  Código de error
     */
     int EndForceDragControl(int status, int asaptiveFlag, int interfereDragFlag,int ingularityConstraintsFlag,int forceCollisionFlag, double[] M, double[] B, double[] K, double[] F, double Fmax, double Vmax);
     
-获取力传感器拖动开关状态
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado del interruptor de arrastre del sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  获取力传感器拖动开关状态
-    * @param  [out] dragState 力传感器辅助拖动控制状态，0-关闭；1-开启
-    * @param  [out] sixDimensionalDragState 六维力辅助拖动控制状态，0-关闭；1-开启
-    * @return  错误码
+    * @brief  Obtener el estado del interruptor de arrastre del sensor de fuerza
+    * @param  [out] dragState Estado de control del arrastre asistido por sensor de fuerza, 0-desactivar; 1-activar
+    * @param  [out] sixDimensionalDragState Estado de control del arrastre asistido por fuerza de seis dimensiones, 0-desactivar; 1-activar
+    * @return  Código de error
     */
     int GetForceAndTorqueDragState(ref int dragState, ref int sixDimensionalDragState);
 
-报错清除后力传感器自动开启
-+++++++++++++++++++++++++++++++++++++++++++++
+Activación automática del sensor de fuerza tras el borrado de errores
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  报错清除后力传感器自动开启
-    * @param  [in] status 控制状态，0-关闭；1-开启
-    * @return  错误码
+    * @brief  Activación automática del sensor de fuerza tras el borrado de errores
+    * @param  [in] status Estado de control, 0-desactivar; 1-activar
+    * @return  Código de error
     */
     int SetForceSensorDragAutoFlag(int status);
 
-力传感器辅助拖动代码示例
-+++++++++++++++++++++++++++++
+Ejemplo de código de arrastre asistido por sensor de fuerza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -1065,27 +1065,27 @@
         robot.EndForceDragControl(0, 0, 0, 0, M, B, K, F, 50, 100);
     }
 
-设置六维力和关节阻抗混合拖动开关及参数
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer el interruptor y los parámetros del arrastre mixto de fuerza de seis dimensiones e impedancia articular
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  设置六维力和关节阻抗混合拖动开关及参数
-    * @param  [in] status 控制状态，0-关闭；1-开启
-    * @param  [in] impedanceFlag 阻抗开启标志，0-关闭；1-开启
-    * @param  [in] lamdeDain 拖动增益
-    * @param  [in] KGain 刚度增益
-    * @param  [in] BGain 阻尼增益
-    * @param  [in] dragMaxTcpVel 拖动末端最大线速度限制
-    * @param  [in] dragMaxTcpOriVel 拖动末端最大角速度限制
-    * @return  错误码
+    * @brief  Establecer el interruptor y los parámetros del arrastre mixto de fuerza de seis dimensiones e impedancia articular
+    * @param  [in] status Estado de control, 0-desactivar; 1-activar
+    * @param  [in] impedanceFlag Indicador de activación de la impedancia, 0-desactivar; 1-activar
+    * @param  [in] lamdeDain Ganancia de arrastre
+    * @param  [in] KGain Ganancia de rigidez
+    * @param  [in] BGain Ganancia de amortiguación
+    * @param  [in] dragMaxTcpVel Límite máximo de velocidad lineal del extremo durante el arrastre
+    * @param  [in] dragMaxTcpOriVel Límite máximo de velocidad angular del extremo durante el arrastre
+    * @return  Código de error
     */
     int ForceAndJointImpedanceStartStop(int status, int impedanceFlag, double[] lamdeDain, double[] KGain, double[] BGain, double dragMaxTcpVel, double dragMaxTcpOriVel);
 
-力传感器辅助拖动代码示例
-+++++++++++++++++++++++++++++
+Ejemplo de código de arrastre asistido por sensor de fuerza
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -1103,7 +1103,7 @@
         Console.WriteLine($"ForceAndJointImpedanceStartStop rtn is {rtn}");
     }
 
-阻抗启停控制
+Control de inicio/parada de la impedancia
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C#SDK-V1.1.8  Web-3.8.6
 
@@ -1111,23 +1111,23 @@
     :linenos:
 
     /**
-    * @brief 阻抗启停控制
-    * @param [in] status 0：关闭；1-开启
-    * @param [in] workSpace 0-关节空间；1-迪卡尔空间
-    * @param [in] forceThreshold 触发力阈值(N)
-    * @param [in] m 质量参数
-    * @param [in] b 阻尼参数
-    * @param [in] k 刚度参数
-    * @param [in] maxV 最大线速度(mm/s)
-    * @param [in] maxVA 最大线加速度(mm/s2)
-    * @param [in] maxW 最大角速度(°/s)
-    * @param [in] maxWA 最大角加速度(°/s2)
-    * @return 错误码
+    * @brief Control de inicio/parada de la impedancia
+    * @param [in] status 0：desactivar; 1-activar
+    * @param [in] workSpace 0-espacio de articulaciones; 1-espacio cartesiano
+    * @param [in] forceThreshold Umbral de fuerza de activación (N)
+    * @param [in] m Parámetros de masa
+    * @param [in] b Parámetros de amortiguación
+    * @param [in] k Parámetros de rigidez
+    * @param [in] maxV Velocidad lineal máxima (mm/s)
+    * @param [in] maxVA Aceleración lineal máxima (mm/s2)
+    * @param [in] maxW Velocidad angular máxima (°/s)
+    * @param [in] maxWA Aceleración angular máxima (°/s2)
+    * @return Código de error
     */
     public int ImpedanceControlStartStop(int status, int workSpace, double[] forceThreshold, double[] m, double[] b, double[] k, double maxV, double maxVA, double maxW, double maxWA)
 
-机器人阻抗启停控制代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de control de inicio/parada de la impedancia del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C#SDK-V1.1.8  Web-3.8.6
 
 .. code-block:: c#
@@ -1196,17 +1196,16 @@
         robot.ImpedanceControlStartStop(0, 1, forceThreshold, m, b, k, 1000, 500, 100, 100);
     }
 
-开启力矩补偿功能及补偿系数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Activar la función de compensación de par y el coeficiente de compensación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 开启力矩补偿功能及补偿系数
-    * @param [in] status 开关，0-关闭；1-开启
-    * @param [in] torqueCoeff J1-J6力矩补偿系数[0-1]
-    * @return 错误码
+    * @brief Activar la función de compensación de par y el coeficiente de compensación
+    * @param [in] status Interruptor, 0-desactivar; 1-activar
+    * @param [in] torqueCoeff Coeficiente de compensación de par J1-J6 [0-1]
+    * @return Código de error
     */
     public int SetCoderCompenParams(int status, double[] torqueCoeff)
-

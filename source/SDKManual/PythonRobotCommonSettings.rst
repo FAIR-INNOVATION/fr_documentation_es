@@ -1,131 +1,131 @@
-机器人常用设置
-=================
+Configuraciones habituales del robot
+====================================
 
 .. toctree:: 
     :maxdepth: 5
 
-设置工具参考点-六点法
-+++++++++++++++++++++
+Establecer el punto de referencia de la herramienta - método de seis puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetToolPoint(point_num)``"
-    "描述", "设置工具参考点-六点法"
-    "必选参数", "- ``point_num``：点编号,范围[1~6]"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetToolPoint(point_num)``"
+    "Descripción", "Establecer el punto de referencia de la herramienta - método de seis puntos"
+    "Parámetros obligatorios", "- ``point_num``：Número de punto, rango [1~6]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-计算工具坐标系-六点法
-+++++++++++++++++++++
+Calcular el sistema de coordenadas de herramienta - método de seis puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ComputeTool()``"
-    "描述", "计算工具坐标系-六点法（设置完六个工具参考点后再进行计算）"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``tcp_pose=[x,y,z,rx,ry,rz]``：工具坐标系"
+    "Prototipo", "``ComputeTool()``"
+    "Descripción", "Calcular el sistema de coordenadas de herramienta - método de seis puntos (calcular después de establecer los seis puntos de referencia de la herramienta)"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``tcp_pose=[x,y,z,rx,ry,rz]``：Sistema de coordenadas de herramienta"
 
-设置工具参考点-四点法
-+++++++++++++++++++++
+Establecer el punto de referencia de la herramienta - método de cuatro puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetTcp4RefPoint(point_num)``"
-    "描述", "设置工具参考点-四点法"
-    "必选参数", "``point_num``：点编号,范围[1~4]"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``tcp_pose=[x,y,z,rx,ry,rz]``：工具坐标系"
+    "Prototipo", "``SetTcp4RefPoint(point_num)``"
+    "Descripción", "Establecer el punto de referencia de la herramienta - método de cuatro puntos"
+    "Parámetros obligatorios", "``point_num``：Número de punto, rango [1~4]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``tcp_pose=[x,y,z,rx,ry,rz]``：Sistema de coordenadas de herramienta"
 
-计算工具坐标系-四点法
-+++++++++++++++++++++
+Calcular el sistema de coordenadas de herramienta - método de cuatro puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ComputeTcp4()``"
-    "描述", "计算工具坐标系-四点法（设置完四个工具参考点后再进行计算）"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``tcp_pose=[x,y,z,rx,ry,rz]``：工具坐标系"
+    "Prototipo", "``ComputeTcp4()``"
+    "Descripción", "Calcular el sistema de coordenadas de herramienta - método de cuatro puntos (calcular después de establecer los cuatro puntos de referencia de la herramienta)"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``tcp_pose=[x,y,z,rx,ry,rz]``：Sistema de coordenadas de herramienta"
 
-根据点位信息计算工具坐标系
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Calcular el sistema de coordenadas de herramienta a partir de la información de los puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.8
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ComputeToolCoordWithPoints(method, pos)``"
-    "描述", "根据点位信息计算工具坐标系"
-    "必选参数", "- ``method``：计算方法；0-四点法；1-六点法
-    - ``pos``：关节位置组，四点法时数组长度为4个，六点法时数组长度为6个"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``tcp_offset=[x,y,z,rx,ry,rz]``：根据点位信息计算得到的工具坐标系，单位 [mm][°]"
+    "Prototipo", "``ComputeToolCoordWithPoints(method, pos)``"
+    "Descripción", "Calcular el sistema de coordenadas de herramienta a partir de la información de los puntos"
+    "Parámetros obligatorios", "- ``method``：Método de cálculo; 0-método de cuatro puntos; 1-método de seis puntos
+    - ``pos``：Grupo de posiciones de articulaciones; en el método de cuatro puntos la longitud del arreglo es 4, en el método de seis puntos la longitud del arreglo es 6"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``tcp_offset=[x,y,z,rx,ry,rz]``：Sistema de coordenadas de herramienta calculado a partir de la información de los puntos, unidad [mm][°]"
 
-设置工具坐标系
-+++++++++++++++++
+Establecer el sistema de coordenadas de herramienta
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetToolCoord(id,t_coord,type,install,toolID,loadNum)``"
-    "描述", "设置工具坐标系"
-    "必选参数", "- ``id``:坐标系编号，范围[1~15]；
-    - ``t_coord``:工具中心点相对末端法兰中心位姿，单位[mm][°]；
-    - ``type``:0-工具坐标系，1-传感器坐标系；
-    - ``install``:安装位置，0-机器人末端，1-机器人外部
-    - ``toolID``:工具ID
-    - ``loadNum``:负载编号"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetToolCoord(id,t_coord,type,install,toolID,loadNum)``"
+    "Descripción", "Establecer el sistema de coordenadas de herramienta"
+    "Parámetros obligatorios", "- ``id``:Número del sistema de coordenadas, rango [1~15];
+    - ``t_coord``:Pose del centro de la herramienta respecto al centro de la brida del extremo, unidad [mm][°];
+    - ``type``:0-sistema de coordenadas de herramienta, 1-sistema de coordenadas de sensor;
+    - ``install``:Posición de instalación, 0-extremo del robot, 1-exterior del robot
+    - ``toolID``:ID de la herramienta
+    - ``loadNum``:Número de carga"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-设置工具坐标系列表
-++++++++++++++++++++
+Establecer la lista de sistemas de coordenadas de herramienta
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetToolList(id,t_coord ,type, install, loadNum)``"
-    "描述", "设置工具坐标系列表"
-    "必选参数", "- ``id``:坐标系编号，范围[1~15]；
-    - ``t_coord``:[x,y,z,rx,ry,rz] 工具中心点相对末端法兰中心位姿，单位[mm][°]；
-    - ``type``:0-工具坐标系，1-传感器坐标系；
-    - ``install``:安装位置，0-机器人末端，1-机器人外部
-    - ``loadNum``:负载编号"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetToolList(id,t_coord ,type, install, loadNum)``"
+    "Descripción", "Establecer la lista de sistemas de coordenadas de herramienta"
+    "Parámetros obligatorios", "- ``id``:Número del sistema de coordenadas, rango [1~15];
+    - ``t_coord``:[x,y,z,rx,ry,rz] Pose del centro de la herramienta respecto al centro de la brida del extremo, unidad [mm][°];
+    - ``type``:0-sistema de coordenadas de herramienta, 1-sistema de coordenadas de sensor;
+    - ``install``:Posición de instalación, 0-extremo del robot, 1-exterior del robot
+    - ``loadNum``:Número de carga"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-获取当前工具坐标系
-++++++++++++++++++++
+Obtener el sistema de coordenadas de herramienta actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetTCPOffset(flag=1)``"
-    "描述", "获取当前工具坐标系"
-    "必选参数", "无"
-    "默认参数", "``flag``：0-阻塞，1-非阻塞  默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``tcp_offset=[x,y,z,rx,ry,rz]``: 当前工具坐标系相对位姿，单位[mm][°]"
+    "Prototipo", "``GetTCPOffset(flag=1)``"
+    "Descripción", "Obtener el sistema de coordenadas de herramienta actual"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "``flag``：0-bloqueante, 1-no bloqueante; valor predeterminado 1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``tcp_offset=[x,y,z,rx,ry,rz]``: Pose relativa del sistema de coordenadas de herramienta actual, unidad [mm][°]"
 
-机器人工具坐标系操作代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de operación del sistema de coordenadas de herramienta del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     p1Desc = [186.331, 487.913, 209.850, 149.030, 0.688, -114.347]
     p2Desc = [69.721, 535.073, 202.882, -144.406, -14.775, -89.012]
@@ -174,61 +174,61 @@
     print(f"GetTCPOffset    {rtn}  coord is {getCoord[0]} {getCoord[1]} {getCoord[2]} {getCoord[3]} {getCoord[4]} {getCoord[5]}")
     robot.CloseRPC()
 
-设置外部工具参考点-六点法
-+++++++++++++++++++++++++
+Establecer el punto de referencia de la herramienta externa - método de seis puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetExTCPPoint(point_num)``"
-    "描述", "设置外部工具参考点-三点法"
-    "必选参数", "- ``point_num``：点编号,范围[1~3]"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetExTCPPoint(point_num)``"
+    "Descripción", "Establecer el punto de referencia de la herramienta externa - método de tres puntos"
+    "Parámetros obligatorios", "- ``point_num``：Número de punto, rango [1~3]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-计算外部工具坐标系-六点法
-+++++++++++++++++++++++++
+Calcular el sistema de coordenadas de herramienta externa - método de seis puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ComputeExTCF(point_num)``"
-    "描述", "计算外部工具坐标系-三点法（设置完三个参考点后再进行计算）"
-    "必选参数", "``point_num``：点编号,范围[1~3]"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``etcp=[x,y,z,rx,ry,rz]``：外部工具坐标系"
+    "Prototipo", "``ComputeExTCF(point_num)``"
+    "Descripción", "Calcular el sistema de coordenadas de herramienta externa - método de tres puntos (calcular después de establecer los tres puntos de referencia)"
+    "Parámetros obligatorios", "``point_num``：Número de punto, rango [1~3]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``etcp=[x,y,z,rx,ry,rz]``：Sistema de coordenadas de herramienta externa"
 
-设置外部工具坐标系
-++++++++++++++++++++
+Establecer el sistema de coordenadas de herramienta externa
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetExToolCoord(id,etcp,etool)``"
-    "描述", "设置外部工具坐标系"
-    "必选参数", "- ``id``:坐标系编号，20-39对应外部工具坐标系0-19；
-    - ``etcp``:[x,y,z,rx,ry,rz] 外部工具坐标系，单位[mm][°]；
-    - ``etool``:[x,y,z,rx,ry,rz] 末端工具坐标系，单位[mm][°]；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetExToolCoord(id,etcp,etool)``"
+    "Descripción", "Establecer el sistema de coordenadas de herramienta externa"
+    "Parámetros obligatorios", "- ``id``:Número del sistema de coordenadas, 20-39 corresponden a los sistemas de coordenadas de herramienta externa 0-19;
+    - ``etcp``:[x,y,z,rx,ry,rz] Sistema de coordenadas de herramienta externa, unidad [mm][°];
+    - ``etool``:[x,y,z,rx,ry,rz] Sistema de coordenadas de la herramienta del extremo, unidad [mm][°];"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置外部工具坐标系列表
-++++++++++++++++++++++++
+Establecer la lista de sistemas de coordenadas de herramienta externa
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetExToolList(id,etcp ,etool)``"
-    "描述", "设置外部工具坐标系列表"
-    "必选参数", "- ``id``:坐标系编号，20-39对应外部工具坐标系0-19；
-    - ``etcp``:[x,y,z,rx,ry,rz] 外部工具坐标系，单位[mm][°]；
-    - ``etool``:[x,y,z,rx,ry,rz] 末端工具坐标系，单位[mm][°]；"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetExToolList(id,etcp ,etool)``"
+    "Descripción", "Establecer la lista de sistemas de coordenadas de herramienta externa"
+    "Parámetros obligatorios", "- ``id``:Número del sistema de coordenadas, 20-39 corresponden a los sistemas de coordenadas de herramienta externa 0-19;
+    - ``etcp``:[x,y,z,rx,ry,rz] Sistema de coordenadas de herramienta externa, unidad [mm][°];
+    - ``etool``:[x,y,z,rx,ry,rz] Sistema de coordenadas de la herramienta del extremo, unidad [mm][°];"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-机器人外部工具坐标系操作代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de operación del sistema de coordenadas de herramienta externa del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
@@ -269,97 +269,97 @@
         robot.CloseRPC()
     TestExtCoord(robot)
 
-设置工件参考点-三点法
-++++++++++++++++++++++++
+Establecer el punto de referencia de la pieza - método de tres puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetWObjCoordPoint(point_num)``"
-    "描述", "设置工件参考点-三点法"
-    "必选参数", "``point_num``:点编号,范围[1~3]"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetWObjCoordPoint(point_num)``"
+    "Descripción", "Establecer el punto de referencia de la pieza - método de tres puntos"
+    "Parámetros obligatorios", "``point_num``:Número de punto, rango [1~3]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-计算工件坐标系-三点法
-++++++++++++++++++++++++
+Calcular el sistema de coordenadas de la pieza - método de tres puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ComputeWObjCoord(method, refFrame)``"
-    "描述", "计算工件坐标系-三点法（三个参考点设置完成后再进行计算）;"
-    "必选参数", "- ``method``：计算方式0：原点-x轴-z轴，1：原点-x轴-xy平面
-    - ``refFrame``：参考坐标系"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``wobj_pose=[x,y,z,rx,ry,rz]``：工件坐标系"
+    "Prototipo", "``ComputeWObjCoord(method, refFrame)``"
+    "Descripción", "Calcular el sistema de coordenadas de la pieza - método de tres puntos (calcular después de establecer los tres puntos de referencia);"
+    "Parámetros obligatorios", "- ``method``：Método de cálculo 0: origen-eje x-eje z, 1: origen-eje x-plano xy
+    - ``refFrame``：Sistema de coordenadas de referencia"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``wobj_pose=[x,y,z,rx,ry,rz]``：Sistema de coordenadas de la pieza"
 
-设置工件坐标系
-++++++++++++++++
+Establecer el sistema de coordenadas de la pieza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetWObjCoord(id, coord, refFrame)``"
-    "描述", "设置工件坐标系"
-    "必选参数", "- ``id``:坐标系编号，范围[0~14]；
-    - ``coord``:工件坐标系相对于末端法兰中心位姿，单位 [mm][°]
-    - ``refFrame``:参考坐标系"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetWObjCoord(id, coord, refFrame)``"
+    "Descripción", "Establecer el sistema de coordenadas de la pieza"
+    "Parámetros obligatorios", "- ``id``:Número del sistema de coordenadas, rango [0~14];
+    - ``coord``:Pose del sistema de coordenadas de la pieza respecto al centro de la brida del extremo, unidad [mm][°]
+    - ``refFrame``:Sistema de coordenadas de referencia"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置工件坐标系列表
-++++++++++++++++++++++
+Establecer la lista de sistemas de coordenadas de la pieza
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetWObjList(id, coord, refFrame)``"
-    "描述", "设置工件坐标系列表"
-    "必选参数", "- ``id``:坐标系编号，范围[0~14]；
-    - ``coord``:工件坐标系相对于末端法兰中心位姿，单位 [mm][°]
-    - ``refFrame``:参考坐标系"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetWObjList(id, coord, refFrame)``"
+    "Descripción", "Establecer la lista de sistemas de coordenadas de la pieza"
+    "Parámetros obligatorios", "- ``id``:Número del sistema de coordenadas, rango [0~14];
+    - ``coord``:Pose del sistema de coordenadas de la pieza respecto al centro de la brida del extremo, unidad [mm][°]
+    - ``refFrame``:Sistema de coordenadas de referencia"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-根据点位信息计算工件坐标系
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Calcular el sistema de coordenadas de la pieza a partir de la información de los puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.8
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ComputeWObjCoordWithPoints(method, pos, refFrame)``"
-    "描述", "根据点位信息计算工件坐标系"
-    "必选参数", "- ``method``：计算方法；0：原点-x轴-z轴  1：原点-x轴-xy平面
-    - ``pos``：三个TCP位置组
-    - ``refFrame``：参考坐标系"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode 
-    - ``wobj_offset=[x,y,z,rx,ry,rz]``：根据点位信息计算得到的工件坐标系，单位 [mm][°]"
+    "Prototipo", "``ComputeWObjCoordWithPoints(method, pos, refFrame)``"
+    "Descripción", "Calcular el sistema de coordenadas de la pieza a partir de la información de los puntos"
+    "Parámetros obligatorios", "- ``method``：Método de cálculo; 0: origen-eje x-eje z  1: origen-eje x-plano xy
+    - ``pos``：Tres grupos de posiciones del TCP
+    - ``refFrame``：Sistema de coordenadas de referencia"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode 
+    - ``wobj_offset=[x,y,z,rx,ry,rz]``：Sistema de coordenadas de la pieza calculado a partir de la información de los puntos, unidad [mm][°]"
 
-获取当前工件坐标系
-++++++++++++++++++++
+Obtener el sistema de coordenadas de la pieza actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetWObjOffset(flag=1)``"
-    "描述", "获取当前工件坐标系"
-    "必选参数", "无"
-    "默认参数", "``flag``：0-阻塞，1-非阻塞，默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``wobj_offset=[x,y,z,rx,ry,rz]``: 当前工件坐标系相对位姿，单位[mm][°]"
+    "Prototipo", "``GetWObjOffset(flag=1)``"
+    "Descripción", "Obtener el sistema de coordenadas de la pieza actual"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "``flag``：0-bloqueante, 1-no bloqueante; valor predeterminado 1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``wobj_offset=[x,y,z,rx,ry,rz]``: Pose relativa del sistema de coordenadas de la pieza actual, unidad [mm][°]"
 
-机器人工件坐标系操作代码示例
-++++++++++++++++++++++++++++++
+Ejemplo de código de operación del sistema de coordenadas de la pieza del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     p1Desc = [-89.606, 779.517, 193.516, 178.000, 0.476, -92.484]
     p2Desc = [-24.656, 850.384, 191.361, 177.079, -2.058, -95.355]
@@ -386,169 +386,169 @@
     print(f"GetWObjOffset    {rtn}  coord is {getWobjDesc[0]} {getWobjDesc[1]} {getWobjDesc[2]} {getWobjDesc[3]} {getWobjDesc[4]} {getWobjDesc[5]}")
     robot.CloseRPC()
 
-设置全局速度
-+++++++++++++++++++
+Establecer la velocidad global
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetSpeed(vel)``"
-    "描述", "设置全局速度"
-    "必选参数", "- ``vel``:速度百分比，范围[0~100]"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetSpeed(vel)``"
+    "Descripción", "Establecer la velocidad global"
+    "Parámetros obligatorios", "- ``vel``:Porcentaje de velocidad, rango [0~100]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置机器人加速度
-+++++++++++++++++
+Establecer la aceleración del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetOaccScale(acc)``"
-    "描述", "设置机器人加速度"
-    "必选参数", "- ``acc``:机器人加速度百分比"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetOaccScale(acc)``"
+    "Descripción", "Establecer la aceleración del robot"
+    "Parámetros obligatorios", "- ``acc``:Porcentaje de aceleración del robot"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-获取默认速度
-+++++++++++++++
+Obtener la velocidad predeterminada
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetDefaultTransVel()``"
-    "描述", "获取默认速度"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``vel``: 默认速度，单位 [mm/s]"
+    "Prototipo", "``GetDefaultTransVel()``"
+    "Descripción", "Obtener la velocidad predeterminada"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``vel``: Velocidad predeterminada, unidad [mm/s]"
 
-设置末端负载重量
-++++++++++++++++++
+Establecer el peso de la carga del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetLoadWeight(loadNum, weight)``"
-    "描述", "设置末端负载重量,错误负载重量设置可能会导致拖动模式下机器人失控"
-    "必选参数", "- ``loadNum``:负载编号
-    - ``weight``:单位[kg]"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetLoadWeight(loadNum, weight)``"
+    "Descripción", "Establecer el peso de la carga del extremo; una configuración incorrecta del peso de la carga puede provocar que el robot pierda el control en modo de arrastre"
+    "Parámetros obligatorios", "- ``loadNum``:Número de carga
+    - ``weight``:Unidad [kg]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-设置末端负载质心坐标
-++++++++++++++++++++++
+Establecer las coordenadas del centro de masa de la carga del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetLoadCoord(x,y,z,loadNum = 0)``"
-    "描述", "设置末端负载质心坐标,错误负载质心设置可能会导致拖动模式下机器人失控"
-    "必选参数", "- ``x``: 质心坐标，单位[mm]
-    - ``y``: 质心坐标，单位[mm]
-    - ``z``: 质心坐标，单位[mm]"
-    "默认参数", "- ``loadNum``: 负载编号，默认0"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetLoadCoord(x,y,z,loadNum = 0)``"
+    "Descripción", "Establecer las coordenadas del centro de masa de la carga del extremo; una configuración incorrecta del centro de masa de la carga puede provocar que el robot pierda el control en modo de arrastre"
+    "Parámetros obligatorios", "- ``x``: Coordenada del centro de masa, unidad [mm]
+    - ``y``: Coordenada del centro de masa, unidad [mm]
+    - ``z``: Coordenada del centro de masa, unidad [mm]"
+    "Parámetros predeterminados", "- ``loadNum``: Número de carga, valor predeterminado 0"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-获取当前负载的重量
-+++++++++++++++++++++
+Obtener el peso de la carga actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetTargetPayload(flag=1)``"
-    "描述", "获取当前负载的质量"
-    "必选参数", "无"
-    "默认参数", "``flag``：0-阻塞，1-非阻塞  默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``weight``：当前负载重量，单位 [kg]"
+    "Prototipo", "``GetTargetPayload(flag=1)``"
+    "Descripción", "Obtener la masa de la carga actual"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "``flag``：0-bloqueante, 1-no bloqueante; valor predeterminado 1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``weight``：Peso de la carga actual, unidad [kg]"
 
-获取当前负载的质心
-+++++++++++++++++++++
+Obtener el centro de masa de la carga actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetTargetPayloadCog(flag=1)``"
-    "描述", "获取当前负载的质心"
-    "必选参数", "无"
-    "默认参数", "``flag``：0-阻塞，1-非阻塞  默认1"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``cog=[x,y,z]``: 当前质心坐标，单位 [mm]"
+    "Prototipo", "``GetTargetPayloadCog(flag=1)``"
+    "Descripción", "Obtener el centro de masa de la carga actual"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "``flag``：0-bloqueante, 1-no bloqueante; valor predeterminado 1"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``cog=[x,y,z]``: Coordenadas del centro de masa actual, unidad [mm]"
 
-设置机器人安装方式-固定安装
-++++++++++++++++++++++++++++++
+Establecer el modo de instalación del robot - instalación fija
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetRobotInstallPos(method)``"
-    "描述", "设置机器人安装方式-固定安装,错误安装方式设置会导致拖动模式下机器人失控"
-    "必选参数", "- ``method``:0-平装，1-侧装，2-挂装"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``SetRobotInstallPos(method)``"
+    "Descripción", "Establecer el modo de instalación del robot - instalación fija; una configuración incorrecta del modo de instalación puede provocar que el robot pierda el control en modo de arrastre"
+    "Parámetros obligatorios", "- ``method``:0-instalación normal, 1-instalación lateral, 2-instalación invertida"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-设置机器人安装角度-自由安装
-++++++++++++++++++++++++++++++
+Establecer el ángulo de instalación del robot - instalación libre
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetRobotInstallAngle(yangle,zangle)``"
-    "描述", "设置机器人安装角度-自由安装,错误安装角度设置会导致拖动模式下机器人失控"
-    "必选参数", "- ``yangle``：倾斜角
-    - ``zangle``：旋转角"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetRobotInstallAngle(yangle,zangle)``"
+    "Descripción", "Establecer el ángulo de instalación del robot - instalación libre; una configuración incorrecta del ángulo de instalación puede provocar que el robot pierda el control en modo de arrastre"
+    "Parámetros obligatorios", "- ``yangle``：Ángulo de inclinación
+    - ``zangle``：Ángulo de rotación"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取机器人安装角度
-++++++++++++++++++++
+Obtener el ángulo de instalación del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetRobotInstallAngle()``"
-    "描述", "获取机器人安装角度"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``[yangle,zangle]``：yangle-倾斜角,zangle-旋转角"
+    "Prototipo", "``GetRobotInstallAngle()``"
+    "Descripción", "Obtener el ángulo de instalación del robot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``[yangle,zangle]``：yangle-ángulo de inclinación, zangle-ángulo de rotación"
 
-设置系统变量值
-+++++++++++++++++
+Establecer el valor de una variable del sistema
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetSysVarValue(id,value)``"
-    "描述", "设置系统变量"
-    "必选参数", "- ``id``：变量编号，范围[1~20];
-    - ``value``：变量值"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetSysVarValue(id,value)``"
+    "Descripción", "Establecer una variable del sistema"
+    "Parámetros obligatorios", "- ``id``：Número de variable, rango [1~20];
+    - ``value``：Valor de la variable"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取系统变量值
-+++++++++++++++++
+Obtener el valor de una variable del sistema
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetSysVarValue(id)``"
-    "描述", "获取系统变量值"
-    "必选参数", "- ``id``：系统变量编号，范围[1~20]"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``var_value``：系统变量值"
+    "Prototipo", "``GetSysVarValue(id)``"
+    "Descripción", "Obtener el valor de una variable del sistema"
+    "Parámetros obligatorios", "- ``id``：Número de variable del sistema, rango [1~20]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``var_value``：Valor de la variable del sistema"
 
-机器人常用设置代码示例
-++++++++++++++++++++++++++++++
+Ejemplo de código de configuraciones habituales del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     for i in range(1, 100):
         robot.SetSpeed(i)
@@ -575,73 +575,73 @@
     print(f"GetRobotInstallAngle x: {anglex}; y: {angley}")
     robot.CloseRPC()
 
-关节摩擦力补偿开关
-++++++++++++++++++++
+Interruptor de compensación de fricción de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FrictionCompensationOnOff(state)``"
-    "描述", "关节摩擦力补偿开关"
-    "必选参数", "- ``state``：0-关，1-开"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``FrictionCompensationOnOff(state)``"
+    "Descripción", "Interruptor de compensación de fricción de las articulaciones"
+    "Parámetros obligatorios", "- ``state``：0-desactivado, 1-activado"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置关节摩擦力补偿系数-正装
-++++++++++++++++++++++++++++
+Establecer el coeficiente de compensación de fricción de las articulaciones - instalación normal
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetFrictionValue_level(coeff)``"
-    "描述", "设置关节摩擦力补偿系数-固定安装-正装"
-    "必选参数", "- ``coeff=[j1,j2,j3,j4,j5,j6]``：六个关节补偿系数"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetFrictionValue_level(coeff)``"
+    "Descripción", "Establecer el coeficiente de compensación de fricción de las articulaciones - instalación fija - instalación normal"
+    "Parámetros obligatorios", "- ``coeff=[j1,j2,j3,j4,j5,j6]``：Coeficientes de compensación de las seis articulaciones"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置关节摩擦力补偿系数-侧装
-++++++++++++++++++++++++++++
+Establecer el coeficiente de compensación de fricción de las articulaciones - instalación lateral
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetFrictionValue_wall(coeff)``"
-    "描述", "设置关节摩擦力补偿系数-固定安装-侧装"
-    "必选参数", "- ``coeff=[j1,j2,j3,j4,j5,j6]``：六个关节补偿系数"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetFrictionValue_wall(coeff)``"
+    "Descripción", "Establecer el coeficiente de compensación de fricción de las articulaciones - instalación fija - instalación lateral"
+    "Parámetros obligatorios", "- ``coeff=[j1,j2,j3,j4,j5,j6]``：Coeficientes de compensación de las seis articulaciones"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置关节摩擦力补偿系数-倒装
-++++++++++++++++++++++++++++++
+Establecer el coeficiente de compensación de fricción de las articulaciones - instalación invertida
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetFrictionValue_ceiling(coeff)``"
-    "描述", "设置关节摩擦力补偿系数-固定安装-倒装"
-    "必选参数", "- ``coeff=[j1,j2,j3,j4,j5,j6]``：六个关节补偿系数"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetFrictionValue_ceiling(coeff)``"
+    "Descripción", "Establecer el coeficiente de compensación de fricción de las articulaciones - instalación fija - instalación invertida"
+    "Parámetros obligatorios", "- ``coeff=[j1,j2,j3,j4,j5,j6]``：Coeficientes de compensación de las seis articulaciones"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置关节摩擦力补偿系数-自由安装
-+++++++++++++++++++++++++++++++++
+Establecer el coeficiente de compensación de fricción de las articulaciones - instalación libre
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetFrictionValue_freedom(coeff)``"
-    "描述", "设置关节摩擦力补偿系数-自由安装"
-    "必选参数", "- ``coeff=[j1,j2,j3,j4,j5,j6]``：六个关节补偿系数"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetFrictionValue_freedom(coeff)``"
+    "Descripción", "Establecer el coeficiente de compensación de fricción de las articulaciones - instalación libre"
+    "Parámetros obligatorios", "- ``coeff=[j1,j2,j3,j4,j5,j6]``：Coeficientes de compensación de las seis articulaciones"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-机器人设置关节摩擦力补偿代码示例
-+++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración de la compensación de fricción de las articulaciones del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     lcoeff = [0.9, 0.9, 0.9, 0.9, 0.9, 0.9]
     wcoeff = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4]
@@ -659,39 +659,39 @@
     print(f"SetFrictionValue_freedom rtn is {rtn}")
     robot.CloseRPC()
 
-查询机器人错误码
-++++++++++++++++++++++++
+Consultar el código de error del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetRobotErrorCode()``"
-    "描述", "查询机器人错误码"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``[maincode subcode]``：机器人错误码，maincode-主错误码，subcode-子错误码"
+    "Prototipo", "``GetRobotErrorCode()``"
+    "Descripción", "Consultar el código de error del robot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``[maincode subcode]``：Código de error del robot, maincode-código de error principal, subcode-código de error secundario"
 
-错误状态清除
-++++++++++++++
+Borrar el estado de error
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ResetAllError()``"
-    "描述", "错误状态清除，只能清除可复位的错误"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ResetAllError()``"
+    "Descripción", "Borrar el estado de error; solo se pueden borrar los errores reiniciables"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-机器人故障状态获取及清除错误代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de obtención del estado de fallo y borrado de errores del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     p1Joint = [-108.145, -50.137, 85.818, -125.599, -87.946, 74.329]
     robot.MoveJ(joint_pos=p1Joint, tool=5, user=2, vel=50)
@@ -705,46 +705,46 @@
     print(f"robot maincode is {maincode}; subcode is {subcode}")
     robot.CloseRPC()
 
-设置宽电压控制箱温度及风扇转速监控参数
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer los parámetros de monitorización de temperatura y velocidad del ventilador de la caja de control de voltaje amplio
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetWideBoxTempFanMonitorParam(enable, period)``"
-    "描述", "设置宽电压控制箱温度及风扇转速监控参数"
-    "必选参数", "- ``enable``：0-不使能监测；1-使能监测
-    - ``period``：监测周期(s),范围1-100"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetWideBoxTempFanMonitorParam(enable, period)``"
+    "Descripción", "Establecer los parámetros de monitorización de temperatura y velocidad del ventilador de la caja de control de voltaje amplio"
+    "Parámetros obligatorios", "- ``enable``：0-no habilitar la monitorización; 1-habilitar la monitorización
+    - ``period``：Período de monitorización (s), rango 1-100"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取宽电压控制箱温度及风扇转速监控参数
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener los parámetros de monitorización de temperatura y velocidad del ventilador de la caja de control de voltaje amplio
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetWideBoxTempFanMonitorParam()``"
-    "描述", "获取宽电压控制箱温度及风扇转速监控参数"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``enable``：0-不使能监测；1-使能监测
-    - ``period``：监测周期(s),范围1-100"
+    "Prototipo", "``GetWideBoxTempFanMonitorParam()``"
+    "Descripción", "Obtener los parámetros de monitorización de temperatura y velocidad del ventilador de la caja de control de voltaje amplio"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``enable``：0-no habilitar la monitorización; 1-habilitar la monitorización
+    - ``period``：Período de monitorización (s), rango 1-100"
 
-宽电压控制箱温度和风扇电流状态获取代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de obtención del estado de temperatura y corriente del ventilador de la caja de control de voltaje amplio
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.SetWideBoxTempFanMonitorParam(1, 2)
     error, enable, period = robot.GetWideBoxTempFanMonitorParam()
@@ -763,92 +763,92 @@
         time.sleep(0.1)
     robot.CloseRPC()
 
-设置焦点标定点
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer el punto de calibración de foco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetFocusCalibPoint(pointNum, point)``"
-    "描述", "设置焦点标定点"
-    "必选参数", "- ``pointNum``：焦点标定点编号 1-8
-    - ``point``：标定点坐标"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetFocusCalibPoint(pointNum, point)``"
+    "Descripción", "Establecer el punto de calibración de foco"
+    "Parámetros obligatorios", "- ``pointNum``：Número del punto de calibración de foco 1-8
+    - ``point``：Coordenadas del punto de calibración"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-计算焦点标定结果
-+++++++++++++++++++++++++++++++++++++++++++++
+Calcular el resultado de la calibración de foco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ComputeFocusCalib(pointNum)``"
-    "描述", "计算焦点标定结果"
-    "必选参数", "- ``pointNum``：标定点个数"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``resultPos``：标定结果XYZ
-    - ``accuracy``：标定精度误差"
+    "Prototipo", "``ComputeFocusCalib(pointNum)``"
+    "Descripción", "Calcular el resultado de la calibración de foco"
+    "Parámetros obligatorios", "- ``pointNum``：Número de puntos de calibración"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``resultPos``：XYZ del resultado de la calibración
+    - ``accuracy``：Error de precisión de la calibración"
 
-开启焦点跟随
-+++++++++++++++++++++++++++++++++++++++++++++
+Activar el seguimiento de foco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FocusStart(kp=50.0, kpredic=19.0, aMax=1440, vMax=180, type=0)``"
-    "描述", "开启焦点跟随"
-    "必选参数", "无"
-    "默认参数", "- ``kp``：比例参数，默认50.0
-    - ``kpredic``：前馈参数，默认19.0
-    - ``aMax``：最大角加速度限制，默认1440°/s^2
-    - ``vMax``：最大角速度限制，默认180°/s
-    - ``type``：锁定X轴指向(0-参考输入矢量；1-水平；2-垂直)，默认0"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``FocusStart(kp=50.0, kpredic=19.0, aMax=1440, vMax=180, type=0)``"
+    "Descripción", "Activar el seguimiento de foco"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "- ``kp``：Parámetro proporcional, valor predeterminado 50.0
+    - ``kpredic``：Parámetro de prealimentación, valor predeterminado 19.0
+    - ``aMax``：Límite máximo de aceleración angular, valor predeterminado 1440°/s^2
+    - ``vMax``：Límite máximo de velocidad angular, valor predeterminado 180°/s
+    - ``type``：Bloqueo de la dirección del eje X (0-vector de entrada de referencia; 1-horizontal; 2-vertical), valor predeterminado 0"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-停止焦点跟随
-+++++++++++++++++++++++++++++++++++++++++++++
+Detener el seguimiento de foco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``FocusEnd()``"
-    "描述", "停止焦点跟随"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``FocusEnd()``"
+    "Descripción", "Detener el seguimiento de foco"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-设置焦点坐标
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer las coordenadas del foco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetFocusPosition(pos)``"
-    "描述", "设置焦点坐标"
-    "必选参数", "- ``pos``：焦点坐标XYZ"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetFocusPosition(pos)``"
+    "Descripción", "Establecer las coordenadas del foco"
+    "Parámetros obligatorios", "- ``pos``：Coordenadas XYZ del foco"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-机器人焦点跟随代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de seguimiento de foco del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     p1Desc = [186.331, 487.913, 209.850, 149.030, 0.688, -114.347]
     p1Joint = [-127.876, -75.341, 115.417, -122.741, -59.820, 74.300]
@@ -895,99 +895,99 @@
     robot.FocusEnd()
     robot.CloseRPC()
 
-关节扭矩传感器灵敏度标定功能开启
-+++++++++++++++++++++++++++++++++++++++++++++
+Activación de la función de calibración de sensibilidad del sensor de par de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``JointSensitivityEnable(status)``"
-    "描述", "关节扭矩传感器灵敏度标定功能开启"
-    "必选参数", "- ``status``：0-关闭；1-开启"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``JointSensitivityEnable(status)``"
+    "Descripción", "Activación de la función de calibración de sensibilidad del sensor de par de las articulaciones"
+    "Parámetros obligatorios", "- ``status``：0-desactivar; 1-activar"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-关节扭矩传感器灵敏度数据采集
-+++++++++++++++++++++++++++++++++++++++++++++
+Recogida de datos de sensibilidad del sensor de par de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``JointSensitivityCollect()``"
-    "描述", "关节扭矩传感器灵敏度数据采集"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``JointSensitivityCollect()``"
+    "Descripción", "Recogida de datos de sensibilidad del sensor de par de las articulaciones"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
     
-获取关节扭矩传感器灵敏度标定结果
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el resultado de la calibración de sensibilidad del sensor de par de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``JointSensitivityCalibration()``"
-    "描述", "获取关节扭矩传感器灵敏度标定结果"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``calibResult``：j1~j6关节灵敏度[0-1]
-    - ``linearityn``：j1~j6关节线性度[0-1]"
+    "Prototipo", "``JointSensitivityCalibration()``"
+    "Descripción", "Obtener el resultado de la calibración de sensibilidad del sensor de par de las articulaciones"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``calibResult``：Sensibilidad de las articulaciones j1~j6 [0-1]
+    - ``linearityn``：Linealidad de las articulaciones j1~j6 [0-1]"
 
-获取关节扭矩传感器迟滞误差
-+++++++++++++++++++++++++++++++++++++++++++++
-
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``JointHysteresisError()``"
-    "描述", "获取关节扭矩传感器迟滞误差"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``hysteresisError``：j1~j6关节迟滞误差"
-
-获取关节扭矩传感器重复精度
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el error de histéresis del sensor de par de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``JointRepeatability()``"
-    "描述", "获取关节扭矩传感器重复精度"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``repeatability``：j1~j6关节重复精度"
+    "Prototipo", "``JointHysteresisError()``"
+    "Descripción", "Obtener el error de histéresis del sensor de par de las articulaciones"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``hysteresisError``：Error de histéresis de las articulaciones j1~j6"
 
-设置关节力传感器参数
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener la repetibilidad del sensor de par de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetAdmittanceParams(M, B, K, threshold, sensitivity, setZeroFlag)``"
-    "描述", "设置关节力传感器参数"
-    "必选参数", "
-    - ``M``：J1-J6质量系数[0.001 ~ 10]
-    - ``B``：J1-J6阻尼系数[0.001 ~ 10]
-    - ``K``：J1-J6刚度系数[0.001 ~ 10]
-    - ``threshold``：力控制阈值，Nm
-    - ``sensitivity``：灵敏度,Nm/V,[0 ~ 10]
-    - ``setZeroFlag``：功能开启标志位；0-关闭；1-开启；2-位置1记录零点；3-位置2记录零点"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Prototipo", "``JointRepeatability()``"
+    "Descripción", "Obtener la repetibilidad del sensor de par de las articulaciones"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``repeatability``：Repetibilidad de las articulaciones j1~j6"
 
-关节扭矩传感器灵敏度自动标定代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer los parámetros del sensor de fuerza de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``SetAdmittanceParams(M, B, K, threshold, sensitivity, setZeroFlag)``"
+    "Descripción", "Establecer los parámetros del sensor de fuerza de las articulaciones"
+    "Parámetros obligatorios", "
+    - ``M``：Coeficientes de masa J1-J6 [0.001 ~ 10]
+    - ``B``：Coeficientes de amortiguación J1-J6 [0.001 ~ 10]
+    - ``K``：Coeficientes de rigidez J1-J6 [0.001 ~ 10]
+    - ``threshold``：Umbral de control de fuerza, Nm
+    - ``sensitivity``：Sensibilidad, Nm/V, [0 ~ 10]
+    - ``setZeroFlag``：Indicador de activación de la función; 0-desactivar; 1-activar; 2-posición 1 registrar punto cero; 3-posición 2 registrar punto cero"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
+
+Ejemplo de código de calibración automática de sensibilidad del sensor de par de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
@@ -1110,51 +1110,51 @@
     print(f"SetAdmittanceParams rtn is {rtn}")
     robot.CloseRPC()
 
-获取机器人8个从站端口错误帧数
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el número de tramas de error de los 8 puertos esclavos del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetSlavePortErrCounter()``"
-    "描述", "获取机器人8个从站端口错误帧数"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``inRecvErr``：输入接收错误帧数
-    - ``inCRCErr``：输入CRC错误帧数
-    - ``inTransmitErr``：输入转发错误帧数
-    - ``inLinkErr``：输入链接错误帧数
-    - ``outRecvErr``：输出接收错误帧数
-    - ``outCRCErr``：输出CRC错误帧数
-    - ``outTransmitErr``：输出转发错误帧数
-    - ``outLinkErr``：输出链接错误帧数"
+    "Prototipo", "``GetSlavePortErrCounter()``"
+    "Descripción", "Obtener el número de tramas de error de los 8 puertos esclavos del robot"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``inRecvErr``：Número de tramas de error de recepción de entrada
+    - ``inCRCErr``：Número de tramas de error CRC de entrada
+    - ``inTransmitErr``：Número de tramas de error de reenvío de entrada
+    - ``inLinkErr``：Número de tramas de error de enlace de entrada
+    - ``outRecvErr``：Número de tramas de error de recepción de salida
+    - ``outCRCErr``：Número de tramas de error CRC de salida
+    - ``outTransmitErr``：Número de tramas de error de reenvío de salida
+    - ``outLinkErr``：Número de tramas de error de enlace de salida"
 
-从站端口错误帧清零
-+++++++++++++++++++++++++++++++++++++++++++++
+Puesta a cero de las tramas de error del puerto esclavo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``JointSensitivityEnable(slaveID)``"
-    "描述", "从站端口错误帧清零"
-    "必选参数", "- ``slaveID``：从站编号0~7"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``JointSensitivityEnable(slaveID)``"
+    "Descripción", "Puesta a cero de las tramas de error del puerto esclavo"
+    "Parámetros obligatorios", "- ``slaveID``：Número de esclavo 0~7"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取从站端口错误帧代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de obtención de tramas de error del puerto esclavo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     inRecvErr = [0] * 8
     inCRCErr = [0] * 8
@@ -1187,44 +1187,44 @@
         robot.SlavePortErrCounterClear(i)
     robot.CloseRPC()
 
-设置各轴速度前馈系数
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer el coeficiente de prealimentación de velocidad de cada eje
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetVelFeedForwardRatio(radio)``"
-    "描述", "设置各轴速度前馈系数"
-    "必选参数", "- ``radio``：各轴速度前馈系数"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetVelFeedForwardRatio(radio)``"
+    "Descripción", "Establecer el coeficiente de prealimentación de velocidad de cada eje"
+    "Parámetros obligatorios", "- ``radio``：Coeficiente de prealimentación de velocidad de cada eje"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-获取各轴速度前馈系数
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el coeficiente de prealimentación de velocidad de cada eje
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``GetVelFeedForwardRatio()``"
-    "描述", "获取各轴速度前馈系数"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode
-    - ``radio``：各轴速度前馈系数"
+    "Prototipo", "``GetVelFeedForwardRatio()``"
+    "Descripción", "Obtener el coeficiente de prealimentación de velocidad de cada eje"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode
+    - ``radio``：Coeficiente de prealimentación de velocidad de cada eje"
 
-机器人速度前馈系数代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código del coeficiente de prealimentación de velocidad del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
     import threading
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     setRadio = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
     robot.SetVelFeedForwardRatio(setRadio)
@@ -1233,105 +1233,105 @@
     print(f"{getRadio[0]},{getRadio[1]},{getRadio[2]},{getRadio[3]},{getRadio[4]},{getRadio[5]}")
     robot.CloseRPC()
 
-光电传感器TCP标定-计算工具RPY
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Calibración TCP del sensor fotoeléctrico - calcular RPY de la herramienta
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``TCPComputeRPY(Btool, Etool, sensor, radius, dz)``"
-    "描述", "光电传感器TCP标定-计算工具RPY"
-    "必选参数", "
-    - ``Btool``：机器人笛卡尔位置
-    - ``Etool``：当前工具坐标系数值
-    - ``Btsenserool``：当前传感器坐标系数值(暂未开放)
-    - ``radius``：圆周运动半径mm(暂未开放)
-    - ``dz``：沿基座标系z轴负方向运动距离；当dz = 10000时，函数直接返回工具RPY"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Prototipo", "``TCPComputeRPY(Btool, Etool, sensor, radius, dz)``"
+    "Descripción", "Calibración TCP del sensor fotoeléctrico - calcular RPY de la herramienta"
+    "Parámetros obligatorios", "
+    - ``Btool``：Posición cartesiana del robot
+    - ``Etool``：Valor actual del sistema de coordenadas de herramienta
+    - ``Btsenserool``：Valor actual del sistema de coordenadas del sensor (aún no disponible)
+    - ``radius``：Radio del movimiento circular mm (aún no disponible)
+    - ``dz``：Distancia de movimiento a lo largo de la dirección negativa del eje z del sistema de coordenadas base; cuando dz = 10000, la función devuelve directamente el RPY de la herramienta"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-光电传感器TCP标定-计算工具XYZ
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Calibración TCP del sensor fotoeléctrico - calcular XYZ de la herramienta
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``TCPComputeXYZ(select, originDirection, pos1, pos2, pos3, pos4)``"
-    "描述", "光电传感器TCP标定-计算工具XYZ"
-    "必选参数", "
-    - ``select``：0-计算工具TCP；1-计算传感器原点；2-计算传感器姿态；3-直接返回工具TCP；4-记录当前工件坐标系和工具坐标系
-    - ``originDirection``：0-X方向；1-Y方向；2-Z方向
-    - ``pos1``：机器人笛卡尔位置1
-    - ``pos2``：机器人笛卡尔位置2
-    - ``pos3``：机器人笛卡尔位置3
-    - ``pos4``：机器人笛卡尔位置4"
-    "默认参数", "无"
-    "返回值", "
-    - 错误码 成功-0  失败- errcode
-    - 返回值（调用成功返回） TCP 工具XYZ数值"
+    "Prototipo", "``TCPComputeXYZ(select, originDirection, pos1, pos2, pos3, pos4)``"
+    "Descripción", "Calibración TCP del sensor fotoeléctrico - calcular XYZ de la herramienta"
+    "Parámetros obligatorios", "
+    - ``select``：0-calcular TCP de la herramienta; 1-calcular el origen del sensor; 2-calcular la orientación del sensor; 3-devolver directamente el TCP de la herramienta; 4-registrar el sistema de coordenadas de la pieza y el sistema de coordenadas de herramienta actuales
+    - ``originDirection``：0-dirección X; 1-dirección Y; 2-dirección Z
+    - ``pos1``：Posición cartesiana 1 del robot
+    - ``pos2``：Posición cartesiana 2 del robot
+    - ``pos3``：Posición cartesiana 3 del robot
+    - ``pos4``：Posición cartesiana 4 del robot"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "
+    - Código de error éxito-0  fallo- errcode
+    - Valor de retorno (devuelto al llamar con éxito) Valor XYZ de la herramienta TCP"
 
-光电传感器TCP标定-开始记录末端法兰中心位置
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Calibración TCP del sensor fotoeléctrico - iniciar el registro de la posición del centro de la brida del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``TCPRecordFlangePosStart()``"
-    "描述", "光电传感器TCP标定-开始记录末端法兰中心位置"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Prototipo", "``TCPRecordFlangePosStart()``"
+    "Descripción", "Calibración TCP del sensor fotoeléctrico - iniciar el registro de la posición del centro de la brida del extremo"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-光电传感器TCP标定-停止记录末端法兰中心位置
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Calibración TCP del sensor fotoeléctrico - detener el registro de la posición del centro de la brida del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``TCPRecordFlangePosEnd()``"
-    "描述", "光电传感器TCP标定-停止记录末端法兰中心位置"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Prototipo", "``TCPRecordFlangePosEnd()``"
+    "Descripción", "Calibración TCP del sensor fotoeléctrico - detener el registro de la posición del centro de la brida del extremo"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-光电传感器TCP标定-获取末端工具中心点位置
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Calibración TCP del sensor fotoeléctrico - obtener la posición del centro de la herramienta del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``TCPGetRecordFlangePos()``"
-    "描述", "光电传感器TCP标定-获取末端工具中心点位置"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "
-    - 错误码 成功-0  失败- errcode
-    - 返回值（调用成功返回） TCP 工具中心点位置(x,y,z)"
+    "Prototipo", "``TCPGetRecordFlangePos()``"
+    "Descripción", "Calibración TCP del sensor fotoeléctrico - obtener la posición del centro de la herramienta del extremo"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "
+    - Código de error éxito-0  fallo- errcode
+    - Valor de retorno (devuelto al llamar con éxito) Posición del centro de la herramienta TCP (x,y,z)"
 
-光电传感器TCP标定
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Calibración TCP del sensor fotoeléctrico
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``PhotoelectricSensorTCPCalibration(self, luaFile, offsetX)``"
-    "描述", "光电传感器TCP标定"
-    "必选参数", "
-    - ``luaFile``：自动标定lua程序名称：如`FR_CalibrateTheToolTcp.lua`
-    - ``offsetX``：示教点偏移(x,y,z)mm"
-    "默认参数", "无"
-    "返回值", "
-    - 错误码 成功-0  失败- errcode
-    - 返回值（调用成功返回） TCP 工具XYZ数值"
+    "Prototipo", "``PhotoelectricSensorTCPCalibration(self, luaFile, offsetX)``"
+    "Descripción", "Calibración TCP del sensor fotoeléctrico"
+    "Parámetros obligatorios", "
+    - ``luaFile``：Nombre del programa lua de calibración automática: como `FR_CalibrateTheToolTcp.lua`
+    - ``offsetX``：Desplazamiento del punto de enseñanza (x,y,z) mm"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "
+    - Código de error éxito-0  fallo- errcode
+    - Valor de retorno (devuelto al llamar con éxito) Valor XYZ de la herramienta TCP"
 
-光电传感器TCP标定代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de calibración TCP del sensor fotoeléctrico
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos: 
@@ -1346,38 +1346,38 @@
     robot.CloseRPC()
     return 0
 
-实时设置速度(指令帧，低延迟)
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer la velocidad en tiempo real (trama de instrucción, baja latencia)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetSpeedInstant(self, vel)``"
-    "描述", "实时设置速度(指令帧，低延迟)"
-    "必选参数", "
-    - ``vel``：速度百分比，范围[0~100]"
-    "默认参数", "无"
-    "返回值", "
-    - 错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetSpeedInstant(self, vel)``"
+    "Descripción", "Establecer la velocidad en tiempo real (trama de instrucción, baja latencia)"
+    "Parámetros obligatorios", "
+    - ``vel``：Porcentaje de velocidad, rango [0~100]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "
+    - Código de error éxito-0  fallo- errcode"
 
-设置摆动实时偏移
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el desplazamiento en tiempo real de la oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetWeaveOffsetRT(self, offset)``"
-    "描述", "设置摆动实时偏移"
-    "必选参数", "
-    - ``offset``：实时偏移量[x,y,z,rx,ry,rz]，单位[mm，°]"
-    "默认参数", "无"
-    "返回值", "
-    - 错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetWeaveOffsetRT(self, offset)``"
+    "Descripción", "Establecer el desplazamiento en tiempo real de la oscilación"
+    "Parámetros obligatorios", "
+    - ``offset``：Desplazamiento en tiempo real [x,y,z,rx,ry,rz], unidad [mm, °]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "
+    - Código de error éxito-0  fallo- errcode"
 
-摆动调速与实时偏移测试代码示例    
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de prueba de regulación de velocidad y desplazamiento en tiempo real de la oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos: 
@@ -1483,23 +1483,23 @@
     if __name__ == "__main__":
         main()  
         
-即时设置物理速度    
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer la velocidad física en tiempo real
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetPhySpeedInstant(self, speed)``"
-    "描述", "即时设置物理速度"
-    "必选参数", "
-    - ``speed``：物理速度值, mm/s"
-    "默认参数", "无"
-    "返回值", "
-    - 错误码 成功-0  失败- errcode"
+    "Prototipo", "``SetPhySpeedInstant(self, speed)``"
+    "Descripción", "Establecer la velocidad física en tiempo real"
+    "Parámetros obligatorios", "
+    - ``speed``：Valor de la velocidad física, mm/s"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "
+    - Código de error éxito-0  fallo- errcode"
 
-即时设置物理速度代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de establecimiento de la velocidad física en tiempo real
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos: 
@@ -1510,7 +1510,7 @@
 
 
     def robot_thread_func(robot):
-    """Background thread: read user input and set speed instantly"""
+    """Hilo en segundo plano: leer la entrada del usuario y establecer la velocidad en tiempo real"""
     while True:
         try:
             input_val = input("Please input speed value: ")
@@ -1522,16 +1522,16 @@
 
 
     def main():
-        # Establish connection with the robot controller
+        # Establecer comunicación con el controlador del robot
         robot = Robot.RPC('192.168.58.2')
-        time.sleep(0.5)  # Wait for connection and data reception
+        time.sleep(0.5)  # Esperar la conexión y la recepción de datos
 
-        # Start background thread for speed input
+        # Iniciar el hilo en segundo plano para la entrada de velocidad
         th = threading.Thread(target=robot_thread_func, args=(robot,))
         th.daemon = True
         th.start()
 
-        # Define motion points
+        # Definir los puntos de movimiento
         j1 = [-60.206, -49.449, 79.476, -124.322, -88.416, -45.209]
         d1 = [-412.929, 510.912, 94.557, -175.850, -1.933, 74.992]
         j2 = [-141.282, -40.962, 62.359, -110.496, -85.512, -126.379]
@@ -1540,7 +1540,7 @@
         ex = [0.0, 0.0, 0.0, 0.0]
         zeroOff = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
-        # Infinite loop: MoveL back and forth between two points
+        # Bucle infinito: MoveL de ida y vuelta entre dos puntos
         while True:
             rtn = robot.MoveL(desc_pos=d1, tool=1, user=0, joint_pos=j1,
                             vel=100, acc=100, ovl=100, blendR=-1, blendMode=0,
@@ -1554,7 +1554,7 @@
                             oacc=100, config=0, velAccParamMode=0, overSpeedStrategy=0, speedPercent=10)
             print(f"MoveL j2->d2 rtn: {rtn}")
 
-        # Close connection (never reached due to infinite loop)
+        # Cerrar la conexión (nunca se alcanza debido al bucle infinito)
         robot.CloseRPC()
 
     if __name__ == "__main__":

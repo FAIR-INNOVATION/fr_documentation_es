@@ -1,33 +1,33 @@
-后台管理
+Gestión en segundo plano
 =========================
 
 .. toctree:: 
    :maxdepth: 6
 
-后台升级
--------------
-在本文档的“软件下载”部分中，可以下载到最新的FRCap后台系统升级包。将下载的升级包上传成功后台即进行自动升级。
+Actualización en segundo plano
+-------------------------------------
+En la sección "Descarga de software" de este documento se puede descargar el paquete de actualización más reciente del sistema en segundo plano de FRCap. Tras cargar correctamente el paquete de actualización descargado, el sistema en segundo plano se actualiza automáticamente.
 
-升级成功如下图所示。
+La actualización correcta se muestra en la figura siguiente.
 
 .. image:: frcap_pictures/008.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 4-1  FRCap后台系统升级成功
+.. centered:: Figura 4-1  Actualización correcta del sistema en segundo plano de FRCap
 
-.. note:: 升级成功后需要重新启动机器人控制箱才会生效。
+.. note:: Tras una actualización correcta es necesario reiniciar la caja de control del robot para que surta efecto.
 
-模块版本
--------------
+Versiones de los módulos
+-------------------------------------
 
-第一版初始的FRCap后台系统各模块版本：
+Versiones de los módulos de la primera versión inicial del sistema en segundo plano de FRCap:
 
-- Node.js：v20.10.0。
-- FRCapSys：v1.0.0。
-- FRCap：v0.0.1。
-- FRCapTools：v1.0.0。
+- Node.js: v20.10.0.
+- FRCapSys: v1.0.0.
+- FRCap: v0.0.1.
+- FRCapTools: v1.0.0.
 
-具体版本更新内容请查看版本更新说明。
+Para conocer el contenido concreto de las actualizaciones de versión, consulte la descripción de la actualización de versión.
 
-.. note:: Node.js目前暂不会随版本进行升级。
+.. note:: Actualmente Node.js no se actualiza con las versiones.

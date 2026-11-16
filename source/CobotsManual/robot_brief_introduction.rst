@@ -1,13 +1,13 @@
-机器人简介
-===================
+Introducción al robot
+========================
 
 .. toctree:: 
 	:maxdepth: 5
 
-基本参数
------------
+Parámetros básicos
+------------------
 
-.. centered:: 表格 2.1-1 机器人基本参数
+.. centered:: Tabla 2.1-1 Parámetros básicos del robot
 
 .. figure:: installation/017.png
 	:align: center
@@ -18,115 +18,115 @@
 	:width: 8in
 
 .. important::
-  FR系列机器人在做姿态或坐标系变换时齐次变换矩阵计算的角度旋转顺序为浮动坐标系的“ZYX”。
+  El orden de rotación de ángulos utilizado en el cálculo de la matriz de transformación homogénea de los robots de la serie FR al realizar transformaciones de actitud o de sistema de coordenadas es "ZYX" del sistema de coordenadas flotante.
 
-运动范围
-----------
+Rango de movimiento
+-------------------
 
-机械臂安装空间：
+Espacio de instalación del brazo mecánico:
 
-机器人本体安装需要3m×3m×2m（长×宽×高）的空间，以满足机器人最大臂展下的运动；若用户自行增加末端负载，请确保安装空间留有最少500mm间隙。
+La instalación del cuerpo del robot requiere un espacio de 3m×3m×2m (largo×ancho×alto) para satisfacer el movimiento con el máximo alcance del robot; si el usuario añade por su cuenta una carga en el extremo, asegúrese de dejar un espacio libre mínimo de 500 mm en el espacio de instalación.
 
 .. note:: 
-	高度空间受安装底座高度的影响，此处2m是指高出安装基准面的距离
+	El espacio en altura se ve afectado por la altura de la base de montaje; aquí 2m se refiere a la distancia por encima del plano de referencia de instalación.
 
-控制柜安装空间：
+Espacio de instalación del armario de control:
 
-1. 控制箱应放在易于操作，防止水淹触电，距离地面0.6m-1.5m。
+1. La caja de control debe colocarse en un lugar de fácil acceso, para evitar inundaciones y descargas eléctricas, a una altura de 0.6m-1.5m del suelo.
 
-2. 柜体必须远离热源。
+2. El armario debe mantenerse alejado de fuentes de calor.
 
-3. 控制箱重载线一侧应满足150mm以内无遮挡，其余侧满足100mm以内无遮挡，便于散热和取放。
+3. El lado del cable de carga pesada de la caja de control debe tener un espacio libre sin obstáculos no superior a 150 mm, y los demás lados deben tener un espacio libre sin obstáculos no superior a 100 mm, para facilitar la disipación de calor y el acceso.
 
 .. figure:: installation/018.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 2.2-1 FR3型号协作机器人运动范围
+.. centered:: Figura 2.2-1 Rango de movimiento del robot colaborativo modelo FR3
 
 .. figure:: installation/103.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 2.2-2 FR3-WML型号协作机器人运动范围
+.. centered:: Figura 2.2-2 Rango de movimiento del robot colaborativo modelo FR3-WML
 
 .. figure:: installation/104.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 2.2-3 FR3-WMS型号协作机器人运动范围
+.. centered:: Figura 2.2-3 Rango de movimiento del robot colaborativo modelo FR3-WMS
 
 .. figure:: installation/105.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 2.2-4 FR3-C型号协作机器人运动范围
+.. centered:: Figura 2.2-4 Rango de movimiento del robot colaborativo modelo FR3-C
 
 .. figure:: installation/019.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 2.2-5 FR5型号协作机器人运动范围
+.. centered:: Figura 2.2-5 Rango de movimiento del robot colaborativo modelo FR5
 
 .. figure:: installation/129.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 2.2-6 FR5-C型号协作机器人运动范围
+.. centered:: Figura 2.2-6 Rango de movimiento del robot colaborativo modelo FR5-C
 
 .. figure:: installation/020.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 2.2-7 FR10型号协作机器人运动范围
+.. centered:: Figura 2.2-7 Rango de movimiento del robot colaborativo modelo FR10
 
 .. figure:: installation/021.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 2.2-8 FR16型号协作机器人运动范围
+.. centered:: Figura 2.2-8 Rango de movimiento del robot colaborativo modelo FR16
 
 .. figure:: installation/022.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 2.2-9 FR20型号协作机器人运动范围
+.. centered:: Figura 2.2-9 Rango de movimiento del robot colaborativo modelo FR20
 
 .. figure:: installation/068.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 2.2-10 FR30型号协作机器人运动范围
+.. centered:: Figura 2.2-10 Rango de movimiento del robot colaborativo modelo FR30
 
-机器人坐标系
----------------
+Sistemas de coordenadas del robot
+----------------------------------
 
 .. figure:: installation/023.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 2.3-1 机器人DH参数坐标系
+.. centered:: Figura 2.3-1 Sistemas de coordenadas de los parámetros DH del robot
 
 .. figure:: installation/024.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 2.3-2 机器人末端法兰坐标系
+.. centered:: Figura 2.3-2 Sistema de coordenadas de la brida del extremo del robot
 
-机器人DH参数
---------------
+Parámetros DH del robot
+-----------------------
 
-DH参数用于计算 FR 系列协作机器人的运动学和动力学。
+Los parámetros DH se utilizan para calcular la cinemática y la dinámica de los robots colaborativos de la serie FR.
 
 .. figure:: installation/063.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 2.4-1 FR系列协作机器人DH参数
+.. centered:: Figura 2.4-1 Parámetros DH de los robots colaborativos de la serie FR
 
-FR系列协作机器人DH参数展示如下：
+Los parámetros DH de los robots colaborativos de la serie FR se muestran a continuación:
 
-.. centered:: 表格 2.4-1 FR3 协作机器人DH参数表
+.. centered:: Tabla 2.4-1 Tabla de parámetros DH del robot colaborativo FR3
 
 .. list-table::
    :widths: 70 50 50 50 50 70 50 120
@@ -134,12 +134,12 @@ FR系列协作机器人DH参数展示如下：
    :align: center
    :class: no-padding sheet-center
 
-   * - **运动学**
+   * - **Cinemática**
      - **theta[rad]**
      - **a[mm]**
      - **d[mm]**
      - **alpha[rad]**
-     - **动力学**
+     - **Dinámica**
      - **Mass[kg]**
      - **Center of Mass[mm]**
 
@@ -197,7 +197,7 @@ FR系列协作机器人DH参数展示如下：
      - 0.261
      - [-0.05, -1.11, -20.05]
 
-.. centered:: 表格 2.4-2 FR3-WMS 协作机器人DH参数表
+.. centered:: Tabla 2.4-2 Tabla de parámetros DH del robot colaborativo FR3-WMS
 
 .. list-table::
    :widths: 70 50 50 50 50 70 50 120
@@ -205,12 +205,12 @@ FR系列协作机器人DH参数展示如下：
    :align: center
    :class: no-padding sheet-center
 
-   * - **运动学**
+   * - **Cinemática**
      - **theta[rad]**
      - **a[mm]**
      - **d[mm]**
      - **alpha[rad]**
-     - **动力学**
+     - **Dinámica**
      - **Mass[kg]**
      - **Center of Mass[mm]**
 
@@ -268,7 +268,7 @@ FR系列协作机器人DH参数展示如下：
      - 0.28
      - [1.81，1.33，-20.41]
 
-.. centered:: 表格 2.4-3 FR3-WML 协作机器人DH参数表
+.. centered:: Tabla 2.4-3 Tabla de parámetros DH del robot colaborativo FR3-WML
 
 .. list-table::
    :widths: 70 50 50 50 50 70 50 120
@@ -276,12 +276,12 @@ FR系列协作机器人DH参数展示如下：
    :align: center
    :class: no-padding sheet-center
 
-   * - **运动学**
+   * - **Cinemática**
      - **theta[rad]**
      - **a[mm]**
      - **d[mm]**
      - **alpha[rad]**
-     - **动力学**
+     - **Dinámica**
      - **Mass[kg]**
      - **Center of Mass[mm]**
 
@@ -339,7 +339,7 @@ FR系列协作机器人DH参数展示如下：
      - 0.28
      - [1.9，1.6，-20.08]
 
-.. centered:: 表格 2.4-4 FR3-C 协作机器人DH参数表
+.. centered:: Tabla 2.4-4 Tabla de parámetros DH del robot colaborativo FR3-C
 
 .. list-table::
    :widths: 70 50 50 50 50 70 50 120
@@ -347,12 +347,12 @@ FR系列协作机器人DH参数展示如下：
    :align: center
    :class: no-padding sheet-center
 
-   * - **运动学**
+   * - **Cinemática**
      - **theta[rad]**
      - **a[mm]**
      - **d[mm]**
      - **alpha[rad]**
-     - **动力学**
+     - **Dinámica**
      - **Mass[kg]**
      - **Center of Mass[mm]**
 
@@ -410,7 +410,7 @@ FR系列协作机器人DH参数展示如下：
      - 0.53
      - [1.48，1.54，-17.9]
 
-.. centered:: 表格 2.4-5 FR5 协作机器人DH参数表
+.. centered:: Tabla 2.4-5 Tabla de parámetros DH del robot colaborativo FR5
 
 .. list-table::
    :widths: 70 50 50 50 50 70 50 120
@@ -418,12 +418,12 @@ FR系列协作机器人DH参数展示如下：
    :align: center
    :class: no-padding sheet-center
 
-   * - **运动学**
+   * - **Cinemática**
      - **theta[rad]**
      - **a[mm]**
      - **d[mm]**
      - **alpha[rad]**
-     - **动力学**
+     - **Dinámica**
      - **Mass[kg]**
      - **Center of Mass[mm]**
 
@@ -481,7 +481,7 @@ FR系列协作机器人DH参数展示如下：
      - 0.36
      - [0.93, 0.81, -20.05]
 
-.. centered:: 表格 2.4-6 FR5-C 协作机器人DH参数表
+.. centered:: Tabla 2.4-6 Tabla de parámetros DH del robot colaborativo FR5-C
 
 .. list-table::
    :widths: 70 50 50 50 50 70 50 120
@@ -489,12 +489,12 @@ FR系列协作机器人DH参数展示如下：
    :align: center
    :class: no-padding sheet-center
 
-   * - **运动学**
+   * - **Cinemática**
      - **theta[rad]**
      - **a[mm]**
      - **d[mm]**
      - **alpha[rad]**
-     - **动力学**
+     - **Dinámica**
      - **Mass[kg]**
      - **Center of Mass[mm]**
 
@@ -552,7 +552,7 @@ FR系列协作机器人DH参数展示如下：
      - 0.28
      - [-0.26, 1.75, -20.50]
 
-.. centered:: 表格 2.4-7 FR5-WML 协作机器人DH参数表
+.. centered:: Tabla 2.4-7 Tabla de parámetros DH del robot colaborativo FR5-WML
 
 .. list-table::
    :widths: 70 50 50 50 50 70 50 120
@@ -560,12 +560,12 @@ FR系列协作机器人DH参数展示如下：
    :align: center
    :class: no-padding sheet-center
 
-   * - **运动学**
+   * - **Cinemática**
      - **theta[rad]**
      - **a[mm]**
      - **d[mm]**
      - **alpha[rad]**
-     - **动力学**
+     - **Dinámica**
      - **Mass[kg]**
      - **Center of Mass[mm]**
 
@@ -623,7 +623,7 @@ FR系列协作机器人DH参数展示如下：
      - 0.36
      - [1.45, 1.09, -19.98]
 
-.. centered:: 表格 2.4-8 FR10 协作机器人DH参数表
+.. centered:: Tabla 2.4-8 Tabla de parámetros DH del robot colaborativo FR10
 
 .. list-table::
    :widths: 70 50 50 50 50 70 50 120
@@ -631,12 +631,12 @@ FR系列协作机器人DH参数展示如下：
    :align: center
    :class: no-padding sheet-center
 
-   * - **运动学**
+   * - **Cinemática**
      - **theta[rad]**
      - **a[mm]**
      - **d[mm]**
      - **alpha[rad]**
-     - **动力学**
+     - **Dinámica**
      - **Mass[kg]**
      - **Center of Mass[mm]**
 
@@ -694,7 +694,7 @@ FR系列协作机器人DH参数展示如下：
      - 0.35
      - [1.24, 0.85, -20.34]
 
-.. centered:: 表格 2.4-9 FR16 协作机器人DH参数表
+.. centered:: Tabla 2.4-9 Tabla de parámetros DH del robot colaborativo FR16
 
 .. list-table::
    :widths: 70 50 50 50 50 70 50 120
@@ -702,12 +702,12 @@ FR系列协作机器人DH参数展示如下：
    :align: center
    :class: no-padding sheet-center
 
-   * - **运动学**
+   * - **Cinemática**
      - **theta[rad]**
      - **a[mm]**
      - **d[mm]**
      - **alpha[rad]**
-     - **动力学**
+     - **Dinámica**
      - **Mass[kg]**
      - **Center of Mass[mm]**
 
@@ -765,7 +765,7 @@ FR系列协作机器人DH参数展示如下：
      - 0.35
      - [1.24, 0.85, -20.34]
 
-.. centered:: 表格 2.4-10 FR20 协作机器人DH参数表
+.. centered:: Tabla 2.4-10 Tabla de parámetros DH del robot colaborativo FR20
 
 .. list-table::
    :widths: 70 50 50 50 50 70 50 120
@@ -773,12 +773,12 @@ FR系列协作机器人DH参数展示如下：
    :align: center
    :class: no-padding sheet-center
 
-   * - **运动学**
+   * - **Cinemática**
      - **theta[rad]**
      - **a[mm]**
      - **d[mm]**
      - **alpha[rad]**
-     - **动力学**
+     - **Dinámica**
      - **Mass[kg]**
      - **Center of Mass[mm]**
 
@@ -836,7 +836,7 @@ FR系列协作机器人DH参数展示如下：
      - 0.6
      - [-2.11, -1.96, -20.38]
 
-.. centered:: 表格 2.4-11 FR30 协作机器人DH参数表
+.. centered:: Tabla 2.4-11 Tabla de parámetros DH del robot colaborativo FR30
 
 .. list-table::
    :widths: 70 50 50 50 50 70 50 120
@@ -844,12 +844,12 @@ FR系列协作机器人DH参数展示如下：
    :align: center
    :class: no-padding sheet-center
 
-   * - **运动学**
+   * - **Cinemática**
      - **theta[rad]**
      - **a[mm]**
      - **d[mm]**
      - **alpha[rad]**
-     - **动力学**
+     - **Dinámica**
      - **Mass[kg]**
      - **Center of Mass[mm]**
 
@@ -907,6 +907,6 @@ FR系列协作机器人DH参数展示如下：
      - 0.6
      - [-2.11, -1.96, -20.38]
 
-DH参数表
+Tabla de parámetros DH
 ---------------------------------
-        :download:`法奥协作机器人 - DH参数表 <../_static/_doc/FR Robots DH Transformation.xlsx>`
+        :download:`Tabla de parámetros DH de los robots colaborativos FAIRINO <../_static/_doc/FR Robots DH Transformation.xlsx>`

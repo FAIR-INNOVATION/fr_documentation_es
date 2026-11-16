@@ -4,85 +4,85 @@ CNDE
 .. toctree:: 
     :maxdepth: 5
 
-配置机器人CNDE状态反馈
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configurar la retroalimentación de estado CNDE del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetRobotRealtimeStateConfig(states: List[RobotState], period: int = 500) -> int:``"
-    "描述", "设置CNDE默认配置（在RPC连接前调用）"
-    "必选参数", "
-    - ``states``：RobotState枚举列表
-    - ``period``：数据周期(ms)，范围8-1000，默认8ms
+    "Prototipo", "``SetRobotRealtimeStateConfig(states: List[RobotState], period: int = 500) -> int:``"
+    "Descripción", "Establecer la configuración predeterminada de CNDE (llamar antes de la conexión RPC)"
+    "Parámetros obligatorios", "
+    - ``states``：Lista de enumeraciones RobotState
+    - ``period``：Período de datos (ms), rango 8-1000, por defecto 8ms
     "
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败-errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo-errcode"
 
-CNDE状态配置添加机器人状态
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Añadir un estado del robot a la configuración de estado CNDE
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AddRobotRealtimeState(states: List[RobotState], ip: str = None) -> int:``"
-    "描述", "在配置基础上添加CNDE状态列表（支持动态维护和IP隔离）"
-    "必选参数", "
-    - ``states``：RobotState枚举列表，要添加的状态
-    - ``ip``：可选，指定机器人IP（用于多机器人隔离配置，不提供则修改全局配置）
+    "Prototipo", "``AddRobotRealtimeState(states: List[RobotState], ip: str = None) -> int:``"
+    "Descripción", "Añadir una lista de estados CNDE sobre la configuración existente (admite mantenimiento dinámico y aislamiento por IP)"
+    "Parámetros obligatorios", "
+    - ``states``：Lista de enumeraciones RobotState, los estados a añadir
+    - ``ip``：Opcional, especifica la IP del robot (para configuración aislada de múltiples robots; si no se proporciona, se modifica la configuración global)
     "
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败-errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo-errcode"
 
-CNDE状态配置删除机器人状态
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Eliminar un estado del robot de la configuración de estado CNDE
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``DeleteRobotRealtimeState(states: List[RobotState], ip: str = None) -> int:``"
-    "描述", "在配置基础上删除CNDE状态列表（支持动态维护和IP隔离）"
-    "必选参数", "
-    - ``states``：RobotState枚举列表，要删除的状态
-    - ``ip``：可选，指定机器人IP（用于多机器人隔离配置，不提供则修改全局配置）
+    "Prototipo", "``DeleteRobotRealtimeState(states: List[RobotState], ip: str = None) -> int:``"
+    "Descripción", "Eliminar una lista de estados CNDE de la configuración existente (admite mantenimiento dinámico y aislamiento por IP)"
+    "Parámetros obligatorios", "
+    - ``states``：Lista de enumeraciones RobotState, los estados a eliminar
+    - ``ip``：Opcional, especifica la IP del robot (para configuración aislada de múltiples robots; si no se proporciona, se modifica la configuración global)
     "
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败-errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo-errcode"
 
-设置CNDE状态反馈周期
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el período de retroalimentación de estado CNDE
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SetRobotRealtimeStatePeriod(period: int, ip: str = None) -> int:``"
-    "描述", "设置CNDE状态反馈周期（支持全局或IP隔离）"
-    "必选参数", "
-    - ``period``：数据周期(ms)，范围8-1000
-    - ``ip``：可选，指定机器人IP（不提供则修改全局配置）
+    "Prototipo", "``SetRobotRealtimeStatePeriod(period: int, ip: str = None) -> int:``"
+    "Descripción", "Establecer el período de retroalimentación de estado CNDE (admite configuración global o aislamiento por IP)"
+    "Parámetros obligatorios", "
+    - ``period``：Período de datos (ms), rango 8-1000
+    - ``ip``：Opcional, especifica la IP del robot (si no se proporciona, se modifica la configuración global)
     "
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败-errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo-errcode"
 
-获取当前CNDE状态反馈所有状态集合
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el conjunto de todos los estados de la retroalimentación de estado CNDE actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``CNDEGetConfig(self) -> tuple:``"
-    "描述", "获取当前所有状态集合"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败-errcode 包含状态列表的配置结果结构体"
+    "Prototipo", "``CNDEGetConfig(self) -> tuple:``"
+    "Descripción", "Obtener el conjunto de todos los estados actuales"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo-errcode; estructura de resultado de configuración que contiene la lista de estados"
 
-CNDE状态反馈使用代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de uso de la retroalimentación de estado CNDE
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
@@ -90,122 +90,122 @@ CNDE状态反馈使用代码示例
     from fairino.Robot import RobotState, SetRobotRealtimeStateConfig, DEFAULT_CNDE_STATES, AddRobotRealtimeState, DeleteRobotRealtimeState, SetRobotRealtimeStatePeriod
     import time
 
-    # ==================== 全局配置参数 ====================
-    ROBOT_IP = '192.168.58.2'       # 机器人IP地址
-    # ========== Test1: CNDE配置与数据获取测试 =============
-    # 测试步骤:
-    # 1. 设置CNDE配置 (JointCurPos, ToolCurPos, 20ms周期)
-    # 2. 建立RPC连接
-    # 3. 打印机器人关节和TCP位姿数据
-    # 4. 获取时间戳并验证周期
-    # 5. 修改配置 (RobotMode, RbtEnableState, 10ms周期)
-    # 6. 验证新配置生效
+    # ==================== Parámetros de configuración global ====================
+    ROBOT_IP = '192.168.58.2'       # Dirección IP del robot
+    # ========== Test1: Prueba de configuración CNDE y obtención de datos =============
+    # Pasos de la prueba:
+    # 1. Establecer la configuración CNDE (JointCurPos, ToolCurPos, período de 20ms)
+    # 2. Establecer la conexión RPC
+    # 3. Imprimir los datos de las articulaciones y la pose TCP del robot
+    # 4. Obtener la marca de tiempo y verificar el período
+    # 5. Modificar la configuración (RobotMode, RbtEnableState, período de 10ms)
+    # 6. Verificar que la nueva configuración surta efecto
 
     def test1_cnde_config_and_data():
-        """Test1: CNDE配置与数据获取测试 - 验证配置设置和数据实时性"""
-        print_separator("Test1: CNDE配置与数据获取测试")
+        """Test1: Prueba de configuración CNDE y obtención de datos - verificar el establecimiento de la configuración y la actualidad de los datos"""
+        print_separator("Test1: Prueba de configuración CNDE y obtención de datos")
 
-        # ===== 步骤1: 设置CNDE配置 (JointCurPos, ToolCurPos, 20ms) =====
-        print("\n【步骤1】设置CNDE配置...")
-        print("  配置字段: JointCurPos, ToolCurPos")
-        print("  反馈周期: 20ms")
+        # ===== Paso 1: Establecer la configuración CNDE (JointCurPos, ToolCurPos, 20ms) =====
+        print("\n[Paso 1] Establecer la configuración CNDE...")
+        print("  Campos de configuración: JointCurPos, ToolCurPos")
+        print("  Período de retroalimentación: 20ms")
 
         custom_states = [
-            RobotState.JointCurPos,   # 关节当前位置
-            RobotState.ToolCurPos,    # 工具(TCP)当前位置
+            RobotState.JointCurPos,   # Posición actual de las articulaciones
+            RobotState.ToolCurPos,    # Posición actual de la herramienta (TCP)
         ]
 
         rtn = SetRobotRealtimeStateConfig(custom_states, 20)
         if rtn != 0:
-            print(f"✗ 配置设置失败，错误码: {rtn}")
+            print(f"✗ Error al establecer la configuración, código de error: {rtn}")
             return None
-        print("✓ CNDE配置设置成功")
+        print("✓ Configuración CNDE establecida correctamente")
 
-        # ===== 步骤2: 建立RPC连接 =====
-        print(f"\n【步骤2】建立RPC连接 ({ROBOT_IP})...")
+        # ===== Paso 2: Establecer la conexión RPC =====
+        print(f"\n[Paso 2] Establecer la conexión RPC ({ROBOT_IP})...")
         robot = Robot.RPC(ROBOT_IP)
-        time.sleep(0.5)  # 等待连接和数据接收
+        time.sleep(0.5)  # Esperar la conexión y la recepción de datos
 
-        # 验证配置
+        # Verificar la configuración
         config = robot.CNDEGetConfig()
         if config:
             states, period = config
-            print(f"✓ 连接成功，当前配置: {len(states)} 个字段, 周期 {period}ms")
+            print(f"✓ Conexión exitosa, configuración actual: {len(states)} campos, período {period}ms")
         else:
-            print("✗ 无法获取CNDE配置")
+            print("✗ No se puede obtener la configuración CNDE")
             return robot
 
-        # ===== 步骤3: 打印机器人关节和TCP位姿 =====
-        print("\n【步骤3】打印机器人关节和TCP位姿...")
-        print("  (提示: 可拖动机器人观察数据变化)")
-        print("  按 Ctrl+C 停止数据打印")
-        print("  (使用 Wireshark 抓包验证实际数据周期)\n")
+        # ===== Paso 3: Imprimir los datos de las articulaciones y la pose TCP =====
+        print("\n[Paso 3] Imprimir los datos de las articulaciones y la pose TCP del robot...")
+        print("  (Sugerencia: arrastre el robot para observar los cambios en los datos)")
+        print("  Presione Ctrl+C para detener la impresión de datos")
+        print("  (Utilice Wireshark para capturar paquetes y verificar el período real de los datos)\n")
 
         sample_count = 0
         try:
-            while sample_count < 100:  # 采集100个样本
+            while sample_count < 100:  # Recoger 100 muestras
                 pkg = robot.robot_state_pkg
 
-                # 每10帧打印一次
+                # Imprimir cada 10 fotogramas
                 if sample_count % 10 == 0:
-                    print(f"--- 样本 #{sample_count} ---")
-                    print(f"  关节位置 (deg): [{', '.join([f'{x:.3f}' for x in pkg.jt_cur_pos])}]")
-                    print(f"  TCP位姿 (mm/deg): [{', '.join([f'{x:.3f}' for x in pkg.tl_cur_pos])}]")
-                    print(f"  当前帧计数: {pkg.frame_cnt}")
+                    print(f"--- Muestra #{sample_count} ---")
+                    print(f"  Posición de articulaciones (deg): [{', '.join([f'{x:.3f}' for x in pkg.jt_cur_pos])}]")
+                    print(f"  Pose TCP (mm/deg): [{', '.join([f'{x:.3f}' for x in pkg.tl_cur_pos])}]")
+                    print(f"  Contador de tramas actual: {pkg.frame_cnt}")
                     print()
 
                 sample_count += 1
                 time.sleep(0.02)  # 20ms
 
         except KeyboardInterrupt:
-            print("\n  用户中断数据打印")
+            print("\n  Impresión de datos interrumpida por el usuario")
 
-        # 关闭连接
+        # Cerrar la conexión
         robot.CloseRPC()
         time.sleep(1)
 
-        # ===== 步骤4: 修改配置并验证 =====
-        print("\n【步骤4】修改CNDE配置...")
-        print("  新配置字段: RobotMode, RbtEnableState")
-        print("  新反馈周期: 10ms")
+        # ===== Paso 4: Modificar la configuración y verificar =====
+        print("\n[Paso 4] Modificar la configuración CNDE...")
+        print("  Nuevos campos de configuración: RobotMode, RbtEnableState")
+        print("  Nuevo período de retroalimentación: 10ms")
 
         new_states = [
             RobotState.RobotMode,
             RobotState.RbtEnableState,
         ]
 
-        # 设置新配置
+        # Establecer la nueva configuración
         rtn = SetRobotRealtimeStateConfig(new_states, 10)
         if rtn != 0:
-            print(f"✗ 新配置设置失败，错误码: {rtn}")
+            print(f"✗ Error al establecer la nueva configuración, código de error: {rtn}")
             return robot
-        print("✓ 新配置设置成功")
+        print("✓ Nueva configuración establecida correctamente")
 
-        # 重新连接
+        # Reconectar
         robot = Robot.RPC(ROBOT_IP)
         time.sleep(0.5)
 
-        # 验证新配置
+        # Verificar la nueva configuración
         config = robot.CNDEGetConfig()
         if config:
             states, period = config
-            print(f"✓ 当前配置: {[s.name for s in states]}")
-            print(f"✓ 当前周期: {period}ms")
+            print(f"✓ Configuración actual: {[s.name for s in states]}")
+            print(f"✓ Período actual: {period}ms")
 
             if period == 10:
-                print("✓ 配置修改验证通过 (周期已变为10ms)")
+                print("✓ Verificación de modificación de configuración superada (el período ha cambiado a 10ms)")
             else:
-                print(f"⚠ 周期未生效 (期望10ms, 实际{period}ms)")
+                print(f"⚠ El período no ha surtido efecto (se esperaba 10ms, real {period}ms)")
 
-            # 打印新数据
+            # Imprimir los nuevos datos
             pkg = robot.robot_state_pkg
-            print(f"\n【新配置数据】")
+            print(f"\n[Datos de la nueva configuración]")
             print(f"  robot_mode: {pkg.robot_mode}")
             print(f"  rbtEnableState: {pkg.rbtEnableState}")
         else:
-            print("✗ 无法获取新配置")
+            print("✗ No se puede obtener la nueva configuración")
 
-        print("\n✓ Test1 完成")
+        print("\n✓ Test1 completado")
         return robot
 
 
@@ -213,23 +213,23 @@ CNDE状态反馈使用代码示例
         test1_cnde_config_and_data()
 
 
-    # ======== Test2: Add/Delete 状态字段测试 ====================
-    # 功能: 测试 AddRobotRealtimeState() 和 DeleteRobotRealtimeState()
-    # 测试步骤:
-    #   1. 使用 AddRobotRealtimeState() 添加 SpeedScaleManual 和 SpeedScaleAuto
-    #   2. 连接机器人，打印手动/自动模式全局速度
-    #   3. 在 WebApp 修改全局速度，观察 SDK 数据变化
-    #   4. 使用 DeleteRobotRealtimeState() 删除添加的字段
-    #   5. 重新连接，验证速度值是否为 0（字段不再更新）
+    # ======== Test2: Prueba de adición/eliminación de campos de estado ====================
+    # Función: Probar AddRobotRealtimeState() y DeleteRobotRealtimeState()
+    # Pasos de la prueba:
+    #   1. Utilizar AddRobotRealtimeState() para añadir SpeedScaleManual y SpeedScaleAuto
+    #   2. Conectar el robot e imprimir la velocidad global en modo manual/automático
+    #   3. Modificar la velocidad global en WebApp y observar los cambios en los datos del SDK
+    #   4. Utilizar DeleteRobotRealtimeState() para eliminar los campos añadidos
+    #   5. Reconectar y verificar si los valores de velocidad son 0 (los campos ya no se actualizan)
 
 
     def test2_add_delete_state():
-        """Test2: Add/Delete 状态字段测试 - 验证动态添加和删除 CNDE 状态"""
-        print_separator("Test2: Add/Delete 状态字段测试")
+        """Test2: Prueba de adición/eliminación de campos de estado - verificar la adición y eliminación dinámica de estados CNDE"""
+        print_separator("Test2: Prueba de adición/eliminación de campos de estado")
 
-        # ===== 步骤1: 添加 SpeedScaleManual 和 SpeedScaleAuto 字段 =====
-        print("\n【步骤1】使用 AddRobotRealtimeState() 添加速度比例字段...")
-        print("  添加字段: SpeedScaleManual, SpeedScaleAuto")
+        # ===== Paso 1: Añadir los campos SpeedScaleManual y SpeedScaleAuto =====
+        print("\n[Paso 1] Utilizar AddRobotRealtimeState() para añadir los campos de proporción de velocidad...")
+        print("  Campos a añadir: SpeedScaleManual, SpeedScaleAuto")
 
         rtn = AddRobotRealtimeState([
             RobotState.SpeedScaleManual,
@@ -237,87 +237,87 @@ CNDE状态反馈使用代码示例
         ])
 
         if rtn != 0:
-            print(f"✗ 添加字段失败，错误码: {rtn}")
+            print(f"✗ Error al añadir campos, código de error: {rtn}")
             return None
-        print("✓ 字段添加成功")
+        print("✓ Campos añadidos correctamente")
 
-        # ===== 步骤2: 建立 RPC 连接并打印速度 =====
-        print(f"\n【步骤2】建立 RPC 连接 ({ROBOT_IP})...")
+        # ===== Paso 2: Establecer la conexión RPC e imprimir la velocidad =====
+        print(f"\n[Paso 2] Establecer la conexión RPC ({ROBOT_IP})...")
         robot = Robot.RPC(ROBOT_IP)
-        time.sleep(0.5)  # 等待连接和数据接收
+        time.sleep(0.5)  # Esperar la conexión y la recepción de datos
 
-        # 验证配置
+        # Verificar la configuración
         config = robot.CNDEGetConfig()
         if config:
             states, period = config
-            print(f"✓ 连接成功，当前配置: {len(states)} 个字段")
-            # 检查是否包含添加的字段
+            print(f"✓ Conexión exitosa, configuración actual: {len(states)} campos")
+            # Comprobar si contiene los campos añadidos
             has_manual = RobotState.SpeedScaleManual in states
             has_auto = RobotState.SpeedScaleAuto in states
             if has_manual and has_auto:
-                print("✓ 配置验证通过: SpeedScaleManual 和 SpeedScaleAuto 已添加")
+                print("✓ Verificación de configuración superada: SpeedScaleManual y SpeedScaleAuto añadidos")
             else:
-                print(f"⚠ 配置验证警告: Manual={has_manual}, Auto={has_auto}")
+                print(f"⚠ Advertencia de verificación de configuración: Manual={has_manual}, Auto={has_auto}")
         else:
-            print("✗ 无法获取 CNDE 配置")
+            print("✗ No se puede obtener la configuración CNDE")
 
-        # 打印速度数据
-        print("\n【当前速度数据】(请在 WebApp 中修改全局速度观察变化)")
-        print("  提示: 拖动机器人使能并切换手/自动模式，观察速度值")
-        print("  按 Ctrl+C 停止数据打印\n")
+        # Imprimir los datos de velocidad
+        print("\n[Datos de velocidad actuales] (modifique la velocidad global en WebApp para observar los cambios)")
+        print("  Sugerencia: arrastre el robot para habilitarlo y cambie entre modo manual/automático para observar el valor de velocidad")
+        print("  Presione Ctrl+C para detener la impresión de datos\n")
 
         sample_count = 0
         try:
-            while sample_count < 100:  # 采集 100 个样本 (约 10 秒，按 100ms 间隔)
+            while sample_count < 100:  # Recoger 100 muestras (unos 10 segundos, con intervalo de 100ms)
                 pkg = robot.robot_state_pkg
                 print(f"  [{sample_count:3d}] SpeedScaleManual: {pkg.speedScaleManual:.2f}, "
                     f"SpeedScaleAuto: {pkg.speedScaleAuto:.2f}, "
                     f"Mode: {pkg.robot_mode}")
                 sample_count += 1
-                time.sleep(0.1)  # 100ms 间隔
+                time.sleep(0.1)  # Intervalo de 100ms
         except KeyboardInterrupt:
-            print("\n  用户中断数据打印")
+            print("\n  Impresión de datos interrumpida por el usuario")
 
-        print(f"\n✓ 数据采集完成，共 {sample_count} 个样本")
+        print(f"\n✓ Recogida de datos completada, {sample_count} muestras en total")
 
-        # ===== 步骤3: 断开连接 =====
-        print("\n【步骤3】断开当前连接...")
+        # ===== Paso 3: Desconectar =====
+        print("\n[Paso 3] Desconectar la conexión actual...")
         robot.CloseRPC()
-        time.sleep(1.0)  # 等待CNDE完全关闭
+        time.sleep(1.0)  # Esperar a que CNDE se cierre completamente
 
-        # ===== 步骤4: 删除添加的字段 =====
-        print("\n【步骤4】使用 DeleteRobotRealtimeState() 删除速度比例字段...")
+        # ===== Paso 4: Eliminar los campos añadidos =====
+        print("\n[Paso 4] Utilizar DeleteRobotRealtimeState() para eliminar los campos de proporción de velocidad...")
         rtn = DeleteRobotRealtimeState([
             RobotState.SpeedScaleManual,
             RobotState.SpeedScaleAuto,
         ])
 
         if rtn != 0:
-            print(f"✗ 删除字段失败，错误码: {rtn}")
+            print(f"✗ Error al eliminar campos, código de error: {rtn}")
             return robot
-        print("✓ 字段删除成功")
+        print("✓ Campos eliminados correctamente")
 
-        # ===== 步骤5: 重新连接并验证字段值为 0 =====
-        print(f"\n【步骤5】重新连接并验证删除后的字段值...")
+        # ===== Paso 5: Reconectar y verificar que los valores de los campos son 0 =====
+        print(f"\n[Paso 5] Reconectar y verificar los valores de los campos tras la eliminación...")
 
         robot = Robot.RPC(ROBOT_IP)
         time.sleep(0.5)
 
-        # 读取速度值
+        # Leer los valores de velocidad
         pkg = robot.robot_state_pkg
         manual_speed = pkg.speedScaleManual
         auto_speed = pkg.speedScaleAuto
 
-        print(f"\n  删除后 SpeedScaleManual: {manual_speed:.2f}")
-        print(f"  删除后 SpeedScaleAuto: {auto_speed:.2f}")
+        print(f"\n  SpeedScaleManual tras eliminación: {manual_speed:.2f}")
+        print(f"  SpeedScaleAuto tras eliminación: {auto_speed:.2f}")
 
-        # 验证是否为 0
+        # Verificar si son 0
         if manual_speed == 0 and auto_speed == 0:
-            print("\n✓ Test2 验证通过: 删除字段后速度值为 0")
+            print("\n✓ Verificación de Test2 superada: los valores de velocidad son 0 tras eliminar los campos")
         else:
-            print(f"\n⚠ Test2 警告: 删除字段后速度值非零")
+            print(f"\n⚠ Advertencia de Test2: los valores de velocidad no son cero tras eliminar los campos")
 
-        print("\n✓ Test2 完成")
+        print("\n✓ Test2 completado")
         return robot
 
     if __name__ == "__main__":

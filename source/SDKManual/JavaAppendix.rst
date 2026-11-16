@@ -1,70 +1,70 @@
-附录
+Apéndice
 =================
 
 .. toctree:: 
     :maxdepth: 5
 
-源码下载
+Descarga del código fuente
 ------------------------------------------------
 
-在法奥文档(https://fairino-doc-zhs.readthedocs.io/latest/)中找到“资料下载”模块，点击“Java SDK”按钮，在右侧页面中点击“FAIRINOJavaSDK”，等待浏览器下载完成。
+En la documentación de FAIRINO (https://fairino-doc-es.readthedocs.io/latest/) busque el módulo "Descarga de materiales", haga clic en el botón "Java SDK" y, en la página de la derecha, haga clic en "FAIRINOJavaSDK", y espere a que el navegador complete la descarga.
 
 .. image:: image/019.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.1‑1 Java SDK源码下载
+.. centered:: Figura 16.1‑1 Descarga del código fuente del Java SDK
 
-解开压缩包，文件目录如图，其中： 
+Descomprima el paquete comprimido; el directorio de archivos se muestra en la figura, donde:
 
-fairino_Java_SDK_maven：Windows系统环境下编译器编译的源码(.java)和库文件(.jar)；
+fairino_Java_SDK_maven: código fuente (.java) y archivos de biblioteca (.jar) compilados por el compilador en entorno del sistema Windows;
 
 .. image:: image/020.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 16.1‑2 Java SDK文件目录
+.. centered:: Figura 16.1‑2 Directorio de archivos del Java SDK
 
-进入fairino_Java_SDK_maven文件夹，包含目录如图所示，其中：
+Acceda a la carpeta fairino_Java_SDK_maven; contiene los directorios que se muestran en la figura, donde:
 
-- lib：源码中用到的依赖jar包；
-- src：Java SDK源代码文件；
-- target：Java SDK源码生成的库文件（.jar）；
+- lib: paquetes jar de dependencias utilizados en el código fuente;
+- src: archivos de código fuente del Java SDK;
+- target: archivos de biblioteca (.jar) generados a partir del código fuente del Java SDK;
 
 .. image:: image/021.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.1‑3 Java SDK源码与库文件目录
+.. centered:: Figura 16.1‑3 Directorio de código fuente y archivos de biblioteca del Java SDK
 
-Windows平台下源码编译
+Compilación del código fuente en plataforma Windows
 -------------------------------------------------------------
-①安装配置构建工具——Maven
+①Instalar y configurar la herramienta de construcción——Maven
 
-Maven下载安装网址：Welcome to Apache Maven – Maven
+Sitio web de descarga e instalación de Maven: Welcome to Apache Maven – Maven
 
-安装配置后如下所示，在终端输出maven --version会显示如下信息
+Tras la instalación y configuración, como se muestra a continuación, al introducir maven --version en el terminal se mostrará la siguiente información
 
 .. image:: image/022.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.2‑1 Maven安装配置
+.. centered:: Figura 16.2‑1 Instalación y configuración de Maven
 
-②在Java SDK源码目录下打开终端，输入mvn package，可生成库文件（.jar），
+②Abra un terminal en el directorio del código fuente del Java SDK e introduzca mvn package para generar el archivo de biblioteca (.jar),
 
 .. image:: image/023.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.2‑2 Java SDK编译为库文件
+.. centered:: Figura 16.2‑2 Compilación del Java SDK en archivo de biblioteca
  
-③在源码目录中找到“target”文件夹，并在文件夹内找到编译得到的fairino-jar-with-dependencies.jar和fairino.jar文件，如图所示
+③En el directorio del código fuente busque la carpeta "target" y dentro de la carpeta encuentre los archivos fairino-jar-with-dependencies.jar y fairino.jar obtenidos de la compilación, como se muestra en la figura
 
 .. image:: image/024.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.2‑3 生成jar文件
+.. centered:: Figura 16.2‑3 Generación del archivo jar
 
-④使用协作机器人Java SDK时，先在idea的项目中依次点击File->Project Structure->Libraries,添加上步骤生成的.jar文件，在文件中使用import fairino.*;即可使用生成的.jar文件。
+④Al usar el Java SDK del robot colaborativo, primero en el proyecto de idea haga clic sucesivamente en File->Project Structure->Libraries, añada el archivo .jar generado en los pasos anteriores; en el archivo utilice import fairino.*; para poder usar el archivo .jar generado.

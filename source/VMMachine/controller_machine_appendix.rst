@@ -1,12 +1,12 @@
-附录
+Apéndice
 ===================
 
-附录1：BIOS 中启用虚拟化
--------------------------
+Apéndice 1: Habilitar la virtualización en la BIOS
+-----------------------------------------------------------------------
 
-不同型号的电脑启用虚拟化的流程可能不同，现以联想ThinkPad系列windows10举例：
+El proceso para habilitar la virtualización puede variar según el modelo de ordenador; a continuación se toma como ejemplo la serie Lenovo ThinkPad con Windows 10:
 
-- 打开电脑设置，选择更新和安全。
+- Abrir la configuración del ordenador, seleccionar Actualización y seguridad.
 
 .. image:: controller_virtual_machine/013.png
    :width: 4in
@@ -16,70 +16,70 @@
    :width: 4in
    :align: center
 
-- 选择“恢复”。
+- Seleccionar "Recuperación".
 
 .. image:: controller_virtual_machine/015.png
    :width: 4in
    :align: center
 
-- 选择“立即重启”。
+- Seleccionar "Reiniciar ahora".
 
 .. image:: controller_virtual_machine/016.png
    :width: 4in
    :align: center
 
-- 选择“疑难解答”。
+- Seleccionar "Solucionar problemas".
   
 .. image:: controller_virtual_machine/017.png
    :width: 4in
    :align: center
 
-- 选择“高级选项”。
+- Seleccionar "Opciones avanzadas".
 
 .. image:: controller_virtual_machine/018.png
    :width: 4in
    :align: center
 
-- 选择UEFI固件设置。
+- Seleccionar Configuración de firmware UEFI.
 
 .. image:: controller_virtual_machine/019.png
    :width: 4in
    :align: center
 
-- 选择“重启”。
+- Seleccionar "Reiniciar".
 
 .. image:: controller_virtual_machine/020.png
    :width: 4in
    :align: center
 
-- 选择“Security”下的“Virtualization”。
+- Seleccionar "Virtualization" dentro de "Security".
 
 .. image:: controller_virtual_machine/021.png
    :width: 4in
    :align: center
 
-- 选择“Enabled”，按下“Enter”确认。
+- Seleccionar "Enabled", pulsar "Enter" para confirmar.
 
 .. image:: controller_virtual_machine/022.png
    :width: 4in
    :align: center
 
-- 按下“F10”，选择“Yes”，按下“Enter”保存修改。
+- Pulsar "F10", seleccionar "Yes", pulsar "Enter" para guardar los cambios.
 
 .. image:: controller_virtual_machine/023.png
    :width: 4in
    :align: center
 
-附录2：添加虚拟网卡（环回网络适配器）
---------------------------------------
+Apéndice 2: Añadir una tarjeta de red virtual (adaptador de red de bucle invertido)
+------------------------------------------------------------------------------------------
 
-1. 打开设备管理器，按下“Windows键-X”，选择“设备管理器”。
+1. Abrir el Administrador de dispositivos, pulsar "Tecla Windows-X", seleccionar "Administrador de dispositivos".
    
 .. image:: controller_virtual_machine/024.png
    :width: 4in
    :align: center
 
-2. 添加网络适配器。
+2. Añadir un adaptador de red.
 
 .. image:: controller_virtual_machine/025.png
    :width: 4in
@@ -109,7 +109,7 @@
    :width: 4in
    :align: center
    
-3. 查看虚拟网卡，按下“Windows键-X”，选择“网络连接”。
+3. Ver la tarjeta de red virtual, pulsar "Tecla Windows-X", seleccionar "Conexiones de red".
 
 .. image:: controller_virtual_machine/032.png
    :width: 4in
@@ -127,117 +127,117 @@
    :width: 4in
    :align: center
    
-4. 配置环回适配器网络。
+4. Configurar la red del adaptador de bucle invertido.
 
-- IP地址: 192.168.58.XXX（与192.168.58.2 同一网段即可）。
-- 子网掩码：255.255.255.0。
+- Dirección IP: 192.168.58.XXX (basta con estar en el mismo segmento de red que 192.168.58.2).
+- Máscara de subred: 255.255.255.0.
 
 .. image:: controller_virtual_machine/012.png
    :width: 6in
    :align: center
 
-5. 打开Virtualbox网络配置，网卡名称选择“环回适配器网络”，启动虚拟机即可。
+5. Abrir la configuración de red de Virtualbox, seleccionar "Adaptador de red de bucle invertido" como nombre de la tarjeta de red e iniciar la máquina virtual.
 
 .. image:: controller_virtual_machine/013.png
    :width: 6in
    :align: center
 
-附录3：root权限
+Apéndice 3: Permisos de root
 --------------------------------------
 
-Ubuntu安装好后，Ubuntu系统默认root用户是不能登录的，密码也是空的。如果想要使用root用户登录，必须先为root用户设置密码。
+Una vez instalado Ubuntu, el usuario root del sistema Ubuntu no puede iniciar sesión de forma predeterminada y su contraseña está vacía. Si se desea iniciar sesión con el usuario root, primero se debe establecer una contraseña para el usuario root.
 
-1. 打开终端，输入 sudo passwd root ，然后回车输入几次密码，显示密码设置成功。
+1. Abrir la terminal, introducir sudo passwd root, luego pulsar Enter e introducir la contraseña varias veces; se mostrará que la contraseña se ha establecido correctamente.
 
 .. image:: controller_virtual_machine/057.png
    :width: 6in
    :align: center
 
-2. 在终端继续输入 su - root 命令切换用户，回车输入密码。
+2. En la terminal, continuar introduciendo el comando su - root para cambiar de usuario, pulsar Enter e introducir la contraseña.
 
-.. warning:: 输入命令时一定要输入“-”，选项“-”表示连带环境变量一起切换，“-”坚决不能少。
+.. warning:: Al introducir el comando es imprescindible escribir "-"; la opción "-" indica que se cambian también las variables de entorno, y "-" no debe omitirse en ningún caso.
 
 .. image:: controller_virtual_machine/058.png
    :width: 6in
    :align: center
 
-附录4：docker基础命令
+Apéndice 4: Comandos básicos de docker
 --------------------------------------
 
-1. docker 帮助命令 :
+1. Comando de ayuda de docker :
 
 .. code-block:: console
    :linenos:
 
    docker --help
 
-2. 启动docker :
+2. Iniciar docker :
 
 .. code-block:: console
    :linenos:
 
    systemctl start docker
 
-3. 关闭docker :
+3. Detener docker :
 
 .. code-block:: console
    :linenos:
 
    systemctl stop docker
 
-4. 重启docker :
+4. Reiniciar docker :
 
 .. code-block:: console
    :linenos:
 
    systemctl restart docker
 
-5. docker设置随服务启动而自启动 :
+5. Configurar docker para que se inicie automáticamente con el servicio :
 
 .. code-block:: console
    :linenos:
 
    systemctl enable docker
 
-6. 查看docker 运行状态 :
+6. Ver el estado de ejecución de docker :
 
 .. code-block:: console
    :linenos:
 
    systemctl status docker
-   --如果是在运行中输入命令后会看到绿色的active
+   --si está en ejecución, tras introducir el comando se verá active en verde
 
-7. docker容器 :
-
-.. code-block:: console
-   :linenos:
-
-   docker images：列出已经下载的镜像，查看镜像
-   docker rmi 镜像id或name：删除本地镜像
-   docker rmi -f 镜像id或name: 删除镜像
-   docker build：构建镜像
-   docker search 镜像id或name：在Docker Hub仓库中搜索关键字镜像
-   docker pull 镜像id或name：从仓库中下载镜像
-   docker images：列出已经下载的镜像，查看镜像
-   docker rmi 镜像id或name：删除本地镜像
-   docker rmi -f 镜像id或name: 删除镜像
-   docker build：构建镜像
-
-8. docker容器 :
+7. Imágenes de docker :
 
 .. code-block:: console
    :linenos:
 
-   docker ps：列出运行中的容器
-   docker ps -a ： 查看所有容器，包括未运行
-   docker stop 容器id或name：停止容器
-   docker kill 容器id：强制停止容器
-   docker start 容器id或name：启动已停止的容器
-   docker inspect 容器id：查看容器的所有信息
-   docker container logs 容器id：查看容器日志
-   docker top 容器id：查看容器里的进程
-   docker exec -it 容器id /bin/bash：进入容器
-   exit：退出容器
-   docker rm 容器id或name：删除已停止的容器
-   docker rm -f 容器id：删除正在运行的容器
-   docker exec -it 容器ID sh :进入容器
+   docker images：lista las imágenes ya descargadas, ver imágenes
+   docker rmi id o nombre de imagen：eliminar la imagen local
+   docker rmi -f id o nombre de imagen: eliminar la imagen
+   docker build：construir una imagen
+   docker search id o nombre de imagen：buscar la imagen por palabra clave en el repositorio de Docker Hub
+   docker pull id o nombre de imagen：descargar la imagen del repositorio
+   docker images：lista las imágenes ya descargadas, ver imágenes
+   docker rmi id o nombre de imagen：eliminar la imagen local
+   docker rmi -f id o nombre de imagen: eliminar la imagen
+   docker build：construir una imagen
+
+8. Contenedores de docker :
+
+.. code-block:: console
+   :linenos:
+
+   docker ps：lista los contenedores en ejecución
+   docker ps -a ： ver todos los contenedores, incluidos los que no están en ejecución
+   docker stop id o nombre de contenedor：detener el contenedor
+   docker kill id de contenedor：forzar la detención del contenedor
+   docker start id o nombre de contenedor：iniciar un contenedor detenido
+   docker inspect id de contenedor：ver toda la información del contenedor
+   docker container logs id de contenedor：ver los registros del contenedor
+   docker top id de contenedor：ver los procesos dentro del contenedor
+   docker exec -it id de contenedor /bin/bash：entrar en el contenedor
+   exit：salir del contenedor
+   docker rm id o nombre de contenedor：eliminar un contenedor detenido
+   docker rm -f id de contenedor：eliminar un contenedor en ejecución
+   docker exec -it ID de contenedor sh :entrar en el contenedor

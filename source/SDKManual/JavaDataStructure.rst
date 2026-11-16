@@ -1,16 +1,16 @@
-数据结构说明
-================
+Descripción de las estructuras de datos
+========================================
 
 .. toctree:: 
     :maxdepth: 5
 
-关节位置数据类型
-+++++++++++++++++++++++++++
+Tipo de dato de posición de articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 关节位置数据类型 
+    * @brief Tipo de dato de posición de articulaciones 
     */  
     public class JointPos
     {
@@ -37,19 +37,19 @@
       }
     }
 
-笛卡尔空间位置数据类型
-+++++++++++++++++++++++++++
+Tipo de dato de posición en el espacio cartesiano
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 笛卡尔空间位置数据类型
+    * @brief Tipo de dato de posición en el espacio cartesiano
     */
     public class DescTran
     {
-      public double x = 0.0;    /* x轴坐标，单位mm  */
-      public double y = 0.0;    /* y轴坐标，单位mm  */
-      public double z = 0.0;    /* z轴坐标，单位mm  */
+      public double x = 0.0;    /* Coordenada del eje x, unidad mm  */
+      public double y = 0.0;    /* Coordenada del eje y, unidad mm  */
+      public double z = 0.0;    /* Coordenada del eje z, unidad mm  */
       public DescTran(double posX, double posY, double posZ)
       {
         x = posX;
@@ -64,19 +64,19 @@
 
     }
 
-欧拉角姿态数据类型
-+++++++++++++++++++++++++++
+Tipo de dato de orientación en ángulos de Euler
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 欧拉角姿态数据类型
+    * @brief Tipo de dato de orientación en ángulos de Euler
     */
     public class Rpy
     {
-      public double rx = 0.0;   /* 绕固定轴X旋转角度，单位：deg  */
-      public double ry = 0.0;   /* 绕固定轴Y旋转角度，单位：deg  */
-      public double rz = 0.0;   /* 绕固定轴Z旋转角度，单位：deg  */
+      public double rx = 0.0;   /* Ángulo de rotación alrededor del eje fijo X, unidad: deg  */
+      public double ry = 0.0;   /* Ángulo de rotación alrededor del eje fijo Y, unidad: deg  */
+      public double rz = 0.0;   /* Ángulo de rotación alrededor del eje fijo Z, unidad: deg  */
       public Rpy(double rotateX, double rotateY, double rotateZ)
       {
         rx = rotateX;
@@ -85,18 +85,18 @@
       }
     }
 
-笛卡尔空间位姿数据类型
-+++++++++++++++++++++++++++
+Tipo de dato de pose en el espacio cartesiano
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    *@brief 笛卡尔空间位姿类型
+    *@brief Tipo de pose en el espacio cartesiano
     */
     public class DescPose
     {
-      public DescTran tran = new DescTran(0.0, 0.0, 0.0);      /* 笛卡尔空间位置  */
-      public Rpy rpy = new Rpy(0.0, 0.0, 0.0);			       /* 笛卡尔空间姿态  */
+      public DescTran tran = new DescTran(0.0, 0.0, 0.0);      /* Posición en el espacio cartesiano  */
+      public Rpy rpy = new Rpy(0.0, 0.0, 0.0);			       /* Orientación en el espacio cartesiano  */
 
       public DescPose()
       {
@@ -125,13 +125,13 @@
       }
     }
 
-扩展轴位置数据类型
-+++++++++++++++++++++++++++
+Tipo de dato de posición del eje extendido
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 扩展轴位置数据类型
+    * @brief Tipo de dato de posición del eje extendido
     */
     public class ExaxisPos
     {
@@ -161,22 +161,22 @@
       }
     }
 
-力矩传感器数据类型
-+++++++++++++++++++++++++++
+Tipo de dato del sensor de par
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 力传感器的受力分量和力矩分量
+    * @brief Componentes de fuerza y componentes de par del sensor de fuerza
     */
     public class ForceTorque
     {
-      public double fx;  /* 沿x轴受力分量，单位N  */
-      public double fy;  /* 沿y轴受力分量，单位N  */
-      public double fz;  /* 沿z轴受力分量，单位N  */
-      public double tx;  /* 绕x轴力矩分量，单位Nm */
-      public double ty;  /* 绕y轴力矩分量，单位Nm */
-      public double tz;  /* 绕z轴力矩分量，单位Nm */
+      public double fx;  /* Componente de fuerza a lo largo del eje x, unidad N  */
+      public double fy;  /* Componente de fuerza a lo largo del eje y, unidad N  */
+      public double fz;  /* Componente de fuerza a lo largo del eje z, unidad N  */
+      public double tx;  /* Componente de par alrededor del eje x, unidad Nm */
+      public double ty;  /* Componente de par alrededor del eje y, unidad Nm */
+      public double tz;  /* Componente de par alrededor del eje z, unidad Nm */
       public ForceTorque(double fX, double fY, double fZ, double tX, double tY, double tZ)
       {
         fx = fX;
@@ -188,23 +188,23 @@
       }
     }
 
-螺旋参数数据类型
-+++++++++++++++++++++++++++
+Tipo de dato de parámetros de hélice
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  螺旋参数数据类型
+    * @brief  Tipo de dato de parámetros de hélice
     */
     public class SpiralParam
     {
-        public int circle_num;           /* 螺旋圈数  */
-        public double circle_angle;         /* 螺旋倾角  */
-        public double rad_init;             /* 螺旋初始半径，单位mm  */
-        public double rad_add;              /* 半径增量  */
-        public double rotaxis_add;          /* 转轴方向增量  */
-        public int rot_direction;  /* 旋转方向，0-顺时针，1-逆时针  */
-        public int velAccMode;     /* 速度加速度参数模式：0-角速度恒定；1-线速度恒定 */
+        public int circle_num;           /* Número de vueltas de la hélice  */
+        public double circle_angle;         /* Ángulo de inclinación de la hélice  */
+        public double rad_init;             /* Radio inicial de la hélice, unidad mm  */
+        public double rad_add;              /* Incremento de radio  */
+        public double rotaxis_add;          /* Incremento de dirección del eje de rotación  */
+        public int rot_direction;  /* Dirección de rotación, 0-sentido horario, 1-sentido antihorario  */
+        public int velAccMode;     /* Modo de parámetros de velocidad y aceleración: 0-velocidad angular constante; 1-velocidad lineal constante */
         public SpiralParam(int circleNum, double circleAngle, double radInit, double radAdd, double rotaxisAdd, int rotDirection,int vel_AccMode)
         {
             circle_num = circleNum;
@@ -217,44 +217,44 @@
         }
     }
 
-扩展轴状态类型
-+++++++++++++++++++++++++++
+Tipo de estado del eje extendido
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  扩展轴状态类型
+    * @brief  Tipo de estado del eje extendido
     */
     public class EXT_AXIS_STATUS
     {
-     public double pos = 0;        //扩展轴位置
-     public double vel = 0;        //扩展轴速度
-     public int errorCode = 0;     //扩展轴故障码
-     public int ready = 0;        //伺服准备好
-     public int inPos = 0;        //伺服到位
-     public int alarm = 0;        //伺服报警
-     public int flerr = 0;        //跟随误差
-     public int nlimit = 0;       //到负限位
-     public int pLimit = 0;       //到正限位
-     public int mdbsOffLine = 0;  //驱动器485总线掉线
-     public int mdbsTimeout = 0;  //控制卡与控制箱485通信超时
-     public int homingStatus = 0; //扩展轴回零状态
+     public double pos = 0;        //Posición del eje extendido
+     public double vel = 0;        //Velocidad del eje extendido
+     public int errorCode = 0;     //Código de fallo del eje extendido
+     public int ready = 0;        //Servo preparado
+     public int inPos = 0;        //Servo en posición
+     public int alarm = 0;        //Alarma del servo
+     public int flerr = 0;        //Error de seguimiento
+     public int nlimit = 0;       //Límite negativo alcanzado
+     public int pLimit = 0;       //Límite positivo alcanzado
+     public int mdbsOffLine = 0;  //Desconexión del bus 485 del accionamiento
+     public int mdbsTimeout = 0;  //Tiempo de espera agotado en la comunicación 485 entre la tarjeta de control y la caja de control
+     public int homingStatus = 0; //Estado de retorno a cero del eje extendido
     }
 
-传感器类型
-+++++++++++++++++++++++++++
+Tipo de sensor
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  传感器类型
+    * @brief  Tipo de sensor
     */
     public class DeviceConfig
     {
-      int company = 0;          // 厂商
-      int device = 0;           // 类型/设备号
-      int softwareVersion = 0;  // 软件版本
-      int bus = 0;              // 挂载位置
+      int company = 0;          // Fabricante
+      int device = 0;           // Tipo/número de dispositivo
+      int softwareVersion = 0;  // Versión de software
+      int bus = 0;              // Posición de montaje
 
       public DeviceConfig()
       {
@@ -270,21 +270,21 @@
       }
     }
 
-485扩展轴配置
-+++++++++++++++++++++++++++
+Configuración del eje extendido 485
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  485扩展轴配置
+    * @brief  Configuración del eje extendido 485
     */
     public class Axis485Param
     {
-      int servoCompany;           // 伺服驱动器厂商，1-戴纳泰克
-      int servoModel;             // 伺服驱动器型号，1-FD100-750C
-      int servoSoftVersion;       // 伺服驱动器软件版本，1-V1.0
-      int servoResolution;        // 编码器分辨率
-      double axisMechTransRatio;  // 机械传动比
+      int servoCompany;           // Fabricante del servoaccionamiento, 1-Dynatec
+      int servoModel;             // Modelo del servoaccionamiento, 1-FD100-750C
+      int servoSoftVersion;       // Versión de software del servoaccionamiento, 1-V1.0
+      int servoResolution;        // Resolución del codificador
+      double axisMechTransRatio;  // Relación de transmisión mecánica
 
       public Axis485Param(int company, int model, int softVersion, int resolution, double mechTransRatio)
       {
@@ -301,360 +301,360 @@
       }
     }
 
-伺服控制器状态
-+++++++++++++++++++++++++++
+Estado del controlador servo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  伺服控制器状态
+    * @brief  Estado del controlador servo
     */
     public class ROBOT_AUX_STATE
     {
-      public int servoId = 0;           //伺服驱动器ID号
-      public int servoErrCode = 0;       //伺服驱动器故障码
-      public int servoState = 0;         //伺服驱动器状态
-      public double servoPos = 0;        //伺服当前位置
-      public float servoVel = 0;         //伺服当前速度
-      public float servoTorque = 0;      //伺服当前转矩    25
+      public int servoId = 0;           //Número de ID del servoaccionamiento
+      public int servoErrCode = 0;       //Código de fallo del servoaccionamiento
+      public int servoState = 0;         //Estado del servoaccionamiento
+      public double servoPos = 0;        //Posición actual del servo
+      public float servoVel = 0;         //Velocidad actual del servo
+      public float servoTorque = 0;      //Par actual del servo    25
     }
 
-焊接中断状态
-++++++++++++++++++++++++++++++++++++++++
+Estado de interrupción de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  焊接中断状态
+    * @brief  Estado de interrupción de soldadura
     */
     public class WELDING_BREAKOFF_STATE
     {
-      public int breakOffState = 0;  //焊接中断状态
-      public int weldArcState = 0;   //焊接电弧中断状态
+      public int breakOffState = 0;  //Estado de interrupción de soldadura
+      public int weldArcState = 0;   //Estado de interrupción del arco de soldadura
     }
 
-UDP扩展轴通讯参数
-++++++++++++++++++++++++++++++++++++++++
+Parámetros de comunicación del eje extendido UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  焊接中断状态
+    * @brief  Parámetros de comunicación del eje extendido UDP
     */
     public class WELDING_BREAKOFF_STATE
     {
-      public String ip = "192.168.58.88";//IP地址
-      public int port = 2021;            //端口号
-      public int period = 2;             //通讯周期(ms，默认为2，请勿修改此参数)
-      public int lossPkgTime = 50;       //丢包检测时间(ms)
-      public int lossPkgNum = 2;         //丢包次数
-      public int disconnectTime = 100;   //通讯断开确认时长
-      public int reconnectEnable = 0;    //通讯断开自动重连使能 0-不使能 1-使能
-      public int reconnectPeriod = 100;  //重连周期间隔(ms)
-      public int reconnectNum = 3;       //重连次数
-      public int selfConnect =0;         //断电重启是否自动建立连接；0-不建立连接；1-建立连接
+      public String ip = "192.168.58.88";//Dirección IP
+      public int port = 2021;            //Número de puerto
+      public int period = 2;             //Período de comunicación (ms, valor predeterminado 2, no modificar este parámetro)
+      public int lossPkgTime = 50;       //Tiempo de detección de pérdida de paquetes (ms)
+      public int lossPkgNum = 2;         //Número de pérdidas de paquetes
+      public int disconnectTime = 100;   //Duración de confirmación de desconexión de comunicación
+      public int reconnectEnable = 0;    //Habilitación de reconexión automática tras desconexión de comunicación 0-no habilitar 1-habilitar
+      public int reconnectPeriod = 100;  //Intervalo del período de reconexión (ms)
+      public int reconnectNum = 3;       //Número de reconexiones
+      public int selfConnect =0;         //Si se establece automáticamente la conexión tras reinicio por corte de energía; 0-no establecer conexión; 1-establecer conexión
     }
 
-机器人状态反馈结构体类型
-+++++++++++++++++++++++++++
+Tipo de estructura de retroalimentación de estado del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  机器人状态反馈结构体类型
+    * @brief  Tipo de estructura de retroalimentación de estado del robot
     * /
     public class ROBOT_STATE_PKG {
-        public int frame_head;                      // 帧头
-        public int frame_cnt;                       // 帧计数
-        public int data_len;                        // 数据长度
-        public int program_state;                   // 程序状态 - 1-停止；2-运行；3-暂停
-        public int robot_state;                     // 机器人运动状态 - 1-停止；2-运行；3-暂停；4-拖动
-        public int main_code;                       // 主故障码
-        public int sub_code;                        // 子故障码
-        public int robot_mode;                      // 机器人模式 - 1-手动模式；0-自动模式
-        public double[] jt_cur_pos = new double[6]; // 6个轴当前关节位置，单位deg
-        public double[] tl_cur_pos = new double[6]; // 工具当前位置 - [x,y,z,rx,ry,rz]
-        public double[] flange_cur_pos = new double[6]; // 末端法兰当前位置 - [x,y,z,rx,ry,rz]
-        public double[] actual_qd = new double[6];  // 当前6个关节速度，单位deg/s
-        public double[] actual_qdd = new double[6]; // 当前6个关节加速度，单位deg/s^2
-        public double[] target_TCP_CmpSpeed = new double[2]; // TCP合成指令速度 - [位置mm/s, 姿态deg/s]
-        public double[] target_TCP_Speed = new double[6]; // TCP指令速度 - [vx,vy,vz,wx,wy,wz]
-        public double[] actual_TCP_CmpSpeed = new double[2]; // TCP合成实际速度 - [位置mm/s, 姿态deg/s]
-        public double[] actual_TCP_Speed = new double[6]; // TCP实际速度 - [vx,vy,vz,wx,wy,wz]
-        public double[] jt_cur_tor = new double[6]; // 当前关节力矩
-        public int tool;                            // 工具ID
-        public int user;                            // 工件ID
-        public int cl_dgt_output_h;                 // 控制柜数字输出高字节
-        public int cl_dgt_output_l;                 // 控制柜数字输出低字节
-        public int tl_dgt_output_l;                 // 工具数字输出低字节
-        public int cl_dgt_input_h;                  // 控制柜数字输入高字节
-        public int cl_dgt_input_l;                  // 控制柜数字输入低字节
-        public int tl_dgt_input_l;                  // 工具数字输入低字节
-        public int[] cl_analog_input = new int[2];  // 控制柜模拟输入
-        public int tl_anglog_input;                 // 工具模拟输入
-        public double[] ft_sensor_raw_data = new double[6]; // 力传感器原始数据
-        public double[] ft_sensor_data = new double[6]; // 力传感器数据
-        public int ft_sensor_active;                // 力传感器激活状态
-        public int EmergencyStop;                   // 急停状态
-        public int motion_done;                     // 运动完成
-        public int gripper_motiondone;              // 夹爪运动完成信号，0-未完成，1-完成(未检测到物体)，2-运动完成（检测到物体）
-        public int mc_queue_len;                    // 运动队列长度
-        public int collisionState;                  // 碰撞状态
-        public int trajectory_pnum;                 // 轨迹点序号
-        public int safety_stop0_state;              // 安全停止0状态
-        public int safety_stop1_state;              // 安全停止1状态
-        public int gripper_fault_id;                // 夹爪故障ID
-        public int gripper_fault;                   // 夹爪故障0-无故障 1-485超时 2-指令错误 3-工件掉落 其他-夹爪故障码
-        public int gripper_active;                  // 夹爪激活
-        public int gripper_position;                // 夹爪位置
-        public int gripper_speed;                   // 夹爪速度
-        public int gripper_current;                 // 夹爪电流
-        public int gripper_temp;                    // 夹爪温度
-        public int gripper_voltage;                 // 夹爪电压
-        public AuxState aux_state = new AuxState(); // 内部辅助轴状态
-        public EXT_AXIS_STATUS[] extAxisStatus = new EXT_AXIS_STATUS[4]; // 扩展轴状态数组
-        public short[] extDIState = new short[8];   // 扩展IO
-        public short[] extDOState = new short[8];   // 扩展IO
-        public short[] extAIState = new short[4];   // 扩展IO
-        public short[] extAOState = new short[4];   // 扩展IO
-        public int rbtEnableState;                  // 机器人使能状态
-        public double[] jointDriverTorque = new double[6]; // 关节驱动器力矩
-        public double[] jointDriverTemperature = new double[6]; // 关节驱动器温度
-        public ROBOT_TIME robotTime = new ROBOT_TIME(); // 机器人时间对象
-        public int softwareUpgradeState;            // 软件升级状态
-        public int endLuaErrCode;                   // 末端Lua错误码
-        public int[] cl_analog_output = new int[2]; // 控制柜模拟输出
-        public int tl_analog_output;                // 工具模拟输出
-        public float gripperRotNum;                 // 旋转夹爪圈数
-        public int gripperRotSpeed;                 // 旋转夹爪速度
-        public int gripperRotTorque;                // 旋转夹爪力矩
-        public WELDING_BREAKOFF_STATE weldingBreakOffState = new WELDING_BREAKOFF_STATE(); // 焊接中断状态
-        public double[] jt_tgt_tor = new double[6]; // 目标关节力矩
-        public int smartToolState;                  // 智能工具状态
-        public float wideVoltageCtrlBoxTemp;        // 宽电压控制箱温度
-        public int wideVoltageCtrlBoxFanCurrent;    // 宽电压控制箱风扇电流
-        public double[] toolCoord = new double[6];  // 工具坐标系
-        public double[] wobjCoord = new double[6];  // 工件坐标系
-        public double[] extoolCoord = new double[6]; // 外部工具坐标系
-        public double[] exAxisCoord = new double[6]; // 扩展轴坐标系
-        public double load;                         // 负载
-        public double[] loadCog = new double[3];    // 负载重心
-        public double[] lastServoTarget = new double[6]; // 上一次伺服J目标位置
-        public int servoJCmdNum;                    // 伺服J命令数量
-        public double[] targetJointPos = new double[6]; // 目标关节位置
-        public double[] targetJointVel = new double[6]; // 目标关节速度
-        public double[] targetJointAcc = new double[6]; // 目标关节加速度
-        public double[] targetJointCurrent = new double[6]; // 目标关节电流
-        public double[] actualJointCurrent = new double[6]; // 实际关节电流
-        public double[] actualTCPForce = new double[6]; // 实际TCP力
-        public double[] targetTCPPos = new double[6]; // 目标TCP位置
-        public int[] collisionLevel = new int[6];   // 碰撞等级
-        public double speedScaleManual;              // 手动速度比例
-        public double speedScaleAuto;                // 自动速度比例
-        public int luaLineNum;                       // Lua行号
-        public int abnomalStop;                      // 异常停止
-        public String currentLuaFileName;            // 当前Lua文件名
-        public int programTotalLine;                 // 程序总行数
-        public int[] safetyBoxSingal = new int[6];   // 安全箱信号
-        public double weldVoltage;                   // 焊接电压
-        public double weldCurrent;                   // 焊接电流
-        public double weldTrackVel;                  // 焊接跟踪速度
-        public int tpdException;                     // TPD异常
-        public int alarmRebootRobot;                 // 报警重启机器人
-        public int modbusMasterConnect;              // Modbus主站连接
-        public int modbusSlaveConnect;               // Modbus从站连接
-        public int btnBoxStopSignal;                 // 按钮盒停止信号
-        public int dragAlarm;                        // 拖动报警
-        public int safetyDoorAlarm;                  // 安全门报警
-        public int safetyPlaneAlarm;                 // 安全平面报警
-        public int motonAlarm;                       // 运动报警
-        public int interfaceAlarm;                   // 干涉报警
-        public int udpCmdState;                      // UDP命令状态
-        public int weldReadyState;                   // 焊接准备状态
-        public int alarmCheckEmergStopBtn;           // 报警检查急停按钮
-        public int tsTmCmdComError;                  // 命令通信错误
-        public int tsTmStateComError;                // 状态通信错误
-        public int ctrlBoxError;                     // 控制箱错误
-        public int safetyDataState;                  // 安全数据状态
-        public int forceSensorErrState;              // 力传感器错误状态
-        public int[] ctrlOpenLuaErrCode = new int[4]; // 控制打开Lua错误码
-        public int strangePosFlag;                   // 奇异位置标志
-        public int alarm;                            // 报警
-        public int driverAlarm;                      // 驱动器报警
-        public int aliveSlaveNumError;               // 存活从站数量错误
-        public int[] slaveComError = new int[8];     // 从站通信错误
-        public int cmdPointError;                    // 命令点错误
-        public int IOError;                          // IO错误
-        public int gripperError;                     // 夹爪错误
-        public int fileError;                        // 文件错误
-        public int paraError;                        // 参数错误
-        public int exaxisOutLimitError;              // 扩展轴超出软限位错误
-        public int[] driverComError = new int[6];    // 驱动器通信错误
-        public int driverError;                      // 驱动器错误
-        public int outSoftLimitError;                // 超出软限位错误
-        public byte[] axleGenComData = new byte[130]; // 通用轴通信数据
-        public int check_sum;                        // 校验和
-        public int socketConnTimeout;                // Socket连接超时
-        public int socketReadTimeout;                // Socket读取超时
-        public int tsWebStateComErr;                 // TS Web状态通信错误
-        public int exaxisCoordID;                  //扩展轴坐标系编号
-        public int programRunState;                  //LUA程序运行状态 0-程序未运行；1-程序运行中(包含程序暂停)
+        public int frame_head;                      // Cabecera de trama
+        public int frame_cnt;                       // Contador de trama
+        public int data_len;                        // Longitud de datos
+        public int program_state;                   // Estado del programa - 1-detenido; 2-en ejecución; 3-pausado
+        public int robot_state;                     // Estado de movimiento del robot - 1-detenido; 2-en ejecución; 3-pausado; 4-arrastre
+        public int main_code;                       // Código de fallo principal
+        public int sub_code;                        // Código de fallo secundario
+        public int robot_mode;                      // Modo del robot - 1-modo manual; 0-modo automático
+        public double[] jt_cur_pos = new double[6]; // Posición actual de las 6 articulaciones, unidad deg
+        public double[] tl_cur_pos = new double[6]; // Posición actual de la herramienta - [x,y,z,rx,ry,rz]
+        public double[] flange_cur_pos = new double[6]; // Posición actual de la brida del extremo - [x,y,z,rx,ry,rz]
+        public double[] actual_qd = new double[6];  // Velocidad actual de las 6 articulaciones, unidad deg/s
+        public double[] actual_qdd = new double[6]; // Aceleración actual de las 6 articulaciones, unidad deg/s^2
+        public double[] target_TCP_CmpSpeed = new double[2]; // Velocidad compuesta de comando del TCP - [posición mm/s, orientación deg/s]
+        public double[] target_TCP_Speed = new double[6]; // Velocidad de comando del TCP - [vx,vy,vz,wx,wy,wz]
+        public double[] actual_TCP_CmpSpeed = new double[2]; // Velocidad compuesta real del TCP - [posición mm/s, orientación deg/s]
+        public double[] actual_TCP_Speed = new double[6]; // Velocidad real del TCP - [vx,vy,vz,wx,wy,wz]
+        public double[] jt_cur_tor = new double[6]; // Par actual de las articulaciones
+        public int tool;                            // ID de herramienta
+        public int user;                            // ID de pieza
+        public int cl_dgt_output_h;                 // Byte alto de salida digital del armario de control
+        public int cl_dgt_output_l;                 // Byte bajo de salida digital del armario de control
+        public int tl_dgt_output_l;                 // Byte bajo de salida digital de la herramienta
+        public int cl_dgt_input_h;                  // Byte alto de entrada digital del armario de control
+        public int cl_dgt_input_l;                  // Byte bajo de entrada digital del armario de control
+        public int tl_dgt_input_l;                  // Byte bajo de entrada digital de la herramienta
+        public int[] cl_analog_input = new int[2];  // Entrada analógica del armario de control
+        public int tl_anglog_input;                 // Entrada analógica de la herramienta
+        public double[] ft_sensor_raw_data = new double[6]; // Datos brutos del sensor de fuerza
+        public double[] ft_sensor_data = new double[6]; // Datos del sensor de fuerza
+        public int ft_sensor_active;                // Estado de activación del sensor de fuerza
+        public int EmergencyStop;                   // Estado de parada de emergencia
+        public int motion_done;                     // Movimiento completado
+        public int gripper_motiondone;              // Señal de movimiento de la pinza completado, 0-no completado, 1-completado (objeto no detectado), 2-movimiento completado (objeto detectado)
+        public int mc_queue_len;                    // Longitud de la cola de movimiento
+        public int collisionState;                  // Estado de colisión
+        public int trajectory_pnum;                 // Número de punto de trayectoria
+        public int safety_stop0_state;              // Estado de parada de seguridad 0
+        public int safety_stop1_state;              // Estado de parada de seguridad 1
+        public int gripper_fault_id;                // ID de fallo de la pinza
+        public int gripper_fault;                   // Fallo de la pinza 0-sin fallo 1-tiempo de espera 485 agotado 2-error de instrucción 3-caída de la pieza otros-código de fallo de la pinza
+        public int gripper_active;                  // Activación de la pinza
+        public int gripper_position;                // Posición de la pinza
+        public int gripper_speed;                   // Velocidad de la pinza
+        public int gripper_current;                 // Corriente de la pinza
+        public int gripper_temp;                    // Temperatura de la pinza
+        public int gripper_voltage;                 // Voltaje de la pinza
+        public AuxState aux_state = new AuxState(); // Estado del eje auxiliar interno
+        public EXT_AXIS_STATUS[] extAxisStatus = new EXT_AXIS_STATUS[4]; // Arreglo de estado de los ejes extendidos
+        public short[] extDIState = new short[8];   // IO extendida
+        public short[] extDOState = new short[8];   // IO extendida
+        public short[] extAIState = new short[4];   // IO extendida
+        public short[] extAOState = new short[4];   // IO extendida
+        public int rbtEnableState;                  // Estado de habilitación del robot
+        public double[] jointDriverTorque = new double[6]; // Par del accionamiento de las articulaciones
+        public double[] jointDriverTemperature = new double[6]; // Temperatura del accionamiento de las articulaciones
+        public ROBOT_TIME robotTime = new ROBOT_TIME(); // Objeto de hora del robot
+        public int softwareUpgradeState;            // Estado de actualización del software
+        public int endLuaErrCode;                   // Código de error de Lua del extremo
+        public int[] cl_analog_output = new int[2]; // Salida analógica del armario de control
+        public int tl_analog_output;                // Salida analógica de la herramienta
+        public float gripperRotNum;                 // Número de vueltas de la pinza giratoria
+        public int gripperRotSpeed;                 // Velocidad de la pinza giratoria
+        public int gripperRotTorque;                // Par de la pinza giratoria
+        public WELDING_BREAKOFF_STATE weldingBreakOffState = new WELDING_BREAKOFF_STATE(); // Estado de interrupción de soldadura
+        public double[] jt_tgt_tor = new double[6]; // Par objetivo de las articulaciones
+        public int smartToolState;                  // Estado de la herramienta inteligente
+        public float wideVoltageCtrlBoxTemp;        // Temperatura de la caja de control de voltaje amplio
+        public int wideVoltageCtrlBoxFanCurrent;    // Corriente del ventilador de la caja de control de voltaje amplio
+        public double[] toolCoord = new double[6];  // Sistema de coordenadas de herramienta
+        public double[] wobjCoord = new double[6];  // Sistema de coordenadas de la pieza
+        public double[] extoolCoord = new double[6]; // Sistema de coordenadas de herramienta externa
+        public double[] exAxisCoord = new double[6]; // Sistema de coordenadas del eje extendido
+        public double load;                         // Carga
+        public double[] loadCog = new double[3];    // Centro de gravedad de la carga
+        public double[] lastServoTarget = new double[6]; // Última posición objetivo de ServoJ
+        public int servoJCmdNum;                    // Número de comandos ServoJ
+        public double[] targetJointPos = new double[6]; // Posición objetivo de las articulaciones
+        public double[] targetJointVel = new double[6]; // Velocidad objetivo de las articulaciones
+        public double[] targetJointAcc = new double[6]; // Aceleración objetivo de las articulaciones
+        public double[] targetJointCurrent = new double[6]; // Corriente objetivo de las articulaciones
+        public double[] actualJointCurrent = new double[6]; // Corriente real de las articulaciones
+        public double[] actualTCPForce = new double[6]; // Fuerza real del TCP
+        public double[] targetTCPPos = new double[6]; // Posición objetivo del TCP
+        public int[] collisionLevel = new int[6];   // Nivel de colisión
+        public double speedScaleManual;              // Proporción de velocidad manual
+        public double speedScaleAuto;                // Proporción de velocidad automática
+        public int luaLineNum;                       // Número de línea Lua
+        public int abnomalStop;                      // Parada anómala
+        public String currentLuaFileName;            // Nombre del archivo Lua actual
+        public int programTotalLine;                 // Número total de líneas del programa
+        public int[] safetyBoxSingal = new int[6];   // Señal de la caja de seguridad
+        public double weldVoltage;                   // Voltaje de soldadura
+        public double weldCurrent;                   // Corriente de soldadura
+        public double weldTrackVel;                  // Velocidad de seguimiento de soldadura
+        public int tpdException;                     // Excepción de TPD
+        public int alarmRebootRobot;                 // Alarma de reinicio del robot
+        public int modbusMasterConnect;              // Conexión de la estación maestra Modbus
+        public int modbusSlaveConnect;               // Conexión de la estación esclava Modbus
+        public int btnBoxStopSignal;                 // Señal de parada de la caja de botones
+        public int dragAlarm;                        // Alarma de arrastre
+        public int safetyDoorAlarm;                  // Alarma de puerta de seguridad
+        public int safetyPlaneAlarm;                 // Alarma de plano de seguridad
+        public int motonAlarm;                       // Alarma de movimiento
+        public int interfaceAlarm;                   // Alarma de interferencia
+        public int udpCmdState;                      // Estado del comando UDP
+        public int weldReadyState;                   // Estado de preparación de soldadura
+        public int alarmCheckEmergStopBtn;           // Alarma de verificación del botón de parada de emergencia
+        public int tsTmCmdComError;                  // Error de comunicación de comando
+        public int tsTmStateComError;                // Error de comunicación de estado
+        public int ctrlBoxError;                     // Error de la caja de control
+        public int safetyDataState;                  // Estado de los datos de seguridad
+        public int forceSensorErrState;              // Estado de error del sensor de fuerza
+        public int[] ctrlOpenLuaErrCode = new int[4]; // Código de error de Lua abierto del control
+        public int strangePosFlag;                   // Indicador de posición singular
+        public int alarm;                            // Alarma
+        public int driverAlarm;                      // Alarma del accionamiento
+        public int aliveSlaveNumError;               // Error del número de esclavos activos
+        public int[] slaveComError = new int[8];     // Error de comunicación de esclavos
+        public int cmdPointError;                    // Error del punto de comando
+        public int IOError;                          // Error de IO
+        public int gripperError;                     // Error de la pinza
+        public int fileError;                        // Error de archivo
+        public int paraError;                        // Error de parámetro
+        public int exaxisOutLimitError;              // Error de eje extendido fuera del límite suave
+        public int[] driverComError = new int[6];    // Error de comunicación del accionamiento
+        public int driverError;                      // Error del accionamiento
+        public int outSoftLimitError;                // Error de fuera del límite suave
+        public byte[] axleGenComData = new byte[130]; // Datos de comunicación del eje genérico
+        public int check_sum;                        // Suma de verificación
+        public int socketConnTimeout;                // Tiempo de espera agotado de conexión del Socket
+        public int socketReadTimeout;                // Tiempo de espera agotado de lectura del Socket
+        public int tsWebStateComErr;                 // Error de comunicación de estado de TS Web
+        public int exaxisCoordID;                  //Número del sistema de coordenadas del eje extendido
+        public int programRunState;                  //Estado de ejecución del programa LUA 0-programa no en ejecución; 1-programa en ejecución (incluye programa pausado)
 
     }
 
-机器人状态反馈配置结果类
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Clase de resultado de configuración de retroalimentación de estado del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * 机器人状态反馈配置结果类，包含状态列表和周期
+    * Clase de resultado de configuración de retroalimentación de estado del robot, que contiene la lista de estados y el período
     */
     public static class StateConfigResult {
       public final List<RobotState> stateList;
       public final int period;
     }
 
-机器人状态反馈配置枚举类型
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Tipo de enumeración de configuración de retroalimentación de estado del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
     
     /**
-    * 机器人状态枚举类型
-    * 用于实时状态反馈配置
+    * Tipo de enumeración de estado del robot
+    * Utilizado para la configuración de retroalimentación de estado en tiempo real
     */
     enum class RobotState
     {
-        ProgramState,           // 程序运行状态，1-停止；2-运行；3-暂停
-        RobotState,             // 机器人运动状态，1-停止；2-运行；3-暂停；4-拖动
-        MainCode,               // 主故障码
-        SubCode,                // 子故障码
-        RobotMode,              // 机器人模式，1-手动模式；0-自动模式
-        JointCurPos,            // 6个轴当前关节位置，单位deg
-        ToolCurPos,             // 工具当前位置：[0]沿x轴位置(mm)，[1]沿y轴(mm)，[2]沿z轴(mm)，[3]绕固定轴X旋转(deg)，[4]绕固定轴Y(deg)，[5]绕固定轴Z(deg)
-        FlangeCurPos,          // 末端法兰当前位置：[0]沿x轴(mm)，[1]沿y轴(mm)，[2]沿z轴(mm)，[3]绕固定轴X(deg)，[4]绕固定轴Y(deg)，[5]绕固定轴Z(deg)
-        ActualJointVel,        // 当前6个关节速度，单位deg/s
-        ActualJointAcc,        // 当前6个关节加速度，单位deg/s^2
-        TargetTCPCmpSpeed,     // TCP合成指令速度：[0]位置(mm/s)，[1]姿态(deg/s)
-        TargetTCPSpeed,        // TCP指令速度：[0]沿x轴(mm/s)，[1]沿y轴(mm/s)，[2]沿z轴(mm/s)，[3]绕X角速度(deg/s)，[4]绕Y(deg/s)，[5]绕Z(deg/s)
-        ActualTCPCmpSpeed,     // TCP合成实际速度：[0]位置(mm/s)，[1]姿态(deg/s)
-        ActualTCPSpeed,        // TCP实际速度：[0]沿x轴(mm/s)，[1]沿y轴(mm/s)，[2]沿z轴(mm/s)，[3]绕X角速度(deg/s)，[4]绕Y(deg/s)，[5]绕Z(deg/s)
-        ActualJointTorque,     // 6个轴当前扭矩，单位N·m
-        Tool,                  // 应用的工具坐标系编号
-        User,                  // 应用的工件坐标系编号
-        ClDgtOutputH,          // 控制箱数字量IO输出15-8
-        ClDgtOutputL,          // 控制箱数字量IO输出7-0
-        TlDgtOutputL,          // 工具数字量IO输出7-0，仅bit0-bit1有效
-        ClDgtInputH,           // 控制箱数字量IO输入15-8
-        ClDgtInputL,           // 控制箱数字量IO输入7-0
-        TlDgtInputL,           // 工具数字量IO输入7-0，仅bit0-bit1有效
-        ClAnalogInput,         // 控制箱模拟量输入：[0]通道0，[1]通道1
-        TlAnalogInput,         // 工具模拟量输入
-        FtSensorRawData,       // 力矩传感器原始数据：[0]沿x轴力(N)，[1]沿y轴力(N)，[2]沿z轴力(N)，[3]沿x轴力矩(Nm)，[4]沿y轴(Nm)，[5]沿z轴(Nm)
-        FtSensorData,          // 力矩传感器数据（经处理）：[0]沿x轴力(N)，[1]沿y轴力(N)，[2]沿z轴力(N)，[3]沿x轴力矩(Nm)，[4]沿y轴(Nm)，[5]沿z轴(Nm)
-        FtSensorActive,        // 力矩传感器激活状态，0-复位，1-激活
-        EmergencyStop,         // 急停标志，0-急停未按下，1-急停按下
-        MotionDone,            // 运动到位信号，1-到位，0-未到位
-        GripperMotiondone,     // 夹爪运动完成信号，0-未完成，1-完成(未检测到物体)，2-运动完成（检测到物体）
-        McQueueLen,            // 运动指令队列长度
-        CollisionState,        // 碰撞检测，1-碰撞，0-无碰撞
-        TrajectoryPnum,        // 轨迹点编号
-        SafetyStop0State,      // 安全停止信号SI0
-        SafetyStop1State,      // 安全停止信号SI1
-        GripperFaultId,        // 错误夹爪号
-        GripperFault,          // 夹爪故障0-无故障 1-485超时 2-指令错误 3-工件掉落 其他-夹爪故障码
-        GripperActive,         // 夹爪激活状态
-        GripperPosition,       // 夹爪位置
-        GripperSpeed,          // 夹爪速度
-        GripperCurrent,        // 夹爪电流
-        GripperTemp,           // 夹爪温度
-        GripperVoltage,        // 夹爪电压
-        AuxState,              // 485扩展轴状态
-        ExtAxisStatus,         // UDP扩展轴状态（4个轴）
-        ExtDIState,            // 扩展DI输入（8个）
-        ExtDOState,            // 扩展DO输出（8个）
-        ExtAIState,            // 扩展AI输入（4个）
-        ExtAOState,            // 扩展AO输出（4个）
-        RbtEnableState,        // 机器人使能状态
-        JointDriverTorque,     // 机器人关节驱动器扭矩（6个关节）
-        JointDriverTemperature,// 机器人关节驱动器温度（6个关节）
-        RobotTime,             // 机器人系统时间
-        SoftwareUpgradeState,  // 机器人软件升级状态
-        EndLuaErrCode,         // 末端LUA运行状态
-        ClAnalogOutput,        // 控制箱模拟量输出（2个）
-        TlAnalogOutput,        // 工具模拟量输出
-        GripperRotNum,         // 旋转夹爪当前旋转圈数
-        GripperRotSpeed,       // 旋转夹爪当前旋转速度百分比
-        GripperRotTorque,      // 旋转夹爪当前旋转力矩百分比
-        WeldingBreakOffState,  // 焊接中断状态
-        TargetJointTorque,     // 关节指令力矩（6个关节）
-        SmartToolState,        // SmartTool手柄按钮状态
-        WideVoltageCtrlBoxTemp,// 宽电压控制箱温度
-        WideVoltageCtrlBoxFanCurrent, // 宽电压控制箱风扇电流(mA)
-        ToolCoord,             // 当前工具坐标系数值：x,y,z,rx,ry,rz
-        WobjCoord,             // 当前工件坐标系数值：x,y,z,rx,ry,rz
-        ExtoolCoord,           // 当前外部工具坐标系数值：x,y,z,rx,ry,rz
-        ExAxisCoord,           // 当前扩展轴坐标系数值：x,y,z,rx,ry,rz
-        Load,                  // 负载质量
-        LoadCog,               // 负载质心：x,y,z
-        LastServoTarget,       // 队列中最后一个ServoJ目标位置（6个关节）
-        ServoJCmdNum,          // servoJ指令计数
-        TargetJointPos,        // 6个关节指令位置，单位°
-        TargetJointVel,        // 6个关节指令速度，单位°/s
-        TargetJointAcc,        // 6个关节指令加速度，单位°/s²
-        TargetJointCurrent,    // 6个关节指令电流，单位A
-        ActualJointCurrent,    // 6个关节当前电流，单位A
-        ActualTCPForce,        // 机器人末端力矩：x,y,z,rx,ry,rz，单位Nm
-        TargetTCPPos,          // 机器人TCP指令位置：x,y,z,rx,ry,rz，单位mm
-        CollisionLevel,        // 机器人碰撞等级（6个）
-        SpeedScaleManual,      // 手动模式全局速度百分比
-        SpeedScaleAuto,        // 自动模式全局速度百分比
-        LuaLineNum,            // 当前lua程序运行行号
-        AbnomalStop,           // 0-无异常；1-有异常
-        CurrentLuaFileName,    // 当前运行lua程序名称
-        ProgramTotalLine,      // lua程序总行数
-        SafetyBoxSingal,       // 机器人按钮盒按钮状态（6个）
-        WeldVoltage,           // 焊接电压 V
-        WeldCurrent,           // 焊接电流
-        WeldTrackVel,          // 焊缝跟踪速度 mm/s
-        TpdException,          // TPD轨迹加载数量超限，0-未超限，1-超限
-        AlarmRebootRobot,      // 警告：1-松开急停后需断电重启，2-关节通讯异常需断电重启
-        ModbusMasterConnect,   // bit0-7对应ModbusTCP主站0-7连接状态，0-未连接，1-连接
-        ModbusSlaveConnect,    // ModbusTCP从站连接状态，0-未连接，1-已连接
-        BtnBoxStopSignal,      // 按钮盒急停信号，0-松开急停，1-按下急停
-        DragAlarm,            // 拖动警告：0-不报警，1-报警，2-位置反馈异常不切换
-        SafetyDoorAlarm,      // 安全门警告：0-关闭，1-打开
-        SafetyPlaneAlarm,     // 安全墙警告：0-未进入，1-已进入
-        MotonAlarm,           // 运动警告
-        InterfaceAlarm,       // 进入干涉区警告
-        UdpCmdState,          // 20007端口UDP通讯连接状态
-        WeldReadyState,       // 焊机准备完成状态
-        AlarmCheckEmergStopBtn, // 0-正常；1-通信异常，检查急停按钮
-        TsTmCmdComError,      // 0-正常；1-扭矩指令通讯失败
-        TsTmStateComError,    // 0-正常；1-扭矩状态通讯失败
-        CtrlBoxError,         // 控制箱错误
-        SafetyDataState,      // 安全数据状态，0-正常，1-异常
-        ForceSensorErrState,  // 力传感器连接超时，bit0-bit1对应ID1-ID2
-        CtrlOpenLuaErrCode,   // 4个控制器外设协议错误码(500错误码)
-        StrangePosFlag,       // 奇异位姿标志：0-正常，1-奇异位姿
-        Alarm,                // 警告
-        DriverAlarm,          // 驱动器报警轴号
-        AliveSlaveNumError,   // 活动从站数量错误：0-正常，1-数量错误
-        SlaveComError,        // 从站错误：0-正常，1-掉线，2-状态不一致，3-未配置，4-配置错误，5-初始化错误，6-邮箱通信初始化错误
-        CmdPointError,        // 指令点错误
-        IOError,              // IO错误
-        GripperError,         // 夹爪错误
-        FileError,            // 文件错误
-        ParaError,            // 参数错误
-        ExaxisOutLimitError,  // 外部轴超出软限位错误
-        DriverComError,       // 与驱动器通信故障（6个轴）
-        DriverError,          // 驱动器通信故障轴号
-        OutSoftLimitError,    // 超出软限位故障
-        AxleGenComData,       // 机器人末端透传反馈数据
-        SocketConnTimeout,    // socket连接超时，bit0-bit4对应socketID 1-4
-        SocketReadTimeout,    // socket读取超时，bit0-bit4对应socketID 1-4
-        TsWebStateComErr,     // web-扭矩通讯失败：0-正常，1-失败
-        ExaxisCoordID          //扩展轴坐标系编号
-        programRunState;       //LUA程序运行状态 0-程序未运行；1-程序运行中(包含程序暂停)
+        ProgramState,           // Estado de ejecución del programa, 1-detenido; 2-en ejecución; 3-pausado
+        RobotState,             // Estado de movimiento del robot, 1-detenido; 2-en ejecución; 3-pausado; 4-arrastre
+        MainCode,               // Código de fallo principal
+        SubCode,                // Código de fallo secundario
+        RobotMode,              // Modo del robot, 1-modo manual; 0-modo automático
+        JointCurPos,            // Posición actual de las 6 articulaciones, unidad deg
+        ToolCurPos,             // Posición actual de la herramienta: [0]posición a lo largo del eje x (mm), [1]a lo largo del eje y (mm), [2]a lo largo del eje z (mm), [3]rotación alrededor del eje fijo X (deg), [4]alrededor del eje fijo Y (deg), [5]alrededor del eje fijo Z (deg)
+        FlangeCurPos,          // Posición actual de la brida del extremo: [0]a lo largo del eje x (mm), [1]a lo largo del eje y (mm), [2]a lo largo del eje z (mm), [3]alrededor del eje fijo X (deg), [4]alrededor del eje fijo Y (deg), [5]alrededor del eje fijo Z (deg)
+        ActualJointVel,        // Velocidad actual de las 6 articulaciones, unidad deg/s
+        ActualJointAcc,        // Aceleración actual de las 6 articulaciones, unidad deg/s^2
+        TargetTCPCmpSpeed,     // Velocidad compuesta de comando del TCP: [0]posición (mm/s), [1]orientación (deg/s)
+        TargetTCPSpeed,        // Velocidad de comando del TCP: [0]a lo largo del eje x (mm/s), [1]a lo largo del eje y (mm/s), [2]a lo largo del eje z (mm/s), [3]velocidad angular alrededor de X (deg/s), [4]alrededor de Y (deg/s), [5]alrededor de Z (deg/s)
+        ActualTCPCmpSpeed,     // Velocidad compuesta real del TCP: [0]posición (mm/s), [1]orientación (deg/s)
+        ActualTCPSpeed,        // Velocidad real del TCP: [0]a lo largo del eje x (mm/s), [1]a lo largo del eje y (mm/s), [2]a lo largo del eje z (mm/s), [3]velocidad angular alrededor de X (deg/s), [4]alrededor de Y (deg/s), [5]alrededor de Z (deg/s)
+        ActualJointTorque,     // Par actual de las 6 articulaciones, unidad N·m
+        Tool,                  // Número del sistema de coordenadas de herramienta aplicado
+        User,                  // Número del sistema de coordenadas de la pieza aplicado
+        ClDgtOutputH,          // Salida de IO digital de la caja de control 15-8
+        ClDgtOutputL,          // Salida de IO digital de la caja de control 7-0
+        TlDgtOutputL,          // Salida de IO digital de la herramienta 7-0, solo bit0-bit1 válidos
+        ClDgtInputH,           // Entrada de IO digital de la caja de control 15-8
+        ClDgtInputL,           // Entrada de IO digital de la caja de control 7-0
+        TlDgtInputL,           // Entrada de IO digital de la herramienta 7-0, solo bit0-bit1 válidos
+        ClAnalogInput,         // Entrada analógica de la caja de control: [0]canal 0, [1]canal 1
+        TlAnalogInput,         // Entrada analógica de la herramienta
+        FtSensorRawData,       // Datos brutos del sensor de par: [0]fuerza a lo largo del eje x (N), [1]fuerza a lo largo del eje y (N), [2]fuerza a lo largo del eje z (N), [3]par alrededor del eje x (Nm), [4]alrededor del eje y (Nm), [5]alrededor del eje z (Nm)
+        FtSensorData,          // Datos del sensor de par (procesados): [0]fuerza a lo largo del eje x (N), [1]fuerza a lo largo del eje y (N), [2]fuerza a lo largo del eje z (N), [3]par alrededor del eje x (Nm), [4]alrededor del eje y (Nm), [5]alrededor del eje z (Nm)
+        FtSensorActive,        // Estado de activación del sensor de par, 0-reiniciado, 1-activado
+        EmergencyStop,         // Indicador de parada de emergencia, 0-parada de emergencia no pulsada, 1-parada de emergencia pulsada
+        MotionDone,            // Señal de movimiento en posición, 1-en posición, 0-no en posición
+        GripperMotiondone,     // Señal de movimiento de la pinza completado, 0-no completado, 1-completado (objeto no detectado), 2-movimiento completado (objeto detectado)
+        McQueueLen,            // Longitud de la cola de instrucciones de movimiento
+        CollisionState,        // Detección de colisión, 1-colisión, 0-sin colisión
+        TrajectoryPnum,        // Número de punto de trayectoria
+        SafetyStop0State,      // Señal de parada de seguridad SI0
+        SafetyStop1State,      // Señal de parada de seguridad SI1
+        GripperFaultId,        // Número de pinza con error
+        GripperFault,          // Fallo de la pinza 0-sin fallo 1-tiempo de espera 485 agotado 2-error de instrucción 3-caída de la pieza otros-código de fallo de la pinza
+        GripperActive,         // Estado de activación de la pinza
+        GripperPosition,       // Posición de la pinza
+        GripperSpeed,          // Velocidad de la pinza
+        GripperCurrent,        // Corriente de la pinza
+        GripperTemp,           // Temperatura de la pinza
+        GripperVoltage,        // Voltaje de la pinza
+        AuxState,              // Estado del eje extendido 485
+        ExtAxisStatus,         // Estado del eje extendido UDP (4 ejes)
+        ExtDIState,            // Entrada DI extendida (8)
+        ExtDOState,            // Salida DO extendida (8)
+        ExtAIState,            // Entrada AI extendida (4)
+        ExtAOState,            // Salida AO extendida (4)
+        RbtEnableState,        // Estado de habilitación del robot
+        JointDriverTorque,     // Par del accionamiento de las articulaciones del robot (6 articulaciones)
+        JointDriverTemperature,// Temperatura del accionamiento de las articulaciones del robot (6 articulaciones)
+        RobotTime,             // Hora del sistema del robot
+        SoftwareUpgradeState,  // Estado de actualización del software del robot
+        EndLuaErrCode,         // Estado de ejecución de LUA del extremo
+        ClAnalogOutput,        // Salida analógica de la caja de control (2)
+        TlAnalogOutput,        // Salida analógica de la herramienta
+        GripperRotNum,         // Número de vueltas de rotación actual de la pinza giratoria
+        GripperRotSpeed,       // Porcentaje de velocidad de rotación actual de la pinza giratoria
+        GripperRotTorque,      // Porcentaje de par de rotación actual de la pinza giratoria
+        WeldingBreakOffState,  // Estado de interrupción de soldadura
+        TargetJointTorque,     // Par de comando de las articulaciones (6 articulaciones)
+        SmartToolState,        // Estado de los botones del mango SmartTool
+        WideVoltageCtrlBoxTemp,// Temperatura de la caja de control de voltaje amplio
+        WideVoltageCtrlBoxFanCurrent, // Corriente del ventilador de la caja de control de voltaje amplio (mA)
+        ToolCoord,             // Valor actual del sistema de coordenadas de herramienta: x,y,z,rx,ry,rz
+        WobjCoord,             // Valor actual del sistema de coordenadas de la pieza: x,y,z,rx,ry,rz
+        ExtoolCoord,           // Valor actual del sistema de coordenadas de herramienta externa: x,y,z,rx,ry,rz
+        ExAxisCoord,           // Valor actual del sistema de coordenadas del eje extendido: x,y,z,rx,ry,rz
+        Load,                  // Masa de la carga
+        LoadCog,               // Centro de masa de la carga: x,y,z
+        LastServoTarget,       // Última posición objetivo de ServoJ en la cola (6 articulaciones)
+        ServoJCmdNum,          // Contador de comandos servoJ
+        TargetJointPos,        // Posición de comando de las 6 articulaciones, unidad °
+        TargetJointVel,        // Velocidad de comando de las 6 articulaciones, unidad °/s
+        TargetJointAcc,        // Aceleración de comando de las 6 articulaciones, unidad °/s²
+        TargetJointCurrent,    // Corriente de comando de las 6 articulaciones, unidad A
+        ActualJointCurrent,    // Corriente actual de las 6 articulaciones, unidad A
+        ActualTCPForce,        // Par del extremo del robot: x,y,z,rx,ry,rz, unidad Nm
+        TargetTCPPos,          // Posición de comando del TCP del robot: x,y,z,rx,ry,rz, unidad mm
+        CollisionLevel,        // Nivel de colisión del robot (6)
+        SpeedScaleManual,      // Porcentaje de velocidad global en modo manual
+        SpeedScaleAuto,        // Porcentaje de velocidad global en modo automático
+        LuaLineNum,            // Número de línea de ejecución actual del programa lua
+        AbnomalStop,           // 0-sin anomalía; 1-con anomalía
+        CurrentLuaFileName,    // Nombre del programa lua en ejecución actual
+        ProgramTotalLine,      // Número total de líneas del programa lua
+        SafetyBoxSingal,       // Estado de los botones de la caja de botones del robot (6)
+        WeldVoltage,           // Voltaje de soldadura V
+        WeldCurrent,           // Corriente de soldadura
+        WeldTrackVel,          // Velocidad de seguimiento de soldadura mm/s
+        TpdException,          // Cantidad de carga de trayectoria TPD excede el límite, 0-no excede, 1-excede
+        AlarmRebootRobot,      // Advertencia: 1-es necesario reiniciar tras liberar la parada de emergencia, 2-es necesario reiniciar tras anomalía de comunicación de articulaciones
+        ModbusMasterConnect,   // bit0-7 corresponden al estado de conexión de las estaciones maestras ModbusTCP 0-7, 0-no conectada, 1-conectada
+        ModbusSlaveConnect,    // Estado de conexión de la estación esclava ModbusTCP, 0-no conectada, 1-conectada
+        BtnBoxStopSignal,      // Señal de parada de emergencia de la caja de botones, 0-parada de emergencia liberada, 1-parada de emergencia pulsada
+        DragAlarm,            // Advertencia de arrastre: 0-no alarma, 1-alarma, 2-no cambiar por anomalía de retroalimentación de posición
+        SafetyDoorAlarm,      // Advertencia de puerta de seguridad: 0-cerrada, 1-abierta
+        SafetyPlaneAlarm,     // Advertencia de muro de seguridad: 0-no entra, 1-entra
+        MotonAlarm,           // Advertencia de movimiento
+        InterfaceAlarm,       // Advertencia de entrada en zona de interferencia
+        UdpCmdState,          // Estado de conexión de comunicación UDP del puerto 20007
+        WeldReadyState,       // Estado de preparación completada de la máquina de soldar
+        AlarmCheckEmergStopBtn, // 0-normal; 1-anomalía de comunicación, verificar el botón de parada de emergencia
+        TsTmCmdComError,      // 0-normal; 1-fallo de comunicación de comando de par
+        TsTmStateComError,    // 0-normal; 1-fallo de comunicación de estado de par
+        CtrlBoxError,         // Error de la caja de control
+        SafetyDataState,      // Estado de los datos de seguridad, 0-normal, 1-anómalo
+        ForceSensorErrState,  // Tiempo de espera agotado de conexión del sensor de fuerza, bit0-bit1 corresponden a ID1-ID2
+        CtrlOpenLuaErrCode,   // 4 códigos de error de protocolo de periféricos del controlador (código de error 500)
+        StrangePosFlag,       // Indicador de pose singular: 0-normal, 1-pose singular
+        Alarm,                // Advertencia
+        DriverAlarm,          // Número de eje de alarma del accionamiento
+        AliveSlaveNumError,   // Error del número de esclavos activos: 0-normal, 1-error de número
+        SlaveComError,        // Error de esclavo: 0-normal, 1-desconectado, 2-estado inconsistente, 3-no configurado, 4-error de configuración, 5-error de inicialización, 6-error de inicialización de comunicación de buzón
+        CmdPointError,        // Error del punto de comando
+        IOError,              // Error de IO
+        GripperError,         // Error de la pinza
+        FileError,            // Error de archivo
+        ParaError,            // Error de parámetro
+        ExaxisOutLimitError,  // Error de eje externo fuera del límite suave
+        DriverComError,       // Fallo de comunicación con el accionamiento (6 ejes)
+        DriverError,          // Número de eje de fallo de comunicación del accionamiento
+        OutSoftLimitError,    // Fallo de fuera del límite suave
+        AxleGenComData,       // Datos de retroalimentación de transmisión transparente del extremo del robot
+        SocketConnTimeout,    // Tiempo de espera agotado de conexión del socket, bit0-bit4 corresponden a socketID 1-4
+        SocketReadTimeout,    // Tiempo de espera agotado de lectura del socket, bit0-bit4 corresponden a socketID 1-4
+        TsWebStateComErr,     // Fallo de comunicación web-par: 0-normal, 1-fallo
+        ExaxisCoordID          //Número del sistema de coordenadas del eje extendido
+        programRunState;       //Estado de ejecución del programa LUA 0-programa no en ejecución; 1-programa en ejecución (incluye programa pausado)
     };

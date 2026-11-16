@@ -1,54 +1,54 @@
-其他接口
+Otras interfaces
 ================
 
 .. toctree:: 
     :maxdepth: 5
 
-获取SSH公钥
-+++++++++++++++++++++++++++++++++++
+Obtener la clave pública SSH
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 获取SSH公钥
-    * @param [out] keygen 公钥
-    * @return 错误码
+    * @brief Obtener la clave pública SSH
+    * @param [out] keygen Clave pública
+    * @return Código de error
     */
     int GetSSHKeygen(String[] keygen)
 
-下发SCP指令
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Enviar comando SCP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.6-3.8.3
 
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 下发SCP指令
-    * @param [in] mode 0-上传（上位机->控制器），1-下载（控制器->上位机）
-    * @param [in] sshname 上位机用户名
-    * @param [in] sship 上位机ip地址
-    * @param [in] usr_file_url 上位机文件路径
-    * @param [in] robot_file_url 机器人控制器文件路径
-    * @return 错误码
+    * @brief Enviar comando SCP
+    * @param [in] mode 0-carga (PC anfitrión->controlador), 1-descarga (controlador->PC anfitrión)
+    * @param [in] sshname Nombre de usuario del PC anfitrión
+    * @param [in] sship Dirección IP del PC anfitrión
+    * @param [in] usr_file_url Ruta del archivo en el PC anfitrión
+    * @param [in] robot_file_url Ruta del archivo en el controlador del robot
+    * @return Código de error
     */
     int SetSSHScpCmd(int mode, String sshname, String sship, String usr_file_url, String robot_file_url)
 
-计算指定路径下文件的MD5值
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Calcular el valor MD5 del archivo en la ruta especificada
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 计算指定路径下文件的MD5值
-    * @param [in] file_path 文件路径包含文件名，默认Traj文件夹路径为:"/fruser/traj/",如"/fruser/traj/trajHelix_aima_1.txt"
-    * @param [out] md5 文件MD5值
-    * @return 错误码
+    * @brief Calcular el valor MD5 del archivo en la ruta especificada
+    * @param [in] file_path Ruta del archivo incluido el nombre del archivo; la ruta predeterminada de la carpeta Traj es: "/fruser/traj/", por ejemplo "/fruser/traj/trajHelix_aima_1.txt"
+    * @param [out] md5 Valor MD5 del archivo
+    * @return Código de error
     */
     int ComputeFileMD5(String file_path, String[] md5)
 
-机器人SSH、MD5指令代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de las instrucciones SSH y MD5 del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -74,31 +74,31 @@
         return 0;
     }
 
-设置机器人 20004 端口反馈周期
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el período de retroalimentación del puerto 20004 del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置机器人 20004 端口反馈周期
-    * @param [in] period 机器人 20004 端口反馈周期(ms)
-    * @return  错误码
+    * @brief Establecer el período de retroalimentación del puerto 20004 del robot
+    * @param [in] period Período de retroalimentación del puerto 20004 del robot (ms)
+    * @return  Código de error
     */
     public int SetRobotRealtimeStateSamplePeriod(int period)
 
-获取机器人 20004 端口反馈周期
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el período de retroalimentación del puerto 20004 del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  获取机器人 20004 端口反馈周期
-    * @return  List[0]:错误码; List[1]:机器人 20004 端口反馈周期(ms)
+    * @brief  Obtener el período de retroalimentación del puerto 20004 del robot
+    * @return  List[0]:código de error; List[1]:período de retroalimentación del puerto 20004 del robot (ms)
     */
     public List<Integer> GetRobotRealtimeStateSamplePeriod()
 
-机器人20004端口状态反馈周期配置代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración del período de retroalimentación de estado del puerto 20004 del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -112,32 +112,32 @@
         return 0;
     }
 
-机器人软件升级
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Actualización del software del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-     * @brief 机器人软件升级
-     * @param [in] filePath 软件升级包全路径
-     * @param [in] block 是否阻塞至升级完成 true:阻塞；false:非阻塞
-     * @return  错误码
+     * @brief Actualización del software del robot
+     * @param [in] filePath Ruta completa del paquete de actualización de software
+     * @param [in] block Si se bloquea hasta completar la actualización true:bloquear; false:no bloquear
+     * @return  Código de error
      */
     public int SoftwareUpgrade(String filePath, boolean block)
 
-获取机器人软件升级状态
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado de actualización del software del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  获取机器人软件升级状态
-    * @return  List[0]:错误码; List[1]:机器人软件升级状态 0-空闲中或上传升级包中；1~100：升级完成百分比；-1:升级软件失败；-2：校验失败；-3：版本校验失败；-4：解压失败；-5：用户配置升级失败；-6：外设配置升级失败；-7：扩展轴配置升级失败；-8：机器人配置升级失败；-9：DH参数配置升级失败
+    * @brief  Obtener el estado de actualización del software del robot
+    * @return  List[0]:código de error; List[1]:estado de actualización del software del robot 0-inactivo o subiendo paquete de actualización; 1~100: porcentaje completado de la actualización; -1:fallo al actualizar el software; -2:fallo de verificación; -3:fallo de verificación de versión; -4:fallo de descompresión; -5:fallo de actualización de la configuración de usuario; -6:fallo de actualización de la configuración de periféricos; -7:fallo de actualización de la configuración del eje extendido; -8:fallo de actualización de la configuración del robot; -9:fallo de actualización de la configuración de parámetros DH
     */
     public List<Integer> GetSoftwareUpgradeState()
 
-机器人软件升级代码示例
-+++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de actualización del software del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -153,47 +153,47 @@
         }
     }
 
-下载点位表数据库
-+++++++++++++++++++++++++++++++++++
+Descargar la base de datos de la tabla de puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 下载点位表数据库 
-    * @param [in] pointTableName 要下载的点位表名称    pointTable1.db
-    * @param [in] saveFilePath 下载点位表的存储路径   C://test/
-    * @return 错误码 
+    * @brief Descargar la base de datos de la tabla de puntos 
+    * @param [in] pointTableName Nombre de la tabla de puntos a descargar    pointTable1.db
+    * @param [in] saveFilePath Ruta de guardado de la tabla de puntos a descargar   C://test/
+    * @return Código de error 
     */
     int PointTableDownLoad(String pointTableName, String saveFilePath);
 
-上传点位表数据库
-+++++++++++++++++++++++++++++++++++
+Subir la base de datos de la tabla de puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 上传点位表数据库 
-    * @param [in] pointTableFilePath 上传点位表的全路径名   C://test/pointTable1.db
-    * @return 错误码 
+    * @brief Subir la base de datos de la tabla de puntos 
+    * @param [in] pointTableFilePath Nombre de ruta completo de la tabla de puntos a subir   C://test/pointTable1.db
+    * @return Código de error 
     */
     int PointTableUpLoad(String pointTableFilePath);
 
-点位表更新lua文件
-+++++++++++++++++++++++++++++++++++
+Actualizar el archivo lua de la tabla de puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 点位表更新lua文件
-    * @param [in] pointTableName 要切换的点位表名称   "pointTable1.db",当点位表为空，即""时，表示将lua程序更新为未应用点位表的初始程序
-    * @param [in] luaFileName 要更新的lua文件名称   "testPointTable.lua"
-    * @param [out] errorStr 切换点位表错误信息
-    * @return 错误码 
+    * @brief Actualizar el archivo lua de la tabla de puntos
+    * @param [in] pointTableName Nombre de la tabla de puntos a cambiar   "pointTable1.db"; cuando la tabla de puntos está vacía, es decir "", indica que el programa lua se actualiza al programa inicial sin aplicar la tabla de puntos
+    * @param [in] luaFileName Nombre del archivo lua a actualizar   "testPointTable.lua"
+    * @param [out] errorStr Información de error del cambio de tabla de puntos
+    * @return Código de error 
     */
     int PointTableUpdateLua(String pointTableName, String luaFileName, String errorStr);
 
-机器人点位表操作代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de operación de la tabla de puntos del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -215,50 +215,50 @@
         return 0;
     }
 
-控制器日志下载
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Descarga del registro del controlador
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.4-3.8.1
 
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 控制器日志下载
-    * @param [in] savePath 保存文件路径"D://zDown/"
-    * @return 错误码
+    * @brief Descarga del registro del controlador
+    * @param [in] savePath Ruta de guardado del archivo "D://zDown/"
+    * @return Código de error
     */
     int RbLogDownload(String savePath);
 
-所有数据源下载
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Descarga de todas las fuentes de datos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.4-3.8.1
 
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 所有数据源下载
-    * @param [in] savePath 保存文件路径"D://zDown/"
-    * @return 错误码
+    * @brief Descarga de todas las fuentes de datos
+    * @param [in] savePath Ruta de guardado del archivo "D://zDown/"
+    * @return Código de error
     */
     int AllDataSourceDownload(String savePath);
 
-数据备份包下载
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Descarga del paquete de copia de seguridad de datos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.4-3.8.1
 
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 数据备份包下载
-    * @param [in] savePath 保存文件路径"D://zDown/"
-    * @return 错误码
+    * @brief Descarga del paquete de copia de seguridad de datos
+    * @param [in] savePath Ruta de guardado del archivo "D://zDown/"
+    * @return Código de error
     */
     int DataPackageDownload(String savePath);
 
-下载控制器数据代码示例
-+++++++++++++++++++++++++++++++++++
+Ejemplo de código de descarga de datos del controlador
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -272,92 +272,92 @@
         return 0;
     }
 
-设置编码器升级
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer la actualización del codificador
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.7-3.8.4
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置编码器升级
-    * @param [in] path 本地升级包全路径(D://zUP/XXXXX.bin)
-    * @return 错误码
+    * @brief Establecer la actualización del codificador
+    * @param [in] path Ruta completa local del paquete de actualización (D://zUP/XXXXX.bin)
+    * @return Código de error
     */
     int SetEncoderUpgrade(String path)
 
-设置关节固件升级
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer la actualización del firmware de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.7-3.8.4
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置关节固件升级
-    * @param [in] type 升级文件类型；1-升级固件；2-升级从站配置文件
-    * @param [in] path 本地升级包全路径(D://zUP/XXXXX.bin)
-    * @return 错误码
+    * @brief Establecer la actualización del firmware de las articulaciones
+    * @param [in] type Tipo de archivo de actualización; 1-actualizar firmware; 2-actualizar archivo de configuración de esclavo
+    * @param [in] path Ruta completa local del paquete de actualización (D://zUP/XXXXX.bin)
+    * @return Código de error
     */
     public int SetJointFirmwareUpgrade(int type, String path)
 
-设置控制箱固件升级
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer la actualización del firmware de la caja de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.7-3.8.4
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置控制箱固件升级
-    * @param [in] type 升级文件类型；1-升级固件；2-升级从站配置文件
-    * @param [in] path 本地升级包全路径(D://zUP/XXXXX.bin)
-    * @return 错误码
+    * @brief Establecer la actualización del firmware de la caja de control
+    * @param [in] type Tipo de archivo de actualización; 1-actualizar firmware; 2-actualizar archivo de configuración de esclavo
+    * @param [in] path Ruta completa local del paquete de actualización (D://zUP/XXXXX.bin)
+    * @return Código de error
     */
     public int SetCtrlFirmwareUpgrade(int type, String path)
 
-设置末端固件升级
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer la actualización del firmware del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.7-3.8.4
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置末端固件升级
-    * @param [in] type 升级文件类型；1-升级固件；2-升级从站配置文件
-    * @param [in] path 本地升级包全路径(D://zUP/XXXXX.bin)
-    * @return 错误码
+    * @brief Establecer la actualización del firmware del extremo
+    * @param [in] type Tipo de archivo de actualización; 1-actualizar firmware; 2-actualizar archivo de configuración de esclavo
+    * @param [in] path Ruta completa local del paquete de actualización (D://zUP/XXXXX.bin)
+    * @return Código de error
     */
     public int SetEndFirmwareUpgrade(int type, String path)
 
-关节全参数配置文件升级
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Actualización del archivo de configuración de todos los parámetros de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.7-3.8.4
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 关节全参数配置文件升级
-    * @param [in] path 本地升级包全路径(D://zUP/XXXXX.bin)
-    * @return 错误码
+    * @brief Actualización del archivo de configuración de todos los parámetros de las articulaciones
+    * @param [in] path Ruta completa local del paquete de actualización (D://zUP/XXXXX.bin)
+    * @return Código de error
     */
     public int JointAllParamUpgrade(String path)
 
-获取关节全参数升级进度百分比
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el porcentaje de progreso de la actualización de todos los parámetros de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 获取关节全参数升级进度百分比
-    * @return List[0]:错误码; List[1]:升级进度百分比[0-100], -1:升级失败
+    * @brief Obtener el porcentaje de progreso de la actualización de todos los parámetros de las articulaciones
+    * @return List[0]:código de error; List[1]:porcentaje de progreso de la actualización [0-100], -1:fallo de la actualización
     */
     public List<Integer> GetJointAllParamUpgradeProgress()
 
-关节全参数升级并查询关节全参数升级进度代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de actualización de todos los parámetros de las articulaciones y consulta del progreso
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -381,8 +381,8 @@
         }
     }
     
-机器人从站固件升级代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de actualización del firmware del esclavo del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -412,75 +412,75 @@
         robot.CloseRPC();
     }
 
-机器人操作系统升级(LA控制箱)
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Actualización del sistema operativo del robot (caja de control LA)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.9-3.8.6
 
 .. code-block:: Java
     :linenos:
 
     /**
-     * @brief 机器人操作系统升级(LA控制箱)
-     * @param [in] filePath 操作系统升级包全路径
-     * @return  错误码
+     * @brief Actualización del sistema operativo del robot (caja de control LA)
+     * @param [in] filePath Ruta completa del paquete de actualización del sistema operativo
+     * @return  Código de error
      */
     public int KernelUpgrade(String filePath)
 
-获取机器人操作系统升级结果(LA控制箱)
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el resultado de la actualización del sistema operativo del robot (caja de control LA)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.9-3.8.6
 
 .. code-block:: Java
     :linenos:
 
     /**
-     * @brief 获取机器人操作系统升级结果(LA控制箱)
-     * @param [out] result 升级结果：0:成功；-1:失败
-     * @return  错误码
+     * @brief Obtener el resultado de la actualización del sistema operativo del robot (caja de control LA)
+     * @param [out] result Resultado de la actualización: 0:éxito; -1:fallo
+     * @return  Código de error
      */
     public int GetKernelUpgradeResult(int[] result)
 
-机器人MCU日志生成
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+Generación del registro MCU del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 机器人MCU日志生成
-    * @return 错误码
+    * @brief Generación del registro MCU del robot
+    * @return Código de error
     */
     public int RobotMCULogCollect()
 
-设置端口通讯断开时停止机器人运行
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer la detención del robot al desconectarse la comunicación del puerto
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置端口通讯断开时停止机器人运行
-    * @param pordID 端口编号 0-8080；1-8083；2-20002；3-20004
-    * @param enable 0-关闭；1-开启
-    * @param confirmTime 通讯中断确认时长(ms)[0-5000]
-    * @return 错误码
+    * @brief Establecer la detención del robot al desconectarse la comunicación del puerto
+    * @param pordID Número de puerto 0-8080; 1-8083; 2-20002; 3-20004
+    * @param enable 0-desactivar; 1-activar
+    * @param confirmTime Duración de confirmación de interrupción de comunicación (ms) [0-5000]
+    * @return Código de error
     */
     public int SetRobotStopOnComDisc(int portID, bool enable, int confirmTime)
     
-获取端口通讯断开时停止机器人运行参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener los parámetros de detención del robot al desconectarse la comunicación del puerto
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 获取端口通讯断开时停止机器人运行参数
-    * @param pordID 端口编号 0-8080；1-8083；2-20002；3-20004
-    * @param enable 结果数组，index 0: 0-关闭；1-开启
-    * @param confirmTime 结果数组，index 0: 通讯中断确认时长(ms)[0-5000] 
-    * @return 错误码
+    * @brief Obtener los parámetros de detención del robot al desconectarse la comunicación del puerto
+    * @param pordID Número de puerto 0-8080; 1-8083; 2-20002; 3-20004
+    * @param enable Arreglo de resultados, index 0: 0-desactivar; 1-activar
+    * @param confirmTime Arreglo de resultados, index 0: duración de confirmación de interrupción de comunicación (ms) [0-5000] 
+    * @return Código de error
     */
     public int GetRobotStopOnComDisc(int pordID, int[] enable, int[] confirmTime)
 
-端口通讯断开时停止机器人运行参数代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de los parámetros de detención del robot al desconectarse la comunicación del puerto
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -507,34 +507,34 @@
         return;
     }
 
-UDP发送指令帧
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Envío de trama de instrucciones por UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief UDP发送指令帧
-    * @param 指令帧
-    * @return 错误码
+    * @brief Envío de trama de instrucciones por UDP
+    * @param trama de instrucciones
+    * @return Código de error
     */
     public int SendUDPFrame(String frame)
     
-关于UDP通信的SDK代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código SDK sobre la comunicación UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     public static void TestRobotUDP (Robot robot) {
         robot.udpCmdClient.SetUDPCmdRpyCallback((srcType, count, cmdID, dataLen, content) -> {
-            System.out.println("\n[收到机器人 UDP 回复]");
+            System.out.println("\n[Respuesta UDP recibida del robot]");
             System.out.println("srcType: " + srcType);
             System.out.println("count: " + count);
             System.out.println("cmdID: " + cmdID);
             System.out.println("dataLen: " + dataLen);
-            System.out.println("内容 (content): " + content);
+            System.out.println("contenido (content): " + content);
             return 0;
         });
-        // 发送帧
+        // Enviar trama
         String frameToSend = "/f/bIII52III236III7IIIMode(1)III/b/f";
         robot.SendUDPFrame(frameToSend);
         robot.Sleep(2000);
@@ -552,22 +552,22 @@ UDP发送指令帧
         robot.Sleep(2000);
     }
         
-设置用户自定义机器人末端灯色
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el color de la luz del extremo del robot personalizado por el usuario
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置用户自定义机器人末端灯色
-    * @param r 末端红灯控制；0-灭；1-亮
-    * @param g 末端绿灯控制；0-灭；1-亮
-    * @param b 末端蓝灯控制；0-灭；1-亮
-    * @return 错误码
+    * @brief Establecer el color de la luz del extremo del robot personalizado por el usuario
+    * @param r Control de la luz roja del extremo; 0-apagada; 1-encendida
+    * @param g Control de la luz verde del extremo; 0-apagada; 1-encendida
+    * @param b Control de la luz azul del extremo; 0-apagada; 1-encendida
+    * @return Código de error
     */
     public int SetUserLEDColor(bool r, bool g, bool b)
             
-设置用户自定义机器人末端灯色的SDK代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código SDK de establecimiento del color de la luz del extremo del robot personalizado por el usuario
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -584,25 +584,25 @@ UDP发送指令帧
         robot.SetUserLEDColor(false, false, true);
     }
                 
-通过TCP8080发送自定义指令帧
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Enviar trama de instrucciones personalizada a través de TCP 8080
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 通过 TCP 8080 发送自定义指令帧（mTLS 模式下自动经加密通道）
-    * @param frame 完整指令帧，如 "/f/bIII52III236III7IIIMode(0)III/b/f"
-    * @return 错误码
+    * @brief Enviar trama de instrucciones personalizada a través de TCP 8080 (en modo mTLS se realiza automáticamente a través del canal cifrado)
+    * @param frame Trama de instrucciones completa, como "/f/bIII52III236III7IIIMode(0)III/b/f"
+    * @return Código de error
     */
     public int SendTCPFrame(String frame)
                     
-通过TCP8080发送自定义指令帧代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de envío de trama de instrucciones personalizada a través de TCP 8080
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 仅 TCP 8080 通道验证
+    * @brief Verificación solo del canal TCP 8080
     */
     public static void TestSendModeTcp(Robot robot)
     {
@@ -611,22 +611,22 @@ UDP发送指令帧
         int[] state = {0};
         int[] line = {0};
 
-        System.out.println("========== Mode 指令 TCP 8080 通道验证 ==========");
-        System.out.println(robot.IsEncryptEnabled() ? "[状态] mTLS 已启用" : "[状态] 明文模式（对照）");
+        System.out.println("========== Verificación del canal TCP 8080 de la instrucción Mode ==========");
+        System.out.println(robot.IsEncryptEnabled() ? "[Estado] mTLS habilitado" : "[Estado] modo en texto plano (referencia)");
 
         robot.SetTcpFrameListener(frame ->
-                System.out.println("[TCP 应答] " + frame));
+                System.out.println("[Respuesta TCP] " + frame));
 
         String mode0 = "/f/bIII52III236III7IIIMode(0)III/b/f";
         String mode1 = "/f/bIII52III236III7IIIMode(1)III/b/f";
 
-        System.out.println("[发送] " + mode0);
+        System.out.println("[Enviar] " + mode0);
         robot.SendTCPFrame(mode0);
         robot.Sleep(1000);
-        System.out.println("[发送] " + mode1);
+        System.out.println("[Enviar] " + mode1);
         robot.SendTCPFrame(mode1);
         robot.Sleep(1000);
-        System.out.println("[发送] " + mode0);
+        System.out.println("[Enviar] " + mode0);
         robot.SendTCPFrame(mode0);
 
         robot.Mode(0);
@@ -650,34 +650,34 @@ UDP发送指令帧
         robot.PauseMotion();
         robot.Sleep(2000);
 
-        System.out.println("========== TCP 验证结束（应答见上方打印） ==========");
+        System.out.println("========== Fin de la verificación TCP (respuestas en la impresión anterior) ==========");
     }
 
-数据备份包上传升级
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Actualización por carga del paquete de copia de seguridad de datos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 数据备份包上传升级
-    * @param [in] filePath 上传数据备份包文件路径；D://zUP/fr_user_data.tar.gz
-    * @return 错误码
+    * @brief Actualización por carga del paquete de copia de seguridad de datos
+    * @param [in] filePath Ruta del archivo del paquete de copia de seguridad de datos a subir; D://zUP/fr_user_data.tar.gz
+    * @return Código de error
     */
     public int DataPackageUpgrade(String filePath)
 
-获取数据备份包升级进度百分比
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el porcentaje de progreso de la actualización del paquete de copia de seguridad de datos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 获取数据备份包升级进度百分比
-    * @return List[0]:错误码; List[1]:升级进度百分比[0-100], -1:升级失败
+    * @brief Obtener el porcentaje de progreso de la actualización del paquete de copia de seguridad de datos
+    * @return List[0]:código de error; List[1]:porcentaje de progreso de la actualización [0-100], -1:fallo de la actualización
     */
     public List<Integer> GetDataPackageUpgradeProgress()
 
-数据备份包上传升级并查询升级进度代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de actualización por carga del paquete de copia de seguridad de datos y consulta del progreso
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 

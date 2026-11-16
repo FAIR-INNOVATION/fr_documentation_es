@@ -1,206 +1,207 @@
-工具应用
-===============
+Aplicación de herramientas
+===========================
 
 .. toctree:: 
    :maxdepth: 6
 
-机器人打包
------------------
+Embalaje del robot
+------------------
 
-在“辅助应用”->“工具应用”的菜单栏下，点击“机器人打包”按钮，进入机器人一键打包界面。
+En la barra de menú "Aplicaciones auxiliares"->"Aplicación de herramientas", hacer clic en el botón "Embalaje del robot" para entrar en la interfaz de embalaje con un solo clic del robot.
 
 .. important:: 
-   在操作打包功能之前，请先确认机器人周围环境和状态，防止发生碰撞。
+   Antes de operar la función de embalaje, confirme primero el entorno y el estado alrededor del robot para evitar colisiones.
    
-   若出厂，则出厂前先进去系统设置-通用设置，进行恢复出厂设置。
+   Si es de fábrica, antes de salir de fábrica entre primero en Configuración del sistema-Configuración general y realice la restauración de la configuración de fábrica.
 
-**Step1**：在移至打包点前先将机器人移至零点。
+**Step1**: Antes de mover al punto de embalaje, mover primero el robot al punto cero.
 
-**Step2**：点击“移至零点”按钮，确认机器人机械零点正确，各关节如图中橙色圆圈位置缺口对齐。
+**Step2**: Hacer clic en el botón "Mover al punto cero", confirmar que el punto cero mecánico del robot es correcto y que las muescas de cada articulación están alineadas como se muestra en los círculos naranjas de la figura.
 
-**Step3**：点击“移至打包点”按钮，机器人按照包装工艺各轴角度运行至打包点。
+**Step3**: Hacer clic en el botón "Mover al punto de embalaje", el robot se desplaza al punto de embalaje según los ángulos de cada eje del proceso de embalaje.
 
 .. image:: application/001.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.1‑1 机器人一键打包
+.. centered:: Figura 14.1‑1 Embalaje con un solo clic del robot
 
 
-数据备份
------------
+Copia de seguridad de datos
+---------------------------
 
-1. 在“辅助应用”->“工具应用”的菜单栏下，点击 “数据备份”进入数据备份界面，如下图所示
+1. En la barra de menú "Aplicaciones auxiliares"->"Aplicación de herramientas", hacer clic en "Copia de seguridad de datos" para entrar en la interfaz de copia de seguridad de datos, como se muestra en la figura siguiente
 
 .. image:: application/002.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.2‑1 数据备份界面
+.. centered:: Figura 14.2‑1 Interfaz de copia de seguridad de datos
 
-2. 备份包数据中包含工具坐标系数据，系统配置文件，示教点数据，用户程序，模板程序和用户配置文件，当用户需要将本机器人相关数据移到另一台机器人上使用时，可通过此功能快速实现。
+2. El paquete de copia de seguridad contiene los datos del sistema de coordenadas de herramienta, el archivo de configuración del sistema, los datos de puntos de enseñanza, los programas de usuario, los programas de plantilla y los archivos de configuración de usuario; cuando el usuario necesite trasladar los datos relacionados de este robot a otro robot para su uso, puede realizarlo rápidamente mediante esta función.
 
-备份包完整性校验功能
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Función de verificación de integridad del paquete de copia de seguridad
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-为避免在导入备份包时可能存在由安装方式等配置不一致所导致的安全隐患，新增备份包导入时对备份包MD5校验及关键参数的校验功能。
+Para evitar los riesgos de seguridad que puedan existir al importar el paquete de copia de seguridad debido a inconsistencias de configuración como el modo de instalación, se añade la función de verificación MD5 del paquete de copia de seguridad y la verificación de parámetros clave al importar el paquete de copia de seguridad.
 
-备份包MD5校验功能
-++++++++++++++++++++++++++++++++++++++++++++++++++++
-为确保导入备份包完整性，上传后将对备份包进行MD5校验，若备份包损坏或被异常修改，则MD5校验失败，提示如下：
+Función de verificación MD5 del paquete de copia de seguridad
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Para garantizar la integridad del paquete de copia de seguridad importado, tras la carga se realizará la verificación MD5 del paquete de copia de seguridad; si el paquete de copia de seguridad está dañado o ha sido modificado de forma anómala, la verificación MD5 fallará y se mostrará el siguiente aviso:
 
 .. image:: application/048.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 14.2‑2 MD5校验失败
+.. centered:: Figura 14.2‑2 Fallo de la verificación MD5
 
-备份包关键参数校验功能
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Función de verificación de parámetros clave del paquete de copia de seguridad
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-备份包导入时加入校验功能，备份包须与被导入机器人进行关键参数对比，具体参数如下表所示。这些参数若设置不准确均会存在一定的安全隐患，仅当完全一致后，备份包能够正常导入。
+Al importar el paquete de copia de seguridad se añade la función de verificación; el paquete de copia de seguridad debe compararse con el robot al que se importa en cuanto a los parámetros clave, cuyos detalles se muestran en la tabla siguiente. Si estos parámetros no se configuran con precisión, existirán ciertos riesgos de seguridad; solo cuando sean completamente consistentes, el paquete de copia de seguridad podrá importarse correctamente.
 
-对比的5个关键参数表：
+Tabla de los 5 parámetros clave comparados:
 
 .. list-table::
    :widths: 15 40 100
    :header-rows: 0
    :class: sheet-center
 
-   * - **序号**
-     - **关键参数**
-     - **具体释义**
+   * - **Número**
+     - **Parámetro clave**
+     - **Definición concreta**
 
    * - 1
      - ROBOT_TYPE
-     - 机器人型号
+     - Modelo de robot
 
    * - 2
      - INSTALL_POS
-     - 安装方式
+     - Modo de instalación
 
    * - 3
      - INSTALL_YANGLE
-     - 基座倾斜角
+     - Ángulo de inclinación de la base
 
    * - 4
      - INSTALL_ZANGLE
-     - 基座旋转角
+     - Ángulo de rotación de la base
 
    * - 5
      - NEW_TEACH_ENABLE
-     - 动力学配置
+     - Configuración dinámica
 
-若不一致将提示错误，此时，需要检测被导入机器人中的关键参数是否与备份包一致。
+Si no son consistentes, se mostrará un error; en este caso, es necesario comprobar si los parámetros clave del robot al que se importa son consistentes con el paquete de copia de seguridad.
 
 .. image:: application/003.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 14.2‑3 当关键参数不一致时，界面将提示错误
+.. centered:: Figura 14.2‑3 Cuando los parámetros clave no son consistentes, la interfaz muestra un error
 
-失败/断电异常回滚功能
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Función de reversión ante fallo/corte de energía anómalo
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-在备份包导入中途出现异常，或在恢复数据中途异常断电情况下，导致数据恢复未能正常完成，为保障设备正常运行，在重新上电后，系统将自动还原至操作前状态；
+En caso de anomalía durante la importación del paquete de copia de seguridad, o de corte de energía anómalo durante la restauración de datos, lo que provoque que la restauración de datos no se complete correctamente, para garantizar el funcionamiento normal del equipo, tras el reinicio de la alimentación el sistema restaurará automáticamente el estado anterior a la operación;
 
-在重新上电后界面将提示，“前次数据恢复未完成，已自动还原，请重启控制箱再次操作”。
+tras el reinicio de la alimentación, la interfaz mostrará: "La restauración de datos anterior no se completó y se ha restaurado automáticamente; reinicie la caja de control y vuelva a operar".
 
 .. image:: application/049.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.2‑4 断电重启还原告警提示
+.. centered:: Figura 14.2‑4 Aviso de alarma de restauración tras reinicio por corte de energía
 
-备份包版本兼容性
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Compatibilidad de versiones del paquete de copia de seguridad
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-当前备份包导入恢复数据已支持软件版本 ≥ v3.8.3 生成的备份包， QX 和 LA 系列控制器备份包通用。
+La importación actual del paquete de copia de seguridad para restaurar datos ya admite paquetes de copia de seguridad generados con versión de software ≥ v3.8.3; los paquetes de copia de seguridad de los controladores de las series QX y LA son compatibles.
 
-10s数据记录
-------------
+Registro de datos de 10s
+------------------------
 
-在“辅助应用”->“工具应用”的菜单栏下，点击“10s数据记录”进入10s数据记录功能界面。
+En la barra de menú "Aplicaciones auxiliares"->"Aplicación de herramientas", hacer clic en "Registro de datos de 10s" para entrar en la interfaz de la función de registro de datos de 10s.
 
-首先选择记录类型，分为默认参数记录和自选参数记录，默认参数记录为系统自动设置记录的数据，自选参数记录用户可自行选择需要记录的参数数据，参数个数最多为15个。选定参数列表后，选择记录参数，点击“右移”按钮即可将参数配置到参数列表中。点击“开始记录”机器人开始记录数据，点击“停止记录”机器人停止记录数，点击“下载数据”可下载最后10s的数据。
+En primer lugar, seleccionar el tipo de registro, que se divide en registro de parámetros por defecto y registro de parámetros autoseleccionados; el registro de parámetros por defecto son los datos configurados automáticamente por el sistema para el registro, y en el registro de parámetros autoseleccionados el usuario puede seleccionar por sí mismo los datos de parámetros que desea registrar, con un número máximo de 15 parámetros. Tras seleccionar la lista de parámetros, seleccionar los parámetros a registrar y hacer clic en el botón "Mover a la derecha" para configurar los parámetros en la lista de parámetros. Hacer clic en "Iniciar registro" para que el robot comience a registrar datos, hacer clic en "Detener registro" para que el robot detenga el registro de datos, y hacer clic en "Descargar datos" para descargar los datos de los últimos 10s.
 
 .. image:: application/004.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.3‑1 10s数据记录
+.. centered:: Figura 14.3‑1 Registro de datos de 10s
 
-末端LED
---------------
+LED del extremo
+---------------
 
-在“辅助应用”->“工具应用”的菜单栏下，点击“末端LED”进入末端LED颜色配置功能界面。
+En la barra de menú "Aplicaciones auxiliares"->"Aplicación de herramientas", hacer clic en "LED del extremo" para entrar en la interfaz de la función de configuración del color del LED del extremo.
 
-可配置LED颜色为绿色，蓝色和白青色，用户可以根据需求对自动模式，手动模式和拖动模式的LED颜色进行配置，不同模式不可配置同一种颜色。
+El color del LED configurable puede ser verde, azul y cian claro; el usuario puede configurar el color del LED de los modos automático, manual y de arrastre según sus necesidades, y no se puede configurar el mismo color en modos diferentes.
 
 .. image:: application/005.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.4‑1 末端LED配置
+.. centered:: Figura 14.4‑1 Configuración del LED del extremo
 
-拖动锁定
---------------
+Bloqueo de arrastre
+-------------------
 
-在“辅助应用”->“工具应用”的菜单栏下，点击“拖动锁定”进入拖动示教锁定配置功能界面。
+En la barra de menú "Aplicaciones auxiliares"->"Aplicación de herramientas", hacer clic en "Bloqueo de arrastre" para entrar en la interfaz de la función de configuración del bloqueo de la enseñanza por arrastre.
 
-针对拖动示教增加了锁定自由度功能，当拖动示教功能开关设置为使能状态时，各自由度参数在用户拖动机器人时生效。例如，当参数设置为X:10，Y:0，Z:10，RX:10，RY:10，RZ:10时，在拖动模式下拖拽机器人，可以限制机器人只移动Y方向，假如需要在拖动时保持机器人姿态不变，只移动X，Y，Z方向，可以将X，Y，Z设置为0，RX，RY，RZ设置为10。
+Para la enseñanza por arrastre se ha añadido la función de bloqueo de grados de libertad; cuando el interruptor de la función de enseñanza por arrastre se establece en estado habilitado, los parámetros de cada grado de libertad surten efecto cuando el usuario arrastra el robot. Por ejemplo, cuando los parámetros se configuran como X:10, Y:0, Z:10, RX:10, RY:10, RZ:10, al arrastrar el robot en modo de arrastre se puede limitar el robot a moverse solo en la dirección Y; si se necesita mantener la actitud del robot sin cambios durante el arrastre y mover solo en las direcciones X, Y, Z, se pueden configurar X, Y, Z como 0 y RX, RY, RZ como 10.
 
 .. image:: application/006.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.5‑1 拖动示教锁定配置
+.. centered:: Figura 14.5‑1 Configuración del bloqueo de la enseñanza por arrastre
 
-FR3-WML/FR3-WMS/FR20/FR30拖动锁定功能
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Función de bloqueo de arrastre FR3-WML/FR3-WMS/FR20/FR30
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
+Descripción general
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-本功能针对新机型的动力学特性，调整电流环拖动锁定功能参数，使拖动过程中末端执行器始终保持在某个自由度上稳定不动，不随施加外力运动。将电流环拖动锁定功能扩展至 FR3WMS/FR3-WML/FR20/FR30 机型。
+Esta función, orientada a las características dinámicas de los nuevos modelos, ajusta los parámetros de la función de bloqueo de arrastre del bucle de corriente, de modo que durante el arrastre el efector final se mantenga siempre estable e inmóvil en un determinado grado de libertad, sin moverse con la fuerza externa aplicada. La función de bloqueo de arrastre del bucle de corriente se extiende a los modelos FR3WMS/FR3-WML/FR20/FR30.
 
-在拖动模式限制末端的位姿，当外力拖动方向不在限制的自由度上时，机器人末端能正常拖动；反之，限制其运动。
+Se limita la pose del extremo en el modo de arrastre; cuando la dirección de arrastre de la fuerza externa no está en el grado de libertad limitado, el extremo del robot puede arrastrarse con normalidad; de lo contrario, se limita su movimiento.
 
-拖动锁定
+Bloqueo de arrastre
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-在拖动锁定功能设置前，需检查机器人安装方式、负载和坐标系等设置，确保在正常拖动模式下，机械臂在无外部受力的情况下不会出现明显上抬、下坠等位移现象。
+Antes de configurar la función de bloqueo de arrastre, es necesario comprobar la configuración del modo de instalación, la carga y el sistema de coordenadas del robot, para garantizar que en el modo de arrastre normal el brazo mecánico no presente desplazamientos evidentes como elevación o caída sin fuerza externa.
 
-在“辅助应用”->“工具应用”的菜单栏下，点击“拖动锁定”进入拖动示教锁定配置功能界面。在“电流环拖动锁定”菜单栏中，当拖动示教功能开关设置为使能状态并且点击应用时，各自由度参数在用户拖动机器人时生效，锁定对应自由度。
+En la barra de menú "Aplicaciones auxiliares"->"Aplicación de herramientas", hacer clic en "Bloqueo de arrastre" para entrar en la interfaz de la función de configuración del bloqueo de la enseñanza por arrastre. En la barra de menú "Bloqueo de arrastre del bucle de corriente", cuando el interruptor de la función de enseñanza por arrastre se establece en estado habilitado y se hace clic en aplicar, los parámetros de cada grado de libertad surten efecto cuando el usuario arrastra el robot, bloqueando el grado de libertad correspondiente.
 
-针对“电流环拖动锁定”菜单栏中配置项进行说明：
+A continuación se describen los elementos de configuración de la barra de menú "Bloqueo de arrastre del bucle de corriente":
 
-(1)各自由度参数设置：当参数设置为X:10，Y:0，Z:10，RX:10，RY:10，RZ:10时，在拖动模式下拖动机器人，可以限制机器人只移动Y方向。假如需要在拖动时保持机器人姿态不变，只移动X，Y，Z方向，可以将X，Y，Z设置为0，RX，RY，RZ设置为10，随着参数减小，对该自由度的限制力越小，其中最大值为10，限制力最大；最小为0，无限制力。
+(1) Configuración de los parámetros de cada grado de libertad: cuando los parámetros se configuran como X:10, Y:0, Z:10, RX:10, RY:10, RZ:10, al arrastrar el robot en modo de arrastre se puede limitar el robot a moverse solo en la dirección Y. Si se necesita mantener la actitud del robot sin cambios durante el arrastre y mover solo en las direcciones X, Y, Z, se pueden configurar X, Y, Z como 0 y RX, RY, RZ como 10; a medida que disminuye el parámetro, la fuerza de limitación sobre ese grado de libertad es menor, donde el valor máximo es 10, con la fuerza de limitación máxima; el mínimo es 0, sin fuerza de limitación.
 
-(2)拖动示教开关：在拖动模式下开启拖动锁定功能。
+(2) Interruptor de enseñanza por arrastre: activar la función de bloqueo de arrastre en el modo de arrastre.
 
 .. image:: application/050.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.5‑1-2 拖动示教锁定配置
+.. centered:: Figura 14.5‑1-2 Configuración del bloqueo de la enseñanza por arrastre
 
-参数设置需满足以下限制：
+La configuración de parámetros debe cumplir las siguientes limitaciones:
 
-(1)参数设置限制在0~10范围内，部分机型（如FR20和FR30），参数设置限制在0~5范围内。所以参数设置输入 0~10 的数值以外的值会变为最近的0或10，例如，参数设置15，会变为10。   
+(1) La configuración de parámetros está limitada al rango de 0~10; en algunos modelos (como FR20 y FR30), la configuración de parámetros está limitada al rango de 0~5. Por lo tanto, si se introduce un valor fuera del rango 0~10 en la configuración de parámetros, se convertirá al 0 o 10 más cercano; por ejemplo, si se configura 15, se convertirá en 10.   
 
-力传感器辅助拖动下正常触发碰撞防护
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Activación normal de la protección contra colisiones durante el arrastre asistido por sensor de fuerza
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
+Descripción general
 ++++++++++++++++++++++
 
-当前FR机器人在力传感器辅助拖动的情况下无法触发碰撞防护，增加在力传感器辅助拖动的情况下可以触发碰撞防护，增加机器人安全性，降低操作风险。
+Actualmente, los robots FR no pueden activar la protección contra colisiones cuando se utiliza el arrastre asistido por sensor de fuerza; se añade la posibilidad de activar la protección contra colisiones con el arrastre asistido por sensor de fuerza, aumentando la seguridad del robot y reduciendo el riesgo operativo.
 
-碰撞防护
-++++++++++++++++++++++
+Protección contra colisiones
+++++++++++++++++++++++++++++++++++++++++++++
 
-**Step1**：点击“辅助应用”->“工具应用”->“拖动锁定”，进入力传感器辅助锁定配置界面，设置“状态开关”、“碰撞检测”为开启，如下图所示。
+**Step1**: Hacer clic en "Aplicaciones auxiliares"->"Aplicación de herramientas"->"Bloqueo de arrastre" para entrar en la interfaz de configuración del bloqueo asistido por sensor de fuerza, y establecer "Interruptor de estado" y "Detección de colisión" como activados, como se muestra en la figura siguiente.
 
 .. image:: application/007.png
    :width: 4in
@@ -210,480 +211,479 @@ FR3-WML/FR3-WMS/FR20/FR30拖动锁定功能
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.5‑2 配置力传感器辅助锁定
+.. centered:: Figura 14.5‑2 Configuración del bloqueo asistido por sensor de fuerza
 
-**Step2**：拖动机器人，在机器人运动过程中向关节处施加外力，触发碰撞防护，web界面报错“力传感器辅助拖动碰撞故障”，并可通过web界面快速恢复/关闭力传感器辅助拖动，如图所示。点击“恢复”，清除报错并恢复开启力传感器辅助拖动；点击“关闭”，清除报错并保持关闭力传感器辅助拖动。
+**Step2**: Arrastrar el robot; durante el movimiento del robot, aplicar una fuerza externa en la articulación para activar la protección contra colisiones; la interfaz web mostrará el error "Fallo de colisión del arrastre asistido por sensor de fuerza", y se podrá restaurar/cerrar rápidamente el arrastre asistido por sensor de fuerza mediante la interfaz web, como se muestra en la figura. Hacer clic en "Restaurar" para borrar el error y restaurar la activación del arrastre asistido por sensor de fuerza; hacer clic en "Cerrar" para borrar el error y mantener cerrado el arrastre asistido por sensor de fuerza.
 
 .. image:: application/009.png
    :width: 3in
    :align: center
 
-.. centered:: 图表 14.5‑3 力传感器辅助拖动下触发碰撞
+.. centered:: Figura 14.5‑3 Activación de colisión durante el arrastre asistido por sensor de fuerza
 
 .. note:: 
-   在力传感器辅助拖动下，机器人本身处于停止状态，在拖动时关节转矩指令与反馈存在差值，建议设置碰撞等级为7级及以上，碰撞等级设置过小会出现拖动时误报碰撞错误。
+   Con el arrastre asistido por sensor de fuerza, el robot en sí se encuentra en estado de parada; al arrastrar existe una diferencia entre la instrucción de par articular y la realimentación; se recomienda configurar el nivel de colisión en 7 o superior; si el nivel de colisión se configura demasiado bajo, se producirán falsos avisos de error de colisión durante el arrastre.
 
-关节扭矩传感器在整机上的参数标定
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Calibración de parámetros del sensor de par articular en la máquina completa
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-概述
+Descripción general
 ************************
 
-关节扭矩传感器灵敏度是指传感器对扭矩变化的响应能力，描述了传感器输出电压与其所测量的真实关节扭矩之间的比例关系；线性度衡量回归模型对观测数据的拟合程度；迟滞误差即在相同的测试条件下，关节扭矩传感器原始数据进行正行程（从小到大）和反行程（从大到小）测量时，对于测量量之间的最大差值；重复性是当前测试结果与上一次测试结果的比值，用以判断关节扭矩传感器的重复精度。
-参数标定方法是使机器人运行既定轨迹，通过获取不同姿态下关节重力矩及关节扭矩传感器原始数据计算得到关节扭矩传感器的灵敏度、线性度、迟滞误差及重复精度。
+La sensibilidad del sensor de par articular se refiere a la capacidad de respuesta del sensor a los cambios de par y describe la relación proporcional entre la tensión de salida del sensor y el par articular real medido; la linealidad mide el grado de ajuste del modelo de regresión a los datos observados; el error de histéresis es la diferencia máxima entre las mediciones cuando los datos originales del sensor de par articular se miden en carrera directa (de menor a mayor) y en carrera inversa (de mayor a menor) bajo las mismas condiciones de prueba; la repetibilidad es la relación entre el resultado de la prueba actual y el resultado de la prueba anterior, utilizada para determinar la precisión de repetición del sensor de par articular.
+El método de calibración de parámetros consiste en hacer que el robot ejecute una trayectoria predefinida y, mediante la obtención del par gravitatorio articular en diferentes actitudes y los datos originales del sensor de par articular, calcular la sensibilidad, la linealidad, el error de histéresis y la precisión de repetición del sensor de par articular.
 
-参数标定
+Calibración de parámetros
 ********************************
 
-**Step1**：设置工具坐标系为“Tool0”，点击“辅助应用”->“工具应用”->“拖动锁定”，在关节扭矩传感器整机拖动模块点击功能启用。
+**Step1**: Configurar el sistema de coordenadas de herramienta como "Tool0", hacer clic en "Aplicaciones auxiliares"->"Aplicación de herramientas"->"Bloqueo de arrastre", y en el módulo de arrastre de la máquina completa del sensor de par articular hacer clic en habilitar función.
 
 .. image:: application/037.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.5‑4 功能启用
+.. centered:: Figura 14.5‑4 Habilitación de la función
 
-**Step2**：点击“功能启用”后进行灵敏度标定，点击“生成程序”下发控制器内部Lua脚本，将机器人切换为自动模式并设置运行速度为“10”，点击“运行”，等待机器人运动。
+**Step2**: Tras hacer clic en "Habilitar función", realizar la calibración de sensibilidad; hacer clic en "Generar programa" para enviar el script Lua interno del controlador, cambiar el robot al modo automático y establecer la velocidad de funcionamiento en "10", hacer clic en "Ejecutar" y esperar el movimiento del robot.
 
 .. image:: application/038.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.5‑5 灵敏度标定
+.. centered:: Figura 14.5‑5 Calibración de sensibilidad
 
-.. note:: 若关节扭矩传感器灵敏度已标定完成，可直接进行拖动功能参数设置。
+.. note:: Si la sensibilidad del sensor de par articular ya se ha calibrado, se puede pasar directamente a la configuración de los parámetros de la función de arrastre.
 
-**Step3**：机器人运行既定轨迹完成后，灵敏度、线性度、迟滞误差及重复性标定结果自动显示至web界面，点击“设置”应用。
+**Step3**: Una vez que el robot haya completado la ejecución de la trayectoria predefinida, los resultados de calibración de sensibilidad, linealidad, error de histéresis y repetibilidad se mostrarán automáticamente en la interfaz web; hacer clic en "Configurar" para aplicarlos.
 
 .. image:: application/039.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.5‑6 参数标定结果
+.. centered:: Figura 14.5‑6 Resultados de la calibración de parámetros
 
-基于动量观测器实现外力估计及力矩补偿
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Estimación de fuerza externa y compensación de par basadas en el observador de momento
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-概述
+Descripción general
 *****************************************
 
-开启力矩补偿功能后，机器人进行电流环拖动时减少拖动力矩，提高拖动体验。
+Tras activar la función de compensación de par, el robot reduce el par de arrastre al realizar el arrastre en el bucle de corriente, mejorando la experiencia de arrastre.
 
-操作流程
+Flujo de operación
 *****************************************
 
-**Step1**：设置动力学配置为“动力学2.0”，点击“辅助应用”->“工具应用”->“拖动锁定”，在双编码器力矩补偿模块点击功能开关启用。
+**Step1**: Configurar la configuración dinámica como "Dinámica 2.0", hacer clic en "Aplicaciones auxiliares"->"Aplicación de herramientas"->"Bloqueo de arrastre", y en el módulo de compensación de par de doble codificador hacer clic en el interruptor de función para habilitarlo.
 
 .. image:: application/040.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.5‑7 启用功能
+.. centered:: Figura 14.5‑7 Habilitación de la función
 
-**Step2**：将“功能开关”设置为“开启”，并设置各轴拖动增益为0.5，点击“设置”应用，如图所示。
+**Step2**: Establecer el "Interruptor de función" en "Activado" y configurar la ganancia de arrastre de cada eje en 0.5, hacer clic en "Configurar" para aplicarlo, como se muestra en la figura.
 
 .. image:: application/041.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.5‑8 增益设置
+.. centered:: Figura 14.5‑8 Configuración de ganancia
 
-.. note:: 拖动增益设置范围：0-1，增益越大，补偿力矩越大，电流环下拖动越轻松。
+.. note:: Rango de configuración de la ganancia de arrastre: 0-1; cuanto mayor es la ganancia, mayor es el par de compensación y más ligero es el arrastre en el bucle de corriente.
 
-基于关节扭矩传感器的辅助拖动优化功能
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Función de optimización del arrastre asistido basada en el sensor de par articular
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-概述
+Descripción general
 *********************************
 
-本用户手册用于描述基于关节扭矩传感器的辅助拖动优化功能的使用方法，共涉及3种拖动模式，较传统拖动示教方法，可提高拖动的柔顺性及降低各关节所需的拖动力。
+Este manual de usuario se utiliza para describir el método de uso de la función de optimización del arrastre asistido basada en el sensor de par articular, que abarca 3 modos de arrastre; en comparación con el método tradicional de enseñanza por arrastre, puede mejorar la suavidad del arrastre y reducir la fuerza de arrastre necesaria en cada articulación.
 
-基于关节扭矩传感器的辅助拖动优化功能
+Función de optimización del arrastre asistido basada en el sensor de par articular
 **************************************************************************************
 
-零点标定及灵敏度标定
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Calibración de cero y calibración de sensibilidad
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-**Step1**：若已完成零点标定和灵敏度标定（标定前的指示灯为绿色），则无需再次进行，仅当拖动存在飘动感时可重新进行零点标定，标定流程可见下文。
+**Step1**: Si ya se han completado la calibración de cero y la calibración de sensibilidad (el indicador antes de la calibración es verde), no es necesario realizarlas de nuevo; solo cuando el arrastre presente una sensación de flotación se puede volver a realizar la calibración de cero, cuyo proceso se puede consultar más abajo.
 
 .. image:: application/042.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.5‑9 关节扭矩传感器零点及灵敏度标定完成时指示灯状态
+.. centered:: Figura 14.5‑9 Estado del indicador al completar la calibración de cero y sensibilidad del sensor de par articular
 
-**Step2**：零点标定。点击“辅助应用”→“工具应用”→“拖动锁定”，进入“关节扭矩传感器整机拖动”模块，点击零点标定“标定”按钮进行关节扭矩传感器零点数据标定，如下图所示，当标定完成时将出现“√”，并更新零点标定结果。
+**Step2**: Calibración de cero. Hacer clic en "Aplicaciones auxiliares"→"Aplicación de herramientas"→"Bloqueo de arrastre" para entrar en el módulo "Arrastre de la máquina completa del sensor de par articular", hacer clic en el botón "Calibrar" de la calibración de cero para realizar la calibración de los datos de cero del sensor de par articular, como se muestra en la figura siguiente; cuando la calibración se complete aparecerá "√" y se actualizará el resultado de la calibración de cero.
 
 .. image:: application/043.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.5‑10 关节扭矩传感器零点标定
+.. centered:: Figura 14.5‑10 Calibración de cero del sensor de par articular
 
-**Step3**：灵敏度标定（注意，标定时建议仅机器人本体，不应携带任何负载）。切换机器人运动模式为“自动模式”，并设置运行速度为“10%”，点击灵敏度标定“标定”按钮等待机器人运动完成。机器人运行既定轨迹完成后，灵敏度系数、线性度，迟滞误差及重复性标定结果自动显示至web界面。
+**Step3**: Calibración de sensibilidad (tenga en cuenta que durante la calibración se recomienda utilizar solo el cuerpo del robot, sin ninguna carga). Cambiar el modo de movimiento del robot a "Modo automático" y establecer la velocidad de funcionamiento en "10%", hacer clic en el botón "Calibrar" de la calibración de sensibilidad y esperar a que el robot complete el movimiento. Una vez que el robot haya completado la ejecución de la trayectoria predefinida, los resultados de calibración del coeficiente de sensibilidad, la linealidad, el error de histéresis y la repetibilidad se mostrarán automáticamente en la interfaz web.
 
 .. image:: application/044.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.5‑11 关节扭矩传感器灵敏度标定
+.. centered:: Figura 14.5‑11 Calibración de sensibilidad del sensor de par articular
 
-**Step4**：设置辅助拖动功能。共3种拖动模式，在完成“零点标定”及“灵敏度标定”的前提下可进行设置，当未设置时，默认为“模式三”，即在完成标定后，可直接在拖动模式下进行拖动示教。
+**Step4**: Configurar la función de arrastre asistido. Hay 3 modos de arrastre en total; se pueden configurar una vez completadas la "Calibración de cero" y la "Calibración de sensibilidad"; si no se configura, el valor predeterminado es el "Modo tres", es decir, tras completar la calibración se puede realizar directamente la enseñanza por arrastre en el modo de arrastre.
 
-辅助拖动功能-模式一
+Función de arrastre asistido- Modo uno
 ******************************************************************
-**Step1**：选择拖动模式为“模式一”。机器人运动模式为“手动模式”时，设置滑动窗口大小，增益系数和关节速度，并点击“设置”应用。此时，按住末端“拖动按钮”或在拖动模式下，可实现拖动示教。
+
+**Step1**: Seleccionar el modo de arrastre como "Modo uno". Cuando el modo de movimiento del robot es "Modo manual", configurar el tamaño de la ventana deslizante, el coeficiente de ganancia y la velocidad articular, y hacer clic en "Configurar" para aplicarlo. En este momento, manteniendo pulsado el "Botón de arrastre" del extremo o en el modo de arrastre, se puede realizar la enseñanza por arrastre.
 
 .. image:: application/045.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.5‑12 模式一：参数设置
+.. centered:: Figura 14.5‑12 Modo uno: configuración de parámetros
 
 .. note:: 
-   (1) 滑动窗口大建议设置值为30，最大值为100；
-   (2) 增益系数影响拖动时的手感，系数越大，拖动越灵敏，但易出现不稳定现象，建议J1-J6设置值为0.5；
-   (3) 关节速度建议设置为6°/s，可缓解对点过冲现象。
+   (1) El valor recomendado para el tamaño de la ventana deslizante es 30, con un valor máximo de 100;
+   (2) El coeficiente de ganancia afecta la sensación durante el arrastre; cuanto mayor es el coeficiente, más sensible es el arrastre, pero es propenso a fenómenos de inestabilidad; se recomienda configurar J1-J6 en 0.5;
+   (3) Se recomienda configurar la velocidad articular en 6°/s, lo que puede mitigar el fenómeno de sobrepaso en el posicionamiento.
 
-辅助拖动功能-模式二
+Función de arrastre asistido- Modo dos
 ******************************************************************
 
-**Step1**：选择拖动模式为“模式二”。机器人运动模式为“手动模式”时，设置质量系数、阻尼系数、刚度系数及力控制阈值，点击“设置”应用。此时，在位置模式下，即可进行拖动示教。
+**Step1**: Seleccionar el modo de arrastre como "Modo dos". Cuando el modo de movimiento del robot es "Modo manual", configurar el coeficiente de masa, el coeficiente de amortiguación, el coeficiente de rigidez y el umbral de control de fuerza, y hacer clic en "Configurar" para aplicarlo. En este momento, en el modo de posición se puede realizar la enseñanza por arrastre.
 
 .. image:: application/046.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.5‑13 模式二：参数设置
+.. centered:: Figura 14.5‑13 Modo dos: configuración de parámetros
 
 .. note:: 
-   (1) 质量系数影响拖动时的关节惯性力，建议J1-J3设置值为1.0，J4-J5设置值为0.5，J6设置值为0.1；
-   (2) 阻尼系数影响拖动时的手感，阻尼越大，手感越重，建议J1-J3设置值为10.0，J4-J5设置值为5.0，J6设置值为1.0；
-   (3) 刚度系数均设置为0；
-   (4) 力控制阈值为拖动时的启动力矩，建议J1-J3设置值为0.3，J4-J5设置值为0.2，J6设置值为0.1。
+   (1) El coeficiente de masa afecta la fuerza de inercia articular durante el arrastre; se recomienda configurar J1-J3 en 1.0, J4-J5 en 0.5 y J6 en 0.1;
+   (2) El coeficiente de amortiguación afecta la sensación durante el arrastre; cuanto mayor es la amortiguación, más pesada es la sensación; se recomienda configurar J1-J3 en 10.0, J4-J5 en 5.0 y J6 en 1.0;
+   (3) Los coeficientes de rigidez se configuran todos en 0;
+   (4) El umbral de control de fuerza es el par de arranque durante el arrastre; se recomienda configurar J1-J3 en 0.3, J4-J5 en 0.2 y J6 en 0.1.
 
-辅助拖动功能-模式三
+Función de arrastre asistido- Modo tres
 ******************************************************************
 
-**Step1**：选择拖动模式为“模式三”。机器人运动模式为“手动模式”时，设置各关节增益系数，点击“设置”应用。此时，按住末端“拖动按钮”或在拖动模式下，可实现拖动示教。
+**Step1**: Seleccionar el modo de arrastre como "Modo tres". Cuando el modo de movimiento del robot es "Modo manual", configurar el coeficiente de ganancia de cada articulación y hacer clic en "Configurar" para aplicarlo. En este momento, manteniendo pulsado el "Botón de arrastre" del extremo o en el modo de arrastre, se puede realizar la enseñanza por arrastre.
 
 .. image:: application/047.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.5‑14 模式三：参数设置
+.. centered:: Figura 14.5‑14 Modo tres: configuración de parámetros
 
 .. note:: 
-   (1) 增益系数影响低速拖动时的关节拖动力，当系数为0.1至1.0时，随着系数的增加，低速拖动时阻力变大。当需精确对点作业时，建议J1-J6增益系数设置为1.0；当考虑整机拖动轻松及柔顺性时，建议J1-J6增益系数设置为0.3。
+   (1) El coeficiente de ganancia afecta la fuerza de arrastre articular durante el arrastre a baja velocidad; cuando el coeficiente está entre 0.1 y 1.0, a medida que aumenta el coeficiente, la resistencia durante el arrastre a baja velocidad se hace mayor. Cuando se necesite un posicionamiento preciso, se recomienda configurar el coeficiente de ganancia de J1-J6 en 1.0; cuando se considere la ligereza y suavidad del arrastre de la máquina completa, se recomienda configurar el coeficiente de ganancia de J1-J6 en 0.3.
 
-交点生成（激光取点运动）
------------------------------------------
+Generación de puntos de intersección (movimiento de captación por láser)
+-----------------------------------------------------------------------------------------------------
 
-在焊接过程中，激光取点运动可配置姿态，使机器人到达位置点时能达到预期的姿态。可以轻松应对角焊缝及坡口焊缝等特殊场景。
+Durante el proceso de soldadura, el movimiento de captación por láser puede configurar la actitud, de modo que el robot pueda alcanzar la actitud esperada al llegar al punto de posición. Puede afrontar fácilmente escenarios especiales como soldaduras en ángulo y soldaduras de ranura.
 
-激光取点运动功能操作流程
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Flujo de operación de la función de movimiento de captación por láser
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Step1**：使用激光传感器前，先将“焊枪”工具坐标系应用到当前工具坐标系。打开示教页面，依次点击“初始设置”、“基础”、“工具坐标”，坐标系名称选择“焊枪”并应用，系统状态栏中工具坐标系显示为Tool1。
+**Step1**: Antes de utilizar el sensor láser, aplicar primero el sistema de coordenadas de herramienta "Antorcha de soldadura" al sistema de coordenadas de herramienta actual. Abrir la página de enseñanza, hacer clic sucesivamente en "Configuración inicial", "Básico", "Coordenadas de herramienta", seleccionar el nombre del sistema de coordenadas "Antorcha de soldadura" y aplicarlo; en la barra de estado del sistema, el sistema de coordenadas de herramienta se mostrará como Tool1.
 
 .. figure:: application/010.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑1 应用焊枪坐标系
+.. centered:: Figura 14.6‑1 Aplicación del sistema de coordenadas de la antorcha de soldadura
 
-**Step2**：编写激光取点运动lua程序。依次点击“示教程序”->“程序编程”->“新建按钮”，新建用户程序“testPointRecord.lua”。
+**Step2**: Escribir el programa Lua de movimiento de captación por láser. Hacer clic sucesivamente en "Programa de enseñanza"->"Programación de programas"->"Botón Nuevo", y crear el programa de usuario "testPointRecord.lua".
 
 .. figure:: application/011.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑2 新建激光取点运动程序
+.. centered:: Figura 14.6‑2 Creación de un programa de movimiento de captación por láser
 
-**Step3**：配置参考姿态示教点（可选）。在手动模式下拖动机器人至所需的焊接姿态。在示教页面上依次点击“示教点记录”、“命名记点”、保存姿态示教点“referencePoint”。
+**Step3**: Configurar el punto de enseñanza de actitud de referencia (opcional). En el modo manual, arrastrar el robot hasta la actitud de soldadura deseada. En la página de enseñanza, hacer clic sucesivamente en "Registro de puntos de enseñanza", "Punto de registro con nombre" y guardar el punto de enseñanza de actitud "referencePoint".
 
 .. figure:: application/012.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑3 保存姿态参考示教点
+.. centered:: Figura 14.6‑3 Guardado del punto de enseñanza de referencia de actitud
 
-**Step4**：生成激光取点运动程序。依次点击“示教程序”->“程序编程”->“焊接指令”、“激光跟踪”、下滑内容至传感器取点运动下，选择需要的“运动方式”，“调试速度”以及姿态参考点，即可生成对应的激光取点LUA程序。
+**Step4**: Generar el programa de movimiento de captación por láser. Hacer clic sucesivamente en "Programa de enseñanza"->"Programación de programas"->"Instrucción de soldadura", "Seguimiento láser", desplazar el contenido hacia abajo hasta movimiento de captación del sensor, seleccionar el "Modo de movimiento", la "Velocidad de depuración" y el punto de referencia de actitud necesarios, y se generará el programa LUA de captación por láser correspondiente.
 
-如果不选择姿态参考点，则默认保持取点时姿态进行运动，如果选择姿态参考点，则以参考姿态运行至激光取点处。
+Si no se selecciona el punto de referencia de actitud, por defecto se mantiene la actitud en el momento de la captación para el movimiento; si se selecciona el punto de referencia de actitud, se ejecuta hasta el punto de captación por láser con la actitud de referencia.
 
 .. figure:: application/013.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 14.6‑4 选择姿态参考示教点
+.. centered:: Figura 14.6‑4 Selección del punto de enseñanza de referencia de actitud
 
-执行激光取点运动。拖动机器人使激光传感器光线指向想要示教的焊缝点，激光传感器会获取焊缝位置，进行取点。执行激光取点运动后，焊枪将以参考姿态运行到激光传感器扫描的指向点。
+Ejecutar el movimiento de captación por láser. Arrastrar el robot para que el rayo del sensor láser apunte al punto de soldadura que se desea enseñar; el sensor láser obtendrá la posición de la soldadura y realizará la captación. Tras ejecutar el movimiento de captación por láser, la antorcha de soldadura se desplazará con la actitud de referencia hasta el punto señalado escaneado por el sensor láser.
 
 .. figure:: application/014.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑5 激光获取焊缝位置
+.. centered:: Figura 14.6‑5 Obtención de la posición de la soldadura por láser
 
 .. figure:: application/015.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑6 焊枪以参考姿态指向焊缝位置
+.. centered:: Figura 14.6‑6 La antorcha de soldadura apunta a la posición de la soldadura con la actitud de referencia
 
-寻位三点与四点求交点坐标
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Búsqueda de posición de tres puntos y cuatro puntos para obtener las coordenadas del punto de intersección
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-当角焊缝位置不方便直接示教时，协作机器人可以通过手动示教或寻位角焊缝两边板材平面位置的方式，计算得到两平面上采集点的交点来生成角焊缝所在位置。
+Cuando la posición de la soldadura en ángulo no es conveniente para la enseñanza directa, el robot colaborativo puede calcular la intersección de los puntos recogidos en los dos planos mediante la enseñanza manual o la búsqueda de posición de las posiciones de los planos de las placas a ambos lados de la soldadura en ángulo, para generar la posición donde se encuentra la soldadura en ángulo.
 
-对于直角焊缝，可以选用三点寻位求交点坐标方法；对于非直角焊缝，则采用四点寻位求交点坐标方法。
+Para las soldaduras en ángulo recto, se puede utilizar el método de búsqueda de posición de tres puntos para obtener las coordenadas del punto de intersección; para las soldaduras en ángulo no recto, se utiliza el método de búsqueda de posición de cuatro puntos para obtener las coordenadas del punto de intersección.
 
-提供指令和lua脚本两种方式获取交点坐标，进行寻位运动，同时可配置参考姿态，机器人携带焊枪可以以参考示教点姿态运动至交点处。
+Se proporcionan dos formas, mediante instrucción y mediante script Lua, para obtener las coordenadas del punto de intersección y realizar el movimiento de búsqueda de posición; al mismo tiempo se puede configurar la actitud de referencia, y el robot con la antorcha de soldadura puede desplazarse con la actitud del punto de enseñanza de referencia hasta el punto de intersección.
 
-指令求交点
-++++++++++++++++++
+Obtención del punto de intersección mediante instrucción
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-三点求交点坐标
-*********************
+Obtención de las coordenadas del punto de intersección con tres puntos
+************************************************************************************
 
-**Step1**：采集三个平面接触点并保存为示教点，配置参考示教点；
+**Step1**: Recoger tres puntos de contacto en los planos y guardarlos como puntos de enseñanza, configurar el punto de enseñanza de referencia;
 
 .. figure:: application/016.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑7 选取三个寻位点
+.. centered:: Figura 14.6‑7 Selección de tres puntos de búsqueda de posición
 
-采集的接触点包含三个点，其中两点位于同一平面，另一点位于垂直平面。
+Los puntos de contacto recogidos incluyen tres puntos, de los cuales dos están en el mismo plano y el otro en el plano vertical.
 
-.. note:: 如果不选择姿态参考点，则默认生成的交点姿态与P3点一致，如果选择姿态参考点，和参考示教点姿态一致。
+.. note:: Si no se selecciona el punto de referencia de actitud, la actitud del punto de intersección generado por defecto será la misma que la del punto P3; si se selecciona el punto de referencia de actitud, será la misma que la del punto de enseñanza de referencia.
 
-**Step2**：在示教页面中，依次点击“辅助应用”、“工具应用”、“交点生成”，找到三点与四点求交点坐标功能模块。
+**Step2**: En la página de enseñanza, hacer clic sucesivamente en "Aplicaciones auxiliares", "Aplicación de herramientas", "Generación de puntos de intersección", y encontrar el módulo de la función de obtención de coordenadas del punto de intersección con tres y cuatro puntos.
 
 .. figure:: application/017.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑8 选择求交点坐标的寻位点
+.. centered:: Figura 14.6‑8 Selección de los puntos de búsqueda de posición para obtener las coordenadas del punto de intersección
 
-**Step3**：下拉框选择三点寻位，依次选择采集的三个接触点，点击计算，查看3D模型中生成交点的显示是否有误，将交点命名并保存；
+**Step3**: En el cuadro desplegable, seleccionar búsqueda de posición de tres puntos, seleccionar sucesivamente los tres puntos de contacto recogidos, hacer clic en calcular, comprobar si la visualización del punto de intersección generado en el modelo 3D es correcta, nombrar el punto de intersección y guardarlo;
 
 .. figure:: application/018.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑9 计算交点坐标并保存
+.. centered:: Figura 14.6‑9 Cálculo y guardado de las coordenadas del punto de intersección
 
-**Step4**：保存示教点，可以进行示教运动。
+**Step4**: Guardar el punto de enseñanza; se puede realizar el movimiento de enseñanza.
 
 .. figure:: application/019.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 14.6‑10 将交点坐标保存成示教点
+.. centered:: Figura 14.6‑10 Guardado de las coordenadas del punto de intersección como punto de enseñanza
 
-四点求交点坐标
-*********************
+Obtención de las coordenadas del punto de intersección con cuatro puntos
+************************************************************************************
 
-**Step1**：采集四个平面接触点并保存为示教点，配置参考示教点。
+**Step1**: Recoger cuatro puntos de contacto en los planos y guardarlos como puntos de enseñanza, configurar el punto de enseñanza de referencia.
 
 .. figure:: application/020.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑11 选取四个寻位点
+.. centered:: Figura 14.6‑11 Selección de cuatro puntos de búsqueda de posición
 
-采集的接触点包含四个点，其中前两点位于同一平面，后两点位于垂直平面。
+Los puntos de contacto recogidos incluyen cuatro puntos, de los cuales los dos primeros están en el mismo plano y los dos últimos en el plano vertical.
 
-.. note:: 如果不选择姿态参考点，则默认生成的交点姿态与P4点一致，如果选择姿态参考点，和参考示教点姿态一致。
+.. note:: Si no se selecciona el punto de referencia de actitud, la actitud del punto de intersección generado por defecto será la misma que la del punto P4; si se selecciona el punto de referencia de actitud, será la misma que la del punto de enseñanza de referencia.
 
-**Step2**：在示教页面中，依次点击“初始设置”、“外设”、“跟踪”、“传感器”，找到三点与四点求交点坐标功能模块。
+**Step2**: En la página de enseñanza, hacer clic sucesivamente en "Configuración inicial", "Periféricos", "Seguimiento", "Sensor", y encontrar el módulo de la función de obtención de coordenadas del punto de intersección con tres y cuatro puntos.
 
 .. figure:: application/021.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑12 选择求交点坐标的寻位点和参考点
+.. centered:: Figura 14.6‑12 Selección de los puntos de búsqueda de posición y del punto de referencia para obtener las coordenadas del punto de intersección
 
-**Step3**：下拉框选择四点寻位，依次选择采集的四个接触点，点击计算，查看3D模型中生成交点的显示是否有误，将交点命名并保存；
+**Step3**: En el cuadro desplegable, seleccionar búsqueda de posición de cuatro puntos, seleccionar sucesivamente los cuatro puntos de contacto recogidos, hacer clic en calcular, comprobar si la visualización del punto de intersección generado en el modelo 3D es correcta, nombrar el punto de intersección y guardarlo;
 
 .. figure:: application/022.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑13 计算交点坐标并保存
+.. centered:: Figura 14.6‑13 Cálculo y guardado de las coordenadas del punto de intersección
 
-**Step4**：保存示教点，可以进行示教运动。
+**Step4**: Guardar el punto de enseñanza; se puede realizar el movimiento de enseñanza.
 
 .. figure:: application/023.png
    :align: center
    :width: 6in
 
-.. centered:: 图表 14.6‑14 将交点坐标保存成示教点
+.. centered:: Figura 14.6‑14 Guardado de las coordenadas del punto de intersección como punto de enseñanza
 
-Lua脚本求交点寻位运动
-++++++++++++++++++++++++++++++++
+Movimiento de búsqueda de posición para obtener el punto de intersección mediante script Lua
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-三点求交点坐标
-*********************
+Obtención de las coordenadas del punto de intersección con tres puntos
+************************************************************************************
 
-**Step1**：采集三个平面接触点并保存为示教点，配置参考示教点。
+**Step1**: Recoger tres puntos de contacto en los planos y guardarlos como puntos de enseñanza, configurar el punto de enseñanza de referencia.
 
 .. figure:: application/016.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑15 选取三个寻位点
+.. centered:: Figura 14.6‑15 Selección de tres puntos de búsqueda de posición
 
-采集的接触点包含三个点，其中两点位于同一平面，另一点位于垂直平面。
+Los puntos de contacto recogidos incluyen tres puntos, de los cuales dos están en el mismo plano y el otro en el plano vertical.
 
-.. note:: 如果不选择姿态参考点，则默认生成的交点姿态与P3点一致，如果选择姿态参考点，和参考示教点姿态一致。
+.. note:: Si no se selecciona el punto de referencia de actitud, la actitud del punto de intersección generado por defecto será la misma que la del punto P3; si se selecciona el punto de referencia de actitud, será la misma que la del punto de enseñanza de referencia.
 
-**Step2**：编写三点求交点寻位运动Lua程序。依次点击“示教程序”->“程序编程”->“新建按钮”，新建用户程序“test3point.lua”。
+**Step2**: Escribir el programa Lua de movimiento de búsqueda de posición para obtener el punto de intersección con tres puntos. Hacer clic sucesivamente en "Programa de enseñanza"->"Programación de programas"->"Botón Nuevo", y crear el programa de usuario "test3point.lua".
 
 .. figure:: application/024.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑16 新建三点求交点寻位运动程序
+.. centered:: Figura 14.6‑16 Creación de un programa de movimiento de búsqueda de posición para obtener el punto de intersección con tres puntos
 
-**Step3**：生成三点求交点寻位运动程序。依次点击“示教程序”->“程序编程”->“焊接指令”->“激光跟踪”、下滑内容至寻位求交点运动下，选择“三点寻位”方式，下拉框依次选择采集的接触点“点位1”、“点位2”、“点位3”以及姿态参考点，选择需要的“运动方式”和“调试速度”，点击“添加”、“应用”按钮即可生成对应的三点求交点寻位运动程序。
+**Step3**: Generar el programa de movimiento de búsqueda de posición para obtener el punto de intersección con tres puntos. Hacer clic sucesivamente en "Programa de enseñanza"->"Programación de programas"->"Instrucción de soldadura"->"Seguimiento láser", desplazar el contenido hacia abajo hasta movimiento de búsqueda de posición para obtener el punto de intersección, seleccionar el modo "Búsqueda de posición de tres puntos", seleccionar sucesivamente en el cuadro desplegable los puntos de contacto recogidos "Punto 1", "Punto 2", "Punto 3" y el punto de referencia de actitud, seleccionar el "Modo de movimiento" y la "Velocidad de depuración" necesarios, y hacer clic en los botones "Añadir" y "Aplicar" para generar el programa de movimiento de búsqueda de posición para obtener el punto de intersección con tres puntos correspondiente.
 
 .. figure:: application/025.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑17 三点求交点寻位运动
+.. centered:: Figura 14.6‑17 Movimiento de búsqueda de posición para obtener el punto de intersección con tres puntos
 
-**Step4**：在自动模式下点击运行按钮，即可自动进行三点求交点计算，机器人拖动焊枪以参考姿态运动至交点位置。
+**Step4**: En el modo automático, hacer clic en el botón de ejecutar para realizar automáticamente el cálculo del punto de intersección con tres puntos; el robot arrastra la antorcha de soldadura con la actitud de referencia hasta la posición del punto de intersección.
 
-四点求交点坐标
-*********************
+Obtención de las coordenadas del punto de intersección con cuatro puntos
+************************************************************************************
 
-**Step1**：采集四个平面接触点并保存为示教点，配置参考示教点。
+**Step1**: Recoger cuatro puntos de contacto en los planos y guardarlos como puntos de enseñanza, configurar el punto de enseñanza de referencia.
 
 .. figure:: application/020.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑18 选取四个寻位点
+.. centered:: Figura 14.6‑18 Selección de cuatro puntos de búsqueda de posición
 
-采集的接触点包含四个点，其中两点位于同一平面，后两点位于另一平面。
+Los puntos de contacto recogidos incluyen cuatro puntos, de los cuales dos están en el mismo plano y los dos últimos en otro plano.
 
-.. note:: 如果不选择姿态参考点，则默认生成的交点姿态与P4点一致，如果选择姿态参考点，和参考示教点姿态一致。
+.. note:: Si no se selecciona el punto de referencia de actitud, la actitud del punto de intersección generado por defecto será la misma que la del punto P4; si se selecciona el punto de referencia de actitud, será la misma que la del punto de enseñanza de referencia.
 
-**Step2**：编写四点求交点寻位运动Lua程序。依次点击“示教程序”->“程序编程”->“新建按钮”，新建用户程序“test4point.lua”。
+**Step2**: Escribir el programa Lua de movimiento de búsqueda de posición para obtener el punto de intersección con cuatro puntos. Hacer clic sucesivamente en "Programa de enseñanza"->"Programación de programas"->"Botón Nuevo", y crear el programa de usuario "test4point.lua".
 
 .. figure:: application/026.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑19 新建四点求交点寻位运动程序
+.. centered:: Figura 14.6‑19 Creación de un programa de movimiento de búsqueda de posición para obtener el punto de intersección con cuatro puntos
 
-**Step3**：生成四点求交点寻位运动程序。如依次点击“示教程序”->“程序编程”->“焊接指令”->“激光跟踪”->下滑内容至寻位求交点运动下，选择“四点寻位”方式，下拉框依次选择采集的接触点“点位1”、“点位2”、“点位3”、“点位4”以及姿态参考点，选择需要的“运动方式”和“调试速度”，点击“添加”、“应用”按钮即可生成对应的四点求交点寻位运动程序。
+**Step3**: Generar el programa de movimiento de búsqueda de posición para obtener el punto de intersección con cuatro puntos. Hacer clic sucesivamente en "Programa de enseñanza"->"Programación de programas"->"Instrucción de soldadura"->"Seguimiento láser"->desplazar el contenido hacia abajo hasta movimiento de búsqueda de posición para obtener el punto de intersección, seleccionar el modo "Búsqueda de posición de cuatro puntos", seleccionar sucesivamente en el cuadro desplegable los puntos de contacto recogidos "Punto 1", "Punto 2", "Punto 3", "Punto 4" y el punto de referencia de actitud, seleccionar el "Modo de movimiento" y la "Velocidad de depuración" necesarios, y hacer clic en los botones "Añadir" y "Aplicar" para generar el programa de movimiento de búsqueda de posición para obtener el punto de intersección con cuatro puntos correspondiente.
 
 .. figure:: application/027.png
    :align: center
    :width: 4in
 
-.. centered:: 图表 14.6‑20 四点求交点寻位运动 
+.. centered:: Figura 14.6‑20 Movimiento de búsqueda de posición para obtener el punto de intersección con cuatro puntos 
 
-**Step4**：在自动模式下点击运行按钮，即可自动进行四点求交点计算，机器人拖动焊枪以参考姿态运动至交点位置。
+Protocolo de periféricos
+---------------------------------
 
-外设协议
------------
+En la barra de menú "Aplicaciones auxiliares"->"Aplicación de herramientas", hacer clic en "Protocolo de periféricos" para entrar en la interfaz de la función de configuración del protocolo de periféricos.
 
-在“辅助应用”->“工具应用”的菜单栏下，点击“外设协议”进入外设协议配置功能界面。
-
-该页面是对外设协议的配置页面，用户可以根据当前使用的外设进行协议配置。
+Esta página es la página de configuración del protocolo de periféricos; el usuario puede configurar el protocolo según los periféricos que utilice actualmente.
 
 .. image:: application/028.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.7‑1 外设协议配置
+.. centered:: Figura 14.7‑1 Configuración del protocolo de periféricos
 
-在程序示教中增加基于Modbus-rtu通讯的读写寄存器lua接口， 输入寄存器地址0x1000寄存器数量为50个，共100字节数据内容；保持寄存器地址0x2000，寄存器数量为50个，共100字节数据内容。
-
-::
-
-   ModbusRegRead（fun_code，reg_add，reg_num）：读寄存器；
-
-   fun_code： 功能码，0x03-保持寄存器，0x04-输入寄存器
-
-   reg_add： 寄存器地址
-
-   reg_num： 寄存器数量
+En la enseñanza de programas se añade la interfaz Lua de lectura y escritura de registros basada en la comunicación Modbus-rtu; los registros de entrada tienen la dirección 0x1000 y un número de 50 registros, con un total de 100 bytes de contenido de datos; los registros de retención tienen la dirección 0x2000 y un número de 50 registros, con un total de 100 bytes de contenido de datos.
 
 ::
 
-   ModbusRegWrite（fun_code，reg_add，reg_num，reg_value）：写寄存器；
+   ModbusRegRead（fun_code，reg_add，reg_num）：leer registros；
 
-   fun_code 功能码，0x06-单个寄存器，0x10-多个寄存器
+   fun_code： código de función, 0x03-registro de retención, 0x04-registro de entrada
 
-   reg_add： 寄存器地址
+   reg_add： dirección del registro
 
-   reg_num： 寄存器数量
-
-   reg_value： 字节数组
+   reg_num： número de registros
 
 ::
 
-   ModbusRegGetData（reg_num）：获取寄存器数据；
+   ModbusRegWrite（fun_code，reg_add，reg_num，reg_value）：escribir registros；
 
-   reg_num： 寄存器数量
+   fun_code código de función, 0x06-registro individual, 0x10-varios registros
 
-   返回值说明：
+   reg_add： dirección del registro
 
-   reg_value: 数组变量
+   reg_num： número de registros
 
-程序示例截图：
+   reg_value： matriz de bytes
+
+::
+
+   ModbusRegGetData（reg_num）：obtener datos de los registros；
+
+   reg_num： número de registros
+
+   Descripción del valor de retorno:
+
+   reg_value: variable de matriz
+
+Captura de pantalla del ejemplo de programa:
 
 .. image:: application/029.png
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.7‑2 Modbus-rtu通讯lua程序示例 
+.. centered:: Figura 14.7‑2 Ejemplo de programa Lua de comunicación Modbus-rtu 
 
-G代码转机器人轨迹规划功能
+Función de conversión de código G a planificación de trayectoria del robot
 -----------------------------------------------------------------------------------
 
-功能概述
+Descripción general de la función
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+La función de conversión de código G generado por software CAD a planificación de trayectoria del robot consiste en utilizar software CAD para convertir rutas de líneas rectas, arcos, círculos completos y splines en archivos de código G con extensión ".gcode", donde el código G de las rutas de spline está compuesto por varios códigos de línea recta pequeños; el archivo de código G generado se puede importar en el lado Web para convertirlo y generar un archivo LUA.
+
+Descripción de la función de conversión de código G a planificación de trayectoria del robot:
+
+(1) El lado Web solo puede importar archivos de código G con extensión ".gcode"; tras una conversión exitosa se generará un archivo LUA con el mismo nombre que el archivo de código G. Si antes de la conversión ya existe un archivo LUA con el mismo nombre, la conversión fallará.
+
+(2) Actualmente se pueden convertir las instrucciones de movimiento rápido G0, interpolación lineal G1, interpolación de arco en sentido horario G2 e interpolación de arco en sentido antihorario G3 del código G, donde G0 corresponde a la instrucción MoveJ, G1 corresponde a la instrucción MoveL, G2/G3 de arco corresponde a la instrucción MoveC, y G2/G3 de círculo completo corresponde a la instrucción Circle.
+
+(3) Actualmente solo se puede convertir el código G de rutas de arco y círculo en el plano XY.
+
+(4) La S que establece la velocidad del husillo en la instrucción de código G corresponde a la velocidad en la instrucción MoveJ; la unidad de la velocidad del husillo es revoluciones/minuto, que corresponde a milímetros/minuto de la velocidad de movimiento; la velocidad de avance F corresponde a la velocidad en MoveL, MoveC y Circle. La unidad de la velocidad de avance es milímetros/minuto, consistente con la unidad de la velocidad de movimiento. La configuración de velocidad en el código G no puede superar la velocidad máxima de movimiento del robot.
+
+(5) Cuando el robot ejecute el archivo LUA generado por la conversión, es necesario cambiar el porcentaje de velocidad de la esquina superior derecha de la interfaz Web a 100.
+
+Flujo de operación
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-CAD软件生成G代码转机器人轨迹规划功能是使用CAD软件把直线、圆弧、整圆、样条线路径转成扩展名为“.gcode”的G代码文件，其中样条线路径的G代码是由若干个小直线代码组成的，将生成的G代码文件在Web端导入便能转化生成LUA文件。
-
-G代码转机器人轨迹规划功能说明：
-
-(1) Web端只能导入扩展名为“.gcode”的G代码文件，转化成功后会生成与G代码文件同名的LUA文件。如果转化前已经有同名的LUA文件，转化会失败。
-
-(2) 目前能够对G代码中的快速移动G0、直线插补G1、顺时针圆弧插补G2、逆时针圆弧插补G3指令进行转化，其中G0对应MoveJ指令、G1对应MoveL指令、圆弧的G2/G3对应MoveC指令，整圆的G2/G3对应Circle指令。
-
-(3) 目前仅能对XY平面的圆弧和圆路径G代码进行转化。
-
-(4) G代码指令中设置主轴转速的S对应MoveJ指令中的速度，主轴转速的单位为转/分钟，对应移动速度的毫米/分钟，进给速度F对应MoveL、MoveC、Circle中的速度。进给速度的单位为毫米/分钟，与移动速度单位一致。G代码中的速度设置不能超过机器人的最大移动速度。
-
-(5) 机器人在执行转化生成的LUA文件时，需要把Web界面右上角的速度百分比改为100。
-
-操作流程
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-机器人在工作路径中姿态计算如下图所示。
+El cálculo de la actitud del robot en la ruta de trabajo se muestra en la figura siguiente.
 
 .. image:: application/030.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 14.8-1 机器人姿态计算示意图
+.. centered:: Figura 14.8-1 Esquema del cálculo de la actitud del robot
 
-其中，P-xyz为记录的参考姿态示教点的姿态，O-xy为CAD图纸的坐标系。机器人在起点A处的姿态是参考姿态，根据参考姿态Z轴与CAD图纸平面的夹角以及Z轴在CAD图纸平面的投影与路径起点处切线的夹角，计算路径中间点B和终点C处的机器人姿态。
+Donde P-xyz es la actitud del punto de enseñanza de actitud de referencia registrado, y O-xy es el sistema de coordenadas del plano CAD. La actitud del robot en el punto de inicio A es la actitud de referencia; según el ángulo entre el eje Z de la actitud de referencia y el plano del plano CAD, y el ángulo entre la proyección del eje Z en el plano del plano CAD y la tangente en el punto de inicio de la ruta, se calcula la actitud del robot en el punto intermedio B y en el punto final C de la ruta.
 
-功能操作流程如下：
+El flujo de operación de la función es el siguiente:
 
-**Step 1**：使用具有CAM功能的CAD软件，将加工路径转为G代码文件，并且使用G代码仿真模拟器，如NC Viewer等，验证刀具路径是否正确。
+**Step 1**: Utilizar software CAD con función CAM para convertir la ruta de mecanizado en un archivo de código G, y utilizar un simulador de código G, como NC Viewer, para verificar si la ruta de la herramienta es correcta.
 
-**Step 2**：在G代码转机器人轨迹规划之前，首先对工具坐标系和工件坐标系进行标定，注意工件坐标系需要与CAD软件中机床坐标系重合。
+**Step 2**: Antes de la conversión de código G a planificación de trayectoria del robot, calibrar primero el sistema de coordenadas de herramienta y el sistema de coordenadas de pieza; tenga en cuenta que el sistema de coordenadas de pieza debe coincidir con el sistema de coordenadas de la máquina en el software CAD.
 
 .. image:: application/031.png
    :width: 4in
@@ -693,36 +693,36 @@ G代码转机器人轨迹规划功能说明：
    :width: 4in
    :align: center
 
-.. centered:: 图表 14.8-2 工具和工件坐标系标定界面
+.. centered:: Figura 14.8-2 Interfaz de calibración de los sistemas de coordenadas de herramienta y de pieza
 
-**Step 3**：在标定后的工具坐标系和工件坐标系下记录一个参考姿态示教点，机器人在工作路径下的姿态会使用参考姿态点的姿态进行计算。
+**Step 3**: Registrar un punto de enseñanza de actitud de referencia en el sistema de coordenadas de herramienta y el sistema de coordenadas de pieza calibrados; la actitud del robot en la ruta de trabajo se calculará utilizando la actitud del punto de referencia.
 
-**Step 4**：依次点击“辅助应用”、“工具应用”、“G代码转化”按钮，进入G代码文件转机器人运动LUA文件界面。
+**Step 4**: Hacer clic sucesivamente en "Aplicaciones auxiliares", "Aplicación de herramientas", "Conversión de código G" para entrar en la interfaz de conversión de archivos de código G a archivos LUA de movimiento del robot.
 
 .. image:: application/033.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 14.8-3 G代码转化界面
+.. centered:: Figura 14.8-3 Interfaz de conversión de código G
 
-**Step 5**：点击“选择文件”按钮，找到需要转化的G代码文件，需要注意G代码文件的文件扩展名必须为“.gcode”；参考姿态点选择Step2中记录的参考姿态示教点，选择成功后下方会显示当前所选示教点的工具坐标系和工件坐标系。最后点击“转化”按钮，转化成功后，会提示G代码转化成功。另外，如果已经有与G代码文件重名的LUA文件，点“转化”按钮会提示文件名已存在。
+**Step 5**: Hacer clic en el botón "Seleccionar archivo", encontrar el archivo de código G que se desea convertir; tenga en cuenta que la extensión del archivo de código G debe ser ".gcode"; para el punto de referencia de actitud, seleccionar el punto de enseñanza de actitud de referencia registrado en el Step2; tras una selección exitosa, debajo se mostrarán el sistema de coordenadas de herramienta y el sistema de coordenadas de pieza del punto de enseñanza seleccionado. Por último, hacer clic en el botón "Convertir"; tras una conversión exitosa se mostrará el aviso de conversión de código G correcta. Además, si ya existe un archivo LUA con el mismo nombre que el archivo de código G, al hacer clic en el botón "Convertir" se mostrará el aviso de que el nombre de archivo ya existe.
 
 .. image:: application/034.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 14.8-4 G代码转化成功界面
+.. centered:: Figura 14.8-4 Interfaz de conversión de código G correcta
 
 .. image:: application/035.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 14.8-5 G代码转化失败界面
+.. centered:: Figura 14.8-5 Interfaz de conversión de código G fallida
 
-**Step 6**：点击“示教编程”->“程序编程”按钮，打开G代码转化后生成的LUA文件，机器人切换为自动模式，点击开始按钮，机器人便能复现G代码文件里的路径。
+**Step 6**: Hacer clic en el botón "Enseñanza y programación"->"Programación de programas", abrir el archivo LUA generado tras la conversión de código G, cambiar el robot al modo automático y hacer clic en el botón de inicio; el robot podrá reproducir la ruta del archivo de código G.
 
 .. image:: application/036.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 14.8-6 打开转化后生成的LUA文件
+.. centered:: Figura 14.8-6 Apertura del archivo LUA generado tras la conversión

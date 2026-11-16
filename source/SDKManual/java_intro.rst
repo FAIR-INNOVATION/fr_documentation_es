@@ -1,21 +1,21 @@
 Java
 ============
 
-本文档为Java版本的二次开发接口文档。
+Este documento es la documentación de la interfaz de desarrollo secundario en versión Java.
 
 .. important::
 
-    机器人参数单位说明：机器人位置单位为毫米(mm)，姿态单位为度(°)。
+    Descripción de las unidades de los parámetros del robot: la unidad de posición del robot es milímetro (mm), la unidad de orientación es grado (°).
 
 .. important:: 
 
-    1)	非特别说明的代码示例中都默认机器人已经正常开机使能；
-    2)	文档中的所有代码示例都默认在机器人的工作空间内没有任何干涉；
-    3)	实际使用测试时请采用现场机器人的数据使用。
+    1)	Salvo indicación especial, todos los ejemplos de código asumen que el robot ya está encendido y habilitado correctamente;
+    2)	Todos los ejemplos de código del documento asumen que no existe ninguna interferencia en el espacio de trabajo del robot;
+    3)	Durante las pruebas de uso real, utilice los datos del robot en el sitio.
 
 .. note:: 
     
-    当前文档适用于SDK-v3.8.4版本，向下兼容v1.x/v2.x版本。
+    El documento actual es aplicable a la versión SDK-v3.8.4, compatible con versiones anteriores v1.x/v2.x.
 
 
 .. toctree:: 

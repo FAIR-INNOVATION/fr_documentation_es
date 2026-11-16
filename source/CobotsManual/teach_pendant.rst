@@ -1,208 +1,208 @@
-示教器
-===============
+Teach pendant
+=============
 
 .. toctree:: 
    :maxdepth: 6
 
-示教器启用
--------------------
+Habilitación del teach pendant
+------------------------------
 
-1. 控制箱连接示教器，并启动。
+1. Conectar el teach pendant a la caja de control y arrancarla.
 
-2. 登录账号admin，密码123。进入页面，点击系统设置-通用设置，确认示教器为启用状态。
+2. Iniciar sesión con la cuenta admin y la contraseña 123. Entrar en la página, hacer clic en Configuración del sistema-Configuración general y confirmar que el teach pendant se encuentra en estado habilitado.
 
 .. image:: teach_pendant/001.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.1‑1 示教器启用状态
+.. centered:: Figura 16.1‑1 Estado de habilitación del teach pendant
 
-示教器多语言设置
---------------------
+Configuración multilingüe del teach pendant
+-------------------------------------------
 
-1. 在登录界面（或首次激活界面均可设置），在右上角进行语言选择。
+1. En la interfaz de inicio de sesión (o en la interfaz de primera activación, en cualquiera de las dos se puede configurar), realizar la selección de idioma en la esquina superior derecha.
 
 .. image:: teaching_pendant_software/062.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.2‑1 激活界面设置语言
+.. centered:: Figura 16.2‑1 Configuración del idioma en la interfaz de activación
 
 .. image:: teaching_pendant_software/063.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.2‑2 登录界面设置语言
+.. centered:: Figura 16.2‑2 Configuración del idioma en la interfaz de inicio de sesión
 
-2. 以登录界面设置多语言为例，选择语言。出现以下提示（对应不同语言）即为设置成功，重启控制箱完成语言设置。
+2. Tomando como ejemplo la configuración multilingüe en la interfaz de inicio de sesión, seleccionar el idioma. Si aparece el siguiente aviso (correspondiente a cada idioma), la configuración se ha realizado correctamente; reiniciar la caja de control para completar la configuración del idioma.
 
 .. image:: teach_pendant/004.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.2‑3 设置中文
+.. centered:: Figura 16.2‑3 Configuración del chino
 
 .. image:: teach_pendant/005.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.2‑4 设置英文
+.. centered:: Figura 16.2‑4 Configuración del inglés
 
-输入法切换
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cambio de método de entrada
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-默认输入法为英文输入法。
+El método de entrada predeterminado es el método de entrada en inglés.
 
-1. 打开右下角软键盘，点击输入框，例如点击用户名输入框。
+1. Abrir el teclado virtual de la esquina inferior derecha y hacer clic en el cuadro de entrada, por ejemplo, en el cuadro de entrada del nombre de usuario.
 
-2. 切换中文拼音输入法。
+2. Cambiar al método de entrada pinyin chino.
 
-点击两次CTRL键，按键状态变红色，点击空格进行选择输入法，以下为中文输入法。
+Hacer clic dos veces en la tecla CTRL; el estado de la tecla se vuelve rojo; hacer clic en la barra espaciadora para seleccionar el método de entrada; a continuación se muestra el método de entrada en chino.
 
 .. image:: teach_pendant/006.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.2‑5 中文拼音输入法
+.. centered:: Figura 16.2‑5 Método de entrada pinyin chino
 
-3. 切换英文输入法
+3. Cambiar al método de entrada en inglés
 
-点击两次CTRL键，按键状态变红色，点击空格进行选择输入法，以下为英文输入法。
+Hacer clic dos veces en la tecla CTRL; el estado de la tecla se vuelve rojo; hacer clic en la barra espaciadora para seleccionar el método de entrada; a continuación se muestra el método de entrada en inglés.
 
 .. image:: teach_pendant/007.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.2‑6 英文输入法
+.. centered:: Figura 16.2‑6 Método de entrada en inglés
 
-登录成功后，系统会加载模型等数据，加载完毕后进入初始页面。
+Tras iniciar sesión correctamente, el sistema carga los datos del modelo, etc.; una vez completada la carga, entra en la página inicial.
 
-示教器与webApp语言不一致
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Idioma del teach pendant inconsistente con el de webApp
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-启用示教器后，在登录界面会触发示教器与webApp语言校验，当示教器语言与webApp语言不一致时，出现以下提示。
+Tras habilitar el teach pendant, en la interfaz de inicio de sesión se activa la verificación del idioma del teach pendant y del idioma de webApp; cuando el idioma del teach pendant y el de webApp no coinciden, aparece el siguiente aviso.
 
 .. image:: teach_pendant/008.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.2‑7 示教器与webApp语言不一致提示
+.. centered:: Figura 16.2‑7 Aviso de inconsistencia entre el idioma del teach pendant y el de webApp
 
-控制器及实体示教器IP重置功能
+Función de restablecimiento de IP del controlador y del teach pendant físico
 ----------------------------------------------------------------------------------
 
-功能概述
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Descripción general de la función
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-此次优化增加不同途径的控制器及实体示教器IP复位操作功能，主要通过以下操作可实现以下功能：
+Esta optimización añade la función de restablecimiento de IP del controlador y del teach pendant físico por distintas vías; mediante las siguientes operaciones se pueden realizar las siguientes funciones:
 
-- 1. 使用webrecovery界面可进行控制箱网卡0和网卡1的IP重置；
-- 2. 使用实体示教器F1自定义按键功能配置IP复位（长按10秒）可进行控制箱网卡0、网卡1以及实体示教器的IP重置；
-- 3. 使用实体示教器F2和F4组合按键，同时长按10秒，可以在实体示教器未登录时进行实体示教器设备的IP重置。
+- 1. Mediante la interfaz webrecovery se puede restablecer la IP de la tarjeta de red 0 y de la tarjeta de red 1 de la caja de control;
+- 2. Mediante la configuración de la función de restablecimiento de IP en la tecla personalizada F1 del teach pendant físico (pulsación larga de 10 segundos) se puede restablecer la IP de la tarjeta de red 0, de la tarjeta de red 1 y del teach pendant físico de la caja de control;
+- 3. Mediante la combinación de teclas F2 y F4 del teach pendant físico, manteniéndolas pulsadas simultáneamente durante 10 segundos, se puede restablecer la IP del dispositivo teach pendant físico cuando el teach pendant físico no ha iniciado sesión.
 
 .. image:: teach_pendant/010.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 16.3‑1 mini控制箱网口示意图
+.. centered:: Figura 16.3‑1 Esquema de los puertos de red de la caja de control mini
 
-Webrecovery界面IP重置
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restablecimiento de IP en la interfaz Webrecovery
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-使用8050端口登录webrecovery界面，如默认ip：192.168.57.2：8050登录，点击重置控制器IP‘重置’按钮，页面会进行二次弹窗确认，点击确定后再次点击重置控制器IP按钮以确认重置。
+Acceder a la interfaz webrecovery mediante el puerto 8050, por ejemplo, iniciando sesión en la ip predeterminada: 192.168.57.2:8050; hacer clic en el botón "Restablecer" de restablecer la IP del controlador; la página mostrará una ventana emergente de segunda confirmación; tras hacer clic en aceptar, volver a hacer clic en el botón de restablecer la IP del controlador para confirmar el restablecimiento.
 
 .. image:: teach_pendant/011.png
    :width: 5in
    :align: center
 
-.. centered:: 图表 16.3‑2 Webrecovery界面IP重置功能
+.. centered:: Figura 16.3‑2 Función de restablecimiento de IP en la interfaz Webrecovery
 
-二次确认后会提示重启生效。重启后控制器网卡0 IP恢复为默认192.168.57.2，网卡1 IP恢复为默认192.168.58.2。
+Tras la segunda confirmación se mostrará el aviso de que es necesario reiniciar para que surta efecto. Tras el reinicio, la IP de la tarjeta de red 0 del controlador se restablece a la predeterminada 192.168.57.2, y la IP de la tarjeta de red 1 se restablece a la predeterminada 192.168.58.2.
 
-实体示教器F1按键自定义IP重置
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restablecimiento de IP personalizado mediante la tecla F1 del teach pendant físico
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-使用实体示教器F1按键自定义功能需先登录示教器界面进行F按键自定义功能进行配置，点击“系统设置”，点击“通用设置”，选择示教器模块，打开启用示教器开关，配置F1按键为重置IP（长按10秒），点击配置。
+Para utilizar la función personalizada de la tecla F1 del teach pendant físico es necesario iniciar sesión primero en la interfaz del teach pendant para configurar la función personalizada de la tecla F; hacer clic en "Configuración del sistema", hacer clic en "Configuración general", seleccionar el módulo del teach pendant, activar el interruptor de habilitación del teach pendant, configurar la tecla F1 como restablecer IP (pulsación larga de 10 segundos) y hacer clic en configurar.
 
 .. image:: teach_pendant/013.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.3‑4 实体示教器F1按键自定义IP重置
+.. centered:: Figura 16.3‑4 Restablecimiento de IP personalizado mediante la tecla F1 del teach pendant físico
 
-此功能仅在实体示教器登录webapp时生效，长按F1按键10秒后会提示重启生效。重启后控制器网卡0 IP恢复为默认192.168.57.2，网卡1 IP恢复为默认192.168.58.2，实体示教器IP恢复为默认192.168.58.77。
+Esta función solo surte efecto cuando el teach pendant físico ha iniciado sesión en webapp; tras mantener pulsada la tecla F1 durante 10 segundos se mostrará el aviso de que es necesario reiniciar para que surta efecto. Tras el reinicio, la IP de la tarjeta de red 0 del controlador se restablece a la predeterminada 192.168.57.2, la IP de la tarjeta de red 1 se restablece a la predeterminada 192.168.58.2, y la IP del teach pendant físico se restablece a la predeterminada 192.168.58.77.
 
-实体示教器F2和F4组合按键IP重置
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restablecimiento de IP mediante la combinación de teclas F2 y F4 del teach pendant físico
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-实体示教器设备提供IP重置功能，在未连接webapp情况下也可进行实体示教器IP复位。同时长按F2和F4组合按键10秒钟，可重置实体示教器IP，IP默认恢复为192.168.58.77。恢复后需要重新登录webapp，在系统设置-通用设置中，设置实体示教器IP为192.168.58.77，重启后重新建立示教器连接。
+El dispositivo teach pendant físico ofrece la función de restablecimiento de IP; también se puede restablecer la IP del teach pendant físico cuando no está conectado a webapp. Mantener pulsadas simultáneamente las teclas F2 y F4 durante 10 segundos para restablecer la IP del teach pendant físico; la IP se restablece por defecto a 192.168.58.77. Tras el restablecimiento es necesario volver a iniciar sesión en webapp y, en Configuración del sistema-Configuración general, configurar la IP del teach pendant físico como 192.168.58.77; tras el reinicio, volver a establecer la conexión con el teach pendant.
 
 .. image:: installation/060.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.3‑6 实体示教器F2和F4组合按键IP重置
+.. centered:: Figura 16.3‑6 Restablecimiento de IP mediante la combinación de teclas F2 y F4 del teach pendant físico
 
-示教器按键自定义功能
+Función de personalización de las teclas del teach pendant
 ----------------------------------------------------------------------------------
 
-功能概述
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Descripción general de la función
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-本文档旨在介绍如何使用示教器按键自定义功能。
+Este documento tiene como objetivo presentar cómo utilizar la función de personalización de las teclas del teach pendant.
 
-操作说明
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Instrucciones de uso
+~~~~~~~~~~~~~~~~~~~~
 
-功能配置
-++++++++++++++++++++++++++++++++++++++
+Configuración de la función
++++++++++++++++++++++++++++
 
-1. 打开访问并等陆webApp;
+1. Abrir el acceso e iniciar sesión en webApp;
    
-2. 点击左侧菜单栏“系统设置”-“通用设置”菜单进入示教器配置模块界面；
+2. Hacer clic en el menú "Configuración del sistema"-"Configuración general" de la barra de menú de la izquierda para entrar en la interfaz del módulo de configuración del teach pendant;
 
 .. image:: teach_pendant/013.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.4‑1 示教器按键功能配置界面
+.. centered:: Figura 16.4‑1 Interfaz de configuración de las funciones de las teclas del teach pendant
 
-3. 示教器启用后，包含钥匙自定义功能，F1-F4按键的功能配置。其中钥匙自定义功能可设置为拖动模式，F1-F4按键可配置重置IP(长按10秒)，一键清除报错，输出DO，使能切换及启动指定Lua程序。
+3. Tras habilitar el teach pendant, se incluye la función personalizada de la llave y la configuración de las funciones de las teclas F1-F4. Entre ellas, la función personalizada de la llave se puede configurar como modo de arrastre, y las teclas F1-F4 se pueden configurar para restablecer IP (pulsación larga de 10 segundos), borrar errores con un clic, emitir DO, conmutar la habilitación e iniciar un programa Lua especificado.
 
-钥匙自定义设置为拖动
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configuración de la llave personalizada como arrastre
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-1. 当钥匙自定义配置为拖动模式，且在登录WebApp时，示教器钥匙旋至自定义时，界面弹窗需确认当前负载，以防负载错误导致坠落；
+1. Cuando la función personalizada de la llave está configurada como modo de arrastre y se ha iniciado sesión en WebApp, al girar la llave del teach pendant a la posición personalizada, la ventana emergente de la interfaz solicita confirmar la carga actual, para evitar caídas debidas a una carga incorrecta;
 
 .. image:: installation/061.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.4‑2 示教器模式示例
+.. centered:: Figura 16.4‑2 Ejemplo del modo del teach pendant
 
-2. 确认负载设置正确后，点击确认，机器人进入拖动模式。
+2. Tras confirmar que la configuración de la carga es correcta, hacer clic en confirmar y el robot entra en el modo de arrastre.
 
 .. image:: teach_pendant/014.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 16.4‑3 拖动模式设置前确认负载
+.. centered:: Figura 16.4‑3 Confirmación de la carga antes de configurar el modo de arrastre
 
-F1-F4按键功能自定义
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Personalización de las funciones de las teclas F1-F4
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. image:: installation/060.png
    :width: 6in
    :align: center
    
-.. centered:: 图表 16.4‑4 示教器按键示例
+.. centered:: Figura 16.4‑4 Ejemplo de las teclas del teach pendant
 
-1. **重置IP（长按10秒）功能**：配置后长按10秒后会提示重启生效。重启后控制器网卡0的IP恢复为默认192.168.57.2，网卡1的IP恢复为默认192.168.58.2，实体示教器IP恢复为默认192.168.58.77。
+1. **Función de restablecer IP (pulsación larga de 10 segundos)**: tras la configuración, al mantener pulsada la tecla durante 10 segundos se mostrará el aviso de que es necesario reiniciar para que surta efecto. Tras el reinicio, la IP de la tarjeta de red 0 del controlador se restablece a la predeterminada 192.168.57.2, la IP de la tarjeta de red 1 se restablece a la predeterminada 192.168.58.2, y la IP del teach pendant físico se restablece a la predeterminada 192.168.58.77.
    
-2. **一键清除报错功能**：在当界面出现报错提示时，按压对应功能F键，可清除报错。
+2. **Función de borrado de errores con un clic**: cuando en la interfaz aparece un aviso de error, pulsar la tecla de función F correspondiente para borrar el error.
    
-3. **输出DO功能**：配置该功能且设置DO编号后，按压对应功能F键，可将当前DO编号对应状态切换。
+3. **Función de emisión de DO**: tras configurar esta función y establecer el número de DO, pulsar la tecla de función F correspondiente para conmutar el estado correspondiente al número de DO actual.
    
-4. **使能切换功能**：配置该功能后，按压对应功能F键，可当前使能状态。
+4. **Función de conmutación de habilitación**: tras configurar esta función, pulsar la tecla de función F correspondiente para conmutar el estado de habilitación actual.
    
-5. **启动Lua程序**：配置该功能且设置Lua程序后，按压对应功能F键，机器人在自动模式下，即可自动运行所设置的Lua程序。 
+5. **Inicio de programa Lua**: tras configurar esta función y establecer el programa Lua, pulsar la tecla de función F correspondiente y, con el robot en modo automático, se ejecutará automáticamente el programa Lua configurado.

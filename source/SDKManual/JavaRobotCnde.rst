@@ -4,95 +4,95 @@ CNDE
 .. toctree:: 
     :maxdepth: 5
 
-配置机器人状态反馈
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configurar la retroalimentación de estado del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 配置机器人状态反馈
-    * @param state 机器人状态枚举列表
-    * @param period 状态反馈周期，范围8-1000
-    * @return 错误码，正常-0，参数异常-4，状态字段不存在-18，字节总数超过4K-20
+    * @brief Configurar la retroalimentación de estado del robot
+    * @param state Lista de enumeraciones de estado del robot
+    * @param period Período de retroalimentación de estado, rango 8-1000
+    * @return Código de error, normal-0, parámetro anómalo-4, campo de estado inexistente-18, total de bytes superior a 4K-20
     */
     public int SetRobotRealtimeStateConfig(List<RobotState> state, int period)
     
-CNDE状态配置添加一个机器人状态
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Añadir un estado del robot a la configuración de estado CNDE
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 添加一个机器人状态到配置列表
-    * @param state 机器人状态枚举
-    * @return 错误码，正常-0，状态已存在-17，状态字段不存在-18，超过4K-20
+    * @brief Añadir un estado del robot a la lista de configuración
+    * @param state Enumeración de estado del robot
+    * @return Código de error, normal-0, estado ya existente-17, campo de estado inexistente-18, superior a 4K-20
     */
     public int AddRobotRealtimeState(RobotState state)
     
-CNDE状态配置删除一个机器人状态
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Eliminar un estado del robot de la configuración de estado CNDE
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 从配置列表删除一个机器人状态
-    * @param state 机器人状态枚举
-    * @return 错误码，正常-0，状态不存在-18，至少保留一个状态-19
+    * @brief Eliminar un estado del robot de la lista de configuración
+    * @param state Enumeración de estado del robot
+    * @return Código de error, normal-0, estado inexistente-18, mantener al menos un estado-19
     */
     public int DeleteRobotRealtimeState(RobotState state)
         
-设置CNDE状态反馈周期
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el período de retroalimentación de estado CNDE
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置CNDE状态反馈周期
-    * @param period 状态反馈周期，范围8-1000
-    * @return 错误码，正常-0，参数异常-4
+    * @brief Establecer el período de retroalimentación de estado CNDE
+    * @param period Período de retroalimentación de estado, rango 8-1000
+    * @return Código de error, normal-0, parámetro anómalo-4
     */
     public int SetRobotRealtimeStatePeriod(int period)
             
-获取当前CNDE状态反馈所有状态集合和周期
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el conjunto de todos los estados y el período de la retroalimentación de estado CNDE actual
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-     * @brief 获取当前所有状态集合和周期
-     * @return 包含状态列表和周期的配置结果结构体
+     * @brief Obtener el conjunto de todos los estados y el período actuales
+     * @return Estructura de resultado de configuración que contiene la lista de estados y el período
     */
     public StateConfigResult GetRobotRealtimeStateConfig()
                 
-CNDE状态反馈使用代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de uso de la retroalimentación de estado CNDE
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief CNDE实时状态配置接口使用示例
+    * @brief Ejemplo de uso de la interfaz de configuración de estado en tiempo real CNDE
     */
     public static void TestRealtimeStateConfig(Robot robot)
     {
         
-        // 1. 创建初始状态列表
+        // 1. Crear la lista de estados inicial
         List<RobotState> stateList1 = new ArrayList<>();
         stateList1.add(RobotState.ProgramState);
         stateList1.add(RobotState.RobotState);
         stateList1.add(RobotState.JointCurPos);
         stateList1.add(RobotState.ToolCurPos);
         
-        // 2. 第一次调用 SetRobotRealtimeStateConfig 配置状态和周期
+        // 2. Primera llamada a SetRobotRealtimeStateConfig para configurar estados y período
         int period1 = 100;  // 100ms周期
         int rtn = robot.SetRobotRealtimeStateConfig(stateList1, period1);
         System.out.printf("1. SetRobotRealtimeStateConfig (initial list, period=%d) rtn: %d%n", period1, rtn);
         
         if (rtn == 0) {
-            // 3. 添加额外状态
+            // 3. Añadir un estado adicional
             rtn = robot.AddRobotRealtimeState(RobotState.RobotTime);
             System.out.printf("2. AddRobotRealtimeState (RobotTime) rtn: %d%n", rtn);
             
-            // 4. 再次调用 SetRobotRealtimeStateConfig 重新配置（不同状态列表）
+            // 4. Llamar de nuevo a SetRobotRealtimeStateConfig para reconfigurar (lista de estados diferente)
             List<RobotState> stateList2 = new ArrayList<>();
             stateList2.add(RobotState.ProgramState);
             stateList2.add(RobotState.RobotState);
@@ -106,12 +106,12 @@ CNDE状态反馈使用代码示例
             rtn = robot.SetRobotRealtimeStateConfig(stateList2, period2);
             System.out.printf("3. SetRobotRealtimeStateConfig (updated list, period=%d) rtn: %d%n", period2, rtn);
             
-            // 5. 修改周期
+            // 5. Modificar el período
             int newPeriod = 80;  // 80ms周期
             rtn = robot.SetRobotRealtimeStatePeriod(newPeriod);
             System.out.printf("4. SetRobotRealtimeStatePeriod (period=%d) rtn: %d%n", newPeriod, rtn);
             
-            // 6. 获取当前配置并打印
+            // 6. Obtener la configuración actual e imprimirla
             Robot.StateConfigResult configResult = robot.GetRobotRealtimeStateConfig();
             System.out.println("5. GetRobotRealtimeStateConfig result:");
             System.out.printf("   - Period: %d ms%n", configResult.period);
@@ -134,11 +134,11 @@ CNDE状态反馈使用代码示例
             }
             System.out.println("CNDE连接已建立，开始接收数据...");
 
-            // 7. 循环读取实时状态验证配置是否生效
+            // 7. Leer cíclicamente el estado en tiempo real para verificar si la configuración ha surtido efecto
             System.out.println("6. Reading real-time states...");
             while(true) {
                 robot.Sleep(1000);
-                // 通过 CNDE 获取状态数据
+                // Obtener los datos de estado a través de CNDE
                 ROBOT_STATE_PKG pkg = robot.CNDEGetStateData();
                 if (pkg == null) {
                     System.out.println("状态数据为空，CNDE连接断开，等待重连");

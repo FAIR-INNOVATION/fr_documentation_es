@@ -1,165 +1,164 @@
-硬件安装
-===================
+Instalación de hardware
+=======================
 
 .. toctree:: 
 	:maxdepth: 5
 
-安全须知
-------------
+Avisos de seguridad
+-------------------
 
-简介
-~~~~~
+Introducción
+~~~~~~~~~~~~
 
-本说明书会使用到以下警示，这些警示的作用是确保人身及设备的安全，当您在阅读本说明书时，必须遵守并执行本手册其他章节中的所有组装说明和指南，这一点非常重要。应特别注意与警告标志相关的文本。
+Este manual utiliza los siguientes avisos, cuya finalidad es garantizar la seguridad de las personas y del equipo; al leer este manual es muy importante que cumpla y ejecute todas las instrucciones de montaje y las directrices del resto de capítulos de este manual. Debe prestarse especial atención a los textos asociados a los símbolos de advertencia.
 
 .. important:: 
-    - 如果机器人（机器人本体、控制箱、示教器或按钮盒）因人为原因被损坏、更改或修改，法奥拒绝承担所有责任；
-    - 法奥对由于客户编写的程序出错而对机器人或任何其他设备造成的任何损坏概不负责。
+    - Si el robot (cuerpo del robot, caja de control, teach pendant o caja de botones) se daña, altera o modifica por causas humanas, FAIRINO declina toda responsabilidad;
+    - FAIRINO no se hace responsable de ningún daño causado al robot o a cualquier otro equipo debido a errores en los programas escritos por el cliente.
 
-人员安全
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Seguridad del personal
+~~~~~~~~~~~~~~~~~~~~~~
 
-在运行机器人系统时，首先必须要确保作业人员的安全，下面列出一般性的注意事项，请妥善采取确保作业人员安全的相应措施。
+Al poner en funcionamiento el sistema del robot, en primer lugar es imprescindible garantizar la seguridad del personal de trabajo; a continuación se enumeran las precauciones generales; adopte debidamente las medidas correspondientes para garantizar la seguridad del personal de trabajo.
 
-1. 使用机器人系统的各作业人员，应通过法奥（苏州）机器人技术股份有限公司主办的培训课程接受培训。用户需确保其充分掌握安全、规范的操作流程，具备机器人操作资格。培训详情请向我公司查询，邮箱为 jiling@frtech.fr。
+1. Todo el personal de trabajo que utilice el sistema del robot deberá recibir formación a través de los cursos organizados por FAIRINO (Suzhou) Robot Technology Co., Ltd. El usuario debe asegurarse de que domina plenamente los procedimientos de operación seguros y normalizados y de que posee la cualificación para operar el robot. Para obtener información detallada sobre la formación, consulte con nuestra empresa en el correo electrónico jiling@frtech.fr.
 
-2. 使用机器人系统的各作业人员请不要穿宽松的衣服，不要佩戴珠宝。操作机器人时请确保长头发束在脑后。
+2. Todo el personal de trabajo que utilice el sistema del robot no debe llevar ropa holgada ni joyas. Al operar el robot, asegúrese de recogerse el pelo largo.
 
-3. 在设备运转之中，即使机器人看上去已经停止，也有可能是因为机器人在等待启动信号而处在即将动作的状态。即使在这样的状态下，也应该将机器人视为正在动作中。
+3. Durante el funcionamiento del equipo, aunque el robot parezca detenido, es posible que se encuentre en un estado a punto de moverse porque está esperando la señal de inicio. Incluso en ese estado, el robot debe considerarse en movimiento.
 
-4. 应在地板上画上线条来标清机器人的动作范围，使操作者了解机器人包含握持工具（机械手、工具等）的动作范围。
+4. Deben trazarse líneas en el suelo para delimitar claramente el rango de movimiento del robot, de modo que el operador conozca el rango de movimiento del robot, incluida la herramienta que sujeta (manipulador, herramienta, etc.).
 
-5. 确保在机器人操作区域附近建立安全措施（例如，护栏、绳索、或防护屏幕），保护操作者及周边人群。应根据需要设置锁具，使得负责操作的作业人员以外者不能接触机器人电源。
+5. Asegúrese de establecer medidas de seguridad en las proximidades de la zona de operación del robot (por ejemplo, barandillas, cuerdas o pantallas de protección) para proteger al operador y a las personas del entorno. Deben instalarse cerraduras según sea necesario, de modo que las personas ajenas al personal responsable de la operación no puedan acceder a la alimentación del robot.
 
-6. 在使用操作面板和示教器时，由于戴上手套可能会出现操作上的失误，务必在摘下手套后进行作业。
+6. Al utilizar el panel de operación y el teach pendant, dado que llevar guantes puede provocar errores de operación, asegúrese de trabajar tras quitarse los guantes.
 
-7. 在人被机器人夹住或围在里面等紧急和异常情况下，通过用力（至少700 N）推动或拉动机器人手臂，迫使关节移动。无电力驱动情况下手动移动机器人手臂仅限于紧急情况，并且可能会损坏关节。
+7. En situaciones de emergencia y anómalas, como cuando una persona queda atrapada o rodeada por el robot, empuje o tire del brazo del robot con fuerza (al menos 700 N) para forzar el movimiento de las articulaciones. El movimiento manual del brazo del robot sin accionamiento eléctrico solo se limita a situaciones de emergencia y puede dañar las articulaciones.
 
-危险识别
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Identificación de peligros
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-风险评估应考虑正常使用期间操作人员与机器人之间所有潜在的接触以及可预见的误操作。操作人员的颈部、脸部和头部不应暴露，以免发生碰触。在不使用外围安全防护装置的情况下使用机器人需要首先进行风险评估，以判断相关危险是否会构成不可接受的风险，例如
+La evaluación de riesgos debe considerar todos los contactos potenciales entre el operador y el robot durante el uso normal, así como los errores previsibles. El cuello, la cara y la cabeza del operador no deben quedar expuestos para evitar contactos. El uso del robot sin dispositivos de protección periféricos requiere primero una evaluación de riesgos para determinar si los peligros correspondientes constituyen un riesgo inaceptable, por ejemplo:
 
--  使用尖锐的末端执行器或工具连接器可能存在危险；
+-  El uso de efectores finales o conectores de herramientas afilados puede ser peligroso;
 
--  处理毒性或其他有害物质可能存在危险；
+-  La manipulación de sustancias tóxicas u otras sustancias nocivas puede ser peligrosa;
 
--  操作人员手指有被机器人底座或关节夹住的危险；
+-  Existe el peligro de que los dedos del operador queden atrapados por la base o las articulaciones del robot;
 
--  被机器人碰撞发生的危险；
+-  Existe el peligro de colisión con el robot;
 
--  机器人或连接到末端的工具固定不到位存在的危险；
+-  Existe el peligro de que el robot o la herramienta conectada al extremo no estén fijados correctamente;
 
--  机器人有效负载与坚固表面之间的冲击造成的危险。
+-  Existe el peligro de impacto entre la carga útil del robot y una superficie sólida.
 
-集成商必须通过风险评估来衡量此类危险及其相关的风险等级，并且确定和实施相应的措施，以将风险降低至可接受的水平。请注意，特定机器人设备可能还存在其他重大危险。
+El integrador debe medir mediante la evaluación de riesgos este tipo de peligros y su nivel de riesgo asociado, y determinar e implementar las medidas correspondientes para reducir el riesgo a un nivel aceptable. Tenga en cuenta que un equipo de robot específico puede presentar además otros peligros importantes.
 
-通过将FR机器人所应用的固有安全设计措施与集成商和最终用户所实施的安全规范或风险评估相结合，将与FR协作性操作相关的风险尽可能降低至合理可行的水平。通过此文档可将机器人在安装前存在的任何剩余风险传达给集成商和最终用户。如果集成商的风险评估测定其特定应用中存在可能对用户构成不可接受风险的危险，集成商必
-须采取适当的风险降低措施，以消除或最大限度降低这些危险，直至将风险降低至可接受的水平为止。在采取适当的风险降低措施（如有需要）之前使用是不安全的。
+Mediante la combinación de las medidas de diseño de seguridad inherentes aplicadas a los robots FR con las normas de seguridad o la evaluación de riesgos implementadas por el integrador y el usuario final, los riesgos asociados a la operación colaborativa de los FR se reducen en la medida de lo razonablemente posible. Mediante este documento se pueden transmitir al integrador y al usuario final los riesgos residuales existentes antes de la instalación del robot. Si la evaluación de riesgos del integrador determina que en su aplicación específica existen peligros que pueden constituir un riesgo inaceptable para el usuario, el integrador debe adoptar medidas adecuadas de reducción de riesgos para eliminar o minimizar al máximo dichos peligros, hasta reducir el riesgo a un nivel aceptable. No es seguro utilizarlo antes de adoptar las medidas adecuadas de reducción de riesgos (si es necesario).
 
-如果对机器人进行非协同性安装（例如，当使用危险工具时），风险评估可能推断集成商需要在其编程时连接额外的安全设备（例如，安全启动设备）确保人员及设备安全。
+Si se realiza una instalación no colaborativa del robot (por ejemplo, cuando se utilizan herramientas peligrosas), la evaluación de riesgos puede concluir que el integrador necesita conectar equipos de seguridad adicionales durante su programación (por ejemplo, dispositivos de arranque de seguridad) para garantizar la seguridad de las personas y del equipo.
 
-铭牌信息
-~~~~~~~~~~~~~~
+Información de la placa de características
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. figure:: installation/002.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.1-1 FR3型号协作机器人
+.. centered:: Figura 3.1-1 Robot colaborativo modelo FR3
 
 .. figure:: installation/106.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.1-2 FR3-WMS型号协作机器人
+.. centered:: Figura 3.1-2 Robot colaborativo modelo FR3-WMS
 
 .. figure:: installation/107.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.1-3 FR3-WML型号协作机器人
+.. centered:: Figura 3.1-3 Robot colaborativo modelo FR3-WML
 
 .. figure:: installation/108.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.1-4 FR3-C型号协作机器人
+.. centered:: Figura 3.1-4 Robot colaborativo modelo FR3-C
 
 .. figure:: installation/003.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.1-5 FR5型号协作机器人
+.. centered:: Figura 3.1-5 Robot colaborativo modelo FR5
 
 .. figure:: installation/128.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.1-6 FR5-C型号协作机器人
+.. centered:: Figura 3.1-6 Robot colaborativo modelo FR5-C
 
 .. figure:: installation/126.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.1-7 FR5-WML型号协作机器人
+.. centered:: Figura 3.1-7 Robot colaborativo modelo FR5-WML
 
 .. figure:: installation/004.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.1-8 FR10型号协作机器人
+.. centered:: Figura 3.1-8 Robot colaborativo modelo FR10
 
 .. figure:: installation/005.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.1-9 FR16型号协作机器人
+.. centered:: Figura 3.1-9 Robot colaborativo modelo FR16
 
 .. figure:: installation/006.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.1-10 FR20型号协作机器人
+.. centered:: Figura 3.1-10 Robot colaborativo modelo FR20
 
 .. figure:: installation/007.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.1-11 FR30型号协作机器人
+.. centered:: Figura 3.1-11 Robot colaborativo modelo FR30
 
-有效性和责任
-~~~~~~~~~~~~~~~~
+Validez y responsabilidad
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-本手册中的信息不包含设计、安装和操作一个完整的机器人应用，也不包含所有可能对这一完整的系统的安全造成影响的周边设备。该完整系统的设计和安装需符合该机器人安装所在国的标准和规范中确立的安全要求。
+La información de este manual no incluye el diseño, la instalación y la operación de una aplicación completa de robot, ni incluye todos los equipos periféricos que puedan afectar a la seguridad de este sistema completo. El diseño y la instalación de este sistema completo deben cumplir los requisitos de seguridad establecidos en las normas y reglamentos del país donde se instala el robot.
 
-法奥的集成商有责任确保遵循相关国家的法律法规，确保完整的机器人应用中不存在任何重大危险。这包括但不限于以下内容：
+El integrador de FAIRINO tiene la responsabilidad de garantizar el cumplimiento de las leyes y reglamentos de los países correspondientes y de garantizar que en la aplicación completa del robot no exista ningún peligro importante. Esto incluye, entre otros, los siguientes aspectos:
 
--  对完整的机器人系统做一个风险评估
+-  Realizar una evaluación de riesgos de todo el sistema de robot
 
--  将风险评估定义的其他机械和附加安全设备连接在一起
+-  Conectar entre sí otros equipos mecánicos y equipos de seguridad adicionales definidos en la evaluación de riesgos
 
--  在软件中建立适当的安全设置
+-  Establecer en el software la configuración de seguridad adecuada
 
--  确保用户不会对任何安全措施加以修改
+-  Garantizar que el usuario no modifique ninguna medida de seguridad
 
--  确认整个机器人系统的设计和安装准确无误
+-  Confirmar que el diseño y la instalación de todo el sistema de robot son correctos
 
--  明确使用说明
+-  Definir claramente las instrucciones de uso
 
--  在机器人上标明集成商的相关标志和联系信息
+-  Indicar en el robot la marca y la información de contacto correspondientes del integrador
 
--  收集技术文件中的所有文档，包括本手册
+-  Recopilar toda la documentación de los archivos técnicos, incluido este manual
 
-责任有限
-~~~~~~~~~~~~~~
+Responsabilidad limitada
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-本手册所包含的任何安全信息都不得视为通用的机器人安全保证，即使遵守所有安全说明，依然有可能引起人员伤害或设备损坏。
+Ninguna información de seguridad contenida en este manual debe considerarse como una garantía general de seguridad del robot; incluso cumpliendo todas las instrucciones de seguridad, todavía es posible que se produzcan daños personales o daños al equipo.
 
-该手册中的警告标志
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Los símbolos de advertencia de este manual
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-下面的标志定义了本手册中所包含的危险等级规定说明。产品上也使用了同样的警告标志。
+Los siguientes símbolos definen las indicaciones de nivel de peligro contenidas en este manual. Los mismos símbolos de advertencia se utilizan también en el producto.
 
 .. important:: 
 	.. figure:: installation/008.png
@@ -167,7 +166,7 @@
 		:height: 50
 		:align: left
 
-	危险：这指的是即将引发危险的用电情况，如果不避免，可导致人员死亡或严重伤害。
+	Peligro: se refiere a una situación eléctrica que está a punto de provocar peligro y que, si no se evita, puede causar la muerte o lesiones graves.
 
 .. important:: 
 	.. figure:: installation/009.png
@@ -175,7 +174,7 @@
 		:height: 50
 		:align: left
 
-	触电危险：这指的是即将引发危险的触电情况，如果不避免，可导致人员触电死亡或严重伤害。
+	Peligro de descarga eléctrica: se refiere a una situación de descarga eléctrica que está a punto de provocar peligro y que, si no se evita, puede causar la muerte por descarga eléctrica o lesiones graves.
 
 .. important:: 
 	.. figure:: installation/010.png
@@ -183,51 +182,51 @@
 		:height: 50
 		:align: left
 
-	烫伤危险：这指的是可能引发危险的热表面，如果不避免接触了，可造成人员伤害。
+	Peligro de quemadura: se refiere a una superficie caliente que puede provocar peligro y que, si se toca sin evitarlo, puede causar daños personales.
 
-使用前评估
-~~~~~~~~~~~~~~~
+Evaluación antes del uso
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-首次使用机器人或进行任何修改之后，机器人默认速度低于250mm/s，请勿登录管理员修改速度进入高速模式，之后必须进行以下测试。确认所有安全输入和输出是正确的，并且连接正确。测试所有连接的安全输入和输出（包括多台机器或机器人共有的设备）是否功能正常。因此您必须：
+La primera vez que se utilice el robot o tras realizar cualquier modificación, la velocidad predeterminada del robot es inferior a 250 mm/s; no inicie sesión como administrador para modificar la velocidad y entrar en modo de alta velocidad; a continuación deben realizarse las siguientes pruebas. Confirme que todas las entradas y salidas de seguridad son correctas y que están conectadas correctamente. Compruebe si todas las entradas y salidas de seguridad conectadas (incluidos los equipos compartidos por varios robots o máquinas) funcionan correctamente. Por lo tanto, debe:
 
--  测试紧急停止按钮和输入是否可以停止机器人并启动刹车。
+-  Probar si el botón de parada de emergencia y las entradas pueden detener el robot y activar el freno.
 
--  测试防护输入是否可以停止机器人的运动。如果配置了防护重置，请在恢复运动之前检查是否需要激活。
+-  Probar si las entradas de protección pueden detener el movimiento del robot. Si se ha configurado el restablecimiento de protección, compruebe si es necesario activarlo antes de reanudar el movimiento.
 
--  测试操作模式是否可以切换操作模式，参见用户界面右上角的图标。
+-  Probar si el modo de operación puede cambiar el modo de operación; consulte el icono de la esquina superior derecha de la interfaz de usuario.
 
--  测试3 档位使动装置是否必须按下才能在手动模式下启动动作，并且机器人处于减速控制下（机器人软件版本V3.0前不支持该功能）。
+-  Probar si es necesario pulsar el dispositivo de habilitación de 3 posiciones para iniciar el movimiento en modo manual y si el robot se encuentra bajo control de deceleración (esta función no es compatible con versiones del software del robot anteriores a la V3.0).
 
--  测试系统紧急停止输出是否能够将整个系统带到安全状态。
+-  Probar si la salida de parada de emergencia del sistema puede llevar todo el sistema a un estado seguro.
 
-紧急停止
-~~~~~~~~~~~~~~
+Parada de emergencia
+~~~~~~~~~~~~~~~~~~~~
 
-紧急停止按钮为0类停机，按下紧急停止按钮，立即停止机器人的一切运动。
+El botón de parada de emergencia es una parada de categoría 0; al pulsar el botón de parada de emergencia se detiene inmediatamente todo movimiento del robot.
 
-下表显示触发0类停机的停止距离和停止时间。这些测量结果对应于机器人的以下配置：
+La tabla siguiente muestra la distancia de parada y el tiempo de parada que activan la parada de categoría 0. Estos resultados de medición corresponden a la siguiente configuración del robot:
 
--  延伸：100%（机器人手臂完全水平展开）
+-  Extensión: 100% (el brazo del robot está completamente extendido en horizontal)
 
--  速度：100%（机器人一般速度设为100%，以180°/s的关节速度移动）
+-  Velocidad: 100% (la velocidad general del robot se establece en 100%, moviéndose a una velocidad articular de 180°/s)
 
--  有效负载：最大有效负载
+-  Carga útil: carga útil máxima
 
-关节1，关节6测试机器人水平移动，旋转轴垂直于地面。关节2，关节3，关节4，关节5测试机器人遵循垂直轨迹，旋转轴平行于地面，并在机器人向下移动时停止。
+Las articulaciones 1 y 6 prueban el movimiento horizontal del robot, con el eje de rotación perpendicular al suelo. Las articulaciones 2, 3, 4 y 5 prueban el robot siguiendo una trayectoria vertical, con el eje de rotación paralelo al suelo, y se detienen cuando el robot se desplaza hacia abajo.
 
-.. centered:: 表格 3.1-1 0类停止距离(rad)
+.. centered:: Tabla 3.1-1 Distancia de parada de categoría 0 (rad)
 .. list-table::
    :widths: 10 15 15 15 15 15 15
    :header-rows: 0
    :class: sheet-center
 
    * - 
-     - **关节1**
-     - **关节2**
-     - **关节3**
-     - **关节4**
-     - **关节5**
-     - **关节6**
+     - **Articulación 1**
+     - **Articulación 2**
+     - **Articulación 3**
+     - **Articulación 4**
+     - **Articulación 5**
+     - **Articulación 6**
 
    * - **FR3**
      - 0.47
@@ -317,19 +316,19 @@
      - 0.31
      - 0.22
 
-.. centered:: 表格 3.1-2 0类停止时间(ms)
+.. centered:: Tabla 3.1-2 Tiempo de parada de categoría 0 (ms)
 .. list-table::
    :widths: 10 15 15 15 15 15 15
    :header-rows: 0
    :class: sheet-center
 
    * - 
-     - **关节1**
-     - **关节2**
-     - **关节3**
-     - **关节4**
-     - **关节5**
-     - **关节6**
+     - **Articulación 1**
+     - **Articulación 2**
+     - **Articulación 3**
+     - **Articulación 4**
+     - **Articulación 5**
+     - **Articulación 6**
 
    * - **FR3**
      - 400
@@ -419,31 +418,31 @@
      - 260
      - 170
 
-紧急停止后，关闭电源，旋转紧急停止按钮，打开电源即可重新启动机器人。
+Tras la parada de emergencia, apague la alimentación, gire el botón de parada de emergencia y vuelva a encender la alimentación para reiniciar el robot.
 
-同时机器人安全停止和软限位停止的停止时间和停止距离，见下表。这些测量结果对应于机器人的以下配置：
+Asimismo, el tiempo de parada y la distancia de parada de la parada de seguridad del robot y de la parada por límite suave se muestran en la tabla siguiente. Estos resultados de medición corresponden a la siguiente configuración del robot:
 
--  延伸：100%（机器人手臂完全水平展开）
+-  Extensión: 100% (el brazo del robot está completamente extendido en horizontal)
 
--  速度：100%（机器人一般速度设为100%，以180°/s的关节速度移动）
+-  Velocidad: 100% (la velocidad general del robot se establece en 100%, moviéndose a una velocidad articular de 180°/s)
 
--  有效负载：最大有效负载
+-  Carga útil: carga útil máxima
 
-关节1，关节6测试机器人水平移动，旋转轴垂直于地面。关节2，关节3，关节4，关节5测试机器人遵循垂直轨迹，旋转轴平行于地面，并在机器人向下移动时停止。
+Las articulaciones 1 y 6 prueban el movimiento horizontal del robot, con el eje de rotación perpendicular al suelo. Las articulaciones 2, 3, 4 y 5 prueban el robot siguiendo una trayectoria vertical, con el eje de rotación paralelo al suelo, y se detienen cuando el robot se desplaza hacia abajo.
 
-.. centered:: 表格 3.1-3 安全停止距离(rad)
+.. centered:: Tabla 3.1-3 Distancia de parada de seguridad (rad)
 .. list-table::
    :widths: 10 15 15 15 15 15 15
    :header-rows: 0
    :class: sheet-center
 
    * - 
-     - **关节1**
-     - **关节2**
-     - **关节3**
-     - **关节4**
-     - **关节5**
-     - **关节6**
+     - **Articulación 1**
+     - **Articulación 2**
+     - **Articulación 3**
+     - **Articulación 4**
+     - **Articulación 5**
+     - **Articulación 6**
 
    * - **FR3**
      - 0.49
@@ -533,19 +532,19 @@
      - 0.33
      - 0.25
 
-.. centered:: 表格 3.1-4 安全停止时间(ms)
+.. centered:: Tabla 3.1-4 Tiempo de parada de seguridad (ms)
 .. list-table::
    :widths: 10 15 15 15 15 15 15
    :header-rows: 0
    :class: sheet-center
 
    * - 
-     - **关节1**
-     - **关节2**
-     - **关节3**
-     - **关节4**
-     - **关节5**
-     - **关节6**
+     - **Articulación 1**
+     - **Articulación 2**
+     - **Articulación 3**
+     - **Articulación 4**
+     - **Articulación 5**
+     - **Articulación 6**
 
    * - **FR3**
      - 410
@@ -635,19 +634,19 @@
      - 280
      - 200
 
-.. centered:: 表格 3.1-5 软限位停止距离(rad)
+.. centered:: Tabla 3.1-5 Distancia de parada por límite suave (rad)
 .. list-table::
    :widths: 10 15 15 15 15 15 15
    :header-rows: 0
    :class: sheet-center
 
    * - 
-     - **关节1**
-     - **关节2**
-     - **关节3**
-     - **关节4**
-     - **关节5**
-     - **关节6**
+     - **Articulación 1**
+     - **Articulación 2**
+     - **Articulación 3**
+     - **Articulación 4**
+     - **Articulación 5**
+     - **Articulación 6**
 
    * - **FR3**
      - 0.52
@@ -737,19 +736,19 @@
      - 0.36
      - 0.27
 
-.. centered:: 表格 3.1-6 软限位停止时间(ms)
+.. centered:: Tabla 3.1-6 Tiempo de parada por límite suave (ms)
 .. list-table::
    :widths: 10 15 15 15 15 15 15
    :header-rows: 0
    :class: sheet-center
 
    * - 
-     - **关节1**
-     - **关节2**
-     - **关节3**
-     - **关节4**
-     - **关节5**
-     - **关节6**
+     - **Articulación 1**
+     - **Articulación 2**
+     - **Articulación 3**
+     - **Articulación 4**
+     - **Articulación 5**
+     - **Articulación 6**
 
    * - **FR3**
      - 430
@@ -840,259 +839,259 @@
      - 210
 
 .. important:: 
-	根据IEC 60204-1 和ISO 13850，紧急停止设备不是安全防护装置。它们是补充性防护措施，并不用于防止伤害。
+	Según IEC 60204-1 e ISO 13850, los dispositivos de parada de emergencia no son dispositivos de protección de seguridad. Son medidas de protección complementarias y no están destinados a prevenir daños.
 
-无电力驱动的移动
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Movimiento sin accionamiento eléctrico
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-如果发生必须移动机器人关节但无法为机器人供电或者其他紧急情况，请联系机器人经销商，必要时可以使用暴力手段强制移动机器人以解救被困人员。
+Si se produce una situación de emergencia en la que es necesario mover las articulaciones del robot pero no se puede alimentar el robot u otras situaciones de emergencia, póngase en contacto con el distribuidor del robot; si es necesario, se pueden utilizar medios violentos para forzar el movimiento del robot y rescatar a las personas atrapadas.
 
-设备运输
----------
-
-运输
-~~~~~~
-
-机器人和控制箱已作为成套设备校准。请勿将它们分开，那样将需要重新校准。
-
-只能将机器人放在原包装中运输。如果今后要搬运机器人的话，请将包装材料保存在干燥处。
-
-将机器人从包装移动到安装空间时，同时托住机器人的两个臂体。扶住机器人直至机器人机座的所有安装螺栓全部紧固好。
-
-搬运
-~~~~~~
-
-协作机器人根据型号不同，总质量（含包装）范围在15kg-80 kg，当人力对协作机器人进行搬运或转移时，需要多人协助抬起，不推荐单人搬运，在运输过程中务必平稳，避免设备倾翻或者滑落。
-
-.. warning:: 
-	- 若采用专业设备进行搬运，请务必由具有相应操作资格的专业人员使用吊车或者叉车对协作机器人进行运输或者搬运，否则有可能会引起人员伤害或者其他事故。
-	- 若采用人工搬运，请注意搬运途中人身安全；
-	- 协作机器人包含精密零部件，在运输或者搬运过程中应该避免剧烈的振动或者晃动，否则有可能降低设备的性能。
-
-存放
-~~~~~~~
-
-协作机器人应在-25~60℃，无凝霜环境下存放。
-
-维护、检查、报废处理
+Transporte del equipo
 ---------------------
 
-维护处置
+Transporte
+~~~~~~~~~~
+
+El robot y la caja de control ya están calibrados como un equipo completo. No los separe, ya que sería necesario volver a calibrarlos.
+
+El robot solo debe transportarse en su embalaje original. Si en el futuro va a trasladar el robot, conserve el material de embalaje en un lugar seco.
+
+Al mover el robot desde el embalaje hasta el espacio de instalación, sujete simultáneamente los dos brazos del robot. Sujete el robot hasta que todos los pernos de instalación de la base del robot estén completamente apretados.
+
+Manipulación
+~~~~~~~~~~~~
+
+El robot colaborativo, según el modelo, tiene una masa total (incluido el embalaje) en el rango de 15 kg a 80 kg; cuando se manipule o traslade el robot colaborativo de forma manual, es necesario que varias personas ayuden a levantarlo; no se recomienda que lo manipule una sola persona; durante el transporte debe mantenerse estable para evitar que el equipo vuelque o se deslice.
+
+.. warning:: 
+	- Si se utiliza equipo profesional para la manipulación, asegúrese de que personal profesional con la cualificación correspondiente utilice una grúa o una carretilla elevadora para transportar o manipular el robot colaborativo; de lo contrario, podría provocar daños personales u otros accidentes.
+	- Si se realiza manipulación manual, preste atención a la seguridad personal durante el transporte;
+	- El robot colaborativo contiene componentes de precisión; durante el transporte o la manipulación deben evitarse vibraciones o sacudidas violentas; de lo contrario, podría reducirse el rendimiento del equipo.
+
+Almacenamiento
 ~~~~~~~~~~~~~~
 
-请用户间隔1个月对急停和保护性停止进行检测。判断安全功能是否有效。
-急停和保护性停止接线请参考接线章节。
+El robot colaborativo debe almacenarse en un entorno de -25~60℃, sin escarcha.
 
-检查手册
-~~~~~~~~~~~~~~
+Mantenimiento, inspección y eliminación
+---------------------------------------
 
-前言
-+++++++++++
+Mantenimiento y tratamiento
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-安全须知
-****************
+Se solicita al usuario que compruebe la parada de emergencia y la parada protectora con una periodicidad de 1 mes, para determinar si la función de seguridad es efectiva.
+Para el cableado de la parada de emergencia y de la parada protectora, consulte el capítulo de cableado.
 
-本说明书会使用到以下警示，这些警示的作用是确保人身及设备的安全，当您在阅读本说明书时，必须遵守并执行本手册其他章节中的所有组装说明和指南，这一点非常重要。
+Manual de inspección
+~~~~~~~~~~~~~~~~~~~~
 
-应特别注意与警告标志相关的文本，使用前请认真阅读用户手册，本手册仅作为客户维修指导手册使用，维护操作人员需要具备专业能力，非专业人事操作，法奥拒绝承担所有责任。
+Prefacio
+++++++++
 
-.. note:: 如果机器人（机器人本体、控制箱、示教盒）因人为原因被损坏、更改或修改，法奥拒绝承担所有责任；法奥对由于客户编写的程序出错而对机器人或任何其他设备造成的任何损坏概不负责。
+Avisos de seguridad
+*******************
 
-有效性和责任
-****************
+Este manual utiliza los siguientes avisos, cuya finalidad es garantizar la seguridad de las personas y del equipo; al leer este manual es muy importante que cumpla y ejecute todas las instrucciones de montaje y las directrices del resto de capítulos de este manual.
 
-本手册中的信息不包含设计、安装和操作一个完整的机器人应用，也不包含所有可能对这一完整的系统的安全造成影响的周边设备。该完整系统的设计和安装需符合该机器人安装所在国的标准和规范中确立的安全要求。
+Debe prestarse especial atención a los textos asociados a los símbolos de advertencia; lea atentamente el manual de usuario antes de su uso. Este manual solo debe utilizarse como manual de orientación para el mantenimiento del cliente; el personal de mantenimiento debe poseer capacidad profesional; FAIRINO declina toda responsabilidad por operaciones realizadas por personal no profesional.
 
-法奥的集成商有责任确保遵循相关国家的法律法规，确保完整的机器人应用中不存在任何重大危险。这包括但不限于以下内容：
+.. note:: Si el robot (cuerpo del robot, caja de control, teach pendant) se daña, altera o modifica por causas humanas, FAIRINO declina toda responsabilidad; FAIRINO no se hace responsable de ningún daño causado al robot o a cualquier otro equipo debido a errores en los programas escritos por el cliente.
 
-- 对完整的机器人系统做一个风险评估
-- 将风险评估定义的其他机械和附加安全设备连接在一起
-- 在软件中建立适当的安全设置
-- 确保用户不会对任何安全措施加以修改
-- 确认整个机器人系统的设计和安装准确无误
-- 明确使用说明
-- 在机器人上标明集成商的相关标志和联系信息
-- 收集技术文件中的所有文档，包括本手册
+Validez y responsabilidad
+*************************
 
-责任有限
-****************
+La información de este manual no incluye el diseño, la instalación y la operación de una aplicación completa de robot, ni incluye todos los equipos periféricos que puedan afectar a la seguridad de este sistema completo. El diseño y la instalación de este sistema completo deben cumplir los requisitos de seguridad establecidos en las normas y reglamentos del país donde se instala el robot.
 
-本手册所包含的任何安全信息都不得视为通用的机器人安全保证，即使遵守所有安全说明，依然有可能引起人员伤害或设备损坏。
+El integrador de FAIRINO tiene la responsabilidad de garantizar el cumplimiento de las leyes y reglamentos de los países correspondientes y de garantizar que en la aplicación completa del robot no exista ningún peligro importante. Esto incluye, entre otros, los siguientes aspectos:
 
-警告标志
+- Realizar una evaluación de riesgos de todo el sistema de robot
+- Conectar entre sí otros equipos mecánicos y equipos de seguridad adicionales definidos en la evaluación de riesgos
+- Establecer en el software la configuración de seguridad adecuada
+- Garantizar que el usuario no modifique ninguna medida de seguridad
+- Confirmar que el diseño y la instalación de todo el sistema de robot son correctos
+- Definir claramente las instrucciones de uso
+- Indicar en el robot la marca y la información de contacto correspondientes del integrador
+- Recopilar toda la documentación de los archivos técnicos, incluido este manual
+
+Responsabilidad limitada
+*************************
+
+Ninguna información de seguridad contenida en este manual debe considerarse como una garantía general de seguridad del robot; incluso cumpliendo todas las instrucciones de seguridad, todavía es posible que se produzcan daños personales o daños al equipo.
+
+Símbolos de advertencia
 ***********************
 
-下面的标志定义了本手册中所包含的危险等级规定说明。产品上也使用了同样的警告标志。
+Los siguientes símbolos definen las indicaciones de nivel de peligro contenidas en este manual. Los mismos símbolos de advertencia se utilizan también en el producto.
 
 .. note:: 
    .. image:: installation/070.png
       :height: 0.75in
       :align: left
 
-   名称：**危险**
+   Nombre: **Peligro**
      
-   作用：这指的是即将引发危险的用电情况，如果不避免，可导致人员死亡或严重伤害。
+   Función: se refiere a una situación eléctrica que está a punto de provocar peligro y que, si no se evita, puede causar la muerte o lesiones graves.
 
 .. note:: 
    .. image:: installation/071.png
       :height: 0.75in
       :align: left
 
-   名称：**触电危险**
+   Nombre: **Peligro de descarga eléctrica**
    
-   作用：这指的是即将引发危险的触电情况，如果不避免，可导致人员触电死亡或严重伤害。
+   Función: se refiere a una situación de descarga eléctrica que está a punto de provocar peligro y que, si no se evita, puede causar la muerte por descarga eléctrica o lesiones graves.
 
 .. note:: 
    .. image:: installation/072.png
       :height: 0.75in
       :align: left
 
-   名称：**烫伤危险**
+   Nombre: **Peligro de quemadura**
    
-   作用：这指的是可能引发危险的热表面，如果接触了，可造成人员伤害。
+   Función: se refiere a una superficie caliente que puede provocar peligro y que, si se toca, puede causar daños personales.
 
-控制箱数字量输入输出说明
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Descripción de las entradas y salidas digitales de la caja de control
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-控制箱数字量相关功能切换时的注意事项
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Precauciones al cambiar las funciones digitales de la caja de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. important:: 
 
-  (1) 在进行数字量输入输出功能切换时，需遵守机器人的安全操作规程，确保操作人员和设备的安全。
-  (2) 在机器人运行过程中，避免对数字量输入输出功能进行切换，以免影响机器人的正常运行。
-  (3) 在进行数字量输入输出功能切换操作前，务必先切断机器人的电源，以防止触电和意外的机器运动，造成人员伤害和设备损坏。
-  (4) 在进行功能切换前，需明确机器人控制系统对数字量输入输出的要求，包括信号类型、电压等级、负载能力等。
-  (5) 确保数字量输入输出端口与外部设备的连接正确无误，包括接线是否牢固、端口是否匹配等。
-  (6) 避免重复分配信号，确保每个信号的分配是唯一的。
-  (7) 分配完成后，需重启机器人控制系统，使设置生效。
-  (8) 在完成配置后，进入I/O状态界面，检查数字量输入输出信号的状态是否正确。
-  (9) 通过实际操作或编写测试程序，验证数字量输入输出功能是否正常工作。
-  (10) 如果数字量输入输出信号与程序逻辑相关，需检查程序中对这些信号的处理是否正确。
+  (1) Al cambiar las funciones de entrada y salida digital, deben cumplirse los procedimientos de operación segura del robot para garantizar la seguridad del operador y del equipo.
+  (2) Durante el funcionamiento del robot, evite cambiar las funciones de entrada y salida digital para no afectar al funcionamiento normal del robot.
+  (3) Antes de realizar la operación de cambio de funciones de entrada y salida digital, asegúrese de cortar primero la alimentación del robot para evitar descargas eléctricas y movimientos accidentales del robot que puedan causar daños personales y daños al equipo.
+  (4) Antes de cambiar las funciones, deben aclararse los requisitos del sistema de control del robot respecto a las entradas y salidas digitales, incluidos el tipo de señal, el nivel de tensión, la capacidad de carga, etc.
+  (5) Asegúrese de que la conexión de los puertos de entrada y salida digital con los dispositivos externos es correcta, incluida la firmeza del cableado y la coincidencia de los puertos, etc.
+  (6) Evite la asignación repetida de señales; asegúrese de que la asignación de cada señal es única.
+  (7) Tras completar la asignación, es necesario reiniciar el sistema de control del robot para que la configuración surta efecto.
+  (8) Tras completar la configuración, entre en la interfaz de estado de I/O y compruebe si el estado de las señales de entrada y salida digital es correcto.
+  (9) Verifique mediante la operación real o mediante la escritura de un programa de prueba si la función de entrada y salida digital funciona correctamente.
+  (10) Si las señales de entrada y salida digital están relacionadas con la lógica del programa, compruebe si el tratamiento de estas señales en el programa es correcto.
 
-控制箱数字量输入说明
-++++++++++++++++++++++++++++++++++++++++++++
+Descripción de las entradas digitales de la caja de control
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-控制箱数字量输入汇总
-***************************************
+Resumen de las entradas digitales de la caja de control
+*******************************************************
 
-下面列出了法奥机器人集成式mini控制箱数字量输入支持的输入类型以及对应的接线图和配置对照表。
+A continuación se enumeran los tipos de entrada admitidos por las entradas digitales de la caja de control mini integrada de los robots FAIRINO, así como los diagramas de cableado y las tablas de correspondencia de configuración correspondientes.
 
 .. figure:: installation/080.png
 	:align: center
 	:width: 4in
 
-.. centered:: 图表 3.3-1 DI0-DI7输入有效状态
+.. centered:: Figura 3.3-1 Estado válido de las entradas DI0-DI7
 
-.. centered:: 表格 3.3-1 控制箱数字量输入配置对照表
+.. centered:: Tabla 3.3-1 Tabla de correspondencia de configuración de las entradas digitales de la caja de control
 
 .. list-table::
    :widths: 15 15 35 10 10 10 10 
    :header-rows: 0
    :align: center
 
-   * - **控制箱类型**
-     - **输入类型**
-     - **连接图示**
-     - **高电平有效(开关闭合)** 
-     - **高电平有效(开关断开)** 
-     - **低电平有效(开关闭合)**
-     - **低电平有效(开关断开)**
+   * - **Tipo de caja de control**
+     - **Tipo de entrada**
+     - **Diagrama de conexión**
+     - **Activo por nivel alto (interruptor cerrado)** 
+     - **Activo por nivel alto (interruptor abierto)** 
+     - **Activo por nivel bajo (interruptor cerrado)**
+     - **Activo por nivel bajo (interruptor abierto)**
 
-   * - 直流控制箱
-     - NPN型输出
+   * - Caja de control de CC
+     - Salida tipo NPN
      - .. figure:: installation/081.png
           :align: center
           :width: 3in
-     - 无效
-     - 有效
-     - 有效
-     - 无效
+     - No válido
+     - Válido
+     - Válido
+     - No válido
 
-   * - 交流窄电压控制箱
-     - NPN型输出
+   * - Caja de control de CA de tensión estrecha
+     - Salida tipo NPN
      - .. figure:: installation/082.png
           :align: center
           :width: 3in
-     - 无效
-     - 有效
-     - 有效
-     - 无效
+     - No válido
+     - Válido
+     - Válido
+     - No válido
 
-   * - 交流宽电压控制箱
-     - NPN型输出
+   * - Caja de control de CA de tensión amplia
+     - Salida tipo NPN
      - .. figure:: installation/083.png
           :align: center
           :width: 3in
-     - 无效
-     - 有效
-     - 有效
-     - 无效
+     - No válido
+     - Válido
+     - Válido
+     - No válido
 
-   * - 交流宽电压控制箱
-     - PNP型输出
+   * - Caja de control de CA de tensión amplia
+     - Salida tipo PNP
      - .. figure:: installation/084.png
           :align: center
           :width: 3in
-     - 无效
-     - 有效
-     - 有效
-     - 无效
+     - No válido
+     - Válido
+     - Válido
+     - No válido
 
-控制箱数字量输入支持类型
-***************************************
+Tipos de entrada digital admitidos por la caja de control
+***************************************************************************************
 
-直流控制箱和交流窄电压控制箱的数字量输入只支持NPN型输入，交流宽电压控制箱数字量输入支持NPN和PNP型可选，出厂默认模式为NPN型。
+Las entradas digitales de la caja de control de CC y de la caja de control de CA de tensión estrecha solo admiten entrada de tipo NPN; las entradas digitales de la caja de control de CA de tensión amplia admiten seleccionablemente NPN y PNP, siendo el modo predeterminado de fábrica el tipo NPN.
 
 .. list-table::
    :widths: 50 50
    :header-rows: 0
    :align: center
 
-   * - **控制箱类型**
-     - **输入类型**
+   * - **Tipo de caja de control**
+     - **Tipo de entrada**
 
-   * - 直流控制箱
-     - NPN型输入
+   * - Caja de control de CC
+     - Entrada tipo NPN
 
-   * - 交流窄电压控制箱
-     - NPN型输入
+   * - Caja de control de CA de tensión estrecha
+     - Entrada tipo NPN
 
-   * - 交流宽电压控制箱
-     - NPN型输入/PNP型输入
+   * - Caja de control de CA de tensión amplia
+     - Entrada tipo NPN/entrada tipo PNP
 
-控制箱数字量输入接线图
-****************************
+Diagrama de cableado de las entradas digitales de la caja de control
+********************************************************************************************
 
-直流控制箱和交流窄电压控制箱的数字量输入只支持NPN型输入，其接线图如下。
+Las entradas digitales de la caja de control de CC y de la caja de control de CA de tensión estrecha solo admiten entrada de tipo NPN; su diagrama de cableado es el siguiente.
 
 	.. figure:: installation/085.png
 		:align: center
 		:width: 6in
 
-	.. centered:: 图表 3.3-2 直流控制箱和交流窄电压控制箱的数字量输入连线图
+	.. centered:: Figura 3.3-2 Diagrama de conexión de las entradas digitales de la caja de control de CC y de la caja de control de CA de tensión estrecha
 
-交流宽电压控制箱数字量输入支持NPN和PNP型可选，出厂默认模式为NPN型。其接线图如下：
+Las entradas digitales de la caja de control de CA de tensión amplia admiten seleccionablemente NPN y PNP, siendo el modo predeterminado de fábrica el tipo NPN. Su diagrama de cableado es el siguiente:
 
 .. list-table::
    :widths: 50 50
    :header-rows: 0
    :align: center
 
-   * - **输入类型** 
-     - **连接图示**
+   * - **Tipo de entrada** 
+     - **Diagrama de conexión**
 
-   * - NPN型输入 
+   * - Entrada tipo NPN 
      - 	.. figure:: installation/086.png
           :align: center
           :width: 3in
 
-   * - PNP型输入
+   * - Entrada tipo PNP
      - 	.. figure:: installation/087.png
           :align: center
           :width: 3in
 
-宽电压控制箱数字量输入的输入类型受控制箱内部的拨码开关决定，如果用户需要更改输入类型，这需要将拨码开关拨到对应位置。
+El tipo de entrada de las entradas digitales de la caja de control de tensión amplia está determinado por el interruptor DIP del interior de la caja de control; si el usuario necesita cambiar el tipo de entrada, debe colocar el interruptor DIP en la posición correspondiente.
 
 .. list-table::
    :widths: 30 30 40
@@ -1100,508 +1099,508 @@
    :align: center
 
    * -  
-     - 拨码开关位置
-     - 拨码开关实物位置
+     - Posición del interruptor DIP
+     - Posición física del interruptor DIP
 
-   * - NPN型输入 
+   * - Entrada tipo NPN 
      - EX-24V
      - .. figure:: installation/088.png
           :align: center
           :width: 3in
 
-   * - PNP型输入 
+   * - Entrada tipo PNP 
      - EX-0V
      - 	.. figure:: installation/089.png
           :align: center
           :width: 3in
 
-控制箱数字量输入相关软件设置
-****************************************************
+Configuración de software relacionada con las entradas digitales de la caja de control
+********************************************************************************************************************
 
-关于数字量输入的软件设置项目只有“DI0-DI7输入有效状态”，其表征检测到的输入有效时对应的数字量电压电平值。此设置可用使用户更加灵活的使用使用数量输入。
+El único elemento de configuración de software relativo a las entradas digitales es "Estado válido de las entradas DI0-DI7", que representa el valor de nivel de tensión digital correspondiente cuando se detecta una entrada válida. Esta configuración permite al usuario utilizar las entradas digitales de forma más flexible.
 
 	.. figure:: installation/090.png
 		:align: center
 		:width: 6in
 
-  .. centered:: 图表 3.3-3 DI0-DI7输入有效状态
+  .. centered:: Figura 3.3-3 Estado válido de las entradas DI0-DI7
 
-“DI0-DI7输入有效状态”在不同的设置下，当数字量输入的外接开关处于不同状态下，软件检测的有效状态对照表如下：
+Con "Estado válido de las entradas DI0-DI7" en distintas configuraciones, cuando el interruptor externo conectado a la entrada digital se encuentra en distintos estados, la tabla de correspondencia del estado válido detectado por el software es la siguiente:
 
-.. centered:: 表格 3.3-2 有效状态对照表
+.. centered:: Tabla 3.3-2 Tabla de correspondencia del estado válido
 
 .. list-table::
    :widths: 15 15 15 15 15 15
    :header-rows: 0
    :align: center
 
-   * - **控制箱类型** 
-     - **输入类型**
-     - **高电平有效(开关闭合)**
-     - **高电平有效(开关断开)**
-     - **低电平有效(开关闭合)**
-     - **低电平有效(开关断开)**
+   * - **Tipo de caja de control** 
+     - **Tipo de entrada**
+     - **Activo por nivel alto (interruptor cerrado)**
+     - **Activo por nivel alto (interruptor abierto)**
+     - **Activo por nivel bajo (interruptor cerrado)**
+     - **Activo por nivel bajo (interruptor abierto)**
 
-   * - 直流控制箱
-     - NPN型输入
-     - 无效
-     - 有效
-     - 有效
-     - 无效
+   * - Caja de control de CC
+     - Entrada tipo NPN
+     - No válido
+     - Válido
+     - Válido
+     - No válido
 
-   * - 交流窄电压控制箱
-     - NPN型输入
-     - 无效
-     - 有效
-     - 有效
-     - 无效
+   * - Caja de control de CA de tensión estrecha
+     - Entrada tipo NPN
+     - No válido
+     - Válido
+     - Válido
+     - No válido
 
-   * - 交流宽电压控制箱
-     - NPN型输入
-     - 无效
-     - 有效
-     - 有效
-     - 无效
+   * - Caja de control de CA de tensión amplia
+     - Entrada tipo NPN
+     - No válido
+     - Válido
+     - Válido
+     - No válido
 
-   * - 交流宽电压控制箱
-     - PNP型输入
-     - 无效
-     - 有效
-     - 有效
-     - 无效
+   * - Caja de control de CA de tensión amplia
+     - Entrada tipo PNP
+     - No válido
+     - Válido
+     - Válido
+     - No válido
 
-控制箱数字量输出说明
-+++++++++++++++++++++++++++++++++++++++++++++
+Descripción de las salidas digitales de la caja de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-控制箱数字量输出汇总
-**************************************
+Resumen de las salidas digitales de la caja de control
+**********************************************************************
 
-下面列出了法奥机器人集成式mini控制箱数字量输出支持的输出类型以及对应的接线图和配置对照表。
+A continuación se enumeran los tipos de salida admitidos por las salidas digitales de la caja de control mini integrada de los robots FAIRINO, así como los diagramas de cableado y las tablas de correspondencia de configuración correspondientes.
 
 .. figure:: installation/091.png
 	:align: center
 	:width: 4in
 
-.. centered:: 图表 3.3-4 上电期间控制箱DO输出
+.. centered:: Figura 3.3-4 Salida DO de la caja de control durante el encendido
 
-.. centered:: 表格 3.3-3 控制箱数字量输出配置对照表
+.. centered:: Tabla 3.3-3 Tabla de correspondencia de configuración de las salidas digitales de la caja de control
 
 .. list-table::
    :widths: 10 10 30 10 10 10 10
    :header-rows: 0
    :align: center
 
-   * - **控制箱类型**
-     - **输入类型**
-     - **连接图示**
-     - **高电平(开关置位ON)** 
-     - **高电平(开关置位OFF)** 
-     - **低电平(开关置位ON)**
-     - **低电平(开关置位OFF)**
+   * - **Tipo de caja de control**
+     - **Tipo de entrada**
+     - **Diagrama de conexión**
+     - **Nivel alto (interruptor en ON)** 
+     - **Nivel alto (interruptor en OFF)** 
+     - **Nivel bajo (interruptor en ON)**
+     - **Nivel bajo (interruptor en OFF)**
 
-   * - 直流控制箱
-     - NPN型输出
+   * - Caja de control de CC
+     - Salida tipo NPN
      - 	.. figure:: installation/093.png
           :align: center
           :width: 3in
-     - 有效 
-     - 有效
-     - 无效
-     - 无效
+     - Válido 
+     - Válido
+     - No válido
+     - No válido
 
-   * - 交流窄电压控制箱
-     - NPN型输出
+   * - Caja de control de CA de tensión estrecha
+     - Salida tipo NPN
      - .. figure:: installation/094.png
           :align: center
           :width: 3in
-     - 有效 
-     - 有效
-     - 无效
-     - 无效
+     - Válido 
+     - Válido
+     - No válido
+     - No válido
 
-   * - 交流宽电压控制箱
-     - NPN型输出
+   * - Caja de control de CA de tensión amplia
+     - Salida tipo NPN
      - .. figure:: installation/095.png
           :align: center
           :width: 3in
-     - 有效 
-     - 有效
-     - 无效
-     - 无效
+     - Válido 
+     - Válido
+     - No válido
+     - No válido
 
-   * - 交流宽电压控制箱
-     - PNP型输出
+   * - Caja de control de CA de tensión amplia
+     - Salida tipo PNP
      - .. figure:: installation/096.png
           :align: center
           :width: 3in
-     - 有效 
-     - 有效
-     - 无效
-     - 无效
+     - Válido 
+     - Válido
+     - No válido
+     - No válido
 
 .. figure:: installation/092.png
   :align: center
   :width: 4in
 
-.. centered:: 图表 3.3-5 DO0-D07输出有效状态
+.. centered:: Figura 3.3-5 Estado válido de las salidas DO0-D07
 
-.. centered:: 表格 3.3-4 控制箱数字量输出配置对照表
+.. centered:: Tabla 3.3-4 Tabla de correspondencia de configuración de las salidas digitales de la caja de control
 
 .. list-table::
    :widths: 10 10 30 10 10 10 10 
    :header-rows: 0
    :align: center
 
-   * - **控制箱类型**
-     - **输入类型**
-     - **连接图示**
-     - **高电平有效(开关置位ON)**
-     - **高电平有效(开关置位OFF)**
-     - **低电平有效(开关置位ON)**
-     - **低电平有效(开关置位OFF)**
+   * - **Tipo de caja de control**
+     - **Tipo de entrada**
+     - **Diagrama de conexión**
+     - **Activo por nivel alto (interruptor en ON)**
+     - **Activo por nivel alto (interruptor en OFF)**
+     - **Activo por nivel bajo (interruptor en ON)**
+     - **Activo por nivel bajo (interruptor en OFF)**
 
-   * - 直流控制箱
-     - NPN型输出
+   * - Caja de control de CC
+     - Salida tipo NPN
      - 	.. figure:: installation/093.png
           :align: center
           :width: 3in
-     - 有效
-     - 无效
-     - 无效
-     - 有效
+     - Válido
+     - No válido
+     - No válido
+     - Válido
 
-   * - 交流窄电压控制箱
-     - NPN型输出
+   * - Caja de control de CA de tensión estrecha
+     - Salida tipo NPN
      - .. figure:: installation/094.png
           :align: center
           :width: 3in
-     - 有效
-     - 无效
-     - 无效
-     - 有效
+     - Válido
+     - No válido
+     - No válido
+     - Válido
 
-   * - 交流宽电压控制箱
-     - NPN型输出
+   * - Caja de control de CA de tensión amplia
+     - Salida tipo NPN
      - .. figure:: installation/095.png
           :align: center
           :width: 3in
-     - 有效
-     - 无效
-     - 无效
-     - 有效
+     - Válido
+     - No válido
+     - No válido
+     - Válido
 
-   * - 交流宽电压控制箱
-     - PNP型输出
+   * - Caja de control de CA de tensión amplia
+     - Salida tipo PNP
      - .. figure:: installation/096.png
           :align: center
           :width: 3in
-     - 有效
-     - 无效
-     - 无效
-     - 有效
+     - Válido
+     - No válido
+     - No válido
+     - Válido
 
-控制箱数字量输出支持类型
-******************************************
+Tipos de salida digital admitidos por la caja de control
+**************************************************************************
 
-直流控制箱和交流窄电压控制箱的数字量输出只支持NPN型输出。交流宽电压控制箱数字量输出支持NPN和PNP型可选，其输出为推挽结构，只需要按照相应的接线图接线即可，不需要进行特殊设置。
+Las salidas digitales de la caja de control de CC y de la caja de control de CA de tensión estrecha solo admiten salida de tipo NPN. Las salidas digitales de la caja de control de CA de tensión amplia admiten seleccionablemente NPN y PNP; su salida es de estructura push-pull, por lo que solo es necesario cablear según el diagrama de cableado correspondiente, sin necesidad de realizar configuraciones especiales.
 
 .. list-table::
    :widths: 50 50
    :header-rows: 0
    :align: center
 
-   * - **控制箱类型**
-     - **输入类型**
+   * - **Tipo de caja de control**
+     - **Tipo de entrada**
 
-   * - 直流控制箱
-     - NPN型输出
+   * - Caja de control de CC
+     - Salida tipo NPN
 
-   * - 交流窄电压控制箱
-     - NPN型输出
+   * - Caja de control de CA de tensión estrecha
+     - Salida tipo NPN
 
-   * - 交流宽电压控制箱
-     - NPN型输出/PNP型输出
+   * - Caja de control de CA de tensión amplia
+     - Salida tipo NPN/salida tipo PNP
 
-控制箱数字量输出接线图
-********************************
+Diagrama de cableado de las salidas digitales de la caja de control
+************************************************************************************************
 
-直流控制箱和交流窄电压控制箱的数字量输出只支持NPN型输出，其接线图如下。
+Las salidas digitales de la caja de control de CC y de la caja de control de CA de tensión estrecha solo admiten salida de tipo NPN; su diagrama de cableado es el siguiente.
 
 	.. figure:: installation/097.png
 		:align: center
 		:width: 6in
 
-	.. centered:: 图表 3.3-6 直流控制箱和交流窄电压控制箱的数字量输出连线图
+	.. centered:: Figura 3.3-6 Diagrama de conexión de las salidas digitales de la caja de control de CC y de la caja de control de CA de tensión estrecha
 
-交流宽电压控制箱数字量输出支持NPN和PNP型。其接线图如下：
+Las salidas digitales de la caja de control de CA de tensión amplia admiten NPN y PNP. Su diagrama de cableado es el siguiente:
 
 .. list-table::
    :widths: 50 50
    :header-rows: 0
    :align: center
 
-   * - **输入类型** 
-     - **连接图示**
+   * - **Tipo de entrada** 
+     - **Diagrama de conexión**
 
-   * - NPN型输入 
+   * - Entrada tipo NPN 
      - 	.. figure:: installation/098.png
           :align: center
           :width: 3in
 
-   * - PNP型输入
+   * - Entrada tipo PNP
      - 	.. figure:: installation/099.png
           :align: center
           :width: 3in
 
-控制箱数字量输出相关软件设置
-****************************************************
+Configuración de software relacionada con las salidas digitales de la caja de control
+****************************************************************************************************************
 
-关于数字量输出的软件设置项目有“上电期间控制箱DO输出”和“DO0-D07输出有效状态”两个设置项，其中“上电期间控制箱DO输出”表征在控制箱上电期间，控制系统还没初始化完成时输出的电平，其可以对用对应不同的输出有效状态，可以灵活应对上电期间对输出状态有特殊要求的场合。“DO0-D07输出有效状态”表征输出有效时需要控制输出的数字量输出电压电平值。此设置可用使用户更加灵活的使用使用数量输出。
+Los elementos de configuración de software relativos a las salidas digitales son dos: "Salida DO de la caja de control durante el encendido" y "Estado válido de las salidas DO0-D07". "Salida DO de la caja de control durante el encendido" representa el nivel que se emite durante el encendido de la caja de control, cuando el sistema de control aún no ha completado la inicialización; puede corresponder a distintos estados válidos de salida y responder de forma flexible a situaciones que exijan requisitos especiales sobre el estado de salida durante el encendido. "Estado válido de las salidas DO0-D07" representa el valor de nivel de tensión digital de salida que debe controlarse cuando la salida es válida. Esta configuración permite al usuario utilizar las salidas digitales de forma más flexible.
 
-(1) “上电期间控制箱DO输出”在不同的设置下，当数字量输出的有效状态对照表如下：
+(1) Con "Salida DO de la caja de control durante el encendido" en distintas configuraciones, la tabla de correspondencia del estado válido de la salida digital es la siguiente:
 
 	.. figure:: installation/100.png
 		:align: center
 		:width: 6in
 
-	.. centered:: 图表 3.3-7 上电期间控制箱DO输出
+	.. centered:: Figura 3.3-7 Salida DO de la caja de control durante el encendido
 
-.. centered:: 表格 3.3-5 有效状态对照表
+.. centered:: Tabla 3.3-5 Tabla de correspondencia del estado válido
 
 .. list-table::
    :widths: 20 15 15 15 15 15
    :header-rows: 0
    :align: center
 
-   * - **控制箱类型** 
-     - **输入类型**
-     - **高电平有效(开关置位ON)**
-     - **高电平有效(开关置位OFF)**
-     - **低电平有效(开关置位ON)**
-     - **低电平有效(开关置位OFF)**
+   * - **Tipo de caja de control** 
+     - **Tipo de entrada**
+     - **Activo por nivel alto (interruptor en ON)**
+     - **Activo por nivel alto (interruptor en OFF)**
+     - **Activo por nivel bajo (interruptor en ON)**
+     - **Activo por nivel bajo (interruptor en OFF)**
 
-   * - 直流控制箱
-     - NPN型输出
-     - 有效
-     - 有效
-     - 无效
-     - 无效
+   * - Caja de control de CC
+     - Salida tipo NPN
+     - Válido
+     - Válido
+     - No válido
+     - No válido
 
-   * - 交流窄电压控制箱
-     - NPN型输出
-     - 有效
-     - 有效
-     - 无效
-     - 无效
+   * - Caja de control de CA de tensión estrecha
+     - Salida tipo NPN
+     - Válido
+     - Válido
+     - No válido
+     - No válido
 
-   * - 交流宽电压控制箱
-     - NPN型输出
-     - 有效
-     - 有效
-     - 无效
-     - 无效
+   * - Caja de control de CA de tensión amplia
+     - Salida tipo NPN
+     - Válido
+     - Válido
+     - No válido
+     - No válido
 
-   * - 交流宽电压控制箱
-     - PNP型输出
-     - 有效
-     - 有效
-     - 无效
-     - 无效
+   * - Caja de control de CA de tensión amplia
+     - Salida tipo PNP
+     - Válido
+     - Válido
+     - No válido
+     - No válido
 
-(2) “DO0-D07输出有效状态”在不同的设置下，当数字量输出的有效状态对照表如下：
+(2) Con "Estado válido de las salidas DO0-D07" en distintas configuraciones, la tabla de correspondencia del estado válido de la salida digital es la siguiente:
 
 	.. figure:: installation/101.png
 		:align: center
 		:width: 6in
 
-	.. centered:: 图表 3.3-8 DO0-D07输出有效状态
+	.. centered:: Figura 3.3-8 Estado válido de las salidas DO0-D07
 
-.. centered:: 表格 3.3-6 有效状态对照表
+.. centered:: Tabla 3.3-6 Tabla de correspondencia del estado válido
 
 .. list-table::
    :widths: 20 15 15 15 15 15
    :header-rows: 0
    :align: center
 
-   * - **控制箱类型** 
-     - **输入类型**
-     - **高电平有效(开关置位ON)**
-     - **高电平有效(开关置位OFF)**
-     - **低电平有效(开关置位ON)**
-     - **低电平有效(开关置位OFF)**
+   * - **Tipo de caja de control** 
+     - **Tipo de entrada**
+     - **Activo por nivel alto (interruptor en ON)**
+     - **Activo por nivel alto (interruptor en OFF)**
+     - **Activo por nivel bajo (interruptor en ON)**
+     - **Activo por nivel bajo (interruptor en OFF)**
 
-   * - 直流控制箱
-     - NPN型输出
-     - 有效
-     - 无效
-     - 无效
-     - 有效
+   * - Caja de control de CC
+     - Salida tipo NPN
+     - Válido
+     - No válido
+     - No válido
+     - Válido
 
-   * - 交流窄电压控制箱
-     - NPN型输出
-     - 有效
-     - 无效
-     - 无效
-     - 有效
+   * - Caja de control de CA de tensión estrecha
+     - Salida tipo NPN
+     - Válido
+     - No válido
+     - No válido
+     - Válido
 
-   * - 交流宽电压控制箱
-     - NPN型输出
-     - 有效
-     - 无效
-     - 无效
-     - 有效
+   * - Caja de control de CA de tensión amplia
+     - Salida tipo NPN
+     - Válido
+     - No válido
+     - No válido
+     - Válido
 
-   * - 交流宽电压控制箱
-     - PNP型输出
-     - 有效
-     - 无效
-     - 无效
-     - 有效
+   * - Caja de control de CA de tensión amplia
+     - Salida tipo PNP
+     - Válido
+     - No válido
+     - No válido
+     - Válido
 
-直流控制箱电源接入安全手册
+Manual de seguridad de conexión de alimentación de la caja de control de CC
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-接线端子定义与标识
+Definición e identificación de los terminales de conexión
 ************************************************************************************
-直流控制箱前面板设有一个3PIN电源输入端子，分别对应电源正极（+V）、电源负极（-V）和保护接地（PE）。为防止误接烧毁设备，请严格参照下表：
+El panel frontal de la caja de control de CC dispone de un terminal de entrada de alimentación de 3 PIN, que corresponden respectivamente al polo positivo de la alimentación (+V), al polo negativo de la alimentación (-V) y a la toma de tierra de protección (PE). Para evitar que una conexión errónea queme el equipo, consulte estrictamente la tabla siguiente:
 
 .. list-table::
    :widths: 15 10 35 35
    :header-rows: 0
    :align: center
 
-   * - **端子标识** 
-     - **颜色规范**
-     - **功能定义**
-     - **严禁操作**
+   * - **Identificación del terminal** 
+     - **Norma de color**
+     - **Definición de la función**
+     - **Operación estrictamente prohibida**
 
    * - 	.. figure:: installation/144.png
           :align: center
           :width: 2in
-     - 红色
-     - 直流电源正极输入端，仅可接入30-60VDC正极线缆
-     - 严禁与PE或-V短接
+     - Rojo
+     - Entrada del polo positivo de la alimentación de CC; solo puede conectarse el cable del polo positivo de 30-60VDC
+     - Estrictamente prohibido cortocircuitarlo con PE o -V
 
    * - 	.. figure:: installation/145.png
           :align: center
           :width: 2in
-     - 黑色
-     - 直流电源负极输入端，仅可接入30-60VDC负极线缆，构成供电回路
-     - 严禁与机壳或PE相连
+     - Negro
+     - Entrada del polo negativo de la alimentación de CC; solo puede conectarse el cable del polo negativo de 30-60VDC, que constituye el circuito de alimentación
+     - Estrictamente prohibido conectarlo a la carcasa o a PE
 
    * - 	.. figure:: installation/146.png
           :align: center
           :width: 2in
-     - 黄色（黄绿色）
-     - 保护性接地端子（机壳安全地）
-     - 严禁作为电源负极或正极使用
+     - Amarillo (amarillo-verde)
+     - Terminal de toma de tierra de protección (toma de tierra de seguridad de la carcasa)
+     - Estrictamente prohibido utilizarlo como polo negativo o positivo de la alimentación
 
 .. warning::
-  重大风险提示：本设备未内置防反接、防错接、防过压保护电路。任何以下违规操作，均会瞬间击穿内部主板及功率器件，造成设备永久性、不可逆烧毁：
+  Aviso de riesgo importante: este equipo no incorpora circuitos de protección contra conexión inversa, conexión errónea ni sobretensión. Cualquiera de las siguientes operaciones irregulares perforará instantáneamente la placa base interna y los componentes de potencia, provocando la quema permanente e irreversible del equipo:
   
-  1. 正负极反接（+V与-V线缆对调）；
-  2. +V或-V误接入PE孔位；
-  3. 负极端子误接地（-V与PE短接）；
-  4. 接入交流电（110V/220V/380V）或超出30~60Vdc范围的直流电压。
+  1. Conexión inversa de los polos positivo y negativo (intercambiar los cables +V y -V);
+  2. Conectar por error +V o -V al orificio PE;
+  3. Conectar a tierra por error el terminal negativo (-V en cortocircuito con PE);
+  4. Conectar corriente alterna (110V/220V/380V) o una tensión de CC fuera del rango 30~60Vdc.
 
-接线前安全准备
+Preparación de seguridad antes del cableado
 *************************************************************************
 
-操作人员在接线前，必须完成以下准备工作：
+Antes de realizar el cableado, el operador debe completar las siguientes preparaciones:
 
-断电确认
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Confirmación del corte de energía
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-彻底切断前端供电电源，悬挂安全警示牌。使用万用表检测电源输入端，确认无电压、无残留电，杜绝带电接线操作。
+Cortar completamente la alimentación del suministro frontal y colgar un cartel de advertencia de seguridad. Utilizar un multímetro para comprobar la entrada de alimentación y confirmar que no hay tensión ni electricidad residual, evitando así el cableado con tensión.
 
-设备检查
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Comprobación del equipo
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-检查设备接线端子无破损、氧化、松动，机身无受潮、进水、磕碰损坏，确保设备本体状态完好。
+Comprobar que los terminales de conexión del equipo no están dañados, oxidados ni flojos, y que el cuerpo de la máquina no presenta humedad, entrada de agua ni daños por golpes, garantizando que el estado del equipo en sí es correcto.
 
-供电电源确认
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Confirmación del suministro de alimentación
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-确认前端电源输出类型为30-60VDC直流稳压电源。严禁接入交流110V/220V/380V电源、低于30VDC或高于60VDC直流电源；
+Confirmar que el tipo de salida del suministro frontal es una fuente de alimentación estabilizada de CC de 30-60VDC. Está estrictamente prohibido conectar alimentación de CA de 110V/220V/380V, o alimentación de CC inferior a 30VDC o superior a 60VDC;
 
-线缆选型
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Selección de los cables
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-推荐选用4mm²（AWG11）及以上规格的铜芯软线，单根供电线长建议不超过2米。杜绝使用线径过细、绝缘层破损或老化的线缆。
+Se recomienda seleccionar cable flexible de cobre de calibre 4mm² (AWG11) o superior; se recomienda que la longitud de un solo cable de alimentación no supere los 2 metros. Evite utilizar cables con un diámetro excesivamente fino, con la capa aislante dañada o envejecidos.
 
-线束端子选型
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Selección de los terminales del mazo de cables
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-线缆末端必须采用预绝缘冷压端子进行压接（推荐型号：DBV5.5-10片型端子），严禁将裸铜线直接插入接线孔。
+El extremo del cable debe crimparse obligatoriamente con terminales de compresión en frío preaislados (modelo recomendado: terminal tipo pala DBV5.5-10); está estrictamente prohibido insertar directamente el hilo de cobre desnudo en el orificio de conexión.
 
-工具校验
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Verificación de las herramientas
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-准备合格万用表、绝缘螺丝刀、压线钳。提前校验万用表电压检测功能正常，确保可精准检测电压、区分正负极。
+Prepare un multímetro homologado, un destornillador aislado y unos alicates de crimpar. Verifique previamente que la función de detección de tensión del multímetro funciona correctamente, asegurando que puede detectar con precisión la tensión y distinguir el polo positivo y el negativo.
 
-标准接线操作流程
+Flujo de operación de cableado estándar
 ************************************************************************************
 
-制作线缆端子
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Fabricación de los terminales del cable
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-使用压线钳，分别将红（+V）、黑（-V）、黄绿（PE）三色线缆的一端压接上冷压端子（推荐DBV5.5-10），确保压接牢固、铜芯不外露。严禁使用同色线缆或颜色标识不清的线缆。
+Utilice los alicates de crimpar para crimpar en un extremo de cada uno de los tres cables de colores rojo (+V), negro (-V) y amarillo-verde (PE) un terminal de compresión en frío (recomendado DBV5.5-10), asegurando una compresión firme y que el hilo de cobre no quede al descubierto. Está estrictamente prohibido utilizar cables del mismo color o cables con identificación de color poco clara.
 
-插入端子插头并锁紧
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Inserción y bloqueo del conector de terminales
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-将压接好的端子依次插入设备配套的可插拔式接线插头对应孔位（注意插入方向，端子扁平面对准弹片）：
-红色线缆→插入+V孔位；
-黑色线缆→插入-V孔位；
-黄绿色线缆→插入PE孔位。
-使用一字绝缘螺丝刀顺时针拧紧每个孔位上方的压线螺钉。
+Inserte sucesivamente los terminales crimpados en los orificios correspondientes del conector de cableado enchufable suministrado con el equipo (tenga en cuenta la dirección de inserción; la cara plana del terminal debe apuntar a la lengüeta elástica):
+Cable rojo → insertar en el orificio +V;
+Cable negro → insertar en el orificio -V;
+Cable amarillo-verde → insertar en el orificio PE.
+Utilice un destornillador de punta plana aislado para apretar en sentido horario el tornillo de presión situado encima de cada orificio.
 
 .. figure:: installation/147.png
   :align: center
   :width: 4in
 
-.. centered:: 含冷压端子线束插入绿色插头
+.. centered:: Mazo de cables con terminales de compresión en frío insertado en el conector verde
 
-拉力复核
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Verificación de la fuerza de tracción
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-每根线缆锁紧后，用手用力拽拉线缆，确认端子无松脱、线芯无滑出。如有松动，需重新压接端子并再次锁紧。
+Tras apretar cada cable, tire del cable con fuerza con la mano para confirmar que el terminal no se suelta y que el núcleo del cable no se desliza. Si hay holgura, es necesario volver a crimpar el terminal y apretarlo de nuevo.
 
-插入控制箱主机
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Inserción en la unidad principal de la caja de control
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-将接线完成的插头，按防呆导向槽方向，插入直流控制箱电源输入端。确保插头完全到位。
+Inserte el conector ya cableado, en la dirección de la ranura de guía de seguridad, en la entrada de alimentación de la caja de control de CC. Asegúrese de que el conector queda completamente en su posición.
 
 .. figure:: installation/148.png
   :align: center
   :width: 3in
 
-.. centered:: 含线束插头插入直流控制箱电源输入端
+.. centered:: Conector con mazo de cables insertado en la entrada de alimentación de la caja de control de CC
 
-上电前最终绝缘复核
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Verificación final de aislamiento antes del encendido
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-在未接通电源的前提下，使用万用表测量插头端的+V与-V之间阻抗，确认无短路现象；测量+V/-V与PE之间阻抗，确认处于断路隔离状态。
+Sin conectar la alimentación, utilice un multímetro para medir la impedancia entre +V y -V en el extremo del conector y confirmar que no hay cortocircuito; mida la impedancia entre +V/-V y PE y confirme que se encuentra en estado de aislamiento por circuito abierto.
 
-上电启动与异常处置
+Encendido y tratamiento de anomalías
 ************************************************************************************
 
-- 正常启动：闭合前端电源开关，观察控制箱面板指示灯。正常现象为指示灯常亮，且无异常声响或异味。
-- 异常现象（立即断电！）：若出现剧烈啸叫、冒烟、火花、异味，或前端电源电流表瞬间满偏过载，须立即断开总电源，并禁止二次通电。请在设备完全冷却后联系技术支持，切勿自行拆机检查。
+- Arranque normal: cerrar el interruptor de alimentación frontal y observar el indicador del panel de la caja de control. El comportamiento normal es que el indicador permanezca encendido y que no haya ruidos anómalos ni olores extraños.
+- Fenómenos anómalos (¡cortar la alimentación inmediatamente!): si se produce un silbido agudo, humo, chispas, olores extraños, o si el amperímetro del suministro frontal se satura instantáneamente por sobrecarga, debe cortarse inmediatamente la alimentación general y prohibirse un segundo encendido. Póngase en contacto con el soporte técnico una vez que el equipo se haya enfriado completamente; no desmonte el equipo por su cuenta para inspeccionarlo.
 
-.. warning:: 最终警告：通电即代表您已完全理解并遵守上述接线规范。若有任何标识不清，请立即致电技术支持，切勿凭经验接线！
+.. warning:: Advertencia final: el encendido significa que usted ha comprendido y cumplido completamente las normas de cableado anteriores. Si alguna identificación no está clara, llame inmediatamente al soporte técnico y ¡no realice el cableado basándose en su experiencia!
 
-检查维护计划
-++++++++++++++++
+Plan de inspección y mantenimiento
+++++++++++++++++++++++++++++++++++
 
-机械臂
-**********
+Brazo mecánico
+********************
 
-1. 检查计划
+1. Plan de inspección
 
-下面列出了法奥机器人建议根据标记的时间间隔执行的检查清单。如果检查发现相关零件的状况不合格，请立即纠正。
+A continuación se enumera la lista de comprobaciones que FAIRINO recomienda ejecutar según los intervalos de tiempo marcados. Si la inspección detecta que el estado de las piezas correspondientes no es aceptable, corríjalo inmediatamente.
 
-.. note:: F=功能检查,V=目视检查,*=严重碰撞后必须检查。
+.. note:: F=inspección funcional, V=inspección visual, *=inspección obligatoria tras una colisión grave.
 
 .. list-table::
    :widths: 10 40 20 20 20 20
@@ -1609,56 +1608,56 @@
    :align: center
 
    * - 
-     - **检查项目**
-     - **要求**
-     - **一月一次**
-     - **半年一次**
-     - **一年一次**
+     - **Elemento de inspección**
+     - **Requisito**
+     - **Una vez al mes**
+     - **Una vez cada seis meses**
+     - **Una vez al año**
 
    * - 1
-     - 检查关节后盖*
+     - Comprobar la tapa posterior de la articulación*
      - V
      - 
      - ✔
      - 
 
    * - 2
-     - 检查关节后盖螺丝
+     - Comprobar los tornillos de la tapa posterior de la articulación
      - F
      - 
      - ✔
      - 
 
    * - 3
-     - 检查关节橡胶圈
+     - Comprobar la junta de goma de la articulación
      - V
      - 
      - ✔
      - 
 
    * - 4
-     - 检查机器人线缆
+     - Comprobar los cables del robot
      - V
      - 
      - ✔
      - 
 
    * - 5
-     - 检查机器人线缆链接
+     - Comprobar la conexión de los cables del robot
      - V
      - 
      - ✔
      - 
 
    * - 6
-     - 检查机器人底座安装螺栓*
+     - Comprobar los pernos de instalación de la base del robot*
      - F
      - ✔
      - 
      - 
 
    * - 7
-     - 检查末端工具安装螺栓*
+     - Comprobar los pernos de instalación de la herramienta del extremo*
      - F
      - ✔
      - 
@@ -1668,39 +1667,39 @@
   :align: center
   :width: 3in
 
-2. 目视检查
+2. Inspección visual
    
-.. note:: 切勿使用压缩空气清洁机器人手臂，因为它可能会损坏组件。在未进行目视检查的情况下，请勿将机器人存放超过 6 个月。
+.. note:: No utilice nunca aire comprimido para limpiar el brazo del robot, ya que podría dañar los componentes. No almacene el robot durante más de 6 meses sin realizar una inspección visual.
 
-- 如果可能，将机器人手臂移至零位置。
-- 关闭并断开控制箱的电源线。
-- 检查控制箱和机器人手臂之间的电缆是否有任何损坏。
-- 检查底座安装螺栓是否正确拧紧。
-- 检查工具法兰螺栓是否正确拧紧。
-- 检查平环是否磨损和损坏。 
-- 检查所有关节后盖是否有任何裂纹或损坏。
-- 检查用于关节后盖的螺钉是否就位并正确拧紧。
+- Si es posible, mueva el brazo del robot a la posición cero.
+- Apague y desconecte el cable de alimentación de la caja de control.
+- Compruebe si el cable entre la caja de control y el brazo del robot presenta algún daño.
+- Compruebe si los pernos de instalación de la base están correctamente apretados.
+- Compruebe si los pernos de la brida de la herramienta están correctamente apretados.
+- Compruebe si el anillo plano presenta desgaste y daños. 
+- Compruebe si todas las tapas posteriores de las articulaciones presentan grietas o daños.
+- Compruebe si los tornillos utilizados para la tapa posterior de la articulación están en su sitio y correctamente apretados.
 
-.. note:: 如果在保修期内机器人出现任何损坏，请联系购买机器人的经销商。
+.. note:: Si el robot presenta cualquier daño durante el período de garantía, póngase en contacto con el distribuidor que vendió el robot.
 
-3. 功能检查
+3. Inspección funcional
 
-功能检验的目的是确保螺钉、螺栓、工具和机械臂没有松动。检查计划中提到的螺钉/螺栓应使用扭矩扳手进行检查，扭矩应符合标准规范，关于机械臂安装螺栓规格，这些规格可在《用户手册》安装规范中找到。
+La finalidad de la inspección funcional es garantizar que los tornillos, pernos, herramientas y el brazo mecánico no presentan holguras. Los tornillos/pernos mencionados en el plan de inspección deben comprobarse con una llave dinamométrica, y el par debe cumplir las normas estándar; en cuanto a las especificaciones de los pernos de instalación del brazo mecánico, estas especificaciones pueden encontrarse en las normas de instalación del «Manual de usuario».
 
-4. 清洁
+4. Limpieza
 
-您可以使用布和以下清洁剂之一擦去机器人手臂上观察到的任何灰尘/污垢/油污：水、异丙醇、10% 乙醇或 10% 石脑油。如果机器人在恶劣环境下运行，例如在切削液、冷却剂等中，机器人建议定期清洁或更换橡胶圈。
+Puede utilizar un paño y uno de los siguientes limpiadores para eliminar cualquier polvo/suciedad/grasa observada en el brazo del robot: agua, alcohol isopropílico, etanol al 10% o nafta al 10%. Si el robot funciona en entornos adversos, por ejemplo con líquido de corte, refrigerante, etc., se recomienda limpiar o sustituir periódicamente la junta de goma.
 
-请勿使用漂白剂。请勿在任何稀释的清洁溶液中使用漂白剂。在极少数情况下，可以从接头处看到极少量的油脂。这不会影响关节的功能、使用或寿命。
+No utilice lejía. No utilice lejía en ninguna solución de limpieza diluida. En raras ocasiones, puede observarse una cantidad mínima de grasa en las juntas. Esto no afecta a la función, el uso ni la vida útil de la articulación.
 
-控制箱、示教器、按钮盒
-****************************
+Caja de control, teach pendant, caja de botones
+***********************************************
 
-1. 检查计划
+1. Plan de inspección
 
-下面列出了法奥机器人建议根据标记的时间间隔执行的检查清单。如果检查发现相关零件的状况不合格，请立即纠正。
+A continuación se enumera la lista de comprobaciones que FAIRINO recomienda ejecutar según los intervalos de tiempo marcados. Si la inspección detecta que el estado de las piezas correspondientes no es aceptable, corríjalo inmediatamente.
 
-.. note:: F=功能检查,V=目视检查。
+.. note:: F=inspección funcional, V=inspección visual.
 
 .. list-table::
    :widths: 10 40 20 20 20 20
@@ -1708,63 +1707,63 @@
    :align: center
 
    * - 
-     - **检查项目**
-     - **要求**
-     - **一月一次**
-     - **半年一次**
-     - **一年一次**
+     - **Elemento de inspección**
+     - **Requisito**
+     - **Una vez al mes**
+     - **Una vez cada seis meses**
+     - **Una vez al año**
 
    * - 1
-     - 检测按钮盒（示教器）上的紧急停止按钮
+     - Comprobar el botón de parada de emergencia de la caja de botones (teach pendant)
      - F
      - ✔
      - 
      - 
 
    * - 2
-     - 检检测端子排上的安全输入输出功能
+     - Comprobar la función de entrada y salida de seguridad de la regleta de terminales
      - F
      - ✔
      - 
      - 
 
    * - 3
-     - 检测按钮盒启动/停止、模式切换功能
+     - Comprobar las funciones de inicio/parada y cambio de modo de la caja de botones
      - F
      - ✔
      - 
      - 
 
    * - 4
-     - 检测按钮盒（示教器）线缆
+     - Comprobar el cable de la caja de botones (teach pendant)
      - V
      - 
      - ✔
      - 
 
    * - 5
-     - 检测并清洁控制箱上的空气过滤器
+     - Comprobar y limpiar el filtro de aire de la caja de control
      - V
      - ✔
      - 
      - 
 
    * - 6
-     - 检测控制箱的端子是否牢固
+     - Comprobar si los terminales de la caja de control están firmes
      - F
      - 
      - ✔
      - 
 
    * - 7
-     - 检测控制箱的接地电阻≤1Ω
+     - Comprobar que la resistencia de puesta a tierra de la caja de control ≤1Ω
      - F
      - 
      - 
      - ✔
 
    * - 8
-     - 检测控制箱的主电源
+     - Comprobar la alimentación principal de la caja de control
      - F
      - 
      - 
@@ -1774,23 +1773,23 @@
   :align: center
   :width: 3in
 
-2. 目视检查
+2. Inspección visual
 
-- 从控制箱上拔下电源线。
-- 检查控制板端子是否正确插入且没有松动的电线。
-- 检查控制箱内是否有污垢/灰尘。如果需要，请使用 ESD 真空吸尘器进行清洁。
+- Desconecte el cable de alimentación de la caja de control.
+- Compruebe si los terminales de la placa de control están correctamente insertados y si hay cables flojos.
+- Compruebe si hay suciedad/polvo en el interior de la caja de control. Si es necesario, utilice un aspirador ESD para limpiarlo.
 
-.. note:: 切勿使用压缩空气清洁控制箱内部，因为这可能会损坏组件。
+.. note:: No utilice nunca aire comprimido para limpiar el interior de la caja de control, ya que podría dañar los componentes.
 
-3. 功能检查
+3. Inspección funcional
 
-.. note:: 机器人安全功能是重点，建议每月进行一次测试，以确保功能正确。
+.. note:: La función de seguridad del robot es un punto clave; se recomienda realizar una prueba mensual para garantizar que la función es correcta.
 
-- 示教器/按钮盒上的紧急停止按钮：
+- Botón de parada de emergencia del teach pendant/caja de botones:
   
-  A. 按下示教器/按钮盒上的紧急停止按钮。
-  B. 观察机器人停止并关闭关节电源。
-  C. 再次打开机器人电源。
+  A. Pulse el botón de parada de emergencia del teach pendant/caja de botones.
+  B. Observe que el robot se detiene y se corta la alimentación de las articulaciones.
+  C. Vuelva a encender la alimentación del robot.
 
 	.. figure:: installation/075.png
 		:align: center
@@ -1800,572 +1799,572 @@
 		:align: center
 		:width: 4in
 
-- 其他安全输入和输出仍在运行
+- Las demás entradas y salidas de seguridad siguen en funcionamiento
   
-  检查哪些安全输入和输出处于活动状态，以及它们是否可以通过 PolyScope 或外部设备触发。
+  Compruebe qué entradas y salidas de seguridad están activas y si pueden activarse mediante PolyScope o dispositivos externos.
 
-- 日期和时钟
+- Fecha y reloj
   
-  检查“日志”选项卡中的日期和时钟是否正确。日期和时钟不正确表明 CMOS 电池电量不足。 CMOS电池的保质期长达5年。
+  Compruebe si la fecha y el reloj de la pestaña "Registro" son correctos. Una fecha y un reloj incorrectos indican que la batería CMOS tiene poca carga. La vida útil de la batería CMOS es de hasta 5 años.
 
-- 检查接线端子卡扣是否到位
+- Comprobar si los cierres de la regleta de terminales están en su posición
   
   .. figure:: installation/077.png
     :align: center
     :width: 4in
 
-4. 清洁
+4. Limpieza
    
-- 示教器
+- Teach pendant
   
-  可能需要清洁示教器屏幕。建议使用不含稀释剂或任何腐蚀性添加剂的标准温和工业清洁剂。请勿使用研磨材料擦拭屏幕。法奥机器人不推销特定的清洁剂。
+  Puede ser necesario limpiar la pantalla del teach pendant. Se recomienda utilizar un limpiador industrial suave estándar que no contenga disolventes ni aditivos corrosivos. No utilice materiales abrasivos para limpiar la pantalla. FAIRINO no comercializa limpiadores específicos.
 
-- 示教器按钮盒
+- Caja de botones del teach pendant
   
-  正常情况下不需要定期清洁。如果按键标识模糊影响了识别操作，请随时使用清洁剂清洁。
+  Normalmente no requiere limpieza periódica. Si la identificación de los botones se vuelve borrosa y afecta a la operación de reconocimiento, límpiela con un limpiador cuando sea necesario.
 
-- 控制箱
+- Caja de control
   
-  控制箱包含两个过滤器，控制箱的每一侧各一个。
+  La caja de control contiene dos filtros, uno a cada lado de la caja de control.
 
-  A. 可以从控制箱左右侧通风口观察过滤器情况。正常情况下可以看到过滤器的蜂网结构。
-  B. 拆下过滤器进行清洁。使用低压空气清洁或根据需要更换过滤器。记得清洁每一面。如果非常脏或损坏，请更换（更坏需要拆下控制器上盖，从上盖内部更换过滤器）。
-  C. 运转时听听风扇的声音，如果声音异常，请联系服务提供商或更换。
+  A. El estado del filtro puede observarse desde las rejillas de ventilación de los lados izquierdo y derecho de la caja de control. Normalmente puede verse la estructura de panal del filtro.
+  B. Desmonte el filtro para limpiarlo. Utilice aire a baja presión para limpiarlo o sustitúyalo según sea necesario. Recuerde limpiar cada cara. Si está muy sucio o dañado, sustitúyalo (en el peor de los casos es necesario desmontar la tapa superior del controlador y sustituir el filtro desde el interior de la tapa superior).
+  C. Durante el funcionamiento, escuche el sonido del ventilador; si el sonido es anómalo, póngase en contacto con el proveedor de servicio o sustitúyalo.
 
-检查计划登记卡
-******************
+Tarjeta de registro del plan de inspección
+******************************************
 
-1. 机械臂
+1. Brazo mecánico
   
 .. list-table::
    :widths: 40 20 20 20 40
    :header-rows: 0
    :align: center
 
-   * - **检查项**
-     - **已检查**
-     - **检察员**
-     - **日期**
-     - **备注**
+   * - **Elemento de inspección**
+     - **Inspeccionado**
+     - **Inspector**
+     - **Fecha**
+     - **Observaciones**
 
-   * - **检查关节后盖**
-     - 
-     - 
-     - 
-     - 
-
-   * - **检查关节后盖螺丝**
+   * - **Comprobar la tapa posterior de la articulación**
      - 
      - 
      - 
      - 
 
-   * - **检查关节橡胶圈**
+   * - **Comprobar los tornillos de la tapa posterior de la articulación**
      - 
      - 
      - 
      - 
 
-   * - **检查机器人线缆**
+   * - **Comprobar la junta de goma de la articulación**
      - 
      - 
      - 
      - 
 
-   * - **检查机器人线缆连接**
+   * - **Comprobar los cables del robot**
      - 
      - 
      - 
      - 
 
-   * - **检查机器人底座安装螺栓**
+   * - **Comprobar la conexión de los cables del robot**
      - 
      - 
      - 
      - 
 
-   * - **检查机器人工具安装螺栓**
+   * - **Comprobar los pernos de instalación de la base del robot**
+     - 
+     - 
+     - 
+     - 
+
+   * - **Comprobar los pernos de instalación de la herramienta del robot**
      - 
      - 
      - 
      - 
   
-2. 控制箱、示教器、按钮盒
+2. Caja de control, teach pendant, caja de botones
 
 .. list-table::
    :widths: 40 20 20 20 40
    :header-rows: 0
    :align: center
 
-   * - **检查项**
-     - **已检查**
-     - **检察员**
-     - **日期**
-     - **备注**
+   * - **Elemento de inspección**
+     - **Inspeccionado**
+     - **Inspector**
+     - **Fecha**
+     - **Observaciones**
 
-   * - **检测按钮盒（示教器）上的紧急停止按钮**
-     - 
-     - 
-     - 
-     - 
-
-   * - **检测端子排上的安全输入输出功能**
+   * - **Comprobar el botón de parada de emergencia de la caja de botones (teach pendant)**
      - 
      - 
      - 
      - 
 
-   * - **检测按钮盒启动/停止、模式切换功能**
+   * - **Comprobar la función de entrada y salida de seguridad de la regleta de terminales**
      - 
      - 
      - 
      - 
 
-   * - **检测按钮盒（示教器）线缆**
+   * - **Comprobar las funciones de inicio/parada y cambio de modo de la caja de botones**
      - 
      - 
      - 
      - 
 
-   * - **检测并清洁控制箱上的空气过滤器**
+   * - **Comprobar el cable de la caja de botones (teach pendant)**
      - 
      - 
      - 
      - 
 
-   * - **检测控制箱的端子是否牢固**
+   * - **Comprobar y limpiar el filtro de aire de la caja de control**
      - 
      - 
      - 
      - 
 
-   * - **检测控制箱的接地电阻≤1Ω**
+   * - **Comprobar si los terminales de la caja de control están firmes**
      - 
      - 
      - 
      - 
 
-   * - **检测控制箱的主电源**
+   * - **Comprobar que la resistencia de puesta a tierra de la caja de control ≤1Ω**
      - 
      - 
      - 
      - 
 
-废弃处置
-~~~~~~~~~~~~~~
+   * - **Comprobar la alimentación principal de la caja de control**
+     - 
+     - 
+     - 
+     - 
 
-FR机器人需要根据适用的国家法律法规及国家标准处置，详情可联系厂商。
+Eliminación
+~~~~~~~~~~~
 
-安装规范
-----------
+Los robots FR deben eliminarse según las leyes y reglamentos nacionales aplicables y las normas nacionales; para más detalles, póngase en contacto con el fabricante.
 
-机器人手臂安装
-~~~~~~~~~~~~~~~~~
+Normas de instalación
+---------------------
+
+Instalación del brazo del robot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. important:: 
-	推荐机器人安装座满足以下几个要求，以保证机器人安装牢固、稳定：
+	Se recomienda que la base de montaje del robot cumpla los siguientes requisitos para garantizar una instalación firme y estable del robot:
    
-	（1）机器人安装座需要足够牢固且有足够的承载能力，应该至少能承载5倍的机器人重量，至少能承受10倍的1轴扭矩。
+	（1）La base de montaje del robot debe ser suficientemente firme y tener suficiente capacidad de carga; debe poder soportar al menos 5 veces el peso del robot y al menos 10 veces el par del eje 1.
 
-	（2）机器人安装座应表面平整，以保证与机器人接触面紧密接触；
+	（2）La base de montaje del robot debe tener una superficie plana para garantizar un contacto estrecho con la superficie de contacto del robot;
 
-	（3）机器人安装座应刚度足够强壮，固定牢固，不会和机器人发生共振；
+	（3）La base de montaje del robot debe tener suficiente rigidez, estar firmemente fijada y no entrar en resonancia con el robot;
 
-	（4）机器人和其他部件同时运动时，安装座与其他运动部件应隔离开，不要固定在一起避免运动过程中的振动干扰；
+	（4）Cuando el robot y otros componentes se muevan simultáneamente, la base de montaje debe estar aislada de los demás componentes móviles; no deben fijarse juntos para evitar interferencias por vibración durante el movimiento;
 
-	（5）如果机器人安装在移动平台或者外部轴上，移动平台或者外部轴的加速度应尽量低；
+	（5）Si el robot se instala en una plataforma móvil o en un eje externo, la aceleración de la plataforma móvil o del eje externo debe ser lo más baja posible;
 
 .. warning:: 
-	应该避免以下安装方式：
+	Deben evitarse los siguientes modos de instalación:
 
-	（I）避免将机器人固定在其它运动设备上
+	（I）Evitar fijar el robot sobre otros equipos en movimiento
 
 	.. figure:: installation/064.png
 		:align: center
 		:width: 3in
 
-	.. centered:: 图表 3.4-1 避免安装在其它运动设备上
+	.. centered:: Figura 3.4-1 Evitar la instalación sobre otros equipos en movimiento
 
-	确保机器人手臂正确并安全地安装到位。安装不稳定会导致事故。
+	Asegúrese de que el brazo del robot está instalado correctamente y de forma segura en su posición. Una instalación inestable provocará accidentes.
 
 .. note:: 
-	可以采购精确的基座作为附件来使用。图表3.4-2、3.4-5、3.4-8、3.4-11 显示了销孔位置和螺丝安装位置。
+	Se puede adquirir una base precisa como accesorio. Las Figuras 3.4-2, 3.4-5, 3.4-8 y 3.4-11 muestran la posición de los orificios de pasador y la posición de instalación de los tornillos.
 
-FR3/FR3-WMS/FR3-WML/FR3-C/FR5-C机器人手臂安装要求
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Requisitos de instalación del brazo del robot FR3/FR3-WMS/FR3-WML/FR3-C/FR5-C
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-机器人安装在安装座上时，使用4颗强度不低于8.8级的M6螺栓将机器人固定在安装座上，螺栓须使用不少于10Nm扭矩拧紧；建议安装座上使用两个φ5mm销孔配合销钉进行机器人定位，以提高机器人安装精度，防止因为碰撞等使机器人发生移动。当机器人有较高运行精度要求时，请务必增加销钉对机器人进行定位。
+Cuando el robot se instala en la base de montaje, se fija a la base de montaje con 4 pernos M6 de una resistencia no inferior a la clase 8.8, y los pernos deben apretarse con un par no inferior a 10Nm; se recomienda utilizar en la base de montaje dos orificios de pasador de φ5mm con pasadores para el posicionamiento del robot, con el fin de mejorar la precisión de instalación del robot y evitar que este se desplace debido a colisiones, etc. Cuando se exija una alta precisión de funcionamiento del robot, es imprescindible añadir pasadores para el posicionamiento del robot.
 
 .. figure:: installation/025.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.4-2 FR3/FR3-WMS/FR3-WML/FR3-C/FR5-C型号协作机器人安装尺寸
+.. centered:: Figura 3.4-2 Dimensiones de instalación del robot colaborativo modelo FR3/FR3-WMS/FR3-WML/FR3-C/FR5-C
 
 .. important:: 
-	根据不同的应用场景推荐几款机器人安装底座如下：
+	Según los distintos escenarios de aplicación se recomiendan varios modelos de base de instalación del robot como los siguientes:
 
-	（I）针对运动速度不太快，运行速度不太大，精度要求一般，且不方便固定在地面上的场合，推荐机器人安装底座如下：
+	（I）Para situaciones en las que la velocidad de movimiento no es demasiado rápida, la velocidad de funcionamiento no es demasiado grande, los requisitos de precisión son generales y no es conveniente fijarlo al suelo, se recomienda la siguiente base de instalación del robot:
 
 	.. figure:: installation/062.png
 		:align: center
 		:width: 3in
 
-	.. centered:: 图表 3.4-3 FR3/FR3-WMS/FR3-WML/FR3-C/FR5-C型号协作机器人低要求安装底座
+	.. centered:: Figura 3.4-3 Base de instalación de bajos requisitos para el robot colaborativo modelo FR3/FR3-WMS/FR3-WML/FR3-C/FR5-C
 
-	（II）针对运动速度较快，运行速度较大，精度要求较高的场合，推荐机器人安装底座如下，并将机器人固定在牢固的地面上：
+	（II）Para situaciones en las que la velocidad de movimiento es más rápida, la velocidad de funcionamiento es mayor y los requisitos de precisión son más elevados, se recomienda la siguiente base de instalación del robot y fijar el robot a un suelo firme:
 
 	.. figure:: installation/067.png
 		:align: center
 		:width: 3in
 
-	.. centered:: 图表 3.4-4 FR3/FR3-WMS/FR3-WML/FR3-C/FR5-C型号协作机器人高要求安装底座
+	.. centered:: Figura 3.4-4 Base de instalación de altos requisitos para el robot colaborativo modelo FR3/FR3-WMS/FR3-WML/FR3-C/FR5-C
 
-FR5机器人手臂安装要求
-++++++++++++++++++++++++++++
+Requisitos de instalación del brazo del robot FR5
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-机器人安装在安装座上时，使用4颗强度不低于8.8级的M8螺栓将机器人固定在安装座上，螺栓须使用不少于20Nm扭矩拧紧；建议安装座上使用两个φ8mm销孔配合销钉进行机器人定位，以提高机器人安装精度，防止因为碰撞等使机器人发生移动。当机器人有较高运行精度要求时，请务必增加销钉对机器人进行定位。
+Cuando el robot se instala en la base de montaje, se fija a la base de montaje con 4 pernos M8 de una resistencia no inferior a la clase 8.8, y los pernos deben apretarse con un par no inferior a 20Nm; se recomienda utilizar en la base de montaje dos orificios de pasador de φ8mm con pasadores para el posicionamiento del robot, con el fin de mejorar la precisión de instalación del robot y evitar que este se desplace debido a colisiones, etc. Cuando se exija una alta precisión de funcionamiento del robot, es imprescindible añadir pasadores para el posicionamiento del robot.
 
 .. figure:: installation/026.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.4-5 FR5型号协作机器人安装尺寸
+.. centered:: Figura 3.4-5 Dimensiones de instalación del robot colaborativo modelo FR5
 
 .. important:: 
-	根据不同的应用场景推荐几款机器人安装底座如下：
+	Según los distintos escenarios de aplicación se recomiendan varios modelos de base de instalación del robot como los siguientes:
 
-	（I）针对运动速度不太快，运行速度不太大，精度要求一般，且不方便固定在地面上的场合，推荐机器人安装底座如下：
+	（I）Para situaciones en las que la velocidad de movimiento no es demasiado rápida, la velocidad de funcionamiento no es demasiado grande, los requisitos de precisión son generales y no es conveniente fijarlo al suelo, se recomienda la siguiente base de instalación del robot:
 
 	.. figure:: installation/062.png
 		:align: center
 		:width: 3in
 
-	.. centered:: 图表 3.4-6 FR5型号协作机器人低要求安装底座
+	.. centered:: Figura 3.4-6 Base de instalación de bajos requisitos para el robot colaborativo modelo FR5
 
-	（II）针对运动速度较快，运行速度较大，精度要求较高的场合，推荐机器人安装底座如下，并将机器人固定在牢固的地面上：
+	（II）Para situaciones en las que la velocidad de movimiento es más rápida, la velocidad de funcionamiento es mayor y los requisitos de precisión son más elevados, se recomienda la siguiente base de instalación del robot y fijar el robot a un suelo firme:
 
 	.. figure:: installation/067.png
 		:align: center
 		:width: 3in
 
-	.. centered:: 图表 3.4-7 FR5型号协作机器人高要求安装底座
+	.. centered:: Figura 3.4-7 Base de instalación de altos requisitos para el robot colaborativo modelo FR5
 
-FR10、FR16机器人手臂安装要求
-+++++++++++++++++++++++++++++++
+Requisitos de instalación del brazo del robot FR10 y FR16
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-机器人安装在安装座上时，使用4颗强度不低于8.8级的M8螺栓将机器人固定在安装座上，螺栓须使用不少于25Nm扭矩拧紧；建议安装座上使用两个φ8mm销孔配合销钉进行机器人定位，以提高机器人安装精度，防止因为碰撞等使机器人发生移动。当机器人有较高运行精度要求时，请务必增加销钉对机器人进行定位。
+Cuando el robot se instala en la base de montaje, se fija a la base de montaje con 4 pernos M8 de una resistencia no inferior a la clase 8.8, y los pernos deben apretarse con un par no inferior a 25Nm; se recomienda utilizar en la base de montaje dos orificios de pasador de φ8mm con pasadores para el posicionamiento del robot, con el fin de mejorar la precisión de instalación del robot y evitar que este se desplace debido a colisiones, etc. Cuando se exija una alta precisión de funcionamiento del robot, es imprescindible añadir pasadores para el posicionamiento del robot.
 
 .. figure:: installation/027.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.4-8 FR10、FR16型号协作机器人安装尺寸
+.. centered:: Figura 3.4-8 Dimensiones de instalación del robot colaborativo modelo FR10 y FR16
 	
 .. important:: 
-	根据不同的应用场景推荐几款机器人安装底座如下：
+	Según los distintos escenarios de aplicación se recomiendan varios modelos de base de instalación del robot como los siguientes:
 
-	（I）针对运动速度不太快，运行速度不太大，精度要求一般，且不方便固定在地面上的场合，推荐机器人安装底座如下：
+	（I）Para situaciones en las que la velocidad de movimiento no es demasiado rápida, la velocidad de funcionamiento no es demasiado grande, los requisitos de precisión son generales y no es conveniente fijarlo al suelo, se recomienda la siguiente base de instalación del robot:
 
 	.. figure:: installation/065.png
 		:align: center
 		:width: 3in
 
-	.. centered:: 图表 3.4-9 FR10、FR16型号协作机器人低要求安装底座
+	.. centered:: Figura 3.4-9 Base de instalación de bajos requisitos para el robot colaborativo modelo FR10 y FR16
 
-	（II）针对运动速度较快，运行速度较大，精度要求较高的场合，推荐机器人安装底座如下，并将机器人固定在牢固的地面上：
+	（II）Para situaciones en las que la velocidad de movimiento es más rápida, la velocidad de funcionamiento es mayor y los requisitos de precisión son más elevados, se recomienda la siguiente base de instalación del robot y fijar el robot a un suelo firme:
 
 	.. figure:: installation/067.png
 		:align: center
 		:width: 3in
 
-	.. centered:: 图表 3.4-10 FR10、FR16型号协作机器人高要求安装底座
+	.. centered:: Figura 3.4-10 Base de instalación de altos requisitos para el robot colaborativo modelo FR10 y FR16
 
-FR20、FR30机器人手臂安装要求
-+++++++++++++++++++++++++++++++++++++++++++++++++++
+Requisitos de instalación del brazo del robot FR20 y FR30
++++++++++++++++++++++++++++++++++++++++++++++++++++***********
 
-机器人安装在安装座上时，使用6颗强度不低于8.8级的M10螺栓将机器人固定在安装座上，螺栓须使用不少于45Nm扭矩拧紧；建议安装座上使用两个φ8mm销孔配合销钉进行机器人定位，以提高机器人安装精度，防止因为碰撞等使机器人发生移动。当机器人有较高运行精度要求时，请务必增加销钉对机器人进行定位。
+Cuando el robot se instala en la base de montaje, se fija a la base de montaje con 6 pernos M10 de una resistencia no inferior a la clase 8.8, y los pernos deben apretarse con un par no inferior a 45Nm; se recomienda utilizar en la base de montaje dos orificios de pasador de φ8mm con pasadores para el posicionamiento del robot, con el fin de mejorar la precisión de instalación del robot y evitar que este se desplace debido a colisiones, etc. Cuando se exija una alta precisión de funcionamiento del robot, es imprescindible añadir pasadores para el posicionamiento del robot.
 
 .. figure:: installation/029.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.4-11 FR20、FR30型号协作机器人安装尺寸
+.. centered:: Figura 3.4-11 Dimensiones de instalación del robot colaborativo modelo FR20 y FR30
 
 .. important:: 
 
-	因为FR20和FR30机器人自重较大及运行惯量较大，建议直接固定在地面上使用。推荐底座如下：
+	Debido al gran peso propio y a la gran inercia de funcionamiento de los robots FR20 y FR30, se recomienda fijarlos directamente al suelo para su uso. La base recomendada es la siguiente:
 
 	.. figure:: installation/066.png
 		:align: center
 		:width: 3in
 
-	.. centered:: 图表 3.4-12 FR20、FR30型号协作机器人安装底座
+	.. centered:: Figura 3.4-12 Base de instalación para el robot colaborativo modelo FR20 y FR30
 
-工具末端安装
-~~~~~~~~~~~~~~~~
+Instalación del extremo de la herramienta
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-机器人工具法兰有四个M6螺纹孔，可用于将工具连接到机器人。M6螺栓必须使用8Nm的扭矩拧紧，其强度等级不低于8.8级。为了准确地重新定位工具，请在预留的Ø6销孔中使用销钉。
+La brida de herramienta del robot dispone de cuatro orificios roscados M6 que pueden utilizarse para conectar la herramienta al robot. Los pernos M6 deben apretarse con un par de 8Nm y su clase de resistencia no debe ser inferior a 8.8. Para volver a posicionar la herramienta con precisión, utilice pasadores en los orificios de pasador Ø6 reservados.
 
 
 .. figure:: installation/030.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.4-13 FR3/FR3-WMS/FR3-WML/FR3-C/FR5/FR5-C/FR10/FR16型号机器人末端法兰图纸
+.. centered:: Figura 3.4-13 Plano de la brida del extremo del robot modelo FR3/FR3-WMS/FR3-WML/FR3-C/FR5/FR5-C/FR10/FR16
 
 .. figure:: installation/031.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.4-14 FR20/FR30型号机器人末端法兰图纸
+.. centered:: Figura 3.4-14 Plano de la brida del extremo del robot modelo FR20/FR30
 
 .. important:: 
-	- 确保工具正确并安全地安装到位。
-	- 确保工具安全架构，不会有零件意外坠落造成危险。
-	- 在机器人上法兰上安装长度超过8毫米的M6螺栓可能会破坏工具法兰并造成无法修复的损坏，从而导致必须更换工具法兰。
+	- Asegúrese de que la herramienta está instalada correctamente y de forma segura en su posición.
+	- Asegúrese de que la estructura de seguridad de la herramienta es correcta y que no hay riesgo de caída accidental de piezas.
+	- Instalar en la brida del robot pernos M6 de longitud superior a 8 milímetros puede dañar la brida de la herramienta y causar daños irreparables, lo que obligaría a sustituir la brida de la herramienta.
 
-安装环境
-~~~~~~~~~~~~~~
+Entorno de instalación
+~~~~~~~~~~~~~~~~~~~~~~
 
-在安装及使用协作机器人时，确保满足以下要求：
+Al instalar y utilizar el robot colaborativo, asegúrese de cumplir los siguientes requisitos:
 
--  环境温度0-45℃
+-  Temperatura ambiente 0-45℃
 
--  湿度0%~90%RH（无结露）
+-  Humedad 0%~90%RH (sin condensación)
 
--  无机械冲击和震动
+-  Sin impactos mecánicos ni vibraciones
 
--  海拔要求2000m以下
+-  Requisito de altitud inferior a 2000m
 
--  无腐蚀性气体，无液体，无爆炸性气体，无油污，无盐雾，无尘埃或金属粉末，无放射性材料，无电磁噪声，无易燃物品
+-  Sin gases corrosivos, sin líquidos, sin gases explosivos, sin suciedad de aceite, sin niebla salina, sin polvo ni polvo metálico, sin materiales radiactivos, sin ruido electromagnético, sin materiales inflamables
 
--  避免设备在电流的不稳定条件下工作
+-  Evitar que el equipo trabaje en condiciones de corriente inestable
 
--  用户需要在机器人电源前增加空气开关，同时建议增加EMC滤波器
+-  El usuario debe añadir un interruptor de aire antes de la alimentación del robot y, además, se recomienda añadir un filtro EMC
 
 .. note:: 
-	如果要将协作机器人吊装或者装到竖直面时，请联系我们。
+	Si desea izar el robot colaborativo o instalarlo en una superficie vertical, póngase en contacto con nosotros.
 
-地板承载能力
-~~~~~~~~~~~~~~~~
+Capacidad de carga del suelo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-将机器人安装在一个坚固的表面，该表面应足以承受至少5倍的机器人手臂的重量，而且该表面不能有震动。
+Instale el robot sobre una superficie firme, que debe ser capaz de soportar al menos 5 veces el peso del brazo del robot y que no debe tener vibraciones.
 
-全系列机型负载曲线
-~~~~~~~~~~~~~~~~~~~~~~~~
+Curvas de carga de toda la serie de modelos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-概述
-+++++++++++++
+Descripción general
++++++++++++++++++++
 
-本节所涉及的负载曲线基于各机型在特定轨迹下的测试得到。各机型负载曲线存在“完整性能”和“扩展后的负载能力”两部分，具体如下：
+Las curvas de carga tratadas en esta sección se obtienen a partir de las pruebas de cada modelo en trayectorias específicas. Las curvas de carga de cada modelo constan de dos partes: "rendimiento completo" y "capacidad de carga ampliada", concretamente como sigue:
 
-(1) “完整性能”的运行环境为：各关节摩擦力补偿系数为1；各关节碰撞等级为10；Web界面设置100%运行速度及360deg/s2加速度；动力学2.0。在此环境下，负载曲线“完整性能”部分适应绝大多数运行轨迹。
-(2) 若末端负载处于“扩展后的负载能力”，须开启“时间最优模式”并满足加速度限制，或减小机器人工作范围。
+(1) El entorno de funcionamiento del "rendimiento completo" es: coeficiente de compensación de fricción de cada articulación igual a 1; nivel de colisión de cada articulación igual a 10; velocidad de funcionamiento del 100% y aceleración de 360deg/s2 configuradas en la interfaz Web; dinámica 2.0. En este entorno, la parte de "rendimiento completo" de la curva de carga se adapta a la gran mayoría de las trayectorias de funcionamiento.
+(2) Si la carga del extremo se encuentra en la "capacidad de carga ampliada", es necesario activar el "modo de tiempo óptimo" y cumplir las limitaciones de aceleración, o reducir el rango de trabajo del robot.
 
-参数说明
-+++++++++++++
+Descripción de los parámetros
++++++++++++++++++++++++++++++
 
-机器人的额定有效负载取决于有效负载的重心偏移，其中，重心偏移定义为末端法兰中心与附加的有效负载重心之间的距离。
+La carga útil nominal del robot depende de la desviación del centro de gravedad de la carga útil, donde la desviación del centro de gravedad se define como la distancia entre el centro de la brida del extremo y el centro de gravedad de la carga útil adicional.
 
-FR3型号协作机器人负载曲线
-*******************************
+Curva de carga del robot colaborativo modelo FR3
+**********************************************************
 
-FR3型号协作机器人最大可携带负载为5kg，额定负载为3kg，负载曲线见图所示。负载曲线的具体释义如下：
+La carga máxima que puede transportar el robot colaborativo modelo FR3 es de 5 kg y la carga nominal es de 3 kg; la curva de carga se muestra en la figura. La explicación concreta de la curva de carga es la siguiente:
 
-(1) FR3在完整性能下可携带3kg及以下的负载，见“蓝色包络线”。
-(2) 当负载为3kg至5kg时，为扩展后的负载能力，见“红色包络线”，此时机器人可运行在如下状态：
+(1) El FR3, con rendimiento completo, puede transportar una carga de 3 kg o inferior, véase la "envolvente azul".
+(2) Cuando la carga es de 3 kg a 5 kg, se trata de la capacidad de carga ampliada, véase la "envolvente roja"; en este caso el robot puede funcionar en los siguientes estados:
 
-  ①开启“时间最优模式”，建议加速度设置在360deg/s\ :sup:`2` 以下；
+  ①Activar el "modo de tiempo óptimo"; se recomienda configurar la aceleración por debajo de 360deg/s\ :sup:`2`;
 
-  ②减小机器人工作范围或降低运行速度。
+  ②Reducir el rango de trabajo del robot o disminuir la velocidad de funcionamiento.
 
 .. figure:: installation/032.png
 	:align: center
 	:width: 5in
 
-.. centered:: 图表 3.4-15 FR3型号协作机器人负载曲线
+.. centered:: Figura 3.4-15 Curva de carga del robot colaborativo modelo FR3
 
-FR3-WMS型号协作机器人负载曲线
-*******************************
+Curva de carga del robot colaborativo modelo FR3-WMS
+**********************************************************
 
-FR3型号协作机器人最大可携带负载为5kg，额定负载为3kg，负载曲线见图所示。负载曲线的具体释义如下：
+La carga máxima que puede transportar el robot colaborativo modelo FR3 es de 5 kg y la carga nominal es de 3 kg; la curva de carga se muestra en la figura. La explicación concreta de la curva de carga es la siguiente:
 
-(1) FR3-WMS在完整性能下可携带3kg及以下的负载，见“蓝色包络线”。
-(2) 当负载为3kg至5kg时，为扩展后的负载能力，见“红色包络线”，此时机器人可运行在如下状态：
+(1) El FR3-WMS, con rendimiento completo, puede transportar una carga de 3 kg o inferior, véase la "envolvente azul".
+(2) Cuando la carga es de 3 kg a 5 kg, se trata de la capacidad de carga ampliada, véase la "envolvente roja"; en este caso el robot puede funcionar en los siguientes estados:
 
-  ①开启“时间最优模式”，建议加速度设置在360deg/s\ :sup:`2` 以下；
+  ①Activar el "modo de tiempo óptimo"; se recomienda configurar la aceleración por debajo de 360deg/s\ :sup:`2`;
 
-  ②减小机器人工作范围或降低运行速度。
+  ②Reducir el rango de trabajo del robot o disminuir la velocidad de funcionamiento.
 
 .. figure:: installation/109.png
 	:align: center
 	:width: 5in
 
-.. centered:: 图表 3.4-16 FR3-WMS型号协作机器人负载曲线
+.. centered:: Figura 3.4-16 Curva de carga del robot colaborativo modelo FR3-WMS
 
-FR3-WML型号协作机器人负载曲线
-*******************************
+Curva de carga del robot colaborativo modelo FR3-WML
+**********************************************************
 
-FR3-WML型号协作机器人最大可携带负载为4kg，额定负载为3kg，负载曲线见图所示。负载曲线的具体释义如下：
+La carga máxima que puede transportar el robot colaborativo modelo FR3-WML es de 4 kg y la carga nominal es de 3 kg; la curva de carga se muestra en la figura. La explicación concreta de la curva de carga es la siguiente:
 
-(1) FR3-WMS在完整性能下可携带3kg及以下的负载，见“蓝色包络线”。
-(2) 当负载为3kg至4kg时，为扩展后的负载能力，见“红色包络线”，此时机器人可运行在如下状态：
+(1) El FR3-WMS, con rendimiento completo, puede transportar una carga de 3 kg o inferior, véase la "envolvente azul".
+(2) Cuando la carga es de 3 kg a 4 kg, se trata de la capacidad de carga ampliada, véase la "envolvente roja"; en este caso el robot puede funcionar en los siguientes estados:
 
-  ①开启“时间最优模式”，建议加速度设置在360deg/s\ :sup:`2` 以下；
+  ①Activar el "modo de tiempo óptimo"; se recomienda configurar la aceleración por debajo de 360deg/s\ :sup:`2`;
 
-  ②减小机器人工作范围或降低运行速度。
+  ②Reducir el rango de trabajo del robot o disminuir la velocidad de funcionamiento.
 
 .. figure:: installation/110.png
 	:align: center
 	:width: 5in
 
-.. centered:: 图表 3.4-17 FR3-WML型号协作机器人负载曲线
+.. centered:: Figura 3.4-17 Curva de carga del robot colaborativo modelo FR3-WML
 
-FR3-C型号协作机器人负载曲线
-*******************************
+Curva de carga del robot colaborativo modelo FR3-C
+**********************************************************
 
-FR3-C型号协作机器人最大可携带负载为5kg，额定负载为3kg，负载曲线见图所示。负载曲线的具体释义如下：
+La carga máxima que puede transportar el robot colaborativo modelo FR3-C es de 5 kg y la carga nominal es de 3 kg; la curva de carga se muestra en la figura. La explicación concreta de la curva de carga es la siguiente:
 
-(1) FR3-WMS在完整性能下可携带3kg及以下的负载，见“蓝色包络线”。
-(2) 当负载为3kg至5kg时，为扩展后的负载能力，见“红色包络线”，此时机器人可运行在如下状态：
+(1) El FR3-WMS, con rendimiento completo, puede transportar una carga de 3 kg o inferior, véase la "envolvente azul".
+(2) Cuando la carga es de 3 kg a 5 kg, se trata de la capacidad de carga ampliada, véase la "envolvente roja"; en este caso el robot puede funcionar en los siguientes estados:
 
-  ①开启“时间最优模式”，建议加速度设置在360deg/s\ :sup:`2` 以下；
+  ①Activar el "modo de tiempo óptimo"; se recomienda configurar la aceleración por debajo de 360deg/s\ :sup:`2`;
 
-  ②减小机器人工作范围或降低运行速度。
+  ②Reducir el rango de trabajo del robot o disminuir la velocidad de funcionamiento.
 
 .. figure:: installation/111.png
 	:align: center
 	:width: 5in
 
-.. centered:: 图表 3.4-18 FR3-C型号协作机器人负载曲线
+.. centered:: Figura 3.4-18 Curva de carga del robot colaborativo modelo FR3-C
 
-FR5型号协作机器人负载曲线
-*******************************
+Curva de carga del robot colaborativo modelo FR5
+**********************************************************
 
-FR5型号协作机器人最大可携带负载为7kg，额定负载为5kg，负载曲线见图所示。负载曲线的具体释义如下：
+La carga máxima que puede transportar el robot colaborativo modelo FR5 es de 7 kg y la carga nominal es de 5 kg; la curva de carga se muestra en la figura. La explicación concreta de la curva de carga es la siguiente:
 
-(1) FR5在完整性能下可携带5kg及以下的负载，见“蓝色包络线”。
-(2) 当负载为5kg至7kg时，为扩展后的负载能力，见“红色包络线”，此时机器人可运行在如下状态：
+(1) El FR5, con rendimiento completo, puede transportar una carga de 5 kg o inferior, véase la "envolvente azul".
+(2) Cuando la carga es de 5 kg a 7 kg, se trata de la capacidad de carga ampliada, véase la "envolvente roja"; en este caso el robot puede funcionar en los siguientes estados:
 
-  ①开启“时间最优模式”，建议加速度设置在360deg/s\ :sup:`2` 以下；
+  ①Activar el "modo de tiempo óptimo"; se recomienda configurar la aceleración por debajo de 360deg/s\ :sup:`2`;
 
-  ②减小机器人工作范围或降低运行速度。
+  ②Reducir el rango de trabajo del robot o disminuir la velocidad de funcionamiento.
 
 .. figure:: installation/033.png
 	:align: center
 	:width: 5in
 
-.. centered:: 图表 3.4-19 FR5型号协作机器人负载曲线
+.. centered:: Figura 3.4-19 Curva de carga del robot colaborativo modelo FR5
 
-FR5-WML型号协作机器人负载曲线
-*******************************
+Curva de carga del robot colaborativo modelo FR5-WML
+**********************************************************
 
-FR5-WML型号协作机器人最大可携带负载为7kg，额定负载为5kg，负载曲线见图所示。负载曲线的具体释义如下：
+La carga máxima que puede transportar el robot colaborativo modelo FR5-WML es de 7 kg y la carga nominal es de 5 kg; la curva de carga se muestra en la figura. La explicación concreta de la curva de carga es la siguiente:
 
-(1) “蓝色包络线”内为完整性能：可在摩擦力补充系数全1，动力学2.0，100%速度，360deg/s2加速度（维护模式）下运行绝大多数据轨迹。
-(2) “红色包络线”内为扩展后的负载能力，可运行在如下状态：
+(1) Dentro de la "envolvente azul" se encuentra el rendimiento completo: puede funcionar en la gran mayoría de las trayectorias con el coeficiente de compensación de fricción a 1, dinámica 2.0, velocidad al 100% y aceleración de 360deg/s2 (modo de mantenimiento).
+(2) Dentro de la "envolvente roja" se encuentra la capacidad de carga ampliada, pudiendo funcionar en los siguientes estados:
 
-  ①开启“时间最优模式”；
+  ①Activar el "modo de tiempo óptimo";
 
-  ②减小机器人工作范围或降低运行速度。
+  ②Reducir el rango de trabajo del robot o disminuir la velocidad de funcionamiento.
 
 .. figure:: installation/127.png
 	:align: center
 	:width: 5in
 
-.. centered:: 图表 3.4-20 FR5-WML型号协作机器人负载曲线
+.. centered:: Figura 3.4-20 Curva de carga del robot colaborativo modelo FR5-WML
 
-FR5-C型号协作机器人负载曲线
-*******************************
+Curva de carga del robot colaborativo modelo FR5-C
+**********************************************************
 
-FR5-C型号协作机器人最大可携带负载为5kg，额定负载为4kg，负载曲线见图所示，为“完整性能”。
+La carga máxima que puede transportar el robot colaborativo modelo FR5-C es de 5 kg y la carga nominal es de 4 kg; la curva de carga se muestra en la figura y corresponde al "rendimiento completo".
 
 .. figure:: installation/130.png
 	:align: center
 	:width: 5in
 
-.. centered:: 图表 3.4-21 FR5-C型号协作机器人负载曲线
+.. centered:: Figura 3.4-21 Curva de carga del robot colaborativo modelo FR5-C
 
-FR10型号协作机器人负载曲线
-*******************************
+Curva de carga del robot colaborativo modelo FR10
+**********************************************************
 
-FR10型号协作机器人最大可携带负载为14kg，额定负载为10kg，负载曲线见图3所示。负载曲线的具体释义如下：
+La carga máxima que puede transportar el robot colaborativo modelo FR10 es de 14 kg y la carga nominal es de 10 kg; la curva de carga se muestra en la Figura 3. La explicación concreta de la curva de carga es la siguiente:
 
-(1) FR10在完整性能下可携带10kg及以下的负载，见“蓝色包络线”。
-(2) 当负载为10kg至14kg时，为扩展后的负载能力，见“红色包络线”，此时机器人可运行在如下状态：
+(1) El FR10, con rendimiento completo, puede transportar una carga de 10 kg o inferior, véase la "envolvente azul".
+(2) Cuando la carga es de 10 kg a 14 kg, se trata de la capacidad de carga ampliada, véase la "envolvente roja"; en este caso el robot puede funcionar en los siguientes estados:
 
-  ①开启“时间最优模式”，建议加速度设置在180deg/s\ :sup:`2` 以下；
+  ①Activar el "modo de tiempo óptimo"; se recomienda configurar la aceleración por debajo de 180deg/s\ :sup:`2`;
 
-  ②减小机器人工作范围或降低运行速度。
+  ②Reducir el rango de trabajo del robot o disminuir la velocidad de funcionamiento.
 
 .. figure:: installation/034.png
 	:align: center
 	:width: 5in
 
-.. centered:: 图表 3.4-22 FR10型号协作机器人负载曲线
+.. centered:: Figura 3.4-22 Curva de carga del robot colaborativo modelo FR10
   
-FR16型号协作机器人负载曲线
-*******************************
+Curva de carga del robot colaborativo modelo FR16
+**********************************************************
 
-FR16型号协作机器人最大可携带负载为20kg，额定负载为16kg，负载曲线见图所示。负载曲线的具体释义如下：
+La carga máxima que puede transportar el robot colaborativo modelo FR16 es de 20 kg y la carga nominal es de 16 kg; la curva de carga se muestra en la figura. La explicación concreta de la curva de carga es la siguiente:
 
-(1) FR16在完整性能下可携带16kg及以下的负载，见“蓝色包络线”。
-(2) 当负载为16kg至20kg时，为扩展后的负载能力，见“红色包络线”，此时机器人可运行在如下状态：
+(1) El FR16, con rendimiento completo, puede transportar una carga de 16 kg o inferior, véase la "envolvente azul".
+(2) Cuando la carga es de 16 kg a 20 kg, se trata de la capacidad de carga ampliada, véase la "envolvente roja"; en este caso el robot puede funcionar en los siguientes estados:
 
-  ①开启“时间最优模式”，建议加速度设置在180deg/s\ :sup:`2` 以下；
+  ①Activar el "modo de tiempo óptimo"; se recomienda configurar la aceleración por debajo de 180deg/s\ :sup:`2`;
 
-  ②减小机器人工作范围或降低运行速度。
+  ②Reducir el rango de trabajo del robot o disminuir la velocidad de funcionamiento.
 
 .. figure:: installation/035.png
 	:align: center
 	:width: 5in
 
-.. centered:: 图表 3.4-23 FR16型号协作机器人负载曲线
+.. centered:: Figura 3.4-23 Curva de carga del robot colaborativo modelo FR16
 
-FR20型号协作机器人负载曲线
-*******************************
+Curva de carga del robot colaborativo modelo FR20
+**********************************************************
 
-FR20型号协作机器人最大可携带负载为25kg，额定负载为20kg，负载曲线见图所示。负载曲线的具体释义如下：
+La carga máxima que puede transportar el robot colaborativo modelo FR20 es de 25 kg y la carga nominal es de 20 kg; la curva de carga se muestra en la figura. La explicación concreta de la curva de carga es la siguiente:
 
-(1) FR20在完整性能下可携带20kg及以下的负载，见“蓝色包络线”。
-(2) 当负载为20kg至25kg时，为扩展后的负载能力，见“红色包络线”，此时机器人可运行在如下状态：
+(1) El FR20, con rendimiento completo, puede transportar una carga de 20 kg o inferior, véase la "envolvente azul".
+(2) Cuando la carga es de 20 kg a 25 kg, se trata de la capacidad de carga ampliada, véase la "envolvente roja"; en este caso el robot puede funcionar en los siguientes estados:
 
-  ①开启“时间最优模式”，建议加速度设置在150deg/s\ :sup:`2` 以下；
+  ①Activar el "modo de tiempo óptimo"; se recomienda configurar la aceleración por debajo de 150deg/s\ :sup:`2`;
   
-  ②减小机器人工作范围或降低运行速度。
+  ②Reducir el rango de trabajo del robot o disminuir la velocidad de funcionamiento.
 
 .. figure:: installation/036.png
 	:align: center
 	:width: 5in
 
-.. centered:: 图表 3.4-24 FR20型号协作机器人负载曲线
+.. centered:: Figura 3.4-24 Curva de carga del robot colaborativo modelo FR20
 
-FR30型号协作机器人负载曲线
-*******************************
+Curva de carga del robot colaborativo modelo FR30
+**********************************************************
 
-FR30型号协作机器人最大可携带负载为35kg，额定负载为30kg，负载曲线见图所示。
+La carga máxima que puede transportar el robot colaborativo modelo FR30 es de 35 kg y la carga nominal es de 30 kg; la curva de carga se muestra en la figura.
 
-(1) FR30在完整性能下可携带30kg及以下的负载，见“蓝色包络线”。
-(2) 当负载为30kg至35kg时，为扩展后的负载能力，见“红色包络线”，此时机器人可运行在如下状态：
+(1) El FR30, con rendimiento completo, puede transportar una carga de 30 kg o inferior, véase la "envolvente azul".
+(2) Cuando la carga es de 30 kg a 35 kg, se trata de la capacidad de carga ampliada, véase la "envolvente roja"; en este caso el robot puede funcionar en los siguientes estados:
 
-  ①开启“时间最优模式”，建议加速度设置在150deg/s\ :sup:`2` 以下；
+  ①Activar el "modo de tiempo óptimo"; se recomienda configurar la aceleración por debajo de 150deg/s\ :sup:`2`;
 
-  ②减小机器人工作范围或降低运行速度。
+  ②Reducir el rango de trabajo del robot o disminuir la velocidad de funcionamiento.
 
 .. figure:: installation/069.png
 	:align: center
 	:width: 5in
 
-.. centered:: 图表 3.4-25 FR30型号协作机器人负载曲线
+.. centered:: Figura 3.4-25 Curva de carga del robot colaborativo modelo FR30
 
-控制连接
-----------
+Conexiones de control
+---------------------
 
-控制器接口
-~~~~~~~~~~~~~~~
+Interfaces del controlador
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-本系列机器人可以配置三种不同电源输入的控制箱，控制箱电源输入信息详见控制箱铭牌信息。机器人需要电气接地。
+Esta serie de robots puede configurarse con tres cajas de control de distintas entradas de alimentación; para la información de entrada de alimentación de la caja de control, consulte la información de la placa de características de la caja de control. El robot requiere conexión eléctrica a tierra.
 
 .. list-table::
    :widths: 20 40 40
@@ -2373,181 +2372,181 @@ FR30型号协作机器人最大可携带负载为35kg，额定负载为30kg，�
    :align: center
 
    * - 
-     - **最大输入 Input（供客户配置前级供电功率使用）**
-     - **最大输出 Output（最大输出峰值）**
+     - **Entrada máxima Input (para que el cliente configure la potencia de alimentación del nivel anterior)**
+     - **Salida máxima Output (pico máximo de salida)**
 
-   * - **直流2kW**
+   * - **CC 2kW**
      - 30-60VDC/30A
      - 2000W/48VDC/41A
 
-   * - **直流5kW**
+   * - **CC 5kW**
      - 30-60VDC/40A
      - 5000W/48VDC/104A
 
-   * - **交流窄电压2kW**
-     - 176-264VDC/10A/单机/50Hz
+   * - **CA tensión estrecha 2kW**
+     - 176-264VDC/10A/una unidad/50Hz
      - 2000W/48VDC/41A
 
-   * - **交流宽电压2kW**
-     - 100-240VDC/10A/单机/50-60Hz
+   * - **CA tensión amplia 2kW**
+     - 100-240VDC/10A/una unidad/50-60Hz
      - 2000W/48VDC/41A
 
-   * - **交流宽电压5kW**
-     - 100-240VDC/16A/单机/50-60Hz
+   * - **CA tensión amplia 5kW**
+     - 100-240VDC/16A/una unidad/50-60Hz
      - 5000W/48VDC/104A
 
 .. warning:: 
-	在接线前，请务必确保电源处于关闭状态，并在旁边挂放安全警示牌。
+	Antes del cableado, asegúrese de que la alimentación está apagada y coloque junto a ella un cartel de advertencia de seguridad.
 
-本系列机械手控制系统的外部连线均使用可插拔可快速安装的插头进行连接。协作机器人接线面板如下图所示。
+Todos los cables externos del sistema de control del manipulador de esta serie se conectan mediante conectores enchufables de instalación rápida. El panel de conexiones del robot colaborativo se muestra en la figura siguiente.
 
--  确保控制箱电源按钮关闭情况下（按钮打到0）将电源线接到电源插口。
+-  Asegúrese de que el botón de alimentación de la caja de control está apagado (botón en 0) antes de conectar el cable de alimentación a la toma de alimentación.
 
--  将机器人本体重载线缆连接到控制箱重载接口。
+-  Conecte el cable de carga pesada del cuerpo del robot a la interfaz de carga pesada de la caja de control.
 
--  将按钮盒航空插头插到控制箱示教器接口。
+-  Conecte el conector de aviación de la caja de botones a la interfaz del teach pendant de la caja de control.
 
--  控制箱两侧散热口，间隔距离不少于15CM。
+-  Las rejillas de ventilación de ambos lados de la caja de control deben mantener una distancia de separación no inferior a 15 cm.
 
--  控制箱正面（用户钣金，开关电源键、重载与示教器线束）处，间隔距离不少于25CM。
+-  La parte frontal de la caja de control (chapa metálica del usuario, botón de encendido, mazo de carga pesada y del teach pendant) debe mantener una distancia de separación no inferior a 25 cm.
 
--  控制箱距离地面0.6-1.5m。
+-  La caja de control debe estar a una altura de 0.6-1.5 m del suelo.
 
--  不允许用户自行更换电源线缆。
+-  No se permite al usuario sustituir por su cuenta los cables de alimentación.
 
 .. figure:: installation/037.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.5-1 机器人接线示意图
+.. centered:: Figura 3.5-1 Esquema de conexión del robot
 
-控制器I/O面板
+Panel de I/O del controlador
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-您可以使用控制箱内的I/O 来控制各种设备，包括气动继电器、PLC 和紧限位装置止按钮。图表3.5-2显示了控制箱的电气接口组，图表3.5-3显示了集成式mini控制箱（mini BOX）的电气接口组。
+Puede utilizar las I/O del interior de la caja de control para controlar diversos dispositivos, incluidos relés neumáticos, PLC y botones de límite de fin de carrera. La Figura 3.5-2 muestra el grupo de interfaces eléctricas de la caja de control, y la Figura 3.5-3 muestra el grupo de interfaces eléctricas de la caja de control mini integrada (mini BOX).
 
 .. figure:: installation/038.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.5-2 控制箱电气接口示意图
+.. centered:: Figura 3.5-2 Esquema de las interfaces eléctricas de la caja de control
 
 .. figure:: installation/039.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.5-3 集成式mini控制箱（mini BOX）电气接口示意图
+.. centered:: Figura 3.5-3 Esquema de las interfaces eléctricas de la caja de control mini integrada (mini BOX)
 
-RJ45网络接口组
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Grupo de interfaces de red RJ45
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-控制箱内的网络接口组地址如下图所示，注意该图与控制箱内部网口地址顺序对应，机器人默认端口禁止插拔。用户网口可以用来与相机等设备通信，IP地址为192.168.57.2。按钮盒接口默认为示教器控制端口，IP地址为192.168.58.2，使用网线连接按钮盒接口与电脑，电脑IP地址设为192.168.58.10或与之同一网段，打开谷歌浏览器输入192.168.58.2即可访问示教器页面。易制造控制箱通过连接按钮盒的网口，访问示教器页面。
+La dirección del grupo de interfaces de red del interior de la caja de control se muestra en la figura siguiente; tenga en cuenta que esta figura corresponde al orden de las direcciones de los puertos de red del interior de la caja de control; está prohibido enchufar o desenchufar el puerto predeterminado del robot. El puerto de red de usuario puede utilizarse para comunicarse con dispositivos como cámaras; su dirección IP es 192.168.57.2. El puerto de la caja de botones es por defecto el puerto de control del teach pendant, con dirección IP 192.168.58.2; utilice un cable de red para conectar el puerto de la caja de botones con el ordenador, configure la dirección IP del ordenador como 192.168.58.10 o en el mismo segmento de red, abra el navegador Chrome e introduzca 192.168.58.2 para acceder a la página del teach pendant. La caja de control de fabricación fácil accede a la página del teach pendant a través del puerto de red conectado a la caja de botones.
 
 .. figure:: installation/040.png
 	:align: center
 	:width: 3in
 
-.. centered:: 图表 3.5-4 网络接口组示意图
+.. centered:: Figura 3.5-4 Esquema del grupo de interfaces de red
 
-末端板
-~~~~~~~~~~~~~
+Placa del extremo
+~~~~~~~~~~~~~~~~~
 
-您可以使用末端板的I/O和485通讯接口来控制各种设备，包括气动继电器、PLC和紧急停止按钮。Pin脚分布及其pin脚说明如下图所示。I/O连接器型号为M12连接器8芯母头。
+Puede utilizar las I/O y la interfaz de comunicación 485 de la placa del extremo para controlar diversos dispositivos, incluidos relés neumáticos, PLC y botones de parada de emergencia. La distribución de pines y la descripción de los pines se muestran en la figura siguiente. El modelo del conector de I/O es un conector M12 hembra de 8 pines.
 
-.. note:: 末端板I/O和485接口禁止热插拔。
+.. note:: Está prohibido el conexionado en caliente de las I/O y de la interfaz 485 de la placa del extremo.
 
 .. figure:: installation/041.png
 	:align: center
 	:width: 3in
 
-.. centered:: 图表 3.5-5 末端版电气接口示意图
+.. centered:: Figura 3.5-5 Esquema de las interfaces eléctricas de la placa del extremo
 
-接地说明
-~~~~~~~~~~~~~~
+Descripción de la puesta a tierra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. 控制箱接地位于电源开关左上方M4组合螺钉处，如下图所示。
+1. La toma de tierra de la caja de control se encuentra en el tornillo combinado M4 situado en la parte superior izquierda del interruptor de alimentación, como se muestra en la figura siguiente.
 
 .. figure:: installation/042.png
 	:align: center
 	:width: 8in
 
-.. centered:: 图表 3.5-6 控制箱接地示意图
+.. centered:: Figura 3.5-6 Esquema de puesta a tierra de la caja de control
 
-1. 本体接地位于基座出线处的右侧位置，如下图所示。
+1. La toma de tierra del cuerpo se encuentra en la posición derecha de la salida de cables de la base, como se muestra en la figura siguiente.
 
 .. figure:: installation/043.png
 	:align: center
 	:width: 4in
 
-.. centered:: 图表 3.5-7 本体接地示意图
+.. centered:: Figura 3.5-7 Esquema de puesta a tierra del cuerpo
 
-单独使用的保护导线，截面积不应小于：
+El conductor de protección utilizado de forma independiente no debe tener una sección inferior a:
 
-- 2.5mm\ :sup:`2` 铜或16mm\ :sup:`2` 铝，如果提供机械损伤防护（导线管、管道等）
-- 4mm\ :sup:`2` 铜或16mm\ :sup:`2` 铝，如果没有提供机械损伤防护
+- 2.5mm\ :sup:`2` de cobre o 16mm\ :sup:`2` de aluminio, si se proporciona protección contra daños mecánicos (tubo de cables, conducto, etc.)
+- 4mm\ :sup:`2` de cobre o 16mm\ :sup:`2` de aluminio, si no se proporciona protección contra daños mecánicos
 
-所有数字I/O 的通用规范
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Especificaciones generales de todas las I/O digitales
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-本节规定了下列控制箱24伏数字输入/输出的电气规范：
+Esta sección establece las especificaciones eléctricas de las siguientes entradas/salidas digitales de 24 voltios de la caja de control:
 
--  安全I/O
+-  I/O de seguridad
 
--  通用数字量I/O
+-  I/O digitales generales
 
-机器人必须按照电气规范进行安装。
+El robot debe instalarse conforme a las especificaciones eléctricas.
 
-通过配置“电源通讯”接口，可以使用内部或外部24V电源为数字I/O供电。该接口中上面两个端子（ex24V和exon）为外部电源的24V和地，下面两个端子（24V和GND）为内部电源的24V和地。默认配置是使用内部电源，控制箱及集成式mini控制箱（mini BOX）如下图所示。
+Mediante la configuración de la interfaz "comunicación de alimentación" se puede utilizar una fuente de alimentación de 24V interna o externa para alimentar las I/O digitales. En esta interfaz, los dos terminales superiores (ex24V y exon) son los 24V y la tierra de la alimentación externa, y los dos terminales inferiores (24V y GND) son los 24V y la tierra de la alimentación interna. La configuración predeterminada es utilizar la alimentación interna; la caja de control y la caja de control mini integrada (mini BOX) se muestran en la figura siguiente.
 
 .. figure:: installation/044.png
 	:align: center
 	:width: 3in
 
-.. centered:: 控制箱
+.. centered:: Caja de control
 
 .. figure:: installation/134.png
 	:align: center
 	:width: 3in
 
-.. centered:: 集成式mini控制箱（mini BOX）
-.. centered:: 图表 3.5-8 电源通信示意图01
+.. centered:: Caja de control mini integrada (mini BOX)
+.. centered:: Figura 3.5-8 Esquema de comunicación de alimentación 01
 
-如果负载功率较大，可以按如下图连接外部电源。交流宽压集成式mini控制箱（mini BOX）外部电源与内部电源共0V连接。
+Si la potencia de la carga es grande, se puede conectar la alimentación externa como se muestra en la figura siguiente. En la caja de control mini integrada de tensión amplia de CA (mini BOX), la alimentación externa y la alimentación interna comparten la conexión de 0V.
 
 .. figure:: installation/045.png
 	:align: center
 	:width: 3in
 
-.. centered:: 控制箱
+.. centered:: Caja de control
 
 .. figure:: installation/135.png
 	:align: center
 	:width: 3in
 
-.. centered:: 集成式mini控制箱（mini BOX）
-.. centered:: 图表 3.5-9 电源通信示意图02
+.. centered:: Caja de control mini integrada (mini BOX)
+.. centered:: Figura 3.5-9 Esquema de comunicación de alimentación 02
 
-内部和外部电源的电气规格如下表格所示：
+Las especificaciones eléctricas de la alimentación interna y externa se muestran en la tabla siguiente:
 
-.. centered:: 表格 3.5-1 内外部电源电气规格
+.. centered:: Tabla 3.5-1 Especificaciones eléctricas de la alimentación interna y externa
 .. list-table::
    :widths: 30 20 10 10 10 10
    :header-rows: 0
    :align: center
 
-   * - **端子**
-     - **参数**
-     - **最小值**
-     - **典型值**
-     - **最大值**
-     - **单位**
+   * - **Terminal**
+     - **Parámetro**
+     - **Valor mínimo**
+     - **Valor típico**
+     - **Valor máximo**
+     - **Unidad**
 
-   * - | 内部24V电源
+   * - | Alimentación interna de 24V
        | [ex24V -exGND]
        | [ex24V -exGND]
      - | 
-       | 电压
-       | 电流
+       | Tensión
+       | Corriente
      - | 
        | 23
        | 0
@@ -2561,12 +2560,12 @@ RJ45网络接口组
        | V
        | A
 
-   * - | 内部24V电源
+   * - | Alimentación interna de 24V
        | [24V- GND]
        | [24V- GND]
      - | 
-       | 电压
-       | 电流
+       | Tensión
+       | Corriente
      - | 
        | 23
        | 0
@@ -2580,29 +2579,29 @@ RJ45网络接口组
        | V
        | A
 
-数字量I/O的电气规格如下表格所示：
+Las especificaciones eléctricas de las I/O digitales se muestran en la tabla siguiente:
 
-.. centered:: 表格 3.5‑2 数字量I/O电气规格
+.. centered:: Tabla 3.5‑2 Especificaciones eléctricas de las I/O digitales
 .. list-table::
    :widths: 30 20 10 10 10 10
    :header-rows: 0
    :align: center
 
-   * - **端子**
-     - **参数**
-     - **最小值**
-     - **典型值**
-     - **最大值**
-     - **单位**
+   * - **Terminal**
+     - **Parámetro**
+     - **Valor mínimo**
+     - **Valor típico**
+     - **Valor máximo**
+     - **Unidad**
 
-   * - | 数字量输出
+   * - | Salida digital
        | [COx/DOx]
        | [COx/DOx]
        | [COx/DOx]
      - | 
-       | 电流
-       | 压降
-       | 漏电流
+       | Corriente
+       | Caída de tensión
+       | Corriente de fuga
      - | 
        | 0
        | 0
@@ -2621,20 +2620,20 @@ RJ45网络接口组
        | mA
 
    * - [COx/DOx]
-     - 功能
+     - Función
      - | -
      - NPN
      - | -
      - Type
 
-   * - | 数字量输入
+   * - | Entrada digital
        | [EIx/SIx/CIx/DIx]
        | [EIx/SIx/CIx/DIx]
        | [EIx/SIx/CIx/DIx]
      - | 
        | OFF
        | ON
-       | 电流(11~30A)
+       | Corriente (11~30A)
      - | 
        | -3
        | 11
@@ -2653,241 +2652,241 @@ RJ45网络接口组
        | mA
 
    * - [EIx/SIx/CIx/DIx]
-     - 功能
+     - Función
      - | -
      - NPN
      - | -
      - Type
 
-数字量DO负载的电气规格如下表所示:
+Las especificaciones eléctricas de la carga de las DO digitales se muestran en la tabla siguiente:
 
-.. centered:: 表格 3.5-3 数字量DO单路负载电气规格
+.. centered:: Tabla 3.5-3 Especificaciones eléctricas de la carga de un solo canal de DO digital
 
 .. list-table::
    :widths: 30 20 20 30
    :header-rows: 0
    :align: center
 
-   * - **控制箱类型** 
-     - **DO输出类型**
-     - **供电类型**
-     - **DO单路最大带载值**
+   * - **Tipo de caja de control** 
+     - **Tipo de salida DO**
+     - **Tipo de alimentación**
+     - **Valor máximo de carga de un solo canal de DO**
 
-   * - 直流/交流窄压控制箱
-     - NPN型输出
-     - 外部24V电源
-     - | 1-4 路：400mA
-       | 5-8 路：250mA
-       | 9-16路：125mA
+   * - Caja de control de CC/CA de tensión estrecha
+     - Salida tipo NPN
+     - Alimentación externa de 24V
+     - | Canales 1-4: 400mA
+       | Canales 5-8: 250mA
+       | Canales 9-16: 125mA
 
-   * - 直流/交流窄压控制箱
-     - NPN型输出
-     - 内部24V电源
-     - | 1-4 路：300mA
-       | 5-8 路：190mA
-       | 9-16路：90mA
+   * - Caja de control de CC/CA de tensión estrecha
+     - Salida tipo NPN
+     - Alimentación interna de 24V
+     - | Canales 1-4: 300mA
+       | Canales 5-8: 190mA
+       | Canales 9-16: 90mA
 
-   * - 交流宽压控制箱
-     - NPN/PNP型输出
-     - 外部24V电源
-     - | 1-2 路：200mA
-       | 3-8 路：100mA
-       | 9-16路：60mA
+   * - Caja de control de CA de tensión amplia
+     - Salida tipo NPN/PNP
+     - Alimentación externa de 24V
+     - | Canales 1-2: 200mA
+       | Canales 3-8: 100mA
+       | Canales 9-16: 60mA
 
-   * - 交流宽压控制箱
-     - NPN/PNP型输出
-     - 内部24V电源
-     - | 1-2 路：200mA
-       | 3-8 路：100mA
-       | 9-16路：60mA
+   * - Caja de control de CA de tensión amplia
+     - Salida tipo NPN/PNP
+     - Alimentación interna de 24V
+     - | Canales 1-2: 200mA
+       | Canales 3-8: 100mA
+       | Canales 9-16: 60mA
 
-安全I/O
-~~~~~~~~~~~~~~~
+I/O de seguridad
+~~~~~~~~~~~~~~~~
 
-本节描述了安全I/O的电气规范，必须遵守第3.5.6节中的通用电气规范。
+Esta sección describe las especificaciones eléctricas de las I/O de seguridad; deben cumplirse las especificaciones eléctricas generales de la sección 3.5.6.
 
-安全装置和设备必须按照安全说明和风险评估进行安装，见第3.1。所有安全I/O都是成对的（冗余），必须作为两个独立的分支保存。单一故障不应导致安全功能丧失。
+Los dispositivos y equipos de seguridad deben instalarse conforme a las instrucciones de seguridad y a la evaluación de riesgos; véase la sección 3.1. Todas las I/O de seguridad están emparejadas (redundantes) y deben conservarse como dos ramas independientes. Un solo fallo no debe provocar la pérdida de la función de seguridad.
 
-安全I/O包括紧急停止和安全停止。紧急停止输入仅用于紧急停止设备，安全停止输入用于各种安全相关保护设备。功能差异如下表格所示：
+Las I/O de seguridad incluyen la parada de emergencia y la parada de seguridad. La entrada de parada de emergencia se utiliza exclusivamente para dispositivos de parada de emergencia, y la entrada de parada de seguridad se utiliza para diversos dispositivos de protección relacionados con la seguridad. Las diferencias funcionales se muestran en la tabla siguiente:
 
-.. centered:: 表格 3.5-3 功能差异
+.. centered:: Tabla 3.5-3 Diferencias funcionales
 .. list-table::
    :widths: 50 80 80
    :header-rows: 0
    :align: center
 
    * - 
-     - **紧急停止**
-     - **安全停止**
+     - **Parada de emergencia**
+     - **Parada de seguridad**
 
-   * - **机器人停止移动**
-     - 是
-     - 是
+   * - **El robot detiene el movimiento**
+     - Sí
+     - Sí
 
-   * - **停止类别**
-     - 类别 0
-     - 类别 1
+   * - **Categoría de parada**
+     - Categoría 0
+     - Categoría 1
 
-   * - **P程序执行**
-     - 停止
-     - 暂停
+   * - **Ejecución del programa P**
+     - Detener
+     - Pausar
 
-   * - **机器人电源**
-     - 关闭
-     - 打开
+   * - **Alimentación del robot**
+     - Apagar
+     - Encender
 
-   * - **重启**
-     - 手动
-     - 自动或手动
+   * - **Reinicio**
+     - Manual
+     - Automático o manual
 
-   * - **使用频率**
-     - 不频繁
-     - 经常
+   * - **Frecuencia de uso**
+     - Poco frecuente
+     - Frecuente
 
-   * - **需要重新初始化**
-     - 需要
-     - 不需要
+   * - **Requiere reinicialización**
+     - Sí
+     - No
 
 .. warning:: 
-	- 切勿将安全信号连接到不具有正确安全级别的PLC。如果不遵守此警告，则可能导致严重伤害或死亡，因为其中一个安全停止功能可能被覆盖。必须将安全接口信号与正常I/O接口信号分开。
-	- 所有与安全相关的I/O都是冗余构建的（两个独立通道）。必须保持两个通道分开，以便单个故障不会导致安全功能丧失。
-	- 在将机器人投入运行之前，必须验证急停安全功能（机器人通电使能，按下急停按钮，机器人断电停止，关闭电源，旋转急停按钮，打开电源，机器人重新上电使能）。必须定期测试安全功能。
-	- 机器人安装应符合这些规范。否则可能导致严重伤害或死亡，因为安全停止功能可能被越过。
+	- No conecte nunca señales de seguridad a PLC que no dispongan del nivel de seguridad correcto. Si no se cumple esta advertencia, pueden producirse lesiones graves o la muerte, ya que una de las funciones de parada de seguridad podría quedar anulada. Las señales de la interfaz de seguridad deben mantenerse separadas de las señales de la interfaz de I/O normal.
+	- Todas las I/O relacionadas con la seguridad están construidas de forma redundante (dos canales independientes). Los dos canales deben mantenerse separados, de modo que un solo fallo no provoque la pérdida de la función de seguridad.
+	- Antes de poner el robot en funcionamiento, debe verificarse la función de seguridad de la parada de emergencia (robot encendido y habilitado, pulsar el botón de parada de emergencia, el robot se apaga y se detiene, apagar la alimentación, girar el botón de parada de emergencia, encender la alimentación, el robot se vuelve a encender y habilitar). Las funciones de seguridad deben probarse periódicamente.
+	- La instalación del robot debe cumplir estas especificaciones. De lo contrario, pueden producirse lesiones graves o la muerte, ya que la función de parada de seguridad podría quedar anulada.
 
-以下小节给出了一些如何使用安全I/O的示例。
+Los siguientes subapartados ofrecen algunos ejemplos de cómo utilizar las I/O de seguridad.
 
-**默认安全配置**
-机器人出厂时带有默认配置，无需任何附加安全设备即可进行操作，请参见下图表：
+**Configuración de seguridad predeterminada**
+El robot se suministra de fábrica con una configuración predeterminada que permite operarlo sin necesidad de ningún equipo de seguridad adicional; consulte la figura siguiente:
 
 .. figure:: installation/049.png
 	:align: center
 	:width: 3in
 
-.. centered:: 控制箱
+.. centered:: Caja de control
 
 .. figure:: installation/136.png
 	:align: center
 	:width: 3in
 
-.. centered:: 集成式mini控制箱（mini BOX）
-.. centered:: 图表 3.5-10 安全防护示意图01
+.. centered:: Caja de control mini integrada (mini BOX)
+.. centered:: Figura 3.5-10 Esquema de protección de seguridad 01
 
-**连接紧急停止按钮**
-在大多数应用中，需要使用一个或多个额外的紧急停止按钮，请参见下图表：
+**Conexión de botones de parada de emergencia**
+En la mayoría de las aplicaciones es necesario utilizar uno o varios botones de parada de emergencia adicionales; consulte la figura siguiente:
 
 .. figure:: installation/050.png
 	:align: center
 	:width: 3in
 
-.. centered:: 控制箱
+.. centered:: Caja de control
   
 .. figure:: installation/137.png
 	:align: center
 	:width: 3in
 
-.. centered:: 集成式mini控制箱（mini BOX）
-.. centered:: 图表 3.5-11 安全防护示意图02
+.. centered:: Caja de control mini integrada (mini BOX)
+.. centered:: Figura 3.5-11 Esquema de protección de seguridad 02
 
-**连接安全停止按钮**
-安全停止装置的一个例子是当门打开时机器人停止的门开关，请参见下图表：
+**Conexión de botones de parada de seguridad**
+Un ejemplo de dispositivo de parada de seguridad es un interruptor de puerta que detiene el robot cuando la puerta se abre; consulte la figura siguiente:
 
 .. figure:: installation/051.png
 	:align: center
 	:width: 3in
 
-.. centered:: 控制箱
+.. centered:: Caja de control
   
 .. figure:: installation/138.png
 	:align: center
 	:width: 3in
 
-.. centered:: 集成式mini控制箱（mini BOX）
-.. centered:: 图表 3.5-12 安全防护示意图03
+.. centered:: Caja de control mini integrada (mini BOX)
+.. centered:: Figura 3.5-12 Esquema de protección de seguridad 03
 
-通用数字量I/O
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+I/O digitales generales
+~~~~~~~~~~~~~~~~~~~~~~~
 
-本节描述了通用数字量 I/O的电气规范，必须遵守第3.5.6节中的通用电气规范。
+Esta sección describe las especificaciones eléctricas de las I/O digitales generales; deben cumplirse las especificaciones eléctricas generales de la sección 3.5.6.
 
-通用数字量I/O可用于驱动继电器、电磁阀等设备或与其他PLC进行交互。
+Las I/O digitales generales pueden utilizarse para accionar dispositivos como relés y electroválvulas, o para interactuar con otros PLC.
 
-**数字量输出控制负载**
+**Control de carga mediante salida digital**
 
-此示例演示如何连接数字量输出从而控制负载，请参见下图表：
+Este ejemplo muestra cómo conectar una salida digital para controlar una carga; consulte la figura siguiente:
 
 .. figure:: installation/052.png
 	:align: center
 	:width: 3in
 
-.. centered:: 控制箱
+.. centered:: Caja de control
   
 .. figure:: installation/139.png
 	:align: center
 	:width: 6in
 
-.. centered:: 集成式mini控制箱（mini BOX）
-.. centered:: 图表 3.5-13 通用数字量输出示意图01
+.. centered:: Caja de control mini integrada (mini BOX)
+.. centered:: Figura 3.5-13 Esquema de salida digital general 01
 
-从按钮进行的数字输入
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Entrada digital desde botón
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-下面的示例演示如何将简单按钮连接到数字量输入。
+El ejemplo siguiente muestra cómo conectar un botón simple a una entrada digital.
 
 .. figure:: installation/053.png
 	:align: center
 	:width: 3in
 
-.. centered:: 控制箱
+.. centered:: Caja de control
   
 .. figure:: installation/140.png
 	:align: center
 	:width: 6in
 
-.. centered:: 集成式mini控制箱（mini BOX）
-.. centered:: 图表 3.5-14 通用数字量输出示意图02
+.. centered:: Caja de control mini integrada (mini BOX)
+.. centered:: Figura 3.5-14 Esquema de salida digital general 02
 
-与其他设备或PLC交互
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Interacción con otros dispositivos o PLC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-下面的示例演示如何与其他设备或PLC进行数字量输入输出交互。
+El ejemplo siguiente muestra cómo interactuar con otros dispositivos o PLC mediante entradas y salidas digitales.
 
 .. figure:: installation/054.png
 	:align: center
 	:width: 6in
 
-.. centered:: 控制箱
+.. centered:: Caja de control
   
 .. figure:: installation/141.png
 	:align: center
 	:width: 6in
 
-.. centered:: 集成式mini控制箱（mini BOX）
-.. centered:: 图表 3.5-15 与其他设备或PLC交互示意图
+.. centered:: Caja de control mini integrada (mini BOX)
+.. centered:: Figura 3.5-15 Esquema de interacción con otros dispositivos o PLC
 
-模拟量I/O
-~~~~~~~~~~~~~~~~
+I/O analógicas
+~~~~~~~~~~~~~~
 
-.. centered:: 表格 3.5-4 模拟量电流电压
+.. centered:: Tabla 3.5-4 Corriente y tensión analógicas
 .. list-table::
    :widths: 30 20 10 10 10 10
    :header-rows: 0
    :align: center
 
-   * - **端子**
-     - **参数**
-     - **最小值**
-     - **典型值**
-     - **最大值**
-     - **单位**
+   * - **Terminal**
+     - **Parámetro**
+     - **Valor mínimo**
+     - **Valor típico**
+     - **Valor máximo**
+     - **Unidad**
 
-   * - | 模拟量电流输入
+   * - | Entrada de corriente analógica
        | [AIx-END]
        | [AIx-END]
        | [AIx-END]
      - | 
-       | 电流
-       | 阻抗
-       | 分辨率
+       | Corriente
+       | Impedancia
+       | Resolución
      - | 
        | 0
        | -
@@ -2905,14 +2904,14 @@ RJ45网络接口组
        | ohm
        | bit
 
-   * - | 模拟量电压输入
+   * - | Entrada de tensión analógica
        | [AIx-END]
        | [AIx-END]
        | [AIx-END]
      - | 
-       | 电压
-       | 阻抗
-       | 分辨率
+       | Tensión
+       | Impedancia
+       | Resolución
      - | 
        | 0
        | -
@@ -2930,14 +2929,14 @@ RJ45网络接口组
        | Kohm
        | bit
 
-   * - | 模拟量电流输出
+   * - | Salida de corriente analógica
        | [AOx-END]
        | [AOx-END]
        | [AOx-END]
      - | 
-       | 电流
-       | 电压
-       | 分辨率
+       | Corriente
+       | Tensión
+       | Resolución
      - | 
        | 0
        | 0
@@ -2955,16 +2954,16 @@ RJ45网络接口组
        | V
        | bit
 
-   * - | 模拟量电压输出
+   * - | Salida de tensión analógica
        | [AOx-END]
        | [AOx-END]
        | [AOx-END]
        | [AOx-END]
      - | 
-       | 电压
-       | 电流
-       | 阻抗
-       | 分辨率
+       | Tensión
+       | Corriente
+       | Impedancia
+       | Resolución
      - | 
        | 0
        | 0
@@ -2986,90 +2985,90 @@ RJ45网络接口组
        | ohm
        | bit
 
-模拟量I/O用来设置或测量其它设备的电压（0-10V）或电流（0-20mA）。
+Las I/O analógicas se utilizan para establecer o medir la tensión (0-10V) o la corriente (0-20mA) de otros dispositivos.
 
-为了达到高精度，建议采用以下方法。
+Para lograr una alta precisión, se recomienda adoptar los siguientes métodos.
 
--  设备和控制箱使用相同的地（GND）。
+-  El dispositivo y la caja de control utilizan la misma tierra (GND).
 
--  使用屏蔽电缆或双绞线。
+-  Utilizar cables apantallados o par trenzado.
 
-下面的示例演示如何使用模拟量I/O。
+El ejemplo siguiente muestra cómo utilizar las I/O analógicas.
 
-**使用模拟量输出**
+**Uso de la salida analógica**
 
-下面的示例是演示使用模拟量输出控制传送带。
+El ejemplo siguiente muestra el uso de una salida analógica para controlar una cinta transportadora.
 
 .. figure:: installation/056.png
 	:align: center
 	:width: 3in
 
-.. centered:: 控制箱
+.. centered:: Caja de control
   
 .. figure:: installation/142.png
 	:align: center
 	:width: 6in
 
-.. centered:: 集成式mini控制箱（mini BOX）
-.. centered:: 图表 3.5-16 模拟量输出示意图
+.. centered:: Caja de control mini integrada (mini BOX)
+.. centered:: Figura 3.5-16 Esquema de salida analógica
 
-**使用模拟量输入**
+**Uso de la entrada analógica**
 
-下面的示例是演示使用模拟量输入连接模拟传感器。
+El ejemplo siguiente muestra el uso de una entrada analógica para conectar un sensor analógico.
 
 .. figure:: installation/057.png
 	:align: center
 	:width: 3in
 
-.. centered:: 控制箱
+.. centered:: Caja de control
   
 .. figure:: installation/143.png
 	:align: center
 	:width: 6in
 
-.. centered:: 集成式mini控制箱（mini BOX）
-.. centered:: 图表 3.5-17 模拟量输入示意图
+.. centered:: Caja de control mini integrada (mini BOX)
+.. centered:: Figura 3.5-17 Esquema de entrada analógica
 
-FR3MT&3C选配模块
+Módulos opcionales FR3MT y 3C
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-前言
+Prefacio
 +++++++++++++++++++++++++
 
-协作机器人的定义遵循国际ISO标准及国标相关规定来保护作业者的安全，我们不推荐直接将机器人本体应用于作业对象为人体的场合。但机器人应用者或应用开发者确有需要涉及机器人作业对象为人体的场合时，需要在应用者或应用开发者充分评估并在人员安全得到保障的前提下，为机器人本体配置安全可靠、经过充分测试及认证的安全防护系统，以保护人员安全。
+La definición del robot colaborativo sigue las normas internacionales ISO y las disposiciones pertinentes de las normas nacionales para proteger la seguridad de los operadores; no recomendamos aplicar directamente el cuerpo del robot en situaciones en las que el objeto de trabajo sean personas. Sin embargo, cuando el usuario de la aplicación o el desarrollador de la aplicación realmente necesite que el objeto de trabajo del robot sean personas, deberá, bajo la premisa de una evaluación suficiente por parte del usuario o desarrollador de la aplicación y de la garantía de la seguridad del personal, configurar para el cuerpo del robot un sistema de protección de seguridad fiable, suficientemente probado y certificado, para proteger la seguridad del personal.
 
-安全须知
+Avisos de seguridad
 ***************************
 
-本手册仅作为客户安全认证指导手册使用，维护操作人员需要具备专业能力，非专业人事操作，法奥拒绝承担所有责任。
+Este manual solo debe utilizarse como manual de orientación para la certificación de seguridad del cliente; el personal de mantenimiento debe poseer capacidad profesional; FAIRINO declina toda responsabilidad por operaciones realizadas por personal no profesional.
 
-.. important:: 如果机器人（机器人本体、电源模块、扩展模块）因人为原因被损坏、更改或修改，法奥拒绝承担所有责任；法奥对由于客户编写的程序出错而对机器人或任何其他设备造成的任何损坏概不负责。
+.. important:: Si el robot (cuerpo del robot, módulo de alimentación, módulo de expansión) se daña, altera o modifica por causas humanas, FAIRINO declina toda responsabilidad; FAIRINO no se hace responsable de ningún daño causado al robot o a cualquier otro equipo debido a errores en los programas escritos por el cliente.
 
-有效性和责任
+Validez y responsabilidad
 ***************************
 
-本手册中的信息不包含设计、安装和操作一个完整的机器人应用，也不包含所有可能对这一完整的系统的安全造成影响的周边设备。该完整系统的设计和安装需符合该机器人安装所在国的标准和规范中确立的安全要求。
+La información de este manual no incluye el diseño, la instalación y la operación de una aplicación completa de robot, ni incluye todos los equipos periféricos que puedan afectar a la seguridad de este sistema completo. El diseño y la instalación de este sistema completo deben cumplir los requisitos de seguridad establecidos en las normas y reglamentos del país donde se instala el robot.
 
-法奥的集成商有责任确保遵循相关国家的法律法规，确保完整的机器人应用中不存在任何重大危险。这包括但不限于以下内容：
+El integrador de FAIRINO tiene la responsabilidad de garantizar el cumplimiento de las leyes y reglamentos de los países correspondientes y de garantizar que en la aplicación completa del robot no exista ningún peligro importante. Esto incluye, entre otros, los siguientes aspectos:
 
-- 对完整的机器人系统做一个风险评估
-- 将风险评估定义的其他机械和附加安全设备连接在一起
-- 在软件中建立适当的安全设置
-- 确保用户不会对任何安全措施加以修改
-- 确认整个机器人系统的设计和安装准确无误
-- 明确使用说明
-- 在机器人上标明集成商的相关标志和联系信息
-- 收集技术文件中的所有文档，包括本手册
+- Realizar una evaluación de riesgos de todo el sistema de robot
+- Conectar entre sí otros equipos mecánicos y equipos de seguridad adicionales definidos en la evaluación de riesgos
+- Establecer en el software la configuración de seguridad adecuada
+- Garantizar que el usuario no modifique ninguna medida de seguridad
+- Confirmar que el diseño y la instalación de todo el sistema de robot son correctos
+- Definir claramente las instrucciones de uso
+- Indicar en el robot la marca y la información de contacto correspondientes del integrador
+- Recopilar toda la documentación de los archivos técnicos, incluido este manual
 
-责任有限
+Responsabilidad limitada
 ***************************
 
-本手册所包含的任何安全信息都不得视为通用的机器人安全保证，即使遵守所有安全说明，依然有可能引起人员伤害或设备损坏。
+Ninguna información de seguridad contenida en este manual debe considerarse como una garantía general de seguridad del robot; incluso cumpliendo todas las instrucciones de seguridad, todavía es posible que se produzcan daños personales o daños al equipo.
 
-安全警告标志
-***************************
+Símbolos de advertencia de seguridad
+*************************************************
 
-产品上使用了以下安全警告标志。
+En el producto se utilizan los siguientes símbolos de advertencia de seguridad.
 
 .. important:: 
 	.. figure:: installation/008.png
@@ -3077,9 +3076,9 @@ FR3MT&3C选配模块
 		:height: 50
 		:align: left
 
-	名称：**危险**
+	Nombre: **Peligro**
    
-	作用：这指的是即将引发危险的用电情况，如果不避免，可导致人员死亡或严重伤害。
+	Función: se refiere a una situación eléctrica que está a punto de provocar peligro y que, si no se evita, puede causar la muerte o lesiones graves.
 
 .. important:: 
 	.. figure:: installation/009.png
@@ -3087,9 +3086,9 @@ FR3MT&3C选配模块
 		:height: 50
 		:align: left
 
-	名称：**触电危险**
+	Nombre: **Peligro de descarga eléctrica**
    
-	作用：这指的是即将引发危险的触电情况，如果不避免，可导致人员触电死亡或严重伤害。
+	Función: se refiere a una situación de descarga eléctrica que está a punto de provocar peligro y que, si no se evita, puede causar la muerte por descarga eléctrica o lesiones graves.
 
 .. important:: 
 	.. figure:: installation/010.png
@@ -3097,9 +3096,9 @@ FR3MT&3C选配模块
 		:height: 50
 		:align: left
 
-	名称：**烫伤危险**
+	Nombre: **Peligro de quemadura**
    
-	作用：这指的是可能引发危险的热表面，如果不避免接触了，可造成人员伤害。
+	Función: se refiere a una superficie caliente que puede provocar peligro y que, si se toca sin evitarlo, puede causar daños personales.
 
 .. important:: 
 	.. figure:: installation/112.png
@@ -3107,30 +3106,30 @@ FR3MT&3C选配模块
 		:height: 50
 		:align: left
 
-	名称：**接地**
+	Nombre: **Puesta a tierra**
    
-	作用：这指设备需要可靠接地。
+	Función: indica que el equipo requiere una puesta a tierra fiable.
 	                                           
-FR3MT&3C基座及模块接口定义
+Definición de las interfaces de la base y de los módulos FR3MT y 3C
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-基座接口定义
-***************************
+Definición de las interfaces de la base
+*************************************************
 
-本体基座部分对外共7个按键及接口，其定义如下：
+La parte de la base del cuerpo dispone en total de 7 botones e interfaces hacia el exterior, cuya definición es la siguiente:
 
 .. figure:: installation/113.png
 	:align: center
 	:width: 4in
 
-.. centered:: 图表 3.5-18 本体基座部分按键及接口
+.. centered:: Figura 3.5-18 Botones e interfaces de la parte de la base del cuerpo
 
-.. note:: 基座接口引脚定义视图均为安装基准面视角。
+.. note:: Las vistas de la definición de pines de las interfaces de la base corresponden todas a la perspectiva del plano de referencia de instalación.
 
-**1、控制器开关机按键**：默认上电自动开机。
+**1. Botón de encendido/apagado del controlador**: por defecto se enciende automáticamente al aplicar alimentación.
 
-**2、M8-A型-4P-母座接口引脚定义**：
-用户网口。地址192.168.57.2。连接器：M8-A型-4P-母座【接线端配M8-A型-4P-公头】，连接器符合IEC 61076-2-101标准。
+**2. Definición de pines de la interfaz M8 tipo A de 4P hembra**:
+Puerto de red de usuario. Dirección 192.168.57.2. Conector: M8 tipo A de 4P hembra [el extremo de conexión utiliza M8 tipo A de 4P macho]; el conector cumple la norma IEC 61076-2-101.
 
 .. figure:: installation/114.png
 	:align: center
@@ -3141,28 +3140,28 @@ FR3MT&3C基座及模块接口定义
    :header-rows: 0
    :align: center
 
-   * - **引脚**
-     - **定义**
-     - **描述**
+   * - **Pin**
+     - **Definición**
+     - **Descripción**
 
    * - 1
      - TX+
-     - 数据发送正
+     - Transmisión de datos positiva
 
    * - 2
      - RX+
-     - 数据接收正
+     - Recepción de datos positiva
 
    * - 3
      - RX-
-     - 数据接收负
+     - Recepción de datos negativa
 
    * - 4
      - TX-
-     - 数据发送负
+     - Transmisión de datos negativa
 
-**3、M12-L型-5P-公座接口引脚定义**：
-连接器：M12-L型-5P-公座【接线端配M12-L型-5P-母头】，连接器符合IEC 61076-2-101标准。
+**3. Definición de pines de la interfaz M12 tipo L de 5P macho**:
+Conector: M12 tipo L de 5P macho [el extremo de conexión utiliza M12 tipo L de 5P hembra]; el conector cumple la norma IEC 61076-2-101.
 
 .. figure:: installation/115.png
 	:align: center
@@ -3173,55 +3172,55 @@ FR3MT&3C基座及模块接口定义
    :header-rows: 0
    :align: center
 
-   * - **引脚**
-     - **颜色**
-     - **定义**
-     - **描述**
-     - **备注**
+   * - **Pin**
+     - **Color**
+     - **Definición**
+     - **Descripción**
+     - **Observaciones**
 
    * - 1
-     - 黑1
+     - Negro 1
      - 0V
-     - 控制电源负
-     - 机器人控制电源负【备用控制箱电源，不需要连接】
+     - Negativo de la alimentación de control
+     - Negativo de la alimentación de control del robot [alimentación de la caja de control de reserva, no es necesario conectar]
 
    * - 2
-     - 棕2
+     - Marrón 2
      - 24V
-     - 控制电源正
-     - 机器人控制电源正【备用控制箱电源，不需要连接】
+     - Positivo de la alimentación de control
+     - Positivo de la alimentación de control del robot [alimentación de la caja de control de reserva, no es necesario conectar]
 
    * - 3
-     - 白3
+     - Blanco 3
      - 48V
-     - 动力电源正
-     - 机器人动力电源正
+     - Positivo de la alimentación de potencia
+     - Positivo de la alimentación de potencia del robot
 
    * - 4
-     - 蓝4
+     - Azul 4
      - 0V
-     - 动力电源负
-     - 机器人动力电源负
+     - Negativo de la alimentación de potencia
+     - Negativo de la alimentación de potencia del robot
 
    * - 5
-     - 灰5
+     - Gris 5
      - PE
-     - 接地
-     - 安全接地
+     - Puesta a tierra
+     - Puesta a tierra de seguridad
   
 .. note:: 
-  ①基座内设计48V转24V的控制电源。
+  ①En el interior de la base se diseña una alimentación de control de 48V a 24V.
 
-  ②基座内48V转24V电源作为电源端口输入的24V电源的备份电源使用。
+  ②La alimentación de 48V a 24V del interior de la base se utiliza como alimentación de respaldo de la alimentación de 24V de entrada del puerto de alimentación.
 
 .. figure:: installation/116.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.5-19 基座内48V转24V电源示意图
+.. centered:: Figura 3.5-19 Esquema de la alimentación de 48V a 24V del interior de la base
 
-**4、M12-A型-12P-母座接口引脚定义**：
-连接器：M12-A型-12P-母座【接线端配M12-A型-12P-公头】，连接器符合IEC 61076-2-101标准。
+**4. Definición de pines de la interfaz M12 tipo A de 12P hembra**:
+Conector: M12 tipo A de 12P hembra [el extremo de conexión utiliza M12 tipo A de 12P macho]; el conector cumple la norma IEC 61076-2-101.
 
 .. figure:: installation/117.png
 	:align: center
@@ -3232,73 +3231,73 @@ FR3MT&3C基座及模块接口定义
    :header-rows: 0
    :align: center
 
-   * - **引脚**
-     - **定义**
-     - **描述**
-     - **备注**
+   * - **Pin**
+     - **Definición**
+     - **Descripción**
+     - **Observaciones**
 
    * - 1
      - AGND
-     - 模拟量地
-     - 模拟量参考地
+     - Tierra analógica
+     - Tierra de referencia analógica
 
    * - 2
      - 0V
-     - 24V电源负
-     - 控制电源负
+     - Negativo de la alimentación de 24V
+     - Negativo de la alimentación de control
 
    * - 3
      - 485-A
-     - 485通信A
-     - 485通信用于扩展备用
+     - Comunicación 485 A
+     - Comunicación 485 para expansión de reserva
 
    * - 4
      - 485-B
-     - 485通信B
-     - 485通信用于扩展备用
+     - Comunicación 485 B
+     - Comunicación 485 para expansión de reserva
 
    * - 5
      - DI0/DO0
-     - 数字量输入/输出0
-     - 5、6、7同一接口，通过程序可以配置为输入或输出，单一时刻二选一
+     - Entrada/salida digital 0
+     - 5, 6 y 7 son la misma interfaz; mediante el programa pueden configurarse como entrada o salida, eligiéndose una de las dos en cada momento
 
    * - 6
      - DI1/DO1
-     - 数宇量输入/输出1
-     - 5、6、7同一接口，通过程序可以配置为输入或输出，单一时刻二选一
+     - Entrada/salida digital 1
+     - 5, 6 y 7 son la misma interfaz; mediante el programa pueden configurarse como entrada o salida, eligiéndose una de las dos en cada momento
 
    * - 7
      - DI2/DO2
-     - 数字量输入/输出2
-     - 5、6、7同一接口，通过程序可以配置为输入或输出，单一时刻二选一
+     - Entrada/salida digital 2
+     - 5, 6 y 7 son la misma interfaz; mediante el programa pueden configurarse como entrada o salida, eligiéndose una de las dos en cada momento
 
    * - 8
      - AI0/AO0
-     - 模拟量输入/输出0
-     - 8、9同一接口，通过程序可以配置为输入或输出，单一时刻二选一
+     - Entrada/salida analógica 0
+     - 8 y 9 son la misma interfaz; mediante el programa pueden configurarse como entrada o salida, eligiéndose una de las dos en cada momento
 
    * - 9
      - AI1/AO1
-     - 模拟量输入/输出1
-     - 8、9同一接口，通过程序可以配置为输入或输出，单一时刻二选一
+     - Entrada/salida analógica 1
+     - 8 y 9 son la misma interfaz; mediante el programa pueden configurarse como entrada o salida, eligiéndose una de las dos en cada momento
 
    * - 10
      - 24V
-     - 24V电源正
-     - 控制电源正
+     - Positivo de la alimentación de 24V
+     - Positivo de la alimentación de control
 
    * - 11
      - DI3/DO3
-     - 数字量输入/输出3
-     - 11、12同一接口，通过程序可以配置为输入或输出，单一时刻二选一
+     - Entrada/salida digital 3
+     - 11 y 12 son la misma interfaz; mediante el programa pueden configurarse como entrada o salida, eligiéndose una de las dos en cada momento
 
    * - 12
      - DI4/DO4
-     - 数字量输入/输出4
-     - 11、12同一接口，通过程序可以配置为输入或输出，单一时刻二选一
+     - Entrada/salida digital 4
+     - 11 y 12 son la misma interfaz; mediante el programa pueden configurarse como entrada o salida, eligiéndose una de las dos en cada momento
 
-**5、M8-A型-4P-母座接口引脚定义**：
-调试网口。地址192.168.58.2。连接器：M8-A型-4P-母座【接线端配M8-A型-4P-公头】，连接器符合IEC 61076-2-101标准。
+**5. Definición de pines de la interfaz M8 tipo A de 4P hembra**:
+Puerto de red de depuración. Dirección 192.168.58.2. Conector: M8 tipo A de 4P hembra [el extremo de conexión utiliza M8 tipo A de 4P macho]; el conector cumple la norma IEC 61076-2-101.
 
 .. figure:: installation/114.png
 	:align: center
@@ -3309,34 +3308,34 @@ FR3MT&3C基座及模块接口定义
    :header-rows: 0
    :align: center
 
-   * - **引脚**
-     - **定义**
-     - **描述**
+   * - **Pin**
+     - **Definición**
+     - **Descripción**
 
    * - 1
      - TX+
-     - 数据发送正
+     - Transmisión de datos positiva
 
    * - 2
      - RX+
-     - 数据接收正
+     - Recepción de datos positiva
 
    * - 3
      - RX-
-     - 数据接收负
+     - Recepción de datos negativa
 
    * - 4
      - TX-
-     - 数据发送负
+     - Transmisión de datos negativa
 
-6、USB-A型接口，USB2.0-内部调试使用。
+6. Interfaz USB tipo A, USB2.0 - uso interno de depuración.
 
-7、HDMI-A型接口，HDMI显示-内部调试使用。
+7. Interfaz HDMI tipo A, visualización HDMI - uso interno de depuración.
 
-电源模块接口定义
-******************************************************
+Definición de las interfaces del módulo de alimentación
+*****************************************************************
 
-电源采用明纬NDR-480-48。接口定义如下
+La alimentación utiliza el modelo Mean Well NDR-480-48. La definición de las interfaces es la siguiente:
 
 .. figure:: installation/118.png
 	:align: center
@@ -3347,50 +3346,50 @@ FR3MT&3C基座及模块接口定义
    :header-rows: 0
    :align: center
 
-   * - **引脚**
-     - **定义**
-     - **描述**
-     - **备注**
+   * - **Pin**
+     - **Definición**
+     - **Descripción**
+     - **Observaciones**
 
    * - 1
      - L
-     - 火线
-     - 输入100-240V AC
+     - Fase
+     - Entrada 100-240V AC
 
    * - 2
      - N
-     - 零线
-     - 输入100-240V AC
+     - Neutro
+     - Entrada 100-240V AC
 
    * - 3
      - PE
-     - 地线
-     - 接地点
+     - Toma de tierra
+     - Punto de puesta a tierra
 
    * - 4
      - +V
      - 48V
-     - 输出48V/10A
+     - Salida 48V/10A
 
    * - 5
      - +V
      - 48V
-     - 输出48V/10A
+     - Salida 48V/10A
 
    * - 6
      - -V
      - 0V
-     - 输出48V/10A
+     - Salida 48V/10A
 
    * - 7
      - -V
      - 0V
-     - 输出48V/10A
+     - Salida 48V/10A
 
-扩展模块接口定义
+Definición de las interfaces del módulo de expansión
 ******************************************************
 
-扩展模块具有紧急停止功能、能耗泄放功能。扩展模块对外端子及内部拓扑图，如下：
+El módulo de expansión dispone de función de parada de emergencia y función de disipación de energía. Los terminales externos y el diagrama de topología interna del módulo de expansión son los siguientes:
 
 .. figure:: installation/119.png
 	:align: center
@@ -3401,435 +3400,435 @@ FR3MT&3C基座及模块接口定义
    :header-rows: 0
    :align: center
 
-   * - **引脚**
-     - **定义**
-     - **描述**
+   * - **Pin**
+     - **Definición**
+     - **Descripción**
 
    * - 1
      - 48-IN
-     - 48V输入正
+     - Positivo de entrada de 48V
 
    * - 2
      - 0V
-     - 48V输入负
+     - Negativo de entrada de 48V
 
    * - 3
      - PE
-     - 地线
+     - Toma de tierra
 
    * - 4
      - PE
-     - 地线
+     - Toma de tierra
 
    * - 5
      - 24V
-     - 控制电源正
+     - Positivo de la alimentación de control
 
    * - 6
      - 0V
-     - 控制电源负
+     - Negativo de la alimentación de control
 
    * - 7
      - 0V
-     - 动力电源负
+     - Negativo de la alimentación de potencia
 
    * - 8
      - 48-OUT
-     - 动力电源正
+     - Positivo de la alimentación de potencia
 
    * - 9
      - ESW1
-     - 急停按钮1正
+     - Positivo del botón de parada de emergencia 1
 
    * - 10
      - 0V
-     - 急停按钮1负
+     - Negativo del botón de parada de emergencia 1
 
    * - 11
      - ESW2
-     - 急停按钮2正
+     - Positivo del botón de parada de emergencia 2
 
    * - 12
      - 0V
-     - 急停按钮2负
+     - Negativo del botón de parada de emergencia 2
 
    * - 13
      - E-O-2
-     - 无源常开2
+     - Contacto normalmente abierto sin tensión 2
 
    * - 14
      - E-O-1
-     - 无源常开1
+     - Contacto normalmente abierto sin tensión 1
 
    * - 15
      - E-C-2
-     - 无源常闭2
+     - Contacto normalmente cerrado sin tensión 2
 
    * - 16
      - E-C-1
-     - 无源常闭1
+     - Contacto normalmente cerrado sin tensión 1
 
-FR3MT&3C应用场景
+Escenarios de aplicación de FR3MT y 3C
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-多数使用场景用户仅选配用户线束即可满足。具体使用场景如下：
+En la mayoría de los escenarios de uso, al usuario le basta con seleccionar el mazo de cables de usuario. Los escenarios de uso concretos son los siguientes:
 
 .. list-table::
    :widths: 10 15 15 20 40 
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **场景分类**
-     - **用户供电条件**
-     - **用户功能需求**
-     - **推荐配置方案**
+   * - **Número**
+     - **Categoría de escenario**
+     - **Condiciones de alimentación del usuario**
+     - **Requisitos funcionales del usuario**
+     - **Solución de configuración recomendada**
 
    * - 1
-     - 基础应用型
-     - 具备48V/10A DC电源
-     - 无急停/能量泄放功能
-     - 用户线束
+     - Tipo de aplicación básica
+     - Dispone de alimentación de CC de 48V/10A
+     - Sin función de parada de emergencia/disipación de energía
+     - Mazo de cables de usuario
 
    * - 2
-     - 安全扩展型
-     - 具备48V/10A DC电源
-     - 需急停+能量泄放功能
-     - 用户线束+扩展模块
+     - Tipo de expansión de seguridad
+     - Dispone de alimentación de CC de 48V/10A
+     - Requiere función de parada de emergencia + disipación de energía
+     - Mazo de cables de usuario + módulo de expansión
 
    * - 3
-     - 独立供电型
-     - 无48V/10A DC电源
-     - 无急停/能量泄放功能
-     - 用户线束+电源模块+电源线
+     - Tipo de alimentación independiente
+     - Sin alimentación de CC de 48V/10A
+     - Sin función de parada de emergencia/disipación de energía
+     - Mazo de cables de usuario + módulo de alimentación + cable de alimentación
 
    * - 4
-     - 全功能集成型
-     - 无48V/10A DC电源
-     - 需急停+能量泄放功能
-     - 用户线束+电源模块+电源线+扩展模块
+     - Tipo de integración de funcionalidad completa
+     - Sin alimentación de CC de 48V/10A
+     - Requiere función de parada de emergencia + disipación de energía
+     - Mazo de cables de usuario + módulo de alimentación + cable de alimentación + módulo de expansión
 
-基础应用型
+Tipo de aplicación básica
 ******************************************************
 
-仅选配用户线束。连接方式如下：
+Solo se selecciona el mazo de cables de usuario. El modo de conexión es el siguiente:
 
-1.将电源线M12-L型-5P-母头连接基座，尾端有5根48V/0V/24V/0V/PE线标，将48V/0V/PE三根线束连接用户电源对应端子。24V/0V线束不连接进行绝缘处理。
+1. Conectar el conector M12 tipo L de 5P hembra del cable de alimentación a la base; el extremo posterior tiene 5 marcas de cable 48V/0V/24V/0V/PE; conectar los tres cables 48V/0V/PE a los terminales correspondientes de la alimentación del usuario. Los cables 24V/0V no se conectan y se someten a tratamiento de aislamiento.
 
-2.M12-A型-12P-公头及M8-A型-4P-公头连接基座对应端子。
+2. Conectar los conectores M12 tipo A de 12P macho y M8 tipo A de 4P macho a los terminales correspondientes de la base.
 
 .. figure:: installation/120.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.5-20 选配用户线束连接方式
+.. centered:: Figura 3.5-20 Modo de conexión con el mazo de cables de usuario opcional
 
-安全扩展型
+Tipo de expansión de seguridad
 ******************************************************
 
-选配用户线束+扩展模块。连接方式如下：
+Se selecciona el mazo de cables de usuario + módulo de expansión. El modo de conexión es el siguiente:
 
-1.0.5M扩展模块线束两端各有3根48V/0V/PE线标，线束输入端连接用户电源对应端子。输出端插入扩展模块48Vin/0V/PE位置。
+1. El mazo de cables del módulo de expansión de 0.5M tiene en ambos extremos 3 marcas de cable 48V/0V/PE; el extremo de entrada del mazo de cables se conecta a los terminales correspondientes de la alimentación del usuario. El extremo de salida se inserta en las posiciones 48Vin/0V/PE del módulo de expansión.
 
-2.将电源线M12-L型-5P-母头连接基座，尾端有5根线束48V/0V/24V/0V/PE线标，将5根线束连接扩展模块48Vout/0V/0V/24V/PE。
+2. Conectar el conector M12 tipo L de 5P hembra del cable de alimentación a la base; el extremo posterior tiene 5 marcas de cable 48V/0V/24V/0V/PE; conectar los 5 cables a 48Vout/0V/0V/24V/PE del módulo de expansión.
 
-3.M12-A型-12P-公头及M8-A型-4P-公头连接基座对应端子。
+3. Conectar los conectores M12 tipo A de 12P macho y M8 tipo A de 4P macho a los terminales correspondientes de la base.
 
 .. figure:: installation/121.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.5-21 选配用户线束+扩展模块连接方式
+.. centered:: Figura 3.5-21 Modo de conexión con el mazo de cables de usuario + módulo de expansión opcionales
 
-独立供电型
+Tipo de alimentación independiente
 ******************************************************
 
-选配用户线束+电源模块+电源线。连接方式如下：
+Se selecciona el mazo de cables de usuario + módulo de alimentación + cable de alimentación. El modo de conexión es el siguiente:
 
-1.1.5M电源线束尾端有3根L/N/PE线标，连接电源NDR-480-48对应的输入端子位置。
+1. El extremo posterior del mazo de cables de alimentación de 1.5M tiene 3 marcas de cable L/N/PE; conectar a las posiciones de los terminales de entrada correspondientes de la alimentación NDR-480-48.
 
-2.将电源线M12-L型-5P-母头连接基座，尾端有5根48V/0V/24V/0V/PE线标，将48V/0V/PE三根线束连接用户电源对应端子。24V/0V线束不连接进行绝缘处理。
+2. Conectar el conector M12 tipo L de 5P hembra del cable de alimentación a la base; el extremo posterior tiene 5 marcas de cable 48V/0V/24V/0V/PE; conectar los tres cables 48V/0V/PE a los terminales correspondientes de la alimentación del usuario. Los cables 24V/0V no se conectan y se someten a tratamiento de aislamiento.
 
-3.M12-A型-12P-公头及M8-A型-4P-公头连接基座对应端子。
+3. Conectar los conectores M12 tipo A de 12P macho y M8 tipo A de 4P macho a los terminales correspondientes de la base.
 
 .. figure:: installation/122.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.5-22 选配用户线束+电源模块+电源线连接方式
+.. centered:: Figura 3.5-22 Modo de conexión con el mazo de cables de usuario + módulo de alimentación + cable de alimentación opcionales
 
-全功能集成型
+Tipo de integración de funcionalidad completa
 ******************************************************
 
-选配用户线束+电源模块+电源线+扩展模块。连接方式如下：
+Se selecciona el mazo de cables de usuario + módulo de alimentación + cable de alimentación + módulo de expansión. El modo de conexión es el siguiente:
 
-1.1.5M电源线束尾端有3根L/N/PE线标，连接电源NDR-480-48对应的输入端子位置。
+1. El extremo posterior del mazo de cables de alimentación de 1.5M tiene 3 marcas de cable L/N/PE; conectar a las posiciones de los terminales de entrada correspondientes de la alimentación NDR-480-48.
 
-2.0.5M扩展模块线束两端各有3根48V/0V/PE线标，线束输入端连接电源NDR-480-48输出端对应端子，PE线束与输入共用。输出端插入扩展模块48Vin/0V/PE位置。
+2. El mazo de cables del módulo de expansión de 0.5M tiene en ambos extremos 3 marcas de cable 48V/0V/PE; el extremo de entrada del mazo de cables se conecta a los terminales correspondientes del extremo de salida de la alimentación NDR-480-48; el cable PE se comparte con la entrada. El extremo de salida se inserta en las posiciones 48Vin/0V/PE del módulo de expansión.
 
-3.将电源线M12-L型-5P-母头连接基座，尾端有5根线束48V/0V/24V/0V/PE线标，将5根线束连接扩展模块48Vout/0V/0V/24V/PE。
+3. Conectar el conector M12 tipo L de 5P hembra del cable de alimentación a la base; el extremo posterior tiene 5 marcas de cable 48V/0V/24V/0V/PE; conectar los 5 cables a 48Vout/0V/0V/24V/PE del módulo de expansión.
 
-4.M12-A型-12P-公头及M8-A型-4P-公头连接基座对应端子。
+4. Conectar los conectores M12 tipo A de 12P macho y M8 tipo A de 4P macho a los terminales correspondientes de la base.
 
 .. figure:: installation/123.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.5-23 选配用户线束+电源模块+电源线+扩展模块连接方式
+.. centered:: Figura 3.5-23 Modo de conexión con el mazo de cables de usuario + módulo de alimentación + cable de alimentación + módulo de expansión opcionales
 
-选配项物料清单
+Lista de materiales de los elementos opcionales
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-用户线束5M物料如下：
+El mazo de cables de usuario de 5M incluye los siguientes materiales:
 
 .. list-table::
    :widths: 20 60 20 
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **名称**
-     - **数量**
+   * - **Número**
+     - **Nombre**
+     - **Cantidad**
 
    * - 1
-     - FR3MT&3C-DC电源线-5M
+     - Cable de alimentación de CC FR3MT&3C-5M
      - 1
 
    * - 2
-     - FR3MT&3C-I/O信号线-5M
+     - Cable de señal de I/O FR3MT&3C-5M
      - 1
 
    * - 3
-     - FR3MT&3C-以太网线束-5M
+     - Mazo de cables Ethernet FR3MT&3C-5M
      - 1
 
    * - 4
-     - M8直式组合式插头,M8-P4A-PLA05,4芯
+     - Conector combinado recto M8, M8-P4A-PLA05, 4 pines
      - 1
 
-用户线束1M物料如下：
+El mazo de cables de usuario de 1M incluye los siguientes materiales:
 
 .. list-table::
    :widths: 20 60 20 
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **名称**
-     - **数量**
+   * - **Número**
+     - **Nombre**
+     - **Cantidad**
 
    * - 1
-     - FR3MT&3C-DC电源线-1M
+     - Cable de alimentación de CC FR3MT&3C-1M
      - 1
 
    * - 2
-     - FR3MT&3C-I/O信号线-1M
+     - Cable de señal de I/O FR3MT&3C-1M
      - 1
 
    * - 3
-     - FR3MT&3C-以太网线束-1M
+     - Mazo de cables Ethernet FR3MT&3C-1M
      - 1
 
    * - 4
-     - M8直式组合式插头,M8-P4A-PLA05,4芯
+     - Conector combinado recto M8, M8-P4A-PLA05, 4 pines
      - 1
 
-电源模块物料如下：
+El módulo de alimentación incluye los siguientes materiales:
 
 .. list-table::
    :widths: 20 60 20 
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **名称**
-     - **数量**
+   * - **Número**
+     - **Nombre**
+     - **Cantidad**
 
    * - 1
-     - 明纬开关电源，NDR-480-48
+     - Fuente de alimentación conmutada Mean Well, NDR-480-48
      - 1
 
-电源线物料如下：
+El cable de alimentación incluye los siguientes materiales:
 
 .. list-table::
    :widths: 20 60 20 
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **名称**
-     - **数量**
+   * - **Número**
+     - **Nombre**
+     - **Cantidad**
 
    * - 1
-     - FR3MT&3C-开关电源线-1.5M 
+     - Cable de la fuente de alimentación conmutada FR3MT&3C-1.5M 
      - 1
 
-扩展模块物料如下：
+El módulo de expansión incluye los siguientes materiales:
 
 .. list-table::
    :widths: 20 60 20 
    :header-rows: 0
    :align: center
 
-   * - **序号**
-     - **名称**
-     - **数量**
+   * - **Número**
+     - **Nombre**
+     - **Cantidad**
 
    * - 1
-     - FR3MT&3C基座-扩展模块
+     - Base FR3MT&3C - módulo de expansión
      - 1
 
    * - 2
-     - FR3MT&3C电源与扩展模块连接线束-0.5M
+     - Mazo de cables de conexión entre la alimentación y el módulo de expansión FR3MT&3C-0.5M
      - 1
 
-示教器及末端LED
-------------------
+Teach pendant y LED del extremo
+--------------------------------
 
-机器人示教器可以使用一台电脑或者平板访问并控制机器人，连接方式可参考3.5.3节说明，此外用户也可以使用我们的FR-HMI示教器，该款示教器是选配件。
+El teach pendant del robot puede accederse y controlarse mediante un ordenador o una tableta; para el modo de conexión, consulte la sección 3.5.3; además, el usuario también puede utilizar nuestro teach pendant FR-HMI, que es un elemento opcional.
 
-按钮盒简介
-~~~~~~~~~~~~~~~
+Introducción a la caja de botones
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-60按钮盒(POE)(BX01)
-++++++++++++++++++++++++++++++
+60 caja de botones (POE) (BX01)
++++++++++++++++++++++++++++++++++++++
 
 .. figure:: installation/058.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.6-1 60按钮盒(POE)(BX01)
+.. centered:: Figura 3.6-1 60 caja de botones (POE) (BX01)
 
-**急停开关：**\ 当按下急停开关，机器人进入紧急停止状态。
+**Interruptor de parada de emergencia:**\ al pulsar el interruptor de parada de emergencia, el robot entra en estado de parada de emergencia.
 
-**Type-c接口：**\ 连接web示教器的端口。
+**Interfaz Type-c:**\ puerto de conexión del teach pendant web.
 
-**按键1：**\ 短按自动/手动模式切换，长按进入/退出拖动模式。
+**Botón 1:**\ pulsación corta para conmutar entre modo automático y manual; pulsación larga para entrar/salir del modo de arrastre.
 
-**按键2：**\ 短按记录示教点，长按进入/退出不搭配示教器状态。
+**Botón 2:**\ pulsación corta para registrar puntos de enseñanza; pulsación larga para entrar/salir del estado sin teach pendant.
 
-**按键3：**\ 短按开始/停止运行程序。
+**Botón 3:**\ pulsación corta para iniciar/detener la ejecución del programa.
 
-60按钮盒(POE)(BX02)-V1.0
-++++++++++++++++++++++++++++++
+60 caja de botones (POE) (BX02)-V1.0
+++++++++++++++++++++++++++++++++++++++++++++
 
 .. figure:: installation/059.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.6-2 60按钮盒(POE)(BX02)-V1.0
+.. centered:: Figura 3.6-2 60 caja de botones (POE) (BX02)-V1.0
 
-**急停开关：**\ 当按下急停开关，机器人进入紧急停止状态。
+**Interruptor de parada de emergencia:**\ al pulsar el interruptor de parada de emergencia, el robot entra en estado de parada de emergencia.
 
-**开始停止：**\ 开始/停止运行程序。
+**Inicio/Detención:**\ iniciar/detener la ejecución del programa.
 
-**网口：**\ 连接web示教器。
+**Puerto de red:**\ conectar el teach pendant web.
 
-**关机：**\ 暂未启用。
+**Apagado:**\ aún no disponible.
 
-**记录点：**\ 记录示教点。
+**Registro de puntos:**\ registrar puntos de enseñanza.
 
-**示教模式：**\ 进入/退出搭配示教器状态。
+**Modo de enseñanza:**\ entrar/salir del estado con teach pendant.
 
-**运行模式：**\ 自动/手动模式切换。
+**Modo de funcionamiento:**\ conmutación entre modo automático y manual.
 
-**拖动模式：**\ 进入/退出拖动模式。
+**Modo de arrastre:**\ entrar/salir del modo de arrastre.
 
-60按钮盒(POE)(BX02)-V2.0
-++++++++++++++++++++++++++++++
+60 caja de botones (POE) (BX02)-V2.0
+++++++++++++++++++++++++++++++++++++++++++++
 
 .. image:: installation/079.png
    :width: 6in
    :align: center
 
-.. centered:: 图表 3.6-3 60按钮盒(POE)(BX02)-V2.0
+.. centered:: Figura 3.6-3 60 caja de botones (POE) (BX02)-V2.0
 
-**急停开关：**\ 当按下急停开关，机器人进入紧急停止状态。
+**Interruptor de parada de emergencia:**\ al pulsar el interruptor de parada de emergencia, el robot entra en estado de parada de emergencia.
 
-**开始停止：**\ 开始/停止运行程序。
+**Inicio/Detención:**\ iniciar/detener la ejecución del programa.
 
-**网口：**\ 连接web示教器。
+**Puerto de red:**\ conectar el teach pendant web.
 
-**IP复位：**\ 重置网口IP。
+**Restablecimiento de IP:**\ restablecer la IP del puerto de red.
 
-**记录点：**\ 记录示教点。
+**Registro de puntos:**\ registrar puntos de enseñanza.
 
-**一键清除：**\ 清除所有可恢复的报错。
+**Borrado con un clic:**\ borrar todos los errores recuperables.
 
-**运行模式：**\ 自动/手动模式切换。
+**Modo de funcionamiento:**\ conmutación entre modo automático y manual.
 
-**拖动模式：**\ 进入/退出拖动模式。
+**Modo de arrastre:**\ entrar/salir del modo de arrastre.
 
-FR-HMI示教器简介
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Introducción al teach pendant FR-HMI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. figure:: installation/060.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.6-4 FR-HMI示教器正面
+.. centered:: Figura 3.6-4 Parte frontal del teach pendant FR-HMI
 
 .. figure:: installation/061.png
 	:align: center
 	:width: 6in
 
-.. centered:: 图表 3.6-5 FR-HMI示教器背面
+.. centered:: Figura 3.6-5 Parte posterior del teach pendant FR-HMI
 
-**显示屏：**\ 示教器的触摸操作与显示界面。
+**Pantalla:**\ interfaz táctil de operación y visualización del teach pendant.
 
-**启动键：**\ 启动程序。
+**Tecla de inicio:**\ iniciar el programa.
 
-**停止键：**\ 停止当前运行的程序。
+**Tecla de parada:**\ detener el programa en ejecución actual.
 
-**Joint按键：**\ 机器人关节点动。
+**Tecla Joint:**\ jog de las articulaciones del robot.
 
-**三位使能：**\ 手动模式使能机器人
+**Habilitación de tres posiciones:**\ habilitar el robot en modo manual.
 
-**急停开关：**\ 当按下急停开关，机器人进入紧急停止状态。
+**Interruptor de parada de emergencia:**\ al pulsar el interruptor de parada de emergencia, el robot entra en estado de parada de emergencia.
 
-**模式键：**\ 旋转按钮切换手自动模式。
+**Tecla de modo:**\ botón giratorio para conmutar entre modo manual y automático.
 
-末端LED定义
-~~~~~~~~~~~~~~~~~
+Definición del LED del extremo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. centered:: 表格 3.6‑1 末端LED定义表
+.. centered:: Tabla 3.6‑1 Tabla de definición del LED del extremo
 .. list-table::
    :widths: 50 50
    :header-rows: 0
    :align: center
 
-   * - **功能**
-     - **LED 颜色**
+   * - **Función**
+     - **Color del LED**
 
-   * - 通信未建立时
-     - "灭", "红", "绿" , "蓝" 交替
+   * - Cuando no se ha establecido la comunicación
+     - Alternancia de "apagado", "rojo", "verde" y "azul"
 
-   * - 自动模式
-     - 蓝色长亮
+   * - Modo automático
+     - Azul fijo
 
-   * - 手动模式
-     - 绿色长亮
+   * - Modo manual
+     - Verde fijo
 
-   * - 拖动模式
-     - 白青色长亮
+   * - Modo de arrastre
+     - Cian claro fijo
 
-   * - 按钮盒记录点 (仅在使用按钮盒时)
-     - 紫色闪烁两下
+   * - Registro de puntos de la caja de botones (solo al usar la caja de botones)
+     - Morado parpadeando dos veces
 
-   * - 进入未搭配按钮盒状态(仅在使用按钮盒时)
-     - 紫色闪烁两下
+   * - Entrada en estado sin teach pendant (solo al usar la caja de botones)
+     - Morado parpadeando dos veces
 
-   * - 开始运行(仅在使用按钮盒时)
-     - 青蓝色闪烁两下
+   * - Inicio de ejecución (solo al usar la caja de botones)
+     - Azul cian parpadeando dos veces
 
-   * - 停止运行(仅在使用按钮盒时)
-     - 红色闪烁两下
+   * - Detención de ejecución (solo al usar la caja de botones)
+     - Rojo parpadeando dos veces
 
-   * - 报错 (仅在使用按钮盒时)
-     - 红色长亮
+   * - Error (solo al usar la caja de botones)
+     - Rojo fijo
 
-   * - 校零完成
-     - 白青色闪烁三下
+   * - Puesta a cero completada
+     - Cian claro parpadeando tres veces
 
-   * - 去使能
-     - 黄色闪烁两下
+   * - Deshabilitado
+     - Amarillo parpadeando dos veces

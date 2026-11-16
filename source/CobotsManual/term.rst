@@ -1,50 +1,50 @@
-术语
-========
+Terminología
+============
 
 .. toctree:: 
 	:maxdepth: 5
 
 
-**停止类别**：
+**Categorías de parada**:
 
-- **0类停机**：当机器人的电源被切断后，机器人立刻停止工作。这是不可控的停止，由于每个关节会以最快的速度制动，因此机器人可能偏离程序设定的路径。当超过安全评定极限，或当控制系统的安全评定部分出现错误的情况下方可使用这种保护性停止。要了解更多信息，请参阅ENISO13850:2008或IEC60204-1:2006。
-- **1类停机**：当为机器人供电使其停止时，机器人就停止，当机器人实现停止后切断电源。这是可控性停止，机器人会遵循程序编制的路径。一秒钟之后或一旦机器人停稳后就将电源切断。要了解更多信息，请参阅ENISO13850:2008或IEC60204-1:2006。
-- **2类停机**：机器人通电时的可控性停止。机器人在一秒钟时间内停止所有动作。安全评定控制系统的操控可使机器人停留在停止的位置。要了解更多信息，请参阅IEC60204-1:2006。
+- **Parada de categoría 0**: cuando se corta la alimentación del robot, este deja de funcionar inmediatamente. Se trata de una parada no controlada; dado que cada articulación frena a la máxima velocidad, el robot puede desviarse de la trayectoria programada. Esta parada de protección solo puede utilizarse cuando se supera el límite de evaluación de seguridad o cuando se produce un error en la parte de evaluación de seguridad del sistema de control. Para más información, consulte ENISO13850:2008 o IEC60204-1:2006.
+- **Parada de categoría 1**: cuando se alimenta el robot para detenerlo, el robot se detiene; una vez que el robot se ha detenido, se corta la alimentación. Se trata de una parada controlada; el robot sigue la trayectoria programada. La alimentación se corta un segundo después o una vez que el robot se ha detenido por completo. Para más información, consulte ENISO13850:2008 o IEC60204-1:2006.
+- **Parada de categoría 2**: parada controlada con el robot alimentado. El robot detiene todos los movimientos en un segundo. El accionamiento del sistema de control de evaluación de seguridad permite que el robot permanezca en la posición de parada. Para más información, consulte IEC60204-1:2006.
 
-**诊断覆盖率（DC）**：用于衡量为了达到评定的性能等级而实施的诊断的有效性。要了解更多信息，请参阅ENISO13849-1:2008。
+**Cobertura de diagnóstico (DC)**: se utiliza para medir la eficacia del diagnóstico implementado para alcanzar el nivel de prestaciones evaluado. Para más información, consulte ENISO13849-1:2008.
 
-**集成商**：集成商即设计机器人最终安装的机构。集成商负责进行最终风险评估，必须确保最终安装遵循当地的法律法规。
+**Integrador**: el integrador es el organismo que diseña la instalación final del robot. El integrador es responsable de realizar la evaluación final de riesgos y debe garantizar que la instalación final cumpla la legislación y normativa locales.
 
-**平均危险失效时间（MTTFd）**：平均危险失效时间（MTTFd）指的是为了达到评定的性能等级而进行计算和检测所得的值。要了解更多信息，请参阅ENISO13849-1:2008。
+**Tiempo medio hasta el fallo peligroso (MTTFd)**: el tiempo medio hasta el fallo peligroso (MTTFd) es el valor obtenido mediante cálculo y comprobación para alcanzar el nivel de prestaciones evaluado. Para más información, consulte ENISO13849-1:2008.
 
-**风险评估**：风险评估即识别所有风险并将风险降低到适当程度的整个过程。风险评估应进行记录存档。详情请参考ISO12100。
+**Evaluación de riesgos**: la evaluación de riesgos es el proceso completo de identificación de todos los riesgos y de reducción de estos a un nivel adecuado. La evaluación de riesgos debe documentarse y archivarse. Para más detalles, consulte ISO12100.
 
-**性能等级**：性能等级（Performance Level,PL）是一个分离的等级，它用于说明控制系统中各个与安全相关的部分在可预测的条件下执行安全功能的能力。PLd是第二高的可信度分类，它意味着安全功能相当值得信赖。要了解更多信息，请参阅EN ISO13849-1:2008。
+**Nivel de prestaciones**: el nivel de prestaciones (Performance Level, PL) es un nivel discreto que describe la capacidad de las distintas partes relacionadas con la seguridad de un sistema de control para ejecutar una función de seguridad en condiciones predecibles. PLd es la segunda clasificación de fiabilidad más alta; significa que la función de seguridad es bastante fiable. Para más información, consulte EN ISO13849-1:2008.
 
-**连接法兰**：用于连接外部工具的结构，一般称为法兰盘。
+**Brida de conexión**: estructura utilizada para conectar herramientas externas, generalmente denominada brida.
 
-**机器人末端**：机器人最后一个轴或连接法兰的中心点。
+**Extremo del robot**: el último eje del robot o el punto central de la brida de conexión.
 
-**工具中心点（TCP）**：工具中心点即机器人工具的特征点，是机器人系统的控点，出厂时默认于最后一个运动轴或连接法兰的中心。每个工具的工具中心点都包含相对于工具输出法兰中心而设定的转换和旋转。位置坐标X、Y、Z决定了工具中心点的位置，RX、RY、RZ决定了工具中心的方向。当其值均为零时，工具中心与连接法兰中心点重合。
+**Punto central de la herramienta (TCP)**: el punto central de la herramienta es el punto característico de la herramienta del robot y es el punto de control del sistema del robot; de fábrica se sitúa por defecto en el último eje de movimiento o en el centro de la brida de conexión. El punto central de la herramienta de cada herramienta incluye la traslación y la rotación establecidas respecto al centro de la brida de salida de la herramienta. Las coordenadas de posición X, Y, Z determinan la posición del punto central de la herramienta, y RX, RY, RZ determinan la orientación de la herramienta. Cuando todos estos valores son cero, el centro de la herramienta coincide con el punto central de la brida de conexión.
 
-**工具位姿点（TCF）**：在工具中心点TCP的基础上，反应工具坐标系相对于末端连杆坐标系的姿态。
+**Punto de pose de la herramienta (TCF)**: sobre la base del punto central de la herramienta TCP, refleja la actitud del sistema de coordenadas de la herramienta respecto al sistema de coordenadas del eslabón del extremo.
 
-**基坐标系**：基坐标系的原点一般定义在机器人第一轴与安装面的中心点，x轴向前，在轴向上，y轴按右手规则确定。
+**Sistema de coordenadas base**: el origen del sistema de coordenadas base se define generalmente en el punto central entre el primer eje del robot y la superficie de montaje; el eje x apunta hacia delante y, en la dirección axial, el eje y se determina según la regla de la mano derecha.
 
-**世界坐标系**：建立在工作单元或工作站中的固定坐标系。当只有一个机器人时，该坐标系可认为与基坐标系重合；当有多个机器人或外部设备时，世界坐标系可为这些设备提供一个唯一的参考系，在满足方便标定其他设备的坐标系前提下，其具体位置可以任意指定。
+**Sistema de coordenadas mundial**: sistema de coordenadas fijo establecido en la celda de trabajo o en la estación de trabajo. Cuando solo hay un robot, este sistema de coordenadas puede considerarse coincidente con el sistema de coordenadas base; cuando hay varios robots o dispositivos externos, el sistema de coordenadas mundial puede proporcionar un sistema de referencia único para estos dispositivos; su posición concreta puede especificarse arbitrariamente siempre que se cumpla la premisa de facilitar la calibración de los sistemas de coordenadas de otros dispositivos.
 
-**关节坐标系**：关节坐标系是机器人关节中的坐标系，在关节坐标系下，机器人各轴均可实现在限位范围内的单独的正向或反向运动。适用于需要对机器人进行大范围的运动且不要求机器人TCP姿态。机器人手动模式下的单轴点动就是在关节坐标系下进行的。
+**Sistema de coordenadas articular**: el sistema de coordenadas articular es el sistema de coordenadas de las articulaciones del robot; bajo el sistema de coordenadas articular, cada eje del robot puede realizar movimientos individuales en sentido positivo o negativo dentro de los límites. Es aplicable cuando se necesita realizar movimientos de gran amplitud del robot y no se exige la actitud del TCP del robot. El jog de un solo eje en el modo manual del robot se realiza bajo el sistema de coordenadas articular.
 
-**工具坐标系**：用于定义工具中心点的位置和工具姿态的坐标系，未定义时，工具坐标系默认在连接法兰的中心处。安装工具后，TCP将发生变化，变为工具末端的中心。
+**Sistema de coordenadas de herramienta**: sistema de coordenadas utilizado para definir la posición del punto central de la herramienta y la actitud de la herramienta; cuando no está definido, el sistema de coordenadas de herramienta se sitúa por defecto en el centro de la brida de conexión. Tras instalar la herramienta, el TCP cambia y pasa a ser el centro del extremo de la herramienta.
 
-**外部工具坐标系**：用于定义固定在机器人外部的工具位姿的坐标系。
+**Sistema de coordenadas de herramienta externa**: sistema de coordenadas utilizado para definir la pose de una herramienta fijada en el exterior del robot.
 
-**扩展轴**：除去机器人本体上的轴，为了工作需要额外增加的轴，扩展轴主要包含滑轨，翻转台和外加伺服设备等类型。
+**Eje extendido**: eje adicional añadido por necesidades de trabajo distinto de los ejes del cuerpo del robot; los ejes extendidos incluyen principalmente tipos como rieles deslizantes, mesas basculantes y equipos de servo adicionales.
 
-**手动模式**：在该模式下，机器人的所有运动均由用户手动控制，并且安全光栅、安全门等外部安全设施不起作用，以便近距离调试。
+**Modo manual**: en este modo, todos los movimientos del robot son controlados manualmente por el usuario, y las instalaciones de seguridad externas como cortinas de luz de seguridad y puertas de seguridad no surten efecto, para facilitar la depuración de proximidad.
 
-**自动模式**：该模式一般用于机器人运行示教程序，此时外部安全设施启用。
+**Modo automático**: este modo se utiliza generalmente para que el robot ejecute programas de enseñanza; en este momento las instalaciones de seguridad externas están activadas.
 
-**重复定位精度**：机器人在同一条件下，用同一方法操作时，重复n次所测得的位置与姿态的一致程度。
+**Precisión de repetibilidad**: grado de coincidencia de la posición y la actitud medidas al repetir n veces la misma operación con el mismo método y en las mismas condiciones por parte del robot.
 
-**示教器**：对机器人进行编程或使机器人运动，并与控制系统相连接的手持式单元。
+**Teach pendant**: unidad portátil conectada al sistema de control que se utiliza para programar el robot o hacer que este se mueva.

@@ -1,105 +1,105 @@
-机器人轨迹复现
-=================
+Reproducción de trayectoria del robot
+=====================================
 
 .. toctree:: 
     :maxdepth: 5
 
-设置TPD轨迹记录参数
-++++++++++++++++++++++++++++
+Establecer los parámetros de registro de trayectoria TPD
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  设置TPD轨迹记录参数
-    * @param  [in] type  记录数据类型，1-关节位置
-    * @param  [in] name  轨迹文件名
-    * @param  [in] period_ms  数据采样周期，固定值2ms或4ms或8ms
-    * @param  [in] di_choose  DI选择,bit0~bit7对应控制箱DI0~DI7，bit8~bit9对应末端DI0~DI1，0-不选择，1-选择
-    * @param  [in] do_choose  DO选择,bit0~bit7对应控制箱DO0~DO7，bit8~bit9对应末端DO0~DO1，0-不选择，1-选择
-    * @return  错误码
+    * @brief  Establecer los parámetros de registro de trayectoria TPD
+    * @param  [in] type  Tipo de dato de registro, 1-posición de articulaciones
+    * @param  [in] name  Nombre del archivo de trayectoria
+    * @param  [in] period_ms  Período de muestreo de datos, valor fijo 2ms o 4ms u 8ms
+    * @param  [in] di_choose  Selección de DI, bit0~bit7 corresponden a DI0~DI7 de la caja de control, bit8~bit9 corresponden a DI0~DI1 del extremo, 0-no seleccionar, 1-seleccionar
+    * @param  [in] do_choose  Selección de DO, bit0~bit7 corresponden a DO0~DO7 de la caja de control, bit8~bit9 corresponden a DO0~DO1 del extremo, 0-no seleccionar, 1-seleccionar
+    * @return  Código de error
     */
     int SetTPDParam(int type, String name, int period_ms, int di_choose, int do_choose);
 
-开始TPD轨迹记录
-++++++++++++++++++++++++++++
+Iniciar el registro de trayectoria TPD
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  开始轨迹开始TPD轨迹记录记录
-    * @param  [in] type  记录数据类型，1-关节位置
-    * @param  [in] name  轨迹文件名
-    * @param  [in] period_ms  数据采样周期，固定值2ms或4ms或8ms
-    * @param  [in] di_choose  DI选择,bit0~bit7对应控制箱DI0~DI7，bit8~bit9对应末端DI0~DI1，0-不选择，1-选择
-    * @param  [in] do_choose  DO选择,bit0~bit7对应控制箱DO0~DO7，bit8~bit9对应末端DO0~DO1，0-不选择，1-选择
-    * @return  错误码
+    * @brief  Iniciar el registro de trayectoria TPD
+    * @param  [in] type  Tipo de dato de registro, 1-posición de articulaciones
+    * @param  [in] name  Nombre del archivo de trayectoria
+    * @param  [in] period_ms  Período de muestreo de datos, valor fijo 2ms o 4ms u 8ms
+    * @param  [in] di_choose  Selección de DI, bit0~bit7 corresponden a DI0~DI7 de la caja de control, bit8~bit9 corresponden a DI0~DI1 del extremo, 0-no seleccionar, 1-seleccionar
+    * @param  [in] do_choose  Selección de DO, bit0~bit7 corresponden a DO0~DO7 de la caja de control, bit8~bit9 corresponden a DO0~DO1 del extremo, 0-no seleccionar, 1-seleccionar
+    * @return  Código de error
     */
     int SetTPDStart(int type, String name, int period_ms, int di_choose, int do_choose);
 
-停止TPD轨迹记录
-++++++++++++++++++++++++++++
+Detener el registro de trayectoria TPD
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: java
     :linenos:
 
     /**
-    * @brief  停止TPD轨迹记录
-    * @return  错误码
+    * @brief  Detener el registro de trayectoria TPD
+    * @return  Código de error
     */
     int SetWebTPDStop(); 
 
-删除TPD轨迹记录
-++++++++++++++++++++++++++++
+Eliminar el registro de trayectoria TPD
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  删除TPD轨迹记录
-    * @param  [in] name  轨迹文件名
-    * @return  错误码
+    * @brief  Eliminar el registro de trayectoria TPD
+    * @param  [in] name  Nombre del archivo de trayectoria
+    * @return  Código de error
     */   
     int SetTPDDelete(string name); 
 
-TPD轨迹预加载
-++++++++++++++++++++++++++++
+Precarga de trayectoria TPD
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  轨迹预加载
-    * @param  [in] name  轨迹文件名
-    * @return  错误码
+    * @brief  Precarga de trayectoria
+    * @param  [in] name  Nombre del archivo de trayectoria
+    * @return  Código de error
     */      
     int LoadTPD(String name);
 
-TPD轨迹复现
-++++++++++++++++++++++++++++
+Reproducción de trayectoria TPD
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  轨迹复现
-    * @param  [in] name  轨迹文件名
-    * @param  [in] blend 0-不平滑，1-平滑
-    * @param  [in] ovl  速度缩放百分比，范围[0~100]
-    * @return  错误码
+    * @brief  Reproducción de trayectoria
+    * @param  [in] name  Nombre del archivo de trayectoria
+    * @param  [in] blend 0-sin suavizado, 1-suavizado
+    * @param  [in] ovl  Porcentaje de escala de velocidad, rango [0~100]
+    * @return  Código de error
     */
     int MoveTPD(String name, int blend, double ovl); 
 
-获取TPD起始位姿
-++++++++++++++++++++++++++++
+Obtener la pose inicial de TPD
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 获取轨迹起始位姿 
-    * @param [in] name  轨迹文件名,不需要文件后缀
-    * @param [out] desc_pose 获取的轨迹起始位姿
-    * @return 错误码 
+    * @brief Obtener la pose inicial de la trayectoria 
+    * @param [in] name  Nombre del archivo de trayectoria, sin sufijo de archivo
+    * @param [out] desc_pose Pose inicial de la trayectoria obtenida
+    * @return Código de error 
     */ 
     int GetTPDStartPose(String name, DescPose desc_pose); 
 
-机器人TPD轨迹记录代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de registro de trayectoria TPD del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -141,178 +141,178 @@ TPD轨迹复现
         return 0;
     }
 
-轨迹预处理
-++++++++++++++++++++++++++++
+Preprocesamiento de trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 外部轨迹文件预处理 
-    * @param [in] name 轨迹文件名  
-    * @param [in] ovl 速度缩放百分比，范围[0~100]
-    * @param [in] opt 1-控制点，默认为1 
-    * @return 错误码 
+    * @brief Preprocesamiento de archivo de trayectoria externo 
+    * @param [in] name Nombre del archivo de trayectoria  
+    * @param [in] ovl Porcentaje de escala de velocidad, rango [0~100]
+    * @param [in] opt 1-punto de control, por defecto 1 
+    * @return Código de error 
     */ 
     int LoadTrajectoryJ(String name, double ovl, int opt); 
 
-轨迹复现
-++++++++++++++++++++++++++++
+Reproducción de trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 外部轨迹文件轨迹复现  
-    * @return 错误码 
+    * @brief Reproducción de archivo de trayectoria externo  
+    * @return Código de error 
     */
     int MoveTrajectoryJ();
 
-获取轨迹起始位姿
-++++++++++++++++++++++++++++
+Obtener la pose inicial de la trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 获取轨迹起始位姿 
-    * @param [in] name 轨迹文件名  
-    * @param [out] desc_pose 获取的轨迹起始位姿
-    * @return 错误码 
+    * @brief Obtener la pose inicial de la trayectoria 
+    * @param [in] name Nombre del archivo de trayectoria  
+    * @param [out] desc_pose Pose inicial de la trayectoria obtenida
+    * @return Código de error 
     */ 
     int GetTrajectoryStartPose(String name, DescPose desc_pose);
 
-获取轨迹点编号
-++++++++++++++++++++++++++++
+Obtener el número de puntos de la trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  获取轨迹点编号
-    * @return  错误码
+    * @brief  Obtener el número de puntos de la trayectoria
+    * @return  Código de error
     */
     public int GetTrajectoryPointNum(int pnum)
 
-设置轨迹运行中的速度
-++++++++++++++++++++++++++++
+Establecer la velocidad durante la ejecución de la trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /*
-    * @brief  设置轨迹运行中的速度
-    * @param  ovl 速度百分比
-    * @param  mode 模式；0-降速模式；1-直接切换
-    * @return  错误码
+    * @brief  Establecer la velocidad durante la ejecución de la trayectoria
+    * @param  ovl Porcentaje de velocidad
+    * @param  mode Modo; 0-modo de reducción de velocidad; 1-cambio directo
+    * @return  Código de error
     */
     public int SetTrajectoryJSpeed(double ovl, int mode)
 
-设置轨迹运行中的力和扭矩
-++++++++++++++++++++++++++++
+Establecer la fuerza y el par durante la ejecución de la trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  设置轨迹运行中的力和扭矩
-    * @param  [in] ft 三个方向的力和扭矩，单位N和Nm
-    * @return  错误码
+    * @brief  Establecer la fuerza y el par durante la ejecución de la trayectoria
+    * @param  [in] ft Fuerza y par en tres direcciones, unidades N y Nm
+    * @return  Código de error
     */
     public int SetTrajectoryJForceTorque(ForceTorque ft)
 
-设置轨迹运行中的沿x方向的力
-++++++++++++++++++++++++++++
+Establecer la fuerza en la dirección x durante la ejecución de la trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 设置轨迹运行中的沿x方向的力  
-    * @param [in] fx 沿x方向的力，单位N
-    * @return 错误码 
+    * @brief Establecer la fuerza en la dirección x durante la ejecución de la trayectoria  
+    * @param [in] fx Fuerza en la dirección x, unidad N
+    * @return Código de error 
     */
     int SetTrajectoryJForceFx(double fx);
 
-设置轨迹运行中的沿y方向的力
-++++++++++++++++++++++++++++
+Establecer la fuerza en la dirección y durante la ejecución de la trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 设置轨迹运行中的沿y方向的力
-    * @param [in] fy 沿y方向的力，单位N
-    * @return 错误码 
+    * @brief Establecer la fuerza en la dirección y durante la ejecución de la trayectoria
+    * @param [in] fy Fuerza en la dirección y, unidad N
+    * @return Código de error 
     */
     int SetTrajectoryJForceFy(double fy);
 
-设置轨迹运行中的沿z方向的力
-++++++++++++++++++++++++++++
+Establecer la fuerza en la dirección z durante la ejecución de la trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 设置轨迹运行中的沿z方向的力  
-    * @param [in] fz  沿z方向的力，单位N
-    * @return 错误码 
+    * @brief Establecer la fuerza en la dirección z durante la ejecución de la trayectoria  
+    * @param [in] fz  Fuerza en la dirección z, unidad N
+    * @return Código de error 
     */
     int SetTrajectoryJForceFz(double fz);
 
-设置轨迹运行中的绕x轴的扭矩
-++++++++++++++++++++++++++++
+Establecer el par alrededor del eje x durante la ejecución de la trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 设置轨迹运行中的绕x轴的扭矩  
-    * @param [in] tx 绕x轴的扭矩，单位Nm
-    * @return 错误码 
+    * @brief Establecer el par alrededor del eje x durante la ejecución de la trayectoria  
+    * @param [in] tx Par alrededor del eje x, unidad Nm
+    * @return Código de error 
     */
     int SetTrajectoryJTorqueTx(double tx);
 
-设置轨迹运行中的绕y轴的扭矩
-++++++++++++++++++++++++++++
+Establecer el par alrededor del eje y durante la ejecución de la trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 设置轨迹运行中的绕y轴的扭矩  
-    * @param [in] ty 绕y轴的扭矩，单位Nm
-    * @return 错误码 
+    * @brief Establecer el par alrededor del eje y durante la ejecución de la trayectoria  
+    * @param [in] ty Par alrededor del eje y, unidad Nm
+    * @return Código de error 
     */
     int SetTrajectoryJTorqueTy(double ty);
 
-设置轨迹运行中的绕z轴的扭矩
-++++++++++++++++++++++++++++
+Establecer el par alrededor del eje z durante la ejecución de la trayectoria
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 设置轨迹运行中的绕z轴的扭矩  
-    * @param [in] tz 绕z轴的扭矩，单位Nm
-    * @return 错误码 
+    * @brief Establecer el par alrededor del eje z durante la ejecución de la trayectoria  
+    * @param [in] tz Par alrededor del eje z, unidad Nm
+    * @return Código de error 
     */
     int SetTrajectoryJTorqueTz(double tz);
 
-上传轨迹J文件
-++++++++++++++++++++++++++++
+Subir archivo de trayectoria J
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 上传轨迹J文件  
-    * @param [in] filePath 上传轨迹文件的全路径名   C://test/testJ.txt
-    * @return 错误码 
+    * @brief Subir archivo de trayectoria J  
+    * @param [in] filePath Nombre de ruta completo del archivo de trayectoria a subir   C://test/testJ.txt
+    * @return Código de error 
     */
     int TrajectoryJUpLoad(String filePath);
 
-删除轨迹J文件
-++++++++++++++++++++++++++++
+Eliminar archivo de trayectoria J
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 删除轨迹J文件  
-    * @param [in] fileName 文件名称 testJ.txt
-    * @return 错误码 
+    * @brief Eliminar archivo de trayectoria J  
+    * @param [in] fileName Nombre del archivo testJ.txt
+    * @return Código de error 
     */
     int TrajectoryJDelete(String fileName);
 
-机器人轨迹J文件复现代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de reproducción del archivo de trayectoria J del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -371,9 +371,8 @@ TPD轨迹复现
         return 0;
     }
 
-机器人设置轨迹运行中的速度代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+Ejemplo de código de establecimiento de la velocidad durante la ejecución de la trayectoria del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -424,42 +423,42 @@ TPD轨迹复现
         return 0;
     }
 
-轨迹预处理(轨迹前瞻)
-+++++++++++++++++++++++++++++++++++++++++++++++++
+Preprocesamiento de trayectoria (previsión de trayectoria)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.3-3.8.0
 
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 轨迹预处理(轨迹前瞻) 
-    * @param [in] name  轨迹文件名
-    * @param [in] mode 采样模式，0-不进行采样；1-等数据间隔采样；2-等误差限制采样
-    * @param [in] errorLim 误差限制，使用直线拟合生效
-    * @param [in] type 平滑方式，0-贝塞尔平滑
-    * @param [in] precision 平滑精度，使用贝塞尔平滑时生效
-    * @param [in] vamx 设定的最大速度，mm/s
-    * @param [in] amax 设定的最大加速度，mm/s2
-    * @param [in] jmax 设定的最大加加速度，mm/s3
-    * @return 错误码 
+    * @brief Preprocesamiento de trayectoria (previsión de trayectoria) 
+    * @param [in] name  Nombre del archivo de trayectoria
+    * @param [in] mode Modo de muestreo, 0-no realizar muestreo; 1-muestreo con intervalo de datos igual; 2-muestreo con límite de error igual
+    * @param [in] errorLim Límite de error, efectivo al usar ajuste de línea recta
+    * @param [in] type Modo de suavizado, 0-suavizado de Bézier
+    * @param [in] precision Precisión de suavizado, efectiva al usar suavizado de Bézier
+    * @param [in] vamx Velocidad máxima configurada, mm/s
+    * @param [in] amax Aceleración máxima configurada, mm/s2
+    * @param [in] jmax Sobreaceleración (jerk) máxima configurada, mm/s3
+    * @return Código de error 
     */ 
     int LoadTrajectoryLA(String name, int mode, double errorLim, int type, double precision, double vamx, double amax, double jmax); 
 
-轨迹复现(轨迹前瞻)
-+++++++++++++++++++++++++++++++++++++++++++++++++
+Reproducción de trayectoria (previsión de trayectoria)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.3-3.8.0
 
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 轨迹复现(轨迹前瞻)  
-    * @return 错误码 
+    * @brief Reproducción de trayectoria (previsión de trayectoria)  
+    * @return Código de error 
     */
     int MoveTrajectoryLA();
 
-轨迹复现(轨迹前瞻)代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de reproducción de trayectoria (previsión de trayectoria)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -483,22 +482,22 @@ TPD轨迹复现
         return 0;
     }
 
-运动到TPD轨迹记录起点
-++++++++++++++++++++++++++++++++++++++++++++++
+Moverse al punto de inicio del registro de trayectoria TPD
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 运动到TPD轨迹记录起点
-    * @param name 轨迹文件名
-    * @param moveType 运动类型；0-PTP; 1-LIN
-    * @param ovl 速度缩放百分比，范围[0~100]
-    * @return 错误码
+    * @brief Moverse al punto de inicio del registro de trayectoria TPD
+    * @param name Nombre del archivo de trayectoria
+    * @param moveType Tipo de movimiento; 0-PTP; 1-LIN
+    * @param ovl Porcentaje de escala de velocidad, rango [0~100]
+    * @return Código de error
     */
     public int MoveToTPDStart(string name, int moveType, double ovl)
 
-运动到TPD轨迹记录起点的SDK代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código SDK de movimiento al punto de inicio del registro de trayectoria TPD
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 

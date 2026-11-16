@@ -1,192 +1,192 @@
-机器人状态查询
-===============
+Consulta del estado del robot
+==================================
 
 .. toctree:: 
     :maxdepth: 5
 
-获取当前关节位置(角度)
-+++++++++++++++++++++++++++++++++
+Obtener la posición actual de las articulaciones (ángulo)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  获取当前关节位置(角度)
-    * @param  [in] flag 0-阻塞，1-非阻塞
-    * @param  [out] jPos 六个关节位置，单位deg
-    * @return  错误码
+    * @brief  Obtener la posición actual de las articulaciones (ángulo)
+    * @param  [in] flag 0-bloqueante, 1-no bloqueante
+    * @param  [out] jPos Posición de las seis articulaciones, unidad deg
+    * @return  Código de error
     */
     errno_t  GetActualJointPosDegree(uint8_t flag, JointPos *jPos);
 
-获取关节反馈速度
-+++++++++++++++++++++++++++++++++
+Obtener la velocidad de retroalimentación de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  获取关节反馈速度-deg/s
-     * @param  [in] flag 0-阻塞，1-非阻塞
-     * @param  [out] speed 六个关节速度
-     * @return  错误码 
+     * @brief  Obtener la velocidad de retroalimentación de las articulaciones-deg/s
+     * @param  [in] flag 0-bloqueante, 1-no bloqueante
+     * @param  [out] speed Velocidad de las seis articulaciones
+     * @return  Código de error 
      */ 
     errno_t  GetActualJointSpeedsDegree(uint8_t flag, float speed[6]);
 
-获取关节反馈加速度
-+++++++++++++++++++++++++++++++++
+Obtener la aceleración de retroalimentación de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  获取关节反馈加速度-deg/s^2
-     * @param  [in] flag 0-阻塞，1-非阻塞
-     * @param  [out] acc 六个关节加速度
-     * @return  错误码 
+     * @brief  Obtener la aceleración de retroalimentación de las articulaciones-deg/s^2
+     * @param  [in] flag 0-bloqueante, 1-no bloqueante
+     * @param  [out] acc Aceleración de las seis articulaciones
+     * @return  Código de error 
      */ 
     errno_t  GetActualJointAccDegree(uint8_t flag, float acc[6]);   
 
-获取TCP指令合速度
-+++++++++++++++++++++++++++++++++
+Obtener la velocidad compuesta de comando del TCP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  获取TCP指令合速度
-     * @param  [in] flag 0-阻塞，1-非阻塞
-     * @param  [out] tcp_speed 线性速度
-     * @param  [out] ori_speed 姿态速度
-     * @return  错误码 
+     * @brief  Obtener la velocidad compuesta de comando del TCP
+     * @param  [in] flag 0-bloqueante, 1-no bloqueante
+     * @param  [out] tcp_speed Velocidad lineal
+     * @param  [out] ori_speed Velocidad de orientación
+     * @return  Código de error 
      */
     errno_t  GetTargetTCPCompositeSpeed(uint8_t flag, float *tcp_speed, float *ori_speed);
 
-获取TCP反馈合速度
-+++++++++++++++++++++++++++++++++
+Obtener la velocidad compuesta de retroalimentación del TCP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  获取TCP反馈合速度
-     * @param  [in] flag 0-阻塞，1-非阻塞
-     * @param  [out] tcp_speed 线性速度
-     * @param  [out] ori_speed 姿态速度
-     * @return  错误码 
+     * @brief  Obtener la velocidad compuesta de retroalimentación del TCP
+     * @param  [in] flag 0-bloqueante, 1-no bloqueante
+     * @param  [out] tcp_speed Velocidad lineal
+     * @param  [out] ori_speed Velocidad de orientación
+     * @return  Código de error 
      */ 
     errno_t  GetActualTCPCompositeSpeed(uint8_t flag, float *tcp_speed, float *ori_speed);
 
-获取TCP指令速度
-+++++++++++++++++++++++++++++++++
+Obtener la velocidad de comando del TCP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  获取TCP指令速度
-     * @param  [in] flag 0-阻塞，1-非阻塞
-     * @param  [out] speed [x,y,z,rx,ry,rz]速度
-     * @return  错误码 
+     * @brief  Obtener la velocidad de comando del TCP
+     * @param  [in] flag 0-bloqueante, 1-no bloqueante
+     * @param  [out] speed Velocidad [x,y,z,rx,ry,rz]
+     * @return  Código de error 
      */ 
     errno_t  GetTargetTCPSpeed(uint8_t flag, float speed[6]);
 
-获取TCP反馈速度
-+++++++++++++++++++++++++++++++++
+Obtener la velocidad de retroalimentación del TCP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  获取TCP反馈速度
-     * @param  [in] flag 0-阻塞，1-非阻塞
-     * @param  [out] speed [x,y,z,rx,ry,rz]速度
-     * @return  错误码 
+     * @brief  Obtener la velocidad de retroalimentación del TCP
+     * @param  [in] flag 0-bloqueante, 1-no bloqueante
+     * @param  [out] speed Velocidad [x,y,z,rx,ry,rz]
+     * @return  Código de error 
      */ 
     errno_t  GetActualTCPSpeed(uint8_t flag, float speed[6]);
 
-获取当前工具位姿
-+++++++++++++++++++++++++++++++++
+Obtener la pose actual de la herramienta
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  获取当前工具位姿
-    * @param  [in] flag  0-阻塞，1-非阻塞
-    * @param  [out] desc_pos  工具位姿
-    * @return  错误码
+    * @brief  Obtener la pose actual de la herramienta
+    * @param  [in] flag  0-bloqueante, 1-no bloqueante
+    * @param  [out] desc_pos  Pose de la herramienta
+    * @return  Código de error
     */
     errno_t  GetActualTCPPose(uint8_t flag, DescPose *desc_pos);
 
-获取当前工具坐标系编号
-+++++++++++++++++++++++++++++++++
+Obtener el número del sistema de coordenadas de herramienta actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  获取当前工具坐标系编号
-    * @param  [in] flag  0-阻塞，1-非阻塞
-    * @param  [out] id  工具坐标系编号
-    * @return  错误码
+    * @brief  Obtener el número del sistema de coordenadas de herramienta actual
+    * @param  [in] flag  0-bloqueante, 1-no bloqueante
+    * @param  [out] id  Número del sistema de coordenadas de herramienta
+    * @return  Código de error
     */
     errno_t  GetActualTCPNum(uint8_t flag, int *id);
 
-获取当前工件坐标系编号
-+++++++++++++++++++++++++++++++++
+Obtener el número del sistema de coordenadas de la pieza actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  获取当前工件坐标系编号
-    * @param  [in] flag  0-阻塞，1-非阻塞
-    * @param  [out] id  工件坐标系编号
-    * @return  错误码
+    * @brief  Obtener el número del sistema de coordenadas de la pieza actual
+    * @param  [in] flag  0-bloqueante, 1-no bloqueante
+    * @param  [out] id  Número del sistema de coordenadas de la pieza
+    * @return  Código de error
     */
     errno_t  GetActualWObjNum(uint8_t flag, int *id);  
 
-获取当前末端法兰位姿
-+++++++++++++++++++++++++++++++++
+Obtener la pose actual de la brida del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  获取当前末端法兰位姿
-    * @param  [in] flag  0-阻塞，1-非阻塞
-    * @param  [out] desc_pos  法兰位姿
-    * @return  错误码
+    * @brief  Obtener la pose actual de la brida del extremo
+    * @param  [in] flag  0-bloqueante, 1-no bloqueante
+    * @param  [out] desc_pos  Pose de la brida
+    * @return  Código de error
     */
     errno_t  GetActualToolFlangePose(uint8_t flag, DescPose *desc_pos);  
 
-获取当前关节转矩
-++++++++++++++++++++++++++++++++++++
+Obtener el par actual de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取当前关节转矩
-    * @param  [in] flag 0-阻塞，1-非阻塞
-    * @param  [out] torques 关节转矩
-    * @return  错误码
+    * @brief Obtener el par actual de las articulaciones
+    * @param  [in] flag 0-bloqueante, 1-no bloqueante
+    * @param  [out] torques Par de las articulaciones
+    * @return  Código de error
     */
     errno_t  GetJointTorques(uint8_t flag, float torques[6]);
 
-获取系统时间
-++++++++++++++++++++++++++++++++++++
+Obtener la hora del sistema
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  获取系统时间
-    * @param  [out] t_ms 单位ms
-    * @return  错误码
+    * @brief  Obtener la hora del sistema
+    * @param  [out] t_ms Unidad ms
+    * @return  Código de error
     */
     errno_t  GetSystemClock(float *t_ms);
 
-同步系统时间至机器人
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sincronizar la hora del sistema con el robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取当前上位机系统时间并发送给机器人，同步系统时间（由于QNX系统限制，同步精度为分钟级）
-    * @return 错误码
+    * @brief Obtener la hora actual del sistema del PC anfitrión y enviarla al robot, sincronizar la hora del sistema (debido a las limitaciones del sistema QNX, la precisión de sincronización es de nivel de minuto)
+    * @return Código de error
     */
     errno_t SetRobotTime();
 
-设置与读取机器人系统时间代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración y lectura de la hora del sistema del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
@@ -274,107 +274,107 @@
     robot.Sleep(1000);
     }
 
-查询机器人运动是否完成
-++++++++++++++++++++++++++++++++++++
+Consultar si el movimiento del robot ha finalizado
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  查询机器人运动是否完成
-    * @param  [out]  state  0-未完成，1-完成
-    * @return  错误码
+    * @brief  Consultar si el movimiento del robot ha finalizado
+    * @param  [out]  state  0-no finalizado, 1-finalizado
+    * @return  Código de error
     */   
     errno_t  GetRobotMotionDone(uint8_t *state);
 
-查询机器人运动队列缓存长度
-++++++++++++++++++++++++++++++++++++
+Consultar la longitud de la caché de la cola de movimiento del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  查询机器人运动队列缓存长度
-     * @param  [out]  len  缓存长度
-     * @return  错误码
+     * @brief  Consultar la longitud de la caché de la cola de movimiento del robot
+     * @param  [out]  len  Longitud de la caché
+     * @return  Código de error
      */ 
     errno_t  GetMotionQueueLength(int *len);
 
-获取机器人急停状态
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado de parada de emergencia del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取机器人急停状态
-    * @param [out] state 急停状态，0-非急停，1-急停
-    * @return 错误码 
+    * @brief Obtener el estado de parada de emergencia del robot
+    * @param [out] state Estado de parada de emergencia, 0-no parada de emergencia, 1-parada de emergencia
+    * @return Código de error 
     */
     errno_t GetRobotEmergencyStopState(uint8_t *state);
 
-获取SDK与机器人的通讯状态
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado de comunicación entre el SDK y el robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取SDK与机器人的通讯状态
-    * @param [out] state 通讯状态，0-通讯正常，1-通讯异常
+    * @brief Obtener el estado de comunicación entre el SDK y el robot
+    * @param [out] state Estado de comunicación, 0-comunicación normal, 1-comunicación anormal
     */
     errno_t GetSDKComState(int *state);
 
-获取安全停止信号
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener la señal de parada de seguridad
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取安全停止信号
-    * @param [out] si0_state 安全停止信号SI0，0-无效，1-有效
-    * @param [out] si1_state 安全停止信号SI1，0-无效，1-有效
+    * @brief Obtener la señal de parada de seguridad
+    * @param [out] si0_state Señal de parada de seguridad SI0, 0-inválida, 1-válida
+    * @param [out] si1_state Señal de parada de seguridad SI1, 0-inválida, 1-válida
     */
     errno_t GetSafetyStopState(uint8_t *si0_state, uint8_t *si1_state);
 
-获取机器人关节驱动器温度(℃)
-++++++++++++++++++++++++++++++++++++++++++
+Obtener la temperatura del controlador de las articulaciones del robot (℃)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取机器人关节驱动器温度(℃)
-    * @return 错误码
+    * @brief Obtener la temperatura del controlador de las articulaciones del robot (℃)
+    * @return Código de error
     */
     errno_t GetJointDriverTemperature(double temperature[]);
 
-获取机器人关节驱动器扭矩(Nm)
-++++++++++++++++++++++++++++++++++++++++++
+Obtener el par del controlador de las articulaciones del robot (Nm)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取机器人关节驱动器扭矩(Nm)
-    * @return 错误码
+    * @brief Obtener el par del controlador de las articulaciones del robot (Nm)
+    * @return Código de error
     */
     errno_t GetJointDriverTorque(double torque[]);
         
-获取机器人实时状态结构体
-++++++++++++++++++++++++++++++++++
+Obtener la estructura del estado en tiempo real del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.3.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取机器人实时状态结构体
-    * @param [out] pkg 机器人实时状态结构体
-    * @return 错误码
+    * @brief Obtener la estructura del estado en tiempo real del robot
+    * @param [out] pkg Estructura del estado en tiempo real del robot
+    * @return Código de error
     */
     errno_t GetRobotRealTimeState(ROBOT_STATE_PKG *pkg);
 
-机器人状态查询代码示例
-+++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de consulta del estado del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos: 
 
@@ -460,56 +460,56 @@
       return 0;
     }
 
-逆运动学求解
-+++++++++++++++++++++++++++++++++
+Solución de cinemática inversa
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  逆运动学求解
-    * @param  [in] type 0-绝对位姿(基坐标系)，1-增量位姿(基坐标系)，2-增量位姿(工具坐标系)
-    * @param  [in] desc_pos 笛卡尔位姿
-    * @param  [in] config 关节空间配置，[-1]-参考当前关节位置解算，[0~7]-依据特定关节空间配置求解
-    * @param  [out] joint_pos 关节位置
-    * @return  错误码
+    * @brief  Solución de cinemática inversa
+    * @param  [in] type 0-pose absoluta (sistema de coordenadas base), 1-pose incremental (sistema de coordenadas base), 2-pose incremental (sistema de coordenadas de herramienta)
+    * @param  [in] desc_pos Pose cartesiana
+    * @param  [in] config Configuración del espacio de articulaciones, [-1]-resolver con referencia a la posición actual de las articulaciones, [0~7]-resolver según una configuración específica del espacio de articulaciones
+    * @param  [out] joint_pos Posición de las articulaciones
+    * @return  Código de error
     */
     errno_t  GetInverseKin(int type, DescPose *desc_pos, int config, JointPos *joint_pos);
 
-逆运动学求解(参考位置)
-++++++++++++++++++++++++++++++++++++
+Solución de cinemática inversa (posición de referencia)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  逆运动学求解，参考指定关节位置求解
-    * @param  [in] type 0-绝对位姿(基坐标系)，1-增量位姿(基坐标系)，2-增量位姿(工具坐标系)
-    * @param  [in] desc_pos 笛卡尔位姿
-    * @param  [in] joint_pos_ref 参考关节位置
-    * @param  [out] joint_pos 关节位置
-    * @return  错误码
+    * @brief  Solución de cinemática inversa, resolver con referencia a la posición de articulaciones especificada
+    * @param  [in] type 0-pose absoluta (sistema de coordenadas base), 1-pose incremental (sistema de coordenadas base), 2-pose incremental (sistema de coordenadas de herramienta)
+    * @param  [in] desc_pos Pose cartesiana
+    * @param  [in] joint_pos_ref Posición de articulaciones de referencia
+    * @param  [out] joint_pos Posición de las articulaciones
+    * @return  Código de error
     */   
     errno_t  GetInverseKinRef(int type, DescPose *desc_pos, JointPos *joint_pos_ref, JointPos *joint_pos);
 
-逆运动学求解，笛卡尔空间包含扩展轴位置
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Solución de cinemática inversa, el espacio cartesiano incluye la posición del eje extendido
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 逆运动学求解，笛卡尔空间包含扩展轴位置
-    * @param [in] type 0-绝对位姿(基坐标系)，1-增量位姿(基坐标系)，2-增量位姿(工具坐标系)
-    * @param [in] desc_pos 笛卡尔位姿
-    * @param [in] exaxis 扩展轴位置
-    * @param [in] tool 工具号
-    * @param [in] workPiece 工件号
-    * @param [out] joint_pos 关节位置
-    * @param [in] config 关节空间配置，[-1]-参考当前关节位置解算，[0~7]-依据特定关节空间配置求解
-    * @return 错误码
+    * @brief Solución de cinemática inversa, el espacio cartesiano incluye la posición del eje extendido
+    * @param [in] type 0-pose absoluta (sistema de coordenadas base), 1-pose incremental (sistema de coordenadas base), 2-pose incremental (sistema de coordenadas de herramienta)
+    * @param [in] desc_pos Pose cartesiana
+    * @param [in] exaxis Posición del eje extendido
+    * @param [in] tool Número de herramienta
+    * @param [in] workPiece Número de pieza
+    * @param [out] joint_pos Posición de las articulaciones
+    * @param [in] config Configuración del espacio de articulaciones, [-1]-resolver con referencia a la posición actual de las articulaciones, [0~7]-resolver según una configuración específica del espacio de articulaciones
+    * @return Código de error
     */
     errno_t GetInverseKinExaxis(int type, DescPose desc_pos, ExaxisPos exaxis, int tool, int workPiece, JointPos& joint_pos, int config = -1);
 
-逆运动学求解包含扩展轴位置代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de solución de cinemática inversa con posición del eje extendido
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
@@ -541,39 +541,39 @@
         return 0;
     }
 
-获取逆运动学是否有解
-++++++++++++++++++++++++++++++++++++
+Obtener si la cinemática inversa tiene solución
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  逆运动学求解，参考指定关节位置判断是否有解
-    * @param  [in] type 0-绝对位姿(基坐标系)，1-增量位姿(基坐标系)，2-增量位姿(工具坐标系)
-    * @param  [in] desc_pos 笛卡尔位姿
-    * @param  [in] joint_pos_ref 参考关节位置
-    * @param  [out] result 0-无解，1-有解
-    * @return  错误码
+    * @brief  Solución de cinemática inversa, determinar con referencia a la posición de articulaciones especificada si tiene solución
+    * @param  [in] type 0-pose absoluta (sistema de coordenadas base), 1-pose incremental (sistema de coordenadas base), 2-pose incremental (sistema de coordenadas de herramienta)
+    * @param  [in] desc_pos Pose cartesiana
+    * @param  [in] joint_pos_ref Posición de articulaciones de referencia
+    * @param  [out] result 0-sin solución, 1-con solución
+    * @return  Código de error
     */   
     errno_t  GetInverseKinHasSolution(int type, DescPose *desc_pos, JointPos *joint_pos_ref, uint8_t *result);
 
-获取机器人8组逆解
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener las 8 soluciones de cinemática inversa del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取机器人8组逆解
-    * @param [in] tcfPose 笛卡尔位姿
-    * @param [in] tool 工具坐标系
-    * @param [in] workpiece 工件坐标系
-    * @param [in] exPos 扩展轴位置
-    * @param [out] jointPos 输出8组关节角度
-    * @return 错误码
+    * @brief Obtener las 8 soluciones de cinemática inversa del robot
+    * @param [in] tcfPose Pose cartesiana
+    * @param [in] tool Sistema de coordenadas de herramienta
+    * @param [in] workpiece Sistema de coordenadas de la pieza
+    * @param [in] exPos Posición del eje extendido
+    * @param [out] jointPos Salida de las 8 soluciones de ángulos de articulaciones
+    * @return Código de error
     */
     errno_t TCFToAllJoint(DescPose tcfPose, int tool, int workpiece, ExaxisPos exPos, std::vector<JointPos>& jointPos);
 
-获取机器人8组逆解代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código para obtener las 8 soluciones de cinemática inversa del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
@@ -624,21 +624,21 @@
         return 0;
     }
 
-正运动学求解
-++++++++++++++++++++++++++++++++++++
+Solución de cinemática directa
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  正运动学求解
-    * @param  [in] joint_pos 关节位置
-    * @param  [out] desc_pos 笛卡尔位姿
-    * @return  错误码
+    * @brief  Solución de cinemática directa
+    * @param  [in] joint_pos Posición de las articulaciones
+    * @param  [out] desc_pos Pose cartesiana
+    * @return  Código de error
     */
     errno_t  GetForwardKin(JointPos *joint_pos, DescPose *desc_pos);
 
-机器人正逆运动学计算代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de cálculo de cinemática directa e inversa del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
@@ -671,20 +671,20 @@
       return 0;
     }
 
-查询机器人示教管理点位数据
-++++++++++++++++++++++++++++++++++++
+Consultar los datos de los puntos de enseñanza del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief  查询机器人示教管理点位数据
-     * @param  [in]  name  点位名
-     * @param  [out]  data   点位数据
-     * @return  错误码
+     * @brief  Consultar los datos de los puntos de enseñanza del robot
+     * @param  [in]  name  Nombre del punto
+     * @param  [out]  data   Datos del punto
+     * @return  Código de error
      */ 
     errno_t  GetRobotTeachingPoint(char name[64], float data[20]);
 
-获取机器人DH参数补偿值
+Obtener el valor de compensación de los parámetros DH del robot
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
@@ -693,28 +693,28 @@
     :linenos:
 
     /**
-    * @brief 获取机器人DH参数补偿值
-    * @param [out] dhCompensation 机器人DH参数补偿值(mm) [cmpstD1,cmpstA2,cmpstA3,cmpstD4,cmpstD5,cmpstD6]
-    * @return 错误码
+    * @brief Obtener el valor de compensación de los parámetros DH del robot
+    * @param [out] dhCompensation Valor de compensación de los parámetros DH del robot (mm) [cmpstD1,cmpstA2,cmpstA3,cmpstD4,cmpstD5,cmpstD6]
+    * @return Código de error
     */
     errno_t GetDHCompensation(double dhCompensation[6]);
 
-获取控制箱SN码
-+++++++++++++++++++++++++++++++++++++++++
+Obtener el código SN de la caja de control
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.2.1-3.8.1
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取控制箱SN码
-    * @param [out] SNCode 控制箱SN码
-    * @return 错误码
+    * @brief Obtener el código SN de la caja de control
+    * @param [out] SNCode Código SN de la caja de control
+    * @return Código de error
     */
     errno_t GetRobotSN(std::string& SNCode);
 
-查询机器人示教管理点位数据代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de consulta de los datos de los puntos de enseñanza del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
@@ -753,148 +753,148 @@
       return 0;
     }
 
-根据编号获取工具坐标系
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas de herramienta según el número
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: C++SDK-v3.9.8
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 根据编号获取工具坐标系
-    * @param [in] id 工具坐标系编号
-    * @param [out] coord 坐标系数值
-    * @param [out] type 工具类型 0-工具；1-传感器
-    * @param [out] install 安装位置 0-机器人末端；1-机器人外部
-    * @param [out] toolID 工具ID 
-    * @param [out] loadNo 负载编号
-    * @return 错误码
+    * @brief Obtener el sistema de coordenadas de herramienta según el número
+    * @param [in] id Número del sistema de coordenadas de herramienta
+    * @param [out] coord Valor del sistema de coordenadas
+    * @param [out] type Tipo de herramienta 0-herramienta; 1-sensor
+    * @param [out] install Posición de instalación 0-extremo del robot; 1-exterior del robot
+    * @param [out] toolID ID de la herramienta 
+    * @param [out] loadNo Número de carga
+    * @return Código de error
     */
     errno_t GetToolCoordWithID(int id, DescPose& coord, int& type, int& install, int& toolID, int& loadNo);
 
-根据编号获取工件坐标系
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas de la pieza según el número
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: C++SDK-v3.9.8
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 根据编号获取工件坐标系
-    * @param [in] id 工件坐标系编号
-    * @param [out] coord 坐标系数值
-    * @param [out] refFrame 参考坐标系
-    * @return 错误码
+    * @brief Obtener el sistema de coordenadas de la pieza según el número
+    * @param [in] id Número del sistema de coordenadas de la pieza
+    * @param [out] coord Valor del sistema de coordenadas
+    * @param [out] refFrame Sistema de coordenadas de referencia
+    * @return Código de error
     */
     errno_t GetWObjCoordWithID(int id, DescPose& coord, int& refFrame);
     
-根据编号获取外部工具坐标系
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas de herramienta externa según el número
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: C++SDK-v3.9.8
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 根据编号获取外部工具坐标系
-    * @param [in] id 外部工具坐标系编号，20-39对应外部工具坐标系0-19
-    * @param [out] coord 机器人外部固定工具TCP位姿
-    * @param [out] tcoord 机器人末端安装工件坐标系位姿
-    * @return 错误码
+    * @brief Obtener el sistema de coordenadas de herramienta externa según el número
+    * @param [in] id Número del sistema de coordenadas de herramienta externa, 20-39 corresponden a los sistemas de coordenadas de herramienta externa 0-19
+    * @param [out] coord Pose del TCP de la herramienta fija externa del robot
+    * @param [out] tcoord Pose del sistema de coordenadas de la pieza instalada en el extremo del robot
+    * @return Código de error
     */
     errno_t GetExToolCoordWithID(int id, DescPose& coord, DescPose& tcoord);
     
-根据编号获取扩展轴坐标系
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas del eje extendido según el número
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: C++SDK-v3.9.8
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 根据编号获取扩展轴坐标系
-    * @param [in] id 外部工具坐标系编号
-    * @param [out] coord 坐标系数值
-    * @param [out] axisCoordNum 扩展轴号；bit0-bit3对应扩展轴1-扩展轴4；如axisCoordNum值为3,对应应用扩展轴[1，2]
-    * @param [out] calibFlag 标定标志；0-未标定；1-已标定
-    * @return 错误码
+    * @brief Obtener el sistema de coordenadas del eje extendido según el número
+    * @param [in] id Número del sistema de coordenadas de herramienta externa
+    * @param [out] coord Valor del sistema de coordenadas
+    * @param [out] axisCoordNum Número del eje extendido; bit0-bit3 corresponden al eje extendido 1-eje extendido 4; si el valor de axisCoordNum es 3, corresponde a la aplicación del eje extendido [1, 2]
+    * @param [out] calibFlag Indicador de calibración; 0-no calibrado; 1-calibrado
+    * @return Código de error
     */
     errno_t GetExAxisCoordWithID(int id, DescPose& coord, int& axisCoordNum, int& calibFlag);
 
-根据编号获取负载质量及质心
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener la masa y el centro de masa de la carga según el número
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 根据编号获取负载质量及质心
-    * @param [in] id 负载编号
-    * @param [out] weight 负载质量
-    * @param [out] cog 负载质心
-    * @return 错误码
+    * @brief Obtener la masa y el centro de masa de la carga según el número
+    * @param [in] id Número de carga
+    * @param [out] weight Masa de la carga
+    * @param [out] cog Centro de masa de la carga
+    * @return Código de error
     */
     errno_t GetTargetPayloadWithID(int id, double& weight, DescTran& cog);
     
-获取当前工具坐标系
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas de herramienta actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++
     :linenos:
     
     /**
-    * @brief 获取当前工具坐标系
-    * @param [out] coord 坐标系数值
-    * @return 错误码
+    * @brief Obtener el sistema de coordenadas de herramienta actual
+    * @param [out] coord Valor del sistema de coordenadas
+    * @return Código de error
     */
     errno_t GetCurToolCoord(DescPose& coord);
         
-获取当前工件坐标系
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas de la pieza actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取当前工件坐标系
-    * @param [out] coord 坐标系数值
-    * @return 错误码
+    * @brief Obtener el sistema de coordenadas de la pieza actual
+    * @param [out] coord Valor del sistema de coordenadas
+    * @return Código de error
     */
     errno_t GetCurWObjCoord(DescPose& coord);
             
-获取当前外部工具坐标系
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas de herramienta externa actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取当前外部工具坐标系
-    * @param [out] coord 坐标系数值
-    * @return 错误码
+    * @brief Obtener el sistema de coordenadas de herramienta externa actual
+    * @param [out] coord Valor del sistema de coordenadas
+    * @return Código de error
     */
     errno_t GetCurExToolCoord(DescPose& coord);
                 
-获取当前扩展轴坐标系
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el sistema de coordenadas del eje extendido actual
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取当前扩展轴坐标系
-    * @param [out] coord 坐标系数值
-    * @return 错误码
+    * @brief Obtener el sistema de coordenadas del eje extendido actual
+    * @param [out] coord Valor del sistema de coordenadas
+    * @return Código de error
     */
     errno_t GetCurExAxisCoord(DescPose& coord);
 
-获取机器人坐标系及负载代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código para obtener los sistemas de coordenadas y la carga del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++

@@ -1,154 +1,154 @@
-机器人焊接
-=============
+Soldadura del robot
+==========================
 
 .. toctree:: 
     :maxdepth: 5
 
 
-设置焊接工艺曲线参数
-++++++++++++++++++++++++++++++++++
+Establecer los parámetros de la curva del proceso de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 设置焊接工艺曲线参数
-    * @param [in] id 焊接工艺编号(1-99)
-    * @param [in] param 焊接工艺参数
-    * @return 错误码 
+    * @brief Establecer los parámetros de la curva del proceso de soldadura
+    * @param [in] id Número del proceso de soldadura (1-99)
+    * @param [in] param Parámetros del proceso de soldadura
+    * @return Código de error 
     */
     int WeldingSetProcessParam(int id, WeldingProcessParam param);
 
-获取焊接工艺曲线参数
-++++++++++++++++++++++++++++++++++
+Obtener los parámetros de la curva del proceso de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 获取焊接工艺曲线参数
-    * @param [in] id 焊接工艺编号(1-99)
-    * @param [out] param 焊接工艺参数
-    * @return 错误码 
+    * @brief Obtener los parámetros de la curva del proceso de soldadura
+    * @param [in] id Número del proceso de soldadura (1-99)
+    * @param [out] param Parámetros del proceso de soldadura
+    * @return Código de error 
     */
     int WeldingGetProcessParam(int id, WeldingProcessParam param);
 
-设置焊接电流与输出模拟量对应关系
-++++++++++++++++++++++++++++++++++
+Establecer la relación entre la corriente de soldadura y la salida analógica
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置焊接电流与输出模拟量对应关系
-    * @param [in] relation 关系值
-    * @return 错误码
+    * @brief Establecer la relación entre la corriente de soldadura y la salida analógica
+    * @param [in] relation Valor de la relación
+    * @return Código de error
     */
     int WeldingSetCurrentRelation(WeldCurrentAORelation relation);
 
-设置焊接电压与输出模拟量对应关系
-++++++++++++++++++++++++++++++++++
+Establecer la relación entre el voltaje de soldadura y la salida analógica
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置焊接电压与输出模拟量对应关系
-    * @param [in] relation 焊接电压-模拟量输出关系值
-    * @return 错误码
+    * @brief Establecer la relación entre el voltaje de soldadura y la salida analógica
+    * @param [in] relation Valor de la relación voltaje de soldadura-salida analógica
+    * @return Código de error
     */
     int WeldingSetVoltageRelation(WeldVoltageAORelation relation);
 
-获取焊接电流与输出模拟量对应关系
-++++++++++++++++++++++++++++++++++
+Obtener la relación entre la corriente de soldadura y la salida analógica
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 获取焊接电流与输出模拟量对应关系
-    * @param [out] relation 关系值
-    * @return 错误码
+    * @brief Obtener la relación entre la corriente de soldadura y la salida analógica
+    * @param [out] relation Valor de la relación
+    * @return Código de error
     */
     int WeldingGetCurrentRelation(WeldCurrentAORelation relation);
 
-获取焊接电压与输出模拟量对应关系
-++++++++++++++++++++++++++++++++++
+Obtener la relación entre el voltaje de soldadura y la salida analógica
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 获取焊接电压与输出模拟量对应关系
-    * @param [out] relation 焊接电压-模拟量输出关系值
-    * @return 错误码
+    * @brief Obtener la relación entre el voltaje de soldadura y la salida analógica
+    * @param [out] relation Valor de la relación voltaje de soldadura-salida analógica
+    * @return Código de error
     */
     int WeldingGetVoltageRelation(WeldVoltageAORelation relation);
 
-设置焊接电流
-++++++++++++++++++++++++++++++++++
+Establecer la corriente de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置焊接电流
-    * @param [in] ioType 控制IO类型 0-控制箱IO；1-扩展IO
-    * @param [in] current 焊接电流值(A)
-    * @param [in] AOIndex 焊接电流控制箱模拟量输出端口(0-1)
-    * @param [in] blend 是否平滑 0-不平滑；1-平滑
-    * @return 错误码
+    * @brief Establecer la corriente de soldadura
+    * @param [in] ioType Tipo de IO de control 0-IO de la caja de control; 1-IO extendida
+    * @param [in] current Valor de corriente de soldadura (A)
+    * @param [in] AOIndex Puerto de salida analógica del control de corriente de soldadura de la caja de control (0-1)
+    * @param [in] blend Si se suaviza 0-sin suavizado; 1-suavizado
+    * @return Código de error
     */
     int WeldingSetCurrent(int ioType, double current, int AOIndex, int blend);
 
-设置焊接电压
-++++++++++++++++++++++++++++++++++
+Establecer el voltaje de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置焊接电压
-    * @param [in] ioType 控制IO类型 0-控制箱IO；1-扩展IO
-    * @param [in] voltage 焊接电压值(A)
-    * @param [in] AOIndex 焊接电压控制箱模拟量输出端口(0-1)
-    * @param [in] blend 是否平滑 0-不平滑；1-平滑
-    * @return 错误码
+    * @brief Establecer el voltaje de soldadura
+    * @param [in] ioType Tipo de IO de control 0-IO de la caja de control; 1-IO extendida
+    * @param [in] voltage Valor de voltaje de soldadura (A)
+    * @param [in] AOIndex Puerto de salida analógica del control de voltaje de soldadura de la caja de control (0-1)
+    * @param [in] blend Si se suaviza 0-sin suavizado; 1-suavizado
+    * @return Código de error
     */
     int WeldingSetVoltage(int ioType, double voltage, int AOIndex, int blend);
 
-设置摆动参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer los parámetros de oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: Java SDK-v1.0.5-3.8.2
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置摆动参数
-    * @param [in] weaveNum 摆焊参数配置编号
-    * @param [in] weaveType 摆动类型 0-平面三角波摆动；1-垂直L型三角波摆动；2-顺时针圆形摆动；3-逆时针圆形摆动；4-平面正弦波摆动；5-垂直L型正弦波摆动；6-垂直三角波摆动；7-垂直正弦波摆动
-    * @param [in] weaveFrequency 摆动频率(Hz)
-    * @param [in] weaveIncStayTime 等待模式 0-周期不包含等待时间；1-周期包含等待时间
-    * @param [in] weaveRange 摆动幅度(mm)
-    * @param [in] weaveLeftRange 垂直三角摆动左弦长度(mm)
-    * @param [in] weaveRightRange 垂直三角摆动右弦长度(mm)
-    * @param [in] additionalStayTime 垂直三角摆动垂三角点停留时间(mm)
-    * @param [in] weaveLeftStayTime 摆动左停留时间(ms)
-    * @param [in] weaveRightStayTime 摆动右停留时间(ms)
-    * @param [in] weaveCircleRadio 圆形摆动-回调比率(0-100%)
-    * @param [in] weaveStationary 摆动位置等待，0-等待时间内位置继续移动；1-等待时间内位置静止
-    * @param [in] weaveYawAngle 摆动方向方位角(绕摆动Z轴旋转)，单位°
-    * @param [in] weaveRotAngle 摆动方向方位角(绕摆动X轴旋转)，单位°
-    * @return 错误码
+    * @brief Establecer los parámetros de oscilación
+    * @param [in] weaveNum Número de configuración de los parámetros de oscilación de soldadura
+    * @param [in] weaveType Tipo de oscilación 0-oscilación triangular plana; 1-oscilación triangular en L vertical; 2-oscilación circular en sentido horario; 3-oscilación circular en sentido antihorario; 4-oscilación sinusoidal plana; 5-oscilación sinusoidal en L vertical; 6-oscilación triangular vertical; 7-oscilación sinusoidal vertical
+    * @param [in] weaveFrequency Frecuencia de oscilación (Hz)
+    * @param [in] weaveIncStayTime Modo de espera 0-el ciclo no incluye el tiempo de espera; 1-el ciclo incluye el tiempo de espera
+    * @param [in] weaveRange Amplitud de oscilación (mm)
+    * @param [in] weaveLeftRange Longitud del lado izquierdo de la oscilación triangular vertical (mm)
+    * @param [in] weaveRightRange Longitud del lado derecho de la oscilación triangular vertical (mm)
+    * @param [in] additionalStayTime Tiempo de permanencia en el vértice de la oscilación triangular vertical (mm)
+    * @param [in] weaveLeftStayTime Tiempo de permanencia izquierdo de la oscilación (ms)
+    * @param [in] weaveRightStayTime Tiempo de permanencia derecho de la oscilación (ms)
+    * @param [in] weaveCircleRadio Oscilación circular - relación de retorno (0-100%)
+    * @param [in] weaveStationary Espera en la posición de oscilación, 0-la posición continúa moviéndose durante el tiempo de espera; 1-la posición permanece estática durante el tiempo de espera
+    * @param [in] weaveYawAngle Ángulo de orientación de la dirección de oscilación (rotación alrededor del eje Z de oscilación), unidad °
+    * @param [in] weaveRotAngle Ángulo de orientación de la dirección de oscilación (rotación alrededor del eje X de oscilación), unidad °
+    * @return Código de error
     */
     int WeaveSetPara(int weaveNum, int weaveType, double weaveFrequency, int weaveIncStayTime, double weaveRange, double weaveLeftRange, double weaveRightRange, int additionalStayTime, int weaveLeftStayTime, int weaveRightStayTime, int weaveCircleRadio, int weaveStationary, double weaveYawAngle,double weaveRotAngle)
 
-设置焊接参数代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración de los parámetros de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     public static int TestSetWeldParam(Robot robot) {
-        // 1. 设置焊接工艺参数
+        // 1. Establecer los parámetros del proceso de soldadura
         WeldingProcessParam para1 = new WeldingProcessParam(177, 27, 1000, 178, 28, 176, 26, 1000);
         WeldingProcessParam para2 = new WeldingProcessParam(188, 28, 555, 199, 29, 133, 23, 333);
         robot.WeldingSetProcessParam(1, para1);
         robot.WeldingSetProcessParam(2, para2);
 
-        // 2. 获取并打印第1组参数
+        // 2. Obtener e imprimir el grupo de parámetros 1
         WeldingProcessParam param = new WeldingProcessParam(0, 0, 0, 0, 0, 0, 0, 0);
         robot.WeldingGetProcessParam(1, param);
         System.out.println("the Num 1 process param is "
@@ -157,7 +157,7 @@
                 + param.weldVoltage + " " + param.endCurrent + " "
                 + param.endVoltage + " " + param.endTime);
 
-        // 3. 获取并打印第2组参数
+        // 3. Obtener e imprimir el grupo de parámetros 2
         robot.WeldingGetProcessParam(2, param);
         System.out.println("the Num 2 process param is "
                 + param.startCurrent + " " + param.startVoltage + " "
@@ -165,7 +165,7 @@
                 + param.weldVoltage + " " + param.endCurrent + " "
                 + param.endVoltage + " " + param.endTime);
 
-        // 4. 设置电流/电压关系并打印返回值
+        // 4. Establecer la relación corriente/voltaje e imprimir el valor de retorno
         WeldCurrentAORelation rela1 = new WeldCurrentAORelation(0, 400, 0, 10, 0);
         int rtn = robot.WeldingSetCurrentRelation(rela1);
         System.out.println("WeldingSetCurrentRelation rtn is: " + rtn);
@@ -174,7 +174,7 @@
         rtn = robot.WeldingSetVoltageRelation(rela2);
         System.out.println("WeldingSetVoltageRelation rtn is: " + rtn);
 
-        // 5. 获取并打印电流关系
+        // 5. Obtener e imprimir la relación de corriente
         WeldCurrentAORelation rela3 = new WeldCurrentAORelation(0, 0, 0, 0, 0);
         rtn = robot.WeldingGetCurrentRelation(rela3);
         System.out.println("WeldingGetCurrentRelation rtn is: " + rtn);
@@ -183,7 +183,7 @@
                 + " output vol min " + rela3.outputVoltageMin
                 + " output vol max " + rela3.outputVoltageMax);
 
-        // 6. 获取并打印电压关系
+        // 6. Obtener e imprimir la relación de voltaje
         WeldVoltageAORelation rela4 = new WeldVoltageAORelation(0, 0, 0, 0, 0);
         rtn = robot.WeldingGetVoltageRelation(rela4);
         System.out.println("WeldingGetVoltageRelation rtn is: " + rtn);
@@ -192,36 +192,36 @@
                 + " output vol min " + rela4.outputVoltageMin
                 + " output vol max " + rela4.outputVoltageMax);
 
-        // 7. 设置电流/电压并打印返回值
+        // 7. Establecer corriente/voltaje e imprimir el valor de retorno
         rtn = robot.WeldingSetCurrent(0, 100, 0, 0);
         System.out.println("WeldingSetCurrent rtn is: " + rtn);
 
-        robot.Sleep(3000);  // 对应 this_thread::sleep_for(chrono::seconds(3))
+        robot.Sleep(3000);  // Equivale a this_thread::sleep_for(chrono::seconds(3))
 
         rtn = robot.WeldingSetVoltage(0, 10, 0, 0);
         System.out.println("WeldingSetVoltage rtn is: " + rtn);
 
-        // 8. 设置摆动参数
+        // 8. Establecer los parámetros de oscilación
         rtn = robot.WeaveSetPara(0, 0, 2.000000, 0, 10.000000, 0.000000, 0.000000, 0, 0, 0, 0, 0, 60.000000,0);
         System.out.println("rtn is: " + rtn);
 
         robot.WeaveOnlineSetPara(0, 0, 1, 0, 20, 0, 0, 0, 0);
 
-        // 9. 设置断弧检测和重焊参数
+        // 9. Establecer los parámetros de detección de interrupción de arco y de resoldadura
         rtn = robot.WeldingSetCheckArcInterruptionParam(1, 200);
         System.out.println("WeldingSetCheckArcInterruptionParam  " + rtn);
 
         rtn = robot.WeldingSetReWeldAfterBreakOffParam(1, 5.7, 98.2, 0);
         System.out.println("WeldingSetReWeldAfterBreakOffParam  " + rtn);
 
-        // 10. 获取并打印断弧检测参数
+        // 10. Obtener e imprimir los parámetros de detección de interrupción de arco
         List<Integer> inter = robot.WeldingGetCheckArcInterruptionParam();
         int checkEnable = inter.get(0);
         int arcInterruptTimeLength = inter.get(1);
         System.out.println("WeldingGetCheckArcInterruptionParam checkEnable " + checkEnable
                 + "  arcInterruptTimeLength " + arcInterruptTimeLength);
 
-        // 11. 获取并打印重焊参数（返回 List<Number>）
+        // 11. Obtener e imprimir los parámetros de resoldadura (devuelve List<Number>)
         List<Number> num = robot.WeldingGetReWeldAfterBreakOffParam();
         int enable = num.get(0).intValue();
         double length = num.get(1).doubleValue();
@@ -230,10 +230,10 @@
         System.out.printf("WeldingGetReWeldAfterBreakOffParam enable = %d, length = %f, velocity = %f, moveType = %d%n",
                 enable, length, velocity, moveType);
 
-        // 12. 设置扩展 DO 并循环控制
+        // 12. Establecer la DO extendida y controlar cíclicamente
         robot.SetWeldMachineCtrlModeExtDoNum(17);
         for (int i = 0; i < 5; i++) {
-            int[] mode = new int[1];   // 用于接收输出值
+            int[] mode = new int[1];   // Para recibir el valor de salida
 
             robot.SetWeldMachineCtrlMode(0);
             rtn = robot.GetWeldMachineCtrlMode(mode);
@@ -257,229 +257,229 @@
         return 0;
     }
 
-即时设置摆动参数
-++++++++++++++++++++++++++++++++++
+Establecer los parámetros de oscilación en tiempo real
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 即时设置摆动参数
-    * @param [in] weaveNum 摆焊参数配置编号
-    * @param [in]weaveType 摆动类型 0-平面三角波摆动；1-垂直L型三角波摆动；2-顺时针圆形摆动；3-逆时针圆形摆动；4-平面正弦波摆动；5-垂直L型正弦波摆动；6-垂直三角波摆动；7-垂直正弦波摆动
-    * @param [in]weaveFrequency 摆动频率(Hz)
-    * @param [in]weaveIncStayTime 等待模式 0-周期不包含等待时间；1-周期包含等待时间
-    * @param [in]weaveRange 摆动幅度(mm)
-    * @param [in]weaveLeftStayTime 摆动左停留时间(ms)
-    * @param [in]weaveRightStayTime 摆动右停留时间(ms)
-    * @param [in]weaveCircleRadio 圆形摆动-回调比率(0-100%)
-    * @param [in]weaveStationary 摆动位置等待，0-等待时间内位置继续移动；1-等待时间内位置静止
-    * @return 错误码
+    * @brief Establecer los parámetros de oscilación en tiempo real
+    * @param [in] weaveNum Número de configuración de los parámetros de oscilación de soldadura
+    * @param [in]weaveType Tipo de oscilación 0-oscilación triangular plana; 1-oscilación triangular en L vertical; 2-oscilación circular en sentido horario; 3-oscilación circular en sentido antihorario; 4-oscilación sinusoidal plana; 5-oscilación sinusoidal en L vertical; 6-oscilación triangular vertical; 7-oscilación sinusoidal vertical
+    * @param [in]weaveFrequency Frecuencia de oscilación (Hz)
+    * @param [in]weaveIncStayTime Modo de espera 0-el ciclo no incluye el tiempo de espera; 1-el ciclo incluye el tiempo de espera
+    * @param [in]weaveRange Amplitud de oscilación (mm)
+    * @param [in]weaveLeftStayTime Tiempo de permanencia izquierdo de la oscilación (ms)
+    * @param [in]weaveRightStayTime Tiempo de permanencia derecho de la oscilación (ms)
+    * @param [in]weaveCircleRadio Oscilación circular - relación de retorno (0-100%)
+    * @param [in]weaveStationary Espera en la posición de oscilación, 0-la posición continúa moviéndose durante el tiempo de espera; 1-la posición permanece estática durante el tiempo de espera
+    * @return Código de error
     */
     int WeaveOnlineSetPara(int weaveNum, int weaveType, double weaveFrequency, int weaveIncStayTime, double weaveRange, int weaveLeftStayTime, int weaveRightStayTime, int weaveCircleRadio, int weaveStationary);
 
-设置机器人焊接电弧意外中断检测参数
-++++++++++++++++++++++++++++++++++
+Establecer los parámetros de detección de interrupción accidental del arco de soldadura del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 设置机器人焊接电弧意外中断检测参数
-    * @param [in] checkEnable 是否使能检测；0-不使能；1-使能
-    * @param [in] arcInterruptTimeLength 电弧中断确认时长(ms)
-    * @return 错误码 
+    * @brief Establecer los parámetros de detección de interrupción accidental del arco de soldadura del robot
+    * @param [in] checkEnable Si se habilita la detección; 0-no habilitar; 1-habilitar
+    * @param [in] arcInterruptTimeLength Duración de confirmación de interrupción del arco (ms)
+    * @return Código de error 
     */
     int WeldingSetCheckArcInterruptionParam(int checkEnable, int arcInterruptTimeLength);
 
-获取机器人焊接电弧意外中断检测参数
-++++++++++++++++++++++++++++++++++
+Obtener los parámetros de detección de interrupción accidental del arco de soldadura del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 获取机器人焊接电弧意外中断检测参数
-    * @return List[0]:错误码; List[1]:double 是否使能检测；0-不使能；1-使能; List[2]:电弧中断确认时长(ms) 
+    * @brief Obtener los parámetros de detección de interrupción accidental del arco de soldadura del robot
+    * @return List[0]:código de error; List[1]:double si se habilita la detección; 0-no habilitar; 1-habilitar; List[2]:duración de confirmación de interrupción del arco (ms) 
     */
     List<Integer> WeldingGetCheckArcInterruptionParam();
 
-设置机器人焊接中断恢复参数
-++++++++++++++++++++++++++++++++++
+Establecer los parámetros de recuperación de interrupción de soldadura del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 设置机器人焊接中断恢复参数
-    * @param [in] enable 是否使能焊接中断恢复
-    * @param [in] length 焊缝重叠距离(mm)
-    * @param [in] velocity 机器人回到再起弧点速度百分比(0-100)
-    * @param [in] moveType 机器人运动到再起弧点方式；0-LIN；1-PTP
-    * @return 错误码 
+    * @brief Establecer los parámetros de recuperación de interrupción de soldadura del robot
+    * @param [in] enable Si se habilita la recuperación de interrupción de soldadura
+    * @param [in] length Distancia de solapamiento de la soldadura (mm)
+    * @param [in] velocity Porcentaje de velocidad del robot para volver al punto de reinicio de arco (0-100)
+    * @param [in] moveType Modo de movimiento del robot al punto de reinicio de arco; 0-LIN; 1-PTP
+    * @return Código de error 
     */
     int WeldingSetReWeldAfterBreakOffParam(int enable, double length, double velocity, int moveType);
 
-获取机器人焊接中断恢复参数
-++++++++++++++++++++++++++++++++++
+Obtener los parámetros de recuperación de interrupción de soldadura del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 获取机器人焊接中断恢复参数
-    * @return List[0]:错误码; List[1]:int 是否使能焊接中断恢复; List[2]:double 焊缝重叠距离(mm);
-    * @return List[3]:double 机器人回到再起弧点速度百分比(0-100);List[4]:int 机器人运动到再起弧点方式；0-LIN；1-PTP 
+    * @brief Obtener los parámetros de recuperación de interrupción de soldadura del robot
+    * @return List[0]:código de error; List[1]:int si se habilita la recuperación de interrupción de soldadura; List[2]:double distancia de solapamiento de la soldadura (mm);
+    * @return List[3]:double porcentaje de velocidad del robot para volver al punto de reinicio de arco (0-100);List[4]:int modo de movimiento del robot al punto de reinicio de arco; 0-LIN; 1-PTP 
     */
     List<Number> WeldingGetReWeldAfterBreakOffParam();
 
-设置焊机控制模式
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el modo de control de la máquina de soldar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置焊机控制模式扩展DO端口
-    * @param DONum 焊机控制模式DO端口(0-127)
-    * @return 错误码
+    * @brief Establecer el puerto DO extendido del modo de control de la máquina de soldar
+    * @param DONum Puerto DO del modo de control de la máquina de soldar (0-127)
+    * @return Código de error
     */
     public int SetWeldMachineCtrlModeExtDoNum(int DONum)
 
-设置焊机控制模式
-++++++++++++++++++++++++++++++++++
+Establecer el modo de control de la máquina de soldar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置焊机控制模式
-    * @param mode 焊机控制模式; 0-直流一元模式；1-脉冲一元模式；2-JOB模式；3-近控模式；4-分别模式；5-CC/CV模式；6-TIG；7-CMT
-    * @param ioType 控制类型；0-控制箱IO;1-数字通信协议(UDP);2-数字通信协议(ModbusTCP)
-    * @return 错误码* @return 错误码
+    * @brief Establecer el modo de control de la máquina de soldar
+    * @param mode Modo de control de la máquina de soldar; 0-modo de un solo parámetro de CC; 1-modo de un solo parámetro de pulso; 2-modo JOB; 3-modo de control cercano; 4-modo separado; 5-modo CC/CV; 6-TIG; 7-CMT
+    * @param ioType Tipo de control; 0-IO de la caja de control; 1-protocolo de comunicación digital (UDP); 2-protocolo de comunicación digital (ModbusTCP)
+    * @return Código de error
     */
     public int SetWeldMachineCtrlMode(int mode, int ioType)
 
-获取焊机控制模式
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el modo de control de la máquina de soldar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 获取焊机控制模式
-    * @param mode 焊机控制模式;0-直流一元模式；1-脉冲一元模式；2-JOB模式；3-近控模式；4-分别模式；5-CC/CV模式；6-TIG；7-CMT
-    * @return 错误码
+    * @brief Obtener el modo de control de la máquina de soldar
+    * @param mode Modo de control de la máquina de soldar; 0-modo de un solo parámetro de CC; 1-modo de un solo parámetro de pulso; 2-modo JOB; 3-modo de control cercano; 4-modo separado; 5-modo CC/CV; 6-TIG; 7-CMT
+    * @return Código de error
     */
     public int GetWeldMachineCtrlMode(int[] mode)
 
-焊接开始
-++++++++++++++++++++++++++++++++++
+Inicio de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 焊接开始
-    * @param [in] ioType io类型 0-控制器IO； 1-扩展IO
-    * @param [in] arcNum 焊机配置文件编号
-    * @param [in] timeout 起弧超时时间
-    * @return 错误码
+    * @brief Inicio de soldadura
+    * @param [in] ioType Tipo de io 0-IO del controlador;  1-IO extendida
+    * @param [in] arcNum Número del archivo de configuración de la máquina de soldar
+    * @param [in] timeout Tiempo de espera de inicio de arco
+    * @return Código de error
     */
     int ARCStart(int ioType, int arcNum, int timeout);
 
-焊接结束
-++++++++++++++++++++++++++++++++++
+Fin de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 焊接结束
-    * @param [in] ioType io类型 0-控制器IO； 1-扩展IO
-    * @param [in] arcNum 焊机配置文件编号
-    * @param [in] timeout 熄弧超时时间
-    * @return 错误码
+    * @brief Fin de soldadura
+    * @param [in] ioType Tipo de io 0-IO del controlador;  1-IO extendida
+    * @param [in] arcNum Número del archivo de configuración de la máquina de soldar
+    * @param [in] timeout Tiempo de espera de extinción de arco
+    * @return Código de error
     */
     int ARCEnd(int ioType, int arcNum, int timeout);
 
-摆动开始
-++++++++++++++++++++++++++++++++++
+Inicio de oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 摆动开始
-    * @param [in] weaveNum 摆焊参数配置编号
-    * @return 错误码
+    * @brief Inicio de oscilación
+    * @param [in] weaveNum Número de configuración de los parámetros de oscilación de soldadura
+    * @return Código de error
     */
     int WeaveStart(int weaveNum);
 
-摆动结束
-++++++++++++++++++++++++++++++++++
+Fin de oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 摆动结束
-    * @param [in] weaveNum 摆焊参数配置编号
-    * @return 错误码
+    * @brief Fin de oscilación
+    * @param [in] weaveNum Número de configuración de los parámetros de oscilación de soldadura
+    * @return Código de error
     */
     int WeaveEnd(int weaveNum);
 
-正向送丝
-++++++++++++++++++++++++++++++++++
+Alimentación de alambre hacia adelante
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 正向送丝
-    * @param [in] ioType io类型  0-控制器IO；1-扩展IO
-    * @param [in] wireFeed 送丝控制  0-停止送丝；1-送丝
-    * @return 错误码
+    * @brief Alimentación de alambre hacia adelante
+    * @param [in] ioType Tipo de io  0-IO del controlador; 1-IO extendida
+    * @param [in] wireFeed Control de alimentación de alambre  0-detener alimentación de alambre; 1-alimentar alambre
+    * @return Código de error
     */
     int SetForwardWireFeed(int ioType, int wireFeed); 	
 
-反向送丝
-++++++++++++++++++++++++++++++++++
+Alimentación de alambre hacia atrás
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 反向送丝
-    * @param [in] ioType io类型  0-控制器IO；1-扩展IO
-    * @param [in] wireFeed 送丝控制  0-停止送丝；1-送丝
-    * @return 错误码
+    * @brief Alimentación de alambre hacia atrás
+    * @param [in] ioType Tipo de io  0-IO del controlador; 1-IO extendida
+    * @param [in] wireFeed Control de alimentación de alambre  0-detener alimentación de alambre; 1-alimentar alambre
+    * @return Código de error
     */
     int SetReverseWireFeed(int ioType, int wireFeed);
 
-送气
-++++++++++++++++++++++++++++++++++
+Suministro de gas
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 送气
-    * @param [in] ioType io类型  0-控制器IO；1-扩展IO
-    * @param [in] airControl 送气控制  0-停止送气；1-送气
-    * @return 错误码
+    * @brief Suministro de gas
+    * @param [in] ioType Tipo de io  0-IO del controlador; 1-IO extendida
+    * @param [in] airControl Control de suministro de gas  0-detener suministro de gas; 1-suministrar gas
+    * @return Código de error
     */
     int SetAspirated(int ioType, int airControl);
 
-设置机器人焊接中断后恢复焊接
-++++++++++++++++++++++++++++++++++
+Establecer la recuperación de soldadura tras la interrupción de soldadura del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 设置机器人焊接中断后恢复焊接
-    * @return 错误码 
+    * @brief Establecer la recuperación de soldadura tras la interrupción de soldadura del robot
+    * @return Código de error 
     */
     int WeldingStartReWeldAfterBreakOff();
 
-设置机器人焊接中断后退出焊接
-++++++++++++++++++++++++++++++++++
+Establecer la salida de soldadura tras la interrupción de soldadura del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 设置机器人焊接中断后退出焊接
-    * @return 错误码 
+    * @brief Establecer la salida de soldadura tras la interrupción de soldadura del robot
+    * @return Código de error 
     */
     int WeldingAbortWeldAfterBreakOff();
 
-机器人焊接控制代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de control de soldadura del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -506,40 +506,40 @@
         return 0;
     }
 
-段焊开始
-++++++++++++++++++++++++++++++++++
+Inicio de soldadura por segmentos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 段焊开始
-    * @param [in] startDesePos 起始点笛卡尔位置
-    * @param [in] endDesePos 结束点笛卡尔位姿
-    * @param [in] startJPos 起始点关节位姿
-    * @param [in] endJPos 结束点关节位姿
-    * @param [in] weldLength 焊接段长度(mm)
-    * @param [in] noWeldLength 非焊接段长度(mm)
-    * @param [in] weldIOType 焊接IO类型(0-控制箱IO；1-扩展IO)
-    * @param [in] arcNum 焊机配置文件编号
-    * @param [in] weldTimeout 起/收弧超时时间
-    * @param [in] isWeave 是否摆动
-    * @param [in] weaveNum 摆焊参数配置编号
-    * @param [in] tool 工具号
-    * @param [in] user 工件号
-    * @param [in] vel  速度百分比，范围[0~100]
-    * @param [in] acc  加速度百分比，范围[0~100],暂不开放
-    * @param [in] ovl  速度缩放因子，范围[0~100]
-    * @param [in] blendR [-1.0]-运动到位(阻塞)，[0~1000.0]-平滑半径(非阻塞)，单位mm
-    * @param [in] epos  扩展轴位置，单位mm
-    * @param [in] search  0-不焊丝寻位，1-焊丝寻位
-    * @param [in] offset_flag  0-不偏移，1-基坐标系/工件坐标系下偏移，2-工具坐标系下偏移
-    * @param [in] offset_pos  位姿偏移量
-    * @return 错误码 
+    * @brief Inicio de soldadura por segmentos
+    * @param [in] startDesePos Posición cartesiana del punto inicial
+    * @param [in] endDesePos Pose cartesiana del punto final
+    * @param [in] startJPos Pose de articulaciones del punto inicial
+    * @param [in] endJPos Pose de articulaciones del punto final
+    * @param [in] weldLength Longitud del segmento de soldadura (mm)
+    * @param [in] noWeldLength Longitud del segmento sin soldadura (mm)
+    * @param [in] weldIOType Tipo de IO de soldadura (0-IO de la caja de control; 1-IO extendida)
+    * @param [in] arcNum Número del archivo de configuración de la máquina de soldar
+    * @param [in] weldTimeout Tiempo de espera de inicio/cierre de arco
+    * @param [in] isWeave Si oscila
+    * @param [in] weaveNum Número de configuración de los parámetros de oscilación de soldadura
+    * @param [in] tool Número de herramienta
+    * @param [in] user Número de pieza
+    * @param [in] vel  Porcentaje de velocidad, rango [0~100]
+    * @param [in] acc  Porcentaje de aceleración, rango [0~100], aún no disponible
+    * @param [in] ovl  Factor de escala de velocidad, rango [0~100]
+    * @param [in] blendR [-1.0]-movimiento en posición (bloqueante), [0~1000.0]-radio de suavizado (no bloqueante), unidad mm
+    * @param [in] epos  Posición del eje extendido, unidad mm
+    * @param [in] search  0-sin búsqueda de posición de alambre de soldadura, 1-búsqueda de posición de alambre de soldadura
+    * @param [in] offset_flag  0-sin desplazamiento, 1-desplazamiento en el sistema de coordenadas base/de pieza, 2-desplazamiento en el sistema de coordenadas de herramienta
+    * @param [in] offset_pos  Cantidad de desplazamiento de la pose
+    * @return Código de error 
     */
     int SegmentWeldStart(DescPose startDesePos, DescPose endDesePos, JointPos startJPos, JointPos endJPos, double weldLength, double noWeldLength, int weldIOType,int arcNum, int weldTimeout, boolean isWeave, int weaveNum, int tool, int user, double vel, double acc, double ovl, double blendR, ExaxisPos epos, int search, int offset_flag, DescPose offset_pos);
 
-机器人段焊代码示例
-++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de soldadura por segmentos del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -564,73 +564,73 @@
         return 0;
     }
 
-仿真摆动开始
-++++++++++++++++++++++++++++++++++
+Inicio de oscilación de simulación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 仿真摆动开始
-    * @param [in] weaveNum  摆动参数编号
-    * @return 错误码 
+    * @brief Inicio de oscilación de simulación
+    * @param [in] weaveNum  Número de parámetros de oscilación
+    * @return Código de error 
     */
     int WeaveStartSim(int weaveNum);
 
-仿真摆动结束
-++++++++++++++++++++++++++++++++++
+Fin de oscilación de simulación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 仿真摆动结束
-    * @param [in] weaveNum  摆动参数编号
-    * @return 错误码 
+    * @brief Fin de oscilación de simulación
+    * @param [in] weaveNum  Número de parámetros de oscilación
+    * @return Código de error 
     */
     int WeaveEndSim(int weaveNum);
 
-开始轨迹检测预警(不运动)
-++++++++++++++++++++++++++++++++++
+Iniciar la alerta de detección de trayectoria (sin movimiento)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 开始轨迹检测预警(不运动)
-    * @param [in] weaveNum   摆动参数编号
-    * @return 错误码 
+    * @brief Iniciar la alerta de detección de trayectoria (sin movimiento)
+    * @param [in] weaveNum   Número de parámetros de oscilación
+    * @return Código de error 
     */
     int WeaveInspectStart(int weaveNum);
 
-结束轨迹检测预警(不运动)
-++++++++++++++++++++++++++++++++++
+Finalizar la alerta de detección de trayectoria (sin movimiento)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 结束轨迹检测预警(不运动)
-    * @param [in] weaveNum   摆动参数编号
-    * @return 错误码 
+    * @brief Finalizar la alerta de detección de trayectoria (sin movimiento)
+    * @param [in] weaveNum   Número de parámetros de oscilación
+    * @return Código de error 
     */
     int WeaveInspectEnd(int weaveNum);
 
-摆动渐变开始
-++++++++++++++++++++++++++++++++++++++++++++++++++
+Inicio del cambio gradual de oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: Java SDK-v1.0.5-3.8.2
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  摆动渐变开始
-    * @param  [in] weaveChangeFlag 1-变摆动参数；2-变摆动参数+焊接速度
-    * @param  [in] weaveNum 摆动编号
-    * @param  [in] velStart 焊接开始速度，(cm/min)
-    * @param  [in] velEnd 焊接结束速度，(cm/min)
-    * @return 错误码
+    * @brief  Inicio del cambio gradual de oscilación
+    * @param  [in] weaveChangeFlag 1-cambiar parámetros de oscilación; 2-cambiar parámetros de oscilación + velocidad de soldadura
+    * @param  [in] weaveNum Número de oscilación
+    * @param  [in] velStart Velocidad de inicio de soldadura, (cm/min)
+    * @param  [in] velEnd Velocidad de fin de soldadura, (cm/min)
+    * @return Código de error
     */
     int WeaveChangeStart(int weaveChangeFlag, int weaveNum, double velStart, double velEnd)
 
-机器人摆动渐变焊接代码示例
-+++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de soldadura con cambio gradual de oscilación del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -669,106 +669,106 @@
         return 0;
     }
 
-摆动渐变结束
-++++++++++++++++++++++++++++++++++++++++++++++++++
+Fin del cambio gradual de oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.2-3.7.9
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 摆动渐变结束
-    * @return 错误码
+    * @brief Fin del cambio gradual de oscilación
+    * @return Código de error
     */
     int WeaveChangeEnd(); 
 
-扩展IO-配置焊机气体检测信号
-++++++++++++++++++++++++++++++++++
+IO extendida - Configurar la señal de detección de gas de la máquina de soldar
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 扩展IO-配置焊机气体检测信号
-    * @param [in] DONum  气体检测信号扩展DO编号
-    * @return 错误码 
+    * @brief IO extendida - Configurar la señal de detección de gas de la máquina de soldar
+    * @param [in] DONum  Número DO extendido de la señal de detección de gas
+    * @return Código de error 
     */
     int SetAirControlExtDoNum(int DONum);
 
-扩展IO-配置焊机起弧信号
-++++++++++++++++++++++++++++++++++
+IO extendida - Configurar la señal de inicio de arco de la máquina de soldar
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 扩展IO-配置焊机起弧信号
-    * @param [in] DONum  焊机起弧信号扩展DO编号
-    * @return 错误码 
+    * @brief IO extendida - Configurar la señal de inicio de arco de la máquina de soldar
+    * @param [in] DONum  Número DO extendido de la señal de inicio de arco de la máquina de soldar
+    * @return Código de error 
     */
     int SetArcStartExtDoNum(int DONum);
 
-扩展IO-配置焊机反向送丝信号
-++++++++++++++++++++++++++++++++++
+IO extendida - Configurar la señal de alimentación de alambre hacia atrás de la máquina de soldar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 扩展IO-配置焊机反向送丝信号
-    * @param [in] DONum  反向送丝信号扩展DO编号
-    * @return 错误码 
+    * @brief IO extendida - Configurar la señal de alimentación de alambre hacia atrás de la máquina de soldar
+    * @param [in] DONum  Número DO extendido de la señal de alimentación de alambre hacia atrás
+    * @return Código de error 
     */
     int SetWireReverseFeedExtDoNum(int DONum);
 
-扩展IO-配置焊机正向送丝信号
-++++++++++++++++++++++++++++++++++
+IO extendida - Configurar la señal de alimentación de alambre hacia adelante de la máquina de soldar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 扩展IO-配置焊机正向送丝信号
-    * @param [in] DONum  正向送丝信号扩展DO编号
-    * @return 错误码 
+    * @brief IO extendida - Configurar la señal de alimentación de alambre hacia adelante de la máquina de soldar
+    * @param [in] DONum  Número DO extendido de la señal de alimentación de alambre hacia adelante
+    * @return Código de error 
     */
     int SetWireForwardFeedExtDoNum(int DONum);
 
-扩展IO-配置焊机起弧成功信号
-++++++++++++++++++++++++++++++++++
+IO extendida - Configurar la señal de inicio de arco exitoso de la máquina de soldar
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 扩展IO-配置焊机起弧成功信号
-    * @param [in] DINum  起弧成功信号扩展DI编号
-    * @return 错误码 
+    * @brief IO extendida - Configurar la señal de inicio de arco exitoso de la máquina de soldar
+    * @param [in] DINum  Número DI extendido de la señal de inicio de arco exitoso
+    * @return Código de error 
     */
     int SetArcDoneExtDiNum(int DINum);
 
-扩展IO-配置焊机准备信号
-++++++++++++++++++++++++++++++++++
+IO extendida - Configurar la señal de preparación de la máquina de soldar
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 扩展IO-配置焊机准备信号
-    * @param [in] DINum  焊机准备信号扩展DI编号
-    * @return 错误码 
+    * @brief IO extendida - Configurar la señal de preparación de la máquina de soldar
+    * @param [in] DINum  Número DI extendido de la señal de preparación de la máquina de soldar
+    * @return Código de error 
     */
     int SetWeldReadyExtDiNum(int DINum);
 
-扩展IO-配置焊接中断恢复信号
-++++++++++++++++++++++++++++++++++
+IO extendida - Configurar la señal de recuperación de interrupción de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 扩展IO-配置焊接中断恢复信号
-    * @param [in] reWeldDINum  焊接中断后恢复焊接信号扩展DI编号
-    * @param [in] abortWeldDINum  焊接中断后退出焊接信号扩展DI编号
-    * @return 错误码 
+    * @brief IO extendida - Configurar la señal de recuperación de interrupción de soldadura
+    * @param [in] reWeldDINum  Número DI extendido de la señal de recuperación de soldadura tras la interrupción
+    * @param [in] abortWeldDINum  Número DI extendido de la señal de salida de soldadura tras la interrupción
+    * @return Código de error 
     */
     int SetExtDIWeldBreakOffRecover(int reWeldDINum, int abortWeldDINum);
 
-设置扩展IO焊接信号代码示例
-+++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración de señales de soldadura de IO extendida
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -798,132 +798,132 @@
     }
 
 
-获取扩展DI功能配置
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener la configuración de funciones de DI extendida
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 获取扩展DI功能配置
-    * @param DIConfig 扩展DI输入配置；DIConfig[0]-焊机准备扩展DI端口；
-    * DIConfig[1]-起弧成功扩展DI端口；
-    * DIConfig[2]-焊接中断恢复扩展DI端口；
-    * DIConfig[3]-焊接中断退出扩展DI端口；
-    * DIConfig[4]-焊丝寻位成功扩展DI端口；
-    * DIConfig[5]-激光焊机运行状态扩展DI端口；
-    * DIConfig[6]-激光焊机故障状态扩展DI端口；
-    * DIConfig[7-15]-预留
-    * @return  错误码
+    * @brief Obtener la configuración de funciones de DI extendida
+    * @param DIConfig Configuración de entrada DI extendida; DIConfig[0]-puerto DI extendido de preparación de la máquina de soldar;
+    * DIConfig[1]-puerto DI extendido de inicio de arco exitoso;
+    * DIConfig[2]-puerto DI extendido de recuperación de interrupción de soldadura;
+    * DIConfig[3]-puerto DI extendido de salida de interrupción de soldadura;
+    * DIConfig[4]-puerto DI extendido de búsqueda de posición de alambre de soldadura exitosa;
+    * DIConfig[5]-puerto DI extendido del estado de funcionamiento de la máquina de soldadura láser;
+    * DIConfig[6]-puerto DI extendido del estado de fallo de la máquina de soldadura láser;
+    * DIConfig[7-15]-reservado
+    * @return  Código de error
     */
     public int GetExtDIConfig(int[] DIConfig)
 
-获取扩展DO功能配置
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener la configuración de funciones de DO extendida
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 获取扩展DO功能配置
-    * @param DOConfig 扩展DO输入配置；DOConfig[0]-焊机起弧扩展DO端口；
-    * DOConfig[1]-气体检测扩展DO端口；
-    * DOConfig[2]-正向送丝扩展DO端口；
-    * DOConfig[3]-反向送丝扩展DO端口；
-    * DOConfig[4]-焊丝寻位扩展DO端口；
-    * DOConfig[5]-焊机控制模式扩展DO端口；
-    * DOConfig[6]-激光焊机使能扩展DO端口；
-    * DOConfig[7]-激光焊机启动(出光)扩展DO端口；
-    * DOConfig[8]-激光焊机复位扩展DO端口；
-    * DOConfig[9-15]-预留
-    * @return  错误码
+    * @brief Obtener la configuración de funciones de DO extendida
+    * @param DOConfig Configuración de salida DO extendida; DOConfig[0]-puerto DO extendido de inicio de arco de la máquina de soldar;
+    * DOConfig[1]-puerto DO extendido de detección de gas;
+    * DOConfig[2]-puerto DO extendido de alimentación de alambre hacia adelante;
+    * DOConfig[3]-puerto DO extendido de alimentación de alambre hacia atrás;
+    * DOConfig[4]-puerto DO extendido de búsqueda de posición de alambre de soldadura;
+    * DOConfig[5]-puerto DO extendido del modo de control de la máquina de soldar;
+    * DOConfig[6]-puerto DO extendido de habilitación de la máquina de soldadura láser;
+    * DOConfig[7]-puerto DO extendido de inicio (emisión de luz) de la máquina de soldadura láser;
+    * DOConfig[8]-puerto DO extendido de reinicio de la máquina de soldadura láser;
+    * DOConfig[9-15]-reservado
+    * @return  Código de error
     */
     public int GetExtDOConfig(int[] DOConfig)
     
-电弧跟踪控制
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Control de seguimiento de arco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: Java SDK-v1.0.2-3.7.9
 
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 电弧跟踪控制
-    * @param [in] flag 开关，0-关；1-开
-    * @param [in] delaytime 滞后时间，单位ms
-    * @param [in] isLeftRight 左右偏差补偿
-    * @param [in] klr 左右调节系数(灵敏度)
-    * @param [in] tStartLr 左右开始补偿时间cyc
-    * @param [in] stepMaxLr 左右每次最大补偿量 mm
-    * @param [in] sumMaxLr 左右总计最大补偿量 mm
-    * @param [in] isUpLow 上下偏差补偿
-    * @param [in] kud 上下调节系数(灵敏度)
-    * @param [in] tStartUd 上下开始补偿时间cyc
-    * @param [in] stepMaxUd 上下每次最大补偿量 mm
-    * @param [in] sumMaxUd 上下总计最大补偿量
-    * @param [in] axisSelect 上下坐标系选择，0-摆动；1-工具；2-基座
-    * @param [in] referenceType 上下基准电流设定方式，0-反馈；1-常数
-    * @param [in] referSampleStartUd 上下基准电流采样开始计数(反馈)，cyc
-    * @param [in] referSampleCountUd 上下基准电流采样循环计数(反馈)，cyc
-    * @param [in] referenceCurrent 上下基准电流mA
-    * @param [in] offsetType 偏置跟踪类型，0-不偏置；1-采样；2-百分比
-    * @param [in] offsetParameter 偏置参数；采样(偏置采样开始时间，默认采一周期)；百分比(偏置百分比(-100 ~ 100))
-    * @return 错误码 
+    * @brief Control de seguimiento de arco
+    * @param [in] flag Interruptor, 0-apagado; 1-encendido
+    * @param [in] delaytime Tiempo de retardo, unidad ms
+    * @param [in] isLeftRight Compensación de desviación izquierda-derecha
+    * @param [in] klr Coeficiente de ajuste izquierda-derecha (sensibilidad)
+    * @param [in] tStartLr Tiempo de inicio de compensación izquierda-derecha cyc
+    * @param [in] stepMaxLr Compensación máxima por paso izquierda-derecha mm
+    * @param [in] sumMaxLr Compensación máxima total izquierda-derecha mm
+    * @param [in] isUpLow Compensación de desviación arriba-abajo
+    * @param [in] kud Coeficiente de ajuste arriba-abajo (sensibilidad)
+    * @param [in] tStartUd Tiempo de inicio de compensación arriba-abajo cyc
+    * @param [in] stepMaxUd Compensación máxima por paso arriba-abajo mm
+    * @param [in] sumMaxUd Compensación máxima total arriba-abajo
+    * @param [in] axisSelect Selección del sistema de coordenadas arriba-abajo, 0-oscilación; 1-herramienta; 2-base
+    * @param [in] referenceType Modo de configuración de la corriente de referencia arriba-abajo, 0-retroalimentación; 1-constante
+    * @param [in] referSampleStartUd Inicio del conteo de muestreo de la corriente de referencia arriba-abajo (retroalimentación), cyc
+    * @param [in] referSampleCountUd Conteo de ciclos de muestreo de la corriente de referencia arriba-abajo (retroalimentación), cyc
+    * @param [in] referenceCurrent Corriente de referencia arriba-abajo mA
+    * @param [in] offsetType Tipo de seguimiento de desplazamiento, 0-sin desplazamiento; 1-muestreo; 2-porcentaje
+    * @param [in] offsetParameter Parámetro de desplazamiento; muestreo (tiempo de inicio del muestreo de desplazamiento, por defecto se muestrea un ciclo); porcentaje (porcentaje de desplazamiento (-100 ~ 100))
+    * @return Código de error 
     */
     int ArcWeldTraceControl(int flag, double delaytime, int isLeftRight, double klr, double tStartLr, double stepMaxLr, double sumMaxLr, int isUpLow, double kud, double tStartUd, double stepMaxUd, double sumMaxUd, int axisSelect, int referenceType, double referSampleStartUd, double referSampleCountUd, double referenceCurrent,int offsetType, int offsetParameter);
 
-电弧跟踪AI通带选择
-++++++++++++++++++++++++++++++++++
+Selección del canal AI del seguimiento de arco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief  电弧跟踪AI通带选择
-    * @param  channel 电弧跟踪AI通带选择,[0-3]
-    * @return  错误码
+    * @brief  Selección del canal AI del seguimiento de arco
+    * @param  channel Selección del canal AI del seguimiento de arco, [0-3]
+    * @return  Código de error
     */
     public int ArcWeldTraceExtAIChannelConfig(int channel)
 
-电弧追踪 + 多层多道补偿开启
-++++++++++++++++++++++++++++++++++
+Inicio de seguimiento de arco + compensación de múltiples capas y pasadas
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 电弧追踪 + 多层多道补偿开启
-    * @return 错误码
+    * @brief Inicio de seguimiento de arco + compensación de múltiples capas y pasadas
+    * @return Código de error
     */
     public int ArcWeldTraceReplayStart()
 
-电弧追踪 + 多层多道补偿关闭
-++++++++++++++++++++++++++++++++++
+Fin de seguimiento de arco + compensación de múltiples capas y pasadas
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 电弧追踪 + 多层多道补偿关闭
-    * @return 错误码
+    * @brief Fin de seguimiento de arco + compensación de múltiples capas y pasadas
+    * @return Código de error
     */
     public int ArcWeldTraceReplayEnd()
 
-偏移量坐标变化-多层多道焊
-++++++++++++++++++++++++++++++++++
+Cambio de coordenadas de desplazamiento - Soldadura de múltiples capas y pasadas
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 偏移量坐标变化-多层多道焊
-    * @param pointO 基准点笛卡尔位姿
-    * @param pointX 基准点X向偏移方向点笛卡尔位姿
-    * @param pointZ 基准点Z向偏移方向点笛卡尔位姿
-    * @param dx x方向偏移量(mm)
-    * @param dz z方向偏移量(mm)
-    * @param dry 绕y轴偏移量(°)
-    * @param offset 计算结果偏移量
-    * @return 错误码
+    * @brief Cambio de coordenadas de desplazamiento - Soldadura de múltiples capas y pasadas
+    * @param pointO Pose cartesiana del punto de referencia
+    * @param pointX Pose cartesiana del punto de dirección de desplazamiento X del punto de referencia
+    * @param pointZ Pose cartesiana del punto de dirección de desplazamiento Z del punto de referencia
+    * @param dx Desplazamiento en la dirección x (mm)
+    * @param dz Desplazamiento en la dirección z (mm)
+    * @param dry Desplazamiento alrededor del eje y (°)
+    * @param offset Desplazamiento del resultado del cálculo
+    * @return Código de error
     */
     public int MultilayerOffsetTrsfToBase(DescTran pointO, DescTran pointX, DescTran pointZ, double dx, double dz, double dry, DescPose offset)
 
-多层多道焊电弧跟踪代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de seguimiento de arco para soldadura de múltiples capas y pasadas
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -1029,70 +1029,70 @@
         return 0;
     }
 
-电弧跟踪焊机电流反馈AI通道选择
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Selección del canal AI de retroalimentación de corriente de la máquina de soldar para el seguimiento de arco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.5-3.8.2
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 电弧跟踪焊机电流反馈AI通道选择
-    * @param  [in] channel 通道；0-扩展AI0；1-扩展AI1；2-扩展AI2；3-扩展AI3；4-控制箱AI0；5-控制箱AI1
-    * @return 错误码
+    * @brief Selección del canal AI de retroalimentación de corriente de la máquina de soldar para el seguimiento de arco
+    * @param  [in] channel Canal; 0-AI extendida 0; 1-AI extendida 1; 2-AI extendida 2; 3-AI extendida 3; 4-AI de la caja de control 0; 5-AI de la caja de control 1
+    * @return Código de error
     */
     int ArcWeldTraceAIChannelCurrent(int channel)
 
-电弧跟踪焊机电压反馈AI通道选择
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Selección del canal AI de retroalimentación de voltaje de la máquina de soldar para el seguimiento de arco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.5-3.8.2
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 电弧跟踪焊机电压反馈AI通道选择
-    * @param  [in] channel 通道；0-扩展AI0；1-扩展AI1；2-扩展AI2；3-扩展AI3；4-控制箱AI0；5-控制箱AI1
-    * @return 错误码
+    * @brief Selección del canal AI de retroalimentación de voltaje de la máquina de soldar para el seguimiento de arco
+    * @param  [in] channel Canal; 0-AI extendida 0; 1-AI extendida 1; 2-AI extendida 2; 3-AI extendida 3; 4-AI de la caja de control 0; 5-AI de la caja de control 1
+    * @return Código de error
     */
     int ArcWeldTraceAIChannelVoltage(int channel)
 
-电弧跟踪焊机电流反馈转换参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parámetros de conversión de retroalimentación de corriente de la máquina de soldar para el seguimiento de arco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.5-3.8.2
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 电弧跟踪焊机电流反馈转换参数
-    * @param [in] AILow AI通道下限，默认值0V，范围[0-10V]
-    * @param [in] AIHigh AI通道上限，默认值10V，范围[0-10V]
-    * @param [in] currentLow AI通道下限对应焊机电流值，默认值0V，范围[0-200V]
-    * @param [in] currentHigh AI通道上限对应焊机电流值，默认值100V，范围[0-200V]
-    * @return 错误码
+    * @brief Parámetros de conversión de retroalimentación de corriente de la máquina de soldar para el seguimiento de arco
+    * @param [in] AILow Límite inferior del canal AI, valor predeterminado 0V, rango [0-10V]
+    * @param [in] AIHigh Límite superior del canal AI, valor predeterminado 10V, rango [0-10V]
+    * @param [in] currentLow Valor de corriente de la máquina de soldar correspondiente al límite inferior del canal AI, valor predeterminado 0V, rango [0-200V]
+    * @param [in] currentHigh Valor de corriente de la máquina de soldar correspondiente al límite superior del canal AI, valor predeterminado 100V, rango [0-200V]
+    * @return Código de error
     */
     int ArcWeldTraceCurrentPara(double AILow, double AIHigh, double currentLow, double currentHigh)
 
-电弧跟踪焊机电压反馈转换参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parámetros de conversión de retroalimentación de voltaje de la máquina de soldar para el seguimiento de arco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.5-3.8.2
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 电弧跟踪焊机电压反馈转换参数
-    * @param [in] AILow AI通道下限，默认值0V，范围[0-10V]
-    * @param [in] AIHigh AI通道上限，默认值10V，范围[0-10V]
-    * @param [in] voltageLow AI通道下限对应焊机电压值，默认值0V，范围[0-200V]
-    * @param [in] voltageHigh AI通道上限对应焊机电压值，默认值100V，范围[0-200V]
-    * @return 错误码
+    * @brief Parámetros de conversión de retroalimentación de voltaje de la máquina de soldar para el seguimiento de arco
+    * @param [in] AILow Límite inferior del canal AI, valor predeterminado 0V, rango [0-10V]
+    * @param [in] AIHigh Límite superior del canal AI, valor predeterminado 10V, rango [0-10V]
+    * @param [in] voltageLow Valor de voltaje de la máquina de soldar correspondiente al límite inferior del canal AI, valor predeterminado 0V, rango [0-200V]
+    * @param [in] voltageHigh Valor de voltaje de la máquina de soldar correspondiente al límite superior del canal AI, valor predeterminado 100V, rango [0-200V]
+    * @return Código de error
     */
     int ArcWeldTraceVoltagePara(double AILow, double AIHigh, double voltageLow, double voltageHigh)
 
-电弧跟踪代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de seguimiento de arco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -1109,15 +1109,15 @@
 
         ExaxisPos exaxisPos = new ExaxisPos(0, 0, 0, 0);
         DescPose offdese = new DescPose(0, 0, 0, 0, 0, 0);
-        //起始运动到安全点
+        //Movimiento inicial al punto de seguridad
         robot.MoveJ(safejointPos, safedescPose, 1, 0, 5, 20, 100, exaxisPos, -1, 0, offdese);
 
         WeldCurrentAORelation current = new WeldCurrentAORelation(0, 495, 1, 10, 0);
         WeldVoltageAORelation voltage = new WeldVoltageAORelation(10, 45, 1, 10, 1);
-        robot.WeldingSetCurrentRelation(current);//电流与输出模拟量的关系
-        robot.WeldingSetVoltageRelation(voltage);//电压与输出模拟量的关系
-        robot.WeldingSetVoltage(0, 25, 1, 0);//设置电压
-        robot.WeldingSetCurrent(0, 260, 0, 0);//设置电流
+        robot.WeldingSetCurrentRelation(current);//Relación entre corriente y salida analógica
+        robot.WeldingSetVoltageRelation(voltage);//Relación entre voltaje y salida analógica
+        robot.WeldingSetVoltage(0, 25, 1, 0);//Establecer voltaje
+        robot.WeldingSetCurrent(0, 260, 0, 0);//Establecer corriente
 
         int rtn = robot.ArcWeldTraceAIChannelCurrent(4);
         System.out.println("ArcWeldTraceAIChannelCurrent rtn is " + rtn);
@@ -1143,28 +1143,28 @@
         robot.MoveJ(safejointPos, safedescPose, 1, 0, 20, 20, 100, exaxisPos, -1, 0, offdese);
     }
 
-设置焊丝寻位扩展IO端口
-++++++++++++++++++++++++++++++++++
+Establecer el puerto IO extendido de búsqueda de posición del alambre de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 设置焊丝寻位扩展IO端口
-    * @param [in] searchDoneDINum 焊丝寻位成功DO端口(0-127)
-    * @param [in] searchStartDONum 焊丝寻位启停控制DO端口(0-127)
-    * @return 错误码
+    * @brief Establecer el puerto IO extendido de búsqueda de posición del alambre de soldadura
+    * @param [in] searchDoneDINum Puerto DO de búsqueda de posición del alambre de soldadura exitosa (0-127)
+    * @param [in] searchStartDONum Puerto DO de control de inicio/parada de búsqueda de posición del alambre de soldadura (0-127)
+    * @return Código de error
     */
     int SetWireSearchExtDIONum(int searchDoneDINum, int searchStartDONum);
 
-示例程序
-++++++++++++++++++++++++++++++++++
+Programa de ejemplo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     private static void TestUDPWireSearch(Robot robot)
     {
         UDPComParam param = new UDPComParam("192.168.58.88", 2021, 2, 100, 3, 100, 1, 100, 10,0);
-        robot.ExtDevSetUDPComParam(param);//udp扩展轴通讯
+        robot.ExtDevSetUDPComParam(param);//comunicación del eje extendido UDP
 
         robot.SetWireSearchExtDIONum(0, 0);
 
@@ -1194,26 +1194,26 @@
         JointPos jointREF1B = new JointPos(82.117, -87.146, 116.470, -117.737, -93.145, -61.090);
 
         rtn0 = robot.WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-        robot.MoveL(jointREF0A, descREF0A, 1, 0, 100, 100, 100, -1, exaxisPos, 0, 0, offdese, 0, 100);  //起点
-        robot.MoveL(jointREF0B, descREF0B, 1, 0, 10, 100, 100, -1, exaxisPos, 1, 0, offdese, 0, 100);  //方向点
+        robot.MoveL(jointREF0A, descREF0A, 1, 0, 100, 100, 100, -1, exaxisPos, 0, 0, offdese, 0, 100);  //punto de inicio
+        robot.MoveL(jointREF0B, descREF0B, 1, 0, 10, 100, 100, -1, exaxisPos, 1, 0, offdese, 0, 100);  //punto de dirección
         rtn1 = robot.WireSearchWait("REF0");
         rtn2 = robot.WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
 
         rtn0 = robot.WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-        robot.MoveL(jointREF1A, descREF1A, 1, 0, 100, 100, 100, -1, exaxisPos, 0, 0, offdese, 0, 100);  //起点
-        robot.MoveL(jointREF1B, descREF1B, 1, 0, 10, 100, 100, -1, exaxisPos, 1, 0, offdese, 0, 100);  //方向点
+        robot.MoveL(jointREF1A, descREF1A, 1, 0, 100, 100, 100, -1, exaxisPos, 0, 0, offdese, 0, 100);  //punto de inicio
+        robot.MoveL(jointREF1B, descREF1B, 1, 0, 10, 100, 100, -1, exaxisPos, 1, 0, offdese, 0, 100);  //punto de dirección
         rtn1 = robot.WireSearchWait("REF1");
         rtn2 = robot.WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
 
         rtn0 = robot.WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-        robot.MoveL(jointREF0A, descREF0A, 1, 0, 100, 100, 100, -1, exaxisPos, 0, 0, offdese, 0, 100);  //起点
-        robot.MoveL(jointREF0B, descREF0B, 1, 0, 10, 100, 100, -1, exaxisPos, 1, 0, offdese, 0, 100);  //方向点
+        robot.MoveL(jointREF0A, descREF0A, 1, 0, 100, 100, 100, -1, exaxisPos, 0, 0, offdese, 0, 100);  //punto de inicio
+        robot.MoveL(jointREF0B, descREF0B, 1, 0, 10, 100, 100, -1, exaxisPos, 1, 0, offdese, 0, 100);  //punto de dirección
         rtn1 = robot.WireSearchWait("RES0");
         rtn2 = robot.WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
 
         rtn0 = robot.WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-        robot.MoveL(jointREF1A, descREF1A, 1, 0, 100, 100, 100, -1, exaxisPos, 0, 0, offdese, 0, 100);  //起点
-        robot.MoveL(jointREF1B, descREF1B, 1, 0, 10, 100, 100, -1, exaxisPos, 1, 0, offdese, 0, 100);  //方向点
+        robot.MoveL(jointREF1A, descREF1A, 1, 0, 100, 100, 100, -1, exaxisPos, 0, 0, offdese, 0, 100);  //punto de inicio
+        robot.MoveL(jointREF1B, descREF1B, 1, 0, 10, 100, 100, -1, exaxisPos, 1, 0, offdese, 0, 100);  //punto de dirección
         rtn1 = robot.WireSearchWait("RES1");
         rtn2 = robot.WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
 
@@ -1229,84 +1229,84 @@
         robot.PointsOffsetDisable();
     }
 
-焊丝寻位开始
-++++++++++++++++++++++++++++++++++
+Inicio de búsqueda de posición del alambre de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 焊丝寻位开始
-    * @param [in] refPos  1-基准点 0-接触点
-    * @param [in] searchVel   寻位速度 %
-    * @param [in] searchDis  寻位距离 mm
-    * @param [in] autoBackFlag 自动返回标志，0-不自动；-自动
-    * @param [in] autoBackVel  自动返回速度 %
-    * @param [in] autoBackDis  自动返回距离 mm
-    * @param [in] offectFlag  1-带偏移量寻位；0-示教点寻位
-    * @return 错误码 
+    * @brief Inicio de búsqueda de posición del alambre de soldadura
+    * @param [in] refPos  1-punto de referencia 0-punto de contacto
+    * @param [in] searchVel   Velocidad de búsqueda de posición %
+    * @param [in] searchDis  Distancia de búsqueda de posición mm
+    * @param [in] autoBackFlag Indicador de retorno automático, 0-no automático; 1-automático
+    * @param [in] autoBackVel  Velocidad de retorno automático %
+    * @param [in] autoBackDis  Distancia de retorno automático mm
+    * @param [in] offectFlag  1-búsqueda de posición con desplazamiento; 0-búsqueda de posición en punto de enseñanza
+    * @return Código de error 
     */
     int WireSearchStart(int refPos, double searchVel, int searchDis, int autoBackFlag, double autoBackVel, int autoBackDis, int offectFlag);
 
-焊丝寻位结束
-++++++++++++++++++++++++++++++++++
+Fin de búsqueda de posición del alambre de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 焊丝寻位结束
-    * @param [in] refPos  1-基准点 2-接触点
-    * @param [in] searchVel   寻位速度 %
-    * @param [in] searchDis  寻位距离 mm
-    * @param [in] autoBackFlag 自动返回标志，0-不自动；-自动
-    * @param [in] autoBackVel  自动返回速度 %
-    * @param [in] autoBackDis  自动返回距离 mm
-    * @param [in] offectFlag  1-带偏移量寻位；2-示教点寻位
-    * @return 错误码 
+    * @brief Fin de búsqueda de posición del alambre de soldadura
+    * @param [in] refPos  1-punto de referencia 2-punto de contacto
+    * @param [in] searchVel   Velocidad de búsqueda de posición %
+    * @param [in] searchDis  Distancia de búsqueda de posición mm
+    * @param [in] autoBackFlag Indicador de retorno automático, 0-no automático; 1-automático
+    * @param [in] autoBackVel  Velocidad de retorno automático %
+    * @param [in] autoBackDis  Distancia de retorno automático mm
+    * @param [in] offectFlag  1-búsqueda de posición con desplazamiento; 2-búsqueda de posición en punto de enseñanza
+    * @return Código de error 
     */
     int WireSearchEnd(int refPos, double searchVel, int searchDis, int autoBackFlag, double autoBackVel, int autoBackDis, int offectFlag);
 
-计算焊丝寻位偏移量
-++++++++++++++++++++++++++++++++++
+Calcular la cantidad de desplazamiento de la búsqueda de posición del alambre de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 计算焊丝寻位偏移量
-    * @param [in] seamType  焊缝类型
-    * @param [in] method   计算方法
-    * @param [in] varNameRef 基准点1-6，“#”表示无点变量
-    * @param [in] varNameRes 接触点1-6，“#”表示无点变量
-    * @param [out] offset 偏移位姿[x, y, z, a, b, c]及偏移方式
-    * @return 错误码 
+    * @brief Calcular la cantidad de desplazamiento de la búsqueda de posición del alambre de soldadura
+    * @param [in] seamType  Tipo de soldadura
+    * @param [in] method   Método de cálculo
+    * @param [in] varNameRef Punto de referencia 1-6, "#" indica que no hay variable de punto
+    * @param [in] varNameRes Punto de contacto 1-6, "#" indica que no hay variable de punto
+    * @param [out] offset Pose de desplazamiento [x, y, z, a, b, c] y modo de desplazamiento
+    * @return Código de error 
     */
     int GetWireSearchOffset(int seamType, int method, String[] varNameRef, String[] varNameRes, DescOffset offset);
 
-等待焊丝寻位完成
-++++++++++++++++++++++++++++++++++
+Esperar a que finalice la búsqueda de posición del alambre de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 等待焊丝寻位完成
-    * @return 错误码 
+    * @brief Esperar a que finalice la búsqueda de posición del alambre de soldadura
+    * @return Código de error 
     */
     int WireSearchWait(String name);
 
-焊丝寻位接触点写入数据库
-++++++++++++++++++++++++++++++++++
+Escribir el punto de contacto de la búsqueda de posición del alambre de soldadura en la base de datos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /** 
-    * @brief 焊丝寻位接触点写入数据库
-    * @param [in] varName  接触点名称 “RES0” ~ “RES99”
-    * @param [in] pos  接触点数据[x, y, x, a, b, c]
-    * @return 错误码 
+    * @brief Escribir el punto de contacto de la búsqueda de posición del alambre de soldadura en la base de datos
+    * @param [in] varName  Nombre del punto de contacto "RES0" ~ "RES99"
+    * @param [in] pos  Datos del punto de contacto [x, y, x, a, b, c]
+    * @return Código de error 
     */
     int SetPointToDatabase(String varName, DescPose pos);
 
-机器人焊丝寻位代码示例
-+++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de búsqueda de posición del alambre de soldadura del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -1344,26 +1344,26 @@
         JointPos jointREF1B = new JointPos(-119.088, -69.676, 98.692, -121.761, -89.219, 74.303);
 
         rtn0 = robot.WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-        robot.MoveL(jointREF0A, descREF0A, 1, 1, 100, 100, 100, -1,0, exaxisPos, 0, 0, offdese,0,10);  //起点
-        robot.MoveL(jointREF0B, descREF0B, 1, 1, 100, 100, 100, -1,0, exaxisPos, 1, 0, offdese,0,10);  //方向点
+        robot.MoveL(jointREF0A, descREF0A, 1, 1, 100, 100, 100, -1,0, exaxisPos, 0, 0, offdese,0,10);  //punto de inicio
+        robot.MoveL(jointREF0B, descREF0B, 1, 1, 100, 100, 100, -1,0, exaxisPos, 1, 0, offdese,0,10);  //punto de dirección
         rtn1 = robot.WireSearchWait("REF0");
         rtn2 = robot.WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
 
         rtn0 = robot.WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-        robot.MoveL(jointREF1A, descREF1A, 1, 1, 100, 100, 100, -1, 0,exaxisPos, 0, 0, offdese,0,10);  //起点
-        robot.MoveL(jointREF1B, descREF1B, 1, 1, 100, 100, 100, -1,0, exaxisPos, 1, 0, offdese,0,10);  //方向点
+        robot.MoveL(jointREF1A, descREF1A, 1, 1, 100, 100, 100, -1, 0,exaxisPos, 0, 0, offdese,0,10);  //punto de inicio
+        robot.MoveL(jointREF1B, descREF1B, 1, 1, 100, 100, 100, -1,0, exaxisPos, 1, 0, offdese,0,10);  //punto de dirección
         rtn1 = robot.WireSearchWait("REF1");
         rtn2 = robot.WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
 
         rtn0 = robot.WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-        robot.MoveL(jointREF0A, descREF0A, 1, 1, 100, 100, 100, -1,0, exaxisPos, 0, 0, offdese,0,10);  //起点
-        robot.MoveL(jointREF0B, descREF0B, 1, 1, 100, 100, 100, -1,0, exaxisPos, 1, 0, offdese,0,10);  //方向点
+        robot.MoveL(jointREF0A, descREF0A, 1, 1, 100, 100, 100, -1,0, exaxisPos, 0, 0, offdese,0,10);  //punto de inicio
+        robot.MoveL(jointREF0B, descREF0B, 1, 1, 100, 100, 100, -1,0, exaxisPos, 1, 0, offdese,0,10);  //punto de dirección
         rtn1 = robot.WireSearchWait("RES0");
         rtn2 = robot.WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
 
         rtn0 = robot.WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-        robot.MoveL(jointREF1A, descREF1A, 1, 1, 100, 100, 100, -1, 0,exaxisPos, 0, 0, offdese,0,10);  //起点
-        robot.MoveL(jointREF1B, descREF1B, 1, 1, 100, 100, 100, -1, 0,exaxisPos, 1, 0, offdese,0,10);  //方向点
+        robot.MoveL(jointREF1A, descREF1A, 1, 1, 100, 100, 100, -1, 0,exaxisPos, 0, 0, offdese,0,10);  //punto de inicio
+        robot.MoveL(jointREF1B, descREF1B, 1, 1, 100, 100, 100, -1, 0,exaxisPos, 1, 0, offdese,0,10);  //punto de dirección
         rtn1 = robot.WireSearchWait("RES1");
         rtn2 = robot.WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
 
@@ -1386,70 +1386,70 @@
         return 0;
     }
 
-设置焊接电压渐变开始
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el inicio del cambio gradual de voltaje de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.5-3.8.2
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置焊接电压渐变开始
-    * @param [in] IOType 控制类型；0-控制箱IO；1-数字通信协议(UDP);2-数字通信协议(ModbusTCP)
-    * @param [in] voltageStart 起始焊接电压(V)
-    * @param [in] voltageEnd 终止焊接电压(V)
-    * @param [in] AOIndex 控制箱AO端口号(0-1)
-    * @param [in] blend 是否平滑 0-不平滑；1-平滑
-    * @return 错误码
+    * @brief Establecer el inicio del cambio gradual de voltaje de soldadura
+    * @param [in] IOType Tipo de control; 0-IO de la caja de control; 1-protocolo de comunicación digital (UDP); 2-protocolo de comunicación digital (ModbusTCP)
+    * @param [in] voltageStart Voltaje de soldadura inicial (V)
+    * @param [in] voltageEnd Voltaje de soldadura final (V)
+    * @param [in] AOIndex Número de puerto AO de la caja de control (0-1)
+    * @param [in] blend Si se suaviza 0-sin suavizado; 1-suavizado
+    * @return Código de error
     */
     int WeldingSetVoltageGradualChangeStart(int IOType, double voltageStart, double voltageEnd, int AOIndex, int blend)
 
-设置焊接电压渐变结束
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el fin del cambio gradual de voltaje de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.5-3.8.2
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置焊接电压渐变结束
-    * @return 错误码
+    * @brief Establecer el fin del cambio gradual de voltaje de soldadura
+    * @return Código de error
     */
     int WeldingSetVoltageGradualChangeEnd()
 
-设置焊接电流渐变开始
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el inicio del cambio gradual de corriente de soldadura
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.5-3.8.2
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置焊接电流渐变开始
-    * @param [in] IOType 控制类型；0-控制箱IO；1-数字通信协议(UDP);2-数字通信协议(ModbusTCP)
-    * @param [in] currentStart 起始焊接电流(A)
-    * @param [in] currentEnd 终止焊接电流(A)
-    * @param [in] AOIndex 控制箱AO端口号(0-1)
-    * @param [in] blend 是否平滑 0-不平滑；1-平滑
-    * @return 错误码
+    * @brief Establecer el inicio del cambio gradual de corriente de soldadura
+    * @param [in] IOType Tipo de control; 0-IO de la caja de control; 1-protocolo de comunicación digital (UDP); 2-protocolo de comunicación digital (ModbusTCP)
+    * @param [in] currentStart Corriente de soldadura inicial (A)
+    * @param [in] currentEnd Corriente de soldadura final (A)
+    * @param [in] AOIndex Número de puerto AO de la caja de control (0-1)
+    * @param [in] blend Si se suaviza 0-sin suavizado; 1-suavizado
+    * @return Código de error
     */
     int WeldingSetCurrentGradualChangeStart(int IOType, double currentStart, double currentEnd, int AOIndex, int blend)
 
-设置焊接电流渐变结束
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el fin del cambio gradual de corriente de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.5-3.8.2
 
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置焊接电流渐变结束
-    * @return 错误码
+    * @brief Establecer el fin del cambio gradual de corriente de soldadura
+    * @return Código de error
     */
     int WeldingSetCurrentGradualChangeEnd()
 
-机器人焊接电流电压渐变代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de cambio gradual de corriente y voltaje de soldadura del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -1472,8 +1472,8 @@
         robot.WeldingSetCurrentRelation(cur);
         robot.WeldingSetVoltageRelation(vol);
 
-        robot.WeldingSetVoltage(0, 25, 1, 0);// ----设置电压
-        robot.WeldingSetCurrent(0, 260, 0, 0);// ----设置电流
+        robot.WeldingSetVoltage(0, 25, 1, 0);// ----Establecer voltaje
+        robot.WeldingSetCurrent(0, 260, 0, 0);// ----Establecer corriente
 
         robot.MoveJ(safejointPos, safedescPose, 1, 0, 5, 100, 100, exaxisPos, -1, 0, offdese);
 
@@ -1496,48 +1496,48 @@
         robot.WeldingSetVoltageGradualChangeEnd();
     }
 
-设置自定义摆动参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer los parámetros de oscilación personalizados
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.9-3.8.6
 
 .. code-block:: Java
     :linenos:
 
     /**
-     * @brief 设置自定义摆动参数
-     * @param [in] id 自定义摆动编号：0-2
-     * @param [in] pointNum 摆动点位个数 0-10
-     * @param [in] point 移动端点数据x,y,z
-     * @param [in] stayTime 摆动停留时间ms
-     * @param [in] frequency 摆动频率 Hz
-     * @param [in] incStayType 等待模式：0-周期不包含等待时间；1-周期包含等待时间
-     * @param [in] stationary 摆动位置等待：0-等待时间内继续运动；1-等待时间内位置静止
-     * @return  错误码
+     * @brief Establecer los parámetros de oscilación personalizados
+     * @param [in] id Número de oscilación personalizada: 0-2
+     * @param [in] pointNum Número de puntos de oscilación 0-10
+     * @param [in] point Datos del punto final de movimiento x,y,z
+     * @param [in] stayTime Tiempo de permanencia de la oscilación ms
+     * @param [in] frequency Frecuencia de oscilación Hz
+     * @param [in] incStayType Modo de espera: 0-el ciclo no incluye el tiempo de espera; 1-el ciclo incluye el tiempo de espera
+     * @param [in] stationary Espera en la posición de oscilación: 0-continuar moviéndose durante el tiempo de espera; 1-permanecer estático durante el tiempo de espera
+     * @return  Código de error
      */
     public int CustomWeaveSetPara(int id, int pointNum, DescTran[] point, double[] stayTime, double frequency, int incStayType, int stationary)
 
-获取自定义摆动参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener los parámetros de oscilación personalizados
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: Java SDK-v1.0.9-3.8.6
 
 .. code-block:: Java
     :linenos:
 
     /**
-     * @brief 获取自定义摆动参数
-     * @param [in] id 自定义摆动编号：0-2
-     * @param [out] pointNum 摆动点位个数 0-10
-     * @param [out] point 移动端点数据x,y,z
-     * @param [out] stayTime 摆动停留时间ms
-     * @param [out] frequency 摆动频率 Hz
-     * @param [out] incStayType 等待模式：0-周期不包含等待时间；1-周期包含等待时间
-     * @param [out] stationary 摆动位置等待：0-等待时间内继续运动；1-等待时间内位置静止
-     * @return  错误码
+     * @brief Obtener los parámetros de oscilación personalizados
+     * @param [in] id Número de oscilación personalizada: 0-2
+     * @param [out] pointNum Número de puntos de oscilación 0-10
+     * @param [out] point Datos del punto final de movimiento x,y,z
+     * @param [out] stayTime Tiempo de permanencia de la oscilación ms
+     * @param [out] frequency Frecuencia de oscilación Hz
+     * @param [out] incStayType Modo de espera: 0-el ciclo no incluye el tiempo de espera; 1-el ciclo incluye el tiempo de espera
+     * @param [out] stationary Espera en la posición de oscilación: 0-continuar moviéndose durante el tiempo de espera; 1-permanecer estático durante el tiempo de espera
+     * @return  Código de error
      */
     public int CustomWeaveGetPara(int id, int[] pointNum, DescTran[] point, double[] stayTime, double[] frequency, int[] incStayType, int[] stationary)
 
-自定义摆动参数代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de parámetros de oscilación personalizados
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -1617,178 +1617,178 @@
         robot.CloseRPC();
     }
 
-激光焊机参数配置
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configuración de parámetros de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 激光焊机参数配置
-    * @param  io_type 通信类型 0-IO 1-UDP
-    * @param  num 需要设置的组号（1~10）
-    * @param  scanSpeed 扫描速度
-    * @param  scanWidth 扫描宽度
-    * @param  peakPower 峰值功率
-    * @param  dutyCycle 占空比
-    * @param  freq 频率
-    * @return 错误码
+    * @brief Configuración de parámetros de la máquina de soldadura láser
+    * @param  io_type Tipo de comunicación 0-IO 1-UDP
+    * @param  num Número de grupo a configurar (1~10)
+    * @param  scanSpeed Velocidad de escaneo
+    * @param  scanWidth Ancho de escaneo
+    * @param  peakPower Potencia pico
+    * @param  dutyCycle Ciclo de trabajo
+    * @param  freq Frecuencia
+    * @return Código de error
     */
     public int SetLaserWeldingParam(int io_type, int num, int scanSpeed, int scanWidth, int peakPower, int dutyCycle, int freq);
 
-设置激光焊接开始停止
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el inicio y la parada de la soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置激光焊接开始停止
-    * @param io_type 通信类型 0-IO 1-UDP
-    * @param status 控制字 0-收光 1-出光
-    * @param max_waittime 最大等待时间，单位毫秒，默认10000
-    * @return 错误码
+    * @brief Establecer el inicio y la parada de la soldadura láser
+    * @param io_type Tipo de comunicación 0-IO 1-UDP
+    * @param status Palabra de control 0-recepción de luz 1-emisión de luz
+    * @param max_waittime Tiempo máximo de espera, unidad milisegundos, por defecto 10000
+    * @return Código de error
     */
     public int SetLaserWeldingStartEnd(int io_type, int status, int max_waittime)
 
-激光焊机使能去使能
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Habilitación y deshabilitación de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 激光焊机使能去使能
-    * @param io_type 通信类型 0-IO 1-UDP
-    * @param status 0-去使能 1-使能
-    * @return 错误码
+    * @brief Habilitación y deshabilitación de la máquina de soldadura láser
+    * @param io_type Tipo de comunicación 0-IO 1-UDP
+    * @param status 0-deshabilitar 1-habilitar
+    * @return Código de error
     */
     public int SetLaserWeldingEnable(int io_type, int status)
 
-激光焊机故障复位
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Reinicio de fallos de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 激光焊机故障复位
-    * @param io_type 通信类型 0-IO 1-UDP
-    * @param status 控制字 0-无效 1-故障复位
-    * @return 错误码
+    * @brief Reinicio de fallos de la máquina de soldadura láser
+    * @param io_type Tipo de comunicación 0-IO 1-UDP
+    * @param status Palabra de control 0-inválido 1-reinicio de fallos
+    * @return Código de error
     */
     public int ResetLaserWeldingErr(int io_type, int status)
 
-获取激光焊机运行状态
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado de funcionamiento de la máquina de soldadura láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 获取激光焊机运行状态
-    * @param io_type 通信类型 0-IO 1-UDP
-    * @param  status 控制字 0-停机 1-运行
-    * @return 错误码
+    * @brief Obtener el estado de funcionamiento de la máquina de soldadura láser
+    * @param io_type Tipo de comunicación 0-IO 1-UDP
+    * @param  status Palabra de control 0-parada 1-en funcionamiento
+    * @return Código de error
     */
     public int GetLaserWeldingRunningState(int io_type, int[] status)
 
-获取激光焊机故障状态
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado de fallo de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 获取激光焊机故障状态
-    * @param io_type 通信类型 0-IO 1-UDP
-    * @param  status 0-无故障 1-存在故障
-    * @return 错误码
+    * @brief Obtener el estado de fallo de la máquina de soldadura láser
+    * @param io_type Tipo de comunicación 0-IO 1-UDP
+    * @param  status 0-sin fallo 1-con fallo
+    * @return Código de error
     */
     public int GetLaserWeldingErrState(int io_type, int[] status)
 
-获取激光焊机配置参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener los parámetros de configuración de la máquina de soldadura láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 获取激光焊机10个工艺组中某一个的配置参数
-    * @param num 需要设置的组号（1~10）
-    * @param params 输出参数数组：[scanSpeed, scanWidth, peakPower, dutyCycle, freq]
-    * @return 错误码
+    * @brief Obtener los parámetros de configuración de uno de los 10 grupos de procesos de la máquina de soldadura láser
+    * @param num Número de grupo a configurar (1~10)
+    * @param params Arreglo de parámetros de salida: [scanSpeed, scanWidth, peakPower, dutyCycle, freq]
+    * @return Código de error
     */
     public int GetLaserWeldingParamTarget(int num, int[] params)
 
-获取当前激光焊机生效的配置参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener los parámetros de configuración vigentes actualmente de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 获取当前激光焊机生效的配置参数
-    * @param io_type 通信类型 0-IO 1-UDP
-    * @param params 输出参数数组：[scanSpeed, scanWidth, peakPower, dutyCycle, freq]
-    * @return 错误码
+    * @brief Obtener los parámetros de configuración vigentes actualmente de la máquina de soldadura láser
+    * @param io_type Tipo de comunicación 0-IO 1-UDP
+    * @param params Arreglo de parámetros de salida: [scanSpeed, scanWidth, peakPower, dutyCycle, freq]
+    * @return Código de error
     */
     public int GetLaserWeldingParamActual(int io_type, int[] params)
 
-配置激光焊机扩展IO使能DO端口
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configurar el puerto DO extendido de habilitación de IO de la máquina de soldadura láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 激光焊机设置扩展IO，使能的DO端口
-    * @param ctrlModeDONum 激光焊机使能的扩展DO端口号
-    * @return 错误码
+    * @brief La máquina de soldadura láser establece la IO extendida, el puerto DO de habilitación
+    * @param ctrlModeDONum Número de puerto DO extendido de habilitación de la máquina de soldadura láser
+    * @return Código de error
     */
     public int SetLaserWeldingEnableExtDoNum(int ctrlModeDONum)
 
-配置激光焊机扩展IO启动DO端口
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configurar el puerto DO extendido de inicio de IO de la máquina de soldadura láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 激光焊机设置扩展IO，启动的DO端口
-    * @param ctrlModeDONum 激光焊机启动（出光收光）的扩展DO端口号
-    * @return 错误码
+    * @brief La máquina de soldadura láser establece la IO extendida, el puerto DO de inicio
+    * @param ctrlModeDONum Número de puerto DO extendido de inicio (emisión y recepción de luz) de la máquina de soldadura láser
+    * @return Código de error
     */
     public int SetLaserWeldingStartExtDoNum(int ctrlModeDONum)
 
-配置激光焊机扩展IO故障复位DO端口
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configurar el puerto DO extendido de reinicio de fallos de IO de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 激光焊机设置扩展IO，故障复位的DO端口
-    * @param ctrlModeDONum 激光焊机故障复位的扩展DO端口号
-    * @return 错误码
+    * @brief La máquina de soldadura láser establece la IO extendida, el puerto DO de reinicio de fallos
+    * @param ctrlModeDONum Número de puerto DO extendido de reinicio de fallos de la máquina de soldadura láser
+    * @return Código de error
     */
     public int SetLaserWeldingErrResetExtDoNum(int ctrlModeDONum)
 
-配置激光焊机扩展IO运行状态（出光状态）DI端口
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configurar el puerto DI extendido del estado de funcionamiento (estado de emisión de luz) de IO de la máquina de soldadura láser
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 配置激光焊机扩展IO运行状态（出光状态）DI端口
-    * @param diNum 配置激光焊机运行状态（出光状态）扩展DI端口
-    * @return 错误码，0表示成功，非0表示失败
+    * @brief Configurar el puerto DI extendido del estado de funcionamiento (estado de emisión de luz) de IO de la máquina de soldadura láser
+    * @param diNum Configurar el puerto DI extendido del estado de funcionamiento (estado de emisión de luz) de la máquina de soldadura láser
+    * @return Código de error, 0 indica éxito, distinto de 0 indica fallo
     */
     public int SetLaserWeldingRunningStateExtDiNum(int diNum);
 
-配置激光焊机扩展IO故障状态DI端口
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configurar el puerto DI extendido del estado de fallo de IO de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 配置激光焊机扩展IO故障状态DI端口
-    * @param diNum 配置激光焊机故障状态扩展DI端口
-    * @return 错误码，0表示成功，非0表示失败
+    * @brief Configurar el puerto DI extendido del estado de fallo de IO de la máquina de soldadura láser
+    * @param diNum Configurar el puerto DI extendido del estado de fallo de la máquina de soldadura láser
+    * @return Código de error, 0 indica éxito, distinto de 0 indica fallo
     */
     public int SetLaserWeldingErrStateExtDiNum(int diNum);
 
-激光焊接代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -1856,32 +1856,32 @@
         return 0;
     }
     
-设置摆动结束回周期零点
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el retorno al punto cero del ciclo al final de la oscilación
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置摆动结束回周期零点
-    * @param flag 摆动结束是否回周期零点；0-不回周期零点；1-回周期零点
-    * @return 错误码
+    * @brief Establecer el retorno al punto cero del ciclo al final de la oscilación
+    * @param flag Si al final de la oscilación se retorna al punto cero del ciclo; 0-no retornar al punto cero del ciclo; 1-retornar al punto cero del ciclo
+    * @return Código de error
     */
     public int SetWeaveBackCenterConfig(int flag)
         
-获取摆动结束回周期零点参数
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el parámetro de retorno al punto cero del ciclo al final de la oscilación
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 获取摆动结束回周期零点参数
-    * @param flag 摆动结束是否回周期零点；0-不回周期零点；1-回周期零点
-    * @return 错误码
+    * @brief Obtener el parámetro de retorno al punto cero del ciclo al final de la oscilación
+    * @param flag Si al final de la oscilación se retorna al punto cero del ciclo; 0-no retornar al punto cero del ciclo; 1-retornar al punto cero del ciclo
+    * @return Código de error
     */
     public int GetWeaveBackCenterConfig(int[] flag)
             
-摆动结束回周期零点代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de retorno al punto cero del ciclo al final de la oscilación
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
@@ -1930,32 +1930,32 @@
         robot.WeaveEnd(0);
     }
                 
-实时设置速度(指令帧，低延迟)
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer la velocidad en tiempo real (trama de instrucción, baja latencia)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置速度(指令帧，低延迟)
-    * @param vel 速度百分比，范围[0~100]
-    * @return 错误码
+    * @brief Establecer la velocidad (trama de instrucción, baja latencia)
+    * @param vel Porcentaje de velocidad, rango [0~100]
+    * @return Código de error
     */
     public int SetSpeedInstant(int vel)
                     
-设置摆动实时偏移
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el desplazamiento en tiempo real de la oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 
     /**
-    * @brief 设置摆动实时偏移
-    * @param [in] offset 实时偏移量[mm，°]
-    * @return 错误码
+    * @brief Establecer el desplazamiento en tiempo real de la oscilación
+    * @param [in] offset Desplazamiento en tiempo real [mm, °]
+    * @return Código de error
     */
     public int SetWeaveOffsetRT(DescPose offset)
                         
-摆动调速与实时偏移测试代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de prueba de regulación de velocidad y desplazamiento en tiempo real de la oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: Java
     :linenos:
 

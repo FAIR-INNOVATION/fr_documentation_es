@@ -1,67 +1,67 @@
-机器人安全设置
-=================
+Configuración de seguridad del robot
+=====================================
 
 .. toctree:: 
     :maxdepth: 5
 
-设置碰撞等级
-++++++++++++++++++++++++++++++++
+Establecer el nivel de colisión
++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置碰撞等级
-    * @param  [in]  mode  0-等级，1-百分比
-    * @param  [in]  level 碰撞阈值，等级对应范围[],百分比对应范围[0~1]
-    * @param  [in]  config 0-不更新配置文件，1-更新配置文件
-    * @return  错误码
+    * @brief Establecer el nivel de colisión
+    * @param  [in]  mode  0-nivel, 1-porcentaje
+    * @param  [in]  level Umbral de colisión; para el nivel, rango [], para el porcentaje, rango [0~1]
+    * @param  [in]  config 0-no actualizar el archivo de configuración, 1-actualizar el archivo de configuración
+    * @return  Código de error
     */
     int SetAnticollision(int mode, double[] level, int config); 
 
-设置碰撞后策略
-++++++++++++++++++++++++++++++++
+Establecer la estrategia tras la colisión
++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  设置碰撞后策略
-    * @param  [in] strategy  0-报错暂停；1-继续运行；2-报错停止；3-重力矩模式；4-震荡相应模式；5-碰撞回弹模式
-    * @param  [in] safeTime  安全停止时间[1000 - 2000]ms
-    * @param  [in] safeDistance  安全停止距离[1-150]mm
-    * @param  [in] safeVel  tcp安全停止速度 [50-250]mm/s
-    * @param  [in] safetyMargin  j1-j6安全系数[1-10]
-    * @return  错误码
+    * @brief  Establecer la estrategia tras la colisión
+    * @param  [in] strategy  0-pausar con error; 1-continuar en ejecución; 2-detener con error; 3-modo de par de gravedad; 4-modo de respuesta oscilatoria; 5-modo de rebote tras colisión
+    * @param  [in] safeTime  Tiempo de parada segura [1000 - 2000] ms
+    * @param  [in] safeDistance  Distancia de parada segura [1-150] mm
+    * @param  [in] safeVel  Velocidad de parada segura del TCP [50-250] mm/s
+    * @param  [in] safetyMargin  Coeficiente de seguridad j1-j6 [1-10]
+    * @return  Código de error
     */
     int SetCollisionStrategy(int strategy, int safeTime, int safeDistance, int safeVel,int[] safetyMargin);
 
-自定义碰撞检测阈值功能开始
-++++++++++++++++++++++++++++++++
+Inicio de la función de umbral de detección de colisiones personalizado
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  自定义碰撞检测阈值功能开始，设置关节端和TCP端的碰撞检测阈值
-    * @param  [in] flag 1-仅关节检测开启；2-仅TCP检测开启；3-关节和TCP检测同时开启
-    * @param  [in] jointDetectionThreshould 关节碰撞检测阈值 j1-j6
-    * @param  [in] tcpDetectionThreshould TCP碰撞检测阈值，xyzabc
-    * @param  [in] block 0-非阻塞；1-阻塞
-    * @return  错误码
+    * @brief  Inicio de la función de umbral de detección de colisiones personalizado; establece los umbrales de detección de colisiones del extremo de las articulaciones y del TCP
+    * @param  [in] flag 1-solo detección de articulaciones activada; 2-solo detección de TCP activada; 3-detección de articulaciones y de TCP activadas simultáneamente
+    * @param  [in] jointDetectionThreshould Umbral de detección de colisiones de las articulaciones j1-j6
+    * @param  [in] tcpDetectionThreshould Umbral de detección de colisiones del TCP, xyzabc
+    * @param  [in] block 0-no bloqueante; 1-bloqueante
+    * @return  Código de error
     */
     int CustomCollisionDetectionStart(int flag, double[] jointDetectionThreshould, double[] tcpDetectionThreshould, int block);
 
-自定义碰撞检测阈值功能关闭
-++++++++++++++++++++++++++++++++
+Cierre de la función de umbral de detección de colisiones personalizado
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  自定义碰撞检测阈值功能关闭
-    * @return  错误码
+    * @brief  Cierre de la función de umbral de detección de colisiones personalizado
+    * @return  Código de error
     */
     int CustomCollisionDetectionEnd()
 
-机器人碰撞等级设置代码示例
-++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración del nivel de colisión del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -103,46 +103,46 @@
         Console.WriteLine($"CustomCollisionDetectionEnd rtn is {rtn}");
     }
 
-设置正限位
-++++++++++++++++++++++++++++++++
+Establecer el límite positivo
++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  设置正限位
-    * @param  [in] limit 六个关节位置，单位deg
-    * @return  错误码
+    * @brief  Establecer el límite positivo
+    * @param  [in] limit Posiciones de las seis articulaciones, unidad deg
+    * @return  Código de error
     */
     int SetLimitPositive(double[] limit); 
 
-设置负限位
-++++++++++++++++++++++++++++++++
+Establecer el límite negativo
++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  设置负限位
-    * @param  [in] limit 六个关节位置，单位deg
-    * @return  错误码
+    * @brief  Establecer el límite negativo
+    * @param  [in] limit Posiciones de las seis articulaciones, unidad deg
+    * @return  Código de error
     */
     int SetLimitNegative(double[] limit); 
 
-获取关节软限位角度
-++++++++++++++++++++++++++++++++
+Obtener los ángulos del límite software de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief  获取关节软限位角度
-    * @param  [in] flag 0-阻塞，1-非阻塞	 
-    * @param  [out] negative  负限位角度，单位deg
-    * @param  [out] positive  正限位角度，单位deg
-    * @return  错误码
+    * @brief  Obtener los ángulos del límite software de las articulaciones
+    * @param  [in] flag 0-bloqueante, 1-no bloqueante	 
+    * @param  [out] negative  Ángulos del límite negativo, unidad deg
+    * @param  [out] positive  Ángulos del límite positivo, unidad deg
+    * @return  Código de error
     */
     int GetJointSoftLimitDeg(byte flag, ref double[] negative, ref double[] positive);
 
-机器人限位设置代码示例
-++++++++++++++++++++++++++++
+Ejemplo de código de configuración de los límites del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -160,34 +160,34 @@
         Console.WriteLine($"pos limit deg:{pos_deg[0]},{pos_deg[1]},{pos_deg[2]},{pos_deg[3]},{pos_deg[4]},{pos_deg[5]}");
     }
 
-设置机器人碰撞检测方法
-++++++++++++++++++++++++++++
+Establecer el método de detección de colisiones del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置机器人碰撞检测方法
-    * @param  [in] method 碰撞检测方法：0-电流模式；1-双编码器；2-电流和双编码器同时开启
-    * @param [in] thresholdMode 碰撞等级阈值方式；0-碰撞等级固定阈值方式；1-自定义碰撞检测阈值
-    * @return  错误码
+    * @brief Establecer el método de detección de colisiones del robot
+    * @param  [in] method Método de detección de colisiones: 0-modo de corriente; 1-doble codificador; 2-corriente y doble codificador activados simultáneamente
+    * @param [in] thresholdMode Modo de umbral del nivel de colisión; 0-modo de umbral fijo del nivel de colisión; 1-umbral de detección de colisión personalizado
+    * @return  Código de error
     */
     int SetCollisionDetectionMethod(int method,int thresholdMode=0);
 
 
-设置静态下碰撞检测开始关闭
-++++++++++++++++++++++++++++
+Establecer la activación/desactivación de la detección de colisiones en estado estático
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置静态下碰撞检测开始关闭
-    * @param  [in] status 0-关闭；1-开启
-    * @return  错误码
+    * @brief Establecer la activación/desactivación de la detección de colisiones en estado estático
+    * @param  [in] status 0-desactivar; 1-activar
+    * @return  Código de error
     */
     int SetStaticCollisionOnOff(int status);
 
-设置机器人碰撞检测方法代码示例
-++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración del método de detección de colisiones del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -202,21 +202,21 @@
         Console.WriteLine($"SetStaticCollisionOnOff Off rtn is {rtn}");
     }
 
-关节扭矩功率检测
-++++++++++++++++++++++++++++
+Detección de potencia y par de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 关节扭矩功率检测
-    * @param  [in] status 0-关闭；1-开启
-    * @param  [in] power 设定最大功率(W)
-    * @return  错误码
+    * @brief Detección de potencia y par de las articulaciones
+    * @param  [in] status 0-desactivar; 1-activar
+    * @param  [in] power Potencia máxima establecida (W)
+    * @return  Código de error
     */
     int SetPowerLimit(int status, double power);
 
-关节扭矩功率检测代码示例
-++++++++++++++++++++++++++++
+Ejemplo de código de detección de potencia y par de las articulaciones
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -240,23 +240,23 @@
         robot.DragTeachSwitch(0);
     }
 
-设置安全速度参数
-++++++++++++++++++++++++++++
+Establecer los parámetros de velocidad de seguridad
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
     /**
-    * @brief 设置安全速度参数
-    * @param [in] enable 0-关；1-手动模式启用；2-所有模式启用(不支持自动限速)
-    * @param [in] maxTCPVel 限制最大TCP速度;[0-1000]mm/s
-    * @param [in] strategy 超速后策略；0-停止报警；1-自动限速；2-停止报警并去使能
-    * @param [in] maxJointVel 6个关节最大速度(°/s) 默认为45°/s
-    * @return 错误码
+    * @brief Establecer los parámetros de velocidad de seguridad
+    * @param [in] enable 0-desactivar; 1-activar en modo manual; 2-activar en todos los modos (no admite limitación automática de velocidad)
+    * @param [in] maxTCPVel Limitar la velocidad TCP máxima; [0-1000] mm/s
+    * @param [in] strategy Estrategia tras exceso de velocidad; 0-detener con alarma; 1-limitación automática de velocidad; 2-detener con alarma y deshabilitar
+    * @param [in] maxJointVel Velocidad máxima de las 6 articulaciones (°/s), por defecto 45°/s
+    * @return Código de error
     */
     public int SetVelReducePara(int enable, double maxTCPVel, int strategy, double[] maxJointVel = null)
     
-设置安全速度参数的SDK代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código SDK de configuración de los parámetros de velocidad de seguridad
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c#
     :linenos:
 
@@ -288,33 +288,33 @@
         return 0; 
     }
         
-获取安全配置参数校验和
+Obtener la suma de verificación de los parámetros de configuración de seguridad
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:  
 
     /**
-    * @brief  获取安全配置参数校验和
-    * @param  [out] status 校验状态，0-有效，1-校验中，2-校验失败
-    * @param  [out] checksum 校验和 8位16进制
-    * @return  错误码
+    * @brief  Obtener la suma de verificación de los parámetros de configuración de seguridad
+    * @param  [out] status Estado de verificación, 0-válido, 1-en verificación, 2-verificación fallida
+    * @param  [out] checksum Suma de verificación de 8 dígitos hexadecimales
+    * @return  Código de error
     */
     public int GetSafetyParamsCheckSum(ref int status, ref uint checksum)
         
-设置mTLS加密使能及证书路径
+Establecer la habilitación del cifrado mTLS y la ruta de los certificados
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
     :linenos:  
 
-    //mTLS 总开关：默认 false；在 RPC 初始化前置 false 强制明文模式
+    // Interruptor general de mTLS: por defecto false; establecer false antes de la inicialización de RPC para forzar el modo en claro
     public bool EnableMtls { get; set; } = false;
 
-    //mTLS 证书目录：默认 null = SDK dll 同目录下的 certs/；须在 RPC() 之前设置
+    // Directorio de certificados mTLS: por defecto null = certs/ en el mismo directorio que la dll del SDK; debe establecerse antes de RPC()
     public string MtlsCertDir { get; set; }
         
-设置mTLS加密使能及证书路径代码示例
+Ejemplo de código de configuración de la habilitación del cifrado mTLS y la ruta de los certificados
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c#
@@ -323,43 +323,43 @@
     public Form1()
     {
         InitializeComponent();
-        robot = new Robot();//实例化机器人对象
+        robot = new Robot();//instanciar el objeto robot
         string path = "D://log/";
         robot.LoggerInit(FrLogType.BUFFER, FrLogLevel.INFO, path, 5, 5);
         robot.SetLoggerLevel(FrLogLevel.INFO);
 
-        // 查看最终CNDE配置
+        // Consultar la configuración final de CNDE
         List<RobotState> finalStates;
         int finalPeriod;
         robot.GetRobotRealtimeStateConfig(out finalStates, out finalPeriod);
         Console.WriteLine($"最终配置状态数量: {finalStates.Count}");
         foreach (var s in finalStates) Console.WriteLine($"  {s}");
         Console.WriteLine($"最终周期: {finalPeriod} ms");
-        robot.SetReconnectParam(true, 1000, 500);//断线重连参数
+        robot.SetReconnectParam(true, 1000, 500);//parámetros de reconexión tras desconexión
             
         robot.EnableMtls = true;
-        robot.MtlsCertDir = @"D:\C#SDK\MTLS-certs";   // 证书不设路径则默认在  <libfairino.dll 所在目录>\certs
-        rrpc = robot.RPC("192.168.58.2"); //与控制箱建立连接
-                                            //20004端口接收超时时间
+        robot.MtlsCertDir = @"D:\C#SDK\MTLS-certs";   // si no se establece la ruta de los certificados, por defecto es <directorio de libfairino.dll>\certs
+        rrpc = robot.RPC("192.168.58.2"); //establecer conexión con el armario de control
+                                            //tiempo de espera agotado de recepción del puerto 20004
                                             //robot.SetReceivePortTimeout(40);
     }
         
-安全操作密码校验
+Verificación de la contraseña de operaciones de seguridad
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:  
 
     /**
-    * @brief  安全操作密码校验
-    * @param  [in] status 校验，0-开启，1-关闭
-    * @param  [in] password 密码
-    * @return  错误码
+    * @brief  Verificación de la contraseña de operaciones de seguridad
+    * @param  [in] status Verificación, 0-activar, 1-desactivar
+    * @param  [in] password Contraseña
+    * @return  Código de error
     */
     public int SafetyOPPasswordCheck(int status, string password)
             
-获取安全配置参数校验和及安全操作密码校验代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de obtención de la suma de verificación de los parámetros de configuración de seguridad y de verificación de la contraseña de operaciones de seguridad
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:  

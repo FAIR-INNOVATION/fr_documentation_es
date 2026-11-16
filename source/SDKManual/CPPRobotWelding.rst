@@ -1,55 +1,55 @@
-机器人焊接
-======================
+Soldadura del robot
+===================
 
 .. toctree:: 
     :maxdepth: 5
 
-设置焊接工艺曲线参数
-+++++++++++++++++++++++++++++++++++++++
+Establecer los parámetros de la curva del proceso de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 设置焊接工艺曲线参数
-     * @param [in] id 焊接工艺编号(1-99)
-     * @param [in] startCurrent 起弧电流(A)
-     * @param [in] startVoltage 起弧电压(V)
-     * @param [in] startTime 起弧时间(ms)
-     * @param [in] weldCurrent 焊接电流(A)
-     * @param [in] weldVoltage 焊接电压(V)
-     * @param [in] endCurrent 收弧电流(A)
-     * @param [in] endVoltage 收弧电压(V)
-     * @param [in] endTime 收弧时间(ms)
-     * @return 错误码
+     * @brief Establecer los parámetros de la curva del proceso de soldadura
+     * @param [in] id Número del proceso de soldadura (1-99)
+     * @param [in] startCurrent Corriente de inicio de arco (A)
+     * @param [in] startVoltage Voltaje de inicio de arco (V)
+     * @param [in] startTime Tiempo de inicio de arco (ms)
+     * @param [in] weldCurrent Corriente de soldadura (A)
+     * @param [in] weldVoltage Voltaje de soldadura (V)
+     * @param [in] endCurrent Corriente de cierre de arco (A)
+     * @param [in] endVoltage Voltaje de cierre de arco (V)
+     * @param [in] endTime Tiempo de cierre de arco (ms)
+     * @return Código de error
      */
     errno_t WeldingSetProcessParam(int id, double startCurrent, double startVoltage, double startTime, double weldCurrent, double weldVoltage, double endCurrent, double endVoltage, double endTime);
 
-获取焊接工艺曲线参数
-+++++++++++++++++++++++++++++++++++++++
+Obtener los parámetros de la curva del proceso de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 获取焊接工艺曲线参数
-     * @param [in] id 焊接工艺编号(1-99)
-     * @param [out] startCurrent 起弧电流(A)
-     * @param [out] startVoltage 起弧电压(V)
-     * @param [out] startTime 起弧时间(ms)
-     * @param [out] weldCurrent 焊接电流(A)
-     * @param [out] weldVoltage 焊接电压(V)
-     * @param [out] endCurrent 收弧电流(A)
-     * @param [out] endVoltage 收弧电压(V)
-     * @param [out] endTime 收弧时间(ms)
-     * @return 错误码
+     * @brief Obtener los parámetros de la curva del proceso de soldadura
+     * @param [in] id Número del proceso de soldadura (1-99)
+     * @param [out] startCurrent Corriente de inicio de arco (A)
+     * @param [out] startVoltage Voltaje de inicio de arco (V)
+     * @param [out] startTime Tiempo de inicio de arco (ms)
+     * @param [out] weldCurrent Corriente de soldadura (A)
+     * @param [out] weldVoltage Voltaje de soldadura (V)
+     * @param [out] endCurrent Corriente de cierre de arco (A)
+     * @param [out] endVoltage Voltaje de cierre de arco (V)
+     * @param [out] endTime Tiempo de cierre de arco (ms)
+     * @return Código de error
      */
     errno_t WeldingGetProcessParam(int id, double& startCurrent, double& startVoltage, double& startTime, double& weldCurrent, double& weldVoltage, double& endCurrent, double& endVoltage, double& endTime);
 
-设置焊接电流与输出模拟量对应关系
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer la relación entre la corriente de soldadura y la salida analógica
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
 
@@ -57,17 +57,17 @@
     :linenos:
 
     /**
-    * @brief 设置焊接电流与输出模拟量对应关系
-    * @param [in] currentMin 焊接电流-模拟量输出线性关系左侧点电流值(A)
-    * @param [in] currentMax 焊接电流-模拟量输出线性关系右侧点电流值(A)
-    * @param [in] outputVoltageMin 焊接电流-模拟量输出线性关系左侧点模拟量输出电压值(V)
-    * @param [in] outputVoltageMax 焊接电流-模拟量输出线性关系右侧点模拟量输出电压值(V)
-    * @return 错误码
+    * @brief Establecer la relación entre la corriente de soldadura y la salida analógica
+    * @param [in] currentMin Valor de corriente del punto izquierdo de la relación lineal corriente de soldadura-salida analógica (A)
+    * @param [in] currentMax Valor de corriente del punto derecho de la relación lineal corriente de soldadura-salida analógica (A)
+    * @param [in] outputVoltageMin Valor de voltaje de salida analógica del punto izquierdo de la relación lineal corriente de soldadura-salida analógica (V)
+    * @param [in] outputVoltageMax Valor de voltaje de salida analógica del punto derecho de la relación lineal corriente de soldadura-salida analógica (V)
+    * @return Código de error
     */
     errno_t WeldingSetCurrentRelation(double currentMin, double currentMax, double outputVoltageMin, double outputVoltageMax);
 
-设置焊接电压与输出模拟量对应关系
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer la relación entre el voltaje de soldadura y la salida analógica
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
 
@@ -75,17 +75,17 @@
     :linenos:
 
     /**
-    * @brief 设置焊接电压与输出模拟量对应关系
-    * @param [in] weldVoltageMin 焊接电压-模拟量输出线性关系左侧点焊接电压值(A)
-    * @param [in] weldVoltageMax 焊接电压-模拟量输出线性关系右侧点焊接电压值(A)
-    * @param [in] outputVoltageMin 焊接电压-模拟量输出线性关系左侧点模拟量输出电压值(V)
-    * @param [in] outputVoltageMax 焊接电压-模拟量输出线性关系右侧点模拟量输出电压值(V)
-    * @return 错误码
+    * @brief Establecer la relación entre el voltaje de soldadura y la salida analógica
+    * @param [in] weldVoltageMin Valor de voltaje de soldadura del punto izquierdo de la relación lineal voltaje de soldadura-salida analógica (A)
+    * @param [in] weldVoltageMax Valor de voltaje de soldadura del punto derecho de la relación lineal voltaje de soldadura-salida analógica (A)
+    * @param [in] outputVoltageMin Valor de voltaje de salida analógica del punto izquierdo de la relación lineal voltaje de soldadura-salida analógica (V)
+    * @param [in] outputVoltageMax Valor de voltaje de salida analógica del punto derecho de la relación lineal voltaje de soldadura-salida analógica (V)
+    * @return Código de error
     */
     errno_t WeldingSetVoltageRelation(double weldVoltageMin, double weldVoltageMax, double outputVoltageMin, double outputVoltageMax);
 
-获取焊接电流与输出模拟量对应关系
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener la relación entre la corriente de soldadura y la salida analógica
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
 
@@ -93,17 +93,17 @@
     :linenos:
 
     /**
-    * @brief 获取焊接电流与输出模拟量对应关系
-    * @param [out] currentMin 焊接电流-模拟量输出线性关系左侧点电流值(A)
-    * @param [out] currentMax 焊接电流-模拟量输出线性关系右侧点电流值(A)
-    * @param [out] outputVoltageMin 焊接电流-模拟量输出线性关系左侧点模拟量输出电压值(V)
-    * @param [out] outputVoltageMax 焊接电流-模拟量输出线性关系右侧点模拟量输出电压值(V)
-    * @return 错误码
+    * @brief Obtener la relación entre la corriente de soldadura y la salida analógica
+    * @param [out] currentMin Valor de corriente del punto izquierdo de la relación lineal corriente de soldadura-salida analógica (A)
+    * @param [out] currentMax Valor de corriente del punto derecho de la relación lineal corriente de soldadura-salida analógica (A)
+    * @param [out] outputVoltageMin Valor de voltaje de salida analógica del punto izquierdo de la relación lineal corriente de soldadura-salida analógica (V)
+    * @param [out] outputVoltageMax Valor de voltaje de salida analógica del punto derecho de la relación lineal corriente de soldadura-salida analógica (V)
+    * @return Código de error
     */
     errno_t WeldingGetCurrentRelation(double *currentMin, double *currentMax, double *outputVoltageMin, double *outputVoltageMax);
 
-获取焊接电压与输出模拟量对应关系
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener la relación entre el voltaje de soldadura y la salida analógica
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
 
@@ -111,17 +111,17 @@
     :linenos:
 
     /**
-    * @brief 获取焊接电压与输出模拟量对应关系
-    * @param [out] weldVoltageMin 焊接电压-模拟量输出线性关系左侧点焊接电压值(A)
-    * @param [out] weldVoltageMax 焊接电压-模拟量输出线性关系右侧点焊接电压值(A)
-    * @param [out] outputVoltageMin 焊接电压-模拟量输出线性关系左侧点模拟量输出电压值(V)
-    * @param [out] outputVoltageMax 焊接电压-模拟量输出线性关系右侧点模拟量输出电压值(V)
-    * @return 错误码
+    * @brief Obtener la relación entre el voltaje de soldadura y la salida analógica
+    * @param [out] weldVoltageMin Valor de voltaje de soldadura del punto izquierdo de la relación lineal voltaje de soldadura-salida analógica (A)
+    * @param [out] weldVoltageMax Valor de voltaje de soldadura del punto derecho de la relación lineal voltaje de soldadura-salida analógica (A)
+    * @param [out] outputVoltageMin Valor de voltaje de salida analógica del punto izquierdo de la relación lineal voltaje de soldadura-salida analógica (V)
+    * @param [out] outputVoltageMax Valor de voltaje de salida analógica del punto derecho de la relación lineal voltaje de soldadura-salida analógica (V)
+    * @return Código de error
     */
     errno_t WeldingGetVoltageRelation(double *weldVoltageMin, double *weldVoltageMax, double *outputVoltageMin, double *outputVoltageMax);
 
-设置焊接电流
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer la corriente de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
 
@@ -129,17 +129,17 @@
     :linenos:
 
     /**
-    * @brief 设置焊接电流
-    * @param [in] ioType 控制IO类型 0-控制箱IO；1-扩展IO
-    * @param [in] current 焊接电流值(A)
-    * @param [in] AOIndex 焊接电流控制箱模拟量输出端口(0-1)
-    * @param [in] blend 是否平滑 0-不平滑；1-平滑
-    * @return 错误码
+    * @brief Establecer la corriente de soldadura
+    * @param [in] ioType Tipo de IO de control 0-IO de la caja de control; 1-IO extendida
+    * @param [in] current Valor de corriente de soldadura (A)
+    * @param [in] AOIndex Puerto de salida analógica del control de corriente de soldadura de la caja de control (0-1)
+    * @param [in] blend Si se suaviza 0-sin suavizado; 1-suavizado
+    * @return Código de error
     */
     errno_t WeldingSetCurrent(int ioType, double current, int AOIndex, int blend);
 
-设置焊接电压
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer el voltaje de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
 
@@ -147,43 +147,43 @@
     :linenos:
 
     /**
-    * @brief 设置焊接电压
-    * @param [in] ioType 控制IO类型 0-控制箱IO；1-扩展IO
-    * @param [in] voltage 焊接电压值(A)
-    * @param [in] AOIndex 焊接电压控制箱模拟量输出端口(0-1)
-    * @param [in] blend 是否平滑 0-不平滑；1-平滑
-    * @return 错误码
+    * @brief Establecer el voltaje de soldadura
+    * @param [in] ioType Tipo de IO de control 0-IO de la caja de control; 1-IO extendida
+    * @param [in] voltage Valor de voltaje de soldadura (A)
+    * @param [in] AOIndex Puerto de salida analógica del control de voltaje de soldadura de la caja de control (0-1)
+    * @param [in] blend Si se suaviza 0-sin suavizado; 1-suavizado
+    * @return Código de error
     */
     errno_t WeldingSetVoltage(int ioType, double voltage, int AOIndex, int blend);
 
-设置摆动参数
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer los parámetros de oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 设置摆动参数
-     * @param [in] weaveNum 摆焊参数配置编号
-     * @param [in] weaveType 摆动类型 0-平面三角波摆动；1-垂直L型三角波摆动；2-顺时针圆形摆动；3-逆时针圆形摆动；4-平面正弦波摆动；5-垂直L型正弦波摆动；6-垂直三角波摆动；7-垂直正弦波摆动
-     * @param [in] weaveFrequency 摆动频率(Hz)
-     * @param [in] weaveIncStayTime 等待模式 0-周期不包含等待时间；1-周期包含等待时间
-     * @param [in] weaveRange 摆动幅度(mm)
-     * @param [in] weaveLeftRange 垂直三角摆动左弦长度(mm)
-     * @param [in] weaveRightRange 垂直三角摆动右弦长度(mm)
-     * @param [in] additionalStayTime 垂直三角摆动垂三角点停留时间(mm)
-     * @param [in] weaveLeftStayTime 摆动左停留时间(ms)
-     * @param [in] weaveRightStayTime 摆动右停留时间(ms)
-     * @param [in] weaveCircleRadio 圆形摆动-回调比率(0-100%)
-     * @param [in] weaveStationary 摆动位置等待，0-等待时间内位置继续移动；1-等待时间内位置静止
-     * @param [in] weaveYawAngle 摆动方向方位角(绕摆动Z轴旋转)，单位°
-     * @param [in] weaveRotAngle 摆动方向侧倾角(绕摆动X轴偏转)，单位°
-     * @return 错误码
+     * @brief Establecer los parámetros de oscilación
+     * @param [in] weaveNum Número de configuración de los parámetros de oscilación de soldadura
+     * @param [in] weaveType Tipo de oscilación 0-oscilación triangular plana; 1-oscilación triangular en L vertical; 2-oscilación circular en sentido horario; 3-oscilación circular en sentido antihorario; 4-oscilación sinusoidal plana; 5-oscilación sinusoidal en L vertical; 6-oscilación triangular vertical; 7-oscilación sinusoidal vertical
+     * @param [in] weaveFrequency Frecuencia de oscilación (Hz)
+     * @param [in] weaveIncStayTime Modo de espera 0-el ciclo no incluye el tiempo de espera; 1-el ciclo incluye el tiempo de espera
+     * @param [in] weaveRange Amplitud de oscilación (mm)
+     * @param [in] weaveLeftRange Longitud del lado izquierdo de la oscilación triangular vertical (mm)
+     * @param [in] weaveRightRange Longitud del lado derecho de la oscilación triangular vertical (mm)
+     * @param [in] additionalStayTime Tiempo de permanencia en el vértice de la oscilación triangular vertical (mm)
+     * @param [in] weaveLeftStayTime Tiempo de permanencia izquierdo de la oscilación (ms)
+     * @param [in] weaveRightStayTime Tiempo de permanencia derecho de la oscilación (ms)
+     * @param [in] weaveCircleRadio Oscilación circular - relación de retorno (0-100%)
+     * @param [in] weaveStationary Espera en la posición de oscilación, 0-la posición continúa moviéndose durante el tiempo de espera; 1-la posición permanece estática durante el tiempo de espera
+     * @param [in] weaveYawAngle Ángulo de orientación de la dirección de oscilación (rotación alrededor del eje Z de oscilación), unidad °
+     * @param [in] weaveRotAngle Ángulo de inclinación lateral de la dirección de oscilación (desviación alrededor del eje X de oscilación), unidad °
+     * @return Código de error
      */
       errno_t WeaveSetPara(int weaveNum, int weaveType, double weaveFrequency, int weaveIncStayTime, double weaveRange, double weaveLeftRange, double weaveRightRange, int additionalStayTime, int weaveLeftStayTime, int weaveRightStayTime, int weaveCircleRadio, int weaveStationary, double weaveYawAngle, double weaveRotAngle = 0);
 
-设置焊接参数代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración de los parámetros de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
@@ -271,8 +271,8 @@
         return 0;
     }
 
-即时设置摆动参数
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer los parámetros de oscilación en tiempo real
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
 
@@ -280,129 +280,129 @@
     :linenos:
 
     /**
-    * @brief 即时设置摆动参数
-    * @param [in] weaveNum 摆焊参数配置编号
-    * @param [in] weaveType 摆动类型 0-平面三角波摆动；1-垂直L型三角波摆动；2-顺时针圆形摆动；3-逆时针圆形摆动；4-平面正弦波摆动；5-垂直L型正弦波摆动；6-垂直三角波摆动；7-垂直正弦波摆动
-    * @param [in] weaveFrequency 摆动频率(Hz)
-    * @param [in] weaveIncStayTime 等待模式 0-周期不包含等待时间；1-周期包含等待时间
-    * @param [in] weaveRange 摆动幅度(mm)
-    * @param [in] weaveLeftStayTime 摆动左停留时间(ms)
-    * @param [in] weaveRightStayTime 摆动右停留时间(ms)
-    * @param [in] weaveCircleRadio 圆形摆动-回调比率(0-100%)
-    * @param [in] weaveStationary 摆动位置等待，0-等待时间内位置继续移动；1-等待时间内位置静止
-    * @return 错误码
+    * @brief Establecer los parámetros de oscilación en tiempo real
+    * @param [in] weaveNum Número de configuración de los parámetros de oscilación de soldadura
+    * @param [in] weaveType Tipo de oscilación 0-oscilación triangular plana; 1-oscilación triangular en L vertical; 2-oscilación circular en sentido horario; 3-oscilación circular en sentido antihorario; 4-oscilación sinusoidal plana; 5-oscilación sinusoidal en L vertical; 6-oscilación triangular vertical; 7-oscilación sinusoidal vertical
+    * @param [in] weaveFrequency Frecuencia de oscilación (Hz)
+    * @param [in] weaveIncStayTime Modo de espera 0-el ciclo no incluye el tiempo de espera; 1-el ciclo incluye el tiempo de espera
+    * @param [in] weaveRange Amplitud de oscilación (mm)
+    * @param [in] weaveLeftStayTime Tiempo de permanencia izquierdo de la oscilación (ms)
+    * @param [in] weaveRightStayTime Tiempo de permanencia derecho de la oscilación (ms)
+    * @param [in] weaveCircleRadio Oscilación circular - relación de retorno (0-100%)
+    * @param [in] weaveStationary Espera en la posición de oscilación, 0-la posición continúa moviéndose durante el tiempo de espera; 1-la posición permanece estática durante el tiempo de espera
+    * @return Código de error
     */
     errno_t WeaveOnlineSetPara(int weaveNum, int weaveType, double weaveFrequency, int weaveIncStayTime, double weaveRange, int weaveLeftStayTime, int weaveRightStayTime, int weaveCircleRadio, int weaveStationary);
 
-设置机器人焊接电弧意外中断检测参数
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer los parámetros de detección de interrupción accidental del arco de soldadura del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.8-3.7.8
 
 .. code-block:: c++
     :linenos:
 
     /**
-	 * @brief 设置机器人焊接电弧意外中断检测参数
-	 * @param [in] checkEnable 是否使能检测；0-不使能；1-使能
-	 * @param [in] arcInterruptTimeLength 电弧中断确认时长(ms)
-	 * @return 错误码
+	 * @brief Establecer los parámetros de detección de interrupción accidental del arco de soldadura del robot
+	 * @param [in] checkEnable Si se habilita la detección; 0-no habilitar; 1-habilitar
+	 * @param [in] arcInterruptTimeLength Duración de confirmación de interrupción del arco (ms)
+	 * @return Código de error
     */
 	errno_t WeldingSetCheckArcInterruptionParam(int checkEnable, int arcInterruptTimeLength);
 
-获取机器人焊接电弧意外中断检测参数
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener los parámetros de detección de interrupción accidental del arco de soldadura del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.8-3.7.8
 
 .. code-block:: c++
     :linenos:
 
     /**
-	 * @brief 获取机器人焊接电弧意外中断检测参数
-	 * @param [out] checkEnable 是否使能检测；0-不使能；1-使能
-	 * @param [out] arcInterruptTimeLength 电弧中断确认时长(ms)
-	 * @return 错误码
+	 * @brief Obtener los parámetros de detección de interrupción accidental del arco de soldadura del robot
+	 * @param [out] checkEnable Si se habilita la detección; 0-no habilitar; 1-habilitar
+	 * @param [out] arcInterruptTimeLength Duración de confirmación de interrupción del arco (ms)
+	 * @return Código de error
     */
 	errno_t WeldingGetCheckArcInterruptionParam(int* checkEnable, int* arcInterruptTimeLength);
 
-设置机器人焊接中断恢复参数
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer los parámetros de recuperación de interrupción de soldadura del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.8-3.7.8
 
 .. code-block:: c++
     :linenos:
 
     /**
-	 * @brief 设置机器人焊接中断恢复参数
-	 * @param [in] enable 是否使能焊接中断恢复
-	 * @param [in] length 焊缝重叠距离(mm)
-	 * @param [in] velocity 机器人回到再起弧点速度百分比(0-100)
-	 * @param [in] moveType 机器人运动到再起弧点方式；0-LIN；1-PTP
-	 * @return 错误码
+	 * @brief Establecer los parámetros de recuperación de interrupción de soldadura del robot
+	 * @param [in] enable Si se habilita la recuperación de interrupción de soldadura
+	 * @param [in] length Distancia de solapamiento de la soldadura (mm)
+	 * @param [in] velocity Porcentaje de velocidad del robot para volver al punto de reinicio de arco (0-100)
+	 * @param [in] moveType Modo de movimiento del robot al punto de reinicio de arco; 0-LIN; 1-PTP
+	 * @return Código de error
     */
 	errno_t WeldingSetReWeldAfterBreakOffParam(int enable, double length, double velocity, int moveType);
     
-获取机器人焊接中断恢复参数
-+++++++++++++++++++++++++++++++++++++++++++++
+Obtener los parámetros de recuperación de interrupción de soldadura del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.8-3.7.8
 
 .. code-block:: c++
     :linenos:
 
     /**
-	 * @brief 获取机器人焊接中断恢复参数
-	 * @param [out] enable 是否使能焊接中断恢复
-	 * @param [out] length 焊缝重叠距离(mm)
-	 * @param [out] velocity 机器人回到再起弧点速度百分比(0-100)
-	 * @param [out] moveType 机器人运动到再起弧点方式；0-LIN；1-PTP
-	 * @return 错误码
+	 * @brief Obtener los parámetros de recuperación de interrupción de soldadura del robot
+	 * @param [out] enable Si se habilita la recuperación de interrupción de soldadura
+	 * @param [out] length Distancia de solapamiento de la soldadura (mm)
+	 * @param [out] velocity Porcentaje de velocidad del robot para volver al punto de reinicio de arco (0-100)
+	 * @param [out] moveType Modo de movimiento del robot al punto de reinicio de arco; 0-LIN; 1-PTP
+	 * @return Código de error
     */
 	errno_t WeldingGetReWeldAfterBreakOffParam(int* enable, double* length, double* velocity, int* moveType);
 
-设置焊机控制模式扩展DO端口
-++++++++++++++++++++++++++++++++++++++++++
+Establecer el puerto DO extendido del modo de control de la máquina de soldar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置焊机控制模式扩展DO端口
-    * @param DONum 焊机控制模式DO端口(0-127)
-    * @return 错误码
+    * @brief Establecer el puerto DO extendido del modo de control de la máquina de soldar
+    * @param DONum Puerto DO del modo de control de la máquina de soldar (0-127)
+    * @return Código de error
     */
     errno_t SetWeldMachineCtrlModeExtDoNum(int DONum);
 
-设置焊机控制模式
-++++++++++++++++++++++++++++++++++++++++++
+Establecer el modo de control de la máquina de soldar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置焊机控制模式
-    * @param [in] mode 焊机控制模式;0-直流一元模式；1-脉冲一元模式；2-JOB模式；3-近控模式；4-分别模式；5-CC/CV模式；6-TIG；7-CMT; 8-松下-有脉冲模式，9-松下-无脉冲模式
-    * @param [in] ioType 控制类型；0-控制箱IO;1-数字通信协议(UDP);2-数字通信协议(ModbusTCP)
-    * @return 错误码
+    * @brief Establecer el modo de control de la máquina de soldar
+    * @param [in] mode Modo de control de la máquina de soldar; 0-modo de un solo parámetro de CC; 1-modo de un solo parámetro de pulso; 2-modo JOB; 3-modo de control cercano; 4-modo separado; 5-modo CC/CV; 6-TIG; 7-CMT; 8-Panasonic-con modo de pulso; 9-Panasonic-sin modo de pulso
+    * @param [in] ioType Tipo de control; 0-IO de la caja de control; 1-protocolo de comunicación digital (UDP); 2-protocolo de comunicación digital (ModbusTCP)
+    * @return Código de error
     */
     errno_t SetWeldMachineCtrlMode(int mode, int ioType = 1);
 
-获取焊机控制模式
-++++++++++++++++++++++++++++++++++++++++++
+Obtener el modo de control de la máquina de soldar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-V3.9.8
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取焊机控制模式
-    * @param [out] mode 焊机控制模式;0-直流一元模式；1-脉冲一元模式；2-JOB模式；3-近控模式；4-分别模式；5-CC/CV模式；6-TIG；7-CMT
-    * @return 错误码
+    * @brief Obtener el modo de control de la máquina de soldar
+    * @param [out] mode Modo de control de la máquina de soldar; 0-modo de un solo parámetro de CC; 1-modo de un solo parámetro de pulso; 2-modo JOB; 3-modo de control cercano; 4-modo separado; 5-modo CC/CV; 6-TIG; 7-CMT
+    * @return Código de error
     */
     errno_t GetWeldMachineCtrlMode(int& mode);
     
-焊接开始
-++++++++++++++++++++++++++
+Inicio de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
 
@@ -410,16 +410,16 @@
     :linenos:
 
     /**
-    * @brief 焊接开始
-    * @param [in] ioType io类型 0-控制器IO； 1-扩展IO
-    * @param [in] arcNum 焊机配置文件编号
-    * @param [in] timeout 起弧超时时间
-    * @return 错误码
+    * @brief Inicio de soldadura
+    * @param [in] ioType Tipo de io 0-IO del controlador;  1-IO extendida
+    * @param [in] arcNum Número del archivo de configuración de la máquina de soldar
+    * @param [in] timeout Tiempo de espera de inicio de arco
+    * @return Código de error
     */
     errno_t ARCStart(int ioType, int arcNum, int timeout);
 
-焊接结束
-++++++++++++++++++++++++++
+Fin de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
 
@@ -427,16 +427,16 @@
     :linenos:
 
     /**
-    * @brief 焊接结束
-    * @param [in] ioType io类型 0-控制器IO； 1-扩展IO
-    * @param [in] arcNum 焊机配置文件编号
-    * @param [in] timeout 熄弧超时时间
-    * @return 错误码
+    * @brief Fin de soldadura
+    * @param [in] ioType Tipo de io 0-IO del controlador;  1-IO extendida
+    * @param [in] arcNum Número del archivo de configuración de la máquina de soldar
+    * @param [in] timeout Tiempo de espera de extinción de arco
+    * @return Código de error
     */
     errno_t ARCEnd(int ioType, int arcNum, int timeout);
 
-摆动开始
-+++++++++++++++++++++++++++++++++++++++++++++
+Inicio de oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
 
@@ -444,14 +444,14 @@
     :linenos:
 
     /**
-    * @brief 摆动开始
-    * @param [in] weaveNum 摆焊参数配置编号
-    * @return 错误码
+    * @brief Inicio de oscilación
+    * @param [in] weaveNum Número de configuración de los parámetros de oscilación de soldadura
+    * @return Código de error
     */
     errno_t WeaveStart(int weaveNum);
 
-摆动结束
-+++++++++++++++++++++++++++++++++++++++++++++
+Fin de oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
 
@@ -459,14 +459,14 @@
     :linenos:
 
     /**
-    * @brief 摆动结束
-    * @param [in] weaveNum 摆焊参数配置编号
-    * @return 错误码
+    * @brief Fin de oscilación
+    * @param [in] weaveNum Número de configuración de los parámetros de oscilación de soldadura
+    * @return Código de error
     */
     errno_t WeaveEnd(int weaveNum);
 
-正向送丝
-+++++++++++++++++++++++++++++++++++++++++++++
+Alimentación de alambre hacia adelante
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
 
@@ -474,15 +474,15 @@
     :linenos:
 
     /**
-    * @brief 正向送丝
-    * @param [in] ioType io类型  0-控制器IO；1-扩展IO
-    * @param [in] wireFeed 送丝控制  0-停止送丝；1-送丝
-    * @return 错误码
+    * @brief Alimentación de alambre hacia adelante
+    * @param [in] ioType Tipo de io  0-IO del controlador; 1-IO extendida
+    * @param [in] wireFeed Control de alimentación de alambre  0-detener alimentación de alambre; 1-alimentar alambre
+    * @return Código de error
     */
     errno_t SetForwardWireFeed(int ioType, int wireFeed);
 
-反向送丝
-+++++++++++++++++++++++++++++++++++++++++++++
+Alimentación de alambre hacia atrás
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
 
@@ -490,15 +490,15 @@
     :linenos:
 
     /**
-    * @brief 反向送丝
-    * @param [in] ioType io类型  0-控制器IO；1-扩展IO
-    * @param [in] wireFeed 送丝控制  0-停止送丝；1-送丝
-    * @return 错误码
+    * @brief Alimentación de alambre hacia atrás
+    * @param [in] ioType Tipo de io  0-IO del controlador; 1-IO extendida
+    * @param [in] wireFeed Control de alimentación de alambre  0-detener alimentación de alambre; 1-alimentar alambre
+    * @return Código de error
     */
     errno_t SetReverseWireFeed(int ioType, int wireFeed);
 
-送气
-+++++++++++++++++++++++++++++++++++++++++++++
+Suministro de gas
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
 
@@ -506,41 +506,41 @@
     :linenos:
 
     /**
-    * @brief 送气
-    * @param [in] ioType io类型  0-控制器IO；1-扩展IO
-    * @param [in] airControl 送气控制  0-停止送气；1-送气
-    * @return 错误码
+    * @brief Suministro de gas
+    * @param [in] ioType Tipo de io  0-IO del controlador; 1-IO extendida
+    * @param [in] airControl Control de suministro de gas  0-detener suministro de gas; 1-suministrar gas
+    * @return Código de error
     */
     errno_t SetAspirated(int ioType, int airControl);
 
-设置机器人焊接中断后恢复焊接
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer la recuperación de soldadura tras la interrupción de soldadura del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.8-3.7.8
 
 .. code-block:: c++
     :linenos:
 
     /**
-	 * @brief 设置机器人焊接中断后恢复焊接
-	 * @return 错误码
+	 * @brief Establecer la recuperación de soldadura tras la interrupción de soldadura del robot
+	 * @return Código de error
     */
 	errno_t WeldingStartReWeldAfterBreakOff();
 
-设置机器人焊接中断后退出焊接
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer la salida de soldadura tras la interrupción de soldadura del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.8-3.7.8
 
 .. code-block:: c++
     :linenos:
 
     /**
-	 * @brief 设置机器人焊接中断后退出焊接
-	 * @return 错误码
+	 * @brief Establecer la salida de soldadura tras la interrupción de soldadura del robot
+	 * @return Código de error
 	 */
 	errno_t WeldingAbortWeldAfterBreakOff();
 
-机器人焊接控制代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de control de soldadura del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
@@ -587,8 +587,8 @@
     }
 
 
-段焊开始
-+++++++++++++++++++++++++++++++++++++++++++++
+Inicio de soldadura por segmentos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: C++SDK-v2.1.1.0
 
@@ -596,34 +596,34 @@
     :linenos:
 
     /**
-    * @brief 段焊开始
-    * @param [in] startDesePos 起始点笛卡尔位置
-    * @param [in] endDesePos 结束点笛卡尔位姿
-    * @param [in] startJPos 起始点关节位姿
-    * @param [in] endJPos 结束点关节位姿
-    * @param [in] weldLength 焊接段长度(mm)
-    * @param [in] noWeldLength 非焊接段长度(mm)
-    * @param [in] weldIOType 焊接IO类型(0-控制箱IO；1-扩展IO)
-    * @param [in] arcNum 焊机配置文件编号
-    * @param [in] weldTimeout 起/收弧超时时间
-    * @param [in] isWeave 是否摆动
-    * @param [in] weaveNum 摆焊参数配置编号
-    * @param [in] tool 工具坐标号，范围[0~14]
-    * @param [in] user 工件坐标号，范围[0~14]
-    * @param [in] vel 速度百分比，范围[0~100]
-    * @param [in] acc 加速度百分比，范围[0~100],暂不开放
-    * @param [in] ovl 速度缩放因子，范围[0~100]
-    * @param [in] blendR [-1.0]-运动到位(阻塞)，[0~1000.0]-平滑半径(非阻塞)，单位mm
-    * @param [in] epos 扩展轴位置，单位mm
-    * @param [in] search 0-不焊丝寻位，1-焊丝寻位
-    * @param [in] offset_flag 0-不偏移，1-基坐标系/工件坐标系下偏移，2-工具坐标系下偏移
-    * @param [in] offset_pos 位姿偏移量
-    * @return 错误码
+    * @brief Inicio de soldadura por segmentos
+    * @param [in] startDesePos Posición cartesiana del punto inicial
+    * @param [in] endDesePos Pose cartesiana del punto final
+    * @param [in] startJPos Pose de articulaciones del punto inicial
+    * @param [in] endJPos Pose de articulaciones del punto final
+    * @param [in] weldLength Longitud del segmento de soldadura (mm)
+    * @param [in] noWeldLength Longitud del segmento sin soldadura (mm)
+    * @param [in] weldIOType Tipo de IO de soldadura (0-IO de la caja de control; 1-IO extendida)
+    * @param [in] arcNum Número del archivo de configuración de la máquina de soldar
+    * @param [in] weldTimeout Tiempo de espera de inicio/cierre de arco
+    * @param [in] isWeave Si oscila
+    * @param [in] weaveNum Número de configuración de los parámetros de oscilación de soldadura
+    * @param [in] tool Número de coordenada de herramienta, rango [0~14]
+    * @param [in] user Número de coordenada de la pieza, rango [0~14]
+    * @param [in] vel Porcentaje de velocidad, rango [0~100]
+    * @param [in] acc Porcentaje de aceleración, rango [0~100], no disponible actualmente
+    * @param [in] ovl Factor de escala de velocidad, rango [0~100]
+    * @param [in] blendR [-1.0]-movimiento en posición (bloqueante), [0~1000.0]-radio de suavizado (no bloqueante), unidad mm
+    * @param [in] epos Posición del eje extendido, unidad mm
+    * @param [in] search 0-sin búsqueda de posición de alambre de soldadura, 1-búsqueda de posición de alambre de soldadura
+    * @param [in] offset_flag 0-sin desplazamiento, 1-desplazamiento en el sistema de coordenadas base/de pieza, 2-desplazamiento en el sistema de coordenadas de herramienta
+    * @param [in] offset_pos Cantidad de desplazamiento de la pose
+    * @return Código de error
     */
     errno_t SegmentWeldStart(DescPose *startDesePos, DescPose *endDesePos, JointPos *startJPos, JointPos *endJPos, double weldLength, double noWeldLength, int weldIOType, int arcNum, int weldTimeout, bool isWeave, int weaveNum, int tool, int user, float vel, float acc, float ovl, float blendR, ExaxisPos *epos, uint8_t search, uint8_t offset_flag, DescPose *offset_pos);
 
-机器人段焊代码示例
-+++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de soldadura por segmentos del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: C++SDK-v2.1.2.0
 
 .. code-block:: c++
@@ -656,80 +656,80 @@
     }
 
 
-仿真摆动开始
-++++++++++++++++++++++++++++++++++++++++++
+Inicio de oscilación de simulación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 仿真摆动开始
-     * @param [in] weaveNum 摆动参数编号
-     * @return 错误码
+     * @brief Inicio de oscilación de simulación
+     * @param [in] weaveNum Número de parámetros de oscilación
+     * @return Código de error
      */
     errno_t WeaveStartSim(int weaveNum);
 
-仿真摆动结束
-++++++++++++++++++++++++++++++++++++++++++
+Fin de oscilación de simulación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 仿真摆动结束
-     * @param [in] weaveNum 摆动参数编号
-     * @return 错误码
+     * @brief Fin de oscilación de simulación
+     * @param [in] weaveNum Número de parámetros de oscilación
+     * @return Código de error
      */
     errno_t WeaveEndSim(int weaveNum);
 
-开始轨迹检测预警(不运动)
-++++++++++++++++++++++++++++++++++++++++++
+Iniciar la alerta de detección de trayectoria (sin movimiento)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 开始轨迹检测预警(不运动)
-     * @param [in] weaveNum  摆动参数编号
-     * @return 错误码
+     * @brief Iniciar la alerta de detección de trayectoria (sin movimiento)
+     * @param [in] weaveNum  Número de parámetros de oscilación
+     * @return Código de error
      */
     errno_t WeaveInspectStart(int weaveNum);
 
-结束轨迹检测预警(不运动)
-++++++++++++++++++++++++++++++++++++++++++
+Finalizar la alerta de detección de trayectoria (sin movimiento)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 结束轨迹检测预警(不运动)
-     * @param [in] weaveNum  摆动参数编号
-     * @return 错误码
+     * @brief Finalizar la alerta de detección de trayectoria (sin movimiento)
+     * @param [in] weaveNum  Número de parámetros de oscilación
+     * @return Código de error
      */
     errno_t WeaveInspectEnd(int weaveNum);
 
-摆动渐变开始
-+++++++++++++++++++++++++
+Inicio de cambio gradual de oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 摆动渐变开始
-     * @param [in] weaveChangeFlag 1-变摆动参数；2-变摆动参数+焊接速度
-     * @param [in] weaveNum 摆动编号 
-     * @param [in] velStart 焊接开始速度，(cm/min)
-     * @param [in] velEnd 焊接结束速度，(cm/min)
-     * @return 错误码
+     * @brief Inicio de cambio gradual de oscilación
+     * @param [in] weaveChangeFlag 1-cambiar parámetros de oscilación; 2-cambiar parámetros de oscilación + velocidad de soldadura
+     * @param [in] weaveNum Número de oscilación 
+     * @param [in] velStart Velocidad de inicio de soldadura, (cm/min)
+     * @param [in] velEnd Velocidad de fin de soldadura, (cm/min)
+     * @return Código de error
      */
      errno_t WeaveChangeStart(int weaveChangeFlag, int weaveNum, double velStart, double velEnd);
 
-机器人摆动渐变焊接代码示例
-+++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de soldadura con cambio gradual de oscilación del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: c++
     :linenos:
@@ -776,164 +776,164 @@
       return 0;
     }
 
-摆动渐变结束
-+++++++++++++++++++++++++
+Fin de cambio gradual de oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.2.0-3.8.0
 
 .. code-block:: c++
     :linenos:
 
 	/**
-	 * @brief  摆动渐变结束
-	 * @return  错误码
+	 * @brief  Fin de cambio gradual de oscilación
+	 * @return  Código de error
 	 */
     errno_t WeaveChangeEnd();
 
-扩展IO-配置焊机气体检测信号
-++++++++++++++++++++++++++++++++++++++++++
+IO extendida - Configurar la señal de detección de gas de la máquina de soldar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 扩展IO-配置焊机气体检测信号
-     * @param [in] DONum 气体检测信号扩展DO编号
-     * @return 错误码
+     * @brief IO extendida - Configurar la señal de detección de gas de la máquina de soldar
+     * @param [in] DONum Número DO extendido de la señal de detección de gas
+     * @return Código de error
      */
     errno_t SetAirControlExtDoNum(int DONum);
 
-扩展IO-配置焊机起弧信号
-++++++++++++++++++++++++++++++++++++++++++
+IO extendida - Configurar la señal de inicio de arco de la máquina de soldar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 扩展IO-配置焊机起弧信号
-     * @param [in] DONum 焊机起弧信号扩展DO编号
-     * @return 错误码
+     * @brief IO extendida - Configurar la señal de inicio de arco de la máquina de soldar
+     * @param [in] DONum Número DO extendido de la señal de inicio de arco de la máquina de soldar
+     * @return Código de error
      */
     errno_t SetArcStartExtDoNum(int DONum);
 
-扩展IO-配置焊机反向送丝信号
-++++++++++++++++++++++++++++++++++++++++++
+IO extendida - Configurar la señal de alimentación de alambre hacia atrás de la máquina de soldar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 扩展IO-配置焊机反向送丝信号
-     * @param [in] DONum 反向送丝信号扩展DO编号
-     * @return 错误码
+     * @brief IO extendida - Configurar la señal de alimentación de alambre hacia atrás de la máquina de soldar
+     * @param [in] DONum Número DO extendido de la señal de alimentación de alambre hacia atrás
+     * @return Código de error
      */
     errno_t SetWireReverseFeedExtDoNum(int DONum);
 
-扩展IO-配置焊机正向送丝信号
-++++++++++++++++++++++++++++++++++++++++++
+IO extendida - Configurar la señal de alimentación de alambre hacia adelante de la máquina de soldar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 扩展IO-配置焊机正向送丝信号
-     * @param [in] DONum 正向送丝信号扩展DO编号
-     * @return 错误码
+     * @brief IO extendida - Configurar la señal de alimentación de alambre hacia adelante de la máquina de soldar
+     * @param [in] DONum Número DO extendido de la señal de alimentación de alambre hacia adelante
+     * @return Código de error
      */
     errno_t SetWireForwardFeedExtDoNum(int DONum);
 
-扩展IO-配置焊机起弧成功信号
-++++++++++++++++++++++++++++++++++++++++++
+IO extendida - Configurar la señal de inicio de arco exitoso de la máquina de soldar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 扩展IO-配置焊机起弧成功信号
-     * @param [in] DINum 起弧成功信号扩展DI编号
-     * @return 错误码
+     * @brief IO extendida - Configurar la señal de inicio de arco exitoso de la máquina de soldar
+     * @param [in] DINum Número DI extendido de la señal de inicio de arco exitoso
+     * @return Código de error
      */
     errno_t SetArcDoneExtDiNum(int DINum);
 
-扩展IO-配置焊机准备信号
-++++++++++++++++++++++++++++++++++++++++++
+IO extendida - Configurar la señal de preparación de la máquina de soldar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 扩展IO-配置焊机准备信号
-     * @param [in] DINum 焊机准备信号扩展DI编号
-     * @return 错误码
+     * @brief IO extendida - Configurar la señal de preparación de la máquina de soldar
+     * @param [in] DINum Número DI extendido de la señal de preparación de la máquina de soldar
+     * @return Código de error
      */
     errno_t SetWeldReadyExtDiNum(int DINum);
 
-扩展IO-配置焊接中断恢复信号
-++++++++++++++++++++++++++++++++++++++++++
+IO extendida - Configurar la señal de recuperación de interrupción de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 扩展IO-配置焊接中断恢复信号
-     * @param [in] reWeldDINum 焊接中断后恢复焊接信号扩展DI编号
-     * @param [in] abortWeldDINum 焊接中断后退出焊接信号扩展DI编号
-     * @return 错误码
+     * @brief IO extendida - Configurar la señal de recuperación de interrupción de soldadura
+     * @param [in] reWeldDINum Número DI extendido de la señal de recuperación de soldadura tras la interrupción
+     * @param [in] abortWeldDINum Número DI extendido de la señal de salida de soldadura tras la interrupción
+     * @return Código de error
      */
     errno_t SetExtDIWeldBreakOffRecover(int reWeldDINum, int abortWeldDINum);
 
-获取扩展DI功能配置
-++++++++++++++++++++++++++++++++++++++++++
+Obtener la configuración de funciones de DI extendida
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-V3.9.8
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 获取扩展DI功能配置
-     * @param [out] DIConfig 扩展DI输入配置；DIConfig[0]-焊机准备扩展DI端口；
-                                         DIConfig[1]-起弧成功扩展DI端口；
-                                            DIConfig[2]-焊接中断恢复扩展DI端口；
-                                            DIConfig[3]-焊接中断退出扩展DI端口；
-                                            DIConfig[4]-焊丝寻位成功扩展DI端口；
-                                            DIConfig[5]-激光焊机运行状态扩展DI端口；
-                                            DIConfig[6]-激光焊机故障状态扩展DI端口；
-                                            DIConfig[7-15]-预留
-    * @return  错误码
+     * @brief Obtener la configuración de funciones de DI extendida
+     * @param [out] DIConfig Configuración de entrada DI extendida; DIConfig[0]-puerto DI extendido de preparación de la máquina de soldar;
+                                         DIConfig[1]-puerto DI extendido de inicio de arco exitoso;
+                                            DIConfig[2]-puerto DI extendido de recuperación de interrupción de soldadura;
+                                            DIConfig[3]-puerto DI extendido de salida de interrupción de soldadura;
+                                            DIConfig[4]-puerto DI extendido de búsqueda de posición de alambre de soldadura exitosa;
+                                            DIConfig[5]-puerto DI extendido del estado de funcionamiento de la máquina de soldadura láser;
+                                            DIConfig[6]-puerto DI extendido del estado de fallo de la máquina de soldadura láser;
+                                            DIConfig[7-15]-reservado
+    * @return  Código de error
     */
     errno_t GetExtDIConfig(int DIConfig[16]);
     
-获取扩展DO功能配置
-++++++++++++++++++++++++++++++++++++++++++
+Obtener la configuración de funciones de DO extendida
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-V3.9.8
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 获取扩展DO功能配置
-     * @param [out] DOConfig 扩展DO输入配置；DOConfig[0]-焊机起弧扩展DO端口；
-                                            DOConfig[1]-气体检测扩展DO端口；
-                                            DOConfig[2]-正向送丝扩展DO端口；
-                                            DOConfig[3]-反向送丝扩展DO端口；
-                                            DOConfig[4]-焊丝寻位扩展DO端口；
-                                            DOConfig[5]-焊机控制模式扩展DO端口；
-                                            DOConfig[6]-激光焊机使能扩展DO端口；
-                                            DOConfig[7]-激光焊机启动(出光)扩展DO端口；
-                                            DOConfig[8]-激光焊机复位扩展DO端口；
-                                            DOConfig[9-15]-预留
-    * @return  错误码
+     * @brief Obtener la configuración de funciones de DO extendida
+     * @param [out] DOConfig Configuración de salida DO extendida; DOConfig[0]-puerto DO extendido de inicio de arco de la máquina de soldar;
+                                            DOConfig[1]-puerto DO extendido de detección de gas;
+                                            DOConfig[2]-puerto DO extendido de alimentación de alambre hacia adelante;
+                                            DOConfig[3]-puerto DO extendido de alimentación de alambre hacia atrás;
+                                            DOConfig[4]-puerto DO extendido de búsqueda de posición de alambre de soldadura;
+                                            DOConfig[5]-puerto DO extendido del modo de control de la máquina de soldar;
+                                            DOConfig[6]-puerto DO extendido de habilitación de la máquina de soldadura láser;
+                                            DOConfig[7]-puerto DO extendido de inicio (emisión de luz) de la máquina de soldadura láser;
+                                            DOConfig[8]-puerto DO extendido de reinicio de la máquina de soldadura láser;
+                                            DOConfig[9-15]-reservado
+    * @return  Código de error
     */
     errno_t GetExtDOConfig(int DOConfig[16]);    
 
-设置扩展IO焊接信号代码示例
-+++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de configuración de señales de soldadura de IO extendida
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
@@ -970,94 +970,94 @@
         return 0;
     }
 
-电弧跟踪控制
-+++++++++++++++++++++++++++
+Control de seguimiento de arco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
       /**
-      * @brief  电弧跟踪控制
-   	  * @param  [in] flag 开关，0-关；1-开
-  	  * @param  [in] dalayTime 滞后时间，单位ms
-  	  * @param  [in] isLeftRight 左右偏差补偿
-  	  * @param  [in] klr 左右调节系数(灵敏度);
-  	  * @param  [in] tStartLr 左右开始补偿时间cyc
-  	  * @param  [in] stepMaxLr 左右每次最大补偿量 mm
-  	  * @param  [in] sumMaxLr 左右总计最大补偿量 mm
-  	  * @param  [in] isUpLow 上下偏差补偿
-  	  * @param  [in] kud 上下调节系数(灵敏度);
-  	  * @param  [in] tStartUd 上下开始补偿时间cyc
-  	  * @param  [in] stepMaxUd 上下每次最大补偿量 mm
-  	  * @param  [in] sumMaxUd 上下总计最大补偿量
-  	  * @param  [in] axisSelect 上下坐标系选择，0-摆动；1-工具；2-基座
-  	  * @param  [in] referenceType 上下基准电流设定方式，0-反馈；1-常数
-  	  * @param  [in] referSampleStartUd 上下基准电流采样开始计数(反馈);，cyc
-  	  * @param  [in] referSampleCountUd 上下基准电流采样循环计数(反馈);，cyc
-  	  * @param  [in] referenceCurrent 上下基准电流mA
-  	  * @param  [in] offsetType 偏置跟踪类型，0-不偏置；1-采样；2-百分比
-  	  * @param  [in] offsetParameter 偏置参数；采样(偏置采样开始时间，默认采一周期)；百分比(偏置百分比(-100 ~ 100))
-  	  * @return  错误码
+      * @brief  Control de seguimiento de arco
+   	  * @param  [in] flag Interruptor, 0-apagado; 1-encendido
+  	  * @param  [in] dalayTime Tiempo de retardo, unidad ms
+  	  * @param  [in] isLeftRight Compensación de desviación izquierda-derecha
+  	  * @param  [in] klr Coeficiente de ajuste izquierda-derecha (sensibilidad);
+  	  * @param  [in] tStartLr Tiempo de inicio de compensación izquierda-derecha cyc
+  	  * @param  [in] stepMaxLr Compensación máxima por paso izquierda-derecha mm
+  	  * @param  [in] sumMaxLr Compensación máxima total izquierda-derecha mm
+  	  * @param  [in] isUpLow Compensación de desviación arriba-abajo
+  	  * @param  [in] kud Coeficiente de ajuste arriba-abajo (sensibilidad);
+  	  * @param  [in] tStartUd Tiempo de inicio de compensación arriba-abajo cyc
+  	  * @param  [in] stepMaxUd Compensación máxima por paso arriba-abajo mm
+  	  * @param  [in] sumMaxUd Compensación máxima total arriba-abajo
+  	  * @param  [in] axisSelect Selección del sistema de coordenadas arriba-abajo, 0-oscilación; 1-herramienta; 2-base
+  	  * @param  [in] referenceType Modo de configuración de la corriente de referencia arriba-abajo, 0-retroalimentación; 1-constante
+  	  * @param  [in] referSampleStartUd Inicio del conteo de muestreo de la corriente de referencia arriba-abajo (retroalimentación); cyc
+  	  * @param  [in] referSampleCountUd Conteo de ciclos de muestreo de la corriente de referencia arriba-abajo (retroalimentación); cyc
+  	  * @param  [in] referenceCurrent Corriente de referencia arriba-abajo mA
+  	  * @param  [in] offsetType Tipo de seguimiento de desplazamiento, 0-sin desplazamiento; 1-muestreo; 2-porcentaje
+  	  * @param  [in] offsetParameter Parámetro de desplazamiento; muestreo (tiempo de inicio del muestreo de desplazamiento, por defecto se muestrea un ciclo); porcentaje (porcentaje de desplazamiento (-100 ~ 100))
+  	  * @return  Código de error
   	  */
 	 errno_t ArcWeldTraceControl(int flag, double delaytime, int isLeftRight, double klr, double tStartLr, double stepMaxLr, double sumMaxLr, int isUpLow, double kud, double tStartUd, double stepMaxUd, double sumMaxUd, int axisSelect, int referenceType, double referSampleStartUd, double referSampleCountUd, double referenceCurrent, int offsetType = 0, int offsetParameter = 0);
 
-设置电弧跟踪输入信号端口
-+++++++++++++++++++++++++++
+Establecer el puerto de señal de entrada del seguimiento de arco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
      /**
-      * @brief  设置电弧跟踪输入信号端口
-      * @param  [in] channel 电弧跟踪AI通带选择,[0-3]
-      * @return  错误码
+      * @brief  Establecer el puerto de señal de entrada del seguimiento de arco
+      * @param  [in] channel Selección de canal AI del seguimiento de arco, [0-3]
+      * @return  Código de error
       */
      errno_t ArcWeldTraceExtAIChannelConfig(int channel);
 
 
-电弧追踪 + 多层多道补偿开启
-++++++++++++++++++++++++++++++++++++++++++
+Inicio de seguimiento de arco + compensación de múltiples capas y pasadas
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 电弧追踪 + 多层多道补偿开启
-    * @return 错误码
+    * @brief Inicio de seguimiento de arco + compensación de múltiples capas y pasadas
+    * @return Código de error
     */
     errno_t ArcWeldTraceReplayStart();
 
-电弧追踪 + 多层多道补偿关闭
-++++++++++++++++++++++++++++++++++++++++++
+Fin de seguimiento de arco + compensación de múltiples capas y pasadas
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 电弧追踪 + 多层多道补偿关闭
-    * @return 错误码
+    * @brief Fin de seguimiento de arco + compensación de múltiples capas y pasadas
+    * @return Código de error
     */
     errno_t ArcWeldTraceReplayEnd();
 
-偏移量坐标变化-多层多道焊
-++++++++++++++++++++++++++++++++++++++++++
+Cambio de coordenadas de desplazamiento - Soldadura de múltiples capas y pasadas
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 偏移量坐标变化-多层多道焊
-    * @return 错误码
+    * @brief Cambio de coordenadas de desplazamiento - Soldadura de múltiples capas y pasadas
+    * @return Código de error
     */
     errno_t MultilayerOffsetTrsfToBase(DescTran pointO, DescTran pointX, DescTran pointZ, double dx, double dy, double db, DescPose& offset);
 
-多层多道焊电弧跟踪代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de seguimiento de arco para soldadura de múltiples capas y pasadas
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
@@ -1167,62 +1167,62 @@
       return 0;
     }
 
-电弧跟踪焊机电流反馈AI通道选择
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Selección del canal AI de retroalimentación de corriente de la máquina de soldar para el seguimiento de arco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 电弧跟踪焊机电流反馈AI通道选择
-     * @param [in]  channel 通道；0-扩展AI0；1-扩展AI1；2-扩展AI2；3-扩展AI3；4-控制箱AI0；5-控制箱AI1
-     * @return 错误码
+     * @brief Selección del canal AI de retroalimentación de corriente de la máquina de soldar para el seguimiento de arco
+     * @param [in]  channel Canal; 0-AI extendida 0; 1-AI extendida 1; 2-AI extendida 2; 3-AI extendida 3; 4-AI de la caja de control 0; 5-AI de la caja de control 1
+     * @return Código de error
      */
      errno_t ArcWeldTraceAIChannelCurrent(int channel);
 
-电弧跟踪焊机电压反馈AI通道选择
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Selección del canal AI de retroalimentación de voltaje de la máquina de soldar para el seguimiento de arco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 电弧跟踪焊机电压反馈AI通道选择
-     * @param [in]  channel 通道；0-扩展AI0；1-扩展AI1；2-扩展AI2；3-扩展AI3；4-控制箱AI0；5-控制箱AI1
-     * @return 错误码
+     * @brief Selección del canal AI de retroalimentación de voltaje de la máquina de soldar para el seguimiento de arco
+     * @param [in]  channel Canal; 0-AI extendida 0; 1-AI extendida 1; 2-AI extendida 2; 3-AI extendida 3; 4-AI de la caja de control 0; 5-AI de la caja de control 1
+     * @return Código de error
      */
      errno_t ArcWeldTraceAIChannelVoltage(int channel);
 
-电弧跟踪焊机电流反馈转换参数
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parámetros de conversión de retroalimentación de corriente de la máquina de soldar para el seguimiento de arco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
      /**
-      * @brief 电弧跟踪焊机电流反馈转换参数
-      * @param [in] AILow AI通道下限，默认值0V，范围[0-10V]
-      * @param [in] AIHigh AI通道上限，默认值10V，范围[0-10V]
-      * @param [in] currentLow AI通道下限对应焊机电流值，默认值0V，范围[0-200V]
-      * @param [in] currentHigh AI通道上限对应焊机电流值，默认值100V，范围[0-200V]
-      * @return 错误码
+      * @brief Parámetros de conversión de retroalimentación de corriente de la máquina de soldar para el seguimiento de arco
+      * @param [in] AILow Límite inferior del canal AI, valor predeterminado 0V, rango [0-10V]
+      * @param [in] AIHigh Límite superior del canal AI, valor predeterminado 10V, rango [0-10V]
+      * @param [in] currentLow Valor de corriente de la máquina de soldar correspondiente al límite inferior del canal AI, valor predeterminado 0V, rango [0-200V]
+      * @param [in] currentHigh Valor de corriente de la máquina de soldar correspondiente al límite superior del canal AI, valor predeterminado 100V, rango [0-200V]
+      * @return Código de error
       */
      errno_t ArcWeldTraceCurrentPara(float AILow, float AIHigh, float currentLow, float currentHigh);
 
-电弧跟踪焊机电压反馈转换参数
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parámetros de conversión de retroalimentación de voltaje de la máquina de soldar para el seguimiento de arco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
      /**
-    * @brief 电弧跟踪焊机电压反馈转换参数
-    * @param [in] AILow AI通道下限，默认值0V，范围[0-10V]
-    * @param [in] AIHigh AI通道上限，默认值10V，范围[0-10V]
-    * @param [in] voltageLow AI通道下限对应焊机电压值，默认值0V，范围[0-200V]
-    * @param [in] voltageHigh AI通道上限对应焊机电压值，默认值100V，范围[0-200V]
-    * @return 错误码
+    * @brief Parámetros de conversión de retroalimentación de voltaje de la máquina de soldar para el seguimiento de arco
+    * @param [in] AILow Límite inferior del canal AI, valor predeterminado 0V, rango [0-10V]
+    * @param [in] AIHigh Límite superior del canal AI, valor predeterminado 10V, rango [0-10V]
+    * @param [in] voltageLow Valor de voltaje de la máquina de soldar correspondiente al límite inferior del canal AI, valor predeterminado 0V, rango [0-200V]
+    * @param [in] voltageHigh Valor de voltaje de la máquina de soldar correspondiente al límite superior del canal AI, valor predeterminado 100V, rango [0-200V]
+    * @return Código de error
     */
     errno_t ArcWeldTraceVoltagePara(float AILow, float AIHigh, float voltageLow, float voltageHigh);
 
-电弧跟踪代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de seguimiento de arco
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: c++
     :linenos:
 
@@ -1243,8 +1243,8 @@
       robot->WeldingSetCurrentRelation(0, 495, 1, 10, 0);
       robot->WeldingSetVoltageRelation(10, 45, 1, 10, 1);
 
-      robot->WeldingSetVoltage(0, 25, 1, 0);// ----设置电压
-      robot->WeldingSetCurrent(0, 260, 0, 0);// ----设置电流
+      robot->WeldingSetVoltage(0, 25, 1, 0);// ----establecer voltaje
+      robot->WeldingSetCurrent(0, 260, 0, 0);// ----establecer corriente
 
       int rtn = robot->ArcWeldTraceAIChannelCurrent(4);
       cout << "ArcWeldTraceAIChannelCurrent rtn is " << rtn << endl;
@@ -1268,23 +1268,23 @@
     }
 
 
-设置焊丝寻位扩展IO端口
-++++++++++++++++++++++++++++++++++++++++++
+Establecer el puerto IO extendido de búsqueda de posición del alambre de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置焊丝寻位扩展IO端口
-    * @param searchDoneDINum 焊丝寻位成功DO端口(0-127)
-    * @param searchStartDONum 焊丝寻位启停控制DO端口(0-127)
-    * @return 错误码
+    * @brief Establecer el puerto IO extendido de búsqueda de posición del alambre de soldadura
+    * @param searchDoneDINum Puerto DO de búsqueda de posición del alambre de soldadura exitosa (0-127)
+    * @param searchStartDONum Puerto DO de control de inicio/parada de búsqueda de posición del alambre de soldadura (0-127)
+    * @return Código de error
     */
     errno_t SetWireSearchExtDIONum(int searchDoneDINum, int searchStartDONum);
 
-示例程序
-+++++++++++++++
+Programa de ejemplo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
@@ -1323,26 +1323,26 @@
     JointPos jointREF1B = { 82.117, -87.146, 116.470, -117.737, -93.145, -61.090 };
 
     rtn0 = robot->WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-    robot->MoveL(&jointREF0A, &descREF0A, 1, 0, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //起点
-    robot->MoveL(&jointREF0B, &descREF0B, 1, 0, 10, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //方向点
+    robot->MoveL(&jointREF0A, &descREF0A, 1, 0, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //punto de inicio
+    robot->MoveL(&jointREF0B, &descREF0B, 1, 0, 10, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //punto de dirección
     rtn1 = robot->WireSearchWait("REF0");
     rtn2 = robot->WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
 
     rtn0 = robot->WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-    robot->MoveL(&jointREF1A, &descREF1A, 1, 0, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //起点
-    robot->MoveL(&jointREF1B, &descREF1B, 1, 0, 10, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //方向点
+    robot->MoveL(&jointREF1A, &descREF1A, 1, 0, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //punto de inicio
+    robot->MoveL(&jointREF1B, &descREF1B, 1, 0, 10, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //punto de dirección
     rtn1 = robot->WireSearchWait("REF1");
     rtn2 = robot->WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
 
     rtn0 = robot->WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-    robot->MoveL(&jointREF0A, &descREF0A, 1, 0, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //起点
-    robot->MoveL(&jointREF0B, &descREF0B, 1, 0, 10, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //方向点
+    robot->MoveL(&jointREF0A, &descREF0A, 1, 0, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //punto de inicio
+    robot->MoveL(&jointREF0B, &descREF0B, 1, 0, 10, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //punto de dirección
     rtn1 = robot->WireSearchWait("RES0");
     rtn2 = robot->WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
 
     rtn0 = robot->WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-    robot->MoveL(&jointREF1A, &descREF1A, 1, 0, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //起点
-    robot->MoveL(&jointREF1B, &descREF1B, 1, 0, 10, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //方向点
+    robot->MoveL(&jointREF1A, &descREF1A, 1, 0, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //punto de inicio
+    robot->MoveL(&jointREF1B, &descREF1B, 1, 0, 10, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //punto de dirección
     rtn1 = robot->WireSearchWait("RES1");
     rtn2 = robot->WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
 
@@ -1357,95 +1357,95 @@
     robot->PointsOffsetDisable();
     }
 
-焊丝寻位开始
-+++++++++++++++++++++++
+Inicio de búsqueda de posición del alambre de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief  焊丝寻位开始
-    * @param  [in] refPos  1-基准点 0-接触点
-    * @param  [in] searchVel   寻位速度 %
-    * @param  [in] searchDis  寻位距离 mm
-    * @param  [in] autoBackFlag 自动返回标志，0-不自动；-自动
-    * @param  [in] autoBackVel  自动返回速度 %
-    * @param  [in] autoBackDis  自动返回距离 mm
-    * @param  [in] offectFlag  1-带偏移量寻位；0-示教点寻位
-    * @return  错误码
+    * @brief  Inicio de búsqueda de posición del alambre de soldadura
+    * @param  [in] refPos  1-punto de referencia 0-punto de contacto
+    * @param  [in] searchVel   Velocidad de búsqueda de posición %
+    * @param  [in] searchDis  Distancia de búsqueda de posición mm
+    * @param  [in] autoBackFlag Indicador de retorno automático, 0-no automático; 1-automático
+    * @param  [in] autoBackVel  Velocidad de retorno automático %
+    * @param  [in] autoBackDis  Distancia de retorno automático mm
+    * @param  [in] offectFlag  1-búsqueda de posición con desplazamiento; 0-búsqueda de posición en punto de enseñanza
+    * @return  Código de error
     */
      errno_t WireSearchStart(int refPos, float searchVel, int searchDis, int autoBackFlag, float autoBackVel, int autoBackDis, int offectFlag);
 
-焊丝寻位结束
-+++++++++++++++++++++++
+Fin de búsqueda de posición del alambre de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
      /**
-      * @brief  焊丝寻位结束
-      * @param  [in] refPos  1-基准点 2-接触点
-      * @param  [in] searchVel   寻位速度 %
-      * @param  [in] searchDis  寻位距离 mm
-      * @param  [in] autoBackFlag 自动返回标志，0-不自动；-自动
-      * @param  [in] autoBackVel  自动返回速度 %
-      * @param  [in] autoBackDis  自动返回距离 mm
-      * @param  [in] offectFlag  1-带偏移量寻位；2-示教点寻位
-      * @return  错误码
+      * @brief  Fin de búsqueda de posición del alambre de soldadura
+      * @param  [in] refPos  1-punto de referencia 2-punto de contacto
+      * @param  [in] searchVel   Velocidad de búsqueda de posición %
+      * @param  [in] searchDis  Distancia de búsqueda de posición mm
+      * @param  [in] autoBackFlag Indicador de retorno automático, 0-no automático; 1-automático
+      * @param  [in] autoBackVel  Velocidad de retorno automático %
+      * @param  [in] autoBackDis  Distancia de retorno automático mm
+      * @param  [in] offectFlag  1-búsqueda de posición con desplazamiento; 2-búsqueda de posición en punto de enseñanza
+      * @return  Código de error
       */
      errno_t WireSearchEnd(int refPos, float searchVel, int searchDis, int autoBackFlag, float autoBackVel, int autoBackDis, int offectFlag);
 
-计算焊丝寻位偏移量
-+++++++++++++++++++++++
+Calcular la cantidad de desplazamiento de la búsqueda de posición del alambre de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
      /**
-      * @brief  计算焊丝寻位偏移量
-      * @param  [in] seamType  焊缝类型
-      * @param  [in] method   计算方法
-      * @param  [in] varNameRef 基准点1-6，“#”表示无点变量
-      * @param  [in] varNameRes 接触点1-6，“#”表示无点变量
-      * @param  [out] offectFlag 0-偏移量直接叠加到指令点；1-偏移量需要对指令点进行坐标变换
-      * @param  [out] offect 偏移位姿[x, y, z, a, b, c]
-      * @return  错误码
+      * @brief  Calcular la cantidad de desplazamiento de la búsqueda de posición del alambre de soldadura
+      * @param  [in] seamType  Tipo de soldadura
+      * @param  [in] method   Método de cálculo
+      * @param  [in] varNameRef Punto de referencia 1-6, "#" indica que no hay variable de punto
+      * @param  [in] varNameRes Punto de contacto 1-6, "#" indica que no hay variable de punto
+      * @param  [out] offectFlag 0-la cantidad de desplazamiento se superpone directamente al punto de instrucción; 1-la cantidad de desplazamiento requiere transformación de coordenadas del punto de instrucción
+      * @param  [out] offect Pose de desplazamiento [x, y, z, a, b, c]
+      * @return  Código de error
       */
      errno_t GetWireSearchOffset(int seamType, int method, std::vector<std::string> varNameRef, std::vector<std::string> varNameRes, int& offectFlag, DescPose& offect);
 
-等待焊丝寻位完成
-+++++++++++++++++++++++
+Esperar a que finalice la búsqueda de posición del alambre de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
 
 .. code-block:: c++
     :linenos:
 
      /**
-      * @brief  等待焊丝寻位完成
-      * @return  错误码
+      * @brief  Esperar a que finalice la búsqueda de posición del alambre de soldadura
+      * @return  Código de error
       */
      errno_t WireSearchWait(std::string varName);
 
-焊丝寻位接触点写入数据库
-+++++++++++++++++++++++++++
+Escribir el punto de contacto de la búsqueda de posición del alambre de soldadura en la base de datos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
     :linenos:
 
      /**
-      * @brief  焊丝寻位接触点写入数据库
-      * @param  [in] varName  接触点名称 “RES0” ~ “RES99”
-      * @param  [in] pos  接触点数据[x, y, x, a, b, c]
-      * @return  错误码
+      * @brief  Escribir el punto de contacto de la búsqueda de posición del alambre de soldadura en la base de datos
+      * @param  [in] varName  Nombre del punto de contacto "RES0" ~ "RES99"
+      * @param  [in] pos  Datos del punto de contacto [x, y, x, a, b, c]
+      * @return  Código de error
       */
      errno_t SetPointToDatabase(std::string varName, DescPose pos);
 
-机器人焊丝寻位代码示例
-+++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de búsqueda de posición del alambre de soldadura del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v2.1.5.0
     
 .. code-block:: c++
@@ -1485,23 +1485,23 @@
       DescPose descREF1B = { 203.103, 583.836, 63.909, 179.991, 2.854, -103.372 };
       JointPos jointREF1B = { -119.088, -69.676, 98.692, -121.761, -89.219, 74.303 };
       rtn0 = robot.WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-      robot.MoveL(&jointREF0A, &descREF0A, 1, 1, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //起点
-      robot.MoveL(&jointREF0B, &descREF0B, 1, 1, 100, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //方向点
+      robot.MoveL(&jointREF0A, &descREF0A, 1, 1, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //punto de inicio
+      robot.MoveL(&jointREF0B, &descREF0B, 1, 1, 100, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //punto de dirección
       rtn1 = robot.WireSearchWait("REF0");
       rtn2 = robot.WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
       rtn0 = robot.WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-      robot.MoveL(&jointREF1A, &descREF1A, 1, 1, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //起点
-      robot.MoveL(&jointREF1B, &descREF1B, 1, 1, 100, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //方向点
+      robot.MoveL(&jointREF1A, &descREF1A, 1, 1, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //punto de inicio
+      robot.MoveL(&jointREF1B, &descREF1B, 1, 1, 100, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //punto de dirección
       rtn1 = robot.WireSearchWait("REF1");
       rtn2 = robot.WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
       rtn0 = robot.WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-      robot.MoveL(&jointREF0A, &descREF0A, 1, 1, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //起点
-      robot.MoveL(&jointREF0B, &descREF0B, 1, 1, 100, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //方向点
+      robot.MoveL(&jointREF0A, &descREF0A, 1, 1, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //punto de inicio
+      robot.MoveL(&jointREF0B, &descREF0B, 1, 1, 100, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //punto de dirección
       rtn1 = robot.WireSearchWait("RES0");
       rtn2 = robot.WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
       rtn0 = robot.WireSearchStart(0, 10, 100, 0, 10, 100, 0);
-      robot.MoveL(&jointREF1A, &descREF1A, 1, 1, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //起点
-      robot.MoveL(&jointREF1B, &descREF1B, 1, 1, 100, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //方向点
+      robot.MoveL(&jointREF1A, &descREF1A, 1, 1, 100, 100, 100, -1, &exaxisPos, 0, 0, &offdese); //punto de inicio
+      robot.MoveL(&jointREF1B, &descREF1B, 1, 1, 100, 100, 100, -1, &exaxisPos, 1, 0, &offdese); //punto de dirección
       rtn1 = robot.WireSearchWait("RES1");
       rtn2 = robot.WireSearchEnd(0, 10, 100, 0, 10, 100, 0);
       vector <string> varNameRef = { "REF0", "REF1", "#", "#", "#", "#" };
@@ -1516,66 +1516,66 @@
       robot.CloseRPC();
       return 0;
 
-设置焊接电压渐变开始
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer el inicio del cambio gradual de voltaje de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
      /**
-    * @brief 设置焊接电压渐变开始
-    * @param [in] IOType 控制类型；0-控制箱IO；1-数字通信协议(UDP);2-数字通信协议(ModbusTCP)
-    * @param [in] voltageStart 起始焊接电压(V)
-    * @param [in] voltageEnd 终止焊接电压(V)
-    * @param [in] AOIndex 控制箱AO端口号(0-1)
-    * @param [in] blend 是否平滑 0-不平滑；1-平滑
-    * @return 错误码
+    * @brief Establecer el inicio del cambio gradual de voltaje de soldadura
+    * @param [in] IOType Tipo de control; 0-IO de la caja de control; 1-protocolo de comunicación digital (UDP); 2-protocolo de comunicación digital (ModbusTCP)
+    * @param [in] voltageStart Voltaje de soldadura inicial (V)
+    * @param [in] voltageEnd Voltaje de soldadura final (V)
+    * @param [in] AOIndex Número de puerto AO de la caja de control (0-1)
+    * @param [in] blend Si se suaviza 0-sin suavizado; 1-suavizado
+    * @return Código de error
     */
     errno_t WeldingSetVoltageGradualChangeStart(int IOType, double voltageStart, double voltageEnd, int AOIndex, int blend);
 
-设置焊接电压渐变结束
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer el fin del cambio gradual de voltaje de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
      /**
-      * @brief 设置焊接电压渐变结束
-      * @return 错误码
+      * @brief Establecer el fin del cambio gradual de voltaje de soldadura
+      * @return Código de error
       */
      errno_t WeldingSetVoltageGradualChangeEnd();
 
-设置焊接电流渐变开始
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer el inicio del cambio gradual de corriente de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
      /**
-      * @brief 设置焊接电流渐变开始
-      * @param [in] IOType 控制类型；0-控制箱IO；1-数字通信协议(UDP);2-数字通信协议(ModbusTCP)
-      * @param [in] voltageStart 起始焊接电流(A)
-      * @param [in] voltageEnd 终止焊接电流(A)
-      * @param [in] AOIndex 控制箱AO端口号(0-1)
-      * @param [in] blend 是否平滑 0-不平滑；1-平滑
-      * @return 错误码
+      * @brief Establecer el inicio del cambio gradual de corriente de soldadura
+      * @param [in] IOType Tipo de control; 0-IO de la caja de control; 1-protocolo de comunicación digital (UDP); 2-protocolo de comunicación digital (ModbusTCP)
+      * @param [in] voltageStart Corriente de soldadura inicial (A)
+      * @param [in] voltageEnd Corriente de soldadura final (A)
+      * @param [in] AOIndex Número de puerto AO de la caja de control (0-1)
+      * @param [in] blend Si se suaviza 0-sin suavizado; 1-suavizado
+      * @return Código de error
       */
      errno_t WeldingSetCurrentGradualChangeStart(int IOType, double currentStart, double currentEnd, int AOIndex, int blend);
 
-设置焊接电流渐变结束
-+++++++++++++++++++++++++++++++++++++++++++++
+Establecer el fin del cambio gradual de corriente de soldadura
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-     * @brief 设置焊接电流渐变结束
-     * @return 错误码
+     * @brief Establecer el fin del cambio gradual de corriente de soldadura
+     * @return Código de error
      */
     errno_t WeldingSetCurrentGradualChangeEnd();
     
-机器人焊接电流电压渐变代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de cambio gradual de corriente y voltaje de soldadura del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
@@ -1617,48 +1617,48 @@
       return 0;
     }
 
-设置自定义摆动参数
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer los parámetros de oscilación personalizados
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置自定义摆动参数
-    * @param [in] id 自定义摆动编号：0-2
-    * @param [in] pointNum 摆动点位个数 0-10
-    * @param [in] point 移动端点数据x,y,z
-    * @param [in] stayTime 摆动停留时间ms
-    * @param [in] frequency 摆动频率 Hz
-    * @param [in] incStayType 等待模式：0-周期不包含等待时间；1-周期包含等待时间
-    * @param [in] stationary 摆动位置等待：0-等待时间内继续运动；1-等待时间内位置静止
-    * @return 错误码
+    * @brief Establecer los parámetros de oscilación personalizados
+    * @param [in] id Número de oscilación personalizada: 0-2
+    * @param [in] pointNum Número de puntos de oscilación 0-10
+    * @param [in] point Datos del punto final de movimiento x,y,z
+    * @param [in] stayTime Tiempo de permanencia de la oscilación ms
+    * @param [in] frequency Frecuencia de oscilación Hz
+    * @param [in] incStayType Modo de espera: 0-el ciclo no incluye el tiempo de espera; 1-el ciclo incluye el tiempo de espera
+    * @param [in] stationary Espera en la posición de oscilación: 0-continuar moviéndose durante el tiempo de espera; 1-permanecer estático durante el tiempo de espera
+    * @return Código de error
     */
     errno_t CustomWeaveSetPara(int id, int pointNum, DescTran point[10], double stayTime[10], double frequency, int incStayType, int stationary);
                 
-获取自定义摆动参数
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener los parámetros de oscilación personalizados
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取自定义摆动参数
-    * @param [in] id 自定义摆动编号：0-2
-    * @param [out] pointNum 摆动点位个数 0-10
-    * @param [out] point 移动端点数据x,y,z
-    * @param [out] stayTime 摆动停留时间ms
-    * @param [out] frequency 摆动频率 Hz
-    * @param [out] incStayType 等待模式：0-周期不包含等待时间；1-周期包含等待时间
-    * @param [out] stationary 摆动位置等待：0-等待时间内继续运动；1-等待时间内位置静止
-    * @return 错误码
+    * @brief Obtener los parámetros de oscilación personalizados
+    * @param [in] id Número de oscilación personalizada: 0-2
+    * @param [out] pointNum Número de puntos de oscilación 0-10
+    * @param [out] point Datos del punto final de movimiento x,y,z
+    * @param [out] stayTime Tiempo de permanencia de la oscilación ms
+    * @param [out] frequency Frecuencia de oscilación Hz
+    * @param [out] incStayType Modo de espera: 0-el ciclo no incluye el tiempo de espera; 1-el ciclo incluye el tiempo de espera
+    * @param [out] stationary Espera en la posición de oscilación: 0-continuar moviéndose durante el tiempo de espera; 1-permanecer estático durante el tiempo de espera
+    * @return Código de error
     */
     errno_t CustomWeaveGetPara(int id, int& pointNum, DescTran point[10], double stayTime[10], double& frequency, int& incStayType, int& stationary);
                     
-自定义摆动参数代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de parámetros de oscilación personalizados
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: C++SDK-v3.8.6
     
 .. code-block:: c++
@@ -1728,199 +1728,199 @@
       robot.CloseRPC();
     }
                     
-激光焊机参数配置
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configuración de parámetros de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 激光焊机参数配置
-    * @param[in] io_type 通信类型 0-IO 1-UDP
-    * @param[in] num 需要设置的组号（1~10）
-    * @param[in] scanSpeed 扫描速度
-    * @param[in] scanWidth 扫描宽度
-    * @param[in] peakPower 峰值功率
-    * @param[in] dutyCycle 占空比
-    * @param[in] freq 频率
-    * @return 错误码
+    * @brief Configuración de parámetros de la máquina de soldadura láser
+    * @param[in] io_type Tipo de comunicación 0-IO 1-UDP
+    * @param[in] num Número de grupo a configurar (1~10)
+    * @param[in] scanSpeed Velocidad de escaneo
+    * @param[in] scanWidth Ancho de escaneo
+    * @param[in] peakPower Potencia pico
+    * @param[in] dutyCycle Ciclo de trabajo
+    * @param[in] freq Frecuencia
+    * @return Código de error
     */
     errno_t SetLaserWeldingParam(int io_type, int num, int scanSpeed, int scanWidth, int peakPower, int dutyCycle, int freq);
                         
-设置激光焊接开始停止
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el inicio y la parada de la soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置激光焊接开始停止
-    * @param[in] io_type 通信类型 0-IO 1-UDP
-    * @param[in] status 控制字 0-收光 1-出光
-    * @param[in] max_waittime 最大等待时间，单位毫秒，默认10000
-    * @return 错误码
+    * @brief Establecer el inicio y la parada de la soldadura láser
+    * @param[in] io_type Tipo de comunicación 0-IO 1-UDP
+    * @param[in] status Palabra de control 0-recepción de luz 1-emisión de luz
+    * @param[in] max_waittime Tiempo máximo de espera, unidad milisegundos, por defecto 10000
+    * @return Código de error
     */
     errno_t SetLaserWeldingStartEnd(int io_type, int status, int max_waittime = 10000);
                         
-激光焊机使能去使能
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Habilitación y deshabilitación de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 激光焊机使能去使能
-    * @param[in] io_type 通信类型 0-IO 1-UDP
-    * @param[in] status 0-去使能 1-使能
-    * @return 错误码
+    * @brief Habilitación y deshabilitación de la máquina de soldadura láser
+    * @param[in] io_type Tipo de comunicación 0-IO 1-UDP
+    * @param[in] status 0-deshabilitar 1-habilitar
+    * @return Código de error
     */
     errno_t SetLaserWeldingEnable(int io_type, int status);
 
-激光焊机故障复位
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Reinicio de fallos de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 激光焊机故障复位
-    * @param[in] io_type 通信类型 0-IO 1-UDP
-    * @param[in] status 控制字 0-无效 1-故障复位
-    * @return 错误码
+    * @brief Reinicio de fallos de la máquina de soldadura láser
+    * @param[in] io_type Tipo de comunicación 0-IO 1-UDP
+    * @param[in] status Palabra de control 0-inválido 1-reinicio de fallos
+    * @return Código de error
     */
     errno_t ResetLaserWeldingErr(int io_type, int status);
 
-获取激光焊机运行状态
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado de funcionamiento de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取激光焊机运行状态
-    * @param[in] io_type 通信类型 0-IO 1-UDP
-    * @param[out] status 控制字 0-停机 1-运行
-    * @return 错误码
+    * @brief Obtener el estado de funcionamiento de la máquina de soldadura láser
+    * @param[in] io_type Tipo de comunicación 0-IO 1-UDP
+    * @param[out] status Palabra de control 0-parada 1-en funcionamiento
+    * @return Código de error
     */
     errno_t GetLaserWeldingRunningState(int io_type, int& status);
 
-获取激光焊机故障状态
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el estado de fallo de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取激光焊机故障状态
-    * @param[in] io_type 通信类型 0-IO 1-UDP
-    * @param[out] status 0-无故障 1-存在故障
-    * @return 错误码
+    * @brief Obtener el estado de fallo de la máquina de soldadura láser
+    * @param[in] io_type Tipo de comunicación 0-IO 1-UDP
+    * @param[out] status 0-sin fallo 1-con fallo
+    * @return Código de error
     */
     errno_t GetLaserWeldingErrState(int io_type, int& status);
     
-获取激光焊机配置参数
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener los parámetros de configuración de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取激光焊机配置参数
-    * @param[in] num 需要设置的组号（1~10）
-    * @param[out] scanSpeed 扫描速度
-    * @param[out] scanWidth 扫描宽度
-    * @param[out] peakPower 峰值功率
-    * @param[out] dutyCycle 占空比
-    * @param[out] freq 频率
-    * @return 错误码
+    * @brief Obtener los parámetros de configuración de la máquina de soldadura láser
+    * @param[in] num Número de grupo a configurar (1~10)
+    * @param[out] scanSpeed Velocidad de escaneo
+    * @param[out] scanWidth Ancho de escaneo
+    * @param[out] peakPower Potencia pico
+    * @param[out] dutyCycle Ciclo de trabajo
+    * @param[out] freq Frecuencia
+    * @return Código de error
     */
     errno_t GetLaserWeldingParamTarget(int num, int& scanSpeed, int& scanWidth, int& peakPower, int& dutyCycle, int& freq);
 
-获取当前激光焊机生效的配置参数
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener los parámetros de configuración vigentes actualmente de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取当前激光焊机生效的配置参数
-    * @param[in] io_type 通信类型 0-IO 1-UDP
-    * @param[out] scanSpeed 扫描速度
-    * @param[out] scanWidth 扫描宽度
-    * @param[out] peakPower 峰值功率
-    * @param[out] dutyCycle 占空比
-    * @param[out] freq 频率
-    * @return 错误码，0表示成功，非0表示失败
+    * @brief Obtener los parámetros de configuración vigentes actualmente de la máquina de soldadura láser
+    * @param[in] io_type Tipo de comunicación 0-IO 1-UDP
+    * @param[out] scanSpeed Velocidad de escaneo
+    * @param[out] scanWidth Ancho de escaneo
+    * @param[out] peakPower Potencia pico
+    * @param[out] dutyCycle Ciclo de trabajo
+    * @param[out] freq Frecuencia
+    * @return Código de error, 0 indica éxito, distinto de 0 indica fallo
     */
     errno_t GetLaserWeldingParamActual(int io_type, int& scanSpeed, int& scanWidth, int& peakPower, int& dutyCycle, int& freq);
 
-配置激光焊机扩展IO使能DO端口
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configurar el puerto DO extendido de habilitación de IO de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 配置激光焊机扩展IO使能DO端口
-    * @param[in] ctrlModeDONum 激光焊机使能的扩展DO端口号
-    * @return 错误码，0表示成功，非0表示失败
+    * @brief Configurar el puerto DO extendido de habilitación de IO de la máquina de soldadura láser
+    * @param[in] ctrlModeDONum Número de puerto DO extendido de habilitación de la máquina de soldadura láser
+    * @return Código de error, 0 indica éxito, distinto de 0 indica fallo
     */
     errno_t SetLaserWeldingEnableExtDoNum(int ctrlModeDONum);
 
-配置激光焊机扩展IO启动DO端口
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configurar el puerto DO extendido de inicio de IO de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 配置激光焊机扩展IO启动DO端口
-    * @param[in] ctrlModeDONum 激光焊机启动（出光收光）的扩展DO端口号
-    * @return 错误码，0表示成功，非0表示失败
+    * @brief Configurar el puerto DO extendido de inicio de IO de la máquina de soldadura láser
+    * @param[in] ctrlModeDONum Número de puerto DO extendido de inicio (emisión y recepción de luz) de la máquina de soldadura láser
+    * @return Código de error, 0 indica éxito, distinto de 0 indica fallo
     */
     errno_t SetLaserWeldingStartExtDoNum(int ctrlModeDONum);
 
-配置激光焊机扩展IO故障复位DO端口
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configurar el puerto DO extendido de reinicio de fallos de IO de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 配置激光焊机扩展IO故障复位DO端口
-    * @param[in] ctrlModeDONum 激光焊机故障复位的扩展DO端口号
-    * @return 错误码，0表示成功，非0表示失败
+    * @brief Configurar el puerto DO extendido de reinicio de fallos de IO de la máquina de soldadura láser
+    * @param[in] ctrlModeDONum Número de puerto DO extendido de reinicio de fallos de la máquina de soldadura láser
+    * @return Código de error, 0 indica éxito, distinto de 0 indica fallo
     */
     errno_t SetLaserWeldingErrResetExtDoNum(int ctrlModeDONum);
     
-配置激光焊机扩展IO运行状态（出光状态）DI端口
+Configurar el puerto DI extendido del estado de funcionamiento (estado de emisión de luz) de IO de la máquina de soldadura láser
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 配置激光焊机扩展IO运行状态（出光状态）DI端口
-    * @param[in] diNum 配置激光焊机运行状态（出光状态）扩展DI端口
-    * @return 错误码，0表示成功，非0表示失败
+    * @brief Configurar el puerto DI extendido del estado de funcionamiento (estado de emisión de luz) de IO de la máquina de soldadura láser
+    * @param[in] diNum Configurar el puerto DI extendido del estado de funcionamiento (estado de emisión de luz) de la máquina de soldadura láser
+    * @return Código de error, 0 indica éxito, distinto de 0 indica fallo
     */
     errno_t SetLaserWeldingRunningStateExtDiNum(int diNum);
     
-配置激光焊机扩展IO故障状态DI端口
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Configurar el puerto DI extendido del estado de fallo de IO de la máquina de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 配置激光焊机扩展IO故障状态DI端口
-    * @param[in] diNum 配置激光焊机故障状态扩展DI端口
-    * @return 错误码，0表示成功，非0表示失败
+    * @brief Configurar el puerto DI extendido del estado de fallo de IO de la máquina de soldadura láser
+    * @param[in] diNum Configurar el puerto DI extendido del estado de fallo de la máquina de soldadura láser
+    * @return Código de error, 0 indica éxito, distinto de 0 indica fallo
     */
     errno_t SetLaserWeldingErrStateExtDiNum(int diNum);
         
-激光焊接代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de soldadura láser
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
@@ -2008,34 +2008,34 @@
         return 0;
     }
             
-设置摆动结束回周期零点
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el retorno al punto cero del ciclo al final de la oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置摆动结束回周期零点
-    * @param [in] flag 摆动结束是否回周期零点；0-不回周期零点；1-回周期零点
-    * @return 错误码
+    * @brief Establecer el retorno al punto cero del ciclo al final de la oscilación
+    * @param [in] flag Si al final de la oscilación se retorna al punto cero del ciclo; 0-no retornar al punto cero del ciclo; 1-retornar al punto cero del ciclo
+    * @return Código de error
     */
     errno_t SetWeaveBackCenterConfig(int flag);
             
-获取摆动结束回周期零点参数
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Obtener el parámetro de retorno al punto cero del ciclo al final de la oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 获取摆动结束回周期零点参数
-    * @param [out] flag 摆动结束是否回周期零点；0-不回周期零点；1-回周期零点
-    * @return 错误码
+    * @brief Obtener el parámetro de retorno al punto cero del ciclo al final de la oscilación
+    * @param [out] flag Si al final de la oscilación se retorna al punto cero del ciclo; 0-no retornar al punto cero del ciclo; 1-retornar al punto cero del ciclo
+    * @return Código de error
     */
     errno_t GetWeaveBackCenterConfig(int& flag);
             
-摆动结束回周期零点代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de retorno al punto cero del ciclo al final de la oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
@@ -2091,21 +2091,21 @@
     robot.NewSplineEnd();
     }
 
-设置摆动实时偏移
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Establecer el desplazamiento en tiempo real de la oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
 
     /**
-    * @brief 设置摆动实时偏移
-    * @param [in] offset 实时偏移量[mm，°]
-    * @return 错误码
+    * @brief Establecer el desplazamiento en tiempo real de la oscilación
+    * @param [in] offset Desplazamiento en tiempo real [mm, °]
+    * @return Código de error
     */
     errno_t SetWeaveOffsetRT(DescPose offset);
 
-摆动实时调速和偏移代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de regulación de velocidad y desplazamiento en tiempo real de la oscilación
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. code-block:: c++
     :linenos:
@@ -2123,7 +2123,7 @@
         return 0;
     }
         std::cout << "============================================================" << std::endl;
-    std::cout << " 摆动调速与实时偏移测试" << std::endl;
+    std::cout << " Prueba de regulación de velocidad y desplazamiento en tiempo real de la oscilación" << std::endl;
     std::cout << "============================================================" << std::endl;
     ExaxisPos epos(0, 0, 0, 0);
     DescPose offset_pos(0, 0, 0, 0, 0, 0);
@@ -2133,18 +2133,18 @@
     DescPose d2(324.999, -355.439, 260.000, 179.995, 0.003, -105.775);
     JointPos j3(59.787, -117.594, -57.183, -95.222, 90.006, 75.562);
     DescPose d3(324.998, 355.441, 260.002, 179.995, 0.003, -105.775);
-    // ---- Step 1: MoveJ到起始点 ----
-    std::cout << "\nStep 1: MoveJ to start point" << std::endl;
+    // ---- Paso 1: MoveJ al punto de inicio ----
+    std::cout << "\nPaso 1: MoveJ al punto de inicio" << std::endl;
     rtn = robot.MoveJ(&j1, &d1, 1, 0, 100, 100, 50, &epos, -1, 0, &offset_pos);
     std::cout << " MoveJ(j1) rtn=" << rtn << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
-    // ---- Step 2: MoveJ到摆动入口 ----
-    std::cout << "\nStep 2: MoveJ to weave entry point" << std::endl;
+    // ---- Paso 2: MoveJ al punto de entrada de la oscilación ----
+    std::cout << "\nPaso 2: MoveJ al punto de entrada de la oscilación" << std::endl;
     rtn = robot.MoveJ(&j2, &d2, 1, 0, 100, 100, 50, &epos, -1, 0, &offset_pos);
     std::cout << " MoveJ(j2) rtn=" << rtn << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
-    // ---- Step 3: WeaveStart, 启动摆动MoveL线程 ----
-    std::cout << "\nStep 3: WeaveStart + MoveL in background thread" << std::endl;
+    // ---- Paso 3: WeaveStart, iniciar el hilo de MoveL de oscilación ----
+    std::cout << "\nPaso 3: WeaveStart + MoveL en hilo en segundo plano" << std::endl;
     robot.WeaveStart(0);
     std::atomic<bool> weaveRunning(true);
     std::thread weaveThread([&]() {
@@ -2152,10 +2152,10 @@
         std::cout << " MoveL(weave) thread finished, rtn=" << rtn << std::endl;
         weaveRunning = false;
         });
-    weaveThread.detach(); // 后台运行
-    std::this_thread::sleep_for(std::chrono::milliseconds(500)); // 等待运动开始
-    // ---- Step 4: 调速测试(主线程，摆动MoveL后台运行) ----
-    std::cout << "\nStep 4: SetSpeed test during weaving" << std::endl;
+    weaveThread.detach(); // ejecución en segundo plano
+    std::this_thread::sleep_for(std::chrono::milliseconds(500)); // esperar a que comience el movimiento
+    // ---- Paso 4: Prueba de regulación de velocidad (hilo principal, MoveL de oscilación en segundo plano) ----
+    std::cout << "\nPaso 4: Prueba de SetSpeed durante la oscilación" << std::endl;
     std::vector<int> speedValues = { 20, 50, 80, 30, 60, 10 };
     for (int speed : speedValues)
     {
@@ -2167,8 +2167,8 @@
         std::this_thread::sleep_for(std::chrono::milliseconds(5000));
     }
     std::this_thread::sleep_for(std::chrono::milliseconds(5000));
-    // ---- Step 5: SetWeaveOffsetRT偏移测试(主线程，摆动MoveL后台运行) ----
-    std::cout << "\nStep 5: SetWeaveOffsetRT test (50 iterations, delta=0.1)" << std::endl;
+    // ---- Paso 5: Prueba de desplazamiento SetWeaveOffsetRT (hilo principal, MoveL de oscilación en segundo plano) ----
+    std::cout << "\nPaso 5: Prueba de SetWeaveOffsetRT (50 iteraciones, delta=0.1)" << std::endl;
     double accumOffset = 0.0;
     for (int i = 0; i < 50 && weaveRunning.load(); i++)
     {
@@ -2181,23 +2181,23 @@
         << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(200));
     }
-    // ---- Step 6: 等待摆动MoveL完成, WeaveEnd ----
-    std::cout << "\nStep 6: Wait for weave MoveL, then WeaveEnd" << std::endl;
-    // 由于使用了 detach，这里需要等待 weaveRunning 变为 false
+    // ---- Paso 6: Esperar a que finalice el MoveL de oscilación, WeaveEnd ----
+    std::cout << "\nPaso 6: Esperar a que finalice el MoveL de oscilación, luego WeaveEnd" << std::endl;
+    // Dado que se usó detach, es necesario esperar a que weaveRunning cambie a false
     while (weaveRunning.load()) 
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
     robot.WeaveEnd(0);
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
-    // ---- Step 7: MoveL返回起始点 ----
-    std::cout << "\nStep 7: MoveL back to start" << std::endl;
+    // ---- Paso 7: MoveL de regreso al punto de inicio ----
+    std::cout << "\nPaso 7: MoveL de regreso al inicio" << std::endl;
     rtn = robot.MoveL(&j1, &d1, 1, 0, 100, 100, 50, -1, 0, &epos, 0, 0, &offset_pos, 50, 0, 0, 10);
     std::cout << " MoveL(back) rtn=" << rtn << std::endl;
     robot.GetRobotRealTimeState(&pkg);
-    std::cout << "\n Final robot state: main_code=" << pkg.main_code
+    std::cout << "\n Estado final del robot: main_code=" << pkg.main_code
         << ", sub_code=" << pkg.sub_code << std::endl;
     std::cout << "============================================================" << std::endl;
-    std::cout << " 摆动调速与实时偏移测试 完成" << std::endl;
+    std::cout << " Prueba de regulación de velocidad y desplazamiento en tiempo real de la oscilación completada" << std::endl;
     std::cout << "============================================================" << std::endl;
     }

@@ -1,61 +1,61 @@
-机器人运动
-============
+Movimiento del robot
+=======================
 
 .. toctree:: 
     :maxdepth: 5
 
-jog点动
-+++++++++++++
+Jog punto a punto
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``StartJOG(ref,nb,dir,max_dis,vel=20.0,acc=100.0)``"
-    "描述", "jog点动"
-    "必选参数", "- ``ref``：0-关节点动,2-基坐标系点动,4-工具坐标系点动,8-工件坐标系点动；
-    - ``nb``：1-1关节(x轴),2-2关节(y轴),3-3关节(z轴),4-4关节(rx),5-5关节(ry),6-6关节(rz);
-    - ``dir``：0-负方向，1-正方向;
-    - ``max_dis``：单次点动最大角度/距离，单位 ° 或 mm;"
-    "默认参数", "- ``vel``：速度百分比，[0~100] 默认20;
-    - ``acc``：加速度百分比，[0~100] 默认100;"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``StartJOG(ref,nb,dir,max_dis,vel=20.0,acc=100.0)``"
+    "Descripción", "Jog punto a punto"
+    "Parámetros obligatorios", "- ``ref``：0-jog de articulaciones,2-jog en el sistema de coordenadas base,4-jog en el sistema de coordenadas de herramienta,8-jog en el sistema de coordenadas de pieza;
+    - ``nb``：1-articulación 1 (eje x),2-articulación 2 (eje y),3-articulación 3 (eje z),4-articulación 4 (rx),5-articulación 5 (ry),6-articulación 6 (rz);
+    - ``dir``：0-dirección negativa, 1-dirección positiva;
+    - ``max_dis``：Ángulo/distancia máximo de un solo jog, unidad ° o mm;"
+    "Parámetros predeterminados", "- ``vel``：Porcentaje de velocidad, [0~100], valor predeterminado 20;
+    - ``acc``：Porcentaje de aceleración, [0~100], valor predeterminado 100;"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-jog点动减速停止
-++++++++++++++++++++++++++
-
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``StopJOG(ref)``"
-    "描述", "jog点动减速停止"
-    "必选参数", "- ``ref``：1-关节点动停止,3-基坐标系点动停止,5-工具坐标系点动停止,9-工件坐标系点动停止"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
-
-jog点动立即停止
-++++++++++++++++++++++++++
+Parada con desaceleración del jog punto a punto
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ImmStopJOG()``"
-    "描述", "jog点动立即停止"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``StopJOG(ref)``"
+    "Descripción", "Parada con desaceleración del jog punto a punto"
+    "Parámetros obligatorios", "- ``ref``：1-parada del jog de articulaciones,3-parada del jog en el sistema de coordenadas base,5-parada del jog en el sistema de coordenadas de herramienta,9-parada del jog en el sistema de coordenadas de pieza"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-机器人点动控制代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+Parada inmediata del jog punto a punto
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``ImmStopJOG()``"
+    "Descripción", "Parada inmediata del jog punto a punto"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
+
+Ejemplo de código de control del jog punto a punto del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     for i in range(6):
         robot.StartJOG(0, i + 1, 0, 20.0, 20.0, 30.0)
@@ -79,147 +79,147 @@ jog点动立即停止
         time.sleep(1)
     robot.CloseRPC()
 
-关节空间运动
-++++++++++++++
+Movimiento en el espacio de articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``MoveJ(joint_pos, tool, user, desc_pos = [0.0,0.0,0.0,0.0,0.0,0.0], vel = 20.0, acc = 0.0, ovl = 100.0, exaxis_pos = [0.0,0.0,0.0,0.0], blendT = -1.0, offset_flag = 0, offset_pos = [0.0,0.0,0.0,0.0,0.0,0.0])``"
-    "描述", "关节空间运动"
-    "必选参数", "- ``joint_pos``:目标关节位置，单位[°]；
-    - ``tool``:工具号，[0~14]；
-    - ``user``:工件号，[0~14]；"
-    "默认参数", "- ``desc_pos``:目标笛卡尔位姿，单位 [mm][°] 默认初值为[0.0,0.0,0.0,0.0,0.0,0.0]，默认值调用正运动学求解返回值;
-    - ``vel``:速度百分比，[0~100] 默认20.0;
-    - ``acc``:加速度百分比，[0~100]，暂不开放；
-    - ``ovl``:速度缩放因子，[0~100] 默认100.0;
-    - ``exaxis_pos``:外部轴 1 位置 ~ 外部轴 4 位置 默认[0.0,0.0,0.0,0.0];
-    - ``blendT``:[-1.0]-运动到位 (阻塞)，[0~500.0]-平滑时间 (非阻塞)，单位 [ms] 默认-1.0;
-    - ``offset_flag``:[0]-不偏移，[1]-工件/基坐标系下偏移，[2]-工具坐标系下偏移 默认 0;
-    - ``offset_pos``:位姿偏移量，单位 [mm][°] 默认[0.0,0.0,0.0,0.0,0.0,0.0];"
-    "返回值", "错误码  成功-0  失败- errcode"
+    "Prototipo", "``MoveJ(joint_pos, tool, user, desc_pos = [0.0,0.0,0.0,0.0,0.0,0.0], vel = 20.0, acc = 0.0, ovl = 100.0, exaxis_pos = [0.0,0.0,0.0,0.0], blendT = -1.0, offset_flag = 0, offset_pos = [0.0,0.0,0.0,0.0,0.0,0.0])``"
+    "Descripción", "Movimiento en el espacio de articulaciones"
+    "Parámetros obligatorios", "- ``joint_pos``:Posición objetivo de las articulaciones, unidad [°];
+    - ``tool``:Número de herramienta, [0~14];
+    - ``user``:Número de pieza, [0~14];"
+    "Parámetros predeterminados", "- ``desc_pos``:Pose cartesiana objetivo, unidad [mm][°]; valor inicial predeterminado [0.0,0.0,0.0,0.0,0.0,0.0], el valor predeterminado utiliza el valor de retorno de la solución de cinemática directa;
+    - ``vel``:Porcentaje de velocidad, [0~100], valor predeterminado 20.0;
+    - ``acc``:Porcentaje de aceleración, [0~100], aún no disponible;
+    - ``ovl``:Factor de escala de velocidad, [0~100], valor predeterminado 100.0;
+    - ``exaxis_pos``:Posición del eje externo 1 ~ posición del eje externo 4, valor predeterminado [0.0,0.0,0.0,0.0];
+    - ``blendT``:[-1.0]-movimiento en posición (bloqueante), [0~500.0]-tiempo de suavizado (no bloqueante), unidad [ms], valor predeterminado -1.0;
+    - ``offset_flag``:[0]-sin desplazamiento, [1]-desplazamiento en el sistema de coordenadas de pieza/base, [2]-desplazamiento en el sistema de coordenadas de herramienta, valor predeterminado 0;
+    - ``offset_pos``:Cantidad de desplazamiento de la pose, unidad [mm][°], valor predeterminado [0.0,0.0,0.0,0.0,0.0,0.0];"
+    "Valor de retorno", "Código de error  éxito-0  fallo- errcode"
 
-笛卡尔空间直线运动
-+++++++++++++++++++
+Movimiento lineal en el espacio cartesiano
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``MoveL(desc_pos, tool, user, joint_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], vel=20.0, acc=0.0, ovl=100.0,blendR=-1.0, blendMode = 0,exaxis_pos=[0.0, 0.0, 0.0, 0.0], search=0, offset_flag=0,offset_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],oacc = 100.0,config=-1,velAccParamMode=0,overSpeedStrategy=0,speedPercent=10)``"
-    "描述", "笛卡尔空间直线运动"
-    "必选参数", "- ``desc_pos``:目标笛卡尔位姿，单位[mm][°]；
-    - ``tool``:工具号，[0~14]；
-    - ``user``:工件号，[0~14]；"
-    "默认参数", "- ``joint_pos``:目标关节位置，单位 [°] 默认初值为[0.0,0.0,0.0,0.0,0.0,0.0]，默认值调用逆运动学求解返回值;
-    - ``vel``:速度百分比，[0~100] 默认20.0；
-    - ``acc``:加速度百分比，[0~100]，暂不开放 默认0.0；
-    - ``ovl``:速度缩放因子，[0~100] 默认100.0；
-    - ``blendR``:[-1.0]-运动到位 (阻塞)，[0~1000]-平滑半径 (非阻塞)，单位 [mm] 默认-1.0;
-    - ``blendMode``:过渡方式；0-内切过渡；1-角点过渡,默认-0;
-    - ``exaxis_pos``:外部轴 1 位置 ~ 外部轴 4 位置 默认[0.0,0.0,0.0,0.0];
-    - ``search``:[0]-不焊丝寻位，[1]-焊丝寻位；
-    - ``offset_flag``:[0]-不偏移，[1]-工件/基坐标系下偏移，[2]-工具坐标系下偏移 默认 0;
-    - ``offset_pos``:位姿偏移量，单位 [mm][°] 默认[0.0,0.0,0.0,0.0,0.0,0.0];
-    - ``oacc``:加速度缩放因子[0-100]/物理加速度(mm/s2) 默认 100;
-    - ``config``:逆解关节空间配置，[-1]-参考当前关节位置解算，[0~7]-依据特定关节空间配置求解，默认-1
-    - ``velAccParamMode``:速度加速度参数模式；0-百分比；1-物理速度(mm/s)加速度(mm/s2) 默认0
-    - ``overSpeedStrategy``:超速处理策略，0-策略关闭；1-标准；2-超速时报错停止；3-自适应降速，默认为0
-    - ``speedPercent``:允许降速阈值百分比[0-100]，默认10%
+    "Prototipo", "``MoveL(desc_pos, tool, user, joint_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], vel=20.0, acc=0.0, ovl=100.0,blendR=-1.0, blendMode = 0,exaxis_pos=[0.0, 0.0, 0.0, 0.0], search=0, offset_flag=0,offset_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],oacc = 100.0,config=-1,velAccParamMode=0,overSpeedStrategy=0,speedPercent=10)``"
+    "Descripción", "Movimiento lineal en el espacio cartesiano"
+    "Parámetros obligatorios", "- ``desc_pos``:Pose cartesiana objetivo, unidad [mm][°];
+    - ``tool``:Número de herramienta, [0~14];
+    - ``user``:Número de pieza, [0~14];"
+    "Parámetros predeterminados", "- ``joint_pos``:Posición objetivo de las articulaciones, unidad [°]; valor inicial predeterminado [0.0,0.0,0.0,0.0,0.0,0.0], el valor predeterminado utiliza el valor de retorno de la solución de cinemática inversa;
+    - ``vel``:Porcentaje de velocidad, [0~100], valor predeterminado 20.0;
+    - ``acc``:Porcentaje de aceleración, [0~100], aún no disponible, valor predeterminado 0.0;
+    - ``ovl``:Factor de escala de velocidad, [0~100], valor predeterminado 100.0;
+    - ``blendR``:[-1.0]-movimiento en posición (bloqueante), [0~1000]-radio de suavizado (no bloqueante), unidad [mm], valor predeterminado -1.0;
+    - ``blendMode``:Modo de transición; 0-transición tangente interna; 1-transición en esquina, valor predeterminado 0;
+    - ``exaxis_pos``:Posición del eje externo 1 ~ posición del eje externo 4, valor predeterminado [0.0,0.0,0.0,0.0];
+    - ``search``:[0]-sin búsqueda de posición de alambre de soldadura, [1]-búsqueda de posición de alambre de soldadura;
+    - ``offset_flag``:[0]-sin desplazamiento, [1]-desplazamiento en el sistema de coordenadas de pieza/base, [2]-desplazamiento en el sistema de coordenadas de herramienta, valor predeterminado 0;
+    - ``offset_pos``:Cantidad de desplazamiento de la pose, unidad [mm][°], valor predeterminado [0.0,0.0,0.0,0.0,0.0,0.0];
+    - ``oacc``:Factor de escala de aceleración [0-100]/aceleración física (mm/s2), valor predeterminado 100;
+    - ``config``:Configuración del espacio de articulaciones de la solución inversa, [-1]-resolver con referencia a la posición actual de las articulaciones, [0~7]-resolver según una configuración específica del espacio de articulaciones, valor predeterminado -1
+    - ``velAccParamMode``:Modo de parámetros de velocidad y aceleración; 0-porcentaje; 1-velocidad física (mm/s) y aceleración (mm/s2), valor predeterminado 0
+    - ``overSpeedStrategy``:Estrategia de tratamiento de exceso de velocidad, 0-estrategia desactivada; 1-estándar; 2-detener con error al exceder la velocidad; 3-reducción adaptativa de velocidad, valor predeterminado 0
+    - ``speedPercent``:Porcentaje de umbral de reducción de velocidad permitido [0-100], valor predeterminado 10%
     "
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-笛卡尔空间圆弧运动
-++++++++++++++++++++
+Movimiento circular en el espacio cartesiano
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``MoveC(desc_pos_p, tool_p, user_p, desc_pos_t, tool_t, user_t, joint_pos_p=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], joint_pos_t=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],vel_p=20.0, acc_p=100.0, exaxis_pos_p=[0.0, 0.0, 0.0, 0.0], offset_flag_p=0,offset_pos_p=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],vel_t=20.0, acc_t=100.0, exaxis_pos_t=[0.0, 0.0, 0.0, 0.0], offset_flag_t=0,offset_pos_t=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],ovl=100.0, blendR=-1.0,oacc=100.0,config=-1,velAccParamMode=0)``"
-    "描述", "笛卡尔空间圆弧运动"
-    "必选参数", "- ``desc_pos_p``:路径点笛卡尔位姿，单位[mm][°]；
-    - ``tool_p``:路径点工具号，[0~14];
-    - ``user_p``:路径点工件号，[0~14];
-    - ``desc_pos_t``:目标点笛卡尔位姿，单位 [mm][°];
-    - ``tool_t``:工具号，[0~14]；
-    - ``user_t``:工件号，[0~14]；"
-    "默认参数", "- ``joint_pos_p``:路径点关节位置，单位 [°] 默认初值为[0.0,0.0,0.0,0.0,0.0,0.0]，默认值调用逆运动学求解返回值;
-    - ``joint_pos_t``:目标点关节位置，单位 [°] 默认初值为[0.0,0.0,0.0,0.0,0.0,0.0]，默认值调用逆运动学求解返回值;
-    - ``vel_p``:路径点速度百分比，[0~100] 默认20.0;
-    - ``acc_p``:路径点加速度百分比，[0~100] 暂不开放,默认0.0;
-    - ``exaxis_pos_p``:路径点外部轴 1位置 ~ 外部轴 4 位置 默认[0.0,0.0,0.0,0.0];
-    - ``offset_flag_p``:路径点是否偏移[0]-不偏移，[1]-工件/基坐标系下偏移，[2]-工具坐标系下偏移 默认 0;
-    - ``vel_t``:目标点速度百分比，[0~100] 默认20.0;
-    - ``acc_t``:目标点加速度百分比，[0~100] 暂不开放 默认0.0;
-    - ``exaxis_pos_t``:目标点外部轴 1 位置 ~ 外部轴 4 位置 默认[0.0,0.0,0.0,0.0];
-    - ``offset_flag_t``:目标点是否偏移[0]-不偏移，[1]-工件/基坐标系下偏移，[2]-工具坐标系下偏移 默认 0;
-    - ``offset_pos_t``:目标点位姿偏移量，单位 [mm][°] 默认[0.0,0.0,0.0,0.0,0.0,0.0];
-    - ``ovl:``:速度缩放因子，[0~100] 默认100.0;
-    - ``blendR``:[-1.0]-运动到位 (阻塞)，[0~1000]-平滑半径 (非阻塞)，单位 [mm] 默认-1.0;
-    - ``oacc``:加速度缩放因子[0-100]/物理加速度(mm/s2) 默认 100;
-    - ``config``:逆解关节空间配置，[-1]-参考当前关节位置解算，[0~7]-依据特定关节空间配置求解，默认-1;
-    - ``velAccParamMode``:速度加速度参数模式；0-百分比；1-物理速度(mm/s)加速度(mm/s2) 默认0"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``MoveC(desc_pos_p, tool_p, user_p, desc_pos_t, tool_t, user_t, joint_pos_p=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], joint_pos_t=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],vel_p=20.0, acc_p=100.0, exaxis_pos_p=[0.0, 0.0, 0.0, 0.0], offset_flag_p=0,offset_pos_p=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],vel_t=20.0, acc_t=100.0, exaxis_pos_t=[0.0, 0.0, 0.0, 0.0], offset_flag_t=0,offset_pos_t=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],ovl=100.0, blendR=-1.0,oacc=100.0,config=-1,velAccParamMode=0)``"
+    "Descripción", "Movimiento circular en el espacio cartesiano"
+    "Parámetros obligatorios", "- ``desc_pos_p``:Pose cartesiana del punto de trayectoria, unidad [mm][°];
+    - ``tool_p``:Número de herramienta del punto de trayectoria, [0~14];
+    - ``user_p``:Número de pieza del punto de trayectoria, [0~14];
+    - ``desc_pos_t``:Pose cartesiana del punto objetivo, unidad [mm][°];
+    - ``tool_t``:Número de herramienta, [0~14];
+    - ``user_t``:Número de pieza, [0~14];"
+    "Parámetros predeterminados", "- ``joint_pos_p``:Posición de las articulaciones del punto de trayectoria, unidad [°]; valor inicial predeterminado [0.0,0.0,0.0,0.0,0.0,0.0], el valor predeterminado utiliza el valor de retorno de la solución de cinemática inversa;
+    - ``joint_pos_t``:Posición de las articulaciones del punto objetivo, unidad [°]; valor inicial predeterminado [0.0,0.0,0.0,0.0,0.0,0.0], el valor predeterminado utiliza el valor de retorno de la solución de cinemática inversa;
+    - ``vel_p``:Porcentaje de velocidad del punto de trayectoria, [0~100], valor predeterminado 20.0;
+    - ``acc_p``:Porcentaje de aceleración del punto de trayectoria, [0~100], aún no disponible, valor predeterminado 0.0;
+    - ``exaxis_pos_p``:Posición del eje externo 1 ~ posición del eje externo 4 del punto de trayectoria, valor predeterminado [0.0,0.0,0.0,0.0];
+    - ``offset_flag_p``:Si el punto de trayectoria está desplazado [0]-sin desplazamiento, [1]-desplazamiento en el sistema de coordenadas de pieza/base, [2]-desplazamiento en el sistema de coordenadas de herramienta, valor predeterminado 0;
+    - ``vel_t``:Porcentaje de velocidad del punto objetivo, [0~100], valor predeterminado 20.0;
+    - ``acc_t``:Porcentaje de aceleración del punto objetivo, [0~100], aún no disponible, valor predeterminado 0.0;
+    - ``exaxis_pos_t``:Posición del eje externo 1 ~ posición del eje externo 4 del punto objetivo, valor predeterminado [0.0,0.0,0.0,0.0];
+    - ``offset_flag_t``:Si el punto objetivo está desplazado [0]-sin desplazamiento, [1]-desplazamiento en el sistema de coordenadas de pieza/base, [2]-desplazamiento en el sistema de coordenadas de herramienta, valor predeterminado 0;
+    - ``offset_pos_t``:Cantidad de desplazamiento de la pose del punto objetivo, unidad [mm][°], valor predeterminado [0.0,0.0,0.0,0.0,0.0,0.0];
+    - ``ovl:``:Factor de escala de velocidad, [0~100], valor predeterminado 100.0;
+    - ``blendR``:[-1.0]-movimiento en posición (bloqueante), [0~1000]-radio de suavizado (no bloqueante), unidad [mm], valor predeterminado -1.0;
+    - ``oacc``:Factor de escala de aceleración [0-100]/aceleración física (mm/s2), valor predeterminado 100;
+    - ``config``:Configuración del espacio de articulaciones de la solución inversa, [-1]-resolver con referencia a la posición actual de las articulaciones, [0~7]-resolver según una configuración específica del espacio de articulaciones, valor predeterminado -1;
+    - ``velAccParamMode``:Modo de parámetros de velocidad y aceleración; 0-porcentaje; 1-velocidad física (mm/s) y aceleración (mm/s2), valor predeterminado 0"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-笛卡尔空间整圆运动
-+++++++++++++++++++++++
+Movimiento circular completo en el espacio cartesiano
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``Circle(desc_pos_p, tool_p, user_p, desc_pos_t, tool_t, user_t, joint_pos_p=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],joint_pos_t=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],vel_p=20.0, acc_p=0.0, exaxis_pos_p=[0.0, 0.0, 0.0, 0.0], vel_t=20.0, acc_t=0.0,exaxis_pos_t=[0.0, 0.0, 0.0, 0.0],ovl=100.0, offset_flag=0, offset_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], oacc=100.0, blendR=-1,config=-1,velAccParamMode=0)``"
-    "描述", "笛卡尔空间整圆运动"
-    "必选参数", "- ``desc_pos_p``:路径点笛卡尔位姿，单位[mm][°]；
-    - ``tool_p``:工具号，[0~14]；
-    - ``user_p``:工件号，[0~14]；
-    - ``desc_pos_t``:目标点笛卡尔位姿，单位[mm][°]；
-    - ``tool_t``:工具号，[0~14]；
-    - ``user_t``:工件号，[0~14]；"
-    "默认参数", "- ``joint_pos_p``:路径点关节位置，单位 [°] 默认初值为[0.0,0.0,0.0,0.0,0.0,0.0]，默认值调用逆运动学求解返回值;
-    - ``joint_pos_t``:目标点关节位置，单位 [°] 默认初值为[0.0,0.0,0.0,0.0,0.0,0.0]，默认值调用逆运动学求解返回值;
-    - ``vel_p``:速度百分比，[0~100] 默认20.0;
-    - ``acc_p``:路径点加速度百分比，[0~100] 暂不开放 默认0.0;
-    - ``exaxis_pos_p``:路径点外部轴 1 位置 ~ 外部轴 4 位置 默认[0.0,0.0,0.0,0.0];
-    - ``vel_t``:目标点速度百分比，[0~100] 默认20.0;
-    - ``acc_t``:目标点加速度百分比，[0~100] 暂不开放 默认0.0;
-    - ``exaxis_pos_t``:标点外部轴 1 位置 ~ 外部轴 4 位置 默认[0.0,0.0,0.0,0.0]
-    - ``ovl``:速度缩放因子，[0~100] 默认100.0;
-    - ``offset_flag``:是否偏移[0]-不偏移，[1]-工件/基坐标系下偏移，[2]-工具坐标系下偏移 默认 0;
-    - ``offset_pos``:位姿偏移量，单位 [mm][°] 默认[0.0,0.0,0.0,0.0,0.0,0.0]
-    - ``oacc``:加速度缩放因子[0-100]/物理加速度(mm/s2)，默认：100；
-    - ``blendR``:-1：阻塞；0~1000：平滑半径,默认：-1；
-    - ``config``:逆解关节空间配置，[-1]-参考当前关节位置解算，[0~7]-依据特定关节空间配置求解，默认-1;
-    - ``velAccParamMode``:速度加速度参数模式；0-百分比；1-物理速度(mm/s)加速度(mm/s2) 默认0"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``Circle(desc_pos_p, tool_p, user_p, desc_pos_t, tool_t, user_t, joint_pos_p=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],joint_pos_t=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],vel_p=20.0, acc_p=0.0, exaxis_pos_p=[0.0, 0.0, 0.0, 0.0], vel_t=20.0, acc_t=0.0,exaxis_pos_t=[0.0, 0.0, 0.0, 0.0],ovl=100.0, offset_flag=0, offset_pos=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], oacc=100.0, blendR=-1,config=-1,velAccParamMode=0)``"
+    "Descripción", "Movimiento circular completo en el espacio cartesiano"
+    "Parámetros obligatorios", "- ``desc_pos_p``:Pose cartesiana del punto de trayectoria, unidad [mm][°];
+    - ``tool_p``:Número de herramienta, [0~14];
+    - ``user_p``:Número de pieza, [0~14];
+    - ``desc_pos_t``:Pose cartesiana del punto objetivo, unidad [mm][°];
+    - ``tool_t``:Número de herramienta, [0~14];
+    - ``user_t``:Número de pieza, [0~14];"
+    "Parámetros predeterminados", "- ``joint_pos_p``:Posición de las articulaciones del punto de trayectoria, unidad [°]; valor inicial predeterminado [0.0,0.0,0.0,0.0,0.0,0.0], el valor predeterminado utiliza el valor de retorno de la solución de cinemática inversa;
+    - ``joint_pos_t``:Posición de las articulaciones del punto objetivo, unidad [°]; valor inicial predeterminado [0.0,0.0,0.0,0.0,0.0,0.0], el valor predeterminado utiliza el valor de retorno de la solución de cinemática inversa;
+    - ``vel_p``:Porcentaje de velocidad, [0~100], valor predeterminado 20.0;
+    - ``acc_p``:Porcentaje de aceleración del punto de trayectoria, [0~100], aún no disponible, valor predeterminado 0.0;
+    - ``exaxis_pos_p``:Posición del eje externo 1 ~ posición del eje externo 4 del punto de trayectoria, valor predeterminado [0.0,0.0,0.0,0.0];
+    - ``vel_t``:Porcentaje de velocidad del punto objetivo, [0~100], valor predeterminado 20.0;
+    - ``acc_t``:Porcentaje de aceleración del punto objetivo, [0~100], aún no disponible, valor predeterminado 0.0;
+    - ``exaxis_pos_t``:Posición del eje externo 1 ~ posición del eje externo 4 del punto objetivo, valor predeterminado [0.0,0.0,0.0,0.0]
+    - ``ovl``:Factor de escala de velocidad, [0~100], valor predeterminado 100.0;
+    - ``offset_flag``:Si está desplazado [0]-sin desplazamiento, [1]-desplazamiento en el sistema de coordenadas de pieza/base, [2]-desplazamiento en el sistema de coordenadas de herramienta, valor predeterminado 0;
+    - ``offset_pos``:Cantidad de desplazamiento de la pose, unidad [mm][°], valor predeterminado [0.0,0.0,0.0,0.0,0.0,0.0]
+    - ``oacc``:Factor de escala de aceleración [0-100]/aceleración física (mm/s2), valor predeterminado: 100;
+    - ``blendR``:-1: bloqueante; 0~1000: radio de suavizado, valor predeterminado: -1;
+    - ``config``:Configuración del espacio de articulaciones de la solución inversa, [-1]-resolver con referencia a la posición actual de las articulaciones, [0~7]-resolver según una configuración específica del espacio de articulaciones, valor predeterminado -1;
+    - ``velAccParamMode``:Modo de parámetros de velocidad y aceleración; 0-porcentaje; 1-velocidad física (mm/s) y aceleración (mm/s2), valor predeterminado 0"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-笛卡尔空间点到点运动
-++++++++++++++++++++++
+Movimiento punto a punto en el espacio cartesiano
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``MoveCart(desc_pos, tool, user, vel = 20.0, acc = 0.0, ovl = 100.0, blendT = -1.0, config = -1)``"
-    "描述", "笛卡尔空间点到点运动"
-    "必选参数", "- ``desc_pos``:目标笛卡尔位置；
-    - ``tool``:工具号，[0~14]；
-    - ``user``:工件号，[0~14]；"
-    "默认参数", "- ``vel``:速度，范围 [0~100]，默认为 20.0;
-    - ``acc``:加速度，范围 [0~100]，暂不开放,默认为 0.0;
-    - ``ovl``:速度缩放因子，[0~100]，默认为 100.0;
-    - ``blendT``:[-1.0]-运动到位 (阻塞)，[0~500]-平滑时间 (非阻塞)，单位 [ms] 默认为 -1.0;
-    - ``config``:关节配置，[-1]-参考当前关节位置求解，[0~7]-依据关节配置求解 默认为 -1"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``MoveCart(desc_pos, tool, user, vel = 20.0, acc = 0.0, ovl = 100.0, blendT = -1.0, config = -1)``"
+    "Descripción", "Movimiento punto a punto en el espacio cartesiano"
+    "Parámetros obligatorios", "- ``desc_pos``:Posición cartesiana objetivo;
+    - ``tool``:Número de herramienta, [0~14];
+    - ``user``:Número de pieza, [0~14];"
+    "Parámetros predeterminados", "- ``vel``:Velocidad, rango [0~100], valor predeterminado 20.0;
+    - ``acc``:Aceleración, rango [0~100], aún no disponible, valor predeterminado 0.0;
+    - ``ovl``:Factor de escala de velocidad, [0~100], valor predeterminado 100.0;
+    - ``blendT``:[-1.0]-movimiento en posición (bloqueante), [0~500]-tiempo de suavizado (no bloqueante), unidad [ms], valor predeterminado -1.0;
+    - ``config``:Configuración de articulaciones, [-1]-resolver con referencia a la posición actual de las articulaciones, [0~7]-resolver según la configuración de articulaciones, valor predeterminado -1"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-机器人基本运动指令代码示例
-++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de instrucciones de movimiento básico del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
@@ -275,38 +275,38 @@ jog点动立即停止
     robot.CloseRPC()
     return 0
 
-笛卡尔空间螺旋线运动
-++++++++++++++++++++++
+Movimiento en hélice en el espacio cartesiano
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``NewSpiral(desc_pos, tool, user, param, joint_pos = [0.0,0.0,0.0,0.0,0.0,0.0], vel = 20.0, acc = 0.0, exaxis_pos = [0.0,0.0,0.0,0.0], ovl = 100.0, offset_flag = 0, offset_pos = [0.0,0.0,0.0,0.0,0.0,0.0], config = -1)``"
-    "描述", "笛卡尔空间螺旋线运动"
-    "必选参数", "- ``desc_pos``:目标笛卡尔位姿，单位[mm][°];
-    - ``tool``:工具号，[0~14];
-    - ``user``:工件号，[0~14];
-    - ``param=[circle_num, circle_angle, rad_init, rad_add, rotaxis_add, rot_direction, velAccMode]``：circle_num: 螺旋圈数;circle_angle: 螺旋倾角;rad_init: 螺旋初始半径;rad_add: 半径增量;rotaxis_add: 转轴方向增量;rot_direction: 旋转方向，0-顺时针，1-逆时针, velAccMode速度加速度参数模式：0-角速度恒定，1-线速度恒定;"
-    "默认参数", "- ``joint_pos``:目标关节位置，单位 [°] 默认初值为[0.0,0.0,0.0,0.0,0.0,0.0]，默认值调用逆运动学求解返回值;
-    - ``vel``:速度百分比，[0~100] 默认20.0;
-    - ``acc``:加速度百分比，[0~100] 默认100.0;
-    - ``exaxis_pos``:外部轴 1 位置 ~ 外部轴 4 位置 默认[0.0,0.0,0.0,0.0];
-    - ``ovl``:速度缩放因子，[0~100] 默认100.0;
-    - ``offset_flag``:[0]-不偏移，[1]-工件/基坐标系下偏移，[2]-工具坐标系下偏移 默认 0;
-    - ``offset_pos``:位姿偏移量，单位 [mm][°] 默认[0.0,0.0,0.0,0.0,0.0,0.0]
-    - ``config``:逆解关节空间配置，[-1]-参考当前关节位置解算，[0~7]-依据特定关节空间配置求解，默认-1"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``NewSpiral(desc_pos, tool, user, param, joint_pos = [0.0,0.0,0.0,0.0,0.0,0.0], vel = 20.0, acc = 0.0, exaxis_pos = [0.0,0.0,0.0,0.0], ovl = 100.0, offset_flag = 0, offset_pos = [0.0,0.0,0.0,0.0,0.0,0.0], config = -1)``"
+    "Descripción", "Movimiento en hélice en el espacio cartesiano"
+    "Parámetros obligatorios", "- ``desc_pos``:Pose cartesiana objetivo, unidad [mm][°];
+    - ``tool``:Número de herramienta, [0~14];
+    - ``user``:Número de pieza, [0~14];
+    - ``param=[circle_num, circle_angle, rad_init, rad_add, rotaxis_add, rot_direction, velAccMode]``：circle_num: número de vueltas de la hélice; circle_angle: ángulo de inclinación de la hélice; rad_init: radio inicial de la hélice; rad_add: incremento de radio; rotaxis_add: incremento de dirección del eje de rotación; rot_direction: dirección de rotación, 0-sentido horario, 1-sentido antihorario; velAccMode modo de parámetros de velocidad y aceleración: 0-velocidad angular constante, 1-velocidad lineal constante;"
+    "Parámetros predeterminados", "- ``joint_pos``:Posición objetivo de las articulaciones, unidad [°]; valor inicial predeterminado [0.0,0.0,0.0,0.0,0.0,0.0], el valor predeterminado utiliza el valor de retorno de la solución de cinemática inversa;
+    - ``vel``:Porcentaje de velocidad, [0~100], valor predeterminado 20.0;
+    - ``acc``:Porcentaje de aceleración, [0~100], valor predeterminado 100.0;
+    - ``exaxis_pos``:Posición del eje externo 1 ~ posición del eje externo 4, valor predeterminado [0.0,0.0,0.0,0.0];
+    - ``ovl``:Factor de escala de velocidad, [0~100], valor predeterminado 100.0;
+    - ``offset_flag``:[0]-sin desplazamiento, [1]-desplazamiento en el sistema de coordenadas de pieza/base, [2]-desplazamiento en el sistema de coordenadas de herramienta, valor predeterminado 0;
+    - ``offset_pos``:Cantidad de desplazamiento de la pose, unidad [mm][°], valor predeterminado [0.0,0.0,0.0,0.0,0.0,0.0]
+    - ``config``:Configuración del espacio de articulaciones de la solución inversa, [-1]-resolver con referencia a la posición actual de las articulaciones, [0~7]-resolver según una configuración específica del espacio de articulaciones, valor predeterminado -1"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-代码示例
-++++++++++++++++++++++
+Ejemplo de código
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     j = [67.957, -81.482, 87.595, -95.691, -94.899, -9.727]
     desc_pos = [-123.142, -551.735, 430.549, 178.753, -4.757, 167.754]
@@ -329,58 +329,58 @@ jog点动立即停止
     robot.CloseRPC()
     return 0
 
-伺服运动开始
-++++++++++++++++++++++
+Inicio del movimiento servo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ServoMoveStart(self, cmdType=0, filtertime=0, gain=[-1.0, -1.0, -1.0, -1.0, -1.0, -1.0])``"
-    "描述", "伺服运动开始，配合ServoJ、ServoCart指令使用"
-    "必选参数", "
-    - ``cmdType``: 命令传输类型，0=XML-RPC，1=UDP透传
-    - ``filtertime``: 滤波时间，单位ms，默认0
-    - ``gain``: 位置环增益数组，长度应为6，依次对应J1~J6关节位置环增益；传None时使用默认值[-1.0, -1.0, -1.0, -1.0, -1.0, -1.0]
+    "Prototipo", "``ServoMoveStart(self, cmdType=0, filtertime=0, gain=[-1.0, -1.0, -1.0, -1.0, -1.0, -1.0])``"
+    "Descripción", "Inicio del movimiento servo, se utiliza junto con las instrucciones ServoJ y ServoCart"
+    "Parámetros obligatorios", "
+    - ``cmdType``: Tipo de transmisión de comandos, 0=XML-RPC, 1=UDP transparente
+    - ``filtertime``: Tiempo de filtrado, unidad ms, valor predeterminado 0
+    - ``gain``: Arreglo de ganancia del lazo de posición, la longitud debe ser 6, correspondiendo sucesivamente a la ganancia del lazo de posición de las articulaciones J1~J6; al pasar None se usan los valores predeterminados [-1.0, -1.0, -1.0, -1.0, -1.0, -1.0]
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-伺服运动结束
-++++++++++++++++++++++
-
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``ServoMoveEnd(cmdType=0)``"
-    "描述", "伺服运动结束，配合ServoJ、ServoCart指令使用"
-    "必选参数", "- ``cmdType``: 命令传输类型，0=XML-RPC，1=UDP透传"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
-
-关节空间伺服模式运动
-+++++++++++++++++++++++++
+Fin del movimiento servo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ServoJ(joint_pos, axisPos, acc = 0.0, vel = 0.0, cmdT = 0.008, filterT = 0.0, gain = 0.0, id=0, cmdType=0)``"
-    "描述", "关节空间伺服模式运动"
-    "必选参数", "- ``joint_pos``:目标关节位置，单位[°]；
-    - ``axisPos``:外部轴位置,单位mm；"
-    "默认参数", "- ``acc``:加速度，范围 [0~100]，暂不开放，默认为 0.0;
-    - ``vel``:速度，范围 [0~100]，暂不开放，默认为 0.0;
-    - ``cmdT``:指令下发周期，单位s，建议范围[0.001~0.0016], 默认为0.008;
-    - ``filterT``:滤波时间，单位 [s]，暂不开放， 默认为0.0;
-    - ``gain``:目标位置的比例放大器，暂不开放， 默认为0.0;
-    - ``id``:servoJ指令ID,默认为0;
-    - ``cmdType``:命令传输类型，0=XML-RPC，1=UDP透传;"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ServoMoveEnd(cmdType=0)``"
+    "Descripción", "Fin del movimiento servo, se utiliza junto con las instrucciones ServoJ y ServoCart"
+    "Parámetros obligatorios", "- ``cmdType``: Tipo de transmisión de comandos, 0=XML-RPC, 1=UDP transparente"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-伺服运动开始代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Movimiento en modo servo del espacio de articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``ServoJ(joint_pos, axisPos, acc = 0.0, vel = 0.0, cmdT = 0.008, filterT = 0.0, gain = 0.0, id=0, cmdType=0)``"
+    "Descripción", "Movimiento en modo servo del espacio de articulaciones"
+    "Parámetros obligatorios", "- ``joint_pos``:Posición objetivo de las articulaciones, unidad [°];
+    - ``axisPos``:Posición del eje externo, unidad mm;"
+    "Parámetros predeterminados", "- ``acc``:Aceleración, rango [0~100], aún no disponible, valor predeterminado 0.0;
+    - ``vel``:Velocidad, rango [0~100], aún no disponible, valor predeterminado 0.0;
+    - ``cmdT``:Período de envío de instrucciones, unidad s, rango recomendado [0.001~0.0016], valor predeterminado 0.008;
+    - ``filterT``:Tiempo de filtrado, unidad [s], aún no disponible, valor predeterminado 0.0;
+    - ``gain``:Amplificador proporcional de la posición objetivo, aún no disponible, valor predeterminado 0.0;
+    - ``id``:ID de la instrucción servoJ, valor predeterminado 0;
+    - ``cmdType``:Tipo de transmisión de comandos, 0=XML-RPC, 1=UDP transparente;"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
+
+Ejemplo de código de inicio del movimiento servo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
@@ -389,20 +389,20 @@ jog点动立即停止
     import time
 
     def udp_frame_callback(src_type, count, cmd_id, data_len, content):
-        """UDP frame receive callback"""
+        """Función de devolución de llamada de recepción de tramas UDP"""
         print("Callback: cmd_id={} count={} data_len={} content={}".format(cmd_id, count, data_len, content))
         return 0
 
 
     def test_servo_j_with_filtertime(robot):
-        """ServoJ with filter time and servo gain test"""
-        print("\n========== ServoJ with Filter Time Test ==========")
+        """Prueba de ServoJ con tiempo de filtrado y ganancia del servo"""
+        print("\n========== Prueba de ServoJ con tiempo de filtrado ==========")
 
         j = [70.000000, -49.000000, -109.000000, -81.000000, 76.000000, 93.000000]
         epos = [0.0, 0.0, 0.0, 0.0]
         offset_pos = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
-        # Move to initial joint position
+        # Moverse a la posición inicial de las articulaciones
         robot.MoveJ(joint_pos=j, tool=1, user=0, vel=100, acc=100, ovl=100,
                     exaxis_pos=epos, blendT=-1, offset_flag=0, offset_pos=offset_pos)
 
@@ -416,16 +416,16 @@ jog点动立即停止
         filtertime = 0
         ServoGain = [22.0, 22.0, 22.0, 22.0, 22.0, 22.0]
 
-        # Get current joint position
+        # Obtener la posición actual de las articulaciones
         rtn, j = robot.GetActualJointPosDegree(0)
         if rtn != 0:
             print(f"GetActualJointPosDegree errcode:{rtn}")
 
-        # Start servo motion with filter time and gain
+        # Iniciar el movimiento servo con tiempo de filtrado y ganancia
         rtn = robot.ServoMoveStart(comType, filtertime, ServoGain)
         print(f"ServoMoveStart rtn is {rtn}")
 
-        # Read trajectory file and send ServoJ commands
+        # Leer el archivo de trayectoria y enviar comandos ServoJ
         file_path = "D://zUP/6RPTPpath.txt"
         try:
             with open(file_path, 'r') as fin:
@@ -433,7 +433,7 @@ jog点动立即停止
                     line = line.strip()
                     if not line:
                         continue
-                    # Parse line format: ServoJ(j1,j2,j3,j4,j5,j6,...
+                    # Formato de análisis de línea: ServoJ(j1,j2,j3,j4,j5,j6,...
                     if line.startswith("ServoJ("):
                         values_str = line[len("ServoJ("):]
                         parts = values_str.split(',')
@@ -446,7 +446,7 @@ jog点动立即停止
         except FileNotFoundError:
             print(f"File not found: {file_path}")
 
-        # End servo motion
+        # Finalizar el movimiento servo
         rtn = robot.ServoMoveEnd(comType)
         print(f"ServoMoveEnd rtn is {rtn}")
 
@@ -454,8 +454,8 @@ jog点动立即停止
 
 
     def test_servo_cart_with_filtertime(robot):
-        """ServoCart with filter time and servo gain test"""
-        print("\n========== ServoCart with Filter Time Test ==========")
+        """Prueba de ServoCart con tiempo de filtrado y ganancia del servo"""
+        print("\n========== Prueba de ServoCart con tiempo de filtrado ==========")
 
         desc_pos_dt = [542.1690, 34.7990, 114.4800, 169.808000, -3.600000, -133.152000]
         exaxis = [0.0, 0.0, 0.0, 0.0]
@@ -469,18 +469,18 @@ jog点动立即停止
         filtertime = 80
         ServoGain = [20.0, 20.0, 20.0, 20.0, 20.0, 20.0]
 
-        # Set speed and move to start point
+        # Establecer la velocidad y moverse al punto de inicio
         robot.SetSpeed(20)
         offset_pos = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         robot.MoveL(desc_pos=desc_pos_dt, tool=1, user=0, vel=100, acc=100, ovl=100,
                     blendR=-1, blendMode=0, exaxis_pos=exaxis, search=0,
                     offset_flag=0, offset_pos=offset_pos)
 
-        # Start servo motion with filter time and gain
+        # Iniciar el movimiento servo con tiempo de filtrado y ganancia
         rtn = robot.ServoMoveStart(0, filtertime, ServoGain)
         print(f"ServoMoveStart rtn is {rtn}")
 
-        # Read trajectory file and send ServoCart commands
+        # Leer el archivo de trayectoria y enviar comandos ServoCart
         file_path = "D://zUP/6RCARpath.txt"
         try:
             with open(file_path, 'r') as fin:
@@ -488,11 +488,11 @@ jog点动立即停止
                     line = line.strip()
                     if not line:
                         continue
-                    # Parse line format: ServoCart(0,x,y,z,rx,ry,rz,...
+                    # Formato de análisis de línea: ServoCart(0,x,y,z,rx,ry,rz,...
                     if line.startswith("ServoCart("):
                         values_str = line[len("ServoCart("):]
                         parts = values_str.split(',')
-                        # Skip the first element (mode=0), take next 6 values
+                        # Omitir el primer elemento (mode=0), tomar los siguientes 6 valores
                         if len(parts) >= 7:
                             desc_pos_dt = [float(parts[i]) for i in range(1, 7)]
                             rtn = robot.ServoCart(mode=mode, desc_pos=desc_pos_dt, exaxis=exaxis,
@@ -502,37 +502,37 @@ jog点动立即停止
         except FileNotFoundError:
             print(f"File not found: {file_path}")
 
-        # End servo motion
+        # Finalizar el movimiento servo
         robot.ServoMoveEnd()
 
 
     def main():
-        # Establish connection with the robot controller
+        # Establecer comunicación con el controlador del robot
         robot = Robot.RPC('192.168.58.2')
-        time.sleep(0.5)  # Wait for connection and data reception
+        time.sleep(0.5)  # Esperar la conexión y la recepción de datos
 
-        # Set UDP command reply callback
+        # Establecer la función de devolución de llamada de respuesta de comandos UDP
         robot.SetUDPCmdRpyCallback(udp_frame_callback)
 
-        # Run the desired test (uncomment one at a time)
+        # Ejecutar la prueba deseada (descomentar una a la vez)
         # test_servo_j_with_filtertime(robot)
         test_servo_cart_with_filtertime(robot)
 
-        # Close connection
+        # Cerrar la conexión
         robot.CloseRPC()
 
 
     if __name__ == "__main__":
         main()
 
-关节空间伺服模式运动代码示例
-++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de movimiento en modo servo del espacio de articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     j = [0.0] * 6
     epos = [0.0] * 4
@@ -566,52 +566,52 @@ jog点动立即停止
         print(f"GetActualJointPosDegree errcode:{ret}")
     robot.CloseRPC()
 
-关节扭矩控制开始
-+++++++++++++++++++++++++
+Inicio del control de par de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ServoJTStart(cmdType=0)``"
-    "描述", "关节扭矩控制开始"
-    "必选参数", "- ``cmdType``: 命令传输类型，0=XML-RPC，1=UDP透传"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ServoJTStart(cmdType=0)``"
+    "Descripción", "Inicio del control de par de las articulaciones"
+    "Parámetros obligatorios", "- ``cmdType``: Tipo de transmisión de comandos, 0=XML-RPC, 1=UDP transparente"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-关节扭矩控制
-+++++++++++++++++++++++++
-
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``ServoJT(torque, interval, checkFlag=0, jPowerLimit=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],jVelLimit=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], cmdType=0)``"
-    "描述", "关节扭矩控制"
-    "必选参数", "- ``torque``:j1~j6关节扭矩，单位Nm
-                - ``interval``:指令周期，单位s，范围[0.001~0.008]
-                - ``checkFlag``:检测策略 0-不限制；1-限制功率；2-限制速度；3-功率和速度同时限制,默认0
-                - ``jPowerLimit``:默认参数 jPowerLimit 关节最大功率限制(W)，默认[0.0,0.0,0.0,0.0,0.0,0.0]
-                - ``jVelLimit``:关节最大速度(°/s)，默认[0.0,0.0,0.0,0.0,0.0,0.0]
-                - ``cmdType``:命令传输类型，0=XML-RPC，1=UDP透传"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
-
-关节扭矩控制结束
-+++++++++++++++++++++++++
+Control de par de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ServoJTEnd(cmdType=0)``"
-    "描述", "关节扭矩控制结束"
-    "必选参数", "- ``cmdType``: 命令传输类型，0=XML-RPC，1=UDP透传"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ServoJT(torque, interval, checkFlag=0, jPowerLimit=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],jVelLimit=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0], cmdType=0)``"
+    "Descripción", "Control de par de las articulaciones"
+    "Parámetros obligatorios", "- ``torque``:par de las articulaciones j1~j6, unidad Nm
+                - ``interval``:período de instrucción, unidad s, rango [0.001~0.008]
+                - ``checkFlag``:estrategia de detección 0-sin límite; 1-limitar potencia; 2-limitar velocidad; 3-limitar potencia y velocidad simultáneamente, valor predeterminado 0
+                - ``jPowerLimit``:parámetro predeterminado jPowerLimit límite máximo de potencia de las articulaciones (W), valor predeterminado [0.0,0.0,0.0,0.0,0.0,0.0]
+                - ``jVelLimit``:velocidad máxima de las articulaciones (°/s), valor predeterminado [0.0,0.0,0.0,0.0,0.0,0.0]
+                - ``cmdType``:tipo de transmisión de comandos, 0=XML-RPC, 1=UDP transparente"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-基于UDP通信的ServoJT、ServoJTStart、ServoJTEnd SDK代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Fin del control de par de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``ServoJTEnd(cmdType=0)``"
+    "Descripción", "Fin del control de par de las articulaciones"
+    "Parámetros obligatorios", "- ``cmdType``: Tipo de transmisión de comandos, 0=XML-RPC, 1=UDP transparente"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
+
+Ejemplo de código SDK de ServoJT, ServoJTStart y ServoJTEnd basado en comunicación UDP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
@@ -620,40 +620,40 @@ jog点动立即停止
     import time
     from fairino import Robot
 
-    # 与机器人控制器建立连接
+    # Establecer comunicación con el controlador del robot
     robot = Robot.RPC('192.168.58.2')
 
     def TestServoJTUDP(self):
-        # 设置回调
+        # Establecer la función de devolución de llamada
         def callback(src_type, count, cmd_id, data_len, content):
-            print("回调函数: cmd_id={} count={} data_len={} content={}".format(cmd_id, count, data_len, content))
+            print("Función de devolución de llamada: cmd_id={} count={} data_len={} content={}".format(cmd_id, count, data_len, content))
             return 0
 
         robot.SetUDPCmdRpyCallback(callback)
         while True:
-            # 初始化关节位置和外部轴位置
+            # Inicializar la posición de las articulaciones y la posición del eje externo
             j = [0, -90, 90, 0, 0, 0]
             epos = [0, 0, 0, 0]
             offset_pos = [0, 0, 0, 0, 0, 0]
 
-            # 移动到初始位置
+            # Moverse a la posición inicial
             robot.MoveJ(joint_pos=j, tool=0, user=0, vel=100, acc=100, ovl=100,
                         exaxis_pos=epos, blendT=-1, offset_flag=0, offset_pos=offset_pos)
             time.sleep(3)
-            # 开启拖动示教
+            # Activar la enseñanza por arrastre
             result=robot.DragTeachSwitch(1)
-            print("DragTeachSwitch返回结果: {}".format(result))
+            print("Resultado devuelto por DragTeachSwitch: {}".format(result))
             torques = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
-            # 获取关节力矩
+            # Obtener el par de las articulaciones
             ret, torques = robot.GetJointTorques(flag=1)
             if ret != 0:
                 print(f"GetJointTorques errcode:{ret}")
 
             count = 100
             result = robot.ServoJTStart(cmdType=1)
-            print("ServoJTStart返回结果: {}".format(result))
-            # 正向力矩控制
+            print("Resultado devuelto por ServoJTStart: {}".format(result))
+            # Control de par positivo
             while True:
                 torques[0] = 0.03
                 result = robot.ServoJT(
@@ -664,14 +664,14 @@ jog点动立即停止
                     jVelLimit=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
                     cmdType=1
                 )
-                print("返回结果: {}".format(result))
+                print("Resultado devuelto: {}".format(result))
                 time.sleep(1)
 
                 ret, pkg = robot.GetRobotRealTimeState()
                 if pkg.jt_cur_pos[0] > 30:
                     break
 
-            # 反向力矩控制
+            # Control de par negativo
             while True:
                 torques[0] = -0.03
                 result = robot.ServoJT(
@@ -682,31 +682,31 @@ jog点动立即停止
                         jVelLimit=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
                         cmdType=1
                     )
-                print("返回结果: {}".format(result))
+                print("Resultado devuelto: {}".format(result))
                 time.sleep(1)
 
                 ret, pkg = robot.GetRobotRealTimeState()
                 if pkg.jt_cur_pos[0] < 0:
                     break
 
-            # 结束力矩控制并关闭拖动示教
+            # Finalizar el control de par y desactivar la enseñanza por arrastre
             result = robot.ServoJTEnd(cmdType=1)
-            print("ServoJTEnd返回结果: {}".format(result))
+            print("Resultado devuelto por ServoJTEnd: {}".format(result))
             result = robot.DragTeachSwitch(0)
-            print("DragTeachSwitch返回结果: {}".format(result))
+            print("Resultado devuelto por DragTeachSwitch: {}".format(result))
 
         robot.CloseRPC()
         return 0
     TestServoJTUDP(robot)
 
-关节扭矩控制代码示例
-++++++++++++++++++++++
+Ejemplo de código de control de par de las articulaciones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     robot.DragTeachSwitch(1)
     # torques = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
@@ -721,28 +721,28 @@ jog点动立即停止
     robot.DragTeachSwitch(0)
     robot.CloseRPC()
 
-笛卡尔空间伺服模式运动
-++++++++++++++++++++++++
+Movimiento en modo servo del espacio cartesiano
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ServoCart(mode, desc_pos, exaxis, pos_gain=[1.0, 1.0, 1.0, 1.0, 1.0, 1.0], acc=0.0, vel=0.0, cmdT=0.008,filterT=0.0, gain=0.0)``"
-    "描述", "笛卡尔空间伺服模式运动"
-    "必选参数", "- ``mode``:[0]-绝对运动(基坐标系)，[1]-增量运动(基坐标系)，[2]-增量运动(工具坐标系)；
-    - ``exaxis``:扩展轴位置；
-    - ``desc_pos``:目标笛卡尔位置/目标笛卡尔位置增量；"
-    "默认参数", "- ``pos_gain``:位姿增量比例系数，仅在增量运动下生效，范围 [0~1], 默认为 [1.0, 1.0, 1.0, 1.0, 1.0, 1.0];
-    - ``acc``:加速度，范围 [0~100]，暂不开放，默认为 0.0;
-    - ``vel``:速度，范围 [0~100]，暂不开放，默认为 0.0;
-    - ``cmdT``:指令下发周期，单位s，建议范围[0.001~0.0016], 默认为0.008;
-    - ``filterT``:滤波时间，单位 [s]，暂不开放， 默认为0.0;
-    - ``gain``:目标位置的比例放大器，暂不开放， 默认为0.0;"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ServoCart(mode, desc_pos, exaxis, pos_gain=[1.0, 1.0, 1.0, 1.0, 1.0, 1.0], acc=0.0, vel=0.0, cmdT=0.008,filterT=0.0, gain=0.0)``"
+    "Descripción", "Movimiento en modo servo del espacio cartesiano"
+    "Parámetros obligatorios", "- ``mode``:[0]-movimiento absoluto (sistema de coordenadas base), [1]-movimiento incremental (sistema de coordenadas base), [2]-movimiento incremental (sistema de coordenadas de herramienta);
+    - ``exaxis``:Posición del eje extendido;
+    - ``desc_pos``:Posición cartesiana objetivo / incremento de posición cartesiana objetivo;"
+    "Parámetros predeterminados", "- ``pos_gain``:Coeficiente proporcional del incremento de pose, solo efectivo en movimiento incremental, rango [0~1], valor predeterminado [1.0, 1.0, 1.0, 1.0, 1.0, 1.0];
+    - ``acc``:Aceleración, rango [0~100], aún no disponible, valor predeterminado 0.0;
+    - ``vel``:Velocidad, rango [0~100], aún no disponible, valor predeterminado 0.0;
+    - ``cmdT``:Período de envío de instrucciones, unidad s, rango recomendado [0.001~0.0016], valor predeterminado 0.008;
+    - ``filterT``:Tiempo de filtrado, unidad [s], aún no disponible, valor predeterminado 0.0;
+    - ``gain``:Amplificador proporcional de la posición objetivo, aún no disponible, valor predeterminado 0.0;"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-笛卡尔空间伺服模式运动代码示例
-+++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de movimiento en modo servo del espacio cartesiano
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
@@ -771,55 +771,55 @@ jog点动立即停止
     robot.CloseRPC()
     return 0
 
-样条运动开始
-++++++++++++++++
+Inicio del movimiento por spline
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SplineStart()``"
-    "描述", "样条运动开始"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SplineStart()``"
+    "Descripción", "Inicio del movimiento por spline"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-样条运动PTP
-++++++++++++++++
+Movimiento por spline PTP
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SplinePTP(joint_pos, tool, user, desc_pos = [0.0,0.0,0.0,0.0,0.0,0.0],  vel = 20.0,  acc = 100.0, ovl = 100.0)``"
-    "描述", "样条运动PTP"
-    "必选参数", "- ``joint_pos``:目标关节位置，单位[°]；
-    - ``tool``:工具号，[0~14]；
-    - ``user``:工件号，[0~14]；"
-    "默认参数", "- ``desc_pos``:目标笛卡尔位姿，单位 [mm][°] 默认初值为[0.0,0.0,0.0,0.0,0.0,0.0]，默认值调用正运动学求解返回值;
-    - ``vel``:速度，范围 [0~100]，默认为 20.0;
-    - ``acc``:加速度，范围 [0~100]，默认为 100.0;
-    - ``ovl``:速度缩放因子，[0~100]，默认为 100.0"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SplinePTP(joint_pos, tool, user, desc_pos = [0.0,0.0,0.0,0.0,0.0,0.0],  vel = 20.0,  acc = 100.0, ovl = 100.0)``"
+    "Descripción", "Movimiento por spline PTP"
+    "Parámetros obligatorios", "- ``joint_pos``:Posición objetivo de las articulaciones, unidad [°];
+    - ``tool``:Número de herramienta, [0~14];
+    - ``user``:Número de pieza, [0~14];"
+    "Parámetros predeterminados", "- ``desc_pos``:Pose cartesiana objetivo, unidad [mm][°]; valor inicial predeterminado [0.0,0.0,0.0,0.0,0.0,0.0], el valor predeterminado utiliza el valor de retorno de la solución de cinemática directa;
+    - ``vel``:Velocidad, rango [0~100], valor predeterminado 20.0;
+    - ``acc``:Aceleración, rango [0~100], valor predeterminado 100.0;
+    - ``ovl``:Factor de escala de velocidad, [0~100], valor predeterminado 100.0"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-样条运动结束
-++++++++++++++++
+Fin del movimiento por spline
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SplineEnd()``"
-    "描述", "样条运动结束"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``SplineEnd()``"
+    "Descripción", "Fin del movimiento por spline"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
     
-样条运动代码示例
-++++++++++++++++
+Ejemplo de código de movimiento por spline
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     joint_points = [
         [-11.904, -99.669, 117.473, -108.616, -91.726, 74.256],  # j1
@@ -841,7 +841,7 @@ jog点动立即停止
     flag = 0 
     robot.SetSpeed(20)
     err1 = robot.MoveJ(joint_pos=joint_points[0],tool=tool, user=user,vel=vel)
-    print(f"MoveJ 错误码: {err1}")
+    print(f"Código de error de MoveJ: {err1}")
     robot.SplineStart()
     robot.SplinePTP(joint_pos=joint_points[0],tool=tool, user=user)
     robot.SplinePTP(joint_pos=joint_points[1],tool=tool, user=user)
@@ -850,59 +850,59 @@ jog点动立即停止
     robot.SplineEnd()
     robot.CloseRPC()
 
-新样条运动开始
-+++++++++++++++++++
+Inicio del nuevo movimiento por spline
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionchanged:: python SDK-v2.0.3
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``NewSplineStart(type,averageTime=2000)``"
-    "描述", "新样条运动开始"
-    "必选参数", "- ``type``:0-圆弧过渡，1-给定点位路径点"
-    "默认参数", "- ``averageTime``:全局平均衔接时间（ms）默认为 2000"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``NewSplineStart(type,averageTime=2000)``"
+    "Descripción", "Inicio del nuevo movimiento por spline"
+    "Parámetros obligatorios", "- ``type``:0-transición de arco, 1-los puntos dados son puntos de trayectoria"
+    "Parámetros predeterminados", "- ``averageTime``:Tiempo medio global de conexión (ms), valor predeterminado 2000"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-新样条指令点
-+++++++++++++++++++
+Punto de instrucción del nuevo spline
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``NewSplinePoint(desc_pos,tool,user,lastFlag,joint_pos=[0.0,0.0,0.0,0.0,0.0,0.0], vel = 0.0, acc = 0.0, ovl = 100.0 ,blendR = 0.0 )``"
-    "描述", "新样条指令点"
-    "必选参数", "- ``desc_pos``:目标笛卡尔位姿，单位 [mm][°];
-    - ``tool``:工具号，[0~14]；
-    - ``user``:工件号，[0~14]；
-    - ``lastFlag``:是否为最后一个点，0-否，1-是;"
-    "默认参数", "- ``joint_pos``:目标关节位置，单位 [°] 默认初值为[0.0,0.0,0.0,0.0,0.0,0.0]，默认值调用逆运动学求解返回值;
-    - ``vel``:速度，范围 [0~100]，暂不开放，默认为 0.0;；
-    - ``acc``:加速度，范围 [0~100]，暂不开放，默认为 0.0;
-    - ``ovl``:速度缩放因子，[0~100] 默认为 100.0;
-    - ``blendR``: [0~1000]-平滑半径，单位 [mm] 默认0.0;"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``NewSplinePoint(desc_pos,tool,user,lastFlag,joint_pos=[0.0,0.0,0.0,0.0,0.0,0.0], vel = 0.0, acc = 0.0, ovl = 100.0 ,blendR = 0.0 )``"
+    "Descripción", "Punto de instrucción del nuevo spline"
+    "Parámetros obligatorios", "- ``desc_pos``:Pose cartesiana objetivo, unidad [mm][°];
+    - ``tool``:Número de herramienta, [0~14];
+    - ``user``:Número de pieza, [0~14];
+    - ``lastFlag``:Si es el último punto, 0-no, 1-sí;"
+    "Parámetros predeterminados", "- ``joint_pos``:Posición objetivo de las articulaciones, unidad [°]; valor inicial predeterminado [0.0,0.0,0.0,0.0,0.0,0.0], el valor predeterminado utiliza el valor de retorno de la solución de cinemática inversa;
+    - ``vel``:Velocidad, rango [0~100], aún no disponible, valor predeterminado 0.0;
+    - ``acc``:Aceleración, rango [0~100], aún no disponible, valor predeterminado 0.0;
+    - ``ovl``:Factor de escala de velocidad, [0~100], valor predeterminado 100.0;
+    - ``blendR``: [0~1000]-radio de suavizado, unidad [mm], valor predeterminado 0.0;"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-新样条运动结束
-+++++++++++++++++++
+Fin del nuevo movimiento por spline
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
     
-    "原型", "``NewSplineEnd()``"
-    "描述", "新样条运动结束"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``NewSplineEnd()``"
+    "Descripción", "Fin del nuevo movimiento por spline"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-新样条运动代码示例
-++++++++++++++++++++++++++++++++
+Ejemplo de código del nuevo movimiento por spline
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     j1 = [-11.904, -99.669, 117.473, -108.616, -91.726, 74.256]
     j2 = [-45.615, -106.172, 124.296, -107.151, -91.282, 74.255]
@@ -935,50 +935,50 @@ jog点动立即停止
     robot.NewSplineEnd()
     robot.CloseRPC()
 
-机器人终止运动
-++++++++++++++++
+Terminación del movimiento del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
     
-    "原型", "``StopMotion()``"
-    "描述", "终止运动，使用终止运动需运动指令为非阻塞状态"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``StopMotion()``"
+    "Descripción", "Terminación del movimiento; para usar la terminación del movimiento la instrucción de movimiento debe estar en estado no bloqueante"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-机器人暂停运动
-++++++++++++++++
+Pausa del movimiento del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
     
-    "原型", "``PauseMotion()``"
-    "描述", "暂停运动，使用暂停运动需运动指令为非阻塞状态"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``PauseMotion()``"
+    "Descripción", "Pausa del movimiento; para usar la pausa del movimiento la instrucción de movimiento debe estar en estado no bloqueante"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-机器人恢复运动
-++++++++++++++++
+Reanudación del movimiento del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
     
-    "原型", "``ResumeMotion()``"
-    "描述", "恢复运动，使用恢复运动需运动指令为非阻塞状态"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``ResumeMotion()``"
+    "Descripción", "Reanudación del movimiento; para usar la reanudación del movimiento la instrucción de movimiento debe estar en estado no bloqueante"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-运动暂停、恢复、停止代码示例
-++++++++++++++++++++++++++++++++
+Ejemplo de código de pausa, reanudación y detención del movimiento
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     j1 =[-11.904, -99.669, 117.473, -108.616, -91.726, 74.256]
     j5 =[-95.228, -54.621, 73.691, -112.245, -91.280, 74.268]
@@ -1005,39 +1005,39 @@ jog点动立即停止
     time.sleep(1)
     robot.CloseRPC()
 
-点位整体偏移开始
-+++++++++++++++++++
+Inicio del desplazamiento global de puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
     
-    "原型", "``PointsOffsetEnable(flag,offset_pos)``"
-    "描述", "点位整体偏移开始"
-    "必选参数", "- ``flag``:0-基坐标或工件坐标系下偏移， 2-工具坐标系下偏移；
-    - ``offset_pos``:偏移量，单位[mm][°]。"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``PointsOffsetEnable(flag,offset_pos)``"
+    "Descripción", "Inicio del desplazamiento global de puntos"
+    "Parámetros obligatorios", "- ``flag``:0-desplazamiento en el sistema de coordenadas base o de pieza, 2-desplazamiento en el sistema de coordenadas de herramienta;
+    - ``offset_pos``:Cantidad de desplazamiento, unidad [mm][°]."
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-点位整体偏移结束
-+++++++++++++++++++
+Fin del desplazamiento global de puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
     
-    "原型", "``PointsOffsetDisable()``"
-    "描述", "点位整体偏移结束"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``PointsOffsetDisable()``"
+    "Descripción", "Fin del desplazamiento global de puntos"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-点位偏移代码示例
-+++++++++++++++++++
+Ejemplo de código de desplazamiento de puntos
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     j1 = [-11.904, -99.669, 117.473, -108.616, -91.726, 74.256]
     j2 = [-45.615, -106.172, 124.296, -107.151, -91.282, 74.255]
@@ -1063,76 +1063,76 @@ jog点动立即停止
     robot.PointsOffsetDisable()
     robot.CloseRPC()
 
-控制箱运动AO开始
-+++++++++++++++++++
+Inicio de la AO sincronizada con el movimiento de la caja de control
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
     
-    "原型", "``MoveAOStart(AONum,maxTCPSpeed=1000,maxAOPercent=100,zeroZoneCmp=20)``"
-    "描述", "控制箱运动AO开始"
-    "必选参数", "- ``AONum``:控制箱AO编号"
-    "默认参数", "
-    - ``maxTCPSpeed``:最大TCP速度值[1-5000mm/s]，默认1000；
-    - ``maxAOPercent``:最大TCP速度值对应的AO百分比，默认100%；
-    - ``zeroZoneCmp``:死区补偿值AO百分比，整形，默认为20%，范围[0-100]。"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``MoveAOStart(AONum,maxTCPSpeed=1000,maxAOPercent=100,zeroZoneCmp=20)``"
+    "Descripción", "Inicio de la AO sincronizada con el movimiento de la caja de control"
+    "Parámetros obligatorios", "- ``AONum``:Número de AO de la caja de control"
+    "Parámetros predeterminados", "
+    - ``maxTCPSpeed``:Valor máximo de velocidad TCP [1-5000mm/s], valor predeterminado 1000;
+    - ``maxAOPercent``:Porcentaje de AO correspondiente al valor máximo de velocidad TCP, valor predeterminado 100%;
+    - ``zeroZoneCmp``:Valor de compensación de zona muerta, porcentaje de AO, entero, valor predeterminado 20%, rango [0-100]."
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-控制箱运动AO结束
-+++++++++++++++++++++++
+Fin de la AO sincronizada con el movimiento de la caja de control
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
     
-    "原型", "``MoveAOStop()``"
-    "描述", "控制箱运动AO结束"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``MoveAOStop()``"
+    "Descripción", "Fin de la AO sincronizada con el movimiento de la caja de control"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-末端运动AO开始
-+++++++++++++++++++++++
+Inicio de la AO sincronizada con el movimiento del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
     
-    "原型", "``MoveToolAOStart(AONum,maxTCPSpeed=1000,maxAOPercent=100,zeroZoneCmp =20)``"
-    "描述", "末端运动AO开始"
-    "必选参数", "- ``AONum``:末端AO编号"
-    "默认参数", "
-    - ``maxTCPSpeed``:最大TCP速度值[1-5000mm/s]，默认1000；
-    - ``maxAOPercent``:最大TCP速度值对应的AO百分比，默认100%；
-    - ``zeroZoneCmp``:死区补偿值AO百分比，整形，默认为20%，范围[0-100]。"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``MoveToolAOStart(AONum,maxTCPSpeed=1000,maxAOPercent=100,zeroZoneCmp =20)``"
+    "Descripción", "Inicio de la AO sincronizada con el movimiento del extremo"
+    "Parámetros obligatorios", "- ``AONum``:Número de AO del extremo"
+    "Parámetros predeterminados", "
+    - ``maxTCPSpeed``:Valor máximo de velocidad TCP [1-5000mm/s], valor predeterminado 1000;
+    - ``maxAOPercent``:Porcentaje de AO correspondiente al valor máximo de velocidad TCP, valor predeterminado 100%;
+    - ``zeroZoneCmp``:Valor de compensación de zona muerta, porcentaje de AO, entero, valor predeterminado 20%, rango [0-100]."
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-末端运动AO结束
-+++++++++++++++++++++++
+Fin de la AO sincronizada con el movimiento del extremo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.4
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
     
-    "原型", "``MoveToolAOStop()``"
-    "描述", "末端运动AO结束"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``MoveToolAOStop()``"
+    "Descripción", "Fin de la AO sincronizada con el movimiento del extremo"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
       
-AO飞拍代码示例
-+++++++++++++++++++++++
+Ejemplo de código de AO sincronizada con el movimiento
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     j1 = [-11.904, -99.669, 117.473, -108.616, -91.726, 74.256]
     j2 = [-45.615, -106.172, 124.296, -107.151, -91.282, 74.255]
@@ -1160,73 +1160,73 @@ AO飞拍代码示例
     robot.MoveToolAOStop()
     robot.CloseRPC()
 
-开始Ptp运动FIR滤波
-+++++++++++++++++++++++
+Inicio del filtrado FIR del movimiento Ptp
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.2
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
     
-    "原型", "``PtpFIRPlanningStart(maxAcc, maxJek)``"
-    "描述", "开始Ptp运动FIR滤波"
-    "必选参数", "- ``maxAcc``:最大加速度极值(deg/s2)
-    - ``maxJek``:统一关节急动度极值(deg/s3)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``PtpFIRPlanningStart(maxAcc, maxJek)``"
+    "Descripción", "Inicio del filtrado FIR del movimiento Ptp"
+    "Parámetros obligatorios", "- ``maxAcc``:Valor extremo máximo de aceleración (deg/s2)
+    - ``maxJek``:Valor extremo unificado de jerk (sobreaceleración) de las articulaciones (deg/s3)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-关闭Ptp运动FIR滤波
-+++++++++++++++++++++++
+Cierre del filtrado FIR del movimiento Ptp
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
     
-    "原型", "``PtpFIRPlanningEnd()``"
-    "描述", "关闭Ptp运动FIR滤波"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``PtpFIRPlanningEnd()``"
+    "Descripción", "Cierre del filtrado FIR del movimiento Ptp"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-开始LIN、ARC运动FIR滤波
-+++++++++++++++++++++++
+Inicio del filtrado FIR del movimiento LIN y ARC
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
     
-    "原型", "``LinArcFIRPlanningStart(maxAccLin,maxAccDeg,maxJerkLin,maxJerkDeg)``"
-    "描述", "开始LIN、ARC运动FIR滤波"
-    "必选参数", "- ``maxAccLin``:线加速度极值(mm/s2)
-    - ``maxAccDeg``:角加速度极值(deg/s2)
-    - ``maxJerkLin``:线加加速度极值(mm/s3)
-    - ``maxJerkDeg``:角加加速度极值(deg/s3)"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``LinArcFIRPlanningStart(maxAccLin,maxAccDeg,maxJerkLin,maxJerkDeg)``"
+    "Descripción", "Inicio del filtrado FIR del movimiento LIN y ARC"
+    "Parámetros obligatorios", "- ``maxAccLin``:Valor extremo de aceleración lineal (mm/s2)
+    - ``maxAccDeg``:Valor extremo de aceleración angular (deg/s2)
+    - ``maxJerkLin``:Valor extremo de jerk lineal (mm/s3)
+    - ``maxJerkDeg``:Valor extremo de jerk angular (deg/s3)"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-关闭LIN、ARC运动FIR滤波
-+++++++++++++++++++++++
+Cierre del filtrado FIR del movimiento LIN y ARC
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
     
-    "原型", "``LinArcFIRPlanningEnd()``"
-    "描述", "关闭LIN、ARC运动FIR滤波"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"   
+    "Prototipo", "``LinArcFIRPlanningEnd()``"
+    "Descripción", "Cierre del filtrado FIR del movimiento LIN y ARC"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"   
 
-FIR滤波代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de filtrado FIR
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     startjointPos = [-11.904, -99.669, 117.473, -108.616, -91.726, 74.256]
     startjointPos = [-11.904, -99.669, 117.473, -108.616, -91.726, 74.256]
@@ -1255,41 +1255,41 @@ FIR滤波代码示例
     print(f"LinArcFIRPlanningEnd rtn is {rtn}")
     robot.CloseRPC()
 
-加速度平滑开启
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Activación del suavizado de aceleración
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.1
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AccSmoothStart(saveFlag_flag)``"
-    "描述", "加速度平滑开启"
-    "必选参数", "- ``saveFlag_flag``：是否断电保存"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AccSmoothStart(saveFlag_flag)``"
+    "Descripción", "Activación del suavizado de aceleración"
+    "Parámetros obligatorios", "- ``saveFlag_flag``：Si se guarda tras un corte de energía"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-加速度平滑关闭
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Desactivación del suavizado de aceleración
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.1
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AccSmoothEnd(saveFlag_flag)``"
-    "描述", "加速度平滑关闭"
-    "必选参数", "- ``saveFlag_flag``：是否断电保存"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Prototipo", "``AccSmoothEnd(saveFlag_flag)``"
+    "Descripción", "Desactivación del suavizado de aceleración"
+    "Parámetros obligatorios", "- ``saveFlag_flag``：Si se guarda tras un corte de energía"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-加速度平滑代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de suavizado de aceleración
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     startjointPos = [-11.904, -99.669, 117.473, -108.616, -91.726, 74.256]
     endjointPos = [-45.615, -106.172, 124.296, -107.151, -91.282, 74.255]
@@ -1304,41 +1304,41 @@ FIR滤波代码示例
     rtn = robot.AccSmoothEnd(0)
     print(f"AccSmoothEnd rtn is {rtn}")
 
-设置机器指定姿态速度开启
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Activación de la velocidad de orientación especificada del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AngularSpeedStart(ratio)``"
-    "描述", "指定姿态速度开启"
-    "必选参数", "- ``ratio``:姿态速度百分比[0-300]"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``AngularSpeedStart(ratio)``"
+    "Descripción", "Activación de la velocidad de orientación especificada"
+    "Parámetros obligatorios", "- ``ratio``:Porcentaje de velocidad de orientación [0-300]"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-指定姿态速度关闭
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Desactivación de la velocidad de orientación especificada
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``AngularSpeedEnd()``"
-    "描述", "指定姿态速度关闭"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Prototipo", "``AngularSpeedEnd()``"
+    "Descripción", "Desactivación de la velocidad de orientación especificada"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-机器人指定姿态速度代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de velocidad de orientación especificada del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos:
 
     from fairino import Robot
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     startjointPos = [-11.904, -99.669, 117.473, -108.616, -91.726, 74.256]
     endjointPos = [-45.615, -106.172, 124.296, -107.151, -91.282, 74.255]
@@ -1354,46 +1354,46 @@ FIR滤波代码示例
     print(f"AngularSpeedEnd rtn is {rtn}")
     robot.CloseRPC()
 
-奇异位姿保护开启
-+++++++++++++++++++++++++++++++++
+Activación de la protección de pose singular
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SingularAvoidStart(protectMode, minShoulderPos=100, minElbowPos=50, minWristPos=10)``"
-    "描述", "开启奇异位姿保护"
-    "必选参数", "
-    - ``protectMode``：奇异位姿保护保护模式：0-关节模式；1-笛卡尔模式
+    "Prototipo", "``SingularAvoidStart(protectMode, minShoulderPos=100, minElbowPos=50, minWristPos=10)``"
+    "Descripción", "Activación de la protección de pose singular"
+    "Parámetros obligatorios", "
+    - ``protectMode``：Modo de protección de pose singular: 0-modo de articulaciones; 1-modo cartesiano
     "
-    "默认参数", "- ``minShoulderPos``：肩奇异调整范围(mm), 默认100.0
-    - ``minElbowPos``：肘奇异调整范围(mm), 默认50.0
-    - ``minWristPos``：腕奇异调整范围(°), 默认10.0"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "- ``minShoulderPos``：Rango de ajuste de singularidad de hombro (mm), valor predeterminado 100.0
+    - ``minElbowPos``：Rango de ajuste de singularidad de codo (mm), valor predeterminado 50.0
+    - ``minWristPos``：Rango de ajuste de singularidad de muñeca (°), valor predeterminado 10.0"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-奇异位姿保护关闭
-+++++++++++++++++++++++++++++++++
+Desactivación de la protección de pose singular
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.0.5
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``SingularAvoidEnd()``"
-    "描述", "关闭奇异位姿保护"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Prototipo", "``SingularAvoidEnd()``"
+    "Descripción", "Desactivación de la protección de pose singular"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-机器人奇异位姿保护代码示例
-+++++++++++++++++++++++++++++++++
+Ejemplo de código de protección de pose singular del robot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. code-block:: python
     :linenos: 
 
     from fairino import Robot
     import time
-    # 与机器人控制器建立连接，连接成功返回一个机器人对象
+    # Establecer comunicación con el controlador del robot; si la conexión es exitosa, devuelve un objeto robot
     robot = Robot.RPC('192.168.58.2')
     startjointPos = [-11.904, -99.669, 117.473, -108.616, -91.726, 74.256]
     endjointPos = [-45.615, -106.172, 124.296, -107.151, -91.282, 74.255]
@@ -1409,79 +1409,79 @@ FIR滤波代码示例
     print(f"SingularAvoidEnd rtn is {rtn}")
     robot.CloseRPC()
 
-清空运动指令队列
-+++++++++++++++++++++++++++++++++
+Vaciar la cola de instrucciones de movimiento
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded:: python SDK-v2.1.7
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``MotionQueueClear()``"
-    "描述", "清空运动指令队列"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Prototipo", "``MotionQueueClear()``"
+    "Descripción", "Vaciar la cola de instrucciones de movimiento"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-清空运动指令队列
-+++++++++++++++++++++++++++++++++
-
-.. csv-table:: 
-    :stub-columns: 1
-    :widths: 10 30
-
-    "原型", "``MoveToIntersectLineStart(mainPoint, piecePoint, tool, wobj, vel, acc, ovl, oacc, moveType,mainExaxisPos=[[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]],pieceExaxisPos=[[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]],extAxisFlag=0,exaxisPos=[0.0,0.0,0.0,0.0],moveDirection=0,offset=[0.0,0.0,0.0,0.0,0.0,0.0])``"
-    "描述", "清空运动指令队列"
-    "必选参数", "
-    - ``mainPoint``：主管6个示教点的笛卡尔位姿
-    - ``piecePoint``：辅管6个示教点的笛卡尔位姿
-    - ``tool``：工具坐标系编号
-    - ``wobj``：工件坐标系编号
-    - ``vel``：速度百分比
-    - ``acc``：加速度百分比
-    - ``ovl``：速度缩放因子
-    - ``oacc``：加速度缩放因子
-    - ``moveType``：运动类型; 0-PTP；1-LIN
-    - ``mainExaxisPos``：主管6个示教点扩展轴位置,默认[[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]]
-    - ``pieceExaxisPos``：拼接管6个示教点扩展轴位置,默认[[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]]
-    - ``extAxisFlag``：是否启用扩展轴；0-不启用；1-启用
-    - ``exaxisPos``：起点扩展轴位置[0.0,0.0,0.0,0.0]
-    - ``moveDirection``：运动方向；0-顺时针；1-逆时针
-    - ``offset``：偏移量
-    "
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
-
-相贯线运动
-+++++++++++++++++++++++++++++++++
+Vaciar la cola de instrucciones de movimiento
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``MoveIntersectLine(mainPoint, piecePoint, tool, wobj, vel, acc, ovl, oacc, moveDirection,mainExaxisPos=[[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]],pieceExaxisPos=[[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]],extAxisFlag=0,exaxisPos=[[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]],offset=[0.0,0.0,0.0,0.0,0.0,0.0])``"
-    "描述", "相贯线运动"
-    "必选参数", "
-    - ``mainPoint``：主管6个示教点的笛卡尔位姿
-    - ``piecePoint``：辅管6个示教点的笛卡尔位姿
-    - ``tool``：工具坐标系编号
-    - ``wobj``：工件坐标系编号
-    - ``vel``：速度百分比
-    - ``acc``：加速度百分比
-    - ``ovl``：速度缩放因子
-    - ``oacc``：加速度缩放因子
-    - ``moveDirection``：运动方向；0-顺时针；1-逆时针
-    - ``mainExaxisPos``：主管6个示教点扩展轴位置,默认[[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]]
-    - ``pieceExaxisPos``：拼接管6个示教点扩展轴位置,默认[[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]]
-    - ``extAxisFlag``：是否启用扩展轴；0-不启用；1-启用
-    - ``exaxisPos``：起点扩展轴位置[0.0,0.0,0.0,0.0]
-    - ``offset``：偏移量
+    "Prototipo", "``MoveToIntersectLineStart(mainPoint, piecePoint, tool, wobj, vel, acc, ovl, oacc, moveType,mainExaxisPos=[[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]],pieceExaxisPos=[[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]],extAxisFlag=0,exaxisPos=[0.0,0.0,0.0,0.0],moveDirection=0,offset=[0.0,0.0,0.0,0.0,0.0,0.0])``"
+    "Descripción", "Moverse al punto inicial de la línea de intersección"
+    "Parámetros obligatorios", "
+    - ``mainPoint``：Pose cartesiana de los 6 puntos de enseñanza del tubo principal
+    - ``piecePoint``：Pose cartesiana de los 6 puntos de enseñanza del tubo auxiliar
+    - ``tool``：Número del sistema de coordenadas de herramienta
+    - ``wobj``：Número del sistema de coordenadas de pieza
+    - ``vel``：Porcentaje de velocidad
+    - ``acc``：Porcentaje de aceleración
+    - ``ovl``：Factor de escala de velocidad
+    - ``oacc``：Factor de escala de aceleración
+    - ``moveType``：Tipo de movimiento; 0-PTP; 1-LIN
+    - ``mainExaxisPos``：Posición del eje extendido de los 6 puntos de enseñanza del tubo principal, valor predeterminado [[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]]
+    - ``pieceExaxisPos``：Posición del eje extendido de los 6 puntos de enseñanza del tubo de empalme, valor predeterminado [[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]]
+    - ``extAxisFlag``：Si se habilita el eje extendido; 0-no habilitar; 1-habilitar
+    - ``exaxisPos``：Posición del eje extendido del punto inicial [0.0,0.0,0.0,0.0]
+    - ``moveDirection``：Dirección de movimiento; 0-sentido horario; 1-sentido antihorario
+    - ``offset``：Cantidad de desplazamiento
     "
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-机器人相贯线运动代码示例
-+++++++++++++++++++++++++++++++++
+Movimiento de línea de intersección
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. csv-table:: 
+    :stub-columns: 1
+    :widths: 10 30
+
+    "Prototipo", "``MoveIntersectLine(mainPoint, piecePoint, tool, wobj, vel, acc, ovl, oacc, moveDirection,mainExaxisPos=[[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]],pieceExaxisPos=[[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]],extAxisFlag=0,exaxisPos=[[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]],offset=[0.0,0.0,0.0,0.0,0.0,0.0])``"
+    "Descripción", "Movimiento de línea de intersección"
+    "Parámetros obligatorios", "
+    - ``mainPoint``：Pose cartesiana de los 6 puntos de enseñanza del tubo principal
+    - ``piecePoint``：Pose cartesiana de los 6 puntos de enseñanza del tubo auxiliar
+    - ``tool``：Número del sistema de coordenadas de herramienta
+    - ``wobj``：Número del sistema de coordenadas de pieza
+    - ``vel``：Porcentaje de velocidad
+    - ``acc``：Porcentaje de aceleración
+    - ``ovl``：Factor de escala de velocidad
+    - ``oacc``：Factor de escala de aceleración
+    - ``moveDirection``：Dirección de movimiento; 0-sentido horario; 1-sentido antihorario
+    - ``mainExaxisPos``：Posición del eje extendido de los 6 puntos de enseñanza del tubo principal, valor predeterminado [[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]]
+    - ``pieceExaxisPos``：Posición del eje extendido de los 6 puntos de enseñanza del tubo de empalme, valor predeterminado [[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0],[0.0,0.0,0.0,0.0]]
+    - ``extAxisFlag``：Si se habilita el eje extendido; 0-no habilitar; 1-habilitar
+    - ``exaxisPos``：Posición del eje extendido del punto inicial [0.0,0.0,0.0,0.0]
+    - ``offset``：Cantidad de desplazamiento
+    "
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
+
+Ejemplo de código de movimiento de línea de intersección del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos: 
@@ -1538,21 +1538,21 @@ FIR滤波代码示例
     print(f"MoveIntersectLine rtn is {rtn}")
     robot.CloseRPC()
 
-原地空运动
-+++++++++++++++++++++++++++++++++
+Movimiento en vacío en el lugar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``MoveStationary()``"
-    "描述", "原地空运动"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Prototipo", "``MoveStationary()``"
+    "Descripción", "Movimiento en vacío en el lugar"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
  
-原地空运动代码示例
-+++++++++++++++++++++++++++++++++
+Ejemplo de código de movimiento en vacío en el lugar
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos: 
@@ -1569,39 +1569,39 @@ FIR滤波代码示例
     robot.CloseRPC()
     return 0
 
-定点摆动开始
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Inicio de la oscilación de punto fijo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``OriginPointWeaveStart(weaveNum, mode, refPoint, weaveTime)``"
-    "描述", "定点摆动开始"
-    "必选参数", "
-    - ``weaveNum``:摆动编号[0-7]
-    - ``mode``:0-工具坐标系；1-参考点
-    - ``refPoint``:参考点笛卡尔坐标[x,y,z,a,b,c]
-    - ``weaveTime``:摆动时间[s]
+    "Prototipo", "``OriginPointWeaveStart(weaveNum, mode, refPoint, weaveTime)``"
+    "Descripción", "Inicio de la oscilación de punto fijo"
+    "Parámetros obligatorios", "
+    - ``weaveNum``:Número de oscilación [0-7]
+    - ``mode``:0-sistema de coordenadas de herramienta; 1-punto de referencia
+    - ``refPoint``:Coordenadas cartesianas del punto de referencia [x,y,z,a,b,c]
+    - ``weaveTime``:Tiempo de oscilación [s]
     - "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode "
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode "
 
-定点摆动结束
-+++++++++++++++++++++++++++++++++
+Fin de la oscilación de punto fijo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``OriginPointWeaveEnd()``"
-    "描述", "定点摆动结束"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "- 错误码 成功-0  失败- errcode"
+    "Prototipo", "``OriginPointWeaveEnd()``"
+    "Descripción", "Fin de la oscilación de punto fijo"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "- Código de error éxito-0  fallo- errcode"
 
-定点摆动的SDK代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código SDK de oscilación de punto fijo
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos: 
@@ -1610,47 +1610,47 @@ FIR滤波代码示例
     import time
     from fairino import Robot
 
-    # 与机器人控制器建立连接
+    # Establecer comunicación con el controlador del robot
     robot = Robot.RPC('192.168.58.2')
 
     def TestOriginPointWeave(self):
         time.sleep(2)
-        # 初始化关节位置、外部轴和偏移
+        # Inicializar posición de articulaciones, eje externo y desplazamiento
         j = [39.886, -98.580, -124.032, -47.393, 90.000, 40.842]
         epos = [0, 0, 0, 0]
         offset_pos = [0, 0, 0, 0, 0, 0]
 
-        # 参考点位置 [x, y, z, rx, ry, rz]
+        # Posición del punto de referencia [x, y, z, rx, ry, rz]
         refPoint = [400.021, 300.022, 299.996, 179.997, -0.003, -90.956]
 
-        # 移动到起始位置
+        # Moverse a la posición inicial
         robot.MoveJ(joint_pos=j, tool=1, user=0, vel=100, acc=100, ovl=100,
                     exaxis_pos=epos, blendT=-1, offset_flag=0, offset_pos=offset_pos)
 
-        # 第一次摆动：绝对坐标系（tool=0），模式0
+        # Primera oscilación: sistema de coordenadas absoluto (tool=0), modo 0
         robot.OriginPointWeaveStart(0, 0, refPoint, 3)
         robot.MoveStationary()
         robot.OriginPointWeaveEnd()
 
         time.sleep(2)
 
-        # 再次移动到起始位置
+        # Moverse de nuevo a la posición inicial
         robot.MoveJ(joint_pos=j, tool=1, user=0, vel=100, acc=100, ovl=100,
                     exaxis_pos=epos, blendT=-1, offset_flag=0, offset_pos=offset_pos)
 
-        # 第二次摆动：绝对坐标系（tool=0），模式1
+        # Segunda oscilación: sistema de coordenadas absoluto (tool=0), modo 1
         robot.OriginPointWeaveStart(0, 1, refPoint, 3)
         robot.MoveStationary()
         robot.OriginPointWeaveEnd()
 
-        # 关闭连接
+        # Cerrar la conexión
         robot.CloseRPC()
         time.sleep(1)
 
     TestOriginPointWeave(robot)
 
-定点摆动（包含激光及拓展轴）的SDK代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código SDK de oscilación de punto fijo (incluye láser y eje extendido)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos: 
@@ -1659,17 +1659,17 @@ FIR滤波代码示例
     import time
     from fairino import Robot
 
-    # 与机器人控制器建立连接
+    # Establecer comunicación con el controlador del robot
     robot = Robot.RPC('192.168.58.2')
 
     def TestOriginPointWeave(self):
         time.sleep(2)
-        # 初始化关节位置、外部轴和偏移
+        # Inicializar posición de articulaciones, eje externo y desplazamiento
         j = [39.886, -98.580, -124.032, -47.393, 90.000, 40.842]
         epos1 = [0, 0, 0, 0]
         offset_pos = [0, 0, 0, 0, 0, 0]
         epos2 = [5, 0.000, 0.000, 0.000]
-        # 参考点位置 [x, y, z, rx, ry, rz]
+        # Posición del punto de referencia [x, y, z, rx, ry, rz]
         refPoint = [400.021, 300.022, 299.996, 179.997, -0.003, -90.956]
 
         rtn = 0
@@ -1677,75 +1677,75 @@ FIR滤波代码示例
         robot.LaserTrackingSensorSamplePeriod(20)
         robot.LoadPosSensorDriver(101)
 
-        # 加载 UDP 驱动
+        # Cargar el controlador UDP
         robot.ExtDevLoadUDPDriver()
 
-        # 设置外部轴命令完成时间
+        # Establecer el tiempo de finalización del comando del eje externo
         rtn = robot.SetExAxisCmdDoneTime(5000.0)
         print(f"SetExAxisCmdDoneTime rtn is {rtn}")
 
-        # 使能外部轴 1 和 2
+        # Habilitar los ejes externos 1 y 2
         rtn = robot.ExtAxisServoOn(1, 1)
         print(f"ExtAxisServoOn axis id 1 rtn is {rtn}")
         rtn = robot.ExtAxisServoOn(2, 1)
         print(f"ExtAxisServoOn axis id 2 rtn is {rtn}")
         time.sleep(2)
 
-        # 设置外部轴回零
+        # Establecer el retorno a cero del eje externo
         robot.ExtAxisSetHoming(1, 0, 10, 2)
         robot.LaserTrackingLaserOnOff(1)
 
-        # 1---不带扩展轴
+        # 1---sin eje extendido
         robot.LaserTrackingTrackOnOff(1, 4)
         time.sleep(0.2)
-        # 启动定点摆动
+        # Iniciar la oscilación de punto fijo
         robot.OriginPointWeaveStart(0, 0, refPoint, 10)
-        robot.MoveStationary()  # 执行固定运动（假设该方法存在）
+        robot.MoveStationary()  # Ejecutar el movimiento fijo (se asume que el método existe)
         robot.OriginPointWeaveEnd()
         robot.LaserTrackingTrackOnOff(0, 4)
 
-        time.sleep(2)  # 等待2秒
+        time.sleep(2)  # Esperar 2 segundos
 
-        # 2----带扩展轴
+        # 2----con eje extendido
         robot.ExtAxisMove(epos1, 100, -1)
         robot.LaserTrackingTrackOnOff(1, 4)
-        # 启动定点摆动
+        # Iniciar la oscilación de punto fijo
         robot.OriginPointWeaveStart(0, 0, refPoint, 20)
         robot.ExtAxisMove(epos2, 100, -1)
         robot.OriginPointWeaveEnd()
         robot.LaserTrackingTrackOnOff(0, 4)
 
-        # 关闭连接
+        # Cerrar la conexión
         robot.CloseRPC()
         time.sleep(1)
 
     TestOriginPointWeave(robot)
 
-关节空间速度伺服模式运动
+Movimiento en modo servo de velocidad del espacio de articulaciones
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ServoJV(self, joint_vel, exis_vel, acc=0.0, vel=0.0, cmdT=0.008, filterT=0.0, gain=0.0, id=0, comType=0)``"
-    "描述", "关节空间速度伺服模式运动"
-    "必选参数", "
-    - ``joint_vel``:6个目标关节速度,单位deg/s
-    - ``exis_vel``:4个外部轴速度,单位deg/s
-    - ``acc``: 加速度百分比，范围[0~100],暂不开放，默认为0
-    - ``vel``:速度百分比，范围[0~100]，暂不开放，默认为0
-    - ``cmdT``:指令下发周期，单位s，建议范围[0.001~0.0016]
-    - ``filterT``:滤波时间，单位s，暂不开放，默认为0
-    - ``gain``:目标位置的比例放大器，暂不开放，默认为0
-    - ``id``:servoJ指令ID,默认为0
-    - ``comType``:指令下发类型；0-xmlrpc；1-UDP(对应机器人20007端口)
+    "Prototipo", "``ServoJV(self, joint_vel, exis_vel, acc=0.0, vel=0.0, cmdT=0.008, filterT=0.0, gain=0.0, id=0, comType=0)``"
+    "Descripción", "Movimiento en modo servo de velocidad del espacio de articulaciones"
+    "Parámetros obligatorios", "
+    - ``joint_vel``:Velocidad objetivo de las 6 articulaciones, unidad deg/s
+    - ``exis_vel``:Velocidad de los 4 ejes externos, unidad deg/s
+    - ``acc``: Porcentaje de aceleración, rango [0~100], aún no disponible, valor predeterminado 0
+    - ``vel``:Porcentaje de velocidad, rango [0~100], aún no disponible, valor predeterminado 0
+    - ``cmdT``:Período de envío de instrucciones, unidad s, rango recomendado [0.001~0.0016]
+    - ``filterT``:Tiempo de filtrado, unidad s, aún no disponible, valor predeterminado 0
+    - ``gain``:Amplificador proporcional de la posición objetivo, aún no disponible, valor predeterminado 0
+    - ``id``:ID de la instrucción servoJ, valor predeterminado 0
+    - ``comType``:Tipo de envío de instrucciones; 0-xmlrpc; 1-UDP (corresponde al puerto 20007 del robot)
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-关节空间速度伺服模式运动代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de movimiento en modo servo de velocidad del espacio de articulaciones
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos: 
@@ -1754,11 +1754,11 @@ FIR滤波代码示例
     import time
 
     def main():
-        # 与机器人控制器建立连接
+        # Establecer comunicación con el controlador del robot
         robot = Robot.RPC('192.168.58.2')
-        time.sleep(0.5)  # 等待连接和数据接收
+        time.sleep(0.5)  # Esperar la conexión y la recepción de datos
 
-        # 初始化关节速度数组和扩展轴速度数组
+        # Inicializar el arreglo de velocidades de las articulaciones y el arreglo de velocidades de los ejes extendidos
         joint_vel = [10.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         exis_vel = [0.0, 0.0, 0.0, 0.0]
         acc = 0.0
@@ -1768,73 +1768,73 @@ FIR滤波代码示例
         gain = 0.0
         cnt = 0
 
-        # 循环调用ServoJV，共200次
+        # Llamar cíclicamente a ServoJV, 200 veces en total
         while cnt < 200:
             rtn = robot.ServoJV(joint_vel=joint_vel, exis_vel=exis_vel, acc=acc, vel=vel,
                                 cmdT=cmdT, filterT=filterT, gain=gain)
             print(f"ServoJV rtn is {rtn}")
             cnt += 1
 
-        # 关闭连接
+        # Cerrar la conexión
         robot.CloseRPC()
 
 
-    # 调用测试函数
+    # Llamar a la función de prueba
     main()
 
-关节MIT控制开始
+Inicio del control MIT de las articulaciones
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ServoMITStart(self, comType=0)``"
-    "描述", "关节MIT控制开始"
-    "必选参数", "
-    - ``comType``:指令下发类型；0-xmlrpc；1-UDP(对应机器人20007端口)
+    "Prototipo", "``ServoMITStart(self, comType=0)``"
+    "Descripción", "Inicio del control MIT de las articulaciones"
+    "Parámetros obligatorios", "
+    - ``comType``:Tipo de envío de instrucciones; 0-xmlrpc; 1-UDP (corresponde al puerto 20007 del robot)
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-关节MIT控制结束
+Fin del control MIT de las articulaciones
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ServoMITEnd(self, comType=0)``"
-    "描述", "关节MIT控制结束"
-    "必选参数", "
-    - ``comType``:指令下发类型；0-xmlrpc；1-UDP(对应机器人20007端口)
+    "Prototipo", "``ServoMITEnd(self, comType=0)``"
+    "Descripción", "Fin del control MIT de las articulaciones"
+    "Parámetros obligatorios", "
+    - ``comType``:Tipo de envío de instrucciones; 0-xmlrpc; 1-UDP (corresponde al puerto 20007 del robot)
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-关节MIT控制
+Control MIT de las articulaciones
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. csv-table:: 
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ServoMIT(self, posGain, desPos, velGain, desVel, torque_ff, interval, comType=0)``"
-    "描述", "关节MIT控制"
-    "必选参数", "
-    - ``posGain``:j1~j6关节位置增益
-    - ``desPos``:j1~j6关节期望位置 单位:deg
-    - ``velGain``:j1~j6关节速度增益
-    - ``desVel``:j1~j6关节期望速度 单位:deg/s
-    - ``torque_ff``:j1~j6前馈力矩 单位:Nm
-    - ``interval``:指令周期，单位s，范围[0.001~0.008]
-    - ``comType``:指令下发类型；0-xmlrpc；1-UDP(对应机器人20007端口)
+    "Prototipo", "``ServoMIT(self, posGain, desPos, velGain, desVel, torque_ff, interval, comType=0)``"
+    "Descripción", "Control MIT de las articulaciones"
+    "Parámetros obligatorios", "
+    - ``posGain``:Ganancia de posición de las articulaciones j1~j6
+    - ``desPos``:Posición deseada de las articulaciones j1~j6, unidad: deg
+    - ``velGain``:Ganancia de velocidad de las articulaciones j1~j6
+    - ``desVel``:Velocidad deseada de las articulaciones j1~j6, unidad: deg/s
+    - ``torque_ff``:Par de prealimentación de las articulaciones j1~j6, unidad: Nm
+    - ``interval``:Período de instrucción, unidad s, rango [0.001~0.008]
+    - ``comType``:Tipo de envío de instrucciones; 0-xmlrpc; 1-UDP (corresponde al puerto 20007 del robot)
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"
 
-机器人关节MIT控制代码示例
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Ejemplo de código de control MIT de las articulaciones del robot
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
     :linenos: 
@@ -1843,47 +1843,47 @@ FIR滤波代码示例
     import time
     from fairino import Robot
 
-    # 与机器人控制器建立连接
+    # Establecer comunicación con el controlador del robot
     robot = Robot.RPC('192.168.58.2')
 
-    # 定义回调函数
+    # Definir la función de devolución de llamada
     def udp_frame_callback(src_type, count, cmd_id, data_len, content):
-        """UDP命令响应回调函数"""
-        print(f"回调函数: cmd_id={cmd_id} count={count} data_len={data_len} content={content}")
+        """Función de devolución de llamada de respuesta de comandos UDP"""
+        print(f"Función de devolución de llamada: cmd_id={cmd_id} count={count} data_len={data_len} content={content}")
         return 0
 
     def ServoMITtest(self):
-        # 设置UDP命令响应回调
+        # Establecer la función de devolución de llamada de respuesta de comandos UDP
         robot.SetUDPCmdRpyCallback(udp_frame_callback)
 
         while True:
-            # 复位所有错误
+            # Restablecer todos los errores
             robot.ResetAllError()
             time.sleep(0.5)
 
-            # 初始化参数数组
+            # Inicializar arreglos de parámetros
             posGain = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
             desPos = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
             velGain = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
             desVel = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
             torques = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
-            # 获取关节力矩
+            # Obtener el par de las articulaciones
             rtn, torques = robot.GetJointTorques(flag=1)
             print(f"GetJointTorques rtn: {rtn}")
             print("111111")
 
-            # 启动Servo MIT模式
+            # Iniciar el modo Servo MIT
             rtn = robot.ServoMITStart(0)
             print(f"ServoMITStart rtn: {rtn}")
 
-            # 开启拖动示教
+            # Activar la enseñanza por arrastre
             rtn = robot.DragTeachSwitch(1)
             print(f"DragTeachSwitch rtn: {rtn}")
 
             intev = 0.008
 
-            # 正向运动：第6轴正向力矩，直到角度超过30度
+            # Movimiento positivo: par positivo en la articulación 6 hasta que el ángulo supere 30 grados
             while True:
                 torques[5] = 0.03
                 rtn = robot.ServoMIT(posGain, desPos, velGain,
@@ -1897,7 +1897,7 @@ FIR滤波代码示例
                 if pkg.jt_cur_pos[5] > 30:
                     break
 
-            # 反向运动：第6轴负向力矩，直到角度小于0度
+            # Movimiento negativo: par negativo en la articulación 6 hasta que el ángulo sea menor que 0 grados
             while True:
                 torques[5] = -0.03
                 rtn = robot.ServoMIT(posGain, desPos, velGain,
@@ -1911,18 +1911,18 @@ FIR滤波代码示例
                 if pkg.jt_cur_pos[5] < 0:
                     break
 
-            # 关闭拖动示教
+            # Desactivar la enseñanza por arrastre
             rtn = robot.DragTeachSwitch(0)
             print(f"DragTeachSwitch off rtn: {rtn}")
 
-            # 结束Servo MIT模式
+            # Finalizar el modo Servo MIT
             rtn = robot.ServoMITEnd(0)
             print(f"ServoMITEnd rtn: {rtn}")
 
-    # 调用测试函数
+    # Llamar a la función de prueba
     ServoMITtest(robot)
 
-工件坐标系点位转换开始
+Inicio de la conversión de puntos del sistema de coordenadas de pieza
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded::python SDK-v3.9.8
 
@@ -1930,15 +1930,15 @@ FIR滤波代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WorkPieceTrsfStart(self, workpieceID)``"
-    "描述", "工件坐标系点位转换开始"
-    "必选参数", "
-    - ``workpieceID``: 工件号[0-14]
+    "Prototipo", "``WorkPieceTrsfStart(self, workpieceID)``"
+    "Descripción", "Inicio de la conversión de puntos del sistema de coordenadas de pieza"
+    "Parámetros obligatorios", "
+    - ``workpieceID``: Número de pieza [0-14]
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"    
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"    
 
-工件坐标系点位转换结束
+Fin de la conversión de puntos del sistema de coordenadas de pieza
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded::python SDK-v3.9.8
 
@@ -1946,13 +1946,13 @@ FIR滤波代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``WorkPieceTrsfEnd((self)``"
-    "描述", "工件坐标系点位转换结束"
-    "必选参数", "无"
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode"    
+    "Prototipo", "``WorkPieceTrsfEnd((self)``"
+    "Descripción", "Fin de la conversión de puntos del sistema de coordenadas de pieza"
+    "Parámetros obligatorios", "Ninguno"
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode"    
 
-工件坐标系点位转换代码示例    
+Ejemplo de código de conversión de puntos del sistema de coordenadas de pieza
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. versionadded::python SDK-v3.9.8
 
@@ -2052,7 +2052,7 @@ FIR滤波代码示例
     if __name__ == "__main__":
         main()
         
-关节空间伺服模式运动(支持多点位一次输入)    
+Movimiento en modo servo del espacio de articulaciones (admite la entrada de múltiples puntos a la vez)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
@@ -2062,24 +2062,24 @@ FIR滤波代码示例
     :stub-columns: 1
     :widths: 10 30
 
-    "原型", "``ServoJMultiPos(self, joint_pos, axisPos, acc=0.0, vel=0.0, cmdT=0.008, filterT=0.0, gain=0.0, id=0, cmdType=0)``"
-    "描述", "关节空间伺服模式运动(支持多点位一次输入)"
-    "必选参数", "
-    - ``joint_pos``: 目标关节位置集合(最多支持10组),单位deg，二维列表，每个元素为6个关节位置
-    - ``axisPos``: 外部轴位置,单位mm，4个元素
-    - ``acc``: 加速度百分比，范围[0~100],暂不开放，默认为0.0
-    - ``vel``: 速度百分比，范围[0~100]，暂不开放，默认为0.0
-    - ``cmdT``: 指令下发周期，单位s，建议范围[0.001~0.0016]，默认为0.008
-    - ``filterT``: 滤波时间，单位s，暂不开放，默认为0.0
-    - ``gain``: 目标位置的比例放大器，暂不开放，默认为0.0
-    - ``id``: servoJ指令ID,默认为0
-    - ``cmdType``: 命令传输类型，0=XML-RPC，1=UDP透传
+    "Prototipo", "``ServoJMultiPos(self, joint_pos, axisPos, acc=0.0, vel=0.0, cmdT=0.008, filterT=0.0, gain=0.0, id=0, cmdType=0)``"
+    "Descripción", "Movimiento en modo servo del espacio de articulaciones (admite la entrada de múltiples puntos a la vez)"
+    "Parámetros obligatorios", "
+    - ``joint_pos``: Conjunto de posiciones objetivo de las articulaciones (admite hasta 10 grupos), unidad deg, lista bidimensional, cada elemento son 6 posiciones de articulaciones
+    - ``axisPos``: Posición del eje externo, unidad mm, 4 elementos
+    - ``acc``: Porcentaje de aceleración, rango [0~100], aún no disponible, valor predeterminado 0.0
+    - ``vel``: Porcentaje de velocidad, rango [0~100], aún no disponible, valor predeterminado 0.0
+    - ``cmdT``: Período de envío de instrucciones, unidad s, rango recomendado [0.001~0.0016], valor predeterminado 0.008
+    - ``filterT``: Tiempo de filtrado, unidad s, aún no disponible, valor predeterminado 0.0
+    - ``gain``: Amplificador proporcional de la posición objetivo, aún no disponible, valor predeterminado 0.0
+    - ``id``: ID de la instrucción servoJ, valor predeterminado 0
+    - ``cmdType``: Tipo de transmisión de comandos, 0=XML-RPC, 1=UDP transparente
     "
-    "默认参数", "无"
-    "返回值", "错误码 成功-0  失败- errcode
-    - ``servoJCmdCount``: ServoJ指令点位计数[0-10000] (仅XML-RPC方式返回)"   
+    "Parámetros predeterminados", "Ninguno"
+    "Valor de retorno", "Código de error éxito-0  fallo- errcode
+    - ``servoJCmdCount``: Contador de puntos de la instrucción ServoJ [0-10000] (solo devuelto en modo XML-RPC)"   
         
-关节空间伺服模式运动(多点位输入)代码示例
+Ejemplo de código de movimiento en modo servo del espacio de articulaciones (entrada de múltiples puntos)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. code-block:: python
@@ -2089,11 +2089,11 @@ FIR滤波代码示例
     import time
 
     def main():
-        # 与机器人控制器建立连接
+        # Establecer comunicación con el controlador del robot
         robot = Robot.RPC('192.168.58.2')
-        time.sleep(0.5)  # 等待连接和数据接收
+        time.sleep(0.5)  # Esperar la conexión y la recepción de datos
 
-        # ========== 读取关节轨迹文件 ==========
+        # ========== Leer el archivo de trayectoria de articulaciones ==========
         file_path = "C://Users/lenovo/Desktop/ServoJPath.txt"
         all_joint_data = []
 
@@ -2102,39 +2102,39 @@ FIR滤波代码示例
                 for line in fin:
                     parts = line.strip().split()
                     if len(parts) >= 6:
-                        # 跳过第一列（索引列），取第2~7列（索引1~6）
+                        # Omitir la primera columna (columna de índice), tomar las columnas 2~7 (índices 1~6)
                         one_pose = [float(parts[i]) for i in range(1, 7)]
                         all_joint_data.append(one_pose)
         except FileNotFoundError:
             print("无法打开文件 ServoJPath.txt")
             return
 
-        print(f"一共读取到 {len(all_joint_data)} 组关节位置")
+        print(f"Se leyeron en total {len(all_joint_data)} conjuntos de posiciones de articulaciones")
 
-        # ========== 构建往返路径（正向 + 反向，去掉重复端点） ==========
+        # ========== Construir la trayectoria de ida y vuelta (directo + inverso, eliminando los extremos duplicados) ==========
         back_forth_path = all_joint_data.copy()
-        # 从倒数第二个开始反向追加（去掉重复的终点）
+        # Añadir en orden inverso desde el penúltimo (eliminando el punto final duplicado)
         for i in range(len(all_joint_data) - 2, -1, -1):
             back_forth_path.append(all_joint_data[i])
 
-        print(f"往返路径总点数: {len(back_forth_path)}")
+        print(f"Total de puntos de la trayectoria de ida y vuelta: {len(back_forth_path)}")
 
         epos = [0.0, 0.0, 0.0, 0.0]
         offset_pos = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
-        # 移动到起始位置
+        # Moverse a la posición inicial
         robot.MoveJ(joint_pos=all_joint_data[0], tool=0, user=0,
                     vel=100, acc=100, ovl=100, exaxis_pos=epos,
                     blendT=-1, offset_flag=0, offset_pos=offset_pos)
 
         time.sleep(1)
 
-        # ========== 主循环 ==========
+        # ========== Bucle principal ==========
         while True:
-            # 复位所有错误
+            # Restablecer todos los errores
             robot.ResetAllError()
 
-            # 移动到起始位置
+            # Moverse a la posición inicial
             robot.MoveJ(joint_pos=all_joint_data[0], tool=0, user=0,
                         vel=100, acc=100, ovl=100, exaxis_pos=epos,
                         blendT=-1, offset_flag=0, offset_pos=offset_pos)
@@ -2143,10 +2143,10 @@ FIR滤波代码示例
             total_points = len(back_forth_path)
 
             while move_count < total_points - 10:
-                # 获取机器人实时状态
+                # Obtener el estado en tiempo real del robot
                 rtn, pkg = robot.GetRobotRealTimeState()
 
-                # 计算单次可发送的ServoJ命令数量
+                # Calcular la cantidad de comandos ServoJ que se pueden enviar en una sola vez
                 single_servo_j_count = 50 - pkg.mc_queue_len
                 if single_servo_j_count <= 0:
                     time.sleep(0.1)
@@ -2155,7 +2155,7 @@ FIR滤波代码示例
                 if single_servo_j_count > 10:
                     single_servo_j_count = 10
 
-                # 构建本次要发送的关节位置列表（二维列表，每个元素包含6个关节角度）
+                # Construir la lista de posiciones de articulaciones a enviar (lista bidimensional, cada elemento contiene 6 ángulos de articulaciones)
                 joint_pos_list = []
                 for j in range(single_servo_j_count):
                     if move_count < total_points:
@@ -2164,24 +2164,24 @@ FIR滤波代码示例
                     else:
                         break
 
-                # 发送多点ServoJ命令
+                # Enviar el comando ServoJ de múltiples puntos
                 axis_pos = [0.0, 0.0, 0.0, 0.0]
-                # 注意参数顺序: joint_pos, axisPos, acc, vel, cmdT, filterT, gain, id, cmdType
-                # acc=100.0 对应C++的100.0, vel=100.0 对应C++的100.0
+                # Nota sobre el orden de los parámetros: joint_pos, axisPos, acc, vel, cmdT, filterT, gain, id, cmdType
+                # acc=100.0 corresponde al 100.0 de C++, vel=100.0 corresponde al 100.0 de C++
                 rtn, servo_j_cmd_count = robot.ServoJMultiPos(joint_pos_list, axis_pos,
                                                             acc=100.0, vel=100.0,
                                                             cmdT=0.008, filterT=0.008,
                                                             gain=1.0, id=0, cmdType=0)
                 if rtn != 0:
-                    print(f"ServoJMultiPos 执行失败，错误码: {rtn}")
+                    print(f"ServoJMultiPos falló, código de error: {rtn}")
                     break
 
-                # 打印调试信息
-                print(f"发送 {len(joint_pos_list)} 个点位，ServoJ命令计数: {servo_j_cmd_count}")
+                # Imprimir información de depuración
+                print(f"Se enviaron {len(joint_pos_list)} puntos, contador de comandos ServoJ: {servo_j_cmd_count}")
 
             time.sleep(4)
 
-        # 关闭连接（正常情况下不会执行到这里）
+        # Cerrar la conexión (normalmente no se llega aquí)
         robot.CloseRPC()
 
 
